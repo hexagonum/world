@@ -1,124 +1,177 @@
-import Image from 'next/image'
-import { Inter } from 'next/font/google'
+import useFetch from '@weather/hooks/use-fetch';
+import { NextPage } from 'next';
 
-const inter = Inter({ subsets: ['latin'] })
+const cities: { id: string; name: string; latitude: number; longitude: number }[] = [
+  {
+    id: 'ho-chi-minh-city',
+    name: 'Ho Chi Minh City',
+    latitude: 10.82,
+    longitude: 106.63,
+  },
+  {
+    id: 'hanoi',
+    name: 'Hanoi',
+    latitude: 21.02,
+    longitude: 105.84,
+  },
+  {
+    id: 'singapore',
+    name: 'Singapore',
+    latitude: 1.29,
+    longitude: 103.85,
+  },
+  {
+    id: 'seoul',
+    name: 'Seoul',
+    latitude: 37.57,
+    longitude: 126.98,
+  },
+  {
+    id: 'melbourne',
+    name: 'Melbourne',
+    latitude: -37.81,
+    longitude: 144.96,
+  },
+  {
+    id: 'dallas',
+    name: 'Dallas',
+    latitude: 32.78,
+    longitude: -96.81,
+  },
+];
 
-export default function Home() {
+type WeatherResponse = {
+  latitude: number;
+  longitude: number;
+  generationtime_ms: number;
+  utc_offset_seconds: number;
+  timezone: string;
+  timezone_abbreviation: string;
+  elevation: number;
+  current_weather: {
+    temperature: number;
+    windspeed: number;
+    winddirection: number;
+    weathercode: number;
+    is_day: number;
+    time: string;
+  };
+};
+
+const weatherCodes: Record<number, string> = {
+  0: 'clear sky',
+  1: 'mainly clear',
+  2: 'partly cloudy',
+  3: 'overcast',
+  45: 'fog',
+  48: 'depositing rime fog',
+  51: 'light drizzle',
+  53: 'moderate drizzle',
+  55: 'dense intensity drizzle',
+  56: 'light freezing drizzle',
+  57: 'dense intensity freezing drizzle',
+  61: 'slight rain',
+  63: 'moderate rain',
+  65: 'heavy intensity rain',
+  66: 'light freezing rain',
+  67: 'heavy intensity freezing rain',
+  71: 'slight snow fall',
+  73: 'moderate snow fall',
+  75: 'heavy intensity snow fall',
+  77: 'snow grains',
+  80: 'slight rain showers',
+  81: 'moderate rain showers',
+  82: 'violent rain showers',
+  85: 'slight snow showers',
+  86: 'heavy snow showers',
+  95: 'thunderstorm: slight or moderate',
+  96: 'slight thunderstorm',
+  99: 'heavy hail thunderstorm',
+};
+
+type WeatherProps = {
+  city: string;
+  latitude: number;
+  longitude: number;
+};
+
+const Weather: React.FC<WeatherProps> = ({ city, latitude, longitude }) => {
+  const url = `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current_weather=true`;
+  const { data, loading, error } = useFetch<WeatherResponse>(url);
+
+  if (loading) {
+    return (
+      <div className="border border-gray-700 rounded p-4">
+        <div className="flex justify-center items-center">Loading</div>
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="border border-gray-700 rounded p-4">
+        <div className="flex justify-center items-center">{error.message}</div>
+      </div>
+    );
+  }
+
+  if (!data) {
+    return (
+      <div className="border border-gray-700 rounded p-4">
+        <div className="flex justify-center items-center">No Data</div>
+      </div>
+    );
+  }
+
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/pages/index.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <div className="border border-gray-700 rounded p-4">
+      <div className="flex justify-between items-center">
+        <div className="uppercase">
+          <p className="font-bold">{city}</p>
+          <p className="text-xs">
+            {Math.abs(data.latitude).toFixed(2)}&deg;{data.latitude >= 0 ? 'N' : 'S'} -{' '}
+            {Math.abs(data.longitude).toFixed(2)}&deg;{data.longitude >= 0 ? 'E' : 'W'}
+          </p>
+        </div>
+        <div className="text-right">
+          <p className="font-bold">{data.current_weather.temperature}&deg;C</p>
+          <p className="capitalize text-xs">{weatherCodes[data.current_weather.weathercode] || 'N/A'}</p>
         </div>
       </div>
+    </div>
+  );
+};
 
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700/10 after:dark:from-sky-900 after:dark:via-[#0141ff]/40 before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
+export const HomePage: NextPage = () => {
+  const year = new Date().getFullYear();
+
+  return (
+    <div className="bg-gray-900 text-gray-100 h-screen">
+      <div className="flex flex-col h-full">
+        <nav className="border-b border-gray-700">
+          <div className="container mx-auto px-8 py-4">
+            <h1 className="uppercase font-bold">Weather</h1>
+          </div>
+        </nav>
+        <main className="grow overflow-hidden">
+          <div className="h-full overflow-auto">
+            <div className="container mx-auto p-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8">
+                {cities.map((city) => {
+                  return <Weather key={city.id} city={city.name} latitude={city.latitude} longitude={city.longitude} />;
+                })}
+              </div>
+            </div>
+          </div>
+        </main>
+        <footer className="border-t border-gray-700">
+          <div className="container mx-auto px-8 py-4">
+            <p className="uppercase">&copy; {year} Weather</p>
+          </div>
+        </footer>
       </div>
+    </div>
+  );
+};
 
-      <div className="mb-32 grid text-center lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`${inter.className} mb-3 text-2xl font-semibold`}>
-            Docs{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p
-            className={`${inter.className} m-0 max-w-[30ch] text-sm opacity-50`}
-          >
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`${inter.className} mb-3 text-2xl font-semibold`}>
-            Learn{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p
-            className={`${inter.className} m-0 max-w-[30ch] text-sm opacity-50`}
-          >
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`${inter.className} mb-3 text-2xl font-semibold`}>
-            Templates{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p
-            className={`${inter.className} m-0 max-w-[30ch] text-sm opacity-50`}
-          >
-            Discover and deploy boilerplate example Next.js&nbsp;projects.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`${inter.className} mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p
-            className={`${inter.className} m-0 max-w-[30ch] text-sm opacity-50`}
-          >
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  )
-}
+export default HomePage;

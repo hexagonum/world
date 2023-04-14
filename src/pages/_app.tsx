@@ -1,6 +1,19 @@
-import '@weather/styles/globals.css'
-import type { AppProps } from 'next/app'
+import { ChakraProvider } from '@chakra-ui/react';
+import '@weather/styles/globals.scss';
+import type { AppProps } from 'next/app';
+import Head from 'next/head';
 
-export default function App({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
-}
+const App: React.FC<AppProps> = ({ Component, pageProps }: AppProps) => {
+  return (
+    <>
+      <Head>
+        <title>Weather</title>
+      </Head>
+      <ChakraProvider>
+        <Component {...pageProps} />
+      </ChakraProvider>
+    </>
+  );
+};
+
+export default App;

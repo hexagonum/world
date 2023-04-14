@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NotFoundPage to match snapshot 1`] = `
+<div>
+  <div
+    class="bg-gray-900 text-gray-100 h-screen"
+  >
+    <div
+      class="flex items-center justify-center h-full"
+    >
+      <div
+        class="text-center"
+      >
+        <div
+          class="text-9xl font-bold"
+        >
+          404
+        </div>
+        <div
+          class="text-3xl uppercase"
+        >
+          Page Not Found
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

@@ -1,6 +1,18 @@
 /** @type {import('next').NextConfig} */
+
+const isProd = process.env.NODE_ENV === 'production';
+
+const withPWA = require('next-pwa')({
+  dest: 'public',
+  register: true,
+  skipWaiting: true,
+  disable: !isProd,
+});
+
 const nextConfig = {
   reactStrictMode: true,
-}
+  basePath: isProd ? '/weather' : undefined,
+  assetPrefix: isProd ? '/weather/' : undefined,
+};
 
-module.exports = nextConfig
+module.exports = withPWA(nextConfig);
