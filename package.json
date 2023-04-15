@@ -7,6 +7,11 @@
   "author": "hieudoanm <hieumdoan@gmail.com>",
   "license": "GNU GPL V3.0",
   "private": true,
+  "engines": {
+    "node": "18",
+    "npm": "9",
+    "yarn": "1"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
