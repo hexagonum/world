@@ -1,44 +1,11 @@
+import { Card, CardBody, CardFooter, Divider, Input } from '@chakra-ui/react';
+import Footer from '@weather/components/Footer';
+import Navbar from '@weather/components/Navbar';
+import { City, cities } from '@weather/configs';
 import useFetch from '@weather/hooks/use-fetch';
+import { addZero } from '@weather/utils/add-zero';
 import { NextPage } from 'next';
-
-const cities: { id: string; name: string; latitude: number; longitude: number }[] = [
-  {
-    id: 'ho-chi-minh-city',
-    name: 'Ho Chi Minh City',
-    latitude: 10.82,
-    longitude: 106.63,
-  },
-  {
-    id: 'hanoi',
-    name: 'Hanoi',
-    latitude: 21.02,
-    longitude: 105.84,
-  },
-  {
-    id: 'singapore',
-    name: 'Singapore',
-    latitude: 1.29,
-    longitude: 103.85,
-  },
-  {
-    id: 'seoul',
-    name: 'Seoul',
-    latitude: 37.57,
-    longitude: 126.98,
-  },
-  {
-    id: 'melbourne',
-    name: 'Melbourne',
-    latitude: -37.81,
-    longitude: 144.96,
-  },
-  {
-    id: 'dallas',
-    name: 'Dallas',
-    latitude: 32.78,
-    longitude: -96.81,
-  },
-];
+import { useEffect, useState } from 'react';
 
 type WeatherResponse = {
   latitude: number;
@@ -93,83 +60,153 @@ type WeatherProps = {
   city: string;
   latitude: number;
   longitude: number;
+  timezone: number;
 };
 
-const Weather: React.FC<WeatherProps> = ({ city, latitude, longitude }) => {
+const oneHour = 1000 * 60 * 60;
+
+const getClock = (timezome: number) => {
+  const d: Date = new Date();
+  const time: number = d.getTime();
+  const machineTimezone: number = d.getTimezoneOffset() / -60;
+  const cityTime: number = time - oneHour * (timezome - machineTimezone);
+  const cityD: Date = new Date(cityTime);
+  const hh: string = addZero(cityD.getHours());
+  const mm: string = addZero(cityD.getMinutes());
+  const ss: string = addZero(cityD.getSeconds());
+  return `${hh}:${mm}:${ss}`;
+};
+
+const Clock: React.FC<{ timezome: number }> = ({ timezome }) => {
+  const [clock, setClock] = useState(getClock(timezome));
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setClock(getClock(timezome));
+    }, 1000);
+    return () => clearInterval(interval);
+  }, [timezome]);
+
+  return (
+    <div className="w-full flex justify-between items-center">
+      <p>
+        Timezone: {timezome > 0 ? '+' : ''}
+        {timezome}
+      </p>
+      <p className="font-bold">{clock}</p>
+    </div>
+  );
+};
+
+const Weather: React.FC<WeatherProps> = ({ city = '', latitude = 0, longitude = 0, timezone = 0 }) => {
   const url = `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current_weather=true`;
   const { data, loading, error } = useFetch<WeatherResponse>(url);
 
   if (loading) {
     return (
-      <div className="border border-gray-700 rounded p-4">
-        <div className="flex justify-center items-center">Loading</div>
-      </div>
+      <Card>
+        <CardBody>
+          <div className="flex justify-center items-center">Loading</div>
+        </CardBody>
+      </Card>
     );
   }
 
   if (error) {
     return (
-      <div className="border border-gray-700 rounded p-4">
-        <div className="flex justify-center items-center">{error.message}</div>
-      </div>
+      <Card>
+        <CardBody>
+          <div className="flex justify-center items-center">{error.message}</div>
+        </CardBody>
+      </Card>
     );
   }
 
   if (!data) {
     return (
-      <div className="border border-gray-700 rounded p-4">
-        <div className="flex justify-center items-center">No Data</div>
-      </div>
+      <Card>
+        <CardBody>
+          <div className="flex justify-center items-center">No Data</div>
+        </CardBody>
+      </Card>
     );
   }
 
   return (
-    <div className="border border-gray-700 rounded p-4">
-      <div className="flex justify-between items-center">
-        <div className="uppercase">
-          <p className="font-bold">{city}</p>
-          <p className="text-xs">
-            {Math.abs(data.latitude).toFixed(2)}&deg;{data.latitude >= 0 ? 'N' : 'S'} -{' '}
-            {Math.abs(data.longitude).toFixed(2)}&deg;{data.longitude >= 0 ? 'E' : 'W'}
-          </p>
+    <Card>
+      <CardBody>
+        <div className="flex justify-between items-center">
+          <div className="capitalize">
+            <p className="font-bold">{city}</p>
+            <p className="text-xs">
+              {Math.abs(data.latitude).toFixed(2)}&deg;{data.latitude >= 0 ? 'N' : 'S'} -{' '}
+              {Math.abs(data.longitude).toFixed(2)}&deg;{data.longitude >= 0 ? 'E' : 'W'}
+            </p>
+          </div>
+          <div className="text-right">
+            <p className="font-bold">{data.current_weather.temperature}&deg;C</p>
+            <p className="capitalize text-xs">{weatherCodes[data.current_weather.weathercode] || 'N/A'}</p>
+          </div>
         </div>
-        <div className="text-right">
-          <p className="font-bold">{data.current_weather.temperature}&deg;C</p>
-          <p className="capitalize text-xs">{weatherCodes[data.current_weather.weathercode] || 'N/A'}</p>
-        </div>
-      </div>
-    </div>
+      </CardBody>
+      <Divider className="border-gray-300" />
+      <CardFooter>
+        <Clock timezome={timezone} />
+      </CardFooter>
+    </Card>
   );
 };
 
 export const HomePage: NextPage = () => {
-  const year = new Date().getFullYear();
+  const [query, setQuery] = useState<string>('');
+
+  const filterCities: City[] = cities.filter(({ name, country }: City) => {
+    const nameFlag = query !== '' ? name.toLowerCase().includes(query.toLowerCase()) : true;
+    const countryFlag = country !== '' ? country.toLowerCase().includes(query.toLowerCase()) : true;
+    return nameFlag || countryFlag;
+  });
+  const countries: string[] = [...new Set(filterCities.map(({ country }) => country))];
+  const citiesByCountries = countries.map((country) => {
+    const citiesByCountry = filterCities.filter(({ country: cityCountry }) => country === cityCountry);
+    return { country, cities: citiesByCountry };
+  });
 
   return (
-    <div className="bg-gray-900 text-gray-100 h-screen">
-      <div className="flex flex-col h-full">
-        <nav className="border-b border-gray-700">
-          <div className="container mx-auto px-8 py-4">
-            <h1 className="uppercase font-bold">Weather</h1>
-          </div>
-        </nav>
-        <main className="grow overflow-hidden">
-          <div className="h-full overflow-auto">
-            <div className="container mx-auto p-8">
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8">
-                {cities.map((city) => {
-                  return <Weather key={city.id} city={city.name} latitude={city.latitude} longitude={city.longitude} />;
-                })}
-              </div>
+    <div className="flex flex-col h-screen">
+      <Navbar />
+      <main className="grow overflow-hidden">
+        <div className="h-full overflow-auto">
+          <div className="container mx-auto p-8">
+            <div className="flex flex-col gap-4">
+              <Input
+                id="query"
+                name="query"
+                value={query}
+                placeholder="Query"
+                onChange={(event) => setQuery(event.target.value)}
+                size="lg"
+              />
+              <Divider />
+              {citiesByCountries.map(({ country = '', cities = [] }) => {
+                return (
+                  <div key={country} className="flex flex-col gap-4">
+                    <h2 className="text-md font-medium">
+                      {country} ({cities.length})
+                    </h2>
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8">
+                      {cities.map(({ id, name, latitude, longitude, timezone }: City) => (
+                        <Weather key={id} city={name} latitude={latitude} longitude={longitude} timezone={timezone} />
+                      ))}
+                    </div>
+                    <Divider />
+                  </div>
+                );
+              })}
             </div>
           </div>
-        </main>
-        <footer className="border-t border-gray-700">
-          <div className="container mx-auto px-8 py-4">
-            <p className="uppercase">&copy; {year} Weather</p>
-          </div>
-        </footer>
-      </div>
+        </div>
+      </main>
+      <Footer />
     </div>
   );
 };

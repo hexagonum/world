@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`InternalServerErrorPage to match snapshot 1`] = `
+<div>
+  <div
+    class="bg-gray-900 text-gray-100 h-screen"
+  >
+    <div
+      class="flex items-center justify-center h-full"
+    >
+      <div
+        class="text-center"
+      >
+        <div
+          class="text-9xl font-bold"
+        >
+          500
+        </div>
+        <div
+          class="text-3xl uppercase"
+        >
+          Internal Server Error
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
