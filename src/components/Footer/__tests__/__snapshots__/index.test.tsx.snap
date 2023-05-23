@@ -3,18 +3,23 @@
 exports[`Footer to match snapshot 1`] = `
 <div>
   <footer
-    class="border-t shadow"
+    class="border-t"
   >
     <div
-      class="container mx-auto px-8 py-4"
+      class="container mx-auto"
     >
-      <p
-        class="uppercase"
+      <div
+        class="px-8 py-4"
       >
-        © 
-        2023
-         Weather
-      </p>
+        <p
+          class="uppercase"
+        >
+          © 
+          2023
+           
+          Weather
+        </p>
+      </div>
     </div>
   </footer>
 </div>

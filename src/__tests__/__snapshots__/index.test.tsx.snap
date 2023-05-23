@@ -9,13 +9,17 @@ exports[`HomePage to match snapshot 1`] = `
       class="border-b shadow"
     >
       <div
-        class="container mx-auto px-8 py-4"
+        class="container mx-auto"
       >
-        <h1
-          class="uppercase font-bold"
+        <div
+          class="px-8 py-4"
         >
-          Weather
-        </h1>
+          <h1
+            class="uppercase font-medium"
+          >
+            Weather
+          </h1>
+        </div>
       </div>
     </nav>
     <main
@@ -25,330 +29,437 @@ exports[`HomePage to match snapshot 1`] = `
         class="h-full overflow-auto"
       >
         <div
-          class="container mx-auto p-8"
+          class="container mx-auto"
         >
           <div
-            class="flex flex-col gap-4"
+            class="p-8"
           >
             <div
               class="flex flex-col gap-4"
             >
-              <h2
-                class="text-md font-medium"
-              >
-                Vietnam
-                 (
-                3
-                )
-              </h2>
-              <div
-                class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8"
-              >
-                <div
-                  class="chakra-card css-2dlz7"
-                >
-                  <div
-                    class="chakra-card__body css-0"
-                  >
-                    <div
-                      class="flex justify-center items-center"
-                    >
-                      fetch is not defined
-                    </div>
-                  </div>
-                </div>
-                <div
-                  class="chakra-card css-2dlz7"
-                >
-                  <div
-                    class="chakra-card__body css-0"
-                  >
-                    <div
-                      class="flex justify-center items-center"
-                    >
-                      fetch is not defined
-                    </div>
-                  </div>
-                </div>
-                <div
-                  class="chakra-card css-2dlz7"
-                >
-                  <div
-                    class="chakra-card__body css-0"
-                  >
-                    <div
-                      class="flex justify-center items-center"
-                    >
-                      fetch is not defined
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <input
+                class="chakra-input css-0"
+                id="query"
+                name="query"
+                placeholder="Query"
+                value=""
+              />
               <hr
                 aria-orientation="horizontal"
                 class="chakra-divider css-1upb9tn"
               />
-            </div>
-            <div
-              class="flex flex-col gap-4"
-            >
-              <h2
-                class="text-md font-medium"
-              >
-                United States
-                 (
-                3
-                )
-              </h2>
               <div
-                class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8"
+                class="flex flex-col gap-4"
               >
+                <h2
+                  class="text-md font-medium"
+                >
+                  <a
+                    href="/vietnam"
+                  >
+                    Vietnam
+                     (
+                    3
+                    )
+                  </a>
+                </h2>
                 <div
-                  class="chakra-card css-2dlz7"
+                  class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8"
                 >
                   <div
-                    class="chakra-card__body css-0"
+                    class="chakra-card border border-gray-200 css-2dlz7"
                   >
                     <div
-                      class="flex justify-center items-center"
+                      class="chakra-card__body css-0"
                     >
-                      fetch is not defined
+                      <div
+                        class="flex justify-center items-center"
+                      >
+                        fetch is not defined
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="chakra-card border border-gray-200 css-2dlz7"
+                  >
+                    <div
+                      class="chakra-card__body css-0"
+                    >
+                      <div
+                        class="flex justify-center items-center"
+                      >
+                        fetch is not defined
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="chakra-card border border-gray-200 css-2dlz7"
+                  >
+                    <div
+                      class="chakra-card__body css-0"
+                    >
+                      <div
+                        class="flex justify-center items-center"
+                      >
+                        fetch is not defined
+                      </div>
                     </div>
                   </div>
                 </div>
-                <div
-                  class="chakra-card css-2dlz7"
-                >
-                  <div
-                    class="chakra-card__body css-0"
-                  >
-                    <div
-                      class="flex justify-center items-center"
-                    >
-                      fetch is not defined
-                    </div>
-                  </div>
-                </div>
-                <div
-                  class="chakra-card css-2dlz7"
-                >
-                  <div
-                    class="chakra-card__body css-0"
-                  >
-                    <div
-                      class="flex justify-center items-center"
-                    >
-                      fetch is not defined
-                    </div>
-                  </div>
-                </div>
+                <hr
+                  aria-orientation="horizontal"
+                  class="chakra-divider css-1upb9tn"
+                />
               </div>
-              <hr
-                aria-orientation="horizontal"
-                class="chakra-divider css-1upb9tn"
-              />
-            </div>
-            <div
-              class="flex flex-col gap-4"
-            >
-              <h2
-                class="text-md font-medium"
-              >
-                Australia
-                 (
-                3
-                )
-              </h2>
               <div
-                class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8"
+                class="flex flex-col gap-4"
               >
+                <h2
+                  class="text-md font-medium"
+                >
+                  <a
+                    href="/united-states"
+                  >
+                    United States
+                     (
+                    3
+                    )
+                  </a>
+                </h2>
                 <div
-                  class="chakra-card css-2dlz7"
+                  class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8"
                 >
                   <div
-                    class="chakra-card__body css-0"
+                    class="chakra-card border border-gray-200 css-2dlz7"
                   >
                     <div
-                      class="flex justify-center items-center"
+                      class="chakra-card__body css-0"
                     >
-                      fetch is not defined
+                      <div
+                        class="flex justify-center items-center"
+                      >
+                        fetch is not defined
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="chakra-card border border-gray-200 css-2dlz7"
+                  >
+                    <div
+                      class="chakra-card__body css-0"
+                    >
+                      <div
+                        class="flex justify-center items-center"
+                      >
+                        fetch is not defined
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="chakra-card border border-gray-200 css-2dlz7"
+                  >
+                    <div
+                      class="chakra-card__body css-0"
+                    >
+                      <div
+                        class="flex justify-center items-center"
+                      >
+                        fetch is not defined
+                      </div>
                     </div>
                   </div>
                 </div>
-                <div
-                  class="chakra-card css-2dlz7"
-                >
-                  <div
-                    class="chakra-card__body css-0"
-                  >
-                    <div
-                      class="flex justify-center items-center"
-                    >
-                      fetch is not defined
-                    </div>
-                  </div>
-                </div>
-                <div
-                  class="chakra-card css-2dlz7"
-                >
-                  <div
-                    class="chakra-card__body css-0"
-                  >
-                    <div
-                      class="flex justify-center items-center"
-                    >
-                      fetch is not defined
-                    </div>
-                  </div>
-                </div>
+                <hr
+                  aria-orientation="horizontal"
+                  class="chakra-divider css-1upb9tn"
+                />
               </div>
-              <hr
-                aria-orientation="horizontal"
-                class="chakra-divider css-1upb9tn"
-              />
-            </div>
-            <div
-              class="flex flex-col gap-4"
-            >
-              <h2
-                class="text-md font-medium"
-              >
-                England
-                 (
-                3
-                )
-              </h2>
               <div
-                class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8"
+                class="flex flex-col gap-4"
               >
+                <h2
+                  class="text-md font-medium"
+                >
+                  <a
+                    href="/australia"
+                  >
+                    Australia
+                     (
+                    3
+                    )
+                  </a>
+                </h2>
                 <div
-                  class="chakra-card css-2dlz7"
+                  class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8"
                 >
                   <div
-                    class="chakra-card__body css-0"
+                    class="chakra-card border border-gray-200 css-2dlz7"
                   >
                     <div
-                      class="flex justify-center items-center"
+                      class="chakra-card__body css-0"
                     >
-                      fetch is not defined
+                      <div
+                        class="flex justify-center items-center"
+                      >
+                        fetch is not defined
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="chakra-card border border-gray-200 css-2dlz7"
+                  >
+                    <div
+                      class="chakra-card__body css-0"
+                    >
+                      <div
+                        class="flex justify-center items-center"
+                      >
+                        fetch is not defined
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="chakra-card border border-gray-200 css-2dlz7"
+                  >
+                    <div
+                      class="chakra-card__body css-0"
+                    >
+                      <div
+                        class="flex justify-center items-center"
+                      >
+                        fetch is not defined
+                      </div>
                     </div>
                   </div>
                 </div>
-                <div
-                  class="chakra-card css-2dlz7"
-                >
-                  <div
-                    class="chakra-card__body css-0"
-                  >
-                    <div
-                      class="flex justify-center items-center"
-                    >
-                      fetch is not defined
-                    </div>
-                  </div>
-                </div>
-                <div
-                  class="chakra-card css-2dlz7"
-                >
-                  <div
-                    class="chakra-card__body css-0"
-                  >
-                    <div
-                      class="flex justify-center items-center"
-                    >
-                      fetch is not defined
-                    </div>
-                  </div>
-                </div>
+                <hr
+                  aria-orientation="horizontal"
+                  class="chakra-divider css-1upb9tn"
+                />
               </div>
-              <hr
-                aria-orientation="horizontal"
-                class="chakra-divider css-1upb9tn"
-              />
-            </div>
-            <div
-              class="flex flex-col gap-4"
-            >
-              <h2
-                class="text-md font-medium"
-              >
-                Singapore
-                 (
-                1
-                )
-              </h2>
               <div
-                class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8"
+                class="flex flex-col gap-4"
               >
+                <h2
+                  class="text-md font-medium"
+                >
+                  <a
+                    href="/england"
+                  >
+                    England
+                     (
+                    3
+                    )
+                  </a>
+                </h2>
                 <div
-                  class="chakra-card css-2dlz7"
+                  class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8"
                 >
                   <div
-                    class="chakra-card__body css-0"
+                    class="chakra-card border border-gray-200 css-2dlz7"
                   >
                     <div
-                      class="flex justify-center items-center"
+                      class="chakra-card__body css-0"
                     >
-                      fetch is not defined
+                      <div
+                        class="flex justify-center items-center"
+                      >
+                        fetch is not defined
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="chakra-card border border-gray-200 css-2dlz7"
+                  >
+                    <div
+                      class="chakra-card__body css-0"
+                    >
+                      <div
+                        class="flex justify-center items-center"
+                      >
+                        fetch is not defined
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="chakra-card border border-gray-200 css-2dlz7"
+                  >
+                    <div
+                      class="chakra-card__body css-0"
+                    >
+                      <div
+                        class="flex justify-center items-center"
+                      >
+                        fetch is not defined
+                      </div>
                     </div>
                   </div>
                 </div>
+                <hr
+                  aria-orientation="horizontal"
+                  class="chakra-divider css-1upb9tn"
+                />
               </div>
-              <hr
-                aria-orientation="horizontal"
-                class="chakra-divider css-1upb9tn"
-              />
-            </div>
-            <div
-              class="flex flex-col gap-4"
-            >
-              <h2
-                class="text-md font-medium"
-              >
-                South Korea
-                 (
-                1
-                )
-              </h2>
               <div
-                class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8"
+                class="flex flex-col gap-4"
               >
+                <h2
+                  class="text-md font-medium"
+                >
+                  <a
+                    href="/germany"
+                  >
+                    Germany
+                     (
+                    3
+                    )
+                  </a>
+                </h2>
                 <div
-                  class="chakra-card css-2dlz7"
+                  class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8"
                 >
                   <div
-                    class="chakra-card__body css-0"
+                    class="chakra-card border border-gray-200 css-2dlz7"
                   >
                     <div
-                      class="flex justify-center items-center"
+                      class="chakra-card__body css-0"
                     >
-                      fetch is not defined
+                      <div
+                        class="flex justify-center items-center"
+                      >
+                        fetch is not defined
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="chakra-card border border-gray-200 css-2dlz7"
+                  >
+                    <div
+                      class="chakra-card__body css-0"
+                    >
+                      <div
+                        class="flex justify-center items-center"
+                      >
+                        fetch is not defined
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="chakra-card border border-gray-200 css-2dlz7"
+                  >
+                    <div
+                      class="chakra-card__body css-0"
+                    >
+                      <div
+                        class="flex justify-center items-center"
+                      >
+                        fetch is not defined
+                      </div>
                     </div>
                   </div>
                 </div>
+                <hr
+                  aria-orientation="horizontal"
+                  class="chakra-divider css-1upb9tn"
+                />
               </div>
-              <hr
-                aria-orientation="horizontal"
-                class="chakra-divider css-1upb9tn"
-              />
+              <div
+                class="flex flex-col gap-4"
+              >
+                <h2
+                  class="text-md font-medium"
+                >
+                  <a
+                    href="/singapore"
+                  >
+                    Singapore
+                     (
+                    1
+                    )
+                  </a>
+                </h2>
+                <div
+                  class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8"
+                >
+                  <div
+                    class="chakra-card border border-gray-200 css-2dlz7"
+                  >
+                    <div
+                      class="chakra-card__body css-0"
+                    >
+                      <div
+                        class="flex justify-center items-center"
+                      >
+                        fetch is not defined
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <hr
+                  aria-orientation="horizontal"
+                  class="chakra-divider css-1upb9tn"
+                />
+              </div>
+              <div
+                class="flex flex-col gap-4"
+              >
+                <h2
+                  class="text-md font-medium"
+                >
+                  <a
+                    href="/south-korea"
+                  >
+                    South Korea
+                     (
+                    1
+                    )
+                  </a>
+                </h2>
+                <div
+                  class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8"
+                >
+                  <div
+                    class="chakra-card border border-gray-200 css-2dlz7"
+                  >
+                    <div
+                      class="chakra-card__body css-0"
+                    >
+                      <div
+                        class="flex justify-center items-center"
+                      >
+                        fetch is not defined
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <hr
+                  aria-orientation="horizontal"
+                  class="chakra-divider css-1upb9tn"
+                />
+              </div>
             </div>
           </div>
         </div>
       </div>
     </main>
     <footer
-      class="border-t shadow"
+      class="border-t"
     >
       <div
-        class="container mx-auto px-8 py-4"
+        class="container mx-auto"
       >
-        <p
-          class="uppercase"
+        <div
+          class="px-8 py-4"
         >
-          © 
-          2023
-           Weather
-        </p>
+          <p
+            class="uppercase"
+          >
+            © 
+            2023
+             
+            Weather
+          </p>
+        </div>
       </div>
     </footer>
   </div>

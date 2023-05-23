@@ -16,12 +16,12 @@ if (!self.define) {
       })
   );
   self.define = (a, n) => {
-    const i = e || ('document' in self ? document.currentScript.src : '') || location.href;
-    if (s[i]) return;
-    let c = {};
-    const r = (e) => t(e, i),
-      o = { module: { uri: i }, exports: c, require: r };
-    s[i] = Promise.all(a.map((e) => o[e] || r(e))).then((e) => (n(...e), c));
+    const c = e || ('document' in self ? document.currentScript.src : '') || location.href;
+    if (s[c]) return;
+    let i = {};
+    const r = (e) => t(e, c),
+      o = { module: { uri: c }, exports: i, require: r };
+    s[c] = Promise.all(a.map((e) => o[e] || r(e))).then((e) => (n(...e), i));
   };
 }
 define(['./workbox-588899ac'], function (e) {
@@ -31,27 +31,33 @@ define(['./workbox-588899ac'], function (e) {
     e.clientsClaim(),
     e.precacheAndRoute(
       [
+        {
+          url: '/weather//_next/static/IV_Vg3UwfSk6wSxWsuxAp/_buildManifest.js',
+          revision: '1320e8f5d21a49f965250c90bb23bdcd',
+        },
+        {
+          url: '/weather//_next/static/IV_Vg3UwfSk6wSxWsuxAp/_ssgManifest.js',
+          revision: 'b6652df95db52feb4daf4eca35380933',
+        },
+        { url: '/weather//_next/static/chunks/137-0470a22e49ae070d.js', revision: '0470a22e49ae070d' },
+        { url: '/weather//_next/static/chunks/445-b42922c0716c3c81.js', revision: 'b42922c0716c3c81' },
+        { url: '/weather//_next/static/chunks/630-72504c1bd1d24ca9.js', revision: '72504c1bd1d24ca9' },
         { url: '/weather//_next/static/chunks/framework-2c79e2a64abdb08b.js', revision: '2c79e2a64abdb08b' },
-        { url: '/weather//_next/static/chunks/main-1dd7ef1dddb9df5f.js', revision: '1dd7ef1dddb9df5f' },
+        { url: '/weather//_next/static/chunks/main-289bfe213331ba7b.js', revision: '289bfe213331ba7b' },
+        { url: '/weather//_next/static/chunks/pages/%5Bcountry%5D-9e5fd229931c1294.js', revision: '9e5fd229931c1294' },
         { url: '/weather//_next/static/chunks/pages/404-3d663e21c5252aa3.js', revision: '3d663e21c5252aa3' },
         { url: '/weather//_next/static/chunks/pages/500-018321599982762d.js', revision: '018321599982762d' },
-        { url: '/weather//_next/static/chunks/pages/_app-4f73bf0a985a620f.js', revision: '4f73bf0a985a620f' },
+        { url: '/weather//_next/static/chunks/pages/_app-282f4c0001e5e7bd.js', revision: '282f4c0001e5e7bd' },
         { url: '/weather//_next/static/chunks/pages/_error-06339d89ea5e2c65.js', revision: '06339d89ea5e2c65' },
-        { url: '/weather//_next/static/chunks/pages/index-a141f57161f1f373.js', revision: 'a141f57161f1f373' },
+        { url: '/weather//_next/static/chunks/pages/index-15c7a6c6b4e18bfe.js', revision: '15c7a6c6b4e18bfe' },
+        { url: '/weather//_next/static/chunks/pages/trends-839232edba3dcd17.js', revision: '839232edba3dcd17' },
+        { url: '/weather//_next/static/chunks/pages/weather-fd39da6d99f33cc1.js', revision: 'fd39da6d99f33cc1' },
         {
           url: '/weather//_next/static/chunks/polyfills-c67a75d1b6f99dc8.js',
           revision: '837c0df77fd5009c9e46d446188ecfd0',
         },
         { url: '/weather//_next/static/chunks/webpack-8c8ee85048b1b5db.js', revision: '8c8ee85048b1b5db' },
-        { url: '/weather//_next/static/css/66cd366cba703777.css', revision: '66cd366cba703777' },
-        {
-          url: '/weather//_next/static/ts889_cqN2c7j0idblWZv/_buildManifest.js',
-          revision: '665f3727710618cb4735267890dc1cad',
-        },
-        {
-          url: '/weather//_next/static/ts889_cqN2c7j0idblWZv/_ssgManifest.js',
-          revision: 'b6652df95db52feb4daf4eca35380933',
-        },
+        { url: '/weather//_next/static/css/b7ae6a0e965f79d3.css', revision: 'b7ae6a0e965f79d3' },
         { url: '/weather/favicon.ico', revision: 'b7e5d143f696329db9b04f047c8ba284' },
         { url: '/weather/manifest.json', revision: '5afb4273d9879978e7d83436c7197ab8' },
         { url: '/weather/next.svg', revision: '8e061864f388b47f33a1c3780831193e' },

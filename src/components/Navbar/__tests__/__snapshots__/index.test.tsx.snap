@@ -6,13 +6,17 @@ exports[`Navbar to match snapshot 1`] = `
     class="border-b shadow"
   >
     <div
-      class="container mx-auto px-8 py-4"
+      class="container mx-auto"
     >
-      <h1
-        class="uppercase font-bold"
+      <div
+        class="px-8 py-4"
       >
-        Weather
-      </h1>
+        <h1
+          class="uppercase font-medium"
+        >
+          Weather
+        </h1>
+      </div>
     </div>
   </nav>
 </div>
