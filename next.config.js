@@ -14,7 +14,7 @@ const nextConfig = {
   reactStrictMode: true,
   basePath: isProd ? '/countries' : undefined,
   assetPrefix: isProd ? '/countries/' : undefined,
-  image: { unoptimized: true },
+  images: { unoptimized: true },
 };
 
 module.exports = withPWA(nextConfig);

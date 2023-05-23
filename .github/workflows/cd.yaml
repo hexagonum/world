@@ -22,8 +22,6 @@ jobs:
         run: yarn test -u
       - name: Build Production
         run: yarn build
-      - name: Export Static
-        run: yarn export
       - name: Add .nojekyll file
         run: touch ./out/.nojekyll
       - name: Deploy Pages
