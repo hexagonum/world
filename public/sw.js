@@ -31,20 +31,12 @@ define(['./workbox-588899ac'], function (e) {
     e.clientsClaim(),
     e.precacheAndRoute(
       [
-        {
-          url: '/weather//_next/static/IV_Vg3UwfSk6wSxWsuxAp/_buildManifest.js',
-          revision: '1320e8f5d21a49f965250c90bb23bdcd',
-        },
-        {
-          url: '/weather//_next/static/IV_Vg3UwfSk6wSxWsuxAp/_ssgManifest.js',
-          revision: 'b6652df95db52feb4daf4eca35380933',
-        },
         { url: '/weather//_next/static/chunks/137-0470a22e49ae070d.js', revision: '0470a22e49ae070d' },
         { url: '/weather//_next/static/chunks/445-b42922c0716c3c81.js', revision: 'b42922c0716c3c81' },
-        { url: '/weather//_next/static/chunks/630-72504c1bd1d24ca9.js', revision: '72504c1bd1d24ca9' },
+        { url: '/weather//_next/static/chunks/630-542ec8fd42855a46.js', revision: '542ec8fd42855a46' },
         { url: '/weather//_next/static/chunks/framework-2c79e2a64abdb08b.js', revision: '2c79e2a64abdb08b' },
         { url: '/weather//_next/static/chunks/main-289bfe213331ba7b.js', revision: '289bfe213331ba7b' },
-        { url: '/weather//_next/static/chunks/pages/%5Bcountry%5D-9e5fd229931c1294.js', revision: '9e5fd229931c1294' },
+        { url: '/weather//_next/static/chunks/pages/%5Bcountry%5D-ea214e8b169ec09f.js', revision: 'ea214e8b169ec09f' },
         { url: '/weather//_next/static/chunks/pages/404-3d663e21c5252aa3.js', revision: '3d663e21c5252aa3' },
         { url: '/weather//_next/static/chunks/pages/500-018321599982762d.js', revision: '018321599982762d' },
         { url: '/weather//_next/static/chunks/pages/_app-282f4c0001e5e7bd.js', revision: '282f4c0001e5e7bd' },
@@ -57,7 +49,15 @@ define(['./workbox-588899ac'], function (e) {
           revision: '837c0df77fd5009c9e46d446188ecfd0',
         },
         { url: '/weather//_next/static/chunks/webpack-8c8ee85048b1b5db.js', revision: '8c8ee85048b1b5db' },
-        { url: '/weather//_next/static/css/b7ae6a0e965f79d3.css', revision: 'b7ae6a0e965f79d3' },
+        { url: '/weather//_next/static/css/618879da58178460.css', revision: '618879da58178460' },
+        {
+          url: '/weather//_next/static/rkx7eSJ2WTAMLhyZjmpDM/_buildManifest.js',
+          revision: 'd5d3b743b2230a0c93a6d9e38648a073',
+        },
+        {
+          url: '/weather//_next/static/rkx7eSJ2WTAMLhyZjmpDM/_ssgManifest.js',
+          revision: 'b6652df95db52feb4daf4eca35380933',
+        },
         { url: '/weather/favicon.ico', revision: 'b7e5d143f696329db9b04f047c8ba284' },
         { url: '/weather/manifest.json', revision: '5afb4273d9879978e7d83436c7197ab8' },
         { url: '/weather/next.svg', revision: '8e061864f388b47f33a1c3780831193e' },
