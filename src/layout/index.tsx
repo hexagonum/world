@@ -2,7 +2,9 @@ import Footer from '@weather/components/Footer';
 import Navbar from '@weather/components/Navbar';
 import { ReactNode } from 'react';
 
-export const Layout: React.FC<{ children: ReactNode }> = ({ children = <></> }) => {
+export type LayoutProps = { children?: ReactNode };
+
+export const Layout: React.FC<LayoutProps> = ({ children = <></> }) => {
   return (
     <div className="flex flex-col h-screen">
       <Navbar />

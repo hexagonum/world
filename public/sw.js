@@ -1,27 +1,27 @@
 if (!self.define) {
   let e,
     s = {};
-  const t = (t, a) => (
-    (t = new URL(t + '.js', a).href),
-    s[t] ||
+  const n = (n, t) => (
+    (n = new URL(n + '.js', t).href),
+    s[n] ||
       new Promise((s) => {
         if ('document' in self) {
           const e = document.createElement('script');
-          (e.src = t), (e.onload = s), document.head.appendChild(e);
-        } else (e = t), importScripts(t), s();
+          (e.src = n), (e.onload = s), document.head.appendChild(e);
+        } else (e = n), importScripts(n), s();
       }).then(() => {
-        let e = s[t];
-        if (!e) throw new Error(`Module ${t} didn’t register its module`);
+        let e = s[n];
+        if (!e) throw new Error(`Module ${n} didn’t register its module`);
         return e;
       })
   );
-  self.define = (a, n) => {
-    const c = e || ('document' in self ? document.currentScript.src : '') || location.href;
-    if (s[c]) return;
-    let i = {};
-    const r = (e) => t(e, c),
-      o = { module: { uri: c }, exports: i, require: r };
-    s[c] = Promise.all(a.map((e) => o[e] || r(e))).then((e) => (n(...e), i));
+  self.define = (t, a) => {
+    const i = e || ('document' in self ? document.currentScript.src : '') || location.href;
+    if (s[i]) return;
+    let c = {};
+    const r = (e) => n(e, i),
+      o = { module: { uri: i }, exports: c, require: r };
+    s[i] = Promise.all(t.map((e) => o[e] || r(e))).then((e) => (a(...e), c));
   };
 }
 define(['./workbox-588899ac'], function (e) {
@@ -31,48 +31,52 @@ define(['./workbox-588899ac'], function (e) {
     e.clientsClaim(),
     e.precacheAndRoute(
       [
-        { url: '/weather//_next/static/chunks/137-0470a22e49ae070d.js', revision: '0470a22e49ae070d' },
-        { url: '/weather//_next/static/chunks/445-b42922c0716c3c81.js', revision: 'b42922c0716c3c81' },
-        { url: '/weather//_next/static/chunks/630-542ec8fd42855a46.js', revision: '542ec8fd42855a46' },
-        { url: '/weather//_next/static/chunks/framework-2c79e2a64abdb08b.js', revision: '2c79e2a64abdb08b' },
-        { url: '/weather//_next/static/chunks/main-289bfe213331ba7b.js', revision: '289bfe213331ba7b' },
-        { url: '/weather//_next/static/chunks/pages/%5Bcountry%5D-ea214e8b169ec09f.js', revision: 'ea214e8b169ec09f' },
-        { url: '/weather//_next/static/chunks/pages/404-3d663e21c5252aa3.js', revision: '3d663e21c5252aa3' },
-        { url: '/weather//_next/static/chunks/pages/500-018321599982762d.js', revision: '018321599982762d' },
-        { url: '/weather//_next/static/chunks/pages/_app-282f4c0001e5e7bd.js', revision: '282f4c0001e5e7bd' },
-        { url: '/weather//_next/static/chunks/pages/_error-06339d89ea5e2c65.js', revision: '06339d89ea5e2c65' },
-        { url: '/weather//_next/static/chunks/pages/index-15c7a6c6b4e18bfe.js', revision: '15c7a6c6b4e18bfe' },
-        { url: '/weather//_next/static/chunks/pages/trends-839232edba3dcd17.js', revision: '839232edba3dcd17' },
-        { url: '/weather//_next/static/chunks/pages/weather-fd39da6d99f33cc1.js', revision: 'fd39da6d99f33cc1' },
+        { url: '/countries//_next/static/chunks/265-4ca3083ddbf8ac9e.js', revision: '4ca3083ddbf8ac9e' },
+        { url: '/countries//_next/static/chunks/664-60e06c839f82ba03.js', revision: '60e06c839f82ba03' },
+        { url: '/countries//_next/static/chunks/69-d5dd4a2cd27d4428.js', revision: 'd5dd4a2cd27d4428' },
+        { url: '/countries//_next/static/chunks/framework-2c79e2a64abdb08b.js', revision: '2c79e2a64abdb08b' },
+        { url: '/countries//_next/static/chunks/main-aa399e0e06303280.js', revision: 'aa399e0e06303280' },
         {
-          url: '/weather//_next/static/chunks/polyfills-c67a75d1b6f99dc8.js',
+          url: '/countries//_next/static/chunks/pages/%5Bcountry%5D-df7f5013f82baa3a.js',
+          revision: 'df7f5013f82baa3a',
+        },
+        { url: '/countries//_next/static/chunks/pages/404-3d663e21c5252aa3.js', revision: '3d663e21c5252aa3' },
+        { url: '/countries//_next/static/chunks/pages/500-018321599982762d.js', revision: '018321599982762d' },
+        { url: '/countries//_next/static/chunks/pages/_app-c2280a70e0531bcb.js', revision: 'c2280a70e0531bcb' },
+        { url: '/countries//_next/static/chunks/pages/_error-06339d89ea5e2c65.js', revision: '06339d89ea5e2c65' },
+        { url: '/countries//_next/static/chunks/pages/index-a1856cf572bef1be.js', revision: 'a1856cf572bef1be' },
+        { url: '/countries//_next/static/chunks/pages/languages-643b6630219e0ddf.js', revision: '643b6630219e0ddf' },
+        { url: '/countries//_next/static/chunks/pages/trends-302b1b4a42a21cd3.js', revision: '302b1b4a42a21cd3' },
+        { url: '/countries//_next/static/chunks/pages/weather-10579f1ddb415ded.js', revision: '10579f1ddb415ded' },
+        {
+          url: '/countries//_next/static/chunks/polyfills-c67a75d1b6f99dc8.js',
           revision: '837c0df77fd5009c9e46d446188ecfd0',
         },
-        { url: '/weather//_next/static/chunks/webpack-8c8ee85048b1b5db.js', revision: '8c8ee85048b1b5db' },
-        { url: '/weather//_next/static/css/618879da58178460.css', revision: '618879da58178460' },
+        { url: '/countries//_next/static/chunks/webpack-1d2b38a40f3fb383.js', revision: '1d2b38a40f3fb383' },
+        { url: '/countries//_next/static/css/3d16fb45a1b0fc67.css', revision: '3d16fb45a1b0fc67' },
         {
-          url: '/weather//_next/static/rkx7eSJ2WTAMLhyZjmpDM/_buildManifest.js',
-          revision: 'd5d3b743b2230a0c93a6d9e38648a073',
+          url: '/countries//_next/static/hJvv0Plb-ZIfZlSmkJt6Q/_buildManifest.js',
+          revision: '4ca98ea3914b2d9a6041499c61509c65',
         },
         {
-          url: '/weather//_next/static/rkx7eSJ2WTAMLhyZjmpDM/_ssgManifest.js',
+          url: '/countries//_next/static/hJvv0Plb-ZIfZlSmkJt6Q/_ssgManifest.js',
           revision: 'b6652df95db52feb4daf4eca35380933',
         },
-        { url: '/weather/favicon.ico', revision: 'b7e5d143f696329db9b04f047c8ba284' },
-        { url: '/weather/manifest.json', revision: '5afb4273d9879978e7d83436c7197ab8' },
-        { url: '/weather/next.svg', revision: '8e061864f388b47f33a1c3780831193e' },
-        { url: '/weather/vercel.svg', revision: '61c6b19abff40ea7acd577be818f3976' },
+        { url: '/countries/favicon.ico', revision: 'b7e5d143f696329db9b04f047c8ba284' },
+        { url: '/countries/manifest.json', revision: '5afb4273d9879978e7d83436c7197ab8' },
+        { url: '/countries/next.svg', revision: '8e061864f388b47f33a1c3780831193e' },
+        { url: '/countries/vercel.svg', revision: '61c6b19abff40ea7acd577be818f3976' },
       ],
       { ignoreURLParametersMatching: [] }
     ),
     e.cleanupOutdatedCaches(),
     e.registerRoute(
-      '/weather',
+      '/countries',
       new e.NetworkFirst({
         cacheName: 'start-url',
         plugins: [
           {
-            cacheWillUpdate: async ({ request: e, response: s, event: t, state: a }) =>
+            cacheWillUpdate: async ({ request: e, response: s, event: n, state: t }) =>
               s && 'opaqueredirect' === s.type
                 ? new Response(s.body, { status: 200, statusText: 'OK', headers: s.headers })
                 : s,

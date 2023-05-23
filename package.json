@@ -13,13 +13,13 @@
     "yarn": "1.22.19"
   },
   "scripts": {
-    "dev": "kill-port 3000 && next dev",
+    "dev": "kill-port 3000 && next dev -p 3000",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
     "export": "next export",
     "test": "jest",
-    "prebuild": "ts-node ./scripts/data && rimraf .next out",
+    "prebuild": "ts-node ./scripts/trends && rimraf .next out",
     "prepare": "husky install || true"
   },
   "dependencies": {

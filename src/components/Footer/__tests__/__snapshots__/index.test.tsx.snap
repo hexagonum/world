@@ -11,13 +11,11 @@ exports[`Footer to match snapshot 1`] = `
       <div
         class="px-8 py-4"
       >
-        <p
-          class="uppercase"
-        >
+        <p>
           © 
           2023
            
-          Weather
+          Countries
         </p>
       </div>
     </div>

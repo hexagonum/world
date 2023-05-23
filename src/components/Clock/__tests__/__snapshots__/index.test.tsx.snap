@@ -1,9 +1,19 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Container to match snapshot 1`] = `
+exports[`Clock to match snapshot 1`] = `
 <div>
   <div
-    class="container mx-auto"
-  />
+    class="w-full flex justify-between items-center"
+  >
+    <p>
+      Timezone: 
+      0
+    </p>
+    <p
+      class="font-bold"
+    >
+      05:17:28
+    </p>
+  </div>
 </div>
 `;

@@ -14,11 +14,15 @@ exports[`HomePage to match snapshot 1`] = `
         <div
           class="px-8 py-4"
         >
-          <h1
-            class="uppercase font-medium"
+          <a
+            href="/"
           >
-            Weather
-          </h1>
+            <h1
+              class="uppercase font-medium"
+            >
+              Countries
+            </h1>
+          </a>
         </div>
       </div>
     </nav>
@@ -35,406 +39,5274 @@ exports[`HomePage to match snapshot 1`] = `
             class="p-8"
           >
             <div
-              class="flex flex-col gap-4"
+              class="flex flex-col gap-4 md:gap-8"
             >
               <input
-                class="chakra-input css-0"
+                class="chakra-input shadow css-0"
                 id="query"
                 name="query"
                 placeholder="Query"
                 value=""
               />
-              <hr
-                aria-orientation="horizontal"
-                class="chakra-divider css-1upb9tn"
-              />
               <div
-                class="flex flex-col gap-4"
+                class="flex flex-col gap-4 md:gap-8"
               >
                 <h2
-                  class="text-md font-medium"
+                  class="text-lg"
                 >
-                  <a
-                    href="/vietnam"
-                  >
-                    Vietnam
-                     (
-                    3
-                    )
-                  </a>
+                  Africa
+                   (
+                  53
+                  )
                 </h2>
                 <div
-                  class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8"
+                  class="flex flex-col gap-4 md:gap-8"
                 >
                   <div
-                    class="chakra-card border border-gray-200 css-2dlz7"
+                    class="flex flex-col gap-2 md:gap-4"
                   >
+                    <h3>
+                      Eastern Africa
+                       (
+                      16
+                      )
+                    </h3>
+                    <hr
+                      aria-orientation="horizontal"
+                      class="chakra-divider border-gray-200 css-1upb9tn"
+                    />
                     <div
-                      class="chakra-card__body css-0"
+                      class="flex items-center justify-between"
                     >
                       <div
-                        class="flex justify-center items-center"
+                        class="flex items-center gap-2"
                       >
-                        fetch is not defined
+                        <p>
+                          🇧🇮
+                        </p>
+                        <p>
+                          Burundi
+                        </p>
                       </div>
+                      <a
+                        class="chakra-link css-0"
+                        href="/burundi"
+                      >
+                        <button
+                          class="chakra-button css-4xx2wk"
+                          type="button"
+                        >
+                          Details
+                        </button>
+                      </a>
+                    </div>
+                    <div
+                      class="flex items-center justify-between"
+                    >
+                      <div
+                        class="flex items-center gap-2"
+                      >
+                        <p>
+                          🇰🇲
+                        </p>
+                        <p>
+                          Comoros
+                        </p>
+                      </div>
+                      <a
+                        class="chakra-link css-0"
+                        href="/comoros"
+                      >
+                        <button
+                          class="chakra-button css-4xx2wk"
+                          type="button"
+                        >
+                          Details
+                        </button>
+                      </a>
+                    </div>
+                    <div
+                      class="flex items-center justify-between"
+                    >
+                      <div
+                        class="flex items-center gap-2"
+                      >
+                        <p>
+                          🇩🇯
+                        </p>
+                        <p>
+                          Djibouti
+                        </p>
+                      </div>
+                      <a
+                        class="chakra-link css-0"
+                        href="/djibouti"
+                      >
+                        <button
+                          class="chakra-button css-4xx2wk"
+                          type="button"
+                        >
+                          Details
+                        </button>
+                      </a>
+                    </div>
+                    <div
+                      class="flex items-center justify-between"
+                    >
+                      <div
+                        class="flex items-center gap-2"
+                      >
+                        <p>
+                          🇪🇷
+                        </p>
+                        <p>
+                          Eritrea
+                        </p>
+                      </div>
+                      <a
+                        class="chakra-link css-0"
+                        href="/eritrea"
+                      >
+                        <button
+                          class="chakra-button css-4xx2wk"
+                          type="button"
+                        >
+                          Details
+                        </button>
+                      </a>
+                    </div>
+                    <div
+                      class="flex items-center justify-between"
+                    >
+                      <div
+                        class="flex items-center gap-2"
+                      >
+                        <p>
+                          🇪🇹
+                        </p>
+                        <p>
+                          Ethiopia
+                        </p>
+                      </div>
+                      <a
+                        class="chakra-link css-0"
+                        href="/ethiopia"
+                      >
+                        <button
+                          class="chakra-button css-4xx2wk"
+                          type="button"
+                        >
+                          Details
+                        </button>
+                      </a>
+                    </div>
+                    <div
+                      class="flex items-center justify-between"
+                    >
+                      <div
+                        class="flex items-center gap-2"
+                      >
+                        <p>
+                          🇰🇪
+                        </p>
+                        <p>
+                          Kenya
+                        </p>
+                      </div>
+                      <a
+                        class="chakra-link css-0"
+                        href="/kenya"
+                      >
+                        <button
+                          class="chakra-button css-4xx2wk"
+                          type="button"
+                        >
+                          Details
+                        </button>
+                      </a>
+                    </div>
+                    <div
+                      class="flex items-center justify-between"
+                    >
+                      <div
+                        class="flex items-center gap-2"
+                      >
+                        <p>
+                          🇲🇬
+                        </p>
+                        <p>
+                          Madagascar
+                        </p>
+                      </div>
+                      <a
+                        class="chakra-link css-0"
+                        href="/madagascar"
+                      >
+                        <button
+                          class="chakra-button css-4xx2wk"
+                          type="button"
+                        >
+                          Details
+                        </button>
+                      </a>
+                    </div>
+                    <div
+                      class="flex items-center justify-between"
+                    >
+                      <div
+                        class="flex items-center gap-2"
+                      >
+                        <p>
+                          🇲🇼
+                        </p>
+                        <p>
+                          Malawi
+                        </p>
+                      </div>
+                      <a
+                        class="chakra-link css-0"
+                        href="/malawi"
+                      >
+                        <button
+                          class="chakra-button css-4xx2wk"
+                          type="button"
+                        >
+                          Details
+                        </button>
+                      </a>
+                    </div>
+                    <div
+                      class="flex items-center justify-between"
+                    >
+                      <div
+                        class="flex items-center gap-2"
+                      >
+                        <p>
+                          🇲🇺
+                        </p>
+                        <p>
+                          Mauritius
+                        </p>
+                      </div>
+                      <a
+                        class="chakra-link css-0"
+                        href="/mauritius"
+                      >
+                        <button
+                          class="chakra-button css-4xx2wk"
+                          type="button"
+                        >
+                          Details
+                        </button>
+                      </a>
+                    </div>
+                    <div
+                      class="flex items-center justify-between"
+                    >
+                      <div
+                        class="flex items-center gap-2"
+                      >
+                        <p>
+                          🇲🇿
+                        </p>
+                        <p>
+                          Mozambique
+                        </p>
+                      </div>
+                      <a
+                        class="chakra-link css-0"
+                        href="/mozambique"
+                      >
+                        <button
+                          class="chakra-button css-4xx2wk"
+                          type="button"
+                        >
+                          Details
+                        </button>
+                      </a>
+                    </div>
+                    <div
+                      class="flex items-center justify-between"
+                    >
+                      <div
+                        class="flex items-center gap-2"
+                      >
+                        <p>
+                          🇷🇼
+                        </p>
+                        <p>
+                          Rwanda
+                        </p>
+                      </div>
+                      <a
+                        class="chakra-link css-0"
+                        href="/rwanda"
+                      >
+                        <button
+                          class="chakra-button css-4xx2wk"
+                          type="button"
+                        >
+                          Details
+                        </button>
+                      </a>
+                    </div>
+                    <div
+                      class="flex items-center justify-between"
+                    >
+                      <div
+                        class="flex items-center gap-2"
+                      >
+                        <p>
+                          🇸🇨
+                        </p>
+                        <p>
+                          Seychelles
+                        </p>
+                      </div>
+                      <a
+                        class="chakra-link css-0"
+                        href="/seychelles"
+                      >
+                        <button
+                          class="chakra-button css-4xx2wk"
+                          type="button"
+                        >
+                          Details
+                        </button>
+                      </a>
+                    </div>
+                    <div
+                      class="flex items-center justify-between"
+                    >
+                      <div
+                        class="flex items-center gap-2"
+                      >
+                        <p>
+                          🇸🇴
+                        </p>
+                        <p>
+                          Somalia
+                        </p>
+                      </div>
+                      <a
+                        class="chakra-link css-0"
+                        href="/somalia"
+                      >
+                        <button
+                          class="chakra-button css-4xx2wk"
+                          type="button"
+                        >
+                          Details
+                        </button>
+                      </a>
+                    </div>
+                    <div
+                      class="flex items-center justify-between"
+                    >
+                      <div
+                        class="flex items-center gap-2"
+                      >
+                        <p>
+                          🇹🇿
+                        </p>
+                        <p>
+                          Tanzania
+                        </p>
+                      </div>
+                      <a
+                        class="chakra-link css-0"
+                        href="/tanzania"
+                      >
+                        <button
+                          class="chakra-button css-4xx2wk"
+                          type="button"
+                        >
+                          Details
+                        </button>
+                      </a>
+                    </div>
+                    <div
+                      class="flex items-center justify-between"
+                    >
+                      <div
+                        class="flex items-center gap-2"
+                      >
+                        <p>
+                          🇺🇬
+                        </p>
+                        <p>
+                          Uganda
+                        </p>
+                      </div>
+                      <a
+                        class="chakra-link css-0"
+                        href="/uganda"
+                      >
+                        <button
+                          class="chakra-button css-4xx2wk"
+                          type="button"
+                        >
+                          Details
+                        </button>
+                      </a>
+                    </div>
+                    <div
+                      class="flex items-center justify-between"
+                    >
+                      <div
+                        class="flex items-center gap-2"
+                      >
+                        <p>
+                          🇿🇲
+                        </p>
+                        <p>
+                          Zambia
+                        </p>
+                      </div>
+                      <a
+                        class="chakra-link css-0"
+                        href="/zambia"
+                      >
+                        <button
+                          class="chakra-button css-4xx2wk"
+                          type="button"
+                        >
+                          Details
+                        </button>
+                      </a>
                     </div>
                   </div>
                   <div
-                    class="chakra-card border border-gray-200 css-2dlz7"
+                    class="flex flex-col gap-2 md:gap-4"
                   >
+                    <h3>
+                      Middle Africa
+                       (
+                      10
+                      )
+                    </h3>
+                    <hr
+                      aria-orientation="horizontal"
+                      class="chakra-divider border-gray-200 css-1upb9tn"
+                    />
                     <div
-                      class="chakra-card__body css-0"
+                      class="flex items-center justify-between"
                     >
                       <div
-                        class="flex justify-center items-center"
+                        class="flex items-center gap-2"
                       >
-                        fetch is not defined
+                        <p>
+                          🇦🇴
+                        </p>
+                        <p>
+                          Angola
+                        </p>
                       </div>
+                      <a
+                        class="chakra-link css-0"
+                        href="/angola"
+                      >
+                        <button
+                          class="chakra-button css-4xx2wk"
+                          type="button"
+                        >
+                          Details
+                        </button>
+                      </a>
+                    </div>
+                    <div
+                      class="flex items-center justify-between"
+                    >
+                      <div
+                        class="flex items-center gap-2"
+                      >
+                        <p>
+                          🇨🇲
+                        </p>
+                        <p>
+                          Cameroon
+                        </p>
+                      </div>
+                      <a
+                        class="chakra-link css-0"
+                        href="/cameroon"
+                      >
+                        <button
+                          class="chakra-button css-4xx2wk"
+                          type="button"
+                        >
+                          Details
+                        </button>
+                      </a>
+                    </div>
+                    <div
+                      class="flex items-center justify-between"
+                    >
+                      <div
+                        class="flex items-center gap-2"
+                      >
+                        <p>
+                          🇨🇫
+                        </p>
+                        <p>
+                          Central African Republic
+                        </p>
+                      </div>
+                      <a
+                        class="chakra-link css-0"
+                        href="/central-african-republic"
+                      >
+                        <button
+                          class="chakra-button css-4xx2wk"
+                          type="button"
+                        >
+                          Details
+                        </button>
+                      </a>
+                    </div>
+                    <div
+                      class="flex items-center justify-between"
+                    >
+                      <div
+                        class="flex items-center gap-2"
+                      >
+                        <p>
+                          🇹🇩
+                        </p>
+                        <p>
+                          Chad
+                        </p>
+                      </div>
+                      <a
+                        class="chakra-link css-0"
+                        href="/chad"
+                      >
+                        <button
+                          class="chakra-button css-4xx2wk"
+                          type="button"
+                        >
+                          Details
+                        </button>
+                      </a>
+                    </div>
+                    <div
+                      class="flex items-center justify-between"
+                    >
+                      <div
+                        class="flex items-center gap-2"
+                      >
+                        <p>
+                          🇨🇩
+                        </p>
+                        <p>
+                          DR Congo
+                        </p>
+                      </div>
+                      <a
+                        class="chakra-link css-0"
+                        href="/dr-congo"
+                      >
+                        <button
+                          class="chakra-button css-4xx2wk"
+                          type="button"
+                        >
+                          Details
+                        </button>
+                      </a>
+                    </div>
+                    <div
+                      class="flex items-center justify-between"
+                    >
+                      <div
+                        class="flex items-center gap-2"
+                      >
+                        <p>
+                          🇬🇶
+                        </p>
+                        <p>
+                          Equatorial Guinea
+                        </p>
+                      </div>
+                      <a
+                        class="chakra-link css-0"
+                        href="/equatorial-guinea"
+                      >
+                        <button
+                          class="chakra-button css-4xx2wk"
+                          type="button"
+                        >
+                          Details
+                        </button>
+                      </a>
+                    </div>
+                    <div
+                      class="flex items-center justify-between"
+                    >
+                      <div
+                        class="flex items-center gap-2"
+                      >
+                        <p>
+                          🇬🇦
+                        </p>
+                        <p>
+                          Gabon
+                        </p>
+                      </div>
+                      <a
+                        class="chakra-link css-0"
+                        href="/gabon"
+                      >
+                        <button
+                          class="chakra-button css-4xx2wk"
+                          type="button"
+                        >
+                          Details
+                        </button>
+                      </a>
+                    </div>
+                    <div
+                      class="flex items-center justify-between"
+                    >
+                      <div
+                        class="flex items-center gap-2"
+                      >
+                        <p>
+                          🇨🇬
+                        </p>
+                        <p>
+                          Republic of the Congo
+                        </p>
+                      </div>
+                      <a
+                        class="chakra-link css-0"
+                        href="/republic-of-the-congo"
+                      >
+                        <button
+                          class="chakra-button css-4xx2wk"
+                          type="button"
+                        >
+                          Details
+                        </button>
+                      </a>
+                    </div>
+                    <div
+                      class="flex items-center justify-between"
+                    >
+                      <div
+                        class="flex items-center gap-2"
+                      >
+                        <p>
+                          🇸🇸
+                        </p>
+                        <p>
+                          South Sudan
+                        </p>
+                      </div>
+                      <a
+                        class="chakra-link css-0"
+                        href="/south-sudan"
+                      >
+                        <button
+                          class="chakra-button css-4xx2wk"
+                          type="button"
+                        >
+                          Details
+                        </button>
+                      </a>
+                    </div>
+                    <div
+                      class="flex items-center justify-between"
+                    >
+                      <div
+                        class="flex items-center gap-2"
+                      >
+                        <p>
+                          🇸🇹
+                        </p>
+                        <p>
+                          São Tomé and Príncipe
+                        </p>
+                      </div>
+                      <a
+                        class="chakra-link css-0"
+                        href="/são-tomé-and-príncipe"
+                      >
+                        <button
+                          class="chakra-button css-4xx2wk"
+                          type="button"
+                        >
+                          Details
+                        </button>
+                      </a>
                     </div>
                   </div>
                   <div
-                    class="chakra-card border border-gray-200 css-2dlz7"
+                    class="flex flex-col gap-2 md:gap-4"
                   >
+                    <h3>
+                      Northern Africa
+                       (
+                      6
+                      )
+                    </h3>
+                    <hr
+                      aria-orientation="horizontal"
+                      class="chakra-divider border-gray-200 css-1upb9tn"
+                    />
                     <div
-                      class="chakra-card__body css-0"
+                      class="flex items-center justify-between"
                     >
                       <div
-                        class="flex justify-center items-center"
+                        class="flex items-center gap-2"
                       >
-                        fetch is not defined
+                        <p>
+                          🇩🇿
+                        </p>
+                        <p>
+                          Algeria
+                        </p>
                       </div>
+                      <a
+                        class="chakra-link css-0"
+                        href="/algeria"
+                      >
+                        <button
+                          class="chakra-button css-4xx2wk"
+                          type="button"
+                        >
+                          Details
+                        </button>
+                      </a>
+                    </div>
+                    <div
+                      class="flex items-center justify-between"
+                    >
+                      <div
+                        class="flex items-center gap-2"
+                      >
+                        <p>
+                          🇪🇬
+                        </p>
+                        <p>
+                          Egypt
+                        </p>
+                      </div>
+                      <a
+                        class="chakra-link css-0"
+                        href="/egypt"
+                      >
+                        <button
+                          class="chakra-button css-4xx2wk"
+                          type="button"
+                        >
+                          Details
+                        </button>
+                      </a>
+                    </div>
+                    <div
+                      class="flex items-center justify-between"
+                    >
+                      <div
+                        class="flex items-center gap-2"
+                      >
+                        <p>
+                          🇱🇾
+                        </p>
+                        <p>
+                          Libya
+                        </p>
+                      </div>
+                      <a
+                        class="chakra-link css-0"
+                        href="/libya"
+                      >
+                        <button
+                          class="chakra-button css-4xx2wk"
+                          type="button"
+                        >
+                          Details
+                        </button>
+                      </a>
+                    </div>
+                    <div
+                      class="flex items-center justify-between"
+                    >
+                      <div
+                        class="flex items-center gap-2"
+                      >
+                        <p>
+                          🇲🇦
+                        </p>
+                        <p>
+                          Morocco
+                        </p>
+                      </div>
+                      <a
+                        class="chakra-link css-0"
+                        href="/morocco"
+                      >
+                        <button
+                          class="chakra-button css-4xx2wk"
+                          type="button"
+                        >
+                          Details
+                        </button>
+                      </a>
+                    </div>
+                    <div
+                      class="flex items-center justify-between"
+                    >
+                      <div
+                        class="flex items-center gap-2"
+                      >
+                        <p>
+                          🇸🇩
+                        </p>
+                        <p>
+                          Sudan
+                        </p>
+                      </div>
+                      <a
+                        class="chakra-link css-0"
+                        href="/sudan"
+                      >
+                        <button
+                          class="chakra-button css-4xx2wk"
+                          type="button"
+                        >
+                          Details
+                        </button>
+                      </a>
+                    </div>
+                    <div
+                      class="flex items-center justify-between"
+                    >
+                      <div
+                        class="flex items-center gap-2"
+                      >
+                        <p>
+                          🇹🇳
+                        </p>
+                        <p>
+                          Tunisia
+                        </p>
+                      </div>
+                      <a
+                        class="chakra-link css-0"
+                        href="/tunisia"
+                      >
+                        <button
+                          class="chakra-button css-4xx2wk"
+                          type="button"
+                        >
+                          Details
+                        </button>
+                      </a>
+                    </div>
+                  </div>
+                  <div
+                    class="flex flex-col gap-2 md:gap-4"
+                  >
+                    <h3>
+                      Southern Africa
+                       (
+                      6
+                      )
+                    </h3>
+                    <hr
+                      aria-orientation="horizontal"
+                      class="chakra-divider border-gray-200 css-1upb9tn"
+                    />
+                    <div
+                      class="flex items-center justify-between"
+                    >
+                      <div
+                        class="flex items-center gap-2"
+                      >
+                        <p>
+                          🇧🇼
+                        </p>
+                        <p>
+                          Botswana
+                        </p>
+                      </div>
+                      <a
+                        class="chakra-link css-0"
+                        href="/botswana"
+                      >
+                        <button
+                          class="chakra-button css-4xx2wk"
+                          type="button"
+                        >
+                          Details
+                        </button>
+                      </a>
+                    </div>
+                    <div
+                      class="flex items-center justify-between"
+                    >
+                      <div
+                        class="flex items-center gap-2"
+                      >
+                        <p>
+                          🇸🇿
+                        </p>
+                        <p>
+                          Eswatini
+                        </p>
+                      </div>
+                      <a
+                        class="chakra-link css-0"
+                        href="/eswatini"
+                      >
+                        <button
+                          class="chakra-button css-4xx2wk"
+                          type="button"
+                        >
+                          Details
+                        </button>
+                      </a>
+                    </div>
+                    <div
+                      class="flex items-center justify-between"
+                    >
+                      <div
+                        class="flex items-center gap-2"
+                      >
+                        <p>
+                          🇱🇸
+                        </p>
+                        <p>
+                          Lesotho
+                        </p>
+                      </div>
+                      <a
+                        class="chakra-link css-0"
+                        href="/lesotho"
+                      >
+                        <button
+                          class="chakra-button css-4xx2wk"
+                          type="button"
+                        >
+                          Details
+                        </button>
+                      </a>
+                    </div>
+                    <div
+                      class="flex items-center justify-between"
+                    >
+                      <div
+                        class="flex items-center gap-2"
+                      >
+                        <p>
+                          🇳🇦
+                        </p>
+                        <p>
+                          Namibia
+                        </p>
+                      </div>
+                      <a
+                        class="chakra-link css-0"
+                        href="/namibia"
+                      >
+                        <button
+                          class="chakra-button css-4xx2wk"
+                          type="button"
+                        >
+                          Details
+                        </button>
+                      </a>
+                    </div>
+                    <div
+                      class="flex items-center justify-between"
+                    >
+                      <div
+                        class="flex items-center gap-2"
+                      >
+                        <p>
+                          🇿🇦
+                        </p>
+                        <p>
+                          South Africa
+                        </p>
+                      </div>
+                      <a
+                        class="chakra-link css-0"
+                        href="/south-africa"
+                      >
+                        <button
+                          class="chakra-button css-4xx2wk"
+                          type="button"
+                        >
+                          Details
+                        </button>
+                      </a>
+                    </div>
+                    <div
+                      class="flex items-center justify-between"
+                    >
+                      <div
+                        class="flex items-center gap-2"
+                      >
+                        <p>
+                          🇿🇼
+                        </p>
+                        <p>
+                          Zimbabwe
+                        </p>
+                      </div>
+                      <a
+                        class="chakra-link css-0"
+                        href="/zimbabwe"
+                      >
+                        <button
+                          class="chakra-button css-4xx2wk"
+                          type="button"
+                        >
+                          Details
+                        </button>
+                      </a>
+                    </div>
+                  </div>
+                  <div
+                    class="flex flex-col gap-2 md:gap-4"
+                  >
+                    <h3>
+                      Western Africa
+                       (
+                      15
+                      )
+                    </h3>
+                    <hr
+                      aria-orientation="horizontal"
+                      class="chakra-divider border-gray-200 css-1upb9tn"
+                    />
+                    <div
+                      class="flex items-center justify-between"
+                    >
+                      <div
+                        class="flex items-center gap-2"
+                      >
+                        <p>
+                          🇧🇯
+                        </p>
+                        <p>
+                          Benin
+                        </p>
+                      </div>
+                      <a
+                        class="chakra-link css-0"
+                        href="/benin"
+                      >
+                        <button
+                          class="chakra-button css-4xx2wk"
+                          type="button"
+                        >
+                          Details
+                        </button>
+                      </a>
+                    </div>
+                    <div
+                      class="flex items-center justify-between"
+                    >
+                      <div
+                        class="flex items-center gap-2"
+                      >
+                        <p>
+                          🇧🇫
+                        </p>
+                        <p>
+                          Burkina Faso
+                        </p>
+                      </div>
+                      <a
+                        class="chakra-link css-0"
+                        href="/burkina-faso"
+                      >
+                        <button
+                          class="chakra-button css-4xx2wk"
+                          type="button"
+                        >
+                          Details
+                        </button>
+                      </a>
+                    </div>
+                    <div
+                      class="flex items-center justify-between"
+                    >
+                      <div
+                        class="flex items-center gap-2"
+                      >
+                        <p>
+                          🇨🇻
+                        </p>
+                        <p>
+                          Cape Verde
+                        </p>
+                      </div>
+                      <a
+                        class="chakra-link css-0"
+                        href="/cape-verde"
+                      >
+                        <button
+                          class="chakra-button css-4xx2wk"
+                          type="button"
+                        >
+                          Details
+                        </button>
+                      </a>
+                    </div>
+                    <div
+                      class="flex items-center justify-between"
+                    >
+                      <div
+                        class="flex items-center gap-2"
+                      >
+                        <p>
+                          🇬🇲
+                        </p>
+                        <p>
+                          Gambia
+                        </p>
+                      </div>
+                      <a
+                        class="chakra-link css-0"
+                        href="/gambia"
+                      >
+                        <button
+                          class="chakra-button css-4xx2wk"
+                          type="button"
+                        >
+                          Details
+                        </button>
+                      </a>
+                    </div>
+                    <div
+                      class="flex items-center justify-between"
+                    >
+                      <div
+                        class="flex items-center gap-2"
+                      >
+                        <p>
+                          🇬🇭
+                        </p>
+                        <p>
+                          Ghana
+                        </p>
+                      </div>
+                      <a
+                        class="chakra-link css-0"
+                        href="/ghana"
+                      >
+                        <button
+                          class="chakra-button css-4xx2wk"
+                          type="button"
+                        >
+                          Details
+                        </button>
+                      </a>
+                    </div>
+                    <div
+                      class="flex items-center justify-between"
+                    >
+                      <div
+                        class="flex items-center gap-2"
+                      >
+                        <p>
+                          🇬🇳
+                        </p>
+                        <p>
+                          Guinea
+                        </p>
+                      </div>
+                      <a
+                        class="chakra-link css-0"
+                        href="/guinea"
+                      >
+                        <button
+                          class="chakra-button css-4xx2wk"
+                          type="button"
+                        >
+                          Details
+                        </button>
+                      </a>
+                    </div>
+                    <div
+                      class="flex items-center justify-between"
+                    >
+                      <div
+                        class="flex items-center gap-2"
+                      >
+                        <p>
+                          🇨🇮
+                        </p>
+                        <p>
+                          Ivory Coast
+                        </p>
+                      </div>
+                      <a
+                        class="chakra-link css-0"
+                        href="/ivory-coast"
+                      >
+                        <button
+                          class="chakra-button css-4xx2wk"
+                          type="button"
+                        >
+                          Details
+                        </button>
+                      </a>
+                    </div>
+                    <div
+                      class="flex items-center justify-between"
+                    >
+                      <div
+                        class="flex items-center gap-2"
+                      >
+                        <p>
+                          🇱🇷
+                        </p>
+                        <p>
+                          Liberia
+                        </p>
+                      </div>
+                      <a
+                        class="chakra-link css-0"
+                        href="/liberia"
+                      >
+                        <button
+                          class="chakra-button css-4xx2wk"
+                          type="button"
+                        >
+                          Details
+                        </button>
+                      </a>
+                    </div>
+                    <div
+                      class="flex items-center justify-between"
+                    >
+                      <div
+                        class="flex items-center gap-2"
+                      >
+                        <p>
+                          🇲🇱
+                        </p>
+                        <p>
+                          Mali
+                        </p>
+                      </div>
+                      <a
+                        class="chakra-link css-0"
+                        href="/mali"
+                      >
+                        <button
+                          class="chakra-button css-4xx2wk"
+                          type="button"
+                        >
+                          Details
+                        </button>
+                      </a>
+                    </div>
+                    <div
+                      class="flex items-center justify-between"
+                    >
+                      <div
+                        class="flex items-center gap-2"
+                      >
+                        <p>
+                          🇲🇷
+                        </p>
+                        <p>
+                          Mauritania
+                        </p>
+                      </div>
+                      <a
+                        class="chakra-link css-0"
+                        href="/mauritania"
+                      >
+                        <button
+                          class="chakra-button css-4xx2wk"
+                          type="button"
+                        >
+                          Details
+                        </button>
+                      </a>
+                    </div>
+                    <div
+                      class="flex items-center justify-between"
+                    >
+                      <div
+                        class="flex items-center gap-2"
+                      >
+                        <p>
+                          🇳🇪
+                        </p>
+                        <p>
+                          Niger
+                        </p>
+                      </div>
+                      <a
+                        class="chakra-link css-0"
+                        href="/niger"
+                      >
+                        <button
+                          class="chakra-button css-4xx2wk"
+                          type="button"
+                        >
+                          Details
+                        </button>
+                      </a>
+                    </div>
+                    <div
+                      class="flex items-center justify-between"
+                    >
+                      <div
+                        class="flex items-center gap-2"
+                      >
+                        <p>
+                          🇳🇬
+                        </p>
+                        <p>
+                          Nigeria
+                        </p>
+                      </div>
+                      <a
+                        class="chakra-link css-0"
+                        href="/nigeria"
+                      >
+                        <button
+                          class="chakra-button css-4xx2wk"
+                          type="button"
+                        >
+                          Details
+                        </button>
+                      </a>
+                    </div>
+                    <div
+                      class="flex items-center justify-between"
+                    >
+                      <div
+                        class="flex items-center gap-2"
+                      >
+                        <p>
+                          🇸🇳
+                        </p>
+                        <p>
+                          Senegal
+                        </p>
+                      </div>
+                      <a
+                        class="chakra-link css-0"
+                        href="/senegal"
+                      >
+                        <button
+                          class="chakra-button css-4xx2wk"
+                          type="button"
+                        >
+                          Details
+                        </button>
+                      </a>
+                    </div>
+                    <div
+                      class="flex items-center justify-between"
+                    >
+                      <div
+                        class="flex items-center gap-2"
+                      >
+                        <p>
+                          🇸🇱
+                        </p>
+                        <p>
+                          Sierra Leone
+                        </p>
+                      </div>
+                      <a
+                        class="chakra-link css-0"
+                        href="/sierra-leone"
+                      >
+                        <button
+                          class="chakra-button css-4xx2wk"
+                          type="button"
+                        >
+                          Details
+                        </button>
+                      </a>
+                    </div>
+                    <div
+                      class="flex items-center justify-between"
+                    >
+                      <div
+                        class="flex items-center gap-2"
+                      >
+                        <p>
+                          🇹🇬
+                        </p>
+                        <p>
+                          Togo
+                        </p>
+                      </div>
+                      <a
+                        class="chakra-link css-0"
+                        href="/togo"
+                      >
+                        <button
+                          class="chakra-button css-4xx2wk"
+                          type="button"
+                        >
+                          Details
+                        </button>
+                      </a>
                     </div>
                   </div>
                 </div>
                 <hr
                   aria-orientation="horizontal"
-                  class="chakra-divider css-1upb9tn"
+                  class="chakra-divider border-gray-200 css-1upb9tn"
                 />
               </div>
               <div
-                class="flex flex-col gap-4"
+                class="flex flex-col gap-4 md:gap-8"
               >
                 <h2
-                  class="text-md font-medium"
+                  class="text-lg"
                 >
-                  <a
-                    href="/united-states"
-                  >
-                    United States
-                     (
-                    3
-                    )
-                  </a>
+                  Americas
+                   (
+                  35
+                  )
                 </h2>
                 <div
-                  class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8"
+                  class="flex flex-col gap-4 md:gap-8"
                 >
                   <div
-                    class="chakra-card border border-gray-200 css-2dlz7"
+                    class="flex flex-col gap-2 md:gap-4"
                   >
+                    <h3>
+                      Caribbean
+                       (
+                      13
+                      )
+                    </h3>
+                    <hr
+                      aria-orientation="horizontal"
+                      class="chakra-divider border-gray-200 css-1upb9tn"
+                    />
                     <div
-                      class="chakra-card__body css-0"
+                      class="flex items-center justify-between"
                     >
                       <div
-                        class="flex justify-center items-center"
+                        class="flex items-center gap-2"
                       >
-                        fetch is not defined
+                        <p>
+                          🇦🇬
+                        </p>
+                        <p>
+                          Antigua and Barbuda
+                        </p>
                       </div>
+                      <a
+                        class="chakra-link css-0"
+                        href="/antigua-and-barbuda"
+                      >
+                        <button
+                          class="chakra-button css-4xx2wk"
+                          type="button"
+                        >
+                          Details
+                        </button>
+                      </a>
+                    </div>
+                    <div
+                      class="flex items-center justify-between"
+                    >
+                      <div
+                        class="flex items-center gap-2"
+                      >
+                        <p>
+                          🇧🇸
+                        </p>
+                        <p>
+                          Bahamas
+                        </p>
+                      </div>
+                      <a
+                        class="chakra-link css-0"
+                        href="/bahamas"
+                      >
+                        <button
+                          class="chakra-button css-4xx2wk"
+                          type="button"
+                        >
+                          Details
+                        </button>
+                      </a>
+                    </div>
+                    <div
+                      class="flex items-center justify-between"
+                    >
+                      <div
+                        class="flex items-center gap-2"
+                      >
+                        <p>
+                          🇧🇧
+                        </p>
+                        <p>
+                          Barbados
+                        </p>
+                      </div>
+                      <a
+                        class="chakra-link css-0"
+                        href="/barbados"
+                      >
+                        <button
+                          class="chakra-button css-4xx2wk"
+                          type="button"
+                        >
+                          Details
+                        </button>
+                      </a>
+                    </div>
+                    <div
+                      class="flex items-center justify-between"
+                    >
+                      <div
+                        class="flex items-center gap-2"
+                      >
+                        <p>
+                          🇨🇺
+                        </p>
+                        <p>
+                          Cuba
+                        </p>
+                      </div>
+                      <a
+                        class="chakra-link css-0"
+                        href="/cuba"
+                      >
+                        <button
+                          class="chakra-button css-4xx2wk"
+                          type="button"
+                        >
+                          Details
+                        </button>
+                      </a>
+                    </div>
+                    <div
+                      class="flex items-center justify-between"
+                    >
+                      <div
+                        class="flex items-center gap-2"
+                      >
+                        <p>
+                          🇩🇲
+                        </p>
+                        <p>
+                          Dominica
+                        </p>
+                      </div>
+                      <a
+                        class="chakra-link css-0"
+                        href="/dominica"
+                      >
+                        <button
+                          class="chakra-button css-4xx2wk"
+                          type="button"
+                        >
+                          Details
+                        </button>
+                      </a>
+                    </div>
+                    <div
+                      class="flex items-center justify-between"
+                    >
+                      <div
+                        class="flex items-center gap-2"
+                      >
+                        <p>
+                          🇩🇴
+                        </p>
+                        <p>
+                          Dominican Republic
+                        </p>
+                      </div>
+                      <a
+                        class="chakra-link css-0"
+                        href="/dominican-republic"
+                      >
+                        <button
+                          class="chakra-button css-4xx2wk"
+                          type="button"
+                        >
+                          Details
+                        </button>
+                      </a>
+                    </div>
+                    <div
+                      class="flex items-center justify-between"
+                    >
+                      <div
+                        class="flex items-center gap-2"
+                      >
+                        <p>
+                          🇬🇩
+                        </p>
+                        <p>
+                          Grenada
+                        </p>
+                      </div>
+                      <a
+                        class="chakra-link css-0"
+                        href="/grenada"
+                      >
+                        <button
+                          class="chakra-button css-4xx2wk"
+                          type="button"
+                        >
+                          Details
+                        </button>
+                      </a>
+                    </div>
+                    <div
+                      class="flex items-center justify-between"
+                    >
+                      <div
+                        class="flex items-center gap-2"
+                      >
+                        <p>
+                          🇭🇹
+                        </p>
+                        <p>
+                          Haiti
+                        </p>
+                      </div>
+                      <a
+                        class="chakra-link css-0"
+                        href="/haiti"
+                      >
+                        <button
+                          class="chakra-button css-4xx2wk"
+                          type="button"
+                        >
+                          Details
+                        </button>
+                      </a>
+                    </div>
+                    <div
+                      class="flex items-center justify-between"
+                    >
+                      <div
+                        class="flex items-center gap-2"
+                      >
+                        <p>
+                          🇯🇲
+                        </p>
+                        <p>
+                          Jamaica
+                        </p>
+                      </div>
+                      <a
+                        class="chakra-link css-0"
+                        href="/jamaica"
+                      >
+                        <button
+                          class="chakra-button css-4xx2wk"
+                          type="button"
+                        >
+                          Details
+                        </button>
+                      </a>
+                    </div>
+                    <div
+                      class="flex items-center justify-between"
+                    >
+                      <div
+                        class="flex items-center gap-2"
+                      >
+                        <p>
+                          🇰🇳
+                        </p>
+                        <p>
+                          Saint Kitts and Nevis
+                        </p>
+                      </div>
+                      <a
+                        class="chakra-link css-0"
+                        href="/saint-kitts-and-nevis"
+                      >
+                        <button
+                          class="chakra-button css-4xx2wk"
+                          type="button"
+                        >
+                          Details
+                        </button>
+                      </a>
+                    </div>
+                    <div
+                      class="flex items-center justify-between"
+                    >
+                      <div
+                        class="flex items-center gap-2"
+                      >
+                        <p>
+                          🇱🇨
+                        </p>
+                        <p>
+                          Saint Lucia
+                        </p>
+                      </div>
+                      <a
+                        class="chakra-link css-0"
+                        href="/saint-lucia"
+                      >
+                        <button
+                          class="chakra-button css-4xx2wk"
+                          type="button"
+                        >
+                          Details
+                        </button>
+                      </a>
+                    </div>
+                    <div
+                      class="flex items-center justify-between"
+                    >
+                      <div
+                        class="flex items-center gap-2"
+                      >
+                        <p>
+                          🇻🇨
+                        </p>
+                        <p>
+                          Saint Vincent and the Grenadines
+                        </p>
+                      </div>
+                      <a
+                        class="chakra-link css-0"
+                        href="/saint-vincent-and-the-grenadines"
+                      >
+                        <button
+                          class="chakra-button css-4xx2wk"
+                          type="button"
+                        >
+                          Details
+                        </button>
+                      </a>
+                    </div>
+                    <div
+                      class="flex items-center justify-between"
+                    >
+                      <div
+                        class="flex items-center gap-2"
+                      >
+                        <p>
+                          🇹🇹
+                        </p>
+                        <p>
+                          Trinidad and Tobago
+                        </p>
+                      </div>
+                      <a
+                        class="chakra-link css-0"
+                        href="/trinidad-and-tobago"
+                      >
+                        <button
+                          class="chakra-button css-4xx2wk"
+                          type="button"
+                        >
+                          Details
+                        </button>
+                      </a>
                     </div>
                   </div>
                   <div
-                    class="chakra-card border border-gray-200 css-2dlz7"
+                    class="flex flex-col gap-2 md:gap-4"
                   >
+                    <h3>
+                      Central America
+                       (
+                      7
+                      )
+                    </h3>
+                    <hr
+                      aria-orientation="horizontal"
+                      class="chakra-divider border-gray-200 css-1upb9tn"
+                    />
                     <div
-                      class="chakra-card__body css-0"
+                      class="flex items-center justify-between"
                     >
                       <div
-                        class="flex justify-center items-center"
+                        class="flex items-center gap-2"
                       >
-                        fetch is not defined
+                        <p>
+                          🇧🇿
+                        </p>
+                        <p>
+                          Belize
+                        </p>
                       </div>
+                      <a
+                        class="chakra-link css-0"
+                        href="/belize"
+                      >
+                        <button
+                          class="chakra-button css-4xx2wk"
+                          type="button"
+                        >
+                          Details
+                        </button>
+                      </a>
+                    </div>
+                    <div
+                      class="flex items-center justify-between"
+                    >
+                      <div
+                        class="flex items-center gap-2"
+                      >
+                        <p>
+                          🇨🇷
+                        </p>
+                        <p>
+                          Costa Rica
+                        </p>
+                      </div>
+                      <a
+                        class="chakra-link css-0"
+                        href="/costa-rica"
+                      >
+                        <button
+                          class="chakra-button css-4xx2wk"
+                          type="button"
+                        >
+                          Details
+                        </button>
+                      </a>
+                    </div>
+                    <div
+                      class="flex items-center justify-between"
+                    >
+                      <div
+                        class="flex items-center gap-2"
+                      >
+                        <p>
+                          🇸🇻
+                        </p>
+                        <p>
+                          El Salvador
+                        </p>
+                      </div>
+                      <a
+                        class="chakra-link css-0"
+                        href="/el-salvador"
+                      >
+                        <button
+                          class="chakra-button css-4xx2wk"
+                          type="button"
+                        >
+                          Details
+                        </button>
+                      </a>
+                    </div>
+                    <div
+                      class="flex items-center justify-between"
+                    >
+                      <div
+                        class="flex items-center gap-2"
+                      >
+                        <p>
+                          🇬🇹
+                        </p>
+                        <p>
+                          Guatemala
+                        </p>
+                      </div>
+                      <a
+                        class="chakra-link css-0"
+                        href="/guatemala"
+                      >
+                        <button
+                          class="chakra-button css-4xx2wk"
+                          type="button"
+                        >
+                          Details
+                        </button>
+                      </a>
+                    </div>
+                    <div
+                      class="flex items-center justify-between"
+                    >
+                      <div
+                        class="flex items-center gap-2"
+                      >
+                        <p>
+                          🇭🇳
+                        </p>
+                        <p>
+                          Honduras
+                        </p>
+                      </div>
+                      <a
+                        class="chakra-link css-0"
+                        href="/honduras"
+                      >
+                        <button
+                          class="chakra-button css-4xx2wk"
+                          type="button"
+                        >
+                          Details
+                        </button>
+                      </a>
+                    </div>
+                    <div
+                      class="flex items-center justify-between"
+                    >
+                      <div
+                        class="flex items-center gap-2"
+                      >
+                        <p>
+                          🇳🇮
+                        </p>
+                        <p>
+                          Nicaragua
+                        </p>
+                      </div>
+                      <a
+                        class="chakra-link css-0"
+                        href="/nicaragua"
+                      >
+                        <button
+                          class="chakra-button css-4xx2wk"
+                          type="button"
+                        >
+                          Details
+                        </button>
+                      </a>
+                    </div>
+                    <div
+                      class="flex items-center justify-between"
+                    >
+                      <div
+                        class="flex items-center gap-2"
+                      >
+                        <p>
+                          🇵🇦
+                        </p>
+                        <p>
+                          Panama
+                        </p>
+                      </div>
+                      <a
+                        class="chakra-link css-0"
+                        href="/panama"
+                      >
+                        <button
+                          class="chakra-button css-4xx2wk"
+                          type="button"
+                        >
+                          Details
+                        </button>
+                      </a>
                     </div>
                   </div>
                   <div
-                    class="chakra-card border border-gray-200 css-2dlz7"
+                    class="flex flex-col gap-2 md:gap-4"
                   >
+                    <h3>
+                      North America
+                       (
+                      3
+                      )
+                    </h3>
+                    <hr
+                      aria-orientation="horizontal"
+                      class="chakra-divider border-gray-200 css-1upb9tn"
+                    />
                     <div
-                      class="chakra-card__body css-0"
+                      class="flex items-center justify-between"
                     >
                       <div
-                        class="flex justify-center items-center"
+                        class="flex items-center gap-2"
                       >
-                        fetch is not defined
+                        <p>
+                          🇨🇦
+                        </p>
+                        <p>
+                          Canada
+                        </p>
                       </div>
+                      <a
+                        class="chakra-link css-0"
+                        href="/canada"
+                      >
+                        <button
+                          class="chakra-button css-4xx2wk"
+                          type="button"
+                        >
+                          Details
+                        </button>
+                      </a>
+                    </div>
+                    <div
+                      class="flex items-center justify-between"
+                    >
+                      <div
+                        class="flex items-center gap-2"
+                      >
+                        <p>
+                          🇲🇽
+                        </p>
+                        <p>
+                          Mexico
+                        </p>
+                      </div>
+                      <a
+                        class="chakra-link css-0"
+                        href="/mexico"
+                      >
+                        <button
+                          class="chakra-button css-4xx2wk"
+                          type="button"
+                        >
+                          Details
+                        </button>
+                      </a>
+                    </div>
+                    <div
+                      class="flex items-center justify-between"
+                    >
+                      <div
+                        class="flex items-center gap-2"
+                      >
+                        <p>
+                          🇺🇸
+                        </p>
+                        <p>
+                          United States
+                        </p>
+                      </div>
+                      <a
+                        class="chakra-link css-0"
+                        href="/united-states"
+                      >
+                        <button
+                          class="chakra-button css-4xx2wk"
+                          type="button"
+                        >
+                          Details
+                        </button>
+                      </a>
+                    </div>
+                  </div>
+                  <div
+                    class="flex flex-col gap-2 md:gap-4"
+                  >
+                    <h3>
+                      South America
+                       (
+                      12
+                      )
+                    </h3>
+                    <hr
+                      aria-orientation="horizontal"
+                      class="chakra-divider border-gray-200 css-1upb9tn"
+                    />
+                    <div
+                      class="flex items-center justify-between"
+                    >
+                      <div
+                        class="flex items-center gap-2"
+                      >
+                        <p>
+                          🇦🇷
+                        </p>
+                        <p>
+                          Argentina
+                        </p>
+                      </div>
+                      <a
+                        class="chakra-link css-0"
+                        href="/argentina"
+                      >
+                        <button
+                          class="chakra-button css-4xx2wk"
+                          type="button"
+                        >
+                          Details
+                        </button>
+                      </a>
+                    </div>
+                    <div
+                      class="flex items-center justify-between"
+                    >
+                      <div
+                        class="flex items-center gap-2"
+                      >
+                        <p>
+                          🇧🇴
+                        </p>
+                        <p>
+                          Bolivia
+                        </p>
+                      </div>
+                      <a
+                        class="chakra-link css-0"
+                        href="/bolivia"
+                      >
+                        <button
+                          class="chakra-button css-4xx2wk"
+                          type="button"
+                        >
+                          Details
+                        </button>
+                      </a>
+                    </div>
+                    <div
+                      class="flex items-center justify-between"
+                    >
+                      <div
+                        class="flex items-center gap-2"
+                      >
+                        <p>
+                          🇧🇷
+                        </p>
+                        <p>
+                          Brazil
+                        </p>
+                      </div>
+                      <a
+                        class="chakra-link css-0"
+                        href="/brazil"
+                      >
+                        <button
+                          class="chakra-button css-4xx2wk"
+                          type="button"
+                        >
+                          Details
+                        </button>
+                      </a>
+                    </div>
+                    <div
+                      class="flex items-center justify-between"
+                    >
+                      <div
+                        class="flex items-center gap-2"
+                      >
+                        <p>
+                          🇨🇱
+                        </p>
+                        <p>
+                          Chile
+                        </p>
+                      </div>
+                      <a
+                        class="chakra-link css-0"
+                        href="/chile"
+                      >
+                        <button
+                          class="chakra-button css-4xx2wk"
+                          type="button"
+                        >
+                          Details
+                        </button>
+                      </a>
+                    </div>
+                    <div
+                      class="flex items-center justify-between"
+                    >
+                      <div
+                        class="flex items-center gap-2"
+                      >
+                        <p>
+                          🇨🇴
+                        </p>
+                        <p>
+                          Colombia
+                        </p>
+                      </div>
+                      <a
+                        class="chakra-link css-0"
+                        href="/colombia"
+                      >
+                        <button
+                          class="chakra-button css-4xx2wk"
+                          type="button"
+                        >
+                          Details
+                        </button>
+                      </a>
+                    </div>
+                    <div
+                      class="flex items-center justify-between"
+                    >
+                      <div
+                        class="flex items-center gap-2"
+                      >
+                        <p>
+                          🇪🇨
+                        </p>
+                        <p>
+                          Ecuador
+                        </p>
+                      </div>
+                      <a
+                        class="chakra-link css-0"
+                        href="/ecuador"
+                      >
+                        <button
+                          class="chakra-button css-4xx2wk"
+                          type="button"
+                        >
+                          Details
+                        </button>
+                      </a>
+                    </div>
+                    <div
+                      class="flex items-center justify-between"
+                    >
+                      <div
+                        class="flex items-center gap-2"
+                      >
+                        <p>
+                          🇬🇾
+                        </p>
+                        <p>
+                          Guyana
+                        </p>
+                      </div>
+                      <a
+                        class="chakra-link css-0"
+                        href="/guyana"
+                      >
+                        <button
+                          class="chakra-button css-4xx2wk"
+                          type="button"
+                        >
+                          Details
+                        </button>
+                      </a>
+                    </div>
+                    <div
+                      class="flex items-center justify-between"
+                    >
+                      <div
+                        class="flex items-center gap-2"
+                      >
+                        <p>
+                          🇵🇾
+                        </p>
+                        <p>
+                          Paraguay
+                        </p>
+                      </div>
+                      <a
+                        class="chakra-link css-0"
+                        href="/paraguay"
+                      >
+                        <button
+                          class="chakra-button css-4xx2wk"
+                          type="button"
+                        >
+                          Details
+                        </button>
+                      </a>
+                    </div>
+                    <div
+                      class="flex items-center justify-between"
+                    >
+                      <div
+                        class="flex items-center gap-2"
+                      >
+                        <p>
+                          🇵🇪
+                        </p>
+                        <p>
+                          Peru
+                        </p>
+                      </div>
+                      <a
+                        class="chakra-link css-0"
+                        href="/peru"
+                      >
+                        <button
+                          class="chakra-button css-4xx2wk"
+                          type="button"
+                        >
+                          Details
+                        </button>
+                      </a>
+                    </div>
+                    <div
+                      class="flex items-center justify-between"
+                    >
+                      <div
+                        class="flex items-center gap-2"
+                      >
+                        <p>
+                          🇸🇷
+                        </p>
+                        <p>
+                          Suriname
+                        </p>
+                      </div>
+                      <a
+                        class="chakra-link css-0"
+                        href="/suriname"
+                      >
+                        <button
+                          class="chakra-button css-4xx2wk"
+                          type="button"
+                        >
+                          Details
+                        </button>
+                      </a>
+                    </div>
+                    <div
+                      class="flex items-center justify-between"
+                    >
+                      <div
+                        class="flex items-center gap-2"
+                      >
+                        <p>
+                          🇺🇾
+                        </p>
+                        <p>
+                          Uruguay
+                        </p>
+                      </div>
+                      <a
+                        class="chakra-link css-0"
+                        href="/uruguay"
+                      >
+                        <button
+                          class="chakra-button css-4xx2wk"
+                          type="button"
+                        >
+                          Details
+                        </button>
+                      </a>
+                    </div>
+                    <div
+                      class="flex items-center justify-between"
+                    >
+                      <div
+                        class="flex items-center gap-2"
+                      >
+                        <p>
+                          🇻🇪
+                        </p>
+                        <p>
+                          Venezuela
+                        </p>
+                      </div>
+                      <a
+                        class="chakra-link css-0"
+                        href="/venezuela"
+                      >
+                        <button
+                          class="chakra-button css-4xx2wk"
+                          type="button"
+                        >
+                          Details
+                        </button>
+                      </a>
                     </div>
                   </div>
                 </div>
                 <hr
                   aria-orientation="horizontal"
-                  class="chakra-divider css-1upb9tn"
+                  class="chakra-divider border-gray-200 css-1upb9tn"
                 />
               </div>
               <div
-                class="flex flex-col gap-4"
+                class="flex flex-col gap-4 md:gap-8"
               >
                 <h2
-                  class="text-md font-medium"
+                  class="text-lg"
                 >
-                  <a
-                    href="/australia"
-                  >
-                    Australia
-                     (
-                    3
-                    )
-                  </a>
+                  Asia
+                   (
+                  46
+                  )
                 </h2>
                 <div
-                  class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8"
+                  class="flex flex-col gap-4 md:gap-8"
                 >
                   <div
-                    class="chakra-card border border-gray-200 css-2dlz7"
+                    class="flex flex-col gap-2 md:gap-4"
                   >
+                    <h3>
+                      Central Asia
+                       (
+                      5
+                      )
+                    </h3>
+                    <hr
+                      aria-orientation="horizontal"
+                      class="chakra-divider border-gray-200 css-1upb9tn"
+                    />
                     <div
-                      class="chakra-card__body css-0"
+                      class="flex items-center justify-between"
                     >
                       <div
-                        class="flex justify-center items-center"
+                        class="flex items-center gap-2"
                       >
-                        fetch is not defined
+                        <p>
+                          🇰🇿
+                        </p>
+                        <p>
+                          Kazakhstan
+                        </p>
                       </div>
+                      <a
+                        class="chakra-link css-0"
+                        href="/kazakhstan"
+                      >
+                        <button
+                          class="chakra-button css-4xx2wk"
+                          type="button"
+                        >
+                          Details
+                        </button>
+                      </a>
+                    </div>
+                    <div
+                      class="flex items-center justify-between"
+                    >
+                      <div
+                        class="flex items-center gap-2"
+                      >
+                        <p>
+                          🇰🇬
+                        </p>
+                        <p>
+                          Kyrgyzstan
+                        </p>
+                      </div>
+                      <a
+                        class="chakra-link css-0"
+                        href="/kyrgyzstan"
+                      >
+                        <button
+                          class="chakra-button css-4xx2wk"
+                          type="button"
+                        >
+                          Details
+                        </button>
+                      </a>
+                    </div>
+                    <div
+                      class="flex items-center justify-between"
+                    >
+                      <div
+                        class="flex items-center gap-2"
+                      >
+                        <p>
+                          🇹🇯
+                        </p>
+                        <p>
+                          Tajikistan
+                        </p>
+                      </div>
+                      <a
+                        class="chakra-link css-0"
+                        href="/tajikistan"
+                      >
+                        <button
+                          class="chakra-button css-4xx2wk"
+                          type="button"
+                        >
+                          Details
+                        </button>
+                      </a>
+                    </div>
+                    <div
+                      class="flex items-center justify-between"
+                    >
+                      <div
+                        class="flex items-center gap-2"
+                      >
+                        <p>
+                          🇹🇲
+                        </p>
+                        <p>
+                          Turkmenistan
+                        </p>
+                      </div>
+                      <a
+                        class="chakra-link css-0"
+                        href="/turkmenistan"
+                      >
+                        <button
+                          class="chakra-button css-4xx2wk"
+                          type="button"
+                        >
+                          Details
+                        </button>
+                      </a>
+                    </div>
+                    <div
+                      class="flex items-center justify-between"
+                    >
+                      <div
+                        class="flex items-center gap-2"
+                      >
+                        <p>
+                          🇺🇿
+                        </p>
+                        <p>
+                          Uzbekistan
+                        </p>
+                      </div>
+                      <a
+                        class="chakra-link css-0"
+                        href="/uzbekistan"
+                      >
+                        <button
+                          class="chakra-button css-4xx2wk"
+                          type="button"
+                        >
+                          Details
+                        </button>
+                      </a>
                     </div>
                   </div>
                   <div
-                    class="chakra-card border border-gray-200 css-2dlz7"
+                    class="flex flex-col gap-2 md:gap-4"
                   >
+                    <h3>
+                      Eastern Asia
+                       (
+                      5
+                      )
+                    </h3>
+                    <hr
+                      aria-orientation="horizontal"
+                      class="chakra-divider border-gray-200 css-1upb9tn"
+                    />
                     <div
-                      class="chakra-card__body css-0"
+                      class="flex items-center justify-between"
                     >
                       <div
-                        class="flex justify-center items-center"
+                        class="flex items-center gap-2"
                       >
-                        fetch is not defined
+                        <p>
+                          🇨🇳
+                        </p>
+                        <p>
+                          China
+                        </p>
                       </div>
+                      <a
+                        class="chakra-link css-0"
+                        href="/china"
+                      >
+                        <button
+                          class="chakra-button css-4xx2wk"
+                          type="button"
+                        >
+                          Details
+                        </button>
+                      </a>
+                    </div>
+                    <div
+                      class="flex items-center justify-between"
+                    >
+                      <div
+                        class="flex items-center gap-2"
+                      >
+                        <p>
+                          🇯🇵
+                        </p>
+                        <p>
+                          Japan
+                        </p>
+                      </div>
+                      <a
+                        class="chakra-link css-0"
+                        href="/japan"
+                      >
+                        <button
+                          class="chakra-button css-4xx2wk"
+                          type="button"
+                        >
+                          Details
+                        </button>
+                      </a>
+                    </div>
+                    <div
+                      class="flex items-center justify-between"
+                    >
+                      <div
+                        class="flex items-center gap-2"
+                      >
+                        <p>
+                          🇲🇳
+                        </p>
+                        <p>
+                          Mongolia
+                        </p>
+                      </div>
+                      <a
+                        class="chakra-link css-0"
+                        href="/mongolia"
+                      >
+                        <button
+                          class="chakra-button css-4xx2wk"
+                          type="button"
+                        >
+                          Details
+                        </button>
+                      </a>
+                    </div>
+                    <div
+                      class="flex items-center justify-between"
+                    >
+                      <div
+                        class="flex items-center gap-2"
+                      >
+                        <p>
+                          🇰🇵
+                        </p>
+                        <p>
+                          North Korea
+                        </p>
+                      </div>
+                      <a
+                        class="chakra-link css-0"
+                        href="/north-korea"
+                      >
+                        <button
+                          class="chakra-button css-4xx2wk"
+                          type="button"
+                        >
+                          Details
+                        </button>
+                      </a>
+                    </div>
+                    <div
+                      class="flex items-center justify-between"
+                    >
+                      <div
+                        class="flex items-center gap-2"
+                      >
+                        <p>
+                          🇰🇷
+                        </p>
+                        <p>
+                          South Korea
+                        </p>
+                      </div>
+                      <a
+                        class="chakra-link css-0"
+                        href="/south-korea"
+                      >
+                        <button
+                          class="chakra-button css-4xx2wk"
+                          type="button"
+                        >
+                          Details
+                        </button>
+                      </a>
                     </div>
                   </div>
                   <div
-                    class="chakra-card border border-gray-200 css-2dlz7"
+                    class="flex flex-col gap-2 md:gap-4"
                   >
+                    <h3>
+                      South-Eastern Asia
+                       (
+                      11
+                      )
+                    </h3>
+                    <hr
+                      aria-orientation="horizontal"
+                      class="chakra-divider border-gray-200 css-1upb9tn"
+                    />
                     <div
-                      class="chakra-card__body css-0"
+                      class="flex items-center justify-between"
                     >
                       <div
-                        class="flex justify-center items-center"
+                        class="flex items-center gap-2"
                       >
-                        fetch is not defined
+                        <p>
+                          🇧🇳
+                        </p>
+                        <p>
+                          Brunei
+                        </p>
                       </div>
+                      <a
+                        class="chakra-link css-0"
+                        href="/brunei"
+                      >
+                        <button
+                          class="chakra-button css-4xx2wk"
+                          type="button"
+                        >
+                          Details
+                        </button>
+                      </a>
+                    </div>
+                    <div
+                      class="flex items-center justify-between"
+                    >
+                      <div
+                        class="flex items-center gap-2"
+                      >
+                        <p>
+                          🇰🇭
+                        </p>
+                        <p>
+                          Cambodia
+                        </p>
+                      </div>
+                      <a
+                        class="chakra-link css-0"
+                        href="/cambodia"
+                      >
+                        <button
+                          class="chakra-button css-4xx2wk"
+                          type="button"
+                        >
+                          Details
+                        </button>
+                      </a>
+                    </div>
+                    <div
+                      class="flex items-center justify-between"
+                    >
+                      <div
+                        class="flex items-center gap-2"
+                      >
+                        <p>
+                          🇮🇩
+                        </p>
+                        <p>
+                          Indonesia
+                        </p>
+                      </div>
+                      <a
+                        class="chakra-link css-0"
+                        href="/indonesia"
+                      >
+                        <button
+                          class="chakra-button css-4xx2wk"
+                          type="button"
+                        >
+                          Details
+                        </button>
+                      </a>
+                    </div>
+                    <div
+                      class="flex items-center justify-between"
+                    >
+                      <div
+                        class="flex items-center gap-2"
+                      >
+                        <p>
+                          🇱🇦
+                        </p>
+                        <p>
+                          Laos
+                        </p>
+                      </div>
+                      <a
+                        class="chakra-link css-0"
+                        href="/laos"
+                      >
+                        <button
+                          class="chakra-button css-4xx2wk"
+                          type="button"
+                        >
+                          Details
+                        </button>
+                      </a>
+                    </div>
+                    <div
+                      class="flex items-center justify-between"
+                    >
+                      <div
+                        class="flex items-center gap-2"
+                      >
+                        <p>
+                          🇲🇾
+                        </p>
+                        <p>
+                          Malaysia
+                        </p>
+                      </div>
+                      <a
+                        class="chakra-link css-0"
+                        href="/malaysia"
+                      >
+                        <button
+                          class="chakra-button css-4xx2wk"
+                          type="button"
+                        >
+                          Details
+                        </button>
+                      </a>
+                    </div>
+                    <div
+                      class="flex items-center justify-between"
+                    >
+                      <div
+                        class="flex items-center gap-2"
+                      >
+                        <p>
+                          🇲🇲
+                        </p>
+                        <p>
+                          Myanmar
+                        </p>
+                      </div>
+                      <a
+                        class="chakra-link css-0"
+                        href="/myanmar"
+                      >
+                        <button
+                          class="chakra-button css-4xx2wk"
+                          type="button"
+                        >
+                          Details
+                        </button>
+                      </a>
+                    </div>
+                    <div
+                      class="flex items-center justify-between"
+                    >
+                      <div
+                        class="flex items-center gap-2"
+                      >
+                        <p>
+                          🇵🇭
+                        </p>
+                        <p>
+                          Philippines
+                        </p>
+                      </div>
+                      <a
+                        class="chakra-link css-0"
+                        href="/philippines"
+                      >
+                        <button
+                          class="chakra-button css-4xx2wk"
+                          type="button"
+                        >
+                          Details
+                        </button>
+                      </a>
+                    </div>
+                    <div
+                      class="flex items-center justify-between"
+                    >
+                      <div
+                        class="flex items-center gap-2"
+                      >
+                        <p>
+                          🇸🇬
+                        </p>
+                        <p>
+                          Singapore
+                        </p>
+                      </div>
+                      <a
+                        class="chakra-link css-0"
+                        href="/singapore"
+                      >
+                        <button
+                          class="chakra-button css-4xx2wk"
+                          type="button"
+                        >
+                          Details
+                        </button>
+                      </a>
+                    </div>
+                    <div
+                      class="flex items-center justify-between"
+                    >
+                      <div
+                        class="flex items-center gap-2"
+                      >
+                        <p>
+                          🇹🇭
+                        </p>
+                        <p>
+                          Thailand
+                        </p>
+                      </div>
+                      <a
+                        class="chakra-link css-0"
+                        href="/thailand"
+                      >
+                        <button
+                          class="chakra-button css-4xx2wk"
+                          type="button"
+                        >
+                          Details
+                        </button>
+                      </a>
+                    </div>
+                    <div
+                      class="flex items-center justify-between"
+                    >
+                      <div
+                        class="flex items-center gap-2"
+                      >
+                        <p>
+                          🇹🇱
+                        </p>
+                        <p>
+                          Timor-Leste
+                        </p>
+                      </div>
+                      <a
+                        class="chakra-link css-0"
+                        href="/timor-leste"
+                      >
+                        <button
+                          class="chakra-button css-4xx2wk"
+                          type="button"
+                        >
+                          Details
+                        </button>
+                      </a>
+                    </div>
+                    <div
+                      class="flex items-center justify-between"
+                    >
+                      <div
+                        class="flex items-center gap-2"
+                      >
+                        <p>
+                          🇻🇳
+                        </p>
+                        <p>
+                          Vietnam
+                        </p>
+                      </div>
+                      <a
+                        class="chakra-link css-0"
+                        href="/vietnam"
+                      >
+                        <button
+                          class="chakra-button css-4xx2wk"
+                          type="button"
+                        >
+                          Details
+                        </button>
+                      </a>
+                    </div>
+                  </div>
+                  <div
+                    class="flex flex-col gap-2 md:gap-4"
+                  >
+                    <h3>
+                      Southern Asia
+                       (
+                      9
+                      )
+                    </h3>
+                    <hr
+                      aria-orientation="horizontal"
+                      class="chakra-divider border-gray-200 css-1upb9tn"
+                    />
+                    <div
+                      class="flex items-center justify-between"
+                    >
+                      <div
+                        class="flex items-center gap-2"
+                      >
+                        <p>
+                          🇦🇫
+                        </p>
+                        <p>
+                          Afghanistan
+                        </p>
+                      </div>
+                      <a
+                        class="chakra-link css-0"
+                        href="/afghanistan"
+                      >
+                        <button
+                          class="chakra-button css-4xx2wk"
+                          type="button"
+                        >
+                          Details
+                        </button>
+                      </a>
+                    </div>
+                    <div
+                      class="flex items-center justify-between"
+                    >
+                      <div
+                        class="flex items-center gap-2"
+                      >
+                        <p>
+                          🇧🇩
+                        </p>
+                        <p>
+                          Bangladesh
+                        </p>
+                      </div>
+                      <a
+                        class="chakra-link css-0"
+                        href="/bangladesh"
+                      >
+                        <button
+                          class="chakra-button css-4xx2wk"
+                          type="button"
+                        >
+                          Details
+                        </button>
+                      </a>
+                    </div>
+                    <div
+                      class="flex items-center justify-between"
+                    >
+                      <div
+                        class="flex items-center gap-2"
+                      >
+                        <p>
+                          🇧🇹
+                        </p>
+                        <p>
+                          Bhutan
+                        </p>
+                      </div>
+                      <a
+                        class="chakra-link css-0"
+                        href="/bhutan"
+                      >
+                        <button
+                          class="chakra-button css-4xx2wk"
+                          type="button"
+                        >
+                          Details
+                        </button>
+                      </a>
+                    </div>
+                    <div
+                      class="flex items-center justify-between"
+                    >
+                      <div
+                        class="flex items-center gap-2"
+                      >
+                        <p>
+                          🇮🇳
+                        </p>
+                        <p>
+                          India
+                        </p>
+                      </div>
+                      <a
+                        class="chakra-link css-0"
+                        href="/india"
+                      >
+                        <button
+                          class="chakra-button css-4xx2wk"
+                          type="button"
+                        >
+                          Details
+                        </button>
+                      </a>
+                    </div>
+                    <div
+                      class="flex items-center justify-between"
+                    >
+                      <div
+                        class="flex items-center gap-2"
+                      >
+                        <p>
+                          🇮🇷
+                        </p>
+                        <p>
+                          Iran
+                        </p>
+                      </div>
+                      <a
+                        class="chakra-link css-0"
+                        href="/iran"
+                      >
+                        <button
+                          class="chakra-button css-4xx2wk"
+                          type="button"
+                        >
+                          Details
+                        </button>
+                      </a>
+                    </div>
+                    <div
+                      class="flex items-center justify-between"
+                    >
+                      <div
+                        class="flex items-center gap-2"
+                      >
+                        <p>
+                          🇲🇻
+                        </p>
+                        <p>
+                          Maldives
+                        </p>
+                      </div>
+                      <a
+                        class="chakra-link css-0"
+                        href="/maldives"
+                      >
+                        <button
+                          class="chakra-button css-4xx2wk"
+                          type="button"
+                        >
+                          Details
+                        </button>
+                      </a>
+                    </div>
+                    <div
+                      class="flex items-center justify-between"
+                    >
+                      <div
+                        class="flex items-center gap-2"
+                      >
+                        <p>
+                          🇳🇵
+                        </p>
+                        <p>
+                          Nepal
+                        </p>
+                      </div>
+                      <a
+                        class="chakra-link css-0"
+                        href="/nepal"
+                      >
+                        <button
+                          class="chakra-button css-4xx2wk"
+                          type="button"
+                        >
+                          Details
+                        </button>
+                      </a>
+                    </div>
+                    <div
+                      class="flex items-center justify-between"
+                    >
+                      <div
+                        class="flex items-center gap-2"
+                      >
+                        <p>
+                          🇵🇰
+                        </p>
+                        <p>
+                          Pakistan
+                        </p>
+                      </div>
+                      <a
+                        class="chakra-link css-0"
+                        href="/pakistan"
+                      >
+                        <button
+                          class="chakra-button css-4xx2wk"
+                          type="button"
+                        >
+                          Details
+                        </button>
+                      </a>
+                    </div>
+                    <div
+                      class="flex items-center justify-between"
+                    >
+                      <div
+                        class="flex items-center gap-2"
+                      >
+                        <p>
+                          🇱🇰
+                        </p>
+                        <p>
+                          Sri Lanka
+                        </p>
+                      </div>
+                      <a
+                        class="chakra-link css-0"
+                        href="/sri-lanka"
+                      >
+                        <button
+                          class="chakra-button css-4xx2wk"
+                          type="button"
+                        >
+                          Details
+                        </button>
+                      </a>
+                    </div>
+                  </div>
+                  <div
+                    class="flex flex-col gap-2 md:gap-4"
+                  >
+                    <h3>
+                      Western Asia
+                       (
+                      16
+                      )
+                    </h3>
+                    <hr
+                      aria-orientation="horizontal"
+                      class="chakra-divider border-gray-200 css-1upb9tn"
+                    />
+                    <div
+                      class="flex items-center justify-between"
+                    >
+                      <div
+                        class="flex items-center gap-2"
+                      >
+                        <p>
+                          🇦🇲
+                        </p>
+                        <p>
+                          Armenia
+                        </p>
+                      </div>
+                      <a
+                        class="chakra-link css-0"
+                        href="/armenia"
+                      >
+                        <button
+                          class="chakra-button css-4xx2wk"
+                          type="button"
+                        >
+                          Details
+                        </button>
+                      </a>
+                    </div>
+                    <div
+                      class="flex items-center justify-between"
+                    >
+                      <div
+                        class="flex items-center gap-2"
+                      >
+                        <p>
+                          🇦🇿
+                        </p>
+                        <p>
+                          Azerbaijan
+                        </p>
+                      </div>
+                      <a
+                        class="chakra-link css-0"
+                        href="/azerbaijan"
+                      >
+                        <button
+                          class="chakra-button css-4xx2wk"
+                          type="button"
+                        >
+                          Details
+                        </button>
+                      </a>
+                    </div>
+                    <div
+                      class="flex items-center justify-between"
+                    >
+                      <div
+                        class="flex items-center gap-2"
+                      >
+                        <p>
+                          🇧🇭
+                        </p>
+                        <p>
+                          Bahrain
+                        </p>
+                      </div>
+                      <a
+                        class="chakra-link css-0"
+                        href="/bahrain"
+                      >
+                        <button
+                          class="chakra-button css-4xx2wk"
+                          type="button"
+                        >
+                          Details
+                        </button>
+                      </a>
+                    </div>
+                    <div
+                      class="flex items-center justify-between"
+                    >
+                      <div
+                        class="flex items-center gap-2"
+                      >
+                        <p>
+                          🇬🇪
+                        </p>
+                        <p>
+                          Georgia
+                        </p>
+                      </div>
+                      <a
+                        class="chakra-link css-0"
+                        href="/georgia"
+                      >
+                        <button
+                          class="chakra-button css-4xx2wk"
+                          type="button"
+                        >
+                          Details
+                        </button>
+                      </a>
+                    </div>
+                    <div
+                      class="flex items-center justify-between"
+                    >
+                      <div
+                        class="flex items-center gap-2"
+                      >
+                        <p>
+                          🇮🇶
+                        </p>
+                        <p>
+                          Iraq
+                        </p>
+                      </div>
+                      <a
+                        class="chakra-link css-0"
+                        href="/iraq"
+                      >
+                        <button
+                          class="chakra-button css-4xx2wk"
+                          type="button"
+                        >
+                          Details
+                        </button>
+                      </a>
+                    </div>
+                    <div
+                      class="flex items-center justify-between"
+                    >
+                      <div
+                        class="flex items-center gap-2"
+                      >
+                        <p>
+                          🇮🇱
+                        </p>
+                        <p>
+                          Israel
+                        </p>
+                      </div>
+                      <a
+                        class="chakra-link css-0"
+                        href="/israel"
+                      >
+                        <button
+                          class="chakra-button css-4xx2wk"
+                          type="button"
+                        >
+                          Details
+                        </button>
+                      </a>
+                    </div>
+                    <div
+                      class="flex items-center justify-between"
+                    >
+                      <div
+                        class="flex items-center gap-2"
+                      >
+                        <p>
+                          🇯🇴
+                        </p>
+                        <p>
+                          Jordan
+                        </p>
+                      </div>
+                      <a
+                        class="chakra-link css-0"
+                        href="/jordan"
+                      >
+                        <button
+                          class="chakra-button css-4xx2wk"
+                          type="button"
+                        >
+                          Details
+                        </button>
+                      </a>
+                    </div>
+                    <div
+                      class="flex items-center justify-between"
+                    >
+                      <div
+                        class="flex items-center gap-2"
+                      >
+                        <p>
+                          🇰🇼
+                        </p>
+                        <p>
+                          Kuwait
+                        </p>
+                      </div>
+                      <a
+                        class="chakra-link css-0"
+                        href="/kuwait"
+                      >
+                        <button
+                          class="chakra-button css-4xx2wk"
+                          type="button"
+                        >
+                          Details
+                        </button>
+                      </a>
+                    </div>
+                    <div
+                      class="flex items-center justify-between"
+                    >
+                      <div
+                        class="flex items-center gap-2"
+                      >
+                        <p>
+                          🇱🇧
+                        </p>
+                        <p>
+                          Lebanon
+                        </p>
+                      </div>
+                      <a
+                        class="chakra-link css-0"
+                        href="/lebanon"
+                      >
+                        <button
+                          class="chakra-button css-4xx2wk"
+                          type="button"
+                        >
+                          Details
+                        </button>
+                      </a>
+                    </div>
+                    <div
+                      class="flex items-center justify-between"
+                    >
+                      <div
+                        class="flex items-center gap-2"
+                      >
+                        <p>
+                          🇴🇲
+                        </p>
+                        <p>
+                          Oman
+                        </p>
+                      </div>
+                      <a
+                        class="chakra-link css-0"
+                        href="/oman"
+                      >
+                        <button
+                          class="chakra-button css-4xx2wk"
+                          type="button"
+                        >
+                          Details
+                        </button>
+                      </a>
+                    </div>
+                    <div
+                      class="flex items-center justify-between"
+                    >
+                      <div
+                        class="flex items-center gap-2"
+                      >
+                        <p>
+                          🇶🇦
+                        </p>
+                        <p>
+                          Qatar
+                        </p>
+                      </div>
+                      <a
+                        class="chakra-link css-0"
+                        href="/qatar"
+                      >
+                        <button
+                          class="chakra-button css-4xx2wk"
+                          type="button"
+                        >
+                          Details
+                        </button>
+                      </a>
+                    </div>
+                    <div
+                      class="flex items-center justify-between"
+                    >
+                      <div
+                        class="flex items-center gap-2"
+                      >
+                        <p>
+                          🇸🇦
+                        </p>
+                        <p>
+                          Saudi Arabia
+                        </p>
+                      </div>
+                      <a
+                        class="chakra-link css-0"
+                        href="/saudi-arabia"
+                      >
+                        <button
+                          class="chakra-button css-4xx2wk"
+                          type="button"
+                        >
+                          Details
+                        </button>
+                      </a>
+                    </div>
+                    <div
+                      class="flex items-center justify-between"
+                    >
+                      <div
+                        class="flex items-center gap-2"
+                      >
+                        <p>
+                          🇸🇾
+                        </p>
+                        <p>
+                          Syria
+                        </p>
+                      </div>
+                      <a
+                        class="chakra-link css-0"
+                        href="/syria"
+                      >
+                        <button
+                          class="chakra-button css-4xx2wk"
+                          type="button"
+                        >
+                          Details
+                        </button>
+                      </a>
+                    </div>
+                    <div
+                      class="flex items-center justify-between"
+                    >
+                      <div
+                        class="flex items-center gap-2"
+                      >
+                        <p>
+                          🇹🇷
+                        </p>
+                        <p>
+                          Turkey
+                        </p>
+                      </div>
+                      <a
+                        class="chakra-link css-0"
+                        href="/turkey"
+                      >
+                        <button
+                          class="chakra-button css-4xx2wk"
+                          type="button"
+                        >
+                          Details
+                        </button>
+                      </a>
+                    </div>
+                    <div
+                      class="flex items-center justify-between"
+                    >
+                      <div
+                        class="flex items-center gap-2"
+                      >
+                        <p>
+                          🇦🇪
+                        </p>
+                        <p>
+                          United Arab Emirates
+                        </p>
+                      </div>
+                      <a
+                        class="chakra-link css-0"
+                        href="/united-arab-emirates"
+                      >
+                        <button
+                          class="chakra-button css-4xx2wk"
+                          type="button"
+                        >
+                          Details
+                        </button>
+                      </a>
+                    </div>
+                    <div
+                      class="flex items-center justify-between"
+                    >
+                      <div
+                        class="flex items-center gap-2"
+                      >
+                        <p>
+                          🇾🇪
+                        </p>
+                        <p>
+                          Yemen
+                        </p>
+                      </div>
+                      <a
+                        class="chakra-link css-0"
+                        href="/yemen"
+                      >
+                        <button
+                          class="chakra-button css-4xx2wk"
+                          type="button"
+                        >
+                          Details
+                        </button>
+                      </a>
                     </div>
                   </div>
                 </div>
                 <hr
                   aria-orientation="horizontal"
-                  class="chakra-divider css-1upb9tn"
+                  class="chakra-divider border-gray-200 css-1upb9tn"
                 />
               </div>
               <div
-                class="flex flex-col gap-4"
+                class="flex flex-col gap-4 md:gap-8"
               >
                 <h2
-                  class="text-md font-medium"
+                  class="text-lg"
                 >
-                  <a
-                    href="/england"
-                  >
-                    England
-                     (
-                    3
-                    )
-                  </a>
+                  Europe
+                   (
+                  45
+                  )
                 </h2>
                 <div
-                  class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8"
+                  class="flex flex-col gap-4 md:gap-8"
                 >
                   <div
-                    class="chakra-card border border-gray-200 css-2dlz7"
+                    class="flex flex-col gap-2 md:gap-4"
                   >
+                    <h3>
+                      Central Europe
+                       (
+                      6
+                      )
+                    </h3>
+                    <hr
+                      aria-orientation="horizontal"
+                      class="chakra-divider border-gray-200 css-1upb9tn"
+                    />
                     <div
-                      class="chakra-card__body css-0"
+                      class="flex items-center justify-between"
                     >
                       <div
-                        class="flex justify-center items-center"
+                        class="flex items-center gap-2"
                       >
-                        fetch is not defined
+                        <p>
+                          🇦🇹
+                        </p>
+                        <p>
+                          Austria
+                        </p>
                       </div>
+                      <a
+                        class="chakra-link css-0"
+                        href="/austria"
+                      >
+                        <button
+                          class="chakra-button css-4xx2wk"
+                          type="button"
+                        >
+                          Details
+                        </button>
+                      </a>
+                    </div>
+                    <div
+                      class="flex items-center justify-between"
+                    >
+                      <div
+                        class="flex items-center gap-2"
+                      >
+                        <p>
+                          🇨🇿
+                        </p>
+                        <p>
+                          Czechia
+                        </p>
+                      </div>
+                      <a
+                        class="chakra-link css-0"
+                        href="/czechia"
+                      >
+                        <button
+                          class="chakra-button css-4xx2wk"
+                          type="button"
+                        >
+                          Details
+                        </button>
+                      </a>
+                    </div>
+                    <div
+                      class="flex items-center justify-between"
+                    >
+                      <div
+                        class="flex items-center gap-2"
+                      >
+                        <p>
+                          🇭🇺
+                        </p>
+                        <p>
+                          Hungary
+                        </p>
+                      </div>
+                      <a
+                        class="chakra-link css-0"
+                        href="/hungary"
+                      >
+                        <button
+                          class="chakra-button css-4xx2wk"
+                          type="button"
+                        >
+                          Details
+                        </button>
+                      </a>
+                    </div>
+                    <div
+                      class="flex items-center justify-between"
+                    >
+                      <div
+                        class="flex items-center gap-2"
+                      >
+                        <p>
+                          🇵🇱
+                        </p>
+                        <p>
+                          Poland
+                        </p>
+                      </div>
+                      <a
+                        class="chakra-link css-0"
+                        href="/poland"
+                      >
+                        <button
+                          class="chakra-button css-4xx2wk"
+                          type="button"
+                        >
+                          Details
+                        </button>
+                      </a>
+                    </div>
+                    <div
+                      class="flex items-center justify-between"
+                    >
+                      <div
+                        class="flex items-center gap-2"
+                      >
+                        <p>
+                          🇸🇰
+                        </p>
+                        <p>
+                          Slovakia
+                        </p>
+                      </div>
+                      <a
+                        class="chakra-link css-0"
+                        href="/slovakia"
+                      >
+                        <button
+                          class="chakra-button css-4xx2wk"
+                          type="button"
+                        >
+                          Details
+                        </button>
+                      </a>
+                    </div>
+                    <div
+                      class="flex items-center justify-between"
+                    >
+                      <div
+                        class="flex items-center gap-2"
+                      >
+                        <p>
+                          🇸🇮
+                        </p>
+                        <p>
+                          Slovenia
+                        </p>
+                      </div>
+                      <a
+                        class="chakra-link css-0"
+                        href="/slovenia"
+                      >
+                        <button
+                          class="chakra-button css-4xx2wk"
+                          type="button"
+                        >
+                          Details
+                        </button>
+                      </a>
                     </div>
                   </div>
                   <div
-                    class="chakra-card border border-gray-200 css-2dlz7"
+                    class="flex flex-col gap-2 md:gap-4"
                   >
+                    <h3>
+                      Eastern Europe
+                       (
+                      4
+                      )
+                    </h3>
+                    <hr
+                      aria-orientation="horizontal"
+                      class="chakra-divider border-gray-200 css-1upb9tn"
+                    />
                     <div
-                      class="chakra-card__body css-0"
+                      class="flex items-center justify-between"
                     >
                       <div
-                        class="flex justify-center items-center"
+                        class="flex items-center gap-2"
                       >
-                        fetch is not defined
+                        <p>
+                          🇧🇾
+                        </p>
+                        <p>
+                          Belarus
+                        </p>
                       </div>
+                      <a
+                        class="chakra-link css-0"
+                        href="/belarus"
+                      >
+                        <button
+                          class="chakra-button css-4xx2wk"
+                          type="button"
+                        >
+                          Details
+                        </button>
+                      </a>
+                    </div>
+                    <div
+                      class="flex items-center justify-between"
+                    >
+                      <div
+                        class="flex items-center gap-2"
+                      >
+                        <p>
+                          🇲🇩
+                        </p>
+                        <p>
+                          Moldova
+                        </p>
+                      </div>
+                      <a
+                        class="chakra-link css-0"
+                        href="/moldova"
+                      >
+                        <button
+                          class="chakra-button css-4xx2wk"
+                          type="button"
+                        >
+                          Details
+                        </button>
+                      </a>
+                    </div>
+                    <div
+                      class="flex items-center justify-between"
+                    >
+                      <div
+                        class="flex items-center gap-2"
+                      >
+                        <p>
+                          🇷🇺
+                        </p>
+                        <p>
+                          Russia
+                        </p>
+                      </div>
+                      <a
+                        class="chakra-link css-0"
+                        href="/russia"
+                      >
+                        <button
+                          class="chakra-button css-4xx2wk"
+                          type="button"
+                        >
+                          Details
+                        </button>
+                      </a>
+                    </div>
+                    <div
+                      class="flex items-center justify-between"
+                    >
+                      <div
+                        class="flex items-center gap-2"
+                      >
+                        <p>
+                          🇺🇦
+                        </p>
+                        <p>
+                          Ukraine
+                        </p>
+                      </div>
+                      <a
+                        class="chakra-link css-0"
+                        href="/ukraine"
+                      >
+                        <button
+                          class="chakra-button css-4xx2wk"
+                          type="button"
+                        >
+                          Details
+                        </button>
+                      </a>
                     </div>
                   </div>
                   <div
-                    class="chakra-card border border-gray-200 css-2dlz7"
+                    class="flex flex-col gap-2 md:gap-4"
                   >
+                    <h3>
+                      Northern Europe
+                       (
+                      10
+                      )
+                    </h3>
+                    <hr
+                      aria-orientation="horizontal"
+                      class="chakra-divider border-gray-200 css-1upb9tn"
+                    />
                     <div
-                      class="chakra-card__body css-0"
+                      class="flex items-center justify-between"
                     >
                       <div
-                        class="flex justify-center items-center"
+                        class="flex items-center gap-2"
                       >
-                        fetch is not defined
+                        <p>
+                          🇩🇰
+                        </p>
+                        <p>
+                          Denmark
+                        </p>
                       </div>
+                      <a
+                        class="chakra-link css-0"
+                        href="/denmark"
+                      >
+                        <button
+                          class="chakra-button css-4xx2wk"
+                          type="button"
+                        >
+                          Details
+                        </button>
+                      </a>
+                    </div>
+                    <div
+                      class="flex items-center justify-between"
+                    >
+                      <div
+                        class="flex items-center gap-2"
+                      >
+                        <p>
+                          🇪🇪
+                        </p>
+                        <p>
+                          Estonia
+                        </p>
+                      </div>
+                      <a
+                        class="chakra-link css-0"
+                        href="/estonia"
+                      >
+                        <button
+                          class="chakra-button css-4xx2wk"
+                          type="button"
+                        >
+                          Details
+                        </button>
+                      </a>
+                    </div>
+                    <div
+                      class="flex items-center justify-between"
+                    >
+                      <div
+                        class="flex items-center gap-2"
+                      >
+                        <p>
+                          🇫🇮
+                        </p>
+                        <p>
+                          Finland
+                        </p>
+                      </div>
+                      <a
+                        class="chakra-link css-0"
+                        href="/finland"
+                      >
+                        <button
+                          class="chakra-button css-4xx2wk"
+                          type="button"
+                        >
+                          Details
+                        </button>
+                      </a>
+                    </div>
+                    <div
+                      class="flex items-center justify-between"
+                    >
+                      <div
+                        class="flex items-center gap-2"
+                      >
+                        <p>
+                          🇮🇸
+                        </p>
+                        <p>
+                          Iceland
+                        </p>
+                      </div>
+                      <a
+                        class="chakra-link css-0"
+                        href="/iceland"
+                      >
+                        <button
+                          class="chakra-button css-4xx2wk"
+                          type="button"
+                        >
+                          Details
+                        </button>
+                      </a>
+                    </div>
+                    <div
+                      class="flex items-center justify-between"
+                    >
+                      <div
+                        class="flex items-center gap-2"
+                      >
+                        <p>
+                          🇮🇪
+                        </p>
+                        <p>
+                          Ireland
+                        </p>
+                      </div>
+                      <a
+                        class="chakra-link css-0"
+                        href="/ireland"
+                      >
+                        <button
+                          class="chakra-button css-4xx2wk"
+                          type="button"
+                        >
+                          Details
+                        </button>
+                      </a>
+                    </div>
+                    <div
+                      class="flex items-center justify-between"
+                    >
+                      <div
+                        class="flex items-center gap-2"
+                      >
+                        <p>
+                          🇱🇻
+                        </p>
+                        <p>
+                          Latvia
+                        </p>
+                      </div>
+                      <a
+                        class="chakra-link css-0"
+                        href="/latvia"
+                      >
+                        <button
+                          class="chakra-button css-4xx2wk"
+                          type="button"
+                        >
+                          Details
+                        </button>
+                      </a>
+                    </div>
+                    <div
+                      class="flex items-center justify-between"
+                    >
+                      <div
+                        class="flex items-center gap-2"
+                      >
+                        <p>
+                          🇱🇹
+                        </p>
+                        <p>
+                          Lithuania
+                        </p>
+                      </div>
+                      <a
+                        class="chakra-link css-0"
+                        href="/lithuania"
+                      >
+                        <button
+                          class="chakra-button css-4xx2wk"
+                          type="button"
+                        >
+                          Details
+                        </button>
+                      </a>
+                    </div>
+                    <div
+                      class="flex items-center justify-between"
+                    >
+                      <div
+                        class="flex items-center gap-2"
+                      >
+                        <p>
+                          🇳🇴
+                        </p>
+                        <p>
+                          Norway
+                        </p>
+                      </div>
+                      <a
+                        class="chakra-link css-0"
+                        href="/norway"
+                      >
+                        <button
+                          class="chakra-button css-4xx2wk"
+                          type="button"
+                        >
+                          Details
+                        </button>
+                      </a>
+                    </div>
+                    <div
+                      class="flex items-center justify-between"
+                    >
+                      <div
+                        class="flex items-center gap-2"
+                      >
+                        <p>
+                          🇸🇪
+                        </p>
+                        <p>
+                          Sweden
+                        </p>
+                      </div>
+                      <a
+                        class="chakra-link css-0"
+                        href="/sweden"
+                      >
+                        <button
+                          class="chakra-button css-4xx2wk"
+                          type="button"
+                        >
+                          Details
+                        </button>
+                      </a>
+                    </div>
+                    <div
+                      class="flex items-center justify-between"
+                    >
+                      <div
+                        class="flex items-center gap-2"
+                      >
+                        <p>
+                          🇬🇧
+                        </p>
+                        <p>
+                          United Kingdom
+                        </p>
+                      </div>
+                      <a
+                        class="chakra-link css-0"
+                        href="/united-kingdom"
+                      >
+                        <button
+                          class="chakra-button css-4xx2wk"
+                          type="button"
+                        >
+                          Details
+                        </button>
+                      </a>
+                    </div>
+                  </div>
+                  <div
+                    class="flex flex-col gap-2 md:gap-4"
+                  >
+                    <h3>
+                      Southeast Europe
+                       (
+                      8
+                      )
+                    </h3>
+                    <hr
+                      aria-orientation="horizontal"
+                      class="chakra-divider border-gray-200 css-1upb9tn"
+                    />
+                    <div
+                      class="flex items-center justify-between"
+                    >
+                      <div
+                        class="flex items-center gap-2"
+                      >
+                        <p>
+                          🇦🇱
+                        </p>
+                        <p>
+                          Albania
+                        </p>
+                      </div>
+                      <a
+                        class="chakra-link css-0"
+                        href="/albania"
+                      >
+                        <button
+                          class="chakra-button css-4xx2wk"
+                          type="button"
+                        >
+                          Details
+                        </button>
+                      </a>
+                    </div>
+                    <div
+                      class="flex items-center justify-between"
+                    >
+                      <div
+                        class="flex items-center gap-2"
+                      >
+                        <p>
+                          🇧🇦
+                        </p>
+                        <p>
+                          Bosnia and Herzegovina
+                        </p>
+                      </div>
+                      <a
+                        class="chakra-link css-0"
+                        href="/bosnia-and-herzegovina"
+                      >
+                        <button
+                          class="chakra-button css-4xx2wk"
+                          type="button"
+                        >
+                          Details
+                        </button>
+                      </a>
+                    </div>
+                    <div
+                      class="flex items-center justify-between"
+                    >
+                      <div
+                        class="flex items-center gap-2"
+                      >
+                        <p>
+                          🇧🇬
+                        </p>
+                        <p>
+                          Bulgaria
+                        </p>
+                      </div>
+                      <a
+                        class="chakra-link css-0"
+                        href="/bulgaria"
+                      >
+                        <button
+                          class="chakra-button css-4xx2wk"
+                          type="button"
+                        >
+                          Details
+                        </button>
+                      </a>
+                    </div>
+                    <div
+                      class="flex items-center justify-between"
+                    >
+                      <div
+                        class="flex items-center gap-2"
+                      >
+                        <p>
+                          🇭🇷
+                        </p>
+                        <p>
+                          Croatia
+                        </p>
+                      </div>
+                      <a
+                        class="chakra-link css-0"
+                        href="/croatia"
+                      >
+                        <button
+                          class="chakra-button css-4xx2wk"
+                          type="button"
+                        >
+                          Details
+                        </button>
+                      </a>
+                    </div>
+                    <div
+                      class="flex items-center justify-between"
+                    >
+                      <div
+                        class="flex items-center gap-2"
+                      >
+                        <p>
+                          🇲🇪
+                        </p>
+                        <p>
+                          Montenegro
+                        </p>
+                      </div>
+                      <a
+                        class="chakra-link css-0"
+                        href="/montenegro"
+                      >
+                        <button
+                          class="chakra-button css-4xx2wk"
+                          type="button"
+                        >
+                          Details
+                        </button>
+                      </a>
+                    </div>
+                    <div
+                      class="flex items-center justify-between"
+                    >
+                      <div
+                        class="flex items-center gap-2"
+                      >
+                        <p>
+                          🇲🇰
+                        </p>
+                        <p>
+                          North Macedonia
+                        </p>
+                      </div>
+                      <a
+                        class="chakra-link css-0"
+                        href="/north-macedonia"
+                      >
+                        <button
+                          class="chakra-button css-4xx2wk"
+                          type="button"
+                        >
+                          Details
+                        </button>
+                      </a>
+                    </div>
+                    <div
+                      class="flex items-center justify-between"
+                    >
+                      <div
+                        class="flex items-center gap-2"
+                      >
+                        <p>
+                          🇷🇴
+                        </p>
+                        <p>
+                          Romania
+                        </p>
+                      </div>
+                      <a
+                        class="chakra-link css-0"
+                        href="/romania"
+                      >
+                        <button
+                          class="chakra-button css-4xx2wk"
+                          type="button"
+                        >
+                          Details
+                        </button>
+                      </a>
+                    </div>
+                    <div
+                      class="flex items-center justify-between"
+                    >
+                      <div
+                        class="flex items-center gap-2"
+                      >
+                        <p>
+                          🇷🇸
+                        </p>
+                        <p>
+                          Serbia
+                        </p>
+                      </div>
+                      <a
+                        class="chakra-link css-0"
+                        href="/serbia"
+                      >
+                        <button
+                          class="chakra-button css-4xx2wk"
+                          type="button"
+                        >
+                          Details
+                        </button>
+                      </a>
+                    </div>
+                  </div>
+                  <div
+                    class="flex flex-col gap-2 md:gap-4"
+                  >
+                    <h3>
+                      Southern Europe
+                       (
+                      9
+                      )
+                    </h3>
+                    <hr
+                      aria-orientation="horizontal"
+                      class="chakra-divider border-gray-200 css-1upb9tn"
+                    />
+                    <div
+                      class="flex items-center justify-between"
+                    >
+                      <div
+                        class="flex items-center gap-2"
+                      >
+                        <p>
+                          🇦🇩
+                        </p>
+                        <p>
+                          Andorra
+                        </p>
+                      </div>
+                      <a
+                        class="chakra-link css-0"
+                        href="/andorra"
+                      >
+                        <button
+                          class="chakra-button css-4xx2wk"
+                          type="button"
+                        >
+                          Details
+                        </button>
+                      </a>
+                    </div>
+                    <div
+                      class="flex items-center justify-between"
+                    >
+                      <div
+                        class="flex items-center gap-2"
+                      >
+                        <p>
+                          🇨🇾
+                        </p>
+                        <p>
+                          Cyprus
+                        </p>
+                      </div>
+                      <a
+                        class="chakra-link css-0"
+                        href="/cyprus"
+                      >
+                        <button
+                          class="chakra-button css-4xx2wk"
+                          type="button"
+                        >
+                          Details
+                        </button>
+                      </a>
+                    </div>
+                    <div
+                      class="flex items-center justify-between"
+                    >
+                      <div
+                        class="flex items-center gap-2"
+                      >
+                        <p>
+                          🇬🇷
+                        </p>
+                        <p>
+                          Greece
+                        </p>
+                      </div>
+                      <a
+                        class="chakra-link css-0"
+                        href="/greece"
+                      >
+                        <button
+                          class="chakra-button css-4xx2wk"
+                          type="button"
+                        >
+                          Details
+                        </button>
+                      </a>
+                    </div>
+                    <div
+                      class="flex items-center justify-between"
+                    >
+                      <div
+                        class="flex items-center gap-2"
+                      >
+                        <p>
+                          🇮🇹
+                        </p>
+                        <p>
+                          Italy
+                        </p>
+                      </div>
+                      <a
+                        class="chakra-link css-0"
+                        href="/italy"
+                      >
+                        <button
+                          class="chakra-button css-4xx2wk"
+                          type="button"
+                        >
+                          Details
+                        </button>
+                      </a>
+                    </div>
+                    <div
+                      class="flex items-center justify-between"
+                    >
+                      <div
+                        class="flex items-center gap-2"
+                      >
+                        <p>
+                          🇲🇹
+                        </p>
+                        <p>
+                          Malta
+                        </p>
+                      </div>
+                      <a
+                        class="chakra-link css-0"
+                        href="/malta"
+                      >
+                        <button
+                          class="chakra-button css-4xx2wk"
+                          type="button"
+                        >
+                          Details
+                        </button>
+                      </a>
+                    </div>
+                    <div
+                      class="flex items-center justify-between"
+                    >
+                      <div
+                        class="flex items-center gap-2"
+                      >
+                        <p>
+                          🇵🇹
+                        </p>
+                        <p>
+                          Portugal
+                        </p>
+                      </div>
+                      <a
+                        class="chakra-link css-0"
+                        href="/portugal"
+                      >
+                        <button
+                          class="chakra-button css-4xx2wk"
+                          type="button"
+                        >
+                          Details
+                        </button>
+                      </a>
+                    </div>
+                    <div
+                      class="flex items-center justify-between"
+                    >
+                      <div
+                        class="flex items-center gap-2"
+                      >
+                        <p>
+                          🇸🇲
+                        </p>
+                        <p>
+                          San Marino
+                        </p>
+                      </div>
+                      <a
+                        class="chakra-link css-0"
+                        href="/san-marino"
+                      >
+                        <button
+                          class="chakra-button css-4xx2wk"
+                          type="button"
+                        >
+                          Details
+                        </button>
+                      </a>
+                    </div>
+                    <div
+                      class="flex items-center justify-between"
+                    >
+                      <div
+                        class="flex items-center gap-2"
+                      >
+                        <p>
+                          🇪🇸
+                        </p>
+                        <p>
+                          Spain
+                        </p>
+                      </div>
+                      <a
+                        class="chakra-link css-0"
+                        href="/spain"
+                      >
+                        <button
+                          class="chakra-button css-4xx2wk"
+                          type="button"
+                        >
+                          Details
+                        </button>
+                      </a>
+                    </div>
+                    <div
+                      class="flex items-center justify-between"
+                    >
+                      <div
+                        class="flex items-center gap-2"
+                      >
+                        <p>
+                          🇻🇦
+                        </p>
+                        <p>
+                          Vatican City
+                        </p>
+                      </div>
+                      <a
+                        class="chakra-link css-0"
+                        href="/vatican-city"
+                      >
+                        <button
+                          class="chakra-button css-4xx2wk"
+                          type="button"
+                        >
+                          Details
+                        </button>
+                      </a>
+                    </div>
+                  </div>
+                  <div
+                    class="flex flex-col gap-2 md:gap-4"
+                  >
+                    <h3>
+                      Western Europe
+                       (
+                      8
+                      )
+                    </h3>
+                    <hr
+                      aria-orientation="horizontal"
+                      class="chakra-divider border-gray-200 css-1upb9tn"
+                    />
+                    <div
+                      class="flex items-center justify-between"
+                    >
+                      <div
+                        class="flex items-center gap-2"
+                      >
+                        <p>
+                          🇧🇪
+                        </p>
+                        <p>
+                          Belgium
+                        </p>
+                      </div>
+                      <a
+                        class="chakra-link css-0"
+                        href="/belgium"
+                      >
+                        <button
+                          class="chakra-button css-4xx2wk"
+                          type="button"
+                        >
+                          Details
+                        </button>
+                      </a>
+                    </div>
+                    <div
+                      class="flex items-center justify-between"
+                    >
+                      <div
+                        class="flex items-center gap-2"
+                      >
+                        <p>
+                          🇫🇷
+                        </p>
+                        <p>
+                          France
+                        </p>
+                      </div>
+                      <a
+                        class="chakra-link css-0"
+                        href="/france"
+                      >
+                        <button
+                          class="chakra-button css-4xx2wk"
+                          type="button"
+                        >
+                          Details
+                        </button>
+                      </a>
+                    </div>
+                    <div
+                      class="flex items-center justify-between"
+                    >
+                      <div
+                        class="flex items-center gap-2"
+                      >
+                        <p>
+                          🇩🇪
+                        </p>
+                        <p>
+                          Germany
+                        </p>
+                      </div>
+                      <a
+                        class="chakra-link css-0"
+                        href="/germany"
+                      >
+                        <button
+                          class="chakra-button css-4xx2wk"
+                          type="button"
+                        >
+                          Details
+                        </button>
+                      </a>
+                    </div>
+                    <div
+                      class="flex items-center justify-between"
+                    >
+                      <div
+                        class="flex items-center gap-2"
+                      >
+                        <p>
+                          🇱🇮
+                        </p>
+                        <p>
+                          Liechtenstein
+                        </p>
+                      </div>
+                      <a
+                        class="chakra-link css-0"
+                        href="/liechtenstein"
+                      >
+                        <button
+                          class="chakra-button css-4xx2wk"
+                          type="button"
+                        >
+                          Details
+                        </button>
+                      </a>
+                    </div>
+                    <div
+                      class="flex items-center justify-between"
+                    >
+                      <div
+                        class="flex items-center gap-2"
+                      >
+                        <p>
+                          🇱🇺
+                        </p>
+                        <p>
+                          Luxembourg
+                        </p>
+                      </div>
+                      <a
+                        class="chakra-link css-0"
+                        href="/luxembourg"
+                      >
+                        <button
+                          class="chakra-button css-4xx2wk"
+                          type="button"
+                        >
+                          Details
+                        </button>
+                      </a>
+                    </div>
+                    <div
+                      class="flex items-center justify-between"
+                    >
+                      <div
+                        class="flex items-center gap-2"
+                      >
+                        <p>
+                          🇲🇨
+                        </p>
+                        <p>
+                          Monaco
+                        </p>
+                      </div>
+                      <a
+                        class="chakra-link css-0"
+                        href="/monaco"
+                      >
+                        <button
+                          class="chakra-button css-4xx2wk"
+                          type="button"
+                        >
+                          Details
+                        </button>
+                      </a>
+                    </div>
+                    <div
+                      class="flex items-center justify-between"
+                    >
+                      <div
+                        class="flex items-center gap-2"
+                      >
+                        <p>
+                          🇳🇱
+                        </p>
+                        <p>
+                          Netherlands
+                        </p>
+                      </div>
+                      <a
+                        class="chakra-link css-0"
+                        href="/netherlands"
+                      >
+                        <button
+                          class="chakra-button css-4xx2wk"
+                          type="button"
+                        >
+                          Details
+                        </button>
+                      </a>
+                    </div>
+                    <div
+                      class="flex items-center justify-between"
+                    >
+                      <div
+                        class="flex items-center gap-2"
+                      >
+                        <p>
+                          🇨🇭
+                        </p>
+                        <p>
+                          Switzerland
+                        </p>
+                      </div>
+                      <a
+                        class="chakra-link css-0"
+                        href="/switzerland"
+                      >
+                        <button
+                          class="chakra-button css-4xx2wk"
+                          type="button"
+                        >
+                          Details
+                        </button>
+                      </a>
                     </div>
                   </div>
                 </div>
                 <hr
                   aria-orientation="horizontal"
-                  class="chakra-divider css-1upb9tn"
+                  class="chakra-divider border-gray-200 css-1upb9tn"
                 />
               </div>
               <div
-                class="flex flex-col gap-4"
+                class="flex flex-col gap-4 md:gap-8"
               >
                 <h2
-                  class="text-md font-medium"
+                  class="text-lg"
                 >
-                  <a
-                    href="/germany"
-                  >
-                    Germany
-                     (
-                    3
-                    )
-                  </a>
+                  Oceania
+                   (
+                  14
+                  )
                 </h2>
                 <div
-                  class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8"
+                  class="flex flex-col gap-4 md:gap-8"
                 >
                   <div
-                    class="chakra-card border border-gray-200 css-2dlz7"
+                    class="flex flex-col gap-2 md:gap-4"
                   >
+                    <h3>
+                      Australia and New Zealand
+                       (
+                      2
+                      )
+                    </h3>
+                    <hr
+                      aria-orientation="horizontal"
+                      class="chakra-divider border-gray-200 css-1upb9tn"
+                    />
                     <div
-                      class="chakra-card__body css-0"
+                      class="flex items-center justify-between"
                     >
                       <div
-                        class="flex justify-center items-center"
+                        class="flex items-center gap-2"
                       >
-                        fetch is not defined
+                        <p>
+                          🇦🇺
+                        </p>
+                        <p>
+                          Australia
+                        </p>
                       </div>
+                      <a
+                        class="chakra-link css-0"
+                        href="/australia"
+                      >
+                        <button
+                          class="chakra-button css-4xx2wk"
+                          type="button"
+                        >
+                          Details
+                        </button>
+                      </a>
+                    </div>
+                    <div
+                      class="flex items-center justify-between"
+                    >
+                      <div
+                        class="flex items-center gap-2"
+                      >
+                        <p>
+                          🇳🇿
+                        </p>
+                        <p>
+                          New Zealand
+                        </p>
+                      </div>
+                      <a
+                        class="chakra-link css-0"
+                        href="/new-zealand"
+                      >
+                        <button
+                          class="chakra-button css-4xx2wk"
+                          type="button"
+                        >
+                          Details
+                        </button>
+                      </a>
                     </div>
                   </div>
                   <div
-                    class="chakra-card border border-gray-200 css-2dlz7"
+                    class="flex flex-col gap-2 md:gap-4"
                   >
+                    <h3>
+                      Melanesia
+                       (
+                      4
+                      )
+                    </h3>
+                    <hr
+                      aria-orientation="horizontal"
+                      class="chakra-divider border-gray-200 css-1upb9tn"
+                    />
                     <div
-                      class="chakra-card__body css-0"
+                      class="flex items-center justify-between"
                     >
                       <div
-                        class="flex justify-center items-center"
+                        class="flex items-center gap-2"
                       >
-                        fetch is not defined
+                        <p>
+                          🇫🇯
+                        </p>
+                        <p>
+                          Fiji
+                        </p>
                       </div>
+                      <a
+                        class="chakra-link css-0"
+                        href="/fiji"
+                      >
+                        <button
+                          class="chakra-button css-4xx2wk"
+                          type="button"
+                        >
+                          Details
+                        </button>
+                      </a>
+                    </div>
+                    <div
+                      class="flex items-center justify-between"
+                    >
+                      <div
+                        class="flex items-center gap-2"
+                      >
+                        <p>
+                          🇵🇬
+                        </p>
+                        <p>
+                          Papua New Guinea
+                        </p>
+                      </div>
+                      <a
+                        class="chakra-link css-0"
+                        href="/papua-new-guinea"
+                      >
+                        <button
+                          class="chakra-button css-4xx2wk"
+                          type="button"
+                        >
+                          Details
+                        </button>
+                      </a>
+                    </div>
+                    <div
+                      class="flex items-center justify-between"
+                    >
+                      <div
+                        class="flex items-center gap-2"
+                      >
+                        <p>
+                          🇸🇧
+                        </p>
+                        <p>
+                          Solomon Islands
+                        </p>
+                      </div>
+                      <a
+                        class="chakra-link css-0"
+                        href="/solomon-islands"
+                      >
+                        <button
+                          class="chakra-button css-4xx2wk"
+                          type="button"
+                        >
+                          Details
+                        </button>
+                      </a>
+                    </div>
+                    <div
+                      class="flex items-center justify-between"
+                    >
+                      <div
+                        class="flex items-center gap-2"
+                      >
+                        <p>
+                          🇻🇺
+                        </p>
+                        <p>
+                          Vanuatu
+                        </p>
+                      </div>
+                      <a
+                        class="chakra-link css-0"
+                        href="/vanuatu"
+                      >
+                        <button
+                          class="chakra-button css-4xx2wk"
+                          type="button"
+                        >
+                          Details
+                        </button>
+                      </a>
                     </div>
                   </div>
                   <div
-                    class="chakra-card border border-gray-200 css-2dlz7"
+                    class="flex flex-col gap-2 md:gap-4"
                   >
+                    <h3>
+                      Micronesia
+                       (
+                      5
+                      )
+                    </h3>
+                    <hr
+                      aria-orientation="horizontal"
+                      class="chakra-divider border-gray-200 css-1upb9tn"
+                    />
                     <div
-                      class="chakra-card__body css-0"
+                      class="flex items-center justify-between"
                     >
                       <div
-                        class="flex justify-center items-center"
+                        class="flex items-center gap-2"
                       >
-                        fetch is not defined
+                        <p>
+                          🇰🇮
+                        </p>
+                        <p>
+                          Kiribati
+                        </p>
                       </div>
+                      <a
+                        class="chakra-link css-0"
+                        href="/kiribati"
+                      >
+                        <button
+                          class="chakra-button css-4xx2wk"
+                          type="button"
+                        >
+                          Details
+                        </button>
+                      </a>
+                    </div>
+                    <div
+                      class="flex items-center justify-between"
+                    >
+                      <div
+                        class="flex items-center gap-2"
+                      >
+                        <p>
+                          🇲🇭
+                        </p>
+                        <p>
+                          Marshall Islands
+                        </p>
+                      </div>
+                      <a
+                        class="chakra-link css-0"
+                        href="/marshall-islands"
+                      >
+                        <button
+                          class="chakra-button css-4xx2wk"
+                          type="button"
+                        >
+                          Details
+                        </button>
+                      </a>
+                    </div>
+                    <div
+                      class="flex items-center justify-between"
+                    >
+                      <div
+                        class="flex items-center gap-2"
+                      >
+                        <p>
+                          🇫🇲
+                        </p>
+                        <p>
+                          Micronesia
+                        </p>
+                      </div>
+                      <a
+                        class="chakra-link css-0"
+                        href="/micronesia"
+                      >
+                        <button
+                          class="chakra-button css-4xx2wk"
+                          type="button"
+                        >
+                          Details
+                        </button>
+                      </a>
+                    </div>
+                    <div
+                      class="flex items-center justify-between"
+                    >
+                      <div
+                        class="flex items-center gap-2"
+                      >
+                        <p>
+                          🇳🇷
+                        </p>
+                        <p>
+                          Nauru
+                        </p>
+                      </div>
+                      <a
+                        class="chakra-link css-0"
+                        href="/nauru"
+                      >
+                        <button
+                          class="chakra-button css-4xx2wk"
+                          type="button"
+                        >
+                          Details
+                        </button>
+                      </a>
+                    </div>
+                    <div
+                      class="flex items-center justify-between"
+                    >
+                      <div
+                        class="flex items-center gap-2"
+                      >
+                        <p>
+                          🇵🇼
+                        </p>
+                        <p>
+                          Palau
+                        </p>
+                      </div>
+                      <a
+                        class="chakra-link css-0"
+                        href="/palau"
+                      >
+                        <button
+                          class="chakra-button css-4xx2wk"
+                          type="button"
+                        >
+                          Details
+                        </button>
+                      </a>
+                    </div>
+                  </div>
+                  <div
+                    class="flex flex-col gap-2 md:gap-4"
+                  >
+                    <h3>
+                      Polynesia
+                       (
+                      3
+                      )
+                    </h3>
+                    <hr
+                      aria-orientation="horizontal"
+                      class="chakra-divider border-gray-200 css-1upb9tn"
+                    />
+                    <div
+                      class="flex items-center justify-between"
+                    >
+                      <div
+                        class="flex items-center gap-2"
+                      >
+                        <p>
+                          🇼🇸
+                        </p>
+                        <p>
+                          Samoa
+                        </p>
+                      </div>
+                      <a
+                        class="chakra-link css-0"
+                        href="/samoa"
+                      >
+                        <button
+                          class="chakra-button css-4xx2wk"
+                          type="button"
+                        >
+                          Details
+                        </button>
+                      </a>
+                    </div>
+                    <div
+                      class="flex items-center justify-between"
+                    >
+                      <div
+                        class="flex items-center gap-2"
+                      >
+                        <p>
+                          🇹🇴
+                        </p>
+                        <p>
+                          Tonga
+                        </p>
+                      </div>
+                      <a
+                        class="chakra-link css-0"
+                        href="/tonga"
+                      >
+                        <button
+                          class="chakra-button css-4xx2wk"
+                          type="button"
+                        >
+                          Details
+                        </button>
+                      </a>
+                    </div>
+                    <div
+                      class="flex items-center justify-between"
+                    >
+                      <div
+                        class="flex items-center gap-2"
+                      >
+                        <p>
+                          🇹🇻
+                        </p>
+                        <p>
+                          Tuvalu
+                        </p>
+                      </div>
+                      <a
+                        class="chakra-link css-0"
+                        href="/tuvalu"
+                      >
+                        <button
+                          class="chakra-button css-4xx2wk"
+                          type="button"
+                        >
+                          Details
+                        </button>
+                      </a>
                     </div>
                   </div>
                 </div>
                 <hr
                   aria-orientation="horizontal"
-                  class="chakra-divider css-1upb9tn"
-                />
-              </div>
-              <div
-                class="flex flex-col gap-4"
-              >
-                <h2
-                  class="text-md font-medium"
-                >
-                  <a
-                    href="/singapore"
-                  >
-                    Singapore
-                     (
-                    1
-                    )
-                  </a>
-                </h2>
-                <div
-                  class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8"
-                >
-                  <div
-                    class="chakra-card border border-gray-200 css-2dlz7"
-                  >
-                    <div
-                      class="chakra-card__body css-0"
-                    >
-                      <div
-                        class="flex justify-center items-center"
-                      >
-                        fetch is not defined
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <hr
-                  aria-orientation="horizontal"
-                  class="chakra-divider css-1upb9tn"
-                />
-              </div>
-              <div
-                class="flex flex-col gap-4"
-              >
-                <h2
-                  class="text-md font-medium"
-                >
-                  <a
-                    href="/south-korea"
-                  >
-                    South Korea
-                     (
-                    1
-                    )
-                  </a>
-                </h2>
-                <div
-                  class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8"
-                >
-                  <div
-                    class="chakra-card border border-gray-200 css-2dlz7"
-                  >
-                    <div
-                      class="chakra-card__body css-0"
-                    >
-                      <div
-                        class="flex justify-center items-center"
-                      >
-                        fetch is not defined
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <hr
-                  aria-orientation="horizontal"
-                  class="chakra-divider css-1upb9tn"
+                  class="chakra-divider border-gray-200 css-1upb9tn"
                 />
               </div>
             </div>
@@ -451,13 +5323,11 @@ exports[`HomePage to match snapshot 1`] = `
         <div
           class="px-8 py-4"
         >
-          <p
-            class="uppercase"
-          >
+          <p>
             © 
             2023
              
-            Weather
+            Countries
           </p>
         </div>
       </div>

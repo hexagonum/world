@@ -11,11 +11,15 @@ exports[`Navbar to match snapshot 1`] = `
       <div
         class="px-8 py-4"
       >
-        <h1
-          class="uppercase font-medium"
+        <a
+          href="/"
         >
-          Weather
-        </h1>
+          <h1
+            class="uppercase font-medium"
+          >
+            Countries
+          </h1>
+        </a>
       </div>
     </div>
   </nav>

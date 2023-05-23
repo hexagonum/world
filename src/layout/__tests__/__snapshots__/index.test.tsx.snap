@@ -1,0 +1,56 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Layout to match snapshot 1`] = `
+<div>
+  <div
+    class="flex flex-col h-screen"
+  >
+    <nav
+      class="border-b shadow"
+    >
+      <div
+        class="container mx-auto"
+      >
+        <div
+          class="px-8 py-4"
+        >
+          <a
+            href="/"
+          >
+            <h1
+              class="uppercase font-medium"
+            >
+              Countries
+            </h1>
+          </a>
+        </div>
+      </div>
+    </nav>
+    <main
+      class="grow overflow-hidden"
+    >
+      <div
+        class="h-full overflow-auto"
+      />
+    </main>
+    <footer
+      class="border-t"
+    >
+      <div
+        class="container mx-auto"
+      >
+        <div
+          class="px-8 py-4"
+        >
+          <p>
+            © 
+            2023
+             
+            Countries
+          </p>
+        </div>
+      </div>
+    </footer>
+  </div>
+</div>
+`;
