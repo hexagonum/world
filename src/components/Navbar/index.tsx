@@ -7,9 +7,12 @@ export const Navbar: React.FC = () => {
     <nav className="border-b shadow">
       <Container>
         <div className="px-8 py-4">
-          <Link href="/">
-            <h1 className="uppercase font-medium">{APP_NAME}</h1>
-          </Link>
+          <div className="flex items-center gap-4 md:gap-8">
+            <Link href="/" className="text-xl uppercase">
+              {APP_NAME}
+            </Link>
+            <Link href="/countries">Countries</Link>
+          </div>
         </div>
       </Container>
     </nav>

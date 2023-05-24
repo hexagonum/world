@@ -6,7 +6,7 @@ import { NextPage } from 'next';
 import Link from 'next/link';
 import { ChangeEvent, useState } from 'react';
 
-export const HomePage: NextPage = () => {
+export const CountriesPage: NextPage = () => {
   const [query, setQuery] = useState<string>('');
 
   const countriesByFilter = unitedNationMembers.filter(
@@ -99,4 +99,4 @@ export const HomePage: NextPage = () => {
   );
 };
 
-export default HomePage;
+export default CountriesPage;

@@ -1,8 +1,9 @@
-import { Input, Link, Table, TableCaption, TableContainer, Tbody, Td, Th, Thead, Tr } from '@chakra-ui/react';
+import { Input, Table, TableCaption, TableContainer, Tbody, Td, Th, Thead, Tr } from '@chakra-ui/react';
 import Container from '@weather/components/Container';
 import unitedNationMembers from '@weather/data/united-nation-members.json';
 import Layout from '@weather/layout';
 import { NextPage } from 'next';
+import Link from 'next/link';
 import { ChangeEvent, useState } from 'react';
 
 const clonedUnitedNationMembers = JSON.parse(JSON.stringify(unitedNationMembers));
@@ -43,7 +44,7 @@ export const LanguagesPage: NextPage = () => {
                   <Thead>
                     <Tr>
                       <Th>Country ({countriesByFilter.length})</Th>
-                      <Th>Total</Th>
+                      <Th isNumeric>Total</Th>
                       <Th>Languages</Th>
                     </Tr>
                   </Thead>
@@ -58,7 +59,7 @@ export const LanguagesPage: NextPage = () => {
                       return (
                         <Tr key={common}>
                           <Td>
-                            <Link href={`/${cca3}`}>{common}</Link>
+                            <Link href={`/countries/${cca3}`}>{common}</Link>
                           </Td>
                           <Td isNumeric>{Object.keys(languages).length}</Td>
                           <Td>
@@ -98,7 +99,7 @@ export const LanguagesPage: NextPage = () => {
                     })}
                   </Tbody>
                   <TableCaption>
-                    <p className="pb-4">Languages ({unitedNationMembers.length})</p>
+                    <p className="pb-4">Languages ({countriesByFilter.length})</p>
                   </TableCaption>
                 </Table>
               </TableContainer>

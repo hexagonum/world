@@ -9,7 +9,7 @@ const getCountries = async (): Promise<any[]> => {
       const area: number = country.area || 0;
       const population: number = country.population || 0;
       const borders: string[] = country.borders || [];
-      const density: number = area === 0 ? 0 : population / area;
+      const density: number = area === 0 ? 0 : Math.round(population / area);
       return { ...country, density, borders };
     });
   } catch (error) {
