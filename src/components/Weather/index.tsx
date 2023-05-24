@@ -1,6 +1,6 @@
 import { Card, CardBody, CardFooter, Divider } from '@chakra-ui/react';
-import Clock from '@weather/components/Clock';
-import useFetch from '@weather/hooks/use-fetch';
+import Clock from '@world/components/Clock';
+import useFetch from '@world/hooks/use-fetch';
 
 export type WeatherProps = {
   city: string;

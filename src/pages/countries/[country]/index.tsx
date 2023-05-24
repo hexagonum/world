@@ -1,12 +1,12 @@
 import { Badge, Card, CardBody, Divider, Table, TableContainer, Tbody, Td, Tr } from '@chakra-ui/react';
-import { Container } from '@weather/components/Container';
-import { Weather } from '@weather/components/Weather';
-import { cities } from '@weather/data/cities';
-import isoAlpha3Codes from '@weather/data/iso-alpha-3-codes.json';
-import trendsByCountries from '@weather/data/trends.json';
-import unitedNationMembers from '@weather/data/united-nation-members.json';
-import { Layout } from '@weather/layout';
-import { City } from '@weather/types';
+import { Container } from '@world/components/Container';
+import { Weather } from '@world/components/Weather';
+import { cities } from '@world/data/cities';
+import isoAlpha3Codes from '@world/data/iso-alpha-3-codes.json';
+import trendsByCountries from '@world/data/trends.json';
+import unitedNationMembers from '@world/data/united-nation-members.json';
+import { Layout } from '@world/layout';
+import { City } from '@world/types';
 import { NextPage } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -121,6 +121,18 @@ const GeographySection: React.FC<{ country: any }> = ({ country }) => {
             </Tr>
             <Tr>
               <Td>
+                <Link href="/countries/timezones">
+                  <b>Timezones ({country.timezones.length})</b>
+                </Link>
+              </Td>
+              <Td>
+                <p className="whitespace-normal text-right">
+                  {country.timezones.map((timezone: string) => timezone).join(', ')}
+                </p>
+              </Td>
+            </Tr>
+            <Tr>
+              <Td>
                 <Link href="/countries/borders">
                   <b>Borders ({country.borders.length})</b>
                 </Link>
@@ -178,7 +190,7 @@ const PopulationSection: React.FC<{ country: any }> = ({ country }) => {
                 </Link>
               </Td>
               <Td isNumeric>
-                {(country.population / country.area).toFixed(2)} people/km<sup>2</sup>
+                {country.density} people/km<sup>2</sup>
               </Td>
             </Tr>
           </Tbody>
@@ -211,6 +223,7 @@ const CountryPage: NextPage = () => {
     languages: {},
     borders: [],
     currencies: {},
+    timezones: [],
   };
   const citiesByCountry = cities.filter(
     ({ country: cityCountry }) => country.name.common.toLowerCase() === cityCountry.toLowerCase()

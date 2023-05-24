@@ -1,7 +1,7 @@
 import { Input, Table, TableCaption, TableContainer, Tbody, Td, Th, Thead, Tr } from '@chakra-ui/react';
-import Container from '@weather/components/Container';
-import unitedNationMembers from '@weather/data/united-nation-members.json';
-import Layout from '@weather/layout';
+import Container from '@world/components/Container';
+import unitedNationMembers from '@world/data/united-nation-members.json';
+import Layout from '@world/layout';
 import { NextPage } from 'next';
 import Link from 'next/link';
 import { ChangeEvent, useState } from 'react';

@@ -1,5 +1,5 @@
-import Container from '@weather/components/Container';
-import { APP_NAME } from '@weather/configs';
+import Container from '@world/components/Container';
+import { APP_NAME } from '@world/configs';
 
 export const Footer: React.FC = () => {
   const year = new Date().getFullYear();

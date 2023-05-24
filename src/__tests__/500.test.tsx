@@ -1,5 +1,5 @@
 import { render } from '@testing-library/react';
-import { InternalServerErrorPage } from '@weather/pages/500';
+import { InternalServerErrorPage } from '@world/pages/500';
 
 describe('InternalServerErrorPage', () => {
   it('to match snapshot', () => {

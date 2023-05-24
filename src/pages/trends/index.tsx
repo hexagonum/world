@@ -1,7 +1,7 @@
 import { Card, CardBody, Divider, Select } from '@chakra-ui/react';
-import { Container } from '@weather/components/Container';
-import trends from '@weather/data/trends.json';
-import { Layout } from '@weather/layout';
+import { Container } from '@world/components/Container';
+import trends from '@world/data/trends.json';
+import { Layout } from '@world/layout';
 import { NextPage } from 'next';
 import Link from 'next/link';
 import { useRouter } from 'next/router';

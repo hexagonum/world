@@ -1,9 +1,9 @@
 import { Divider, Input } from '@chakra-ui/react';
-import Container from '@weather/components/Container';
-import { Weather } from '@weather/components/Weather';
-import { cities } from '@weather/data/cities';
-import { Layout } from '@weather/layout';
-import { City } from '@weather/types';
+import Container from '@world/components/Container';
+import { Weather } from '@world/components/Weather';
+import { cities } from '@world/data/cities';
+import { Layout } from '@world/layout';
+import { City } from '@world/types';
 import { NextPage } from 'next';
 import { ChangeEvent, useState } from 'react';
 

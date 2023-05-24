@@ -1,5 +1,5 @@
-import Footer from '@weather/components/Footer';
-import Navbar from '@weather/components/Navbar';
+import Footer from '@world/components/Footer';
+import Navbar from '@world/components/Navbar';
 import { ReactNode } from 'react';
 
 export type LayoutProps = { children?: ReactNode };

@@ -1,6 +1,5 @@
-import { Badge, Input, Table, TableCaption, TableContainer, Tbody, Td, Th, Thead, Tr } from '@chakra-ui/react';
+import { Input, Table, TableCaption, TableContainer, Tbody, Td, Th, Thead, Tr } from '@chakra-ui/react';
 import Container from '@world/components/Container';
-import isoAlpha3Codes from '@world/data/iso-alpha-3-codes.json';
 import unitedNationMembers from '@world/data/united-nation-members.json';
 import Layout from '@world/layout';
 import { NextPage } from 'next';
@@ -8,19 +7,16 @@ import Link from 'next/link';
 import { ChangeEvent, useState } from 'react';
 
 const clonedUnitedNationMembers = JSON.parse(JSON.stringify(unitedNationMembers));
-clonedUnitedNationMembers.sort((a: any, b: any) => (a.borders.length > b.borders.length ? -1 : 1));
+clonedUnitedNationMembers.sort((a: any, b: any) => (a.timezones.length > b.timezones.length ? -1 : 1));
 
-export const BordersPage: NextPage = () => {
+export const TopLevelDomainsPage: NextPage = () => {
   const [query, setQuery] = useState<string>('');
 
-  const countriesByFilter = clonedUnitedNationMembers.filter(({ name: { common = '' }, borders = [] }) => {
-    const names: string[] = borders.map((border: string) => (isoAlpha3Codes as Record<string, string>)[border]);
-    const codeFlag: boolean =
-      query !== '' ? borders.some((code: string) => code.toLowerCase().includes(query.toLowerCase())) : true;
-    const nameFlag: boolean =
-      query !== '' ? names.some((name: string) => name.toLowerCase().includes(query.toLowerCase())) : true;
+  const countriesByFilter = clonedUnitedNationMembers.filter(({ name: { common = '' }, timezones = [] }) => {
+    const timezonesFlag: boolean =
+      query !== '' ? timezones.some((timezone: string) => timezone.toLowerCase().includes(query.toLowerCase())) : true;
     const commonFlag: boolean = query !== '' ? common.toLowerCase().includes(query.toLowerCase()) : true;
-    return codeFlag || nameFlag || commonFlag;
+    return timezonesFlag || commonFlag;
   });
 
   return (
@@ -43,29 +39,22 @@ export const BordersPage: NextPage = () => {
                     <Tr>
                       <Th>Country ({countriesByFilter.length})</Th>
                       <Th isNumeric>Total</Th>
-                      <Th>Borders</Th>
+                      <Th>Timezones</Th>
                     </Tr>
                   </Thead>
                   <Tbody>
-                    {countriesByFilter.map(({ name: { common = '' }, cca3 = '', borders = [] }) => {
+                    {countriesByFilter.map(({ name: { common = '' }, cca3 = '', timezones = [] }) => {
                       return (
                         <Tr key={common}>
                           <Td>
                             <Link href={`/countries/${cca3}`}>{common}</Link>
                           </Td>
-                          <Td isNumeric>{borders.length}</Td>
+                          <Td isNumeric>{timezones.length}</Td>
                           <Td>
                             <div className="whitespace-normal">
-                              {borders.length > 0 ? (
+                              {timezones.length > 0 ? (
                                 <div className="flex flex-wrap items-center gap-1 md:gap-2">
-                                  {borders.map((border: string) => {
-                                    const name: string = (isoAlpha3Codes as Record<string, string>)[border] || '';
-                                    return (
-                                      <Link key={border} href={`/countries/${border}`}>
-                                        <Badge colorScheme="teal">{name}</Badge>
-                                      </Link>
-                                    );
-                                  })}
+                                  {timezones.map((domain: string) => domain).join(', ')}
                                 </div>
                               ) : (
                                 <p>Island Nation</p>
@@ -77,7 +66,7 @@ export const BordersPage: NextPage = () => {
                     })}
                   </Tbody>
                   <TableCaption>
-                    <p className="pb-4">Borders ({countriesByFilter.length})</p>
+                    <p className="pb-4">Timezones ({countriesByFilter.length})</p>
                   </TableCaption>
                 </Table>
               </TableContainer>
@@ -89,4 +78,4 @@ export const BordersPage: NextPage = () => {
   );
 };
 
-export default BordersPage;
+export default TopLevelDomainsPage;

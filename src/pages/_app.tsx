@@ -1,6 +1,6 @@
 import { ChakraProvider } from '@chakra-ui/react';
-import { APP_NAME } from '@weather/configs';
-import '@weather/styles/globals.scss';
+import { APP_NAME } from '@world/configs';
+import '@world/styles/globals.scss';
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
 

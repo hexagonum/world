@@ -1,5 +1,5 @@
 import { render } from '@testing-library/react';
-import { HomePage } from '@weather/pages';
+import { HomePage } from '@world/pages';
 
 describe('HomePage', () => {
   it('to match snapshot', () => {

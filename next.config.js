@@ -12,8 +12,8 @@ const withPWA = require('next-pwa')({
 const nextConfig = {
   output: 'export',
   reactStrictMode: true,
-  basePath: isProd ? '/countries' : undefined,
-  assetPrefix: isProd ? '/countries/' : undefined,
+  basePath: isProd ? '/world' : undefined,
+  assetPrefix: isProd ? '/world/' : undefined,
   images: { unoptimized: true },
 };
 

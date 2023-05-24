@@ -1,4 +1,4 @@
-import { City } from '@weather/types';
+import { City } from '@world/types';
 
 export const cities: City[] = [
   {
