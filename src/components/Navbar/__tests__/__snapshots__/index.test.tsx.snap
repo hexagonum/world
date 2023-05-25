@@ -11,15 +11,21 @@ exports[`Navbar to match snapshot 1`] = `
       <div
         class="px-8 py-4"
       >
-        <a
-          href="/"
+        <div
+          class="flex items-center gap-4 md:gap-8"
         >
-          <h1
-            class="uppercase font-medium"
+          <a
+            class="text-xl uppercase"
+            href="/"
+          >
+            World
+          </a>
+          <a
+            href="/countries"
           >
             Countries
-          </h1>
-        </a>
+          </a>
+        </div>
       </div>
     </div>
   </nav>
