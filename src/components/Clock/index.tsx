@@ -7,7 +7,7 @@ const getClock = (timezome: number) => {
   const d: Date = new Date();
   const time: number = d.getTime();
   const machineTimezone: number = d.getTimezoneOffset() / -60;
-  const cityTime: number = time - oneHour * (timezome - machineTimezone);
+  const cityTime: number = time + oneHour * (timezome - machineTimezone);
   const cityD: Date = new Date(cityTime);
   const hh: string = addZero(cityD.getHours());
   const mm: string = addZero(cityD.getMinutes());
