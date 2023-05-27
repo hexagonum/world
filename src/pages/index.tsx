@@ -1,4 +1,4 @@
-import { Button, Divider, Input } from '@chakra-ui/react';
+import { Divider, Input } from '@chakra-ui/react';
 import Container from '@world/components/Container';
 import unitedNationMembers from '@world/data/united-nation-members.json';
 import { Layout } from '@world/layout';
@@ -6,7 +6,7 @@ import { NextPage } from 'next';
 import Link from 'next/link';
 import { ChangeEvent, useState } from 'react';
 
-export const HomePage: NextPage = () => {
+export const CountriesPage: NextPage = () => {
   const [query, setQuery] = useState<string>('');
 
   const countriesByFilter = unitedNationMembers.filter(
@@ -20,10 +20,14 @@ export const HomePage: NextPage = () => {
       return cca2Flag || cca3Flag || fifaFlag || commonFlag || regionFlag || subregionFlag;
     }
   );
-  const regions: string[] = [...new Set(countriesByFilter.map(({ region = '' }) => region))].sort();
+  const regions: string[] = [...new Set(countriesByFilter.map(({ region = '' }) => region))].sort(
+    (a: string, b: string) => (a > b ? 1 : -1)
+  );
   const countriesByRegions: any[] = regions.map((region: string) => {
     const countriesByRegions: any[] = countriesByFilter.filter(({ region: countryRegion }) => region === countryRegion);
-    const subregions: string[] = [...new Set(countriesByRegions.map(({ subregion = '' }) => subregion))].sort();
+    const subregions: string[] = [...new Set(countriesByRegions.map(({ subregion = '' }) => subregion))].sort(
+      (a: string, b: string) => (a > b ? 1 : -1)
+    );
     const countriesBySubregions: any[] = subregions.map((subregion: string) => {
       const countries: any[] = countriesByRegions
         .filter(({ subregion: countrySubregion }: any) => subregion === countrySubregion)
@@ -72,14 +76,11 @@ export const HomePage: NextPage = () => {
                                 <div key={cca2} className="flex items-center justify-between">
                                   <div className="flex items-center gap-2">
                                     <p>{flag}</p>
-                                    <div>
+                                    <Link href={`/countries/${cca3}`}>
                                       <pre className="inline">{cca2}</pre> - <pre className="inline">{cca3}</pre> -{' '}
                                       <pre className="inline">{fifa}</pre> - <pre className="inline">{common}</pre>
-                                    </div>
+                                    </Link>
                                   </div>
-                                  <Link href={`/countries/${cca3}`}>
-                                    <Button colorScheme="teal">Details</Button>
-                                  </Link>
                                 </div>
                               );
                             }
@@ -99,4 +100,4 @@ export const HomePage: NextPage = () => {
   );
 };
 
-export default HomePage;
+export default CountriesPage;
