@@ -15,19 +15,75 @@ exports[`Layout to match snapshot 1`] = `
           class="px-8 py-4"
         >
           <div
-            class="flex items-center gap-4 md:gap-8"
+            class="flex items-center justify-between gap-4 md:gap-8"
           >
-            <a
-              class="text-xl uppercase"
-              href="/"
+            <div
+              class="flex items-center gap-4 md:gap-8"
             >
-              World
-            </a>
-            <a
-              href="/countries"
+              <a
+                class="text-xl uppercase"
+                href="/"
+              >
+                World
+              </a>
+              <div
+                class="hidden md:block"
+              >
+                <div
+                  class="flex items-center gap-2 md:gap-4"
+                >
+                  <a
+                    href="/countries"
+                  >
+                    Countries
+                  </a>
+                  <a
+                    href="/currencies"
+                  >
+                    Currencies
+                  </a>
+                  <a
+                    href="/languages"
+                  >
+                    Languages
+                  </a>
+                  <a
+                    href="/timezones"
+                  >
+                    Timezones
+                  </a>
+                  <a
+                    href="/trends"
+                  >
+                    Trends
+                  </a>
+                  <a
+                    href="/weather"
+                  >
+                    Weather
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div
+              class="block md:hidden"
             >
-              Countries
-            </a>
+              <button
+                class="chakra-button css-4xx2wk"
+                type="button"
+              >
+                <svg
+                  class="chakra-icon css-onkibi"
+                  focusable="false"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M 3 5 A 1.0001 1.0001 0 1 0 3 7 L 21 7 A 1.0001 1.0001 0 1 0 21 5 L 3 5 z M 3 11 A 1.0001 1.0001 0 1 0 3 13 L 21 13 A 1.0001 1.0001 0 1 0 21 11 L 3 11 z M 3 17 A 1.0001 1.0001 0 1 0 3 19 L 21 19 A 1.0001 1.0001 0 1 0 21 17 L 3 17 z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </button>
+            </div>
           </div>
         </div>
       </div>

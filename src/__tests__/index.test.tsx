@@ -1,9 +1,9 @@
 import { render } from '@testing-library/react';
-import { HomePage } from '@world/pages';
+import { CountriesPage } from '@world/pages';
 
-describe('HomePage', () => {
+describe('CountriesPage', () => {
   it('to match snapshot', () => {
-    const { container } = render(<HomePage />);
+    const { container } = render(<CountriesPage />);
     expect(container).toMatchSnapshot();
   });
 });
