@@ -1,41 +1,374 @@
 [
-  "UTC",
-  "UTC+00:00",
-  "UTC+01:00",
-  "UTC+02:00",
-  "UTC+03:00",
-  "UTC+03:30",
-  "UTC+04:00",
-  "UTC+04:30",
-  "UTC+05:00",
-  "UTC+05:30",
-  "UTC+05:45",
-  "UTC+06:00",
-  "UTC+06:30",
-  "UTC+07:00",
-  "UTC+08:00",
-  "UTC+09:00",
-  "UTC+09:30",
-  "UTC+10:00",
-  "UTC+10:30",
-  "UTC+11:00",
-  "UTC+11:30",
-  "UTC+12:00",
-  "UTC+12:45",
-  "UTC+13:00",
-  "UTC+14:00",
-  "UTC-01:00",
-  "UTC-02:00",
-  "UTC-03:00",
-  "UTC-03:30",
-  "UTC-04:00",
-  "UTC-05:00",
-  "UTC-06:00",
-  "UTC-07:00",
-  "UTC-08:00",
-  "UTC-09:00",
-  "UTC-09:30",
-  "UTC-10:00",
-  "UTC-11:00",
-  "UTC-12:00"
+  {
+    "name": "UTC-12:00",
+    "offset": -12,
+    "total": 1,
+    "countries": ["USA"]
+  },
+  {
+    "name": "UTC-11:00",
+    "offset": -11,
+    "total": 2,
+    "countries": ["NZL", "USA"]
+  },
+  {
+    "name": "UTC-10:00",
+    "offset": -10,
+    "total": 3,
+    "countries": ["FRA", "NZL", "USA"]
+  },
+  {
+    "name": "UTC-09:30",
+    "offset": -9.5,
+    "total": 1,
+    "countries": ["FRA"]
+  },
+  {
+    "name": "UTC-09:00",
+    "offset": -9,
+    "total": 2,
+    "countries": ["FRA", "USA"]
+  },
+  {
+    "name": "UTC-08:00",
+    "offset": -8,
+    "total": 5,
+    "countries": ["CAN", "FRA", "GBR", "MEX", "USA"]
+  },
+  {
+    "name": "UTC-07:00",
+    "offset": -7,
+    "total": 3,
+    "countries": ["CAN", "MEX", "USA"]
+  },
+  {
+    "name": "UTC-06:00",
+    "offset": -6,
+    "total": 11,
+    "countries": ["BLZ", "CAN", "CHL", "CRI", "ECU", "GTM", "HND", "MEX", "NIC", "SLV", "USA"]
+  },
+  {
+    "name": "UTC-05:00",
+    "offset": -5,
+    "total": 12,
+    "countries": ["BHS", "BRA", "CAN", "COL", "CUB", "ECU", "GBR", "HTI", "JAM", "PAN", "PER", "USA"]
+  },
+  {
+    "name": "UTC-04:00",
+    "offset": -4,
+    "total": 21,
+    "countries": [
+      "ATG",
+      "BOL",
+      "BRA",
+      "BRB",
+      "CAN",
+      "CHL",
+      "DMA",
+      "DNK",
+      "DOM",
+      "FRA",
+      "GBR",
+      "GRD",
+      "GUY",
+      "KNA",
+      "LCA",
+      "NLD",
+      "PRY",
+      "TTO",
+      "USA",
+      "VCT",
+      "VEN"
+    ]
+  },
+  {
+    "name": "UTC-03:30",
+    "offset": -3.5,
+    "total": 1,
+    "countries": ["CAN"]
+  },
+  {
+    "name": "UTC-03:00",
+    "offset": -3,
+    "total": 7,
+    "countries": ["ARG", "BRA", "DNK", "FRA", "GBR", "SUR", "URY"]
+  },
+  {
+    "name": "UTC-02:00",
+    "offset": -2,
+    "total": 2,
+    "countries": ["BRA", "GBR"]
+  },
+  {
+    "name": "UTC-01:00",
+    "offset": -1,
+    "total": 3,
+    "countries": ["CPV", "DNK", "PRT"]
+  },
+  {
+    "name": "UTC+00:00",
+    "offset": 0,
+    "total": 1,
+    "countries": ["GMB"]
+  },
+  {
+    "name": "UTC",
+    "offset": 0,
+    "total": 18,
+    "countries": [
+      "BFA",
+      "CIV",
+      "DNK",
+      "ESP",
+      "GBR",
+      "GHA",
+      "GIN",
+      "IRL",
+      "ISL",
+      "LBR",
+      "MAR",
+      "MLI",
+      "MRT",
+      "PRT",
+      "SEN",
+      "SLE",
+      "STP",
+      "TGO"
+    ]
+  },
+  {
+    "name": "UTC+01:00",
+    "offset": 1,
+    "total": 45,
+    "countries": [
+      "AGO",
+      "ALB",
+      "AND",
+      "AUT",
+      "BEL",
+      "BEN",
+      "BIH",
+      "CAF",
+      "CHE",
+      "CMR",
+      "COD",
+      "COG",
+      "CZE",
+      "DEU",
+      "DNK",
+      "DZA",
+      "ESP",
+      "FRA",
+      "GAB",
+      "GBR",
+      "GNQ",
+      "HRV",
+      "HUN",
+      "ITA",
+      "LBY",
+      "LIE",
+      "LUX",
+      "MCO",
+      "MKD",
+      "MLT",
+      "MNE",
+      "NAM",
+      "NER",
+      "NGA",
+      "NLD",
+      "NOR",
+      "POL",
+      "SMR",
+      "SRB",
+      "SVK",
+      "SVN",
+      "SWE",
+      "TCD",
+      "TUN",
+      "VAT"
+    ]
+  },
+  {
+    "name": "UTC+02:00",
+    "offset": 2,
+    "total": 27,
+    "countries": [
+      "BDI",
+      "BGR",
+      "BWA",
+      "COD",
+      "CYP",
+      "EGY",
+      "EST",
+      "FIN",
+      "FRA",
+      "GBR",
+      "GRC",
+      "ISR",
+      "LBN",
+      "LSO",
+      "LTU",
+      "LVA",
+      "MDA",
+      "MOZ",
+      "MWI",
+      "ROU",
+      "RWA",
+      "SWZ",
+      "SYR",
+      "UKR",
+      "ZAF",
+      "ZMB",
+      "ZWE"
+    ]
+  },
+  {
+    "name": "UTC+03:00",
+    "offset": 3,
+    "total": 22,
+    "countries": [
+      "BHR",
+      "BLR",
+      "COM",
+      "DJI",
+      "ERI",
+      "ETH",
+      "FRA",
+      "IRQ",
+      "JOR",
+      "KEN",
+      "KWT",
+      "MDG",
+      "QAT",
+      "RUS",
+      "SAU",
+      "SDN",
+      "SOM",
+      "SSD",
+      "TUR",
+      "TZA",
+      "UGA",
+      "YEM"
+    ]
+  },
+  {
+    "name": "UTC+03:30",
+    "offset": 3.5,
+    "total": 1,
+    "countries": ["IRN"]
+  },
+  {
+    "name": "UTC+04:00",
+    "offset": 4,
+    "total": 9,
+    "countries": ["ARE", "ARM", "AZE", "FRA", "GEO", "MUS", "OMN", "RUS", "SYC"]
+  },
+  {
+    "name": "UTC+04:30",
+    "offset": 4.5,
+    "total": 1,
+    "countries": ["AFG"]
+  },
+  {
+    "name": "UTC+05:00",
+    "offset": 5,
+    "total": 8,
+    "countries": ["AUS", "FRA", "KAZ", "MDV", "PAK", "TJK", "TKM", "UZB"]
+  },
+  {
+    "name": "UTC+05:30",
+    "offset": 5.5,
+    "total": 2,
+    "countries": ["IND", "LKA"]
+  },
+  {
+    "name": "UTC+05:45",
+    "offset": 5.75,
+    "total": 1,
+    "countries": ["NPL"]
+  },
+  {
+    "name": "UTC+06:00",
+    "offset": 6,
+    "total": 6,
+    "countries": ["BGD", "BTN", "GBR", "KAZ", "KGZ", "RUS"]
+  },
+  {
+    "name": "UTC+06:30",
+    "offset": 6.5,
+    "total": 2,
+    "countries": ["AUS", "MMR"]
+  },
+  {
+    "name": "UTC+07:00",
+    "offset": 7,
+    "total": 8,
+    "countries": ["AUS", "IDN", "KHM", "LAO", "MNG", "RUS", "THA", "VNM"]
+  },
+  {
+    "name": "UTC+08:00",
+    "offset": 8,
+    "total": 9,
+    "countries": ["AUS", "BRN", "CHN", "IDN", "MNG", "MYS", "PHL", "RUS", "SGP"]
+  },
+  {
+    "name": "UTC+09:00",
+    "offset": 9,
+    "total": 7,
+    "countries": ["IDN", "JPN", "KOR", "PLW", "PRK", "RUS", "TLS"]
+  },
+  {
+    "name": "UTC+09:30",
+    "offset": 9.5,
+    "total": 1,
+    "countries": ["AUS"]
+  },
+  {
+    "name": "UTC+10:00",
+    "offset": 10,
+    "total": 6,
+    "countries": ["AUS", "FRA", "FSM", "PNG", "RUS", "USA"]
+  },
+  {
+    "name": "UTC+10:30",
+    "offset": 10.5,
+    "total": 1,
+    "countries": ["AUS"]
+  },
+  {
+    "name": "UTC+11:00",
+    "offset": 11,
+    "total": 5,
+    "countries": ["FRA", "FSM", "RUS", "SLB", "VUT"]
+  },
+  {
+    "name": "UTC+11:30",
+    "offset": 11.5,
+    "total": 1,
+    "countries": ["AUS"]
+  },
+  {
+    "name": "UTC+12:00",
+    "offset": 12,
+    "total": 9,
+    "countries": ["FJI", "FRA", "KIR", "MHL", "NRU", "NZL", "RUS", "TUV", "USA"]
+  },
+  {
+    "name": "UTC+12:45",
+    "offset": 12.75,
+    "total": 1,
+    "countries": ["NZL"]
+  },
+  {
+    "name": "UTC+13:00",
+    "offset": 13,
+    "total": 4,
+    "countries": ["KIR", "NZL", "TON", "WSM"]
+  },
+  {
+    "name": "UTC+14:00",
+    "offset": 14,
+    "total": 1,
+    "countries": ["KIR"]
+  }
 ]

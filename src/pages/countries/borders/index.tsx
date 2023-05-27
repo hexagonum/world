@@ -1,6 +1,6 @@
 import { Badge, Input, Table, TableCaption, TableContainer, Tbody, Td, Th, Thead, Tr } from '@chakra-ui/react';
 import Container from '@world/components/Container';
-import isoAlpha3Codes from '@world/data/iso-alpha-3-codes.json';
+import isoAlpha3Codes from '@world/data/codes/iso-alpha-3.json';
 import unitedNationMembers from '@world/data/united-nation-members.json';
 import Layout from '@world/layout';
 import { NextPage } from 'next';

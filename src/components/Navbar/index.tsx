@@ -11,7 +11,14 @@ export const Navbar: React.FC = () => {
             <Link href="/" className="text-xl uppercase">
               {APP_NAME}
             </Link>
-            <Link href="/countries">Countries</Link>
+            <div className="flex items-center gap-2 md:gap-4">
+              <Link href="/countries">Countries</Link>
+              <Link href="/currencies">Currencies</Link>
+              <Link href="/languages">Languages</Link>
+              <Link href="/timezones">Timezones</Link>
+              <Link href="/trends">Trends</Link>
+              <Link href="/weather">Weather</Link>
+            </div>
           </div>
         </div>
       </Container>

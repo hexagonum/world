@@ -2,7 +2,7 @@ import { Badge, Card, CardBody, Divider, Table, TableContainer, Tbody, Td, Tr } 
 import { Container } from '@world/components/Container';
 import { Weather } from '@world/components/Weather';
 import { cities } from '@world/data/cities';
-import isoAlpha3Codes from '@world/data/iso-alpha-3-codes.json';
+import isoAlpha3Codes from '@world/data/codes/iso-alpha-3.json';
 import trendsByCountries from '@world/data/trends.json';
 import unitedNationMembers from '@world/data/united-nation-members.json';
 import { Layout } from '@world/layout';
@@ -126,9 +126,13 @@ const GeographySection: React.FC<{ country: any }> = ({ country }) => {
                 </Link>
               </Td>
               <Td>
-                <p className="whitespace-normal text-right">
-                  {country.timezones.map((timezone: string) => timezone).join(', ')}
-                </p>
+                <div className="flex flex-wrap justify-end gap-1 md:gap-2">
+                  {country.timezones.map((timezone: string) => (
+                    <Link key={timezone} href={`/timezones/${timezone}`}>
+                      <Badge colorScheme="teal">{timezone}</Badge>
+                    </Link>
+                  ))}
+                </div>
               </Td>
             </Tr>
             <Tr>
@@ -228,10 +232,9 @@ const CountryPage: NextPage = () => {
   const citiesByCountry = cities.filter(
     ({ country: cityCountry }) => country.name.common.toLowerCase() === cityCountry.toLowerCase()
   );
-  const trendsByCountry: { trends: string[] } = trendsByCountries.find(
+  const { trends = [] }: { trends: string[] } = trendsByCountries.find(
     ({ country: trendCountry }) => country.name.common.toLowerCase() === trendCountry.toLowerCase()
-  ) || { trends: [] };
-  const { trends = [] } = trendsByCountry;
+  ) ?? { trends: [] };
 
   return (
     <Layout>
@@ -271,15 +274,17 @@ const CountryPage: NextPage = () => {
                         </Link>
                       </Td>
                       <Td>
-                        <p className="whitespace-normal text-right">
-                          {Object.keys(country.currencies)
-                            .map((key: string) => {
-                              const value: { name: string; symbol: string } =
-                                (country.currencies as Record<string, { name: string; symbol: string }>)[key] || '';
-                              return `${key} - ${value.name} (${value.symbol})`;
-                            })
-                            .join(', ')}
-                        </p>
+                        <div className="flex flex-wrap justify-end gap-1 md:gap-2">
+                          {Object.keys(country.currencies).map((code: string) => {
+                            const currency: { name: string; symbol: string } =
+                              (country.currencies as Record<string, { name: string; symbol: string }>)[code] || '';
+                            return (
+                              <Link key={code} href={`/currencies/${code}`}>
+                                <Badge colorScheme="teal">{currency.name}</Badge>
+                              </Link>
+                            );
+                          })}
+                        </div>
                       </Td>
                     </Tr>
                     <Tr>
@@ -289,14 +294,16 @@ const CountryPage: NextPage = () => {
                         </Link>
                       </Td>
                       <Td>
-                        <p className="whitespace-normal text-right">
-                          {Object.keys(country.languages)
-                            .map((key: string) => {
-                              const value: string = (country.languages as Record<string, string>)[key] || '';
-                              return `${value} (${key})`;
-                            })
-                            .join(', ')}
-                        </p>
+                        <div className="flex flex-wrap justify-end gap-1 md:gap-2">
+                          {Object.keys(country.languages).map((code: string) => {
+                            const name: string = (country.languages as Record<string, string>)[code] || '';
+                            return (
+                              <Link key={code} href={`/languages/${code}`}>
+                                <Badge colorScheme="teal">{name}</Badge>
+                              </Link>
+                            );
+                          })}
+                        </div>
                       </Td>
                     </Tr>
                   </Tbody>

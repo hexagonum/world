@@ -1,4 +1,4 @@
-import { Input, Table, TableCaption, TableContainer, Tbody, Td, Th, Thead, Tr } from '@chakra-ui/react';
+import { Badge, Input, Table, TableCaption, TableContainer, Tbody, Td, Th, Thead, Tr } from '@chakra-ui/react';
 import Container from '@world/components/Container';
 import unitedNationMembers from '@world/data/united-nation-members.json';
 import Layout from '@world/layout';
@@ -49,12 +49,8 @@ export const LanguagesPage: NextPage = () => {
                     </Tr>
                   </Thead>
                   <Tbody>
-                    {countriesByFilter.map(({ name: { common = '', nativeName = {} }, cca3 = '', languages = {} }) => {
-                      const nativeLanguageCodes: string[] = Object.keys(nativeName);
-                      const allLanguageCodes: string[] = Object.keys(languages);
-                      const nonNativeLanguageCodes: string[] = allLanguageCodes.filter(
-                        (code: string) => !nativeLanguageCodes.includes(code)
-                      );
+                    {countriesByFilter.map(({ name: { common = '' }, cca3 = '', languages = {} }) => {
+                      const languageCodes: string[] = Object.keys(languages);
 
                       return (
                         <Tr key={common}>
@@ -63,36 +59,20 @@ export const LanguagesPage: NextPage = () => {
                           </Td>
                           <Td isNumeric>{Object.keys(languages).length}</Td>
                           <Td>
-                            <div className="flex flex-col gap-2 md:gap-4">
-                              {nativeLanguageCodes.length > 0 ? (
-                                <p className="whitespace-normal">
-                                  <b>Native Languages</b>:{' '}
-                                  {nativeLanguageCodes
-                                    .map((key: string) => {
-                                      const value: string = (languages as Record<string, string>)[key] || '';
-                                      return `${value} (${key})`;
-                                    })
-                                    .sort()
-                                    .join(', ')}
-                                </p>
-                              ) : (
-                                <></>
-                              )}
-                              {nonNativeLanguageCodes.length > 0 ? (
-                                <p className="whitespace-normal">
-                                  <b>Nonnative Languages</b>:{' '}
-                                  {nonNativeLanguageCodes
-                                    .map((key: string) => {
-                                      const value: string = (languages as Record<string, string>)[key] || '';
-                                      return `${value} (${key})`;
-                                    })
-                                    .sort()
-                                    .join(', ')}
-                                </p>
-                              ) : (
-                                <></>
-                              )}
-                            </div>
+                            {languageCodes.length > 0 ? (
+                              <div className="flex flex-wrap gap-1 md:gap-2">
+                                {languageCodes.map((code: string) => {
+                                  const name: string = (languages as Record<string, string>)[code] || '';
+                                  return (
+                                    <Link key={code} href={`/languages/${code}`}>
+                                      <Badge colorScheme="teal">{name}</Badge>
+                                    </Link>
+                                  );
+                                })}
+                              </div>
+                            ) : (
+                              <></>
+                            )}
                           </Td>
                         </Tr>
                       );
