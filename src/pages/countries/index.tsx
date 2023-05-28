@@ -1,4 +1,4 @@
-import { Button, Divider, Input } from '@chakra-ui/react';
+import { Divider, Input } from '@chakra-ui/react';
 import Container from '@world/components/Container';
 import unitedNationMembers from '@world/data/united-nation-members.json';
 import { Layout } from '@world/layout';

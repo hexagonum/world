@@ -107,7 +107,7 @@ const GeographySection: React.FC<{ country: any }> = ({ country }) => {
               </Td>
               <Td isNumeric>
                 <Link href={country.maps.googleMaps} target="_blank">
-                  <Badge colorScheme="teal" variant="outline" fontSize="sm" className="px-2">
+                  <Badge colorScheme="teal" variant="outline" className="px-2">
                     <span>
                       {country.latlng[0]}&deg;{country.latlng[0] >= 0 ? 'N' : 'S'}
                     </span>
@@ -142,14 +142,12 @@ const GeographySection: React.FC<{ country: any }> = ({ country }) => {
                   <b>Borders ({country.borders.length})</b>
                 </Link>
               </Td>
-              <Td isNumeric>
-                <div className="flex flex-wrap justify-end gap-2">
+              <Td>
+                <div className="flex flex-wrap justify-end gap-1 md:gap-2">
                   {country.borders.map((border: string) => {
                     return (
                       <Link key={`/${border}`} href={`/countries/${border}`}>
-                        <Badge colorScheme="teal" fontSize="sm">
-                          {(isoAlpha3Codes as Record<string, string>)[border]}
-                        </Badge>
+                        <Badge colorScheme="teal">{(isoAlpha3Codes as Record<string, string>)[border]}</Badge>
                       </Link>
                     );
                   })}
@@ -255,6 +253,7 @@ const defaultCountry = {
   tld: [],
   latlng: [0, 0],
   area: 0,
+  density: 0,
   population: 0,
   maps: { googleMaps: '', openStreetMaps: '' },
   idd: { root: '', suffixes: [] },
