@@ -13,6 +13,7 @@ import nato from '../data/json/organizations/nato.json';
 import opec from '../data/json/organizations/opec.json';
 import organizations from '../data/json/organizations/organizations.json';
 import saarc from '../data/json/organizations/saarc.json';
+import timezoneDetails from '../src/data/timezones/details.json';
 
 const organizationsMap = {
   al,
@@ -123,8 +124,8 @@ const main = async () => {
   // Process Timezones
   const timezonesList: { name: string; total: number; countries: string[] }[] = timezones
     .map((timezone: string) => {
-      const offsetString: string[] = (timezone.replace('UTC', '') || '+00:00').split(':');
-      const [hourString = '00', minute = '00'] = offsetString;
+      const utcOffset: string = timezone.replace('UTC', '') || '+00:00';
+      const [hourString = '00', minute = '00'] = utcOffset.split(':');
       const hour = parseInt(hourString);
       const offset = hour + (hour > 0 ? 1 : -1) * parseFloat((parseInt(minute) / 60).toFixed(2));
       const timezoneCountries = unitedNationMembers.filter(({ timezones: countryTimezones = [] }) =>
@@ -132,7 +133,10 @@ const main = async () => {
       );
       const total = timezoneCountries.length;
       const timezoneCountryCodes = timezoneCountries.map(({ cca3 }: { cca3: string }) => cca3);
-      return { name: timezone, offset, total, countries: timezoneCountryCodes };
+      const timezones: string[] = timezoneDetails
+        .filter(({ utc_offset = '' }: { utc_offset: string }) => utc_offset === utcOffset)
+        .map(({ timezone }) => timezone);
+      return { name: timezone, offset, total, countries: timezoneCountryCodes, timezones };
     })
     .sort((a, b) => (a.offset > b.offset ? 1 : -1));
   // Languages
@@ -145,7 +149,8 @@ const main = async () => {
   if (currenciesList.length > 0)
     writeFileSync(`${basePath}/currencies/list.json`, JSON.stringify(currenciesList, null, 2));
   // Timezones
-  if (timezonesList.length > 0) writeFileSync(`${basePath}/timezones.json`, JSON.stringify(timezonesList, null, 2));
+  if (timezonesList.length > 0)
+    writeFileSync(`${basePath}/timezones/list.json`, JSON.stringify(timezonesList, null, 2));
   // Codes
   if (Object.keys(isoAlpha2Codes).length > 0)
     writeFileSync(`${basePath}/codes/iso-alpha-2.json`, JSON.stringify(isoAlpha2Codes, null, 2));

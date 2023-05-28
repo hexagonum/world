@@ -1,19 +1,20 @@
 import { Badge, Divider, Table, TableContainer, Tbody, Td, Tr } from '@chakra-ui/react';
 import { Container } from '@world/components/Container';
 import isoAlpha3Codes from '@world/data/codes/iso-alpha-3.json';
-import timezones from '@world/data/timezones.json';
+import timezones from '@world/data/timezones/list.json';
 import unitedNationMembers from '@world/data/united-nation-members.json';
 import Layout from '@world/layout';
 import { NextPage } from 'next';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 
-type Timezone = { name: string; offset: number; total: number; countries: string[] };
+type Timezone = { name: string; offset: number; total: number; countries: string[]; timezones: string[] };
 const defaultTimezone: Timezone = {
   name: '',
   offset: 0,
   total: 0,
   countries: [],
+  timezones: [],
 };
 
 const TimezonePage: NextPage = () => {
@@ -38,6 +39,16 @@ const TimezonePage: NextPage = () => {
                   <Tr>
                     <Td>Offset</Td>
                     <Td isNumeric>{timezone.offset}</Td>
+                  </Tr>
+                  <Tr>
+                    <Td>Timezones ({timezone.timezones.length})</Td>
+                    <Td>
+                      <div className="flex flex-wrap justify-end gap-1 md:gap-2">
+                        {timezone.timezones.map((tz: string) => (
+                          <Badge key={tz}>{tz}</Badge>
+                        ))}
+                      </div>
+                    </Td>
                   </Tr>
                 </Tbody>
               </Table>

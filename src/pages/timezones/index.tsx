@@ -1,6 +1,6 @@
 import { Table, TableContainer, Tbody, Td, Th, Thead, Tr } from '@chakra-ui/react';
 import Container from '@world/components/Container';
-import timezones from '@world/data/timezones.json';
+import timezones from '@world/data/timezones/list.json';
 import Layout from '@world/layout';
 import { NextPage } from 'next';
 import Link from 'next/link';

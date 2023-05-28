@@ -24,6 +24,7 @@ export const Navbar: React.FC = () => {
     { id: 'currencies', href: '/currencies', name: 'Currencies' },
     { id: 'languages', href: '/languages', name: 'Languages' },
     { id: 'organizations', href: '/organizations', name: 'Organizations' },
+    { id: 'passports', href: '/passports', name: 'Passports' },
     { id: 'timezones', href: '/timezones', name: 'Timezones' },
     { id: 'trends', href: '/trends', name: 'Trends' },
     { id: 'weather', href: '/weather', name: 'Weather' },
@@ -34,13 +35,13 @@ export const Navbar: React.FC = () => {
       <nav className="border-b shadow">
         <Container>
           <div className="px-8 py-4">
-            <div className="flex items-center justify-between gap-4 md:gap-8">
-              <div className="flex items-center gap-4 md:gap-8">
+            <div className="flex items-center justify-between gap-4 lg:gap-8">
+              <div className="flex items-center gap-4 lg:gap-8">
                 <Link href="/" className="text-xl uppercase">
                   {APP_NAME}
                 </Link>
-                <div className="hidden md:block">
-                  <div className="flex items-center gap-2 md:gap-4">
+                <div className="hidden lg:block">
+                  <div className="flex items-center gap-2 lg:gap-4">
                     {links.map(({ id, href, name }) => {
                       return (
                         <Link key={id} href={href}>
@@ -51,7 +52,7 @@ export const Navbar: React.FC = () => {
                   </div>
                 </div>
               </div>
-              <div className="block md:hidden">
+              <div className="block lg:hidden">
                 <Button colorScheme="teal" onClick={onOpen}>
                   <HamburgerIcon />
                 </Button>
@@ -66,7 +67,7 @@ export const Navbar: React.FC = () => {
           <DrawerCloseButton />
           <DrawerHeader>{APP_NAME}</DrawerHeader>
           <DrawerBody>
-            <div className="flex flex-col gap-2 md:gap-4">
+            <div className="flex flex-col gap-2 lg:gap-4">
               {links.map(({ id, href, name }) => {
                 return (
                   <div key={id}>
