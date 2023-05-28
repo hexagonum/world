@@ -1,8 +1,8 @@
 if (!self.define) {
   let e,
     s = {};
-  const n = (n, a) => (
-    (n = new URL(n + '.js', a).href),
+  const n = (n, c) => (
+    (n = new URL(n + '.js', c).href),
     s[n] ||
       new Promise((s) => {
         if ('document' in self) {
@@ -15,13 +15,13 @@ if (!self.define) {
         return e;
       })
   );
-  self.define = (a, c) => {
-    const t = e || ('document' in self ? document.currentScript.src : '') || location.href;
-    if (s[t]) return;
+  self.define = (c, t) => {
+    const a = e || ('document' in self ? document.currentScript.src : '') || location.href;
+    if (s[a]) return;
     let i = {};
-    const r = (e) => n(e, t),
-      o = { module: { uri: t }, exports: i, require: r };
-    s[t] = Promise.all(a.map((e) => o[e] || r(e))).then((e) => (c(...e), i));
+    const r = (e) => n(e, a),
+      o = { module: { uri: a }, exports: i, require: r };
+    s[a] = Promise.all(c.map((e) => o[e] || r(e))).then((e) => (t(...e), i));
   };
 }
 define(['./workbox-588899ac'], function (e) {
@@ -31,81 +31,90 @@ define(['./workbox-588899ac'], function (e) {
     e.clientsClaim(),
     e.precacheAndRoute(
       [
-        {
-          url: '/world//_next/static/1zGnBdRQGmuA4cBPiQ286/_buildManifest.js',
-          revision: 'f4077b09d7c9036fccbc734f71395fa3',
-        },
-        {
-          url: '/world//_next/static/1zGnBdRQGmuA4cBPiQ286/_ssgManifest.js',
-          revision: 'b6652df95db52feb4daf4eca35380933',
-        },
-        { url: '/world//_next/static/chunks/232-7f464077a5a2cbbd.js', revision: '7f464077a5a2cbbd' },
-        { url: '/world//_next/static/chunks/265-9ee59103b8c89211.js', revision: '9ee59103b8c89211' },
-        { url: '/world//_next/static/chunks/664-60e06c839f82ba03.js', revision: '60e06c839f82ba03' },
+        { url: '/world//_next/static/chunks/232-97feb6515f5aa00c.js', revision: '97feb6515f5aa00c' },
+        { url: '/world//_next/static/chunks/265-f042687f1777f3e3.js', revision: 'f042687f1777f3e3' },
+        { url: '/world//_next/static/chunks/479-7077021c600f2cc7.js', revision: '7077021c600f2cc7' },
         { url: '/world//_next/static/chunks/framework-2c79e2a64abdb08b.js', revision: '2c79e2a64abdb08b' },
         { url: '/world//_next/static/chunks/main-ff814ac547a86341.js', revision: 'ff814ac547a86341' },
-        { url: '/world//_next/static/chunks/pages/404-3d663e21c5252aa3.js', revision: '3d663e21c5252aa3' },
-        { url: '/world//_next/static/chunks/pages/500-018321599982762d.js', revision: '018321599982762d' },
-        { url: '/world//_next/static/chunks/pages/_app-53603b156d234cdd.js', revision: '53603b156d234cdd' },
-        { url: '/world//_next/static/chunks/pages/_error-06339d89ea5e2c65.js', revision: '06339d89ea5e2c65' },
-        { url: '/world//_next/static/chunks/pages/countries-80dfee75fe68bd54.js', revision: '80dfee75fe68bd54' },
+        { url: '/world//_next/static/chunks/pages/404-31058f3eb3a4395f.js', revision: '31058f3eb3a4395f' },
+        { url: '/world//_next/static/chunks/pages/500-b779885ddf995490.js', revision: 'b779885ddf995490' },
+        { url: '/world//_next/static/chunks/pages/_app-58ec14ff488d6ba9.js', revision: '58ec14ff488d6ba9' },
+        { url: '/world//_next/static/chunks/pages/_error-5c890c76bd6896f5.js', revision: '5c890c76bd6896f5' },
+        { url: '/world//_next/static/chunks/pages/countries-d74c223729a2111e.js', revision: 'd74c223729a2111e' },
         {
-          url: '/world//_next/static/chunks/pages/countries/%5Bcountry%5D-585c57df9c81cc5a.js',
-          revision: '585c57df9c81cc5a',
+          url: '/world//_next/static/chunks/pages/countries/%5Bcountry%5D-61d4faed838f58ab.js',
+          revision: '61d4faed838f58ab',
         },
-        { url: '/world//_next/static/chunks/pages/countries/area-926b73c3369c3c3b.js', revision: '926b73c3369c3c3b' },
+        { url: '/world//_next/static/chunks/pages/countries/area-722719e3e0b231b8.js', revision: '722719e3e0b231b8' },
         {
-          url: '/world//_next/static/chunks/pages/countries/borders-bf9d9644f68f0bbd.js',
-          revision: 'bf9d9644f68f0bbd',
-        },
-        {
-          url: '/world//_next/static/chunks/pages/countries/currencies-1c7848b525d29dc6.js',
-          revision: '1c7848b525d29dc6',
+          url: '/world//_next/static/chunks/pages/countries/borders-b70d0d37a9a463cd.js',
+          revision: 'b70d0d37a9a463cd',
         },
         {
-          url: '/world//_next/static/chunks/pages/countries/density-7738d13aef86bf76.js',
-          revision: '7738d13aef86bf76',
+          url: '/world//_next/static/chunks/pages/countries/currencies-b822c549775856f8.js',
+          revision: 'b822c549775856f8',
         },
         {
-          url: '/world//_next/static/chunks/pages/countries/languages-f3c0d357968aa658.js',
-          revision: 'f3c0d357968aa658',
+          url: '/world//_next/static/chunks/pages/countries/density-fbc0c636b43bb6c3.js',
+          revision: 'fbc0c636b43bb6c3',
         },
         {
-          url: '/world//_next/static/chunks/pages/countries/population-f04b7467a8ec1555.js',
-          revision: 'f04b7467a8ec1555',
+          url: '/world//_next/static/chunks/pages/countries/languages-0358c34cc9b57cb0.js',
+          revision: '0358c34cc9b57cb0',
         },
         {
-          url: '/world//_next/static/chunks/pages/countries/timezones-4185dc681737cfe4.js',
-          revision: '4185dc681737cfe4',
+          url: '/world//_next/static/chunks/pages/countries/organizations-86a0c62eeaee5c02.js',
+          revision: '86a0c62eeaee5c02',
         },
         {
-          url: '/world//_next/static/chunks/pages/countries/top-level-domains-5f570dfd41a2749b.js',
-          revision: '5f570dfd41a2749b',
+          url: '/world//_next/static/chunks/pages/countries/population-fde3c78ff17c62b4.js',
+          revision: 'fde3c78ff17c62b4',
         },
-        { url: '/world//_next/static/chunks/pages/currencies-eff90b431fc3a177.js', revision: 'eff90b431fc3a177' },
         {
-          url: '/world//_next/static/chunks/pages/currencies/%5Bcurrency%5D-89143ee4aaeb08d9.js',
-          revision: '89143ee4aaeb08d9',
+          url: '/world//_next/static/chunks/pages/countries/timezones-5f44d71d75d49020.js',
+          revision: '5f44d71d75d49020',
         },
-        { url: '/world//_next/static/chunks/pages/index-ca433426ff6e5298.js', revision: 'ca433426ff6e5298' },
-        { url: '/world//_next/static/chunks/pages/languages-c1e59301cc9db21b.js', revision: 'c1e59301cc9db21b' },
         {
-          url: '/world//_next/static/chunks/pages/languages/%5Blanguage%5D-e6d4ccafab2b2eea.js',
-          revision: 'e6d4ccafab2b2eea',
+          url: '/world//_next/static/chunks/pages/countries/top-level-domains-51c8884a939f5091.js',
+          revision: '51c8884a939f5091',
         },
-        { url: '/world//_next/static/chunks/pages/timezones-ba2fa938ecef2647.js', revision: 'ba2fa938ecef2647' },
+        { url: '/world//_next/static/chunks/pages/currencies-73c1ba63f0510376.js', revision: '73c1ba63f0510376' },
         {
-          url: '/world//_next/static/chunks/pages/timezones/%5Btimezone%5D-8596925624631871.js',
-          revision: '8596925624631871',
+          url: '/world//_next/static/chunks/pages/currencies/%5Bcurrency%5D-d61376380bedead7.js',
+          revision: 'd61376380bedead7',
         },
-        { url: '/world//_next/static/chunks/pages/trends-10db43bf97a5aac8.js', revision: '10db43bf97a5aac8' },
-        { url: '/world//_next/static/chunks/pages/weather-e1aa331b4fa8492d.js', revision: 'e1aa331b4fa8492d' },
+        { url: '/world//_next/static/chunks/pages/index-2c150b90755f6016.js', revision: '2c150b90755f6016' },
+        { url: '/world//_next/static/chunks/pages/languages-0788f8f7536b2f53.js', revision: '0788f8f7536b2f53' },
+        {
+          url: '/world//_next/static/chunks/pages/languages/%5Blanguage%5D-5ec121476b24e8d3.js',
+          revision: '5ec121476b24e8d3',
+        },
+        { url: '/world//_next/static/chunks/pages/organizations-63f004b1c5df893e.js', revision: '63f004b1c5df893e' },
+        {
+          url: '/world//_next/static/chunks/pages/organizations/%5Borganization%5D-013c625037164d1f.js',
+          revision: '013c625037164d1f',
+        },
+        { url: '/world//_next/static/chunks/pages/timezones-71850706b71e811b.js', revision: '71850706b71e811b' },
+        {
+          url: '/world//_next/static/chunks/pages/timezones/%5Btimezone%5D-0d27bc50e72928e7.js',
+          revision: '0d27bc50e72928e7',
+        },
+        { url: '/world//_next/static/chunks/pages/trends-395fed76c3a8d1c4.js', revision: '395fed76c3a8d1c4' },
+        { url: '/world//_next/static/chunks/pages/weather-7ccabe580211b1ff.js', revision: '7ccabe580211b1ff' },
         {
           url: '/world//_next/static/chunks/polyfills-c67a75d1b6f99dc8.js',
           revision: '837c0df77fd5009c9e46d446188ecfd0',
         },
-        { url: '/world//_next/static/chunks/webpack-1683c4100fe76514.js', revision: '1683c4100fe76514' },
-        { url: '/world//_next/static/css/08e559a91452e72e.css', revision: '08e559a91452e72e' },
+        { url: '/world//_next/static/chunks/webpack-72f0182628967e4b.js', revision: '72f0182628967e4b' },
+        { url: '/world//_next/static/css/02be66eff291562d.css', revision: '02be66eff291562d' },
+        {
+          url: '/world//_next/static/uIKyouScZZJSafwv1cALU/_buildManifest.js',
+          revision: 'aa991721f04e077dd519d74c1012f3a7',
+        },
+        {
+          url: '/world//_next/static/uIKyouScZZJSafwv1cALU/_ssgManifest.js',
+          revision: 'b6652df95db52feb4daf4eca35380933',
+        },
         { url: '/world/favicon.ico', revision: 'b7e5d143f696329db9b04f047c8ba284' },
         { url: '/world/manifest.json', revision: 'da0164d5cdfa9dd960ff4b15e98bf1bd' },
         { url: '/world/next.svg', revision: '8e061864f388b47f33a1c3780831193e' },
@@ -121,7 +130,7 @@ define(['./workbox-588899ac'], function (e) {
         cacheName: 'start-url',
         plugins: [
           {
-            cacheWillUpdate: async ({ request: e, response: s, event: n, state: a }) =>
+            cacheWillUpdate: async ({ request: e, response: s, event: n, state: c }) =>
               s && 'opaqueredirect' === s.type
                 ? new Response(s.body, { status: 200, statusText: 'OK', headers: s.headers })
                 : s,

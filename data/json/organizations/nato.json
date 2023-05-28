@@ -1,0 +1,126 @@
+[
+  {
+    "code": "ALB",
+    "name": "Albania"
+  },
+  {
+    "code": "BEL",
+    "name": "Belgium"
+  },
+  {
+    "code": "BGR",
+    "name": "Bulgaria"
+  },
+  {
+    "code": "CAN",
+    "name": "Canada"
+  },
+  {
+    "code": "HRV",
+    "name": "Croatia"
+  },
+  {
+    "code": "CZE",
+    "name": "Czech Republic"
+  },
+  {
+    "code": "DNK",
+    "name": "Denmark"
+  },
+  {
+    "code": "EST",
+    "name": "Estonia"
+  },
+  {
+    "code": "FIN",
+    "name": "Finland"
+  },
+  {
+    "code": "FRA",
+    "name": "France"
+  },
+  {
+    "code": "DEU",
+    "name": "Germany"
+  },
+  {
+    "code": "GRC",
+    "name": "Greece"
+  },
+  {
+    "code": "HUN",
+    "name": "Hungary"
+  },
+  {
+    "code": "ISL",
+    "name": "Iceland"
+  },
+  {
+    "code": "ITA",
+    "name": "Italy"
+  },
+  {
+    "code": "LVA",
+    "name": "Latvia"
+  },
+  {
+    "code": "LTU",
+    "name": "Lithuania"
+  },
+  {
+    "code": "LUX",
+    "name": "Luxembourg"
+  },
+  {
+    "code": "MNE",
+    "name": "Montenegro"
+  },
+  {
+    "code": "NLD",
+    "name": "Netherlands"
+  },
+  {
+    "code": "MKD",
+    "name": "North Macedonia"
+  },
+  {
+    "code": "NOR",
+    "name": "Norway"
+  },
+  {
+    "code": "POL",
+    "name": "Poland"
+  },
+  {
+    "code": "PRT",
+    "name": "Portugal"
+  },
+  {
+    "code": "ROU",
+    "name": "Romania"
+  },
+  {
+    "code": "SVK",
+    "name": "Slovakia"
+  },
+  {
+    "code": "SVN",
+    "name": "Slovenia"
+  },
+  {
+    "code": "ESP",
+    "name": "Spain"
+  },
+  {
+    "code": "TUR",
+    "name": "Turkey"
+  },
+  {
+    "code": "GBR",
+    "name": "United Kingdom"
+  },
+  {
+    "code": "USA",
+    "name": "United States"
+  }
+]

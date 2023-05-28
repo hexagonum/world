@@ -23,6 +23,7 @@ export const Navbar: React.FC = () => {
     { id: 'countries', href: '/countries', name: 'Countries' },
     { id: 'currencies', href: '/currencies', name: 'Currencies' },
     { id: 'languages', href: '/languages', name: 'Languages' },
+    { id: 'organizations', href: '/organizations', name: 'Organizations' },
     { id: 'timezones', href: '/timezones', name: 'Timezones' },
     { id: 'trends', href: '/trends', name: 'Trends' },
     { id: 'weather', href: '/weather', name: 'Weather' },

@@ -1,4 +1,43 @@
 import { writeFileSync } from 'fs';
+import al from '../data/json/organizations/al.json';
+import apec from '../data/json/organizations/apec.json';
+import asean from '../data/json/organizations/asean.json';
+import au from '../data/json/organizations/au.json';
+import celac from '../data/json/organizations/celac.json';
+import cis from '../data/json/organizations/cis.json';
+import cmw from '../data/json/organizations/cmw.json';
+import coe from '../data/json/organizations/coe.json';
+import cofa from '../data/json/organizations/cofa.json';
+import eu from '../data/json/organizations/eu.json';
+import nato from '../data/json/organizations/nato.json';
+import opec from '../data/json/organizations/opec.json';
+import organizations from '../data/json/organizations/organizations.json';
+import saarc from '../data/json/organizations/saarc.json';
+
+const organizationsMap = {
+  al,
+  apec,
+  asean,
+  au,
+  celac,
+  cis,
+  cmw,
+  coe,
+  cofa,
+  eu,
+  nato,
+  opec,
+  saarc,
+};
+
+const getOrganizations = (countryCode: string) => {
+  return organizations.filter(({ code }) => {
+    const countryCodes: string[] = (
+      (organizationsMap as Record<string, { code: string; name: string }[]>)[code.toLowerCase()] || []
+    ).map(({ code }) => code);
+    return countryCodes.includes(countryCode);
+  });
+};
 
 const getCountries = async (): Promise<any[]> => {
   try {
@@ -7,11 +46,13 @@ const getCountries = async (): Promise<any[]> => {
     const countries = await response.json();
     return countries
       .map((country: any) => {
+        const { cca3 = '' } = country;
         const area: number = country.area || 0;
         const population: number = country.population || 0;
         const borders: string[] = country.borders || [];
         const density: number = area === 0 ? 0 : Math.round(population / area);
-        return { ...country, density, borders };
+        const organizations: { code: string; name: string }[] = getOrganizations(cca3);
+        return { ...country, density, borders, organizations };
       })
       .sort((a: any, b: any) => (a.cca3 > b.cca3 ? 1 : -1));
   } catch (error) {

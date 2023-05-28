@@ -1,0 +1,86 @@
+[
+  {
+    "code": "AUS",
+    "name": "Australia"
+  },
+  {
+    "code": "BRN",
+    "name": "Brunei"
+  },
+  {
+    "code": "CAN",
+    "name": "Canada"
+  },
+  {
+    "code": "IDN",
+    "name": "Indonesia"
+  },
+  {
+    "code": "JPN",
+    "name": "Japan"
+  },
+  {
+    "code": "KOR",
+    "name": "South Korea"
+  },
+  {
+    "code": "MYS",
+    "name": "Malaysia"
+  },
+  {
+    "code": "NZL",
+    "name": "New Zealand"
+  },
+  {
+    "code": "PHL",
+    "name": "Philippines"
+  },
+  {
+    "code": "SGP",
+    "name": "Singapore"
+  },
+  {
+    "code": "THA",
+    "name": "Thailand"
+  },
+  {
+    "code": "USA",
+    "name": "United States"
+  },
+  {
+    "code": "TWN",
+    "name": "Taiwan"
+  },
+  {
+    "code": "HKG",
+    "name": "Hong Kong"
+  },
+  {
+    "code": "CHN",
+    "name": "China"
+  },
+  {
+    "code": "MEX",
+    "name": "Mexico"
+  },
+  {
+    "code": "PNG",
+    "name": "Papua New Guinea"
+  },
+  {
+    "code": "CHL",
+    "name": "Chile"
+  },
+  {
+    "code": "PER",
+    "name": "Peru"
+  },
+  {
+    "code": "RUS",
+    "name": "Russia"
+  },
+  {
+    "code": "VNM",
+    "name": "Vietnam"
+  }
+]

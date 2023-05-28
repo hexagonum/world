@@ -72,6 +72,7 @@ const CodeSection: React.FC<{ country: any }> = ({ country }) => {
           </Tbody>
         </Table>
       </TableContainer>
+      <Divider className="border-gray-300" />
     </section>
   );
 };
@@ -158,6 +159,7 @@ const GeographySection: React.FC<{ country: any }> = ({ country }) => {
           </Tbody>
         </Table>
       </TableContainer>
+      <Divider className="border-gray-300" />
     </section>
   );
 };
@@ -200,35 +202,75 @@ const PopulationSection: React.FC<{ country: any }> = ({ country }) => {
           </Tbody>
         </Table>
       </TableContainer>
+      <Divider className="border-gray-300" />
     </section>
   );
+};
+
+const OrganizationsSection: React.FC<{ organizations?: { code: string; name: string }[] }> = ({
+  organizations = [],
+}) => {
+  if (organizations.length === 0) {
+    return <></>;
+  }
+
+  return (
+    <section className="flex flex-col gap-4 md:gap-8">
+      <h2 className="font-semibold text-xl">
+        <Link href="/countries/organizations">Organizations</Link>
+      </h2>
+      <TableContainer className="border rounded shadow">
+        <Table>
+          <Tbody>
+            {organizations.map(({ code, name = '' }: { code: string; name: string }) => {
+              return (
+                <Tr key={code}>
+                  <Td>
+                    <Link href={`/organizations/${code}`}>
+                      <b>{code}</b>
+                    </Link>
+                  </Td>
+                  <Td isNumeric>{name}</Td>
+                </Tr>
+              );
+            })}
+          </Tbody>
+        </Table>
+      </TableContainer>
+      <Divider className="border-gray-300" />
+    </section>
+  );
+};
+
+const defaultCountry = {
+  name: { common: '', official: '' },
+  flags: { svg: '' },
+  cca2: '',
+  cca3: '',
+  ccn3: '',
+  cioc: '',
+  fifa: '',
+  region: '',
+  subregion: '',
+  tld: [],
+  latlng: [0, 0],
+  area: 0,
+  population: 0,
+  maps: { googleMaps: '', openStreetMaps: '' },
+  idd: { root: '', suffixes: [] },
+  capital: [],
+  languages: {},
+  borders: [],
+  currencies: {},
+  timezones: [],
+  organizations: [],
 };
 
 const CountryPage: NextPage = () => {
   const { query } = useRouter();
   const countryCode: string = query.country?.toString() || '';
-  const country = unitedNationMembers.find(({ cca3 }) => cca3.toLowerCase() === countryCode.toLowerCase()) || {
-    name: { common: '', official: '' },
-    flags: { svg: '' },
-    cca2: '',
-    cca3: '',
-    ccn3: '',
-    cioc: '',
-    fifa: '',
-    region: '',
-    subregion: '',
-    tld: [],
-    latlng: [0, 0],
-    area: 0,
-    population: 0,
-    maps: { googleMaps: '', openStreetMaps: '' },
-    idd: { root: '', suffixes: [] },
-    capital: [],
-    languages: {},
-    borders: [],
-    currencies: {},
-    timezones: [],
-  };
+  const country =
+    unitedNationMembers.find(({ cca3 }) => cca3.toLowerCase() === countryCode.toLowerCase()) ?? defaultCountry;
   const citiesByCountry = cities.filter(
     ({ country: cityCountry }) => country.name.common.toLowerCase() === cityCountry.toLowerCase()
   );
@@ -309,14 +351,12 @@ const CountryPage: NextPage = () => {
                   </Tbody>
                 </Table>
               </TableContainer>
+              <Divider className="border-gray-300" />
             </div>
-            <Divider className="border-gray-300" />
             <CodeSection country={country} />
-            <Divider className="border-gray-300" />
             <GeographySection country={country} />
-            <Divider className="border-gray-300" />
             <PopulationSection country={country} />
-            <Divider className="border-gray-300" />
+            <OrganizationsSection organizations={country.organizations} />
             {citiesByCountry.length > 0 ? (
               <>
                 <div className="flex flex-col gap-4 md:gap-8">

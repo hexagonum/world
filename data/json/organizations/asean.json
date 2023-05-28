@@ -1,0 +1,42 @@
+[
+  {
+    "code": "BRN",
+    "name": "Brunei"
+  },
+  {
+    "code": "KHM",
+    "name": "Cambodia"
+  },
+  {
+    "code": "IDN",
+    "name": "Indonesia"
+  },
+  {
+    "code": "LAO",
+    "name": "Laos"
+  },
+  {
+    "code": "MYS",
+    "name": "Malaysia"
+  },
+  {
+    "code": "MMR",
+    "name": "Myanmar"
+  },
+  {
+    "code": "PHL",
+    "name": "Philippines"
+  },
+  {
+    "code": "SGP",
+    "name": "Singapore"
+  },
+  {
+    "code": "THA",
+    "name": "Thailand"
+  },
+  {
+    "code": "VNM",
+    "name": "Vietnam"
+  }
+]

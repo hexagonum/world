@@ -187,7 +187,13 @@
     "capitalInfo": {
       "latlng": [34.52, 69.18]
     },
-    "density": 62
+    "density": 62,
+    "organizations": [
+      {
+        "code": "SAARC",
+        "name": "South Asian Association for Regional Cooperation"
+      }
+    ]
   },
   {
     "name": {
@@ -370,7 +376,17 @@
     "capitalInfo": {
       "latlng": [-8.83, 13.22]
     },
-    "density": 26
+    "density": 26,
+    "organizations": [
+      {
+        "code": "AU",
+        "name": "African Union"
+      },
+      {
+        "code": "OPEC",
+        "name": "Organisation of the Petroleum Exporting Countries"
+      }
+    ]
   },
   {
     "name": {
@@ -553,7 +569,17 @@
     "capitalInfo": {
       "latlng": [41.32, 19.82]
     },
-    "density": 99
+    "density": 99,
+    "organizations": [
+      {
+        "code": "COE",
+        "name": "Council of Europe"
+      },
+      {
+        "code": "NATO",
+        "name": "North Atlantic Treaty Organization"
+      }
+    ]
   },
   {
     "name": {
@@ -737,7 +763,13 @@
       "format": "AD###",
       "regex": "^(?:AD)*(\\d{3})$"
     },
-    "density": 165
+    "density": 165,
+    "organizations": [
+      {
+        "code": "COE",
+        "name": "Council of Europe"
+      }
+    ]
   },
   {
     "name": {
@@ -920,7 +952,17 @@
     "capitalInfo": {
       "latlng": [24.47, 54.37]
     },
-    "density": 118
+    "density": 118,
+    "organizations": [
+      {
+        "code": "AL",
+        "name": "Arab League"
+      },
+      {
+        "code": "OPEC",
+        "name": "Organisation of the Petroleum Exporting Countries"
+      }
+    ]
   },
   {
     "name": {
@@ -1112,7 +1154,13 @@
       "format": "@####@@@",
       "regex": "^([A-Z]\\d{4}[A-Z]{3})$"
     },
-    "density": 16
+    "density": 16,
+    "organizations": [
+      {
+        "code": "CELAC",
+        "name": "Community of Latin American and Caribbean States"
+      }
+    ]
   },
   {
     "name": {
@@ -1299,7 +1347,17 @@
       "format": "######",
       "regex": "^(\\d{6})$"
     },
-    "density": 100
+    "density": 100,
+    "organizations": [
+      {
+        "code": "CIS",
+        "name": "Commonwealth of Independent States"
+      },
+      {
+        "code": "COE",
+        "name": "Council of Europe"
+      }
+    ]
   },
   {
     "name": {
@@ -1479,7 +1537,17 @@
       "latlng": [17.12, -61.85]
     },
     "density": 222,
-    "borders": []
+    "borders": [],
+    "organizations": [
+      {
+        "code": "CELAC",
+        "name": "Community of Latin American and Caribbean States"
+      },
+      {
+        "code": "CMW",
+        "name": "Commonwealth of Nations"
+      }
+    ]
   },
   {
     "name": {
@@ -1675,7 +1743,17 @@
       "regex": "^(\\d{4})$"
     },
     "density": 3,
-    "borders": []
+    "borders": [],
+    "organizations": [
+      {
+        "code": "APEC",
+        "name": "Asia-Pacific Economic Cooperation"
+      },
+      {
+        "code": "CMW",
+        "name": "Commonwealth of Nations"
+      }
+    ]
   },
   {
     "name": {
@@ -1862,7 +1940,17 @@
       "format": "####",
       "regex": "^(\\d{4})$"
     },
-    "density": 106
+    "density": 106,
+    "organizations": [
+      {
+        "code": "COE",
+        "name": "Council of Europe"
+      },
+      {
+        "code": "EU",
+        "name": "European Union"
+      }
+    ]
   },
   {
     "name": {
@@ -2054,7 +2142,17 @@
       "format": "AZ ####",
       "regex": "^(?:AZ)*(\\d{4})$"
     },
-    "density": 117
+    "density": 117,
+    "organizations": [
+      {
+        "code": "CIS",
+        "name": "Commonwealth of Independent States"
+      },
+      {
+        "code": "COE",
+        "name": "Council of Europe"
+      }
+    ]
   },
   {
     "name": {
@@ -2242,7 +2340,13 @@
     "capitalInfo": {
       "latlng": [-3.43, 29.93]
     },
-    "density": 427
+    "density": 427,
+    "organizations": [
+      {
+        "code": "AU",
+        "name": "African Union"
+      }
+    ]
   },
   {
     "name": {
@@ -2449,7 +2553,21 @@
       "format": "####",
       "regex": "^(\\d{4})$"
     },
-    "density": 379
+    "density": 379,
+    "organizations": [
+      {
+        "code": "COE",
+        "name": "Council of Europe"
+      },
+      {
+        "code": "EU",
+        "name": "European Union"
+      },
+      {
+        "code": "NATO",
+        "name": "North Atlantic Treaty Organization"
+      }
+    ]
   },
   {
     "name": {
@@ -2632,7 +2750,13 @@
     "capitalInfo": {
       "latlng": [6.48, 2.62]
     },
-    "density": 108
+    "density": 108,
+    "organizations": [
+      {
+        "code": "AU",
+        "name": "African Union"
+      }
+    ]
   },
   {
     "name": {
@@ -2815,7 +2939,13 @@
     "capitalInfo": {
       "latlng": [12.37, -1.52]
     },
-    "density": 77
+    "density": 77,
+    "organizations": [
+      {
+        "code": "AU",
+        "name": "African Union"
+      }
+    ]
   },
   {
     "name": {
@@ -3002,7 +3132,17 @@
       "format": "####",
       "regex": "^(\\d{4})$"
     },
-    "density": 1116
+    "density": 1116,
+    "organizations": [
+      {
+        "code": "CMW",
+        "name": "Commonwealth of Nations"
+      },
+      {
+        "code": "SAARC",
+        "name": "South Asian Association for Regional Cooperation"
+      }
+    ]
   },
   {
     "name": {
@@ -3189,7 +3329,21 @@
       "format": "####",
       "regex": "^(\\d{4})$"
     },
-    "density": 62
+    "density": 62,
+    "organizations": [
+      {
+        "code": "COE",
+        "name": "Council of Europe"
+      },
+      {
+        "code": "EU",
+        "name": "European Union"
+      },
+      {
+        "code": "NATO",
+        "name": "North Atlantic Treaty Organization"
+      }
+    ]
   },
   {
     "name": {
@@ -3373,7 +3527,13 @@
       "regex": "^(\\d{3}\\d?)$"
     },
     "density": 2224,
-    "borders": []
+    "borders": [],
+    "organizations": [
+      {
+        "code": "AL",
+        "name": "Arab League"
+      }
+    ]
   },
   {
     "name": {
@@ -3557,7 +3717,17 @@
       "latlng": [25.08, -77.35]
     },
     "density": 28,
-    "borders": []
+    "borders": [],
+    "organizations": [
+      {
+        "code": "CELAC",
+        "name": "Community of Latin American and Caribbean States"
+      },
+      {
+        "code": "CMW",
+        "name": "Commonwealth of Nations"
+      }
+    ]
   },
   {
     "name": {
@@ -3753,7 +3923,13 @@
       "format": "#####",
       "regex": "^(\\d{5})$"
     },
-    "density": 64
+    "density": 64,
+    "organizations": [
+      {
+        "code": "COE",
+        "name": "Council of Europe"
+      }
+    ]
   },
   {
     "name": {
@@ -3945,7 +4121,13 @@
       "format": "######",
       "regex": "^(\\d{6})$"
     },
-    "density": 45
+    "density": 45,
+    "organizations": [
+      {
+        "code": "CIS",
+        "name": "Commonwealth of Independent States"
+      }
+    ]
   },
   {
     "name": {
@@ -4138,7 +4320,17 @@
     "capitalInfo": {
       "latlng": [17.25, -88.77]
     },
-    "density": 17
+    "density": 17,
+    "organizations": [
+      {
+        "code": "CELAC",
+        "name": "Community of Latin American and Caribbean States"
+      },
+      {
+        "code": "CMW",
+        "name": "Commonwealth of Nations"
+      }
+    ]
   },
   {
     "name": {
@@ -4346,7 +4538,13 @@
     "capitalInfo": {
       "latlng": [-19.02, -65.26]
     },
-    "density": 11
+    "density": 11,
+    "organizations": [
+      {
+        "code": "CELAC",
+        "name": "Community of Latin American and Caribbean States"
+      }
+    ]
   },
   {
     "name": {
@@ -4533,7 +4731,13 @@
       "format": "#####-###",
       "regex": "^(\\d{8})$"
     },
-    "density": 25
+    "density": 25,
+    "organizations": [
+      {
+        "code": "CELAC",
+        "name": "Community of Latin American and Caribbean States"
+      }
+    ]
   },
   {
     "name": {
@@ -4717,7 +4921,17 @@
       "regex": "^(?:BB)*(\\d{5})$"
     },
     "density": 668,
-    "borders": []
+    "borders": [],
+    "organizations": [
+      {
+        "code": "CELAC",
+        "name": "Community of Latin American and Caribbean States"
+      },
+      {
+        "code": "CMW",
+        "name": "Commonwealth of Nations"
+      }
+    ]
   },
   {
     "name": {
@@ -4905,7 +5119,21 @@
       "format": "@@####",
       "regex": "^([A-Z]{2}\\d{4})$"
     },
-    "density": 76
+    "density": 76,
+    "organizations": [
+      {
+        "code": "APEC",
+        "name": "Asia-Pacific Economic Cooperation"
+      },
+      {
+        "code": "ASEAN",
+        "name": "Association of Southeast Asian Nations"
+      },
+      {
+        "code": "CMW",
+        "name": "Commonwealth of Nations"
+      }
+    ]
   },
   {
     "name": {
@@ -5092,7 +5320,13 @@
     "capitalInfo": {
       "latlng": [27.47, 89.63]
     },
-    "density": 20
+    "density": 20,
+    "organizations": [
+      {
+        "code": "SAARC",
+        "name": "South Asian Association for Regional Cooperation"
+      }
+    ]
   },
   {
     "name": {
@@ -5280,7 +5514,17 @@
     "capitalInfo": {
       "latlng": [-24.63, 25.9]
     },
-    "density": 4
+    "density": 4,
+    "organizations": [
+      {
+        "code": "AU",
+        "name": "African Union"
+      },
+      {
+        "code": "CMW",
+        "name": "Commonwealth of Nations"
+      }
+    ]
   },
   {
     "name": {
@@ -5468,7 +5712,13 @@
     "capitalInfo": {
       "latlng": [4.37, 18.58]
     },
-    "density": 8
+    "density": 8,
+    "organizations": [
+      {
+        "code": "AU",
+        "name": "African Union"
+      }
+    ]
   },
   {
     "name": {
@@ -5660,7 +5910,21 @@
       "format": "@#@ #@#",
       "regex": "^([ABCEGHJKLMNPRSTVXY]\\d[ABCEGHJKLMNPRSTVWXYZ]) ?(\\d[ABCEGHJKLMNPRSTVWXYZ]\\d)$"
     },
-    "density": 4
+    "density": 4,
+    "organizations": [
+      {
+        "code": "APEC",
+        "name": "Asia-Pacific Economic Cooperation"
+      },
+      {
+        "code": "CMW",
+        "name": "Commonwealth of Nations"
+      },
+      {
+        "code": "NATO",
+        "name": "North Atlantic Treaty Organization"
+      }
+    ]
   },
   {
     "name": {
@@ -5862,7 +6126,13 @@
       "format": "####",
       "regex": "^(\\d{4})$"
     },
-    "density": 210
+    "density": 210,
+    "organizations": [
+      {
+        "code": "COE",
+        "name": "Council of Europe"
+      }
+    ]
   },
   {
     "name": {
@@ -6049,7 +6319,17 @@
       "format": "#######",
       "regex": "^(\\d{7})$"
     },
-    "density": 25
+    "density": 25,
+    "organizations": [
+      {
+        "code": "APEC",
+        "name": "Asia-Pacific Economic Cooperation"
+      },
+      {
+        "code": "CELAC",
+        "name": "Community of Latin American and Caribbean States"
+      }
+    ]
   },
   {
     "name": {
@@ -6257,7 +6537,13 @@
       "format": "######",
       "regex": "^(\\d{6})$"
     },
-    "density": 144
+    "density": 144,
+    "organizations": [
+      {
+        "code": "APEC",
+        "name": "Asia-Pacific Economic Cooperation"
+      }
+    ]
   },
   {
     "name": {
@@ -6440,7 +6726,13 @@
     "capitalInfo": {
       "latlng": [6.82, -5.27]
     },
-    "density": 82
+    "density": 82,
+    "organizations": [
+      {
+        "code": "AU",
+        "name": "African Union"
+      }
+    ]
   },
   {
     "name": {
@@ -6628,7 +6920,17 @@
     "capitalInfo": {
       "latlng": [3.85, 11.5]
     },
-    "density": 56
+    "density": 56,
+    "organizations": [
+      {
+        "code": "AU",
+        "name": "African Union"
+      },
+      {
+        "code": "CMW",
+        "name": "Commonwealth of Nations"
+      }
+    ]
   },
   {
     "name": {
@@ -6831,7 +7133,13 @@
     "capitalInfo": {
       "latlng": [-4.32, 15.3]
     },
-    "density": 46
+    "density": 46,
+    "organizations": [
+      {
+        "code": "AU",
+        "name": "African Union"
+      }
+    ]
   },
   {
     "name": {
@@ -7021,7 +7329,17 @@
     "capitalInfo": {
       "latlng": [-4.25, 15.28]
     },
-    "density": 17
+    "density": 17,
+    "organizations": [
+      {
+        "code": "AU",
+        "name": "African Union"
+      },
+      {
+        "code": "OPEC",
+        "name": "Organisation of the Petroleum Exporting Countries"
+      }
+    ]
   },
   {
     "name": {
@@ -7204,7 +7522,13 @@
     "capitalInfo": {
       "latlng": [4.71, -74.07]
     },
-    "density": 45
+    "density": 45,
+    "organizations": [
+      {
+        "code": "CELAC",
+        "name": "Community of Latin American and Caribbean States"
+      }
+    ]
   },
   {
     "name": {
@@ -7397,7 +7721,17 @@
       "latlng": [-11.7, 43.23]
     },
     "density": 467,
-    "borders": []
+    "borders": [],
+    "organizations": [
+      {
+        "code": "AL",
+        "name": "Arab League"
+      },
+      {
+        "code": "AU",
+        "name": "African Union"
+      }
+    ]
   },
   {
     "name": {
@@ -7584,7 +7918,13 @@
       "regex": "^(\\d{4})$"
     },
     "density": 138,
-    "borders": []
+    "borders": [],
+    "organizations": [
+      {
+        "code": "AU",
+        "name": "African Union"
+      }
+    ]
   },
   {
     "name": {
@@ -7771,7 +8111,13 @@
       "format": "####",
       "regex": "^(\\d{4})$"
     },
-    "density": 100
+    "density": 100,
+    "organizations": [
+      {
+        "code": "CELAC",
+        "name": "Community of Latin American and Caribbean States"
+      }
+    ]
   },
   {
     "name": {
@@ -7959,7 +8305,13 @@
       "regex": "^(?:CP)*(\\d{5})$"
     },
     "density": 103,
-    "borders": []
+    "borders": [],
+    "organizations": [
+      {
+        "code": "CELAC",
+        "name": "Community of Latin American and Caribbean States"
+      }
+    ]
   },
   {
     "name": {
@@ -8151,7 +8503,21 @@
       "regex": "^(\\d{4})$"
     },
     "density": 131,
-    "borders": []
+    "borders": [],
+    "organizations": [
+      {
+        "code": "CMW",
+        "name": "Commonwealth of Nations"
+      },
+      {
+        "code": "COE",
+        "name": "Council of Europe"
+      },
+      {
+        "code": "EU",
+        "name": "European Union"
+      }
+    ]
   },
   {
     "name": {
@@ -8343,7 +8709,21 @@
       "format": "### ##",
       "regex": "^(\\d{5})$"
     },
-    "density": 136
+    "density": 136,
+    "organizations": [
+      {
+        "code": "COE",
+        "name": "Council of Europe"
+      },
+      {
+        "code": "EU",
+        "name": "European Union"
+      },
+      {
+        "code": "NATO",
+        "name": "North Atlantic Treaty Organization"
+      }
+    ]
   },
   {
     "name": {
@@ -8530,7 +8910,21 @@
       "format": "#####",
       "regex": "^(\\d{5})$"
     },
-    "density": 233
+    "density": 233,
+    "organizations": [
+      {
+        "code": "COE",
+        "name": "Council of Europe"
+      },
+      {
+        "code": "EU",
+        "name": "European Union"
+      },
+      {
+        "code": "NATO",
+        "name": "North Atlantic Treaty Organization"
+      }
+    ]
   },
   {
     "name": {
@@ -8726,7 +9120,17 @@
     "capitalInfo": {
       "latlng": [11.58, 43.15]
     },
-    "density": 43
+    "density": 43,
+    "organizations": [
+      {
+        "code": "AL",
+        "name": "Arab League"
+      },
+      {
+        "code": "AU",
+        "name": "African Union"
+      }
+    ]
   },
   {
     "name": {
@@ -8906,7 +9310,17 @@
       "latlng": [15.3, -61.4]
     },
     "density": 96,
-    "borders": []
+    "borders": [],
+    "organizations": [
+      {
+        "code": "CELAC",
+        "name": "Community of Latin American and Caribbean States"
+      },
+      {
+        "code": "CMW",
+        "name": "Commonwealth of Nations"
+      }
+    ]
   },
   {
     "name": {
@@ -9093,7 +9507,21 @@
       "format": "####",
       "regex": "^(\\d{4})$"
     },
-    "density": 135
+    "density": 135,
+    "organizations": [
+      {
+        "code": "COE",
+        "name": "Council of Europe"
+      },
+      {
+        "code": "EU",
+        "name": "European Union"
+      },
+      {
+        "code": "NATO",
+        "name": "North Atlantic Treaty Organization"
+      }
+    ]
   },
   {
     "name": {
@@ -9280,7 +9708,13 @@
       "format": "#####",
       "regex": "^(\\d{5})$"
     },
-    "density": 223
+    "density": 223,
+    "organizations": [
+      {
+        "code": "CELAC",
+        "name": "Community of Latin American and Caribbean States"
+      }
+    ]
   },
   {
     "name": {
@@ -9467,7 +9901,21 @@
       "format": "#####",
       "regex": "^(\\d{5})$"
     },
-    "density": 19
+    "density": 19,
+    "organizations": [
+      {
+        "code": "AL",
+        "name": "Arab League"
+      },
+      {
+        "code": "AU",
+        "name": "African Union"
+      },
+      {
+        "code": "OPEC",
+        "name": "Organisation of the Petroleum Exporting Countries"
+      }
+    ]
   },
   {
     "name": {
@@ -9654,7 +10102,13 @@
       "format": "@####@",
       "regex": "^([a-zA-Z]\\d{4}[a-zA-Z])$"
     },
-    "density": 64
+    "density": 64,
+    "organizations": [
+      {
+        "code": "CELAC",
+        "name": "Community of Latin American and Caribbean States"
+      }
+    ]
   },
   {
     "name": {
@@ -9841,7 +10295,17 @@
       "format": "#####",
       "regex": "^(\\d{5})$"
     },
-    "density": 102
+    "density": 102,
+    "organizations": [
+      {
+        "code": "AL",
+        "name": "Arab League"
+      },
+      {
+        "code": "AU",
+        "name": "African Union"
+      }
+    ]
   },
   {
     "name": {
@@ -10031,7 +10495,13 @@
     "capitalInfo": {
       "latlng": [15.33, 38.93]
     },
-    "density": 46
+    "density": 46,
+    "organizations": [
+      {
+        "code": "AU",
+        "name": "African Union"
+      }
+    ]
   },
   {
     "name": {
@@ -10218,7 +10688,21 @@
       "format": "#####",
       "regex": "^(\\d{5})$"
     },
-    "density": 94
+    "density": 94,
+    "organizations": [
+      {
+        "code": "COE",
+        "name": "Council of Europe"
+      },
+      {
+        "code": "EU",
+        "name": "European Union"
+      },
+      {
+        "code": "NATO",
+        "name": "North Atlantic Treaty Organization"
+      }
+    ]
   },
   {
     "name": {
@@ -10405,7 +10889,21 @@
       "format": "#####",
       "regex": "^(\\d{5})$"
     },
-    "density": 29
+    "density": 29,
+    "organizations": [
+      {
+        "code": "COE",
+        "name": "Council of Europe"
+      },
+      {
+        "code": "EU",
+        "name": "European Union"
+      },
+      {
+        "code": "NATO",
+        "name": "North Atlantic Treaty Organization"
+      }
+    ]
   },
   {
     "name": {
@@ -10592,7 +11090,13 @@
       "format": "####",
       "regex": "^(\\d{4})$"
     },
-    "density": 104
+    "density": 104,
+    "organizations": [
+      {
+        "code": "AU",
+        "name": "African Union"
+      }
+    ]
   },
   {
     "name": {
@@ -10784,7 +11288,21 @@
       "format": "#####",
       "regex": "^(?:FI)*(\\d{5})$"
     },
-    "density": 16
+    "density": 16,
+    "organizations": [
+      {
+        "code": "COE",
+        "name": "Council of Europe"
+      },
+      {
+        "code": "EU",
+        "name": "European Union"
+      },
+      {
+        "code": "NATO",
+        "name": "North Atlantic Treaty Organization"
+      }
+    ]
   },
   {
     "name": {
@@ -10977,7 +11495,13 @@
       "latlng": [-18.13, 178.42]
     },
     "density": 49,
-    "borders": []
+    "borders": [],
+    "organizations": [
+      {
+        "code": "CMW",
+        "name": "Commonwealth of Nations"
+      }
+    ]
   },
   {
     "name": {
@@ -11179,7 +11703,21 @@
       "format": "#####",
       "regex": "^(\\d{5})$"
     },
-    "density": 122
+    "density": 122,
+    "organizations": [
+      {
+        "code": "COE",
+        "name": "Council of Europe"
+      },
+      {
+        "code": "EU",
+        "name": "European Union"
+      },
+      {
+        "code": "NATO",
+        "name": "North Atlantic Treaty Organization"
+      }
+    ]
   },
   {
     "name": {
@@ -11365,7 +11903,13 @@
       "regex": "^(\\d{5})$"
     },
     "density": 164,
-    "borders": []
+    "borders": [],
+    "organizations": [
+      {
+        "code": "COFA",
+        "name": "Compact of Free Association"
+      }
+    ]
   },
   {
     "name": {
@@ -11548,7 +12092,21 @@
     "capitalInfo": {
       "latlng": [0.38, 9.45]
     },
-    "density": 8
+    "density": 8,
+    "organizations": [
+      {
+        "code": "AU",
+        "name": "African Union"
+      },
+      {
+        "code": "CMW",
+        "name": "Commonwealth of Nations"
+      },
+      {
+        "code": "OPEC",
+        "name": "Organisation of the Petroleum Exporting Countries"
+      }
+    ]
   },
   {
     "name": {
@@ -11744,7 +12302,21 @@
       "format": "@# #@@|@## #@@|@@# #@@|@@## #@@|@#@ #@@|@@#@ #@@|GIR0AA",
       "regex": "^(([A-Z]\\d{2}[A-Z]{2})|([A-Z]\\d{3}[A-Z]{2})|([A-Z]{2}\\d{2}[A-Z]{2})|([A-Z]{2}\\d{3}[A-Z]{2})|([A-Z]\\d[A-Z]\\d[A-Z]{2})|([A-Z]{2}\\d[A-Z]\\d[A-Z]{2})|(GIR0AA))$"
     },
-    "density": 277
+    "density": 277,
+    "organizations": [
+      {
+        "code": "CMW",
+        "name": "Commonwealth of Nations"
+      },
+      {
+        "code": "COE",
+        "name": "Council of Europe"
+      },
+      {
+        "code": "NATO",
+        "name": "North Atlantic Treaty Organization"
+      }
+    ]
   },
   {
     "name": {
@@ -11931,7 +12503,13 @@
       "format": "####",
       "regex": "^(\\d{4})$"
     },
-    "density": 53
+    "density": 53,
+    "organizations": [
+      {
+        "code": "COE",
+        "name": "Council of Europe"
+      }
+    ]
   },
   {
     "name": {
@@ -12114,7 +12692,17 @@
     "capitalInfo": {
       "latlng": [5.55, -0.22]
     },
-    "density": 130
+    "density": 130,
+    "organizations": [
+      {
+        "code": "AU",
+        "name": "African Union"
+      },
+      {
+        "code": "CMW",
+        "name": "Commonwealth of Nations"
+      }
+    ]
   },
   {
     "name": {
@@ -12297,7 +12885,13 @@
     "capitalInfo": {
       "latlng": [9.5, -13.7]
     },
-    "density": 53
+    "density": 53,
+    "organizations": [
+      {
+        "code": "AU",
+        "name": "African Union"
+      }
+    ]
   },
   {
     "name": {
@@ -12480,7 +13074,17 @@
     "capitalInfo": {
       "latlng": [13.45, -16.57]
     },
-    "density": 226
+    "density": 226,
+    "organizations": [
+      {
+        "code": "AU",
+        "name": "African Union"
+      },
+      {
+        "code": "CMW",
+        "name": "Commonwealth of Nations"
+      }
+    ]
   },
   {
     "name": {
@@ -12676,7 +13280,17 @@
     "capitalInfo": {
       "latlng": [3.75, 8.78]
     },
-    "density": 50
+    "density": 50,
+    "organizations": [
+      {
+        "code": "AU",
+        "name": "African Union"
+      },
+      {
+        "code": "OPEC",
+        "name": "Organisation of the Petroleum Exporting Countries"
+      }
+    ]
   },
   {
     "name": {
@@ -12863,7 +13477,21 @@
       "format": "### ##",
       "regex": "^(\\d{5})$"
     },
-    "density": 81
+    "density": 81,
+    "organizations": [
+      {
+        "code": "COE",
+        "name": "Council of Europe"
+      },
+      {
+        "code": "EU",
+        "name": "European Union"
+      },
+      {
+        "code": "NATO",
+        "name": "North Atlantic Treaty Organization"
+      }
+    ]
   },
   {
     "name": {
@@ -13043,7 +13671,17 @@
       "latlng": [32.38, -64.68]
     },
     "density": 327,
-    "borders": []
+    "borders": [],
+    "organizations": [
+      {
+        "code": "CELAC",
+        "name": "Community of Latin American and Caribbean States"
+      },
+      {
+        "code": "CMW",
+        "name": "Commonwealth of Nations"
+      }
+    ]
   },
   {
     "name": {
@@ -13230,7 +13868,13 @@
       "format": "#####",
       "regex": "^(\\d{5})$"
     },
-    "density": 155
+    "density": 155,
+    "organizations": [
+      {
+        "code": "CELAC",
+        "name": "Community of Latin American and Caribbean States"
+      }
+    ]
   },
   {
     "name": {
@@ -13413,7 +14057,17 @@
     "capitalInfo": {
       "latlng": [6.8, -58.15]
     },
-    "density": 4
+    "density": 4,
+    "organizations": [
+      {
+        "code": "CELAC",
+        "name": "Community of Latin American and Caribbean States"
+      },
+      {
+        "code": "CMW",
+        "name": "Commonwealth of Nations"
+      }
+    ]
   },
   {
     "name": {
@@ -13600,7 +14254,13 @@
       "format": "@@####",
       "regex": "^([A-Z]{2}\\d{4})$"
     },
-    "density": 88
+    "density": 88,
+    "organizations": [
+      {
+        "code": "CELAC",
+        "name": "Community of Latin American and Caribbean States"
+      }
+    ]
   },
   {
     "name": {
@@ -13787,7 +14447,21 @@
       "format": "HR-#####",
       "regex": "^(?:HR)*(\\d{5})$"
     },
-    "density": 72
+    "density": 72,
+    "organizations": [
+      {
+        "code": "COE",
+        "name": "Council of Europe"
+      },
+      {
+        "code": "EU",
+        "name": "European Union"
+      },
+      {
+        "code": "NATO",
+        "name": "North Atlantic Treaty Organization"
+      }
+    ]
   },
   {
     "name": {
@@ -13979,7 +14653,13 @@
       "format": "HT####",
       "regex": "^(?:HT)*(\\d{4})$"
     },
-    "density": 411
+    "density": 411,
+    "organizations": [
+      {
+        "code": "CELAC",
+        "name": "Community of Latin American and Caribbean States"
+      }
+    ]
   },
   {
     "name": {
@@ -14166,7 +14846,21 @@
       "format": "####",
       "regex": "^(\\d{4})$"
     },
-    "density": 105
+    "density": 105,
+    "organizations": [
+      {
+        "code": "COE",
+        "name": "Council of Europe"
+      },
+      {
+        "code": "EU",
+        "name": "European Union"
+      },
+      {
+        "code": "NATO",
+        "name": "North Atlantic Treaty Organization"
+      }
+    ]
   },
   {
     "name": {
@@ -14353,7 +15047,17 @@
       "format": "#####",
       "regex": "^(\\d{5})$"
     },
-    "density": 144
+    "density": 144,
+    "organizations": [
+      {
+        "code": "APEC",
+        "name": "Asia-Pacific Economic Cooperation"
+      },
+      {
+        "code": "ASEAN",
+        "name": "Association of Southeast Asian Nations"
+      }
+    ]
   },
   {
     "name": {
@@ -14550,7 +15254,17 @@
       "format": "######",
       "regex": "^(\\d{6})$"
     },
-    "density": 420
+    "density": 420,
+    "organizations": [
+      {
+        "code": "CMW",
+        "name": "Commonwealth of Nations"
+      },
+      {
+        "code": "SAARC",
+        "name": "South Asian Association for Regional Cooperation"
+      }
+    ]
   },
   {
     "name": {
@@ -14738,7 +15452,17 @@
     "capitalInfo": {
       "latlng": [53.32, -6.23]
     },
-    "density": 71
+    "density": 71,
+    "organizations": [
+      {
+        "code": "COE",
+        "name": "Council of Europe"
+      },
+      {
+        "code": "EU",
+        "name": "European Union"
+      }
+    ]
   },
   {
     "name": {
@@ -14921,7 +15645,13 @@
       "format": "##########",
       "regex": "^(\\d{10})$"
     },
-    "density": 51
+    "density": 51,
+    "organizations": [
+      {
+        "code": "OPEC",
+        "name": "Organisation of the Petroleum Exporting Countries"
+      }
+    ]
   },
   {
     "name": {
@@ -15118,7 +15848,17 @@
       "format": "#####",
       "regex": "^(\\d{5})$"
     },
-    "density": 92
+    "density": 92,
+    "organizations": [
+      {
+        "code": "AL",
+        "name": "Arab League"
+      },
+      {
+        "code": "OPEC",
+        "name": "Organisation of the Petroleum Exporting Countries"
+      }
+    ]
   },
   {
     "name": {
@@ -15305,7 +16045,17 @@
       "regex": "^(\\d{3})$"
     },
     "density": 4,
-    "borders": []
+    "borders": [],
+    "organizations": [
+      {
+        "code": "COE",
+        "name": "Council of Europe"
+      },
+      {
+        "code": "NATO",
+        "name": "North Atlantic Treaty Organization"
+      }
+    ]
   },
   {
     "name": {
@@ -15497,7 +16247,8 @@
       "format": "#####",
       "regex": "^(\\d{5})$"
     },
-    "density": 444
+    "density": 444,
+    "organizations": []
   },
   {
     "name": {
@@ -15684,7 +16435,21 @@
       "format": "#####",
       "regex": "^(\\d{5})$"
     },
-    "density": 198
+    "density": 198,
+    "organizations": [
+      {
+        "code": "COE",
+        "name": "Council of Europe"
+      },
+      {
+        "code": "EU",
+        "name": "European Union"
+      },
+      {
+        "code": "NATO",
+        "name": "North Atlantic Treaty Organization"
+      }
+    ]
   },
   {
     "name": {
@@ -15872,7 +16637,17 @@
       "latlng": [17.99702, -76.79358]
     },
     "density": 269,
-    "borders": []
+    "borders": [],
+    "organizations": [
+      {
+        "code": "CELAC",
+        "name": "Community of Latin American and Caribbean States"
+      },
+      {
+        "code": "CMW",
+        "name": "Commonwealth of Nations"
+      }
+    ]
   },
   {
     "name": {
@@ -16059,7 +16834,13 @@
       "format": "#####",
       "regex": "^(\\d{5})$"
     },
-    "density": 114
+    "density": 114,
+    "organizations": [
+      {
+        "code": "AL",
+        "name": "Arab League"
+      }
+    ]
   },
   {
     "name": {
@@ -16246,7 +17027,13 @@
       "regex": "^(\\d{7})$"
     },
     "density": 333,
-    "borders": []
+    "borders": [],
+    "organizations": [
+      {
+        "code": "APEC",
+        "name": "Asia-Pacific Economic Cooperation"
+      }
+    ]
   },
   {
     "name": {
@@ -16447,7 +17234,13 @@
       "format": "######",
       "regex": "^(\\d{6})$"
     },
-    "density": 7
+    "density": 7,
+    "organizations": [
+      {
+        "code": "CIS",
+        "name": "Commonwealth of Independent States"
+      }
+    ]
   },
   {
     "name": {
@@ -16639,7 +17432,17 @@
       "format": "#####",
       "regex": "^(\\d{5})$"
     },
-    "density": 93
+    "density": 93,
+    "organizations": [
+      {
+        "code": "AU",
+        "name": "African Union"
+      },
+      {
+        "code": "CMW",
+        "name": "Commonwealth of Nations"
+      }
+    ]
   },
   {
     "name": {
@@ -16831,7 +17634,13 @@
       "format": "######",
       "regex": "^(\\d{6})$"
     },
-    "density": 33
+    "density": 33,
+    "organizations": [
+      {
+        "code": "CIS",
+        "name": "Commonwealth of Independent States"
+      }
+    ]
   },
   {
     "name": {
@@ -17019,7 +17828,13 @@
       "format": "#####",
       "regex": "^(\\d{5})$"
     },
-    "density": 92
+    "density": 92,
+    "organizations": [
+      {
+        "code": "ASEAN",
+        "name": "Association of Southeast Asian Nations"
+      }
+    ]
   },
   {
     "name": {
@@ -17210,7 +18025,13 @@
       "latlng": [1.33, 172.98]
     },
     "density": 147,
-    "borders": []
+    "borders": [],
+    "organizations": [
+      {
+        "code": "CMW",
+        "name": "Commonwealth of Nations"
+      }
+    ]
   },
   {
     "name": {
@@ -17390,7 +18211,17 @@
       "latlng": [17.3, -62.72]
     },
     "density": 204,
-    "borders": []
+    "borders": [],
+    "organizations": [
+      {
+        "code": "CELAC",
+        "name": "Community of Latin American and Caribbean States"
+      },
+      {
+        "code": "CMW",
+        "name": "Commonwealth of Nations"
+      }
+    ]
   },
   {
     "name": {
@@ -17577,7 +18408,13 @@
       "format": "SEOUL ###-###",
       "regex": "^(?:SEOUL)*(\\d{6})$"
     },
-    "density": 517
+    "density": 517,
+    "organizations": [
+      {
+        "code": "APEC",
+        "name": "Asia-Pacific Economic Cooperation"
+      }
+    ]
   },
   {
     "name": {
@@ -17761,7 +18598,17 @@
       "format": "#####",
       "regex": "^(\\d{5})$"
     },
-    "density": 240
+    "density": 240,
+    "organizations": [
+      {
+        "code": "AL",
+        "name": "Arab League"
+      },
+      {
+        "code": "OPEC",
+        "name": "Organisation of the Petroleum Exporting Countries"
+      }
+    ]
   },
   {
     "name": {
@@ -17948,7 +18795,13 @@
       "format": "#####",
       "regex": "^(\\d{5})$"
     },
-    "density": 31
+    "density": 31,
+    "organizations": [
+      {
+        "code": "ASEAN",
+        "name": "Association of Southeast Asian Nations"
+      }
+    ]
   },
   {
     "name": {
@@ -18140,7 +18993,13 @@
       "format": "#### ####|####",
       "regex": "^(\\d{4}(\\d{4})?)$"
     },
-    "density": 653
+    "density": 653,
+    "organizations": [
+      {
+        "code": "AL",
+        "name": "Arab League"
+      }
+    ]
   },
   {
     "name": {
@@ -18327,7 +19186,13 @@
       "format": "####",
       "regex": "^(\\d{4})$"
     },
-    "density": 45
+    "density": 45,
+    "organizations": [
+      {
+        "code": "AU",
+        "name": "African Union"
+      }
+    ]
   },
   {
     "name": {
@@ -18507,7 +19372,21 @@
     "capitalInfo": {
       "latlng": [32.88, 13.17]
     },
-    "density": 4
+    "density": 4,
+    "organizations": [
+      {
+        "code": "AL",
+        "name": "Arab League"
+      },
+      {
+        "code": "AU",
+        "name": "African Union"
+      },
+      {
+        "code": "OPEC",
+        "name": "Organisation of the Petroleum Exporting Countries"
+      }
+    ]
   },
   {
     "name": {
@@ -18690,7 +19569,17 @@
       "latlng": [14, -61]
     },
     "density": 298,
-    "borders": []
+    "borders": [],
+    "organizations": [
+      {
+        "code": "CELAC",
+        "name": "Community of Latin American and Caribbean States"
+      },
+      {
+        "code": "CMW",
+        "name": "Commonwealth of Nations"
+      }
+    ]
   },
   {
     "name": {
@@ -18874,7 +19763,13 @@
       "format": "####",
       "regex": "^(\\d{4})$"
     },
-    "density": 238
+    "density": 238,
+    "organizations": [
+      {
+        "code": "COE",
+        "name": "Council of Europe"
+      }
+    ]
   },
   {
     "name": {
@@ -19066,7 +19961,17 @@
       "format": "#####",
       "regex": "^(\\d{5})$"
     },
-    "density": 334
+    "density": 334,
+    "organizations": [
+      {
+        "code": "CMW",
+        "name": "Commonwealth of Nations"
+      },
+      {
+        "code": "SAARC",
+        "name": "South Asian Association for Regional Cooperation"
+      }
+    ]
   },
   {
     "name": {
@@ -19262,7 +20167,17 @@
       "format": "###",
       "regex": "^(\\d{3})$"
     },
-    "density": 71
+    "density": 71,
+    "organizations": [
+      {
+        "code": "AU",
+        "name": "African Union"
+      },
+      {
+        "code": "CMW",
+        "name": "Commonwealth of Nations"
+      }
+    ]
   },
   {
     "name": {
@@ -19449,7 +20364,21 @@
       "format": "LT-#####",
       "regex": "^(?:LT)*(\\d{5})$"
     },
-    "density": 43
+    "density": 43,
+    "organizations": [
+      {
+        "code": "COE",
+        "name": "Council of Europe"
+      },
+      {
+        "code": "EU",
+        "name": "European Union"
+      },
+      {
+        "code": "NATO",
+        "name": "North Atlantic Treaty Organization"
+      }
+    ]
   },
   {
     "name": {
@@ -19652,7 +20581,21 @@
       "format": "####",
       "regex": "^(\\d{4})$"
     },
-    "density": 244
+    "density": 244,
+    "organizations": [
+      {
+        "code": "COE",
+        "name": "Council of Europe"
+      },
+      {
+        "code": "EU",
+        "name": "European Union"
+      },
+      {
+        "code": "NATO",
+        "name": "North Atlantic Treaty Organization"
+      }
+    ]
   },
   {
     "name": {
@@ -19839,7 +20782,21 @@
       "format": "LV-####",
       "regex": "^(?:LV)*(\\d{4})$"
     },
-    "density": 29
+    "density": 29,
+    "organizations": [
+      {
+        "code": "COE",
+        "name": "Council of Europe"
+      },
+      {
+        "code": "EU",
+        "name": "European Union"
+      },
+      {
+        "code": "NATO",
+        "name": "North Atlantic Treaty Organization"
+      }
+    ]
   },
   {
     "name": {
@@ -20031,7 +20988,17 @@
       "format": "#####",
       "regex": "^(\\d{5})$"
     },
-    "density": 83
+    "density": 83,
+    "organizations": [
+      {
+        "code": "AL",
+        "name": "Arab League"
+      },
+      {
+        "code": "AU",
+        "name": "African Union"
+      }
+    ]
   },
   {
     "name": {
@@ -20214,7 +21181,13 @@
       "format": "#####",
       "regex": "^(\\d{5})$"
     },
-    "density": 19428
+    "density": 19428,
+    "organizations": [
+      {
+        "code": "COE",
+        "name": "Council of Europe"
+      }
+    ]
   },
   {
     "name": {
@@ -20401,7 +21374,17 @@
       "format": "MD-####",
       "regex": "^(?:MD)*(\\d{4})$"
     },
-    "density": 77
+    "density": 77,
+    "organizations": [
+      {
+        "code": "CIS",
+        "name": "Commonwealth of Independent States"
+      },
+      {
+        "code": "COE",
+        "name": "Council of Europe"
+      }
+    ]
   },
   {
     "name": {
@@ -20593,7 +21576,13 @@
       "regex": "^(\\d{3})$"
     },
     "density": 47,
-    "borders": []
+    "borders": [],
+    "organizations": [
+      {
+        "code": "AU",
+        "name": "African Union"
+      }
+    ]
   },
   {
     "name": {
@@ -20780,7 +21769,17 @@
       "regex": "^(\\d{5})$"
     },
     "density": 1802,
-    "borders": []
+    "borders": [],
+    "organizations": [
+      {
+        "code": "CMW",
+        "name": "Commonwealth of Nations"
+      },
+      {
+        "code": "SAARC",
+        "name": "South Asian Association for Regional Cooperation"
+      }
+    ]
   },
   {
     "name": {
@@ -20967,7 +21966,17 @@
       "format": "#####",
       "regex": "^(\\d{5})$"
     },
-    "density": 66
+    "density": 66,
+    "organizations": [
+      {
+        "code": "APEC",
+        "name": "Asia-Pacific Economic Cooperation"
+      },
+      {
+        "code": "CELAC",
+        "name": "Community of Latin American and Caribbean States"
+      }
+    ]
   },
   {
     "name": {
@@ -21151,7 +22160,13 @@
       "latlng": [7.1, 171.38]
     },
     "density": 327,
-    "borders": []
+    "borders": [],
+    "organizations": [
+      {
+        "code": "COFA",
+        "name": "Compact of Free Association"
+      }
+    ]
   },
   {
     "name": {
@@ -21344,7 +22359,17 @@
       "format": "####",
       "regex": "^(\\d{4})$"
     },
-    "density": 81
+    "density": 81,
+    "organizations": [
+      {
+        "code": "COE",
+        "name": "Council of Europe"
+      },
+      {
+        "code": "NATO",
+        "name": "North Atlantic Treaty Organization"
+      }
+    ]
   },
   {
     "name": {
@@ -21527,7 +22552,13 @@
     "capitalInfo": {
       "latlng": [12.65, -8]
     },
-    "density": 16
+    "density": 16,
+    "organizations": [
+      {
+        "code": "AU",
+        "name": "African Union"
+      }
+    ]
   },
   {
     "name": {
@@ -21719,7 +22750,21 @@
       "regex": "^([A-Z]{3}\\d{2}\\d?)$"
     },
     "density": 1662,
-    "borders": []
+    "borders": [],
+    "organizations": [
+      {
+        "code": "CMW",
+        "name": "Commonwealth of Nations"
+      },
+      {
+        "code": "COE",
+        "name": "Council of Europe"
+      },
+      {
+        "code": "EU",
+        "name": "European Union"
+      }
+    ]
   },
   {
     "name": {
@@ -21906,7 +22951,13 @@
       "format": "#####",
       "regex": "^(\\d{5})$"
     },
-    "density": 80
+    "density": 80,
+    "organizations": [
+      {
+        "code": "ASEAN",
+        "name": "Association of Southeast Asian Nations"
+      }
+    ]
   },
   {
     "name": {
@@ -22093,7 +23144,17 @@
       "format": "#####",
       "regex": "^(\\d{5})$"
     },
-    "density": 45
+    "density": 45,
+    "organizations": [
+      {
+        "code": "COE",
+        "name": "Council of Europe"
+      },
+      {
+        "code": "NATO",
+        "name": "North Atlantic Treaty Organization"
+      }
+    ]
   },
   {
     "name": {
@@ -22280,7 +23341,8 @@
       "format": "######",
       "regex": "^(\\d{6})$"
     },
-    "density": 2
+    "density": 2,
+    "organizations": []
   },
   {
     "name": {
@@ -22467,7 +23529,17 @@
       "format": "####",
       "regex": "^(\\d{4})$"
     },
-    "density": 39
+    "density": 39,
+    "organizations": [
+      {
+        "code": "AU",
+        "name": "African Union"
+      },
+      {
+        "code": "CMW",
+        "name": "Commonwealth of Nations"
+      }
+    ]
   },
   {
     "name": {
@@ -22650,7 +23722,17 @@
     "capitalInfo": {
       "latlng": [18.07, -15.97]
     },
-    "density": 5
+    "density": 5,
+    "organizations": [
+      {
+        "code": "AL",
+        "name": "Arab League"
+      },
+      {
+        "code": "AU",
+        "name": "African Union"
+      }
+    ]
   },
   {
     "name": {
@@ -22843,7 +23925,17 @@
       "latlng": [-20.15, 57.48]
     },
     "density": 620,
-    "borders": []
+    "borders": [],
+    "organizations": [
+      {
+        "code": "AU",
+        "name": "African Union"
+      },
+      {
+        "code": "CMW",
+        "name": "Commonwealth of Nations"
+      }
+    ]
   },
   {
     "name": {
@@ -23031,7 +24123,17 @@
     "capitalInfo": {
       "latlng": [-13.97, 33.78]
     },
-    "density": 161
+    "density": 161,
+    "organizations": [
+      {
+        "code": "AU",
+        "name": "African Union"
+      },
+      {
+        "code": "CMW",
+        "name": "Commonwealth of Nations"
+      }
+    ]
   },
   {
     "name": {
@@ -23223,7 +24325,21 @@
       "format": "#####",
       "regex": "^(\\d{5})$"
     },
-    "density": 98
+    "density": 98,
+    "organizations": [
+      {
+        "code": "APEC",
+        "name": "Asia-Pacific Economic Cooperation"
+      },
+      {
+        "code": "ASEAN",
+        "name": "Association of Southeast Asian Nations"
+      },
+      {
+        "code": "CMW",
+        "name": "Commonwealth of Nations"
+      }
+    ]
   },
   {
     "name": {
@@ -23450,7 +24566,17 @@
     "capitalInfo": {
       "latlng": [-22.57, 17.08]
     },
-    "density": 3
+    "density": 3,
+    "organizations": [
+      {
+        "code": "AU",
+        "name": "African Union"
+      },
+      {
+        "code": "CMW",
+        "name": "Commonwealth of Nations"
+      }
+    ]
   },
   {
     "name": {
@@ -23637,7 +24763,13 @@
       "format": "####",
       "regex": "^(\\d{4})$"
     },
-    "density": 19
+    "density": 19,
+    "organizations": [
+      {
+        "code": "AU",
+        "name": "African Union"
+      }
+    ]
   },
   {
     "name": {
@@ -23824,7 +24956,21 @@
       "format": "######",
       "regex": "^(\\d{6})$"
     },
-    "density": 223
+    "density": 223,
+    "organizations": [
+      {
+        "code": "AU",
+        "name": "African Union"
+      },
+      {
+        "code": "CMW",
+        "name": "Commonwealth of Nations"
+      },
+      {
+        "code": "OPEC",
+        "name": "Organisation of the Petroleum Exporting Countries"
+      }
+    ]
   },
   {
     "name": {
@@ -24011,7 +25157,13 @@
       "format": "###-###-#",
       "regex": "^(\\d{7})$"
     },
-    "density": 51
+    "density": 51,
+    "organizations": [
+      {
+        "code": "CELAC",
+        "name": "Community of Latin American and Caribbean States"
+      }
+    ]
   },
   {
     "name": {
@@ -24198,7 +25350,21 @@
       "format": "#### @@",
       "regex": "^(\\d{4}[A-Z]{2})$"
     },
-    "density": 398
+    "density": 398,
+    "organizations": [
+      {
+        "code": "COE",
+        "name": "Council of Europe"
+      },
+      {
+        "code": "EU",
+        "name": "European Union"
+      },
+      {
+        "code": "NATO",
+        "name": "North Atlantic Treaty Organization"
+      }
+    ]
   },
   {
     "name": {
@@ -24395,7 +25561,17 @@
       "format": "####",
       "regex": "^(\\d{4})$"
     },
-    "density": 17
+    "density": 17,
+    "organizations": [
+      {
+        "code": "COE",
+        "name": "Council of Europe"
+      },
+      {
+        "code": "NATO",
+        "name": "North Atlantic Treaty Organization"
+      }
+    ]
   },
   {
     "name": {
@@ -24582,7 +25758,13 @@
       "format": "#####",
       "regex": "^(\\d{5})$"
     },
-    "density": 198
+    "density": 198,
+    "organizations": [
+      {
+        "code": "SAARC",
+        "name": "South Asian Association for Regional Cooperation"
+      }
+    ]
   },
   {
     "name": {
@@ -24769,7 +25951,13 @@
       "latlng": [-0.55, 166.92]
     },
     "density": 516,
-    "borders": []
+    "borders": [],
+    "organizations": [
+      {
+        "code": "CMW",
+        "name": "Commonwealth of Nations"
+      }
+    ]
   },
   {
     "name": {
@@ -24963,7 +26151,17 @@
       "regex": "^(\\d{4})$"
     },
     "density": 19,
-    "borders": []
+    "borders": [],
+    "organizations": [
+      {
+        "code": "APEC",
+        "name": "Asia-Pacific Economic Cooperation"
+      },
+      {
+        "code": "CMW",
+        "name": "Commonwealth of Nations"
+      }
+    ]
   },
   {
     "name": {
@@ -25147,7 +26345,13 @@
       "format": "###",
       "regex": "^(\\d{3})$"
     },
-    "density": 16
+    "density": 16,
+    "organizations": [
+      {
+        "code": "AL",
+        "name": "Arab League"
+      }
+    ]
   },
   {
     "name": {
@@ -25339,7 +26543,17 @@
       "format": "#####",
       "regex": "^(\\d{5})$"
     },
-    "density": 250
+    "density": 250,
+    "organizations": [
+      {
+        "code": "CMW",
+        "name": "Commonwealth of Nations"
+      },
+      {
+        "code": "SAARC",
+        "name": "South Asian Association for Regional Cooperation"
+      }
+    ]
   },
   {
     "name": {
@@ -25526,7 +26740,13 @@
     "capitalInfo": {
       "latlng": [8.97, -79.53]
     },
-    "density": 57
+    "density": 57,
+    "organizations": [
+      {
+        "code": "CELAC",
+        "name": "Community of Latin American and Caribbean States"
+      }
+    ]
   },
   {
     "name": {
@@ -25723,7 +26943,17 @@
       "format": "#####",
       "regex": "^(\\d{5})$"
     },
-    "density": 26
+    "density": 26,
+    "organizations": [
+      {
+        "code": "APEC",
+        "name": "Asia-Pacific Economic Cooperation"
+      },
+      {
+        "code": "CELAC",
+        "name": "Community of Latin American and Caribbean States"
+      }
+    ]
   },
   {
     "name": {
@@ -25915,7 +27145,17 @@
       "regex": "^(\\d{4})$"
     },
     "density": 320,
-    "borders": []
+    "borders": [],
+    "organizations": [
+      {
+        "code": "APEC",
+        "name": "Asia-Pacific Economic Cooperation"
+      },
+      {
+        "code": "ASEAN",
+        "name": "Association of Southeast Asian Nations"
+      }
+    ]
   },
   {
     "name": {
@@ -26103,7 +27343,13 @@
       "regex": "^(96940)$"
     },
     "density": 39,
-    "borders": []
+    "borders": [],
+    "organizations": [
+      {
+        "code": "COFA",
+        "name": "Compact of Free Association"
+      }
+    ]
   },
   {
     "name": {
@@ -26300,7 +27546,17 @@
       "format": "###",
       "regex": "^(\\d{3})$"
     },
-    "density": 19
+    "density": 19,
+    "organizations": [
+      {
+        "code": "APEC",
+        "name": "Asia-Pacific Economic Cooperation"
+      },
+      {
+        "code": "CMW",
+        "name": "Commonwealth of Nations"
+      }
+    ]
   },
   {
     "name": {
@@ -26487,7 +27743,21 @@
       "format": "##-###",
       "regex": "^(\\d{5})$"
     },
-    "density": 121
+    "density": 121,
+    "organizations": [
+      {
+        "code": "COE",
+        "name": "Council of Europe"
+      },
+      {
+        "code": "EU",
+        "name": "European Union"
+      },
+      {
+        "code": "NATO",
+        "name": "North Atlantic Treaty Organization"
+      }
+    ]
   },
   {
     "name": {
@@ -26680,7 +27950,8 @@
       "format": "###-###",
       "regex": "^(\\d{6})$"
     },
-    "density": 214
+    "density": 214,
+    "organizations": []
   },
   {
     "name": {
@@ -26867,7 +28138,21 @@
       "format": "####-###",
       "regex": "^(\\d{7})$"
     },
-    "density": 112
+    "density": 112,
+    "organizations": [
+      {
+        "code": "COE",
+        "name": "Council of Europe"
+      },
+      {
+        "code": "EU",
+        "name": "European Union"
+      },
+      {
+        "code": "NATO",
+        "name": "North Atlantic Treaty Organization"
+      }
+    ]
   },
   {
     "name": {
@@ -27059,7 +28344,13 @@
       "format": "####",
       "regex": "^(\\d{4})$"
     },
-    "density": 18
+    "density": 18,
+    "organizations": [
+      {
+        "code": "CELAC",
+        "name": "Community of Latin American and Caribbean States"
+      }
+    ]
   },
   {
     "name": {
@@ -27239,7 +28530,13 @@
     "capitalInfo": {
       "latlng": [25.28, 51.53]
     },
-    "density": 249
+    "density": 249,
+    "organizations": [
+      {
+        "code": "AL",
+        "name": "Arab League"
+      }
+    ]
   },
   {
     "name": {
@@ -27426,7 +28723,21 @@
       "format": "######",
       "regex": "^(\\d{6})$"
     },
-    "density": 81
+    "density": 81,
+    "organizations": [
+      {
+        "code": "COE",
+        "name": "Council of Europe"
+      },
+      {
+        "code": "EU",
+        "name": "European Union"
+      },
+      {
+        "code": "NATO",
+        "name": "North Atlantic Treaty Organization"
+      }
+    ]
   },
   {
     "name": {
@@ -27623,7 +28934,17 @@
       "format": "######",
       "regex": "^(\\d{6})$"
     },
-    "density": 8
+    "density": 8,
+    "organizations": [
+      {
+        "code": "APEC",
+        "name": "Asia-Pacific Economic Cooperation"
+      },
+      {
+        "code": "CIS",
+        "name": "Commonwealth of Independent States"
+      }
+    ]
   },
   {
     "name": {
@@ -27816,7 +29137,17 @@
     "capitalInfo": {
       "latlng": [-1.95, 30.05]
     },
-    "density": 492
+    "density": 492,
+    "organizations": [
+      {
+        "code": "AU",
+        "name": "African Union"
+      },
+      {
+        "code": "CMW",
+        "name": "Commonwealth of Nations"
+      }
+    ]
   },
   {
     "name": {
@@ -28000,7 +29331,17 @@
       "format": "#####",
       "regex": "^(\\d{5})$"
     },
-    "density": 16
+    "density": 16,
+    "organizations": [
+      {
+        "code": "AL",
+        "name": "Arab League"
+      },
+      {
+        "code": "OPEC",
+        "name": "Organisation of the Petroleum Exporting Countries"
+      }
+    ]
   },
   {
     "name": {
@@ -28191,7 +29532,17 @@
       "format": "#####",
       "regex": "^(\\d{5})$"
     },
-    "density": 23
+    "density": 23,
+    "organizations": [
+      {
+        "code": "AL",
+        "name": "Arab League"
+      },
+      {
+        "code": "AU",
+        "name": "African Union"
+      }
+    ]
   },
   {
     "name": {
@@ -28378,7 +29729,13 @@
       "format": "#####",
       "regex": "^(\\d{5})$"
     },
-    "density": 85
+    "density": 85,
+    "organizations": [
+      {
+        "code": "AU",
+        "name": "African Union"
+      }
+    ]
   },
   {
     "name": {
@@ -28573,7 +29930,21 @@
       "regex": "^(\\d{6})$"
     },
     "density": 8008,
-    "borders": []
+    "borders": [],
+    "organizations": [
+      {
+        "code": "APEC",
+        "name": "Asia-Pacific Economic Cooperation"
+      },
+      {
+        "code": "ASEAN",
+        "name": "Association of Southeast Asian Nations"
+      },
+      {
+        "code": "CMW",
+        "name": "Commonwealth of Nations"
+      }
+    ]
   },
   {
     "name": {
@@ -28756,7 +30127,13 @@
       "latlng": [-9.43, 159.95]
     },
     "density": 24,
-    "borders": []
+    "borders": [],
+    "organizations": [
+      {
+        "code": "CMW",
+        "name": "Commonwealth of Nations"
+      }
+    ]
   },
   {
     "name": {
@@ -28939,7 +30316,17 @@
     "capitalInfo": {
       "latlng": [8.48, -13.23]
     },
-    "density": 111
+    "density": 111,
+    "organizations": [
+      {
+        "code": "AU",
+        "name": "African Union"
+      },
+      {
+        "code": "CMW",
+        "name": "Commonwealth of Nations"
+      }
+    ]
   },
   {
     "name": {
@@ -29126,7 +30513,13 @@
       "format": "CP ####",
       "regex": "^(?:CP)*(\\d{4})$"
     },
-    "density": 308
+    "density": 308,
+    "organizations": [
+      {
+        "code": "CELAC",
+        "name": "Community of Latin American and Caribbean States"
+      }
+    ]
   },
   {
     "name": {
@@ -29310,7 +30703,13 @@
       "format": "4789#",
       "regex": "^(4789\\d)$"
     },
-    "density": 556
+    "density": 556,
+    "organizations": [
+      {
+        "code": "COE",
+        "name": "Council of Europe"
+      }
+    ]
   },
   {
     "name": {
@@ -29508,7 +30907,17 @@
       "format": "@@  #####",
       "regex": "^([A-Z]{2}\\d{5})$"
     },
-    "density": 25
+    "density": 25,
+    "organizations": [
+      {
+        "code": "AL",
+        "name": "Arab League"
+      },
+      {
+        "code": "AU",
+        "name": "African Union"
+      }
+    ]
   },
   {
     "name": {
@@ -29695,7 +31104,13 @@
       "format": "######",
       "regex": "^(\\d{6})$"
     },
-    "density": 78
+    "density": 78,
+    "organizations": [
+      {
+        "code": "COE",
+        "name": "Council of Europe"
+      }
+    ]
   },
   {
     "name": {
@@ -29878,7 +31293,13 @@
     "capitalInfo": {
       "latlng": [4.85, 31.62]
     },
-    "density": 18
+    "density": 18,
+    "organizations": [
+      {
+        "code": "AU",
+        "name": "African Union"
+      }
+    ]
   },
   {
     "name": {
@@ -30066,7 +31487,13 @@
       "latlng": [0.34, 6.73]
     },
     "density": 227,
-    "borders": []
+    "borders": [],
+    "organizations": [
+      {
+        "code": "AU",
+        "name": "African Union"
+      }
+    ]
   },
   {
     "name": {
@@ -30249,7 +31676,13 @@
     "capitalInfo": {
       "latlng": [5.83, -55.17]
     },
-    "density": 4
+    "density": 4,
+    "organizations": [
+      {
+        "code": "CELAC",
+        "name": "Community of Latin American and Caribbean States"
+      }
+    ]
   },
   {
     "name": {
@@ -30436,7 +31869,21 @@
       "format": "###  ##",
       "regex": "^(\\d{5})$"
     },
-    "density": 111
+    "density": 111,
+    "organizations": [
+      {
+        "code": "COE",
+        "name": "Council of Europe"
+      },
+      {
+        "code": "EU",
+        "name": "European Union"
+      },
+      {
+        "code": "NATO",
+        "name": "North Atlantic Treaty Organization"
+      }
+    ]
   },
   {
     "name": {
@@ -30623,7 +32070,21 @@
       "format": "SI- ####",
       "regex": "^(?:SI)*(\\d{4})$"
     },
-    "density": 104
+    "density": 104,
+    "organizations": [
+      {
+        "code": "COE",
+        "name": "Council of Europe"
+      },
+      {
+        "code": "EU",
+        "name": "European Union"
+      },
+      {
+        "code": "NATO",
+        "name": "North Atlantic Treaty Organization"
+      }
+    ]
   },
   {
     "name": {
@@ -30810,7 +32271,17 @@
       "format": "SE-### ##",
       "regex": "^(?:SE)*(\\d{5})$"
     },
-    "density": 23
+    "density": 23,
+    "organizations": [
+      {
+        "code": "COE",
+        "name": "Council of Europe"
+      },
+      {
+        "code": "EU",
+        "name": "European Union"
+      }
+    ]
   },
   {
     "name": {
@@ -31003,7 +32474,17 @@
       "format": "@###",
       "regex": "^([A-Z]\\d{3})$"
     },
-    "density": 67
+    "density": 67,
+    "organizations": [
+      {
+        "code": "AU",
+        "name": "African Union"
+      },
+      {
+        "code": "CMW",
+        "name": "Commonwealth of Nations"
+      }
+    ]
   },
   {
     "name": {
@@ -31196,7 +32677,17 @@
       "latlng": [-4.62, 55.45]
     },
     "density": 218,
-    "borders": []
+    "borders": [],
+    "organizations": [
+      {
+        "code": "AU",
+        "name": "African Union"
+      },
+      {
+        "code": "CMW",
+        "name": "Commonwealth of Nations"
+      }
+    ]
   },
   {
     "name": {
@@ -31379,7 +32870,13 @@
     "capitalInfo": {
       "latlng": [33.5, 36.3]
     },
-    "density": 95
+    "density": 95,
+    "organizations": [
+      {
+        "code": "AL",
+        "name": "Arab League"
+      }
+    ]
   },
   {
     "name": {
@@ -31567,7 +33064,13 @@
     "capitalInfo": {
       "latlng": [12.1, 15.03]
     },
-    "density": 13
+    "density": 13,
+    "organizations": [
+      {
+        "code": "AU",
+        "name": "African Union"
+      }
+    ]
   },
   {
     "name": {
@@ -31750,7 +33253,17 @@
     "capitalInfo": {
       "latlng": [6.14, 1.21]
     },
-    "density": 146
+    "density": 146,
+    "organizations": [
+      {
+        "code": "AU",
+        "name": "African Union"
+      },
+      {
+        "code": "CMW",
+        "name": "Commonwealth of Nations"
+      }
+    ]
   },
   {
     "name": {
@@ -31937,7 +33450,17 @@
       "format": "#####",
       "regex": "^(\\d{5})$"
     },
-    "density": 136
+    "density": 136,
+    "organizations": [
+      {
+        "code": "APEC",
+        "name": "Asia-Pacific Economic Cooperation"
+      },
+      {
+        "code": "ASEAN",
+        "name": "Association of Southeast Asian Nations"
+      }
+    ]
   },
   {
     "name": {
@@ -32129,7 +33652,13 @@
       "format": "######",
       "regex": "^(\\d{6})$"
     },
-    "density": 67
+    "density": 67,
+    "organizations": [
+      {
+        "code": "CIS",
+        "name": "Commonwealth of Independent States"
+      }
+    ]
   },
   {
     "name": {
@@ -32321,7 +33850,8 @@
       "format": "######",
       "regex": "^(\\d{6})$"
     },
-    "density": 12
+    "density": 12,
+    "organizations": []
   },
   {
     "name": {
@@ -32514,7 +34044,8 @@
     "capitalInfo": {
       "latlng": [-8.58, 125.6]
     },
-    "density": 89
+    "density": 89,
+    "organizations": []
   },
   {
     "name": {
@@ -32702,7 +34233,13 @@
       "latlng": [-21.13, -175.2]
     },
     "density": 141,
-    "borders": []
+    "borders": [],
+    "organizations": [
+      {
+        "code": "CMW",
+        "name": "Commonwealth of Nations"
+      }
+    ]
   },
   {
     "name": {
@@ -32885,7 +34422,17 @@
       "latlng": [10.65, -61.52]
     },
     "density": 273,
-    "borders": []
+    "borders": [],
+    "organizations": [
+      {
+        "code": "CELAC",
+        "name": "Community of Latin American and Caribbean States"
+      },
+      {
+        "code": "CMW",
+        "name": "Commonwealth of Nations"
+      }
+    ]
   },
   {
     "name": {
@@ -33072,7 +34619,17 @@
       "format": "####",
       "regex": "^(\\d{4})$"
     },
-    "density": 72
+    "density": 72,
+    "organizations": [
+      {
+        "code": "AL",
+        "name": "Arab League"
+      },
+      {
+        "code": "AU",
+        "name": "African Union"
+      }
+    ]
   },
   {
     "name": {
@@ -33259,7 +34816,17 @@
       "format": "#####",
       "regex": "^(\\d{5})$"
     },
-    "density": 108
+    "density": 108,
+    "organizations": [
+      {
+        "code": "COE",
+        "name": "Council of Europe"
+      },
+      {
+        "code": "NATO",
+        "name": "North Atlantic Treaty Organization"
+      }
+    ]
   },
   {
     "name": {
@@ -33450,7 +35017,13 @@
       "latlng": [-8.52, 179.22]
     },
     "density": 454,
-    "borders": []
+    "borders": [],
+    "organizations": [
+      {
+        "code": "CMW",
+        "name": "Commonwealth of Nations"
+      }
+    ]
   },
   {
     "name": {
@@ -33643,7 +35216,17 @@
     "capitalInfo": {
       "latlng": [-6.16, 35.75]
     },
-    "density": 63
+    "density": 63,
+    "organizations": [
+      {
+        "code": "AU",
+        "name": "African Union"
+      },
+      {
+        "code": "CMW",
+        "name": "Commonwealth of Nations"
+      }
+    ]
   },
   {
     "name": {
@@ -33831,7 +35414,17 @@
     "capitalInfo": {
       "latlng": [0.32, 32.55]
     },
-    "density": 189
+    "density": 189,
+    "organizations": [
+      {
+        "code": "AU",
+        "name": "African Union"
+      },
+      {
+        "code": "CMW",
+        "name": "Commonwealth of Nations"
+      }
+    ]
   },
   {
     "name": {
@@ -34018,7 +35611,13 @@
       "format": "#####",
       "regex": "^(\\d{5})$"
     },
-    "density": 73
+    "density": 73,
+    "organizations": [
+      {
+        "code": "COE",
+        "name": "Council of Europe"
+      }
+    ]
   },
   {
     "name": {
@@ -34205,7 +35804,13 @@
       "format": "#####",
       "regex": "^(\\d{5})$"
     },
-    "density": 19
+    "density": 19,
+    "organizations": [
+      {
+        "code": "CELAC",
+        "name": "Community of Latin American and Caribbean States"
+      }
+    ]
   },
   {
     "name": {
@@ -34722,7 +36327,21 @@
       "format": "#####-####",
       "regex": "^\\d{5}(-\\d{4})?$"
     },
-    "density": 35
+    "density": 35,
+    "organizations": [
+      {
+        "code": "APEC",
+        "name": "Asia-Pacific Economic Cooperation"
+      },
+      {
+        "code": "COFA",
+        "name": "Compact of Free Association"
+      },
+      {
+        "code": "NATO",
+        "name": "North Atlantic Treaty Organization"
+      }
+    ]
   },
   {
     "name": {
@@ -34914,7 +36533,13 @@
       "format": "######",
       "regex": "^(\\d{6})$"
     },
-    "density": 77
+    "density": 77,
+    "organizations": [
+      {
+        "code": "CIS",
+        "name": "Commonwealth of Independent States"
+      }
+    ]
   },
   {
     "name": {
@@ -35097,7 +36722,8 @@
     "capitalInfo": {
       "latlng": [41.9, 12.45]
     },
-    "density": 1025
+    "density": 1025,
+    "organizations": []
   },
   {
     "name": {
@@ -35277,7 +36903,17 @@
       "latlng": [13.13, -61.22]
     },
     "density": 285,
-    "borders": []
+    "borders": [],
+    "organizations": [
+      {
+        "code": "CELAC",
+        "name": "Community of Latin American and Caribbean States"
+      },
+      {
+        "code": "CMW",
+        "name": "Commonwealth of Nations"
+      }
+    ]
   },
   {
     "name": {
@@ -35469,7 +37105,17 @@
       "format": "####",
       "regex": "^(\\d{4})$"
     },
-    "density": 31
+    "density": 31,
+    "organizations": [
+      {
+        "code": "CELAC",
+        "name": "Community of Latin American and Caribbean States"
+      },
+      {
+        "code": "OPEC",
+        "name": "Organisation of the Petroleum Exporting Countries"
+      }
+    ]
   },
   {
     "name": {
@@ -35656,7 +37302,17 @@
       "format": "######",
       "regex": "^(\\d{6})$"
     },
-    "density": 294
+    "density": 294,
+    "organizations": [
+      {
+        "code": "APEC",
+        "name": "Asia-Pacific Economic Cooperation"
+      },
+      {
+        "code": "ASEAN",
+        "name": "Association of Southeast Asian Nations"
+      }
+    ]
   },
   {
     "name": {
@@ -35849,7 +37505,13 @@
       "latlng": [-17.73, 168.32]
     },
     "density": 25,
-    "borders": []
+    "borders": [],
+    "organizations": [
+      {
+        "code": "CMW",
+        "name": "Commonwealth of Nations"
+      }
+    ]
   },
   {
     "name": {
@@ -36037,7 +37699,13 @@
       "latlng": [-13.82, -171.77]
     },
     "density": 70,
-    "borders": []
+    "borders": [],
+    "organizations": [
+      {
+        "code": "CMW",
+        "name": "Commonwealth of Nations"
+      }
+    ]
   },
   {
     "name": {
@@ -36220,7 +37888,13 @@
     "capitalInfo": {
       "latlng": [15.37, 44.19]
     },
-    "density": 56
+    "density": 56,
+    "organizations": [
+      {
+        "code": "AL",
+        "name": "Arab League"
+      }
+    ]
   },
   {
     "name": {
@@ -36457,7 +38131,17 @@
       "format": "####",
       "regex": "^(\\d{4})$"
     },
-    "density": 49
+    "density": 49,
+    "organizations": [
+      {
+        "code": "AU",
+        "name": "African Union"
+      },
+      {
+        "code": "CMW",
+        "name": "Commonwealth of Nations"
+      }
+    ]
   },
   {
     "name": {
@@ -36644,7 +38328,17 @@
       "format": "#####",
       "regex": "^(\\d{5})$"
     },
-    "density": 24
+    "density": 24,
+    "organizations": [
+      {
+        "code": "AU",
+        "name": "African Union"
+      },
+      {
+        "code": "CMW",
+        "name": "Commonwealth of Nations"
+      }
+    ]
   },
   {
     "name": {
@@ -36897,6 +38591,12 @@
     "capitalInfo": {
       "latlng": [-17.82, 31.03]
     },
-    "density": 38
+    "density": 38,
+    "organizations": [
+      {
+        "code": "AU",
+        "name": "African Union"
+      }
+    ]
   }
 ]

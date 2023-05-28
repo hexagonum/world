@@ -1,0 +1,186 @@
+[
+  {
+    "code": "ALB",
+    "name": "Albania"
+  },
+  {
+    "code": "AND",
+    "name": "Andorra"
+  },
+  {
+    "code": "ARM",
+    "name": "Armenia"
+  },
+  {
+    "code": "AUT",
+    "name": "Austria"
+  },
+  {
+    "code": "AZE",
+    "name": "Azerbaijan"
+  },
+  {
+    "code": "BEL",
+    "name": "Belgium"
+  },
+  {
+    "code": "BIH",
+    "name": "Bosnia and Herzegovina"
+  },
+  {
+    "code": "BGR",
+    "name": "Bulgaria"
+  },
+  {
+    "code": "HRV",
+    "name": "Croatia"
+  },
+  {
+    "code": "CYP",
+    "name": "Cyprus"
+  },
+  {
+    "code": "CZE",
+    "name": "Czech Republic"
+  },
+  {
+    "code": "DNK",
+    "name": "Denmark"
+  },
+  {
+    "code": "EST",
+    "name": "Estonia"
+  },
+  {
+    "code": "FIN",
+    "name": "Finland"
+  },
+  {
+    "code": "FRA",
+    "name": "France"
+  },
+  {
+    "code": "GEO",
+    "name": "Georgia"
+  },
+  {
+    "code": "DEU",
+    "name": "Germany"
+  },
+  {
+    "code": "GRC",
+    "name": "Greece"
+  },
+  {
+    "code": "HUN",
+    "name": "Hungary"
+  },
+  {
+    "code": "ISL",
+    "name": "Iceland"
+  },
+  {
+    "code": "IRL",
+    "name": "Ireland"
+  },
+  {
+    "code": "ITA",
+    "name": "Italy"
+  },
+  {
+    "code": "LVA",
+    "name": "Latvia"
+  },
+  {
+    "code": "LIE",
+    "name": "Liechtenstein"
+  },
+  {
+    "code": "LTU",
+    "name": "Lithuania"
+  },
+  {
+    "code": "LUX",
+    "name": "Luxembourg"
+  },
+  {
+    "code": "MLT",
+    "name": "Malta"
+  },
+  {
+    "code": "MCO",
+    "name": "Monaco"
+  },
+  {
+    "code": "MNE",
+    "name": "Montenegro"
+  },
+  {
+    "code": "NLD",
+    "name": "Netherlands"
+  },
+  {
+    "code": "MKD",
+    "name": "North Macedonia"
+  },
+  {
+    "code": "NOR",
+    "name": "Norway"
+  },
+  {
+    "code": "POL",
+    "name": "Poland"
+  },
+  {
+    "code": "PRT",
+    "name": "Portugal"
+  },
+  {
+    "code": "MDA",
+    "name": "Moldova"
+  },
+  {
+    "code": "ROU",
+    "name": "Romania"
+  },
+  {
+    "code": "SMR",
+    "name": "San Marino"
+  },
+  {
+    "code": "SRB",
+    "name": "Serbia"
+  },
+  {
+    "code": "SVK",
+    "name": "Slovakia"
+  },
+  {
+    "code": "SVN",
+    "name": "Slovenia"
+  },
+  {
+    "code": "ESP",
+    "name": "Spain"
+  },
+  {
+    "code": "SWE",
+    "name": "Sweden"
+  },
+  {
+    "code": "CHE",
+    "name": "Switzerland"
+  },
+  {
+    "code": "TUR",
+    "name": "Turkey"
+  },
+  {
+    "code": "UKR",
+    "name": "Ukraine"
+  },
+  {
+    "code": "GBR",
+    "name": "United Kingdom"
+  }
+]
