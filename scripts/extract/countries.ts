@@ -1,19 +1,19 @@
 import { writeFileSync } from 'fs';
-import al from '../data/json/organizations/al.json';
-import apec from '../data/json/organizations/apec.json';
-import asean from '../data/json/organizations/asean.json';
-import au from '../data/json/organizations/au.json';
-import celac from '../data/json/organizations/celac.json';
-import cis from '../data/json/organizations/cis.json';
-import cmw from '../data/json/organizations/cmw.json';
-import coe from '../data/json/organizations/coe.json';
-import cofa from '../data/json/organizations/cofa.json';
-import eu from '../data/json/organizations/eu.json';
-import nato from '../data/json/organizations/nato.json';
-import opec from '../data/json/organizations/opec.json';
-import organizations from '../data/json/organizations/organizations.json';
-import saarc from '../data/json/organizations/saarc.json';
-import timezoneDetails from '../src/data/timezones/details.json';
+import al from '../../data/json/organizations/al.json';
+import apec from '../../data/json/organizations/apec.json';
+import asean from '../../data/json/organizations/asean.json';
+import au from '../../data/json/organizations/au.json';
+import celac from '../../data/json/organizations/celac.json';
+import cis from '../../data/json/organizations/cis.json';
+import cmw from '../../data/json/organizations/cmw.json';
+import coe from '../../data/json/organizations/coe.json';
+import cofa from '../../data/json/organizations/cofa.json';
+import eu from '../../data/json/organizations/eu.json';
+import nato from '../../data/json/organizations/nato.json';
+import opec from '../../data/json/organizations/opec.json';
+import organizations from '../../data/json/organizations/organizations.json';
+import saarc from '../../data/json/organizations/saarc.json';
+import timezoneDetails from '../../src/data/timezones/details.json';
 
 const organizationsMap = {
   al,

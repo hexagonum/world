@@ -4,5 +4,103 @@ datasource db {
 }
 
 model Country {
-  id String @id
+  code                 String                     @id
+  name                 Json
+  cca2                 String
+  cca3                 String
+  ccn3                 String
+  cioc                 String
+  status               String
+  independent          Boolean
+  unMember             Boolean
+  latlng               Float[]
+  topLevelDomains      String[]
+  capital              String[]
+  alternativeSpellings String[]
+  continents           String[]
+  region               String
+  subregion            String
+  area                 Int
+  flag                 String
+  population           Int
+  fifa                 String
+  startOfWeek          String
+  density              Int
+  borders              String[]
+  currencies           CurrenciesInCountries[]
+  languages            LanguagesInCountries[]
+  organiztions         OrganizationsInCountries[]
+  TimezonesInCountries TimezonesInCountries[]
+  createdAt            DateTime                   @default(now())
+  updatedAt            DateTime                   @updatedAt
+}
+
+model Currency {
+  code                  String                  @id
+  name                  String
+  symbol                String
+  CurrenciesInCountries CurrenciesInCountries[]
+  createdAt             DateTime                @default(now())
+  updatedAt             DateTime                @updatedAt
+}
+
+model Language {
+  code                 String                 @id
+  name                 String
+  LanguagesInCountries LanguagesInCountries[]
+  createdAt            DateTime               @default(now())
+  updatedAt            DateTime               @updatedAt
+}
+
+model Organization {
+  code                     String                     @id
+  name                     String
+  OrganizationsInCountries OrganizationsInCountries[]
+  createdAt                DateTime                   @default(now())
+  updatedAt                DateTime                   @updatedAt
+}
+
+model Timezone {
+  code                 String                 @id
+  name                 String
+  offset               String
+  TimezonesInCountries TimezonesInCountries[]
+  createdAt            DateTime               @default(now())
+  updatedAt            DateTime               @updatedAt
+}
+
+model CurrenciesInCountries {
+  currency     Currency @relation(fields: [currencyCode], references: [code])
+  currencyCode String
+  country      Country  @relation(fields: [countryCode], references: [code])
+  countryCode  String
+
+  @@id([currencyCode, countryCode])
+}
+
+model LanguagesInCountries {
+  language     Language @relation(fields: [languageCode], references: [code])
+  languageCode String
+  country      Country  @relation(fields: [countryCode], references: [code])
+  countryCode  String
+
+  @@id([languageCode, countryCode])
+}
+
+model OrganizationsInCountries {
+  organization     Organization @relation(fields: [organizationCode], references: [code])
+  organizationCode String
+  country          Country      @relation(fields: [countryCode], references: [code])
+  countryCode      String
+
+  @@id([organizationCode, countryCode])
+}
+
+model TimezonesInCountries {
+  timezone     Timezone @relation(fields: [timezoneCode], references: [code])
+  timezoneCode String
+  country      Country  @relation(fields: [countryCode], references: [code])
+  countryCode  String
+
+  @@id([timezoneCode, countryCode])
 }

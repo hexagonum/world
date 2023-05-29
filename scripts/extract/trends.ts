@@ -1,5 +1,5 @@
 import { writeFileSync } from 'fs';
-import countries from '../src/data/countries.json';
+import countries from '../../src/data/countries.json';
 
 const main = async () => {
   const url: string = 'https://trends.google.com/trends/hottrends/visualize/internal/data';

@@ -1,5 +1,5 @@
 import { load, Element } from 'cheerio';
-import passports from '../src/data/passports/passports.json';
+import passports from '../../src/data/passports/passports.json';
 import { writeFileSync } from 'fs';
 
 const main = async () => {

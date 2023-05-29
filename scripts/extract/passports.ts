@@ -1,6 +1,6 @@
 import { Element, load } from 'cheerio';
 import { writeFileSync } from 'fs';
-import countries from '../src/data/countries.json';
+import countries from '../../src/data/countries.json';
 
 export type Passport = {
   id: string;

@@ -1,5 +1,5 @@
 import { readFileSync, writeFileSync } from 'fs';
-import passports from '../src/data/passports/passports.json';
+import passports from '../../src/data/passports/passports.json';
 
 const main = async () => {
   const requirements: Record<string, Record<string, string>> = {};

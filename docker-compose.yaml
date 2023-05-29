@@ -1,15 +1,15 @@
 version: '3.9'
 
 volumes:
-  postgres_countries:
+  postgres_world:
     driver: local
 
 services:
-  postgres-countries:
+  postgres-world:
     image: postgres:latest
-    container_name: postgres-countries
+    container_name: postgres-world
     volumes:
-      - postgres_countries:/var/lib/postgresql/data
+      - postgres_world:/var/lib/postgresql/data
     ports:
       - '5432:5432'
     environment:
