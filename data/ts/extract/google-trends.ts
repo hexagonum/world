@@ -1,7 +1,7 @@
 import { writeFileSync } from 'fs';
 
 const main = async () => {
-  const url: string = 'https://trends.google.com/trends/hottrends/visualize/internal/data';
+  const url = 'https://trends.google.com/trends/hottrends/visualize/internal/data';
   const response: Response = await fetch(url);
   const data = await response.json();
   const trends: { country: string; trends: string[] }[] = Object.keys(data).map((key: string) => {

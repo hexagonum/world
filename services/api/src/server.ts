@@ -1,6 +1,7 @@
 import http from 'http';
 import { HttpError } from 'http-errors';
 import app from './app';
+import { PORT } from './common/environments';
 import logger from './common/libs/logger';
 
 const normalizePort = (val: string): string | number | boolean => {
@@ -21,7 +22,7 @@ const normalizePort = (val: string): string | number | boolean => {
 
 const main = async () => {
   // Port
-  const port = normalizePort(process.env.PORT || '8080');
+  const port = normalizePort(PORT);
   app.set('port', port);
   const httpServer = http.createServer(app);
   // HTTP Server

@@ -28,11 +28,157 @@ import type { RequestHandler, Router } from 'express';
 // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
 
 const models: TsoaRoute.Models = {
+  JsonObject: {
+    dataType: 'refAlias',
+    type: { dataType: 'nestedObjectLiteral', nestedProperties: {}, validators: {} },
+  },
+  // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
+  JsonArray: {
+    dataType: 'refObject',
+    properties: {},
+    additionalProperties: false,
+  },
+  // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
+  'Prisma.JsonValue': {
+    dataType: 'refAlias',
+    type: {
+      dataType: 'union',
+      subSchemas: [
+        { dataType: 'string' },
+        { dataType: 'double' },
+        { dataType: 'boolean' },
+        { ref: 'JsonObject' },
+        { ref: 'JsonArray' },
+        { dataType: 'enum', enums: [null] },
+      ],
+      validators: {},
+    },
+  },
+  // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
+  Country: {
+    dataType: 'refAlias',
+    type: {
+      dataType: 'nestedObjectLiteral',
+      nestedProperties: {
+        updatedAt: { dataType: 'datetime', required: true },
+        createdAt: { dataType: 'datetime', required: true },
+        passportRequirements: { ref: 'Prisma.JsonValue', required: true },
+        passportMobilityScore: { dataType: 'double', required: true },
+        passportIndividualRank: { dataType: 'double', required: true },
+        passportGlobalRank: { dataType: 'double', required: true },
+        timezones: { dataType: 'array', array: { dataType: 'string' }, required: true },
+        googleTrends: { dataType: 'array', array: { dataType: 'string' }, required: true },
+        googleMaps: { dataType: 'string', required: true },
+        density: { dataType: 'double', required: true },
+        population: { dataType: 'double', required: true },
+        area: { dataType: 'double', required: true },
+        flagSVG: { dataType: 'string', required: true },
+        flagPNG: { dataType: 'string', required: true },
+        flag: { dataType: 'string', required: true },
+        subregion: { dataType: 'string', required: true },
+        region: { dataType: 'string', required: true },
+        borders: { dataType: 'array', array: { dataType: 'string' }, required: true },
+        continents: { dataType: 'array', array: { dataType: 'string' }, required: true },
+        alternativeSpellings: { dataType: 'array', array: { dataType: 'string' }, required: true },
+        capital: { dataType: 'array', array: { dataType: 'string' }, required: true },
+        topLevelDomains: { dataType: 'array', array: { dataType: 'string' }, required: true },
+        longitude: { dataType: 'double', required: true },
+        latitude: { dataType: 'double', required: true },
+        startOfWeek: { dataType: 'string', required: true },
+        unMember: { dataType: 'boolean', required: true },
+        independent: { dataType: 'boolean', required: true },
+        status: { dataType: 'string', required: true },
+        fifa: { dataType: 'string', required: true },
+        cioc: { dataType: 'string', required: true },
+        ccn3: { dataType: 'string', required: true },
+        cca3: { dataType: 'string', required: true },
+        cca2: { dataType: 'string', required: true },
+        officialName: { dataType: 'string', required: true },
+        commonName: { dataType: 'string', required: true },
+        code: { dataType: 'string', required: true },
+      },
+      validators: {},
+    },
+  },
+  // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
+  'Pick_Country.CountryGoogleTrends_': {
+    dataType: 'refAlias',
+    type: {
+      dataType: 'nestedObjectLiteral',
+      nestedProperties: {
+        commonName: { dataType: 'string', required: true },
+        region: { dataType: 'string', required: true },
+        subregion: { dataType: 'string', required: true },
+        googleTrends: { dataType: 'array', array: { dataType: 'string' }, required: true },
+      },
+      validators: {},
+    },
+  },
+  // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
+  Currency: {
+    dataType: 'refAlias',
+    type: {
+      dataType: 'nestedObjectLiteral',
+      nestedProperties: {
+        updatedAt: { dataType: 'datetime', required: true },
+        createdAt: { dataType: 'datetime', required: true },
+        symbol: { dataType: 'string', required: true },
+        name: { dataType: 'string', required: true },
+        code: { dataType: 'string', required: true },
+      },
+      validators: {},
+    },
+  },
+  // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
   HealthResponse: {
     dataType: 'refAlias',
     type: {
       dataType: 'nestedObjectLiteral',
       nestedProperties: { status: { dataType: 'string', required: true } },
+      validators: {},
+    },
+  },
+  // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
+  Language: {
+    dataType: 'refAlias',
+    type: {
+      dataType: 'nestedObjectLiteral',
+      nestedProperties: {
+        updatedAt: { dataType: 'datetime', required: true },
+        createdAt: { dataType: 'datetime', required: true },
+        name: { dataType: 'string', required: true },
+        code: { dataType: 'string', required: true },
+      },
+      validators: {},
+    },
+  },
+  // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
+  Organization: {
+    dataType: 'refAlias',
+    type: {
+      dataType: 'nestedObjectLiteral',
+      nestedProperties: {
+        updatedAt: { dataType: 'datetime', required: true },
+        createdAt: { dataType: 'datetime', required: true },
+        name: { dataType: 'string', required: true },
+        code: { dataType: 'string', required: true },
+      },
+      validators: {},
+    },
+  },
+  // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
+  Timezone: {
+    dataType: 'refAlias',
+    type: {
+      dataType: 'nestedObjectLiteral',
+      nestedProperties: {
+        updatedAt: { dataType: 'datetime', required: true },
+        createdAt: { dataType: 'datetime', required: true },
+        utcOffset: { dataType: 'string', required: true },
+        offset: { dataType: 'string', required: true },
+        name: { dataType: 'string', required: true },
+        code: { dataType: 'string', required: true },
+      },
       validators: {},
     },
   },
@@ -64,6 +210,30 @@ export function RegisterRoutes(app: Router) {
         const controller = new CountriesController();
 
         const promise = controller.getCountries.apply(controller, validatedArgs as any);
+        promiseHandler(controller, promise, response, undefined, next);
+      } catch (err) {
+        return next(err);
+      }
+    }
+  );
+  // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
+  app.get(
+    '/countries/google/trends',
+    ...fetchMiddlewares<RequestHandler>(CountriesController),
+    ...fetchMiddlewares<RequestHandler>(CountriesController.prototype.getTrends),
+
+    function CountriesController_getTrends(request: any, response: any, next: any) {
+      const args = {};
+
+      // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
+
+      let validatedArgs: any[] = [];
+      try {
+        validatedArgs = getValidatedArgs(args, request, response);
+
+        const controller = new CountriesController();
+
+        const promise = controller.getTrends.apply(controller, validatedArgs as any);
         promiseHandler(controller, promise, response, undefined, next);
       } catch (err) {
         return next(err);

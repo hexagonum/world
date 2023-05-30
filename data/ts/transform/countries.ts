@@ -43,7 +43,8 @@ const main = async () => {
         .filter(({ members = [] }) => members.map(({ code }) => code).includes(cca3))
         .map(({ code }) => code);
       const { trends: googleTrends = [] } = trends.find(
-        ({ country }) => country.toLowerCase() === common.toLowerCase()
+        ({ country = '' }) =>
+          country.toLowerCase() === common.toLowerCase() || country.toLowerCase() === official.toLowerCase()
       ) ?? { trends: [] };
       const {
         globalRank = 0,

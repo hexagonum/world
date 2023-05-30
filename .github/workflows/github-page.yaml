@@ -20,16 +20,12 @@ jobs:
           node-version: '20.1.0'
       - name: Install Dependencies
         run: yarn install --network-timeout 86400000
-        working-directory: services/web
       - name: Unit Test
-        run: yarn test -u
-        working-directory: services/web
+        run: yarn workspace @world/web test -u
       - name: Build Production
-        run: yarn build
-        working-directory: services/web
+        run: yarn workspace @world/web build
       - name: Add .nojekyll file
-        run: touch ./out/.nojekyll
-        working-directory: services/web
+        run: touch services/web/out/.nojekyll
       - name: Deploy Pages
         uses: JamesIves/github-pages-deploy-action@v4.4.1
         with:

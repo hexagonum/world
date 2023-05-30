@@ -22,7 +22,7 @@
     "docs:postman": "openapi2postmanv2 -s docs/swagger/swagger.yaml -o docs/postman/collection.json",
     "docs:swagger:json": "tsoa spec-and-routes",
     "docs:swagger:yaml": "json2yaml ./docs/swagger/swagger.json > ./docs/swagger/swagger.yaml",
-    "docs:swagger:html": "redocly build-docs ./docs/swagger/swagger.json --output ./public/index.html --title 'Express.js - API - Template'",
+    "docs:swagger:html": "redocly build-docs ./docs/swagger/swagger.json --output ./public/index.html --title 'World API'",
     "lint": "eslint . --fix --ext .ts",
     "test": "jest",
     "test:watch": "jest --watch",

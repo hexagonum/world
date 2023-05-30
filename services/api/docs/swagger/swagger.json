@@ -6,6 +6,268 @@
     "requestBodies": {},
     "responses": {},
     "schemas": {
+      "JsonObject": {
+        "properties": {},
+        "type": "object",
+        "description": "From https://github.com/sindresorhus/type-fest/\nMatches a JSON object.\nThis type can be useful to enforce some input to be JSON-compatible or as a super-type to be extended from."
+      },
+      "JsonArray": {
+        "description": "From https://github.com/sindresorhus/type-fest/\nMatches a JSON array.",
+        "properties": {},
+        "type": "object",
+        "additionalProperties": false
+      },
+      "Prisma.JsonValue": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "number",
+            "format": "double"
+          },
+          {
+            "type": "boolean"
+          },
+          {
+            "$ref": "#/components/schemas/JsonObject"
+          },
+          {
+            "$ref": "#/components/schemas/JsonArray"
+          }
+        ],
+        "nullable": true,
+        "description": "From https://github.com/sindresorhus/type-fest/\nMatches any valid JSON value."
+      },
+      "Country": {
+        "properties": {
+          "updatedAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "passportRequirements": {
+            "$ref": "#/components/schemas/Prisma.JsonValue"
+          },
+          "passportMobilityScore": {
+            "type": "number",
+            "format": "double"
+          },
+          "passportIndividualRank": {
+            "type": "number",
+            "format": "double"
+          },
+          "passportGlobalRank": {
+            "type": "number",
+            "format": "double"
+          },
+          "timezones": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "googleTrends": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "googleMaps": {
+            "type": "string"
+          },
+          "density": {
+            "type": "number",
+            "format": "double"
+          },
+          "population": {
+            "type": "number",
+            "format": "double"
+          },
+          "area": {
+            "type": "number",
+            "format": "double"
+          },
+          "flagSVG": {
+            "type": "string"
+          },
+          "flagPNG": {
+            "type": "string"
+          },
+          "flag": {
+            "type": "string"
+          },
+          "subregion": {
+            "type": "string"
+          },
+          "region": {
+            "type": "string"
+          },
+          "borders": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "continents": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "alternativeSpellings": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "capital": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "topLevelDomains": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "longitude": {
+            "type": "number",
+            "format": "double"
+          },
+          "latitude": {
+            "type": "number",
+            "format": "double"
+          },
+          "startOfWeek": {
+            "type": "string"
+          },
+          "unMember": {
+            "type": "boolean"
+          },
+          "independent": {
+            "type": "boolean"
+          },
+          "status": {
+            "type": "string"
+          },
+          "fifa": {
+            "type": "string"
+          },
+          "cioc": {
+            "type": "string"
+          },
+          "ccn3": {
+            "type": "string"
+          },
+          "cca3": {
+            "type": "string"
+          },
+          "cca2": {
+            "type": "string"
+          },
+          "officialName": {
+            "type": "string"
+          },
+          "commonName": {
+            "type": "string"
+          },
+          "code": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "updatedAt",
+          "createdAt",
+          "passportRequirements",
+          "passportMobilityScore",
+          "passportIndividualRank",
+          "passportGlobalRank",
+          "timezones",
+          "googleTrends",
+          "googleMaps",
+          "density",
+          "population",
+          "area",
+          "flagSVG",
+          "flagPNG",
+          "flag",
+          "subregion",
+          "region",
+          "borders",
+          "continents",
+          "alternativeSpellings",
+          "capital",
+          "topLevelDomains",
+          "longitude",
+          "latitude",
+          "startOfWeek",
+          "unMember",
+          "independent",
+          "status",
+          "fifa",
+          "cioc",
+          "ccn3",
+          "cca3",
+          "cca2",
+          "officialName",
+          "commonName",
+          "code"
+        ],
+        "type": "object",
+        "description": "Model Country"
+      },
+      "Pick_Country.CountryGoogleTrends_": {
+        "properties": {
+          "commonName": {
+            "type": "string"
+          },
+          "region": {
+            "type": "string"
+          },
+          "subregion": {
+            "type": "string"
+          },
+          "googleTrends": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          }
+        },
+        "required": ["commonName", "region", "subregion", "googleTrends"],
+        "type": "object",
+        "description": "From T, pick a set of properties whose keys are in the union K"
+      },
+      "Currency": {
+        "properties": {
+          "updatedAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "symbol": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "code": {
+            "type": "string"
+          }
+        },
+        "required": ["updatedAt", "createdAt", "symbol", "name", "code"],
+        "type": "object",
+        "description": "Model Currency"
+      },
       "HealthResponse": {
         "properties": {
           "status": {
@@ -14,6 +276,75 @@
         },
         "required": ["status"],
         "type": "object"
+      },
+      "Language": {
+        "properties": {
+          "updatedAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "name": {
+            "type": "string"
+          },
+          "code": {
+            "type": "string"
+          }
+        },
+        "required": ["updatedAt", "createdAt", "name", "code"],
+        "type": "object",
+        "description": "Model Language"
+      },
+      "Organization": {
+        "properties": {
+          "updatedAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "name": {
+            "type": "string"
+          },
+          "code": {
+            "type": "string"
+          }
+        },
+        "required": ["updatedAt", "createdAt", "name", "code"],
+        "type": "object",
+        "description": "Model Organization"
+      },
+      "Timezone": {
+        "properties": {
+          "updatedAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "utcOffset": {
+            "type": "string"
+          },
+          "offset": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "code": {
+            "type": "string"
+          }
+        },
+        "required": ["updatedAt", "createdAt", "utcOffset", "offset", "name", "code"],
+        "type": "object",
+        "description": "Model Timezone"
       }
     },
     "securitySchemes": {}
@@ -41,7 +372,32 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "items": {},
+                  "items": {
+                    "$ref": "#/components/schemas/Country"
+                  },
+                  "type": "array"
+                }
+              }
+            }
+          }
+        },
+        "tags": ["Countries"],
+        "security": [],
+        "parameters": []
+      }
+    },
+    "/countries/google/trends": {
+      "get": {
+        "operationId": "GetTrends",
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/Pick_Country.CountryGoogleTrends_"
+                  },
                   "type": "array"
                 }
               }
@@ -62,7 +418,9 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "items": {},
+                  "items": {
+                    "$ref": "#/components/schemas/Currency"
+                  },
                   "type": "array"
                 }
               }
@@ -103,7 +461,9 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "items": {},
+                  "items": {
+                    "$ref": "#/components/schemas/Language"
+                  },
                   "type": "array"
                 }
               }
@@ -124,7 +484,9 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "items": {},
+                  "items": {
+                    "$ref": "#/components/schemas/Organization"
+                  },
                   "type": "array"
                 }
               }
@@ -145,7 +507,9 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "items": {},
+                  "items": {
+                    "$ref": "#/components/schemas/Timezone"
+                  },
                   "type": "array"
                 }
               }
