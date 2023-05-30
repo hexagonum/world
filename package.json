@@ -27,8 +27,10 @@
     "prisma:format": "prisma format",
     "prisma:studio": "prisma studio",
     "prisma:generate": "prisma generate",
-    "prisma:migrate": "prisma migrate dev --name init",
-    "prisma:init": "yarn prisma:format && yarn prisma:generate && yarn prisma:migrate"
+    "prisma:migrate:dev": "prisma migrate dev --name init",
+    "prisma:migrate:prod": "prisma migrate deploy --name init",
+    "prisma:init:dev": "yarn prisma:format && yarn prisma:generate && yarn prisma:migrate:dev",
+    "prisma:init:prod": "yarn prisma:format && yarn prisma:generate && yarn prisma:migrate:prod"
   },
   "dependencies": {
     "@prisma/client": "4.14.1"
