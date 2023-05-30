@@ -11,7 +11,8 @@ COPY . /home/node/app
 
 ARG POSTGRESQL_URL
 ENV POSTGRESQL_URL=$POSTGRESQL_URL
-
+## Install OpenSSL
+RUN apt-get update -y && apt-get install -y openss
 RUN openssl version
 
 RUN yarn install
