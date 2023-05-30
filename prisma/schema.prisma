@@ -60,28 +60,28 @@ model Country {
 }
 
 model Currency {
-  code                  String                  @id
-  name                  String                  @default("")
-  symbol                String                  @default("")
-  createdAt             DateTime                @default(now())
-  updatedAt             DateTime                @updatedAt
-  CurrenciesInCountries CurrenciesInCountries[]
+  code      String                  @id
+  name      String                  @default("")
+  symbol    String                  @default("")
+  createdAt DateTime                @default(now())
+  updatedAt DateTime                @updatedAt
+  countries CurrenciesInCountries[]
 }
 
 model Language {
-  code                 String                 @id
-  name                 String                 @default("")
-  LanguagesInCountries LanguagesInCountries[]
-  createdAt            DateTime               @default(now())
-  updatedAt            DateTime               @updatedAt
+  code      String                 @id
+  name      String                 @default("")
+  createdAt DateTime               @default(now())
+  updatedAt DateTime               @updatedAt
+  countries LanguagesInCountries[]
 }
 
 model Organization {
-  code                     String                     @id
-  name                     String                     @default("")
-  CountriesInOrganizations CountriesInOrganizations[]
-  createdAt                DateTime                   @default(now())
-  updatedAt                DateTime                   @updatedAt
+  code      String                     @id
+  name      String                     @default("")
+  createdAt DateTime                   @default(now())
+  updatedAt DateTime                   @updatedAt
+  countries CountriesInOrganizations[]
 }
 
 model Timezone {
