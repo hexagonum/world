@@ -35,5 +35,5 @@ jobs:
         with:
           token: ${{ secrets.GHP_TOKEN }}
           branch: gh-pages
-          folder: services/web
+          folder: services/web/out
           clean: true
