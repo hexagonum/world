@@ -4,11 +4,11 @@ import nodeExternals from 'webpack-node-externals';
 const isProduction = process.env.NODE_ENV === 'production';
 const mode = isProduction ? 'production' : 'development';
 
-export default {
+const config = {
   mode,
   target: 'node',
   entry: path.resolve(__dirname, 'src/server.ts'),
-  externals: [nodeExternals()],
+  externals: [nodeExternals(), nodeExternals({ modulesDir: path.resolve(__dirname, '../../node_modules') })],
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'server.js',
@@ -32,3 +32,5 @@ export default {
     extensions: ['.tsx', '.ts', '.jsx', '.js'],
   },
 };
+
+export default config;

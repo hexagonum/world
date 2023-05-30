@@ -12,6 +12,8 @@ COPY . /home/node/app
 ARG POSTGRESQL_URL
 ENV POSTGRESQL_URL=$POSTGRESQL_URL
 
+RUN openssl version
+
 RUN yarn install
 RUN yarn prisma:prod
 RUN yarn build:api
