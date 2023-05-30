@@ -1,0 +1,167 @@
+{
+  "components": {
+    "examples": {},
+    "headers": {},
+    "parameters": {},
+    "requestBodies": {},
+    "responses": {},
+    "schemas": {
+      "HealthResponse": {
+        "properties": {
+          "status": {
+            "type": "string"
+          }
+        },
+        "required": ["status"],
+        "type": "object"
+      }
+    },
+    "securitySchemes": {}
+  },
+  "info": {
+    "title": "@world/api",
+    "version": "0.0.1",
+    "description": "World API",
+    "license": {
+      "name": "GNU GPL V3.0"
+    },
+    "contact": {
+      "name": "hieudoanm ",
+      "email": "hieumdoan@gmail.com"
+    }
+  },
+  "openapi": "3.0.0",
+  "paths": {
+    "/countries": {
+      "get": {
+        "operationId": "GetCountries",
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {},
+                  "type": "array"
+                }
+              }
+            }
+          }
+        },
+        "tags": ["Countries"],
+        "security": [],
+        "parameters": []
+      }
+    },
+    "/currencies": {
+      "get": {
+        "operationId": "GetCurrencies",
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {},
+                  "type": "array"
+                }
+              }
+            }
+          }
+        },
+        "tags": ["Currencies"],
+        "security": [],
+        "parameters": []
+      }
+    },
+    "/health": {
+      "get": {
+        "operationId": "GetHealth",
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HealthResponse"
+                }
+              }
+            }
+          }
+        },
+        "tags": ["Health"],
+        "security": [],
+        "parameters": []
+      }
+    },
+    "/languages": {
+      "get": {
+        "operationId": "GetLanguages",
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {},
+                  "type": "array"
+                }
+              }
+            }
+          }
+        },
+        "tags": ["Languages"],
+        "security": [],
+        "parameters": []
+      }
+    },
+    "/organizations": {
+      "get": {
+        "operationId": "GetOrganizations",
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {},
+                  "type": "array"
+                }
+              }
+            }
+          }
+        },
+        "tags": ["Organizations"],
+        "security": [],
+        "parameters": []
+      }
+    },
+    "/timezones": {
+      "get": {
+        "operationId": "GetTimezones",
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {},
+                  "type": "array"
+                }
+              }
+            }
+          }
+        },
+        "tags": ["Timezones"],
+        "security": [],
+        "parameters": []
+      }
+    }
+  },
+  "servers": [
+    {
+      "url": "http://localhost:8080",
+      "description": "Local"
+    }
+  ]
+}

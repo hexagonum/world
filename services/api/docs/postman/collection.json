@@ -1,0 +1,249 @@
+{
+  "item": [
+    {
+      "name": "timezones",
+      "description": "",
+      "item": [
+        {
+          "id": "d4511553-18ed-460c-aa45-33dc9edb8d4a",
+          "name": "Get Timezones",
+          "request": {
+            "name": "Get Timezones",
+            "description": {},
+            "url": { "path": ["timezones"], "host": ["{{baseUrl}}"], "query": [], "variable": [] },
+            "header": [{ "key": "Accept", "value": "application/json" }],
+            "method": "GET",
+            "body": {},
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "794d007f-732b-4586-84e2-caafba1d2690",
+              "name": "Ok",
+              "originalRequest": {
+                "url": { "path": ["timezones"], "host": ["{{baseUrl}}"], "query": [], "variable": [] },
+                "header": [{ "key": "Accept", "value": "application/json" }],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [{ "key": "Content-Type", "value": "application/json" }],
+              "body": "[]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": { "disableBodyPruning": true }
+        }
+      ]
+    },
+    {
+      "name": "organizations",
+      "description": "",
+      "item": [
+        {
+          "id": "5723befe-543a-4f87-8e05-e0f65a007d5d",
+          "name": "Get Organizations",
+          "request": {
+            "name": "Get Organizations",
+            "description": {},
+            "url": { "path": ["organizations"], "host": ["{{baseUrl}}"], "query": [], "variable": [] },
+            "header": [{ "key": "Accept", "value": "application/json" }],
+            "method": "GET",
+            "body": {},
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "6533a543-e379-4e9f-b68e-57f1fb873ee7",
+              "name": "Ok",
+              "originalRequest": {
+                "url": { "path": ["organizations"], "host": ["{{baseUrl}}"], "query": [], "variable": [] },
+                "header": [{ "key": "Accept", "value": "application/json" }],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [{ "key": "Content-Type", "value": "application/json" }],
+              "body": "[]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": { "disableBodyPruning": true }
+        }
+      ]
+    },
+    {
+      "name": "languages",
+      "description": "",
+      "item": [
+        {
+          "id": "8682c6b0-3095-40b4-8ec0-e76a22f2bb19",
+          "name": "Get Languages",
+          "request": {
+            "name": "Get Languages",
+            "description": {},
+            "url": { "path": ["languages"], "host": ["{{baseUrl}}"], "query": [], "variable": [] },
+            "header": [{ "key": "Accept", "value": "application/json" }],
+            "method": "GET",
+            "body": {},
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "272ef328-1b01-47f0-86c9-cd765a23afff",
+              "name": "Ok",
+              "originalRequest": {
+                "url": { "path": ["languages"], "host": ["{{baseUrl}}"], "query": [], "variable": [] },
+                "header": [{ "key": "Accept", "value": "application/json" }],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [{ "key": "Content-Type", "value": "application/json" }],
+              "body": "[]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": { "disableBodyPruning": true }
+        }
+      ]
+    },
+    {
+      "name": "health",
+      "description": "",
+      "item": [
+        {
+          "id": "8cd57f94-63bf-41fe-bcdf-0d420f0bf856",
+          "name": "Get Health",
+          "request": {
+            "name": "Get Health",
+            "description": {},
+            "url": { "path": ["health"], "host": ["{{baseUrl}}"], "query": [], "variable": [] },
+            "header": [{ "key": "Accept", "value": "application/json" }],
+            "method": "GET",
+            "body": {},
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "ad852309-58ae-44f1-9851-b34a0f86f158",
+              "name": "Ok",
+              "originalRequest": {
+                "url": { "path": ["health"], "host": ["{{baseUrl}}"], "query": [], "variable": [] },
+                "header": [{ "key": "Accept", "value": "application/json" }],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [{ "key": "Content-Type", "value": "application/json" }],
+              "body": "{\n  \"status\": \"<string>\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": { "disableBodyPruning": true }
+        }
+      ]
+    },
+    {
+      "name": "currencies",
+      "description": "",
+      "item": [
+        {
+          "id": "ded34807-28c5-4491-903a-9adb36260786",
+          "name": "Get Currencies",
+          "request": {
+            "name": "Get Currencies",
+            "description": {},
+            "url": { "path": ["currencies"], "host": ["{{baseUrl}}"], "query": [], "variable": [] },
+            "header": [{ "key": "Accept", "value": "application/json" }],
+            "method": "GET",
+            "body": {},
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "174c0016-1ee5-4aa6-b83a-b5a59fa66347",
+              "name": "Ok",
+              "originalRequest": {
+                "url": { "path": ["currencies"], "host": ["{{baseUrl}}"], "query": [], "variable": [] },
+                "header": [{ "key": "Accept", "value": "application/json" }],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [{ "key": "Content-Type", "value": "application/json" }],
+              "body": "[]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": { "disableBodyPruning": true }
+        }
+      ]
+    },
+    {
+      "name": "countries",
+      "description": "",
+      "item": [
+        {
+          "id": "8f3c55b6-8f86-4f61-92dc-589afb090dad",
+          "name": "Get Countries",
+          "request": {
+            "name": "Get Countries",
+            "description": {},
+            "url": { "path": ["countries"], "host": ["{{baseUrl}}"], "query": [], "variable": [] },
+            "header": [{ "key": "Accept", "value": "application/json" }],
+            "method": "GET",
+            "body": {},
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "ad3feeab-339d-43a2-90aa-1ad97b7d42df",
+              "name": "Ok",
+              "originalRequest": {
+                "url": { "path": ["countries"], "host": ["{{baseUrl}}"], "query": [], "variable": [] },
+                "header": [{ "key": "Accept", "value": "application/json" }],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [{ "key": "Content-Type", "value": "application/json" }],
+              "body": "[]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": { "disableBodyPruning": true }
+        }
+      ]
+    }
+  ],
+  "event": [],
+  "variable": [{ "key": "baseUrl", "value": "http://localhost:8080" }],
+  "info": {
+    "_postman_id": "9e83a784-5d84-4624-a9e7-eee9eda5ea50",
+    "name": "@world/api",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "World API\n\nContact Support:\n Name: hieudoanm \n Email: hieumdoan@gmail.com",
+      "type": "text/plain"
+    }
+  }
+}
