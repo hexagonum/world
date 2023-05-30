@@ -3,48 +3,58 @@ datasource db {
   url      = env("POSTGRESQL_URL")
 }
 
+generator client {
+  provider = "prisma-client-js"
+}
+
 model Country {
-  code                 String                     @id
+  code                     String                     @id
   // Name
-  commonName           String
-  officialName         String
+  commonName               String
+  officialName             String
   // Code
-  cca2                 String
-  cca3                 String
-  ccn3                 String
-  cioc                 String
-  fifa                 String
+  cca2                     String
+  cca3                     String
+  ccn3                     String
+  cioc                     String
+  fifa                     String
   // Status
-  status               String
-  independent          Boolean
-  unMember             Boolean
-  startOfWeek          String
-  latlng               Float[]
-  topLevelDomains      String[]
-  capital              String[]
-  alternativeSpellings String[]
-  continents           String[]
-  borders              String[]
+  status                   String
+  independent              Boolean
+  unMember                 Boolean
+  startOfWeek              String
+  latlng                   Float[]
+  topLevelDomains          String[]
+  capital                  String[]
+  alternativeSpellings     String[]
+  continents               String[]
+  borders                  String[]
   // Region
-  region               String
-  subregion            String
+  region                   String
+  subregion                String
   // Image
-  flag                 String
-  flagPNG              String
-  flagSVG              String
+  flag                     String
+  flagPNG                  String
+  flagSVG                  String
   // Population
-  area                 Int
-  population           Int
-  density              Int
+  area                     Int
+  population               Int
+  density                  Int
   // Google
-  googleMaps           String
-  googleTrends         String[]
-  currencies           CurrenciesInCountries[]
-  languages            LanguagesInCountries[]
-  organiztions         OrganizationsInCountries[]
-  TimezonesInCountries TimezonesInCountries[]
-  createdAt            DateTime                   @default(now())
-  updatedAt            DateTime                   @updatedAt
+  googleMaps               String
+  googleTrends             String[]
+  // Other Data
+  timezones                String[]
+  currencies               CurrenciesInCountries[]
+  languages                LanguagesInCountries[]
+  organiztions             OrganizationsInCountries[]
+  // Passport
+  passportGlobalRank       Int
+  passportIndividualank    Int
+  passportMobilityScoreInt Int
+  passportRequirements     Json
+  createdAt                DateTime                   @default(now())
+  updatedAt                DateTime                   @updatedAt
 }
 
 model Currency {
@@ -73,12 +83,12 @@ model Organization {
 }
 
 model Timezone {
-  code                 String                 @id
-  name                 String
-  offset               String
-  TimezonesInCountries TimezonesInCountries[]
-  createdAt            DateTime               @default(now())
-  updatedAt            DateTime               @updatedAt
+  code      String   @id
+  name      String
+  offset    String
+  utcOffset String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 }
 
 model CurrenciesInCountries {
@@ -106,13 +116,4 @@ model OrganizationsInCountries {
   countryCode      String
 
   @@id([organizationCode, countryCode])
-}
-
-model TimezonesInCountries {
-  timezone     Timezone @relation(fields: [timezoneCode], references: [code])
-  timezoneCode String
-  country      Country  @relation(fields: [countryCode], references: [code])
-  countryCode  String
-
-  @@id([timezoneCode, countryCode])
 }

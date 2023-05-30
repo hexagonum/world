@@ -1,0 +1,1594 @@
+[
+  {
+    "id": "united-arab-emirates",
+    "name": "United Arab Emirates",
+    "cca2": "AE",
+    "globalRank": 1,
+    "mobilityScore": 180,
+    "individualRank": 1
+  },
+  {
+    "id": "sweden",
+    "name": "Sweden",
+    "cca2": "SE",
+    "globalRank": 2,
+    "mobilityScore": 173,
+    "individualRank": 2
+  },
+  {
+    "id": "germany",
+    "name": "Germany",
+    "cca2": "DE",
+    "globalRank": 2,
+    "mobilityScore": 173,
+    "individualRank": 3
+  },
+  {
+    "id": "finland",
+    "name": "Finland",
+    "cca2": "FI",
+    "globalRank": 2,
+    "mobilityScore": 173,
+    "individualRank": 4
+  },
+  {
+    "id": "spain",
+    "name": "Spain",
+    "cca2": "ES",
+    "globalRank": 2,
+    "mobilityScore": 173,
+    "individualRank": 5
+  },
+  {
+    "id": "france",
+    "name": "France",
+    "cca2": "FR",
+    "globalRank": 2,
+    "mobilityScore": 173,
+    "individualRank": 6
+  },
+  {
+    "id": "italy",
+    "name": "Italy",
+    "cca2": "IT",
+    "globalRank": 2,
+    "mobilityScore": 173,
+    "individualRank": 7
+  },
+  {
+    "id": "netherlands",
+    "name": "Netherlands",
+    "cca2": "NL",
+    "globalRank": 2,
+    "mobilityScore": 173,
+    "individualRank": 8
+  },
+  {
+    "id": "luxembourg",
+    "name": "Luxembourg",
+    "cca2": "LU",
+    "globalRank": 2,
+    "mobilityScore": 173,
+    "individualRank": 9
+  },
+  {
+    "id": "austria",
+    "name": "Austria",
+    "cca2": "AT",
+    "globalRank": 2,
+    "mobilityScore": 173,
+    "individualRank": 10
+  },
+  {
+    "id": "switzerland",
+    "name": "Switzerland",
+    "cca2": "CH",
+    "globalRank": 2,
+    "mobilityScore": 173,
+    "individualRank": 11
+  },
+  {
+    "id": "south-korea",
+    "name": "South Korea",
+    "cca2": "KR",
+    "globalRank": 2,
+    "mobilityScore": 173,
+    "individualRank": 12
+  },
+  {
+    "id": "denmark",
+    "name": "Denmark",
+    "cca2": "DK",
+    "globalRank": 3,
+    "mobilityScore": 172,
+    "individualRank": 13
+  },
+  {
+    "id": "belgium",
+    "name": "Belgium",
+    "cca2": "BE",
+    "globalRank": 3,
+    "mobilityScore": 172,
+    "individualRank": 14
+  },
+  {
+    "id": "portugal",
+    "name": "Portugal",
+    "cca2": "PT",
+    "globalRank": 3,
+    "mobilityScore": 172,
+    "individualRank": 15
+  },
+  {
+    "id": "norway",
+    "name": "Norway",
+    "cca2": "NO",
+    "globalRank": 3,
+    "mobilityScore": 172,
+    "individualRank": 16
+  },
+  {
+    "id": "poland",
+    "name": "Poland",
+    "cca2": "PL",
+    "globalRank": 3,
+    "mobilityScore": 172,
+    "individualRank": 17
+  },
+  {
+    "id": "ireland",
+    "name": "Ireland",
+    "cca2": "IE",
+    "globalRank": 3,
+    "mobilityScore": 172,
+    "individualRank": 18
+  },
+  {
+    "id": "united-kingdom",
+    "name": "United Kingdom",
+    "cca2": "GB",
+    "globalRank": 3,
+    "mobilityScore": 172,
+    "individualRank": 19
+  },
+  {
+    "id": "new-zealand",
+    "name": "New Zealand",
+    "cca2": "NZ",
+    "globalRank": 3,
+    "mobilityScore": 172,
+    "individualRank": 20
+  },
+  {
+    "id": "czech-republic",
+    "name": "Czech Republic",
+    "cca2": "CZ",
+    "globalRank": 4,
+    "mobilityScore": 171,
+    "individualRank": 21
+  },
+  {
+    "id": "greece",
+    "name": "Greece",
+    "cca2": "GR",
+    "globalRank": 4,
+    "mobilityScore": 171,
+    "individualRank": 22
+  },
+  {
+    "id": "lithuania",
+    "name": "Lithuania",
+    "cca2": "LT",
+    "globalRank": 4,
+    "mobilityScore": 171,
+    "individualRank": 23
+  },
+  {
+    "id": "hungary",
+    "name": "Hungary",
+    "cca2": "HU",
+    "globalRank": 4,
+    "mobilityScore": 171,
+    "individualRank": 24
+  },
+  {
+    "id": "japan",
+    "name": "Japan",
+    "cca2": "JP",
+    "globalRank": 4,
+    "mobilityScore": 171,
+    "individualRank": 25
+  },
+  {
+    "id": "canada",
+    "name": "Canada",
+    "cca2": "CA",
+    "globalRank": 4,
+    "mobilityScore": 171,
+    "individualRank": 26
+  },
+  {
+    "id": "united-states-of-america",
+    "name": "United States of America",
+    "cca2": "US",
+    "globalRank": 4,
+    "mobilityScore": 171,
+    "individualRank": 27
+  },
+  {
+    "id": "australia",
+    "name": "Australia",
+    "cca2": "AU",
+    "globalRank": 4,
+    "mobilityScore": 171,
+    "individualRank": 28
+  },
+  {
+    "id": "singapore",
+    "name": "Singapore",
+    "cca2": "SG",
+    "globalRank": 5,
+    "mobilityScore": 170,
+    "individualRank": 29
+  },
+  {
+    "id": "malta",
+    "name": "Malta",
+    "cca2": "MT",
+    "globalRank": 5,
+    "mobilityScore": 170,
+    "individualRank": 30
+  },
+  {
+    "id": "slovakia",
+    "name": "Slovakia",
+    "cca2": "SK",
+    "globalRank": 5,
+    "mobilityScore": 170,
+    "individualRank": 31
+  },
+  {
+    "id": "estonia",
+    "name": "Estonia",
+    "cca2": "EE",
+    "globalRank": 6,
+    "mobilityScore": 169,
+    "individualRank": 32
+  },
+  {
+    "id": "latvia",
+    "name": "Latvia",
+    "cca2": "LV",
+    "globalRank": 6,
+    "mobilityScore": 169,
+    "individualRank": 33
+  },
+  {
+    "id": "slovenia",
+    "name": "Slovenia",
+    "cca2": "SI",
+    "globalRank": 6,
+    "mobilityScore": 169,
+    "individualRank": 34
+  },
+  {
+    "id": "liechtenstein",
+    "name": "Liechtenstein",
+    "cca2": "LI",
+    "globalRank": 6,
+    "mobilityScore": 169,
+    "individualRank": 35
+  },
+  {
+    "id": "iceland",
+    "name": "Iceland",
+    "cca2": "IS",
+    "globalRank": 7,
+    "mobilityScore": 168,
+    "individualRank": 36
+  },
+  {
+    "id": "cyprus",
+    "name": "Cyprus",
+    "cca2": "CY",
+    "globalRank": 8,
+    "mobilityScore": 167,
+    "individualRank": 37
+  },
+  {
+    "id": "croatia",
+    "name": "Croatia",
+    "cca2": "HR",
+    "globalRank": 8,
+    "mobilityScore": 167,
+    "individualRank": 38
+  },
+  {
+    "id": "romania",
+    "name": "Romania",
+    "cca2": "RO",
+    "globalRank": 8,
+    "mobilityScore": 167,
+    "individualRank": 39
+  },
+  {
+    "id": "bulgaria",
+    "name": "Bulgaria",
+    "cca2": "BG",
+    "globalRank": 8,
+    "mobilityScore": 167,
+    "individualRank": 40
+  },
+  {
+    "id": "malaysia",
+    "name": "Malaysia",
+    "cca2": "MY",
+    "globalRank": 9,
+    "mobilityScore": 166,
+    "individualRank": 41
+  },
+  {
+    "id": "monaco",
+    "name": "Monaco",
+    "cca2": "MC",
+    "globalRank": 10,
+    "mobilityScore": 165,
+    "individualRank": 42
+  },
+  {
+    "id": "chile",
+    "name": "Chile",
+    "cca2": "CL",
+    "globalRank": 11,
+    "mobilityScore": 160,
+    "individualRank": 43
+  },
+  {
+    "id": "brazil",
+    "name": "Brazil",
+    "cca2": "BR",
+    "globalRank": 11,
+    "mobilityScore": 160,
+    "individualRank": 44
+  },
+  {
+    "id": "argentina",
+    "name": "Argentina",
+    "cca2": "AR",
+    "globalRank": 11,
+    "mobilityScore": 160,
+    "individualRank": 45
+  },
+  {
+    "id": "andorra",
+    "name": "Andorra",
+    "cca2": "AD",
+    "globalRank": 12,
+    "mobilityScore": 158,
+    "individualRank": 46
+  },
+  {
+    "id": "hong-kong",
+    "name": "Hong Kong",
+    "cca2": "HK",
+    "globalRank": 13,
+    "mobilityScore": 156,
+    "individualRank": 47
+  },
+  {
+    "id": "san-marino",
+    "name": "San Marino",
+    "cca2": "SM",
+    "globalRank": 13,
+    "mobilityScore": 156,
+    "individualRank": 48
+  },
+  {
+    "id": "brunei",
+    "name": "Brunei",
+    "cca2": "BN",
+    "globalRank": 14,
+    "mobilityScore": 153,
+    "individualRank": 49
+  },
+  {
+    "id": "barbados",
+    "name": "Barbados",
+    "cca2": "BB",
+    "globalRank": 15,
+    "mobilityScore": 152,
+    "individualRank": 50
+  },
+  {
+    "id": "israel",
+    "name": "Israel",
+    "cca2": "IL",
+    "globalRank": 16,
+    "mobilityScore": 150,
+    "individualRank": 51
+  },
+  {
+    "id": "mexico",
+    "name": "Mexico",
+    "cca2": "MX",
+    "globalRank": 16,
+    "mobilityScore": 150,
+    "individualRank": 52
+  },
+  {
+    "id": "bahamas",
+    "name": "Bahamas",
+    "cca2": "BS",
+    "globalRank": 17,
+    "mobilityScore": 147,
+    "individualRank": 53
+  },
+  {
+    "id": "uruguay",
+    "name": "Uruguay",
+    "cca2": "UY",
+    "globalRank": 17,
+    "mobilityScore": 147,
+    "individualRank": 54
+  },
+  {
+    "id": "vatican-city",
+    "name": "Vatican City",
+    "cca2": "VA",
+    "globalRank": 18,
+    "mobilityScore": 146,
+    "individualRank": 55
+  },
+  {
+    "id": "ukraine",
+    "name": "Ukraine",
+    "cca2": "UA",
+    "globalRank": 18,
+    "mobilityScore": 146,
+    "individualRank": 56
+  },
+  {
+    "id": "peru",
+    "name": "Peru",
+    "cca2": "PE",
+    "globalRank": 19,
+    "mobilityScore": 145,
+    "individualRank": 57
+  },
+  {
+    "id": "st.-vincent-and-the-grenadines",
+    "name": "St. Vincent and the Grenadines",
+    "cca2": "VC",
+    "globalRank": 20,
+    "mobilityScore": 143,
+    "individualRank": 58
+  },
+  {
+    "id": "saint-kitts-and-nevis",
+    "name": "Saint Kitts and Nevis",
+    "cca2": "KN",
+    "globalRank": 21,
+    "mobilityScore": 142,
+    "individualRank": 59
+  },
+  {
+    "id": "seychelles",
+    "name": "Seychelles",
+    "cca2": "SC",
+    "globalRank": 21,
+    "mobilityScore": 142,
+    "individualRank": 60
+  },
+  {
+    "id": "costa-rica",
+    "name": "Costa Rica",
+    "cca2": "CR",
+    "globalRank": 22,
+    "mobilityScore": 141,
+    "individualRank": 61
+  },
+  {
+    "id": "antigua-and-barbuda",
+    "name": "Antigua and Barbuda",
+    "cca2": "AG",
+    "globalRank": 23,
+    "mobilityScore": 140,
+    "individualRank": 62
+  },
+  {
+    "id": "trinidad-and-tobago",
+    "name": "Trinidad and Tobago",
+    "cca2": "TT",
+    "globalRank": 24,
+    "mobilityScore": 139,
+    "individualRank": 63
+  },
+  {
+    "id": "paraguay",
+    "name": "Paraguay",
+    "cca2": "PY",
+    "globalRank": 25,
+    "mobilityScore": 138,
+    "individualRank": 64
+  },
+  {
+    "id": "macao",
+    "name": "Macao",
+    "cca2": "MO",
+    "globalRank": 26,
+    "mobilityScore": 137,
+    "individualRank": 65
+  },
+  {
+    "id": "colombia",
+    "name": "Colombia",
+    "cca2": "CO",
+    "globalRank": 26,
+    "mobilityScore": 137,
+    "individualRank": 66
+  },
+  {
+    "id": "mauritius",
+    "name": "Mauritius",
+    "cca2": "MU",
+    "globalRank": 27,
+    "mobilityScore": 135,
+    "individualRank": 67
+  },
+  {
+    "id": "saint-lucia",
+    "name": "Saint Lucia",
+    "cca2": "LC",
+    "globalRank": 27,
+    "mobilityScore": 135,
+    "individualRank": 68
+  },
+  {
+    "id": "grenada",
+    "name": "Grenada",
+    "cca2": "GD",
+    "globalRank": 28,
+    "mobilityScore": 134,
+    "individualRank": 69
+  },
+  {
+    "id": "panama",
+    "name": "Panama",
+    "cca2": "PA",
+    "globalRank": 28,
+    "mobilityScore": 134,
+    "individualRank": 70
+  },
+  {
+    "id": "serbia",
+    "name": "Serbia",
+    "cca2": "RS",
+    "globalRank": 28,
+    "mobilityScore": 134,
+    "individualRank": 71
+  },
+  {
+    "id": "dominica",
+    "name": "Dominica",
+    "cca2": "DM",
+    "globalRank": 29,
+    "mobilityScore": 132,
+    "individualRank": 72
+  },
+  {
+    "id": "solomon-islands",
+    "name": "Solomon Islands",
+    "cca2": "SB",
+    "globalRank": 29,
+    "mobilityScore": 132,
+    "individualRank": 73
+  },
+  {
+    "id": "taiwan",
+    "name": "Taiwan",
+    "cca2": "TW",
+    "globalRank": 29,
+    "mobilityScore": 132,
+    "individualRank": 74
+  },
+  {
+    "id": "honduras",
+    "name": "Honduras",
+    "cca2": "HN",
+    "globalRank": 30,
+    "mobilityScore": 129,
+    "individualRank": 75
+  },
+  {
+    "id": "georgia",
+    "name": "Georgia",
+    "cca2": "GE",
+    "globalRank": 30,
+    "mobilityScore": 129,
+    "individualRank": 76
+  },
+  {
+    "id": "guatemala",
+    "name": "Guatemala",
+    "cca2": "GT",
+    "globalRank": 31,
+    "mobilityScore": 128,
+    "individualRank": 77
+  },
+  {
+    "id": "north-macedonia",
+    "name": "North Macedonia",
+    "cca2": "MK",
+    "globalRank": 31,
+    "mobilityScore": 128,
+    "individualRank": 78
+  },
+  {
+    "id": "samoa",
+    "name": "Samoa",
+    "cca2": "WS",
+    "globalRank": 32,
+    "mobilityScore": 127,
+    "individualRank": 79
+  },
+  {
+    "id": "el-salvador",
+    "name": "El Salvador",
+    "cca2": "SV",
+    "globalRank": 32,
+    "mobilityScore": 127,
+    "individualRank": 80
+  },
+  {
+    "id": "montenegro",
+    "name": "Montenegro",
+    "cca2": "ME",
+    "globalRank": 32,
+    "mobilityScore": 127,
+    "individualRank": 81
+  },
+  {
+    "id": "tuvalu",
+    "name": "Tuvalu",
+    "cca2": "TV",
+    "globalRank": 33,
+    "mobilityScore": 126,
+    "individualRank": 82
+  },
+  {
+    "id": "kiribati",
+    "name": "Kiribati",
+    "cca2": "KI",
+    "globalRank": 34,
+    "mobilityScore": 124,
+    "individualRank": 83
+  },
+  {
+    "id": "türkiye",
+    "name": "Türkiye",
+    "cca2": "TR",
+    "globalRank": 34,
+    "mobilityScore": 124,
+    "individualRank": 84
+  },
+  {
+    "id": "tonga",
+    "name": "Tonga",
+    "cca2": "TO",
+    "globalRank": 35,
+    "mobilityScore": 123,
+    "individualRank": 85
+  },
+  {
+    "id": "russian-federation",
+    "name": "Russian Federation",
+    "cca2": "RU",
+    "globalRank": 35,
+    "mobilityScore": 123,
+    "individualRank": 86
+  },
+  {
+    "id": "marshall-islands",
+    "name": "Marshall Islands",
+    "cca2": "MH",
+    "globalRank": 35,
+    "mobilityScore": 123,
+    "individualRank": 87
+  },
+  {
+    "id": "venezuela",
+    "name": "Venezuela",
+    "cca2": "VE",
+    "globalRank": 35,
+    "mobilityScore": 123,
+    "individualRank": 88
+  },
+  {
+    "id": "nicaragua",
+    "name": "Nicaragua",
+    "cca2": "NI",
+    "globalRank": 36,
+    "mobilityScore": 121,
+    "individualRank": 89
+  },
+  {
+    "id": "moldova",
+    "name": "Moldova",
+    "cca2": "MD",
+    "globalRank": 36,
+    "mobilityScore": 121,
+    "individualRank": 90
+  },
+  {
+    "id": "palau",
+    "name": "Palau",
+    "cca2": "PW",
+    "globalRank": 37,
+    "mobilityScore": 120,
+    "individualRank": 91
+  },
+  {
+    "id": "micronesia",
+    "name": "Micronesia",
+    "cca2": "FM",
+    "globalRank": 38,
+    "mobilityScore": 119,
+    "individualRank": 92
+  },
+  {
+    "id": "albania",
+    "name": "Albania",
+    "cca2": "AL",
+    "globalRank": 39,
+    "mobilityScore": 118,
+    "individualRank": 93
+  },
+  {
+    "id": "bosnia-and-herzegovina",
+    "name": "Bosnia and Herzegovina",
+    "cca2": "BA",
+    "globalRank": 40,
+    "mobilityScore": 117,
+    "individualRank": 94
+  },
+  {
+    "id": "qatar",
+    "name": "Qatar",
+    "cca2": "QA",
+    "globalRank": 41,
+    "mobilityScore": 114,
+    "individualRank": 95
+  },
+  {
+    "id": "kuwait",
+    "name": "Kuwait",
+    "cca2": "KW",
+    "globalRank": 42,
+    "mobilityScore": 108,
+    "individualRank": 96
+  },
+  {
+    "id": "south-africa",
+    "name": "South Africa",
+    "cca2": "ZA",
+    "globalRank": 43,
+    "mobilityScore": 107,
+    "individualRank": 97
+  },
+  {
+    "id": "ecuador",
+    "name": "Ecuador",
+    "cca2": "EC",
+    "globalRank": 44,
+    "mobilityScore": 101,
+    "individualRank": 98
+  },
+  {
+    "id": "timor-leste",
+    "name": "Timor-Leste",
+    "cca2": "TL",
+    "globalRank": 45,
+    "mobilityScore": 99,
+    "individualRank": 99
+  },
+  {
+    "id": "bahrain",
+    "name": "Bahrain",
+    "cca2": "BH",
+    "globalRank": 45,
+    "mobilityScore": 99,
+    "individualRank": 100
+  },
+  {
+    "id": "vanuatu",
+    "name": "Vanuatu",
+    "cca2": "VU",
+    "globalRank": 46,
+    "mobilityScore": 98,
+    "individualRank": 101
+  },
+  {
+    "id": "belize",
+    "name": "Belize",
+    "cca2": "BZ",
+    "globalRank": 47,
+    "mobilityScore": 97,
+    "individualRank": 102
+  },
+  {
+    "id": "jamaica",
+    "name": "Jamaica",
+    "cca2": "JM",
+    "globalRank": 48,
+    "mobilityScore": 96,
+    "individualRank": 103
+  },
+  {
+    "id": "saudi-arabia",
+    "name": "Saudi Arabia",
+    "cca2": "SA",
+    "globalRank": 49,
+    "mobilityScore": 95,
+    "individualRank": 104
+  },
+  {
+    "id": "fiji",
+    "name": "Fiji",
+    "cca2": "FJ",
+    "globalRank": 49,
+    "mobilityScore": 95,
+    "individualRank": 105
+  },
+  {
+    "id": "oman",
+    "name": "Oman",
+    "cca2": "OM",
+    "globalRank": 49,
+    "mobilityScore": 95,
+    "individualRank": 106
+  },
+  {
+    "id": "maldives",
+    "name": "Maldives",
+    "cca2": "MV",
+    "globalRank": 50,
+    "mobilityScore": 94,
+    "individualRank": 107
+  },
+  {
+    "id": "thailand",
+    "name": "Thailand",
+    "cca2": "TH",
+    "globalRank": 50,
+    "mobilityScore": 94,
+    "individualRank": 108
+  },
+  {
+    "id": "guyana",
+    "name": "Guyana",
+    "cca2": "GY",
+    "globalRank": 51,
+    "mobilityScore": 93,
+    "individualRank": 109
+  },
+  {
+    "id": "belarus",
+    "name": "Belarus",
+    "cca2": "BY",
+    "globalRank": 52,
+    "mobilityScore": 90,
+    "individualRank": 110
+  },
+  {
+    "id": "nauru",
+    "name": "Nauru",
+    "cca2": "NR",
+    "globalRank": 53,
+    "mobilityScore": 89,
+    "individualRank": 111
+  },
+  {
+    "id": "kazakhstan",
+    "name": "Kazakhstan",
+    "cca2": "KZ",
+    "globalRank": 53,
+    "mobilityScore": 89,
+    "individualRank": 112
+  },
+  {
+    "id": "indonesia",
+    "name": "Indonesia",
+    "cca2": "ID",
+    "globalRank": 54,
+    "mobilityScore": 87,
+    "individualRank": 113
+  },
+  {
+    "id": "botswana",
+    "name": "Botswana",
+    "cca2": "BW",
+    "globalRank": 55,
+    "mobilityScore": 86,
+    "individualRank": 114
+  },
+  {
+    "id": "bolivia",
+    "name": "Bolivia",
+    "cca2": "BO",
+    "globalRank": 56,
+    "mobilityScore": 85,
+    "individualRank": 115
+  },
+  {
+    "id": "suriname",
+    "name": "Suriname",
+    "cca2": "SR",
+    "globalRank": 56,
+    "mobilityScore": 85,
+    "individualRank": 116
+  },
+  {
+    "id": "papua-new-guinea",
+    "name": "Papua New Guinea",
+    "cca2": "PG",
+    "globalRank": 57,
+    "mobilityScore": 83,
+    "individualRank": 117
+  },
+  {
+    "id": "china",
+    "name": "China",
+    "cca2": "CN",
+    "globalRank": 57,
+    "mobilityScore": 83,
+    "individualRank": 118
+  },
+  {
+    "id": "lesotho",
+    "name": "Lesotho",
+    "cca2": "LS",
+    "globalRank": 58,
+    "mobilityScore": 81,
+    "individualRank": 119
+  },
+  {
+    "id": "dominican-republic",
+    "name": "Dominican Republic",
+    "cca2": "DO",
+    "globalRank": 58,
+    "mobilityScore": 81,
+    "individualRank": 120
+  },
+  {
+    "id": "armenia",
+    "name": "Armenia",
+    "cca2": "AM",
+    "globalRank": 59,
+    "mobilityScore": 80,
+    "individualRank": 121
+  },
+  {
+    "id": "tunisia",
+    "name": "Tunisia",
+    "cca2": "TN",
+    "globalRank": 60,
+    "mobilityScore": 79,
+    "individualRank": 122
+  },
+  {
+    "id": "azerbaijan",
+    "name": "Azerbaijan",
+    "cca2": "AZ",
+    "globalRank": 60,
+    "mobilityScore": 79,
+    "individualRank": 123
+  },
+  {
+    "id": "eswatini",
+    "name": "Eswatini",
+    "cca2": "SZ",
+    "globalRank": 61,
+    "mobilityScore": 78,
+    "individualRank": 124
+  },
+  {
+    "id": "namibia",
+    "name": "Namibia",
+    "cca2": "NA",
+    "globalRank": 61,
+    "mobilityScore": 78,
+    "individualRank": 125
+  },
+  {
+    "id": "malawi",
+    "name": "Malawi",
+    "cca2": "MW",
+    "globalRank": 62,
+    "mobilityScore": 77,
+    "individualRank": 126
+  },
+  {
+    "id": "philippines",
+    "name": "Philippines",
+    "cca2": "PH",
+    "globalRank": 62,
+    "mobilityScore": 77,
+    "individualRank": 127
+  },
+  {
+    "id": "kenya",
+    "name": "Kenya",
+    "cca2": "KE",
+    "globalRank": 63,
+    "mobilityScore": 76,
+    "individualRank": 128
+  },
+  {
+    "id": "cape-verde",
+    "name": "Cape Verde",
+    "cca2": "CV",
+    "globalRank": 63,
+    "mobilityScore": 76,
+    "individualRank": 129
+  },
+  {
+    "id": "morocco",
+    "name": "Morocco",
+    "cca2": "MA",
+    "globalRank": 63,
+    "mobilityScore": 76,
+    "individualRank": 130
+  },
+  {
+    "id": "mongolia",
+    "name": "Mongolia",
+    "cca2": "MN",
+    "globalRank": 64,
+    "mobilityScore": 75,
+    "individualRank": 131
+  },
+  {
+    "id": "cuba",
+    "name": "Cuba",
+    "cca2": "CU",
+    "globalRank": 64,
+    "mobilityScore": 75,
+    "individualRank": 132
+  },
+  {
+    "id": "zambia",
+    "name": "Zambia",
+    "cca2": "ZM",
+    "globalRank": 65,
+    "mobilityScore": 74,
+    "individualRank": 133
+  },
+  {
+    "id": "kyrgyzstan",
+    "name": "Kyrgyzstan",
+    "cca2": "KG",
+    "globalRank": 66,
+    "mobilityScore": 73,
+    "individualRank": 134
+  },
+  {
+    "id": "tanzania",
+    "name": "Tanzania",
+    "cca2": "TZ",
+    "globalRank": 67,
+    "mobilityScore": 72,
+    "individualRank": 135
+  },
+  {
+    "id": "gambia",
+    "name": "Gambia",
+    "cca2": "GM",
+    "globalRank": 67,
+    "mobilityScore": 72,
+    "individualRank": 136
+  },
+  {
+    "id": "ghana",
+    "name": "Ghana",
+    "cca2": "GH",
+    "globalRank": 67,
+    "mobilityScore": 72,
+    "individualRank": 137
+  },
+  {
+    "id": "rwanda",
+    "name": "Rwanda",
+    "cca2": "RW",
+    "globalRank": 68,
+    "mobilityScore": 71,
+    "individualRank": 138
+  },
+  {
+    "id": "sao-tome-and-principe",
+    "name": "Sao Tome and Principe",
+    "cca2": "ST",
+    "globalRank": 68,
+    "mobilityScore": 71,
+    "individualRank": 139
+  },
+  {
+    "id": "uganda",
+    "name": "Uganda",
+    "cca2": "UG",
+    "globalRank": 69,
+    "mobilityScore": 70,
+    "individualRank": 140
+  },
+  {
+    "id": "uzbekistan",
+    "name": "Uzbekistan",
+    "cca2": "UZ",
+    "globalRank": 69,
+    "mobilityScore": 70,
+    "individualRank": 141
+  },
+  {
+    "id": "india",
+    "name": "India",
+    "cca2": "IN",
+    "globalRank": 69,
+    "mobilityScore": 70,
+    "individualRank": 142
+  },
+  {
+    "id": "zimbabwe",
+    "name": "Zimbabwe",
+    "cca2": "ZW",
+    "globalRank": 70,
+    "mobilityScore": 69,
+    "individualRank": 143
+  },
+  {
+    "id": "tajikistan",
+    "name": "Tajikistan",
+    "cca2": "TJ",
+    "globalRank": 70,
+    "mobilityScore": 69,
+    "individualRank": 144
+  },
+  {
+    "id": "cambodia",
+    "name": "Cambodia",
+    "cca2": "KH",
+    "globalRank": 70,
+    "mobilityScore": 69,
+    "individualRank": 145
+  },
+  {
+    "id": "sierra-leone",
+    "name": "Sierra Leone",
+    "cca2": "SL",
+    "globalRank": 71,
+    "mobilityScore": 68,
+    "individualRank": 146
+  },
+  {
+    "id": "senegal",
+    "name": "Senegal",
+    "cca2": "SN",
+    "globalRank": 71,
+    "mobilityScore": 68,
+    "individualRank": 147
+  },
+  {
+    "id": "benin",
+    "name": "Benin",
+    "cca2": "BJ",
+    "globalRank": 71,
+    "mobilityScore": 68,
+    "individualRank": 148
+  },
+  {
+    "id": "burkina-faso",
+    "name": "Burkina Faso",
+    "cca2": "BF",
+    "globalRank": 71,
+    "mobilityScore": 68,
+    "individualRank": 149
+  },
+  {
+    "id": "viet-nam",
+    "name": "Viet Nam",
+    "cca2": "VN",
+    "globalRank": 71,
+    "mobilityScore": 68,
+    "individualRank": 150
+  },
+  {
+    "id": "cote-d'ivoire-(ivory-coast)",
+    "name": "Cote d'Ivoire (Ivory Coast)",
+    "cca2": "CI",
+    "globalRank": 72,
+    "mobilityScore": 67,
+    "individualRank": 151
+  },
+  {
+    "id": "gabon",
+    "name": "Gabon",
+    "cca2": "GA",
+    "globalRank": 72,
+    "mobilityScore": 67,
+    "individualRank": 152
+  },
+  {
+    "id": "madagascar",
+    "name": "Madagascar",
+    "cca2": "MG",
+    "globalRank": 73,
+    "mobilityScore": 66,
+    "individualRank": 153
+  },
+  {
+    "id": "equatorial-guinea",
+    "name": "Equatorial Guinea",
+    "cca2": "GQ",
+    "globalRank": 73,
+    "mobilityScore": 66,
+    "individualRank": 154
+  },
+  {
+    "id": "bhutan",
+    "name": "Bhutan",
+    "cca2": "BT",
+    "globalRank": 73,
+    "mobilityScore": 66,
+    "individualRank": 155
+  },
+  {
+    "id": "mozambique",
+    "name": "Mozambique",
+    "cca2": "MZ",
+    "globalRank": 74,
+    "mobilityScore": 65,
+    "individualRank": 156
+  },
+  {
+    "id": "togo",
+    "name": "Togo",
+    "cca2": "TG",
+    "globalRank": 74,
+    "mobilityScore": 65,
+    "individualRank": 157
+  },
+  {
+    "id": "algeria",
+    "name": "Algeria",
+    "cca2": "DZ",
+    "globalRank": 74,
+    "mobilityScore": 65,
+    "individualRank": 158
+  },
+  {
+    "id": "niger",
+    "name": "Niger",
+    "cca2": "NE",
+    "globalRank": 75,
+    "mobilityScore": 64,
+    "individualRank": 159
+  },
+  {
+    "id": "guinea",
+    "name": "Guinea",
+    "cca2": "GN",
+    "globalRank": 75,
+    "mobilityScore": 64,
+    "individualRank": 160
+  },
+  {
+    "id": "egypt",
+    "name": "Egypt",
+    "cca2": "EG",
+    "globalRank": 75,
+    "mobilityScore": 64,
+    "individualRank": 161
+  },
+  {
+    "id": "mali",
+    "name": "Mali",
+    "cca2": "ML",
+    "globalRank": 76,
+    "mobilityScore": 63,
+    "individualRank": 162
+  },
+  {
+    "id": "angola",
+    "name": "Angola",
+    "cca2": "AO",
+    "globalRank": 76,
+    "mobilityScore": 63,
+    "individualRank": 163
+  },
+  {
+    "id": "mauritania",
+    "name": "Mauritania",
+    "cca2": "MR",
+    "globalRank": 76,
+    "mobilityScore": 63,
+    "individualRank": 164
+  },
+  {
+    "id": "jordan",
+    "name": "Jordan",
+    "cca2": "JO",
+    "globalRank": 76,
+    "mobilityScore": 63,
+    "individualRank": 165
+  },
+  {
+    "id": "guinea-bissau",
+    "name": "Guinea-Bissau",
+    "cca2": "GW",
+    "globalRank": 77,
+    "mobilityScore": 62,
+    "individualRank": 166
+  },
+  {
+    "id": "laos",
+    "name": "Laos",
+    "cca2": "LA",
+    "globalRank": 77,
+    "mobilityScore": 62,
+    "individualRank": 167
+  },
+  {
+    "id": "comoros",
+    "name": "Comoros",
+    "cca2": "KM",
+    "globalRank": 77,
+    "mobilityScore": 62,
+    "individualRank": 168
+  },
+  {
+    "id": "chad",
+    "name": "Chad",
+    "cca2": "TD",
+    "globalRank": 78,
+    "mobilityScore": 61,
+    "individualRank": 169
+  },
+  {
+    "id": "turkmenistan",
+    "name": "Turkmenistan",
+    "cca2": "TM",
+    "globalRank": 78,
+    "mobilityScore": 61,
+    "individualRank": 170
+  },
+  {
+    "id": "haiti",
+    "name": "Haiti",
+    "cca2": "HT",
+    "globalRank": 78,
+    "mobilityScore": 61,
+    "individualRank": 171
+  },
+  {
+    "id": "liberia",
+    "name": "Liberia",
+    "cca2": "LR",
+    "globalRank": 79,
+    "mobilityScore": 60,
+    "individualRank": 172
+  },
+  {
+    "id": "central-african-republic",
+    "name": "Central African Republic",
+    "cca2": "CF",
+    "globalRank": 79,
+    "mobilityScore": 60,
+    "individualRank": 173
+  },
+  {
+    "id": "djibouti",
+    "name": "Djibouti",
+    "cca2": "DJ",
+    "globalRank": 79,
+    "mobilityScore": 60,
+    "individualRank": 174
+  },
+  {
+    "id": "cameroon",
+    "name": "Cameroon",
+    "cca2": "CM",
+    "globalRank": 80,
+    "mobilityScore": 59,
+    "individualRank": 175
+  },
+  {
+    "id": "burundi",
+    "name": "Burundi",
+    "cca2": "BI",
+    "globalRank": 81,
+    "mobilityScore": 57,
+    "individualRank": 176
+  },
+  {
+    "id": "congo",
+    "name": "Congo",
+    "cca2": "CG",
+    "globalRank": 82,
+    "mobilityScore": 56,
+    "individualRank": 177
+  },
+  {
+    "id": "nigeria",
+    "name": "Nigeria",
+    "cca2": "NG",
+    "globalRank": 83,
+    "mobilityScore": 55,
+    "individualRank": 178
+  },
+  {
+    "id": "lebanon",
+    "name": "Lebanon",
+    "cca2": "LB",
+    "globalRank": 83,
+    "mobilityScore": 55,
+    "individualRank": 179
+  },
+  {
+    "id": "kosovo",
+    "name": "Kosovo",
+    "cca2": "XK",
+    "globalRank": 83,
+    "mobilityScore": 55,
+    "individualRank": 180
+  },
+  {
+    "id": "myanmar",
+    "name": "Myanmar",
+    "cca2": "MM",
+    "globalRank": 83,
+    "mobilityScore": 55,
+    "individualRank": 181
+  },
+  {
+    "id": "sri-lanka",
+    "name": "Sri Lanka",
+    "cca2": "LK",
+    "globalRank": 84,
+    "mobilityScore": 54,
+    "individualRank": 182
+  },
+  {
+    "id": "nepal",
+    "name": "Nepal",
+    "cca2": "NP",
+    "globalRank": 84,
+    "mobilityScore": 54,
+    "individualRank": 183
+  },
+  {
+    "id": "congo-(dem.-rep.)",
+    "name": "Congo (Dem. Rep.)",
+    "cca2": "CD",
+    "globalRank": 85,
+    "mobilityScore": 53,
+    "individualRank": 184
+  },
+  {
+    "id": "sudan",
+    "name": "Sudan",
+    "cca2": "SD",
+    "globalRank": 85,
+    "mobilityScore": 53,
+    "individualRank": 185
+  },
+  {
+    "id": "south-sudan",
+    "name": "South Sudan",
+    "cca2": "SS",
+    "globalRank": 86,
+    "mobilityScore": 52,
+    "individualRank": 186
+  },
+  {
+    "id": "ethiopia",
+    "name": "Ethiopia",
+    "cca2": "ET",
+    "globalRank": 86,
+    "mobilityScore": 52,
+    "individualRank": 187
+  },
+  {
+    "id": "iran",
+    "name": "Iran",
+    "cca2": "IR",
+    "globalRank": 87,
+    "mobilityScore": 51,
+    "individualRank": 188
+  },
+  {
+    "id": "eritrea",
+    "name": "Eritrea",
+    "cca2": "ER",
+    "globalRank": 87,
+    "mobilityScore": 51,
+    "individualRank": 189
+  },
+  {
+    "id": "libya",
+    "name": "Libya",
+    "cca2": "LY",
+    "globalRank": 88,
+    "mobilityScore": 50,
+    "individualRank": 190
+  },
+  {
+    "id": "palestinian-territories",
+    "name": "Palestinian Territories",
+    "cca2": "PS",
+    "globalRank": 88,
+    "mobilityScore": 50,
+    "individualRank": 191
+  },
+  {
+    "id": "north-korea",
+    "name": "North Korea",
+    "cca2": "KP",
+    "globalRank": 89,
+    "mobilityScore": 49,
+    "individualRank": 192
+  },
+  {
+    "id": "bangladesh",
+    "name": "Bangladesh",
+    "cca2": "BD",
+    "globalRank": 90,
+    "mobilityScore": 47,
+    "individualRank": 193
+  },
+  {
+    "id": "yemen",
+    "name": "Yemen",
+    "cca2": "YE",
+    "globalRank": 91,
+    "mobilityScore": 45,
+    "individualRank": 194
+  },
+  {
+    "id": "pakistan",
+    "name": "Pakistan",
+    "cca2": "PK",
+    "globalRank": 92,
+    "mobilityScore": 44,
+    "individualRank": 195
+  },
+  {
+    "id": "somalia",
+    "name": "Somalia",
+    "cca2": "SO",
+    "globalRank": 93,
+    "mobilityScore": 43,
+    "individualRank": 196
+  },
+  {
+    "id": "iraq",
+    "name": "Iraq",
+    "cca2": "IQ",
+    "globalRank": 94,
+    "mobilityScore": 41,
+    "individualRank": 197
+  },
+  {
+    "id": "syria",
+    "name": "Syria",
+    "cca2": "SY",
+    "globalRank": 95,
+    "mobilityScore": 39,
+    "individualRank": 198
+  },
+  {
+    "id": "afghanistan",
+    "name": "Afghanistan",
+    "cca2": "AF",
+    "globalRank": 96,
+    "mobilityScore": 38,
+    "individualRank": 199
+  }
+]
