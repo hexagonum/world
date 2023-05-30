@@ -1,4 +1,4 @@
-FROM node:lts-slim
+FROM node
 
 LABEL author="hieudoanm"
 LABEL maintainer="hieumdoan@gmail.com"
@@ -12,7 +12,7 @@ COPY . /home/node/app
 ARG POSTGRESQL_URL
 ENV POSTGRESQL_URL=$POSTGRESQL_URL
 ## Install OpenSSL
-RUN apt-get update -y && apt-get install -y openss
+RUN apt-get update -y && apt-get install -y openssl
 RUN openssl version
 
 RUN yarn install
