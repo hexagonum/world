@@ -1,4 +1,4 @@
-FROM node:lts
+FROM node:lts-slim
 
 LABEL author="hieudoanm"
 LABEL maintainer="hieumdoan@gmail.com"
