@@ -386,6 +386,35 @@
         "parameters": []
       }
     },
+    "/countries/{code}": {
+      "get": {
+        "operationId": "GetCountry",
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Country"
+                }
+              }
+            }
+          }
+        },
+        "tags": ["Countries"],
+        "security": [],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "code",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ]
+      }
+    },
     "/countries/google/trends": {
       "get": {
         "operationId": "GetTrends",
@@ -432,6 +461,35 @@
         "parameters": []
       }
     },
+    "/currencies/{code}": {
+      "get": {
+        "operationId": "GetCurrency",
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Currency"
+                }
+              }
+            }
+          }
+        },
+        "tags": ["Currencies"],
+        "security": [],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "code",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ]
+      }
+    },
     "/health": {
       "get": {
         "operationId": "GetHealth",
@@ -475,6 +533,35 @@
         "parameters": []
       }
     },
+    "/languages/{code}": {
+      "get": {
+        "operationId": "GetLanguage",
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Language"
+                }
+              }
+            }
+          }
+        },
+        "tags": ["Languages"],
+        "security": [],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "code",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ]
+      }
+    },
     "/organizations": {
       "get": {
         "operationId": "GetOrganizations",
@@ -498,6 +585,35 @@
         "parameters": []
       }
     },
+    "/organizations/{code}": {
+      "get": {
+        "operationId": "GetOrganization",
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Organization"
+                }
+              }
+            }
+          }
+        },
+        "tags": ["Organizations"],
+        "security": [],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "code",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ]
+      }
+    },
     "/timezones": {
       "get": {
         "operationId": "GetTimezones",
@@ -519,6 +635,35 @@
         "tags": ["Timezones"],
         "security": [],
         "parameters": []
+      }
+    },
+    "/timezones/{code}": {
+      "get": {
+        "operationId": "GetTimezone",
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Timezone"
+                }
+              }
+            }
+          }
+        },
+        "tags": ["Timezones"],
+        "security": [],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "code",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ]
       }
     }
   },

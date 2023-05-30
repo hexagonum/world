@@ -1,4 +1,4 @@
-import { Controller, Get, Route, Tags } from 'tsoa';
+import { Controller, Get, Path, Route, Tags } from 'tsoa';
 import { TimezonesService } from './timezones.service';
 import { Timezone } from '@prisma/client';
 
@@ -15,5 +15,10 @@ export class TimezonesController extends Controller {
   @Get()
   async getTimezones(): Promise<Timezone[]> {
     return this.timezonesService.getTimezones();
+  }
+
+  @Get(':code')
+  async getTimezone(@Path('code') code: string): Promise<Timezone> {
+    return this.timezonesService.getTimezone(code);
   }
 }

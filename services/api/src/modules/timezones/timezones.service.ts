@@ -6,4 +6,9 @@ export class TimezonesService {
     const timezones: Timezone[] = await prismaClient.timezone.findMany();
     return timezones;
   }
+
+  async getTimezone(code: string): Promise<Timezone> {
+    const timezone: Timezone = await prismaClient.timezone.findFirstOrThrow({ where: { code } });
+    return timezone;
+  }
 }

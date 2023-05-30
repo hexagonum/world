@@ -1,4 +1,4 @@
-import { Controller, Get, Route, Tags } from 'tsoa';
+import { Controller, Get, Path, Route, Tags } from 'tsoa';
 import { OrganizationsService } from './organizations.service';
 import { Organization } from '@prisma/client';
 
@@ -15,5 +15,10 @@ export class OrganizationsController extends Controller {
   @Get()
   async getOrganizations(): Promise<Organization[]> {
     return this.organizationsService.getOrganizations();
+  }
+
+  @Get(':code')
+  async getOrganization(@Path('code') code: string): Promise<Organization> {
+    return this.organizationsService.getOrganization(code);
   }
 }

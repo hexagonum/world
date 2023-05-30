@@ -1,4 +1,4 @@
-import { Controller, Get, Route, Tags } from 'tsoa';
+import { Controller, Get, Path, Route, Tags } from 'tsoa';
 import { LanguagesService } from './languages.service';
 import { Language } from '@prisma/client';
 
@@ -15,5 +15,10 @@ export class LanguagesController extends Controller {
   @Get()
   async getLanguages(): Promise<Language[]> {
     return this.languagesService.getLanguages();
+  }
+
+  @Get(':code')
+  async getLanguage(@Path('code') code: string): Promise<Language> {
+    return this.languagesService.getLanguage(code);
   }
 }

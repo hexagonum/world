@@ -218,6 +218,32 @@ export function RegisterRoutes(app: Router) {
   );
   // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
   app.get(
+    '/countries/:code',
+    ...fetchMiddlewares<RequestHandler>(CountriesController),
+    ...fetchMiddlewares<RequestHandler>(CountriesController.prototype.getCountry),
+
+    function CountriesController_getCountry(request: any, response: any, next: any) {
+      const args = {
+        code: { in: 'path', name: 'code', required: true, dataType: 'string' },
+      };
+
+      // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
+
+      let validatedArgs: any[] = [];
+      try {
+        validatedArgs = getValidatedArgs(args, request, response);
+
+        const controller = new CountriesController();
+
+        const promise = controller.getCountry.apply(controller, validatedArgs as any);
+        promiseHandler(controller, promise, response, undefined, next);
+      } catch (err) {
+        return next(err);
+      }
+    }
+  );
+  // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
+  app.get(
     '/countries/google/trends',
     ...fetchMiddlewares<RequestHandler>(CountriesController),
     ...fetchMiddlewares<RequestHandler>(CountriesController.prototype.getTrends),
@@ -258,6 +284,32 @@ export function RegisterRoutes(app: Router) {
         const controller = new CurrenciesController();
 
         const promise = controller.getCurrencies.apply(controller, validatedArgs as any);
+        promiseHandler(controller, promise, response, undefined, next);
+      } catch (err) {
+        return next(err);
+      }
+    }
+  );
+  // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
+  app.get(
+    '/currencies/:code',
+    ...fetchMiddlewares<RequestHandler>(CurrenciesController),
+    ...fetchMiddlewares<RequestHandler>(CurrenciesController.prototype.getCurrency),
+
+    function CurrenciesController_getCurrency(request: any, response: any, next: any) {
+      const args = {
+        code: { in: 'path', name: 'code', required: true, dataType: 'string' },
+      };
+
+      // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
+
+      let validatedArgs: any[] = [];
+      try {
+        validatedArgs = getValidatedArgs(args, request, response);
+
+        const controller = new CurrenciesController();
+
+        const promise = controller.getCurrency.apply(controller, validatedArgs as any);
         promiseHandler(controller, promise, response, undefined, next);
       } catch (err) {
         return next(err);
@@ -314,6 +366,32 @@ export function RegisterRoutes(app: Router) {
   );
   // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
   app.get(
+    '/languages/:code',
+    ...fetchMiddlewares<RequestHandler>(LanguagesController),
+    ...fetchMiddlewares<RequestHandler>(LanguagesController.prototype.getLanguage),
+
+    function LanguagesController_getLanguage(request: any, response: any, next: any) {
+      const args = {
+        code: { in: 'path', name: 'code', required: true, dataType: 'string' },
+      };
+
+      // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
+
+      let validatedArgs: any[] = [];
+      try {
+        validatedArgs = getValidatedArgs(args, request, response);
+
+        const controller = new LanguagesController();
+
+        const promise = controller.getLanguage.apply(controller, validatedArgs as any);
+        promiseHandler(controller, promise, response, undefined, next);
+      } catch (err) {
+        return next(err);
+      }
+    }
+  );
+  // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
+  app.get(
     '/organizations',
     ...fetchMiddlewares<RequestHandler>(OrganizationsController),
     ...fetchMiddlewares<RequestHandler>(OrganizationsController.prototype.getOrganizations),
@@ -338,6 +416,32 @@ export function RegisterRoutes(app: Router) {
   );
   // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
   app.get(
+    '/organizations/:code',
+    ...fetchMiddlewares<RequestHandler>(OrganizationsController),
+    ...fetchMiddlewares<RequestHandler>(OrganizationsController.prototype.getOrganization),
+
+    function OrganizationsController_getOrganization(request: any, response: any, next: any) {
+      const args = {
+        code: { in: 'path', name: 'code', required: true, dataType: 'string' },
+      };
+
+      // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
+
+      let validatedArgs: any[] = [];
+      try {
+        validatedArgs = getValidatedArgs(args, request, response);
+
+        const controller = new OrganizationsController();
+
+        const promise = controller.getOrganization.apply(controller, validatedArgs as any);
+        promiseHandler(controller, promise, response, undefined, next);
+      } catch (err) {
+        return next(err);
+      }
+    }
+  );
+  // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
+  app.get(
     '/timezones',
     ...fetchMiddlewares<RequestHandler>(TimezonesController),
     ...fetchMiddlewares<RequestHandler>(TimezonesController.prototype.getTimezones),
@@ -354,6 +458,32 @@ export function RegisterRoutes(app: Router) {
         const controller = new TimezonesController();
 
         const promise = controller.getTimezones.apply(controller, validatedArgs as any);
+        promiseHandler(controller, promise, response, undefined, next);
+      } catch (err) {
+        return next(err);
+      }
+    }
+  );
+  // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
+  app.get(
+    '/timezones/:code',
+    ...fetchMiddlewares<RequestHandler>(TimezonesController),
+    ...fetchMiddlewares<RequestHandler>(TimezonesController.prototype.getTimezone),
+
+    function TimezonesController_getTimezone(request: any, response: any, next: any) {
+      const args = {
+        code: { in: 'path', name: 'code', required: true, dataType: 'string' },
+      };
+
+      // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
+
+      let validatedArgs: any[] = [];
+      try {
+        validatedArgs = getValidatedArgs(args, request, response);
+
+        const controller = new TimezonesController();
+
+        const promise = controller.getTimezone.apply(controller, validatedArgs as any);
         promiseHandler(controller, promise, response, undefined, next);
       } catch (err) {
         return next(err);

@@ -6,4 +6,9 @@ export class OrganizationsService {
     const organizations: Organization[] = await prismaClient.organization.findMany();
     return organizations;
   }
+
+  async getOrganization(code: string): Promise<Organization> {
+    const organization: Organization = await prismaClient.organization.findFirstOrThrow({ where: { code } });
+    return organization;
+  }
 }
