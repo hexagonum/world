@@ -13,22 +13,35 @@
     "yarn": "1.22.19"
   },
   "scripts": {
-    "extract:countries": "ts-node ./scripts/extract/countries",
-    "extract:languages": "ts-node ./scripts/extract/languages",
-    "extract:currencies": "ts-node ./scripts/extract/currencies",
-    "extract:passports": "ts-node ./scripts/extract/passports",
-    "extract:timezones": "ts-node ./scripts/extract/timezones",
-    "extract:google:trends": "ts-node ./scripts/extract/google-trends",
-    "extract:requirements": "ts-node ./scripts/extract/requirements",
-    "transform:countries": "ts-node ./scripts/transform/countries",
-    "transform:timezones": "ts-node ./scripts/transform/timezones"
+    "extract:countries": "ts-node ./ts/extract/countries",
+    "extract:currencies": "ts-node ./ts/extract/currencies",
+    "extract:google:trends": "ts-node ./ts/extract/google-trends",
+    "extract:languages": "ts-node ./ts/extract/languages",
+    "extract:passports": "ts-node ./ts/extract/passports",
+    "extract:passports:requirements": "ts-node ./ts/extract/requirements",
+    "extract:timezones": "ts-node ./ts/extract/timezones",
+    "transform:countries": "ts-node ./ts/transform/countries",
+    "transform:organizations": "ts-node ./ts/transform/organizations",
+    "transform:timezones": "ts-node ./ts/transform/timezones",
+    "load:countries": "ts-node ./ts/load/countries",
+    "load:countries:organizations": "ts-node ./ts/load/countries-organizations",
+    "load:currencies": "ts-node ./ts/load/currencies",
+    "load:currencies:countries": "ts-node ./ts/load/currencies-countries",
+    "load:languages": "ts-node ./ts/load/languages",
+    "load:languages:countries": "ts-node ./ts/load/languages-countries",
+    "load:organizations": "ts-node ./ts/load/organizations",
+    "load:timezones": "ts-node ./ts/load/timezones"
+  },
+  "dependencies": {
+    "cheerio": "1.0.0-rc.12",
+    "csvtojson": "2.0.10"
   },
   "devDependencies": {
     "@types/node": "20.2.5",
+    "@typescript-eslint/eslint-plugin": "^5.59.8",
+    "@typescript-eslint/parser": "^5.59.8",
+    "eslint": "8.41.0",
     "ts-node": "10.9.1",
     "typescript": "5.0.4"
-  },
-  "dependencies": {
-    "cheerio": "1.0.0-rc.12"
   }
 }

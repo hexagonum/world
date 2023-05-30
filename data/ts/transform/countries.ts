@@ -3,9 +3,10 @@ import countries from '../../json/raw/countries.json';
 import trends from '../../json/raw/google-trends.json';
 import passports from '../../json/raw/passports/passports.json';
 import requirements from '../../json/raw/passports/requirements.json';
+import organizations from '../../json/raw/organizations.json';
 
 const main = async () => {
-  const processedCountries = countries.map(
+  const transformedCountries = countries.map(
     ({
       name: { common = '', official = '' } = { common: '', official: '' },
       cca2 = '',
@@ -32,10 +33,15 @@ const main = async () => {
       maps: { googleMaps = '' } = { googleMaps: '' },
       languages = {},
       currencies = {},
+      startOfWeek = '',
     }) => {
+      const [latitude = 0, longitude = 0] = latlng;
       const density: number = area !== 0 ? Math.round(population / area) : 0;
-      const languageCodes = Object.keys(languages);
-      const currencyCodes = Object.keys(currencies);
+      const languageCodes: string[] = Object.keys(languages);
+      const currencyCodes: string[] = Object.keys(currencies);
+      const organizationCodes: string[] = organizations
+        .filter(({ members = [] }) => members.map(({ code }) => code).includes(cca3))
+        .map(({ code }) => code);
       const { trends: googleTrends = [] } = trends.find(
         ({ country }) => country.toLowerCase() === common.toLowerCase()
       ) ?? { trends: [] };
@@ -61,7 +67,8 @@ const main = async () => {
         status,
         independent,
         unMember,
-        latlng,
+        latitude,
+        longitude,
         topLevelDomains: tld,
         capital,
         alternativeSpellings: altSpellings,
@@ -69,6 +76,7 @@ const main = async () => {
         borders,
         region,
         subregion,
+        startOfWeek,
         flag,
         flagPNG: png,
         flagSVG: svg,
@@ -80,6 +88,7 @@ const main = async () => {
         timezones,
         languageCodes,
         currencyCodes,
+        organizationCodes,
         passportGlobalRank: globalRank,
         passportIndividualRank: individualRank,
         passportMobilityScore: mobilityScore,
@@ -87,7 +96,7 @@ const main = async () => {
       };
     }
   );
-  writeFileSync('./json/processed/countries.json', JSON.stringify(processedCountries, null, 2));
+  writeFileSync('./json/transformed/countries.json', JSON.stringify(transformedCountries, null, 2));
 };
 
 main().catch(console.error);

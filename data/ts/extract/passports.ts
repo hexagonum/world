@@ -36,7 +36,7 @@ const main = async () => {
       });
     });
   passports.sort((a, b) => (a.individualRank > b.individualRank ? 1 : -1));
-  writeFileSync('./raw/json/passports/passports.json', JSON.stringify(passports, null, 2));
+  writeFileSync('./json/raw/passports/passports.json', JSON.stringify(passports, null, 2));
   process.exit(0);
 };
 
