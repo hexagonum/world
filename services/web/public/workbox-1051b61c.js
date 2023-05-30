@@ -1,7 +1,7 @@
 define(['exports'], function (t) {
   'use strict';
   try {
-    self['workbox:core:6.5.3'] && _();
+    self['workbox:core:6.5.4'] && _();
   } catch (t) {}
   const e = (t, ...e) => {
     let s = t;
@@ -13,7 +13,7 @@ define(['exports'], function (t) {
     }
   }
   try {
-    self['workbox:routing:6.5.3'] && _();
+    self['workbox:routing:6.5.4'] && _();
   } catch (t) {}
   const n = (t) => (t && 'object' == typeof t ? t : { handle: t });
   class r {
@@ -150,7 +150,7 @@ define(['exports'], function (t) {
     return c().registerRoute(a), a;
   }
   try {
-    self['workbox:strategies:6.5.3'] && _();
+    self['workbox:strategies:6.5.4'] && _();
   } catch (t) {}
   const u = { cacheWillUpdate: async ({ response: t }) => (200 === t.status || 0 === t.status ? t : null) },
     l = {
@@ -499,7 +499,7 @@ define(['exports'], function (t) {
   }
   O = ((t) => q({}, t, { get: (e, s, n) => S(e, s) || t.get(e, s, n), has: (e, s) => !!S(e, s) || t.has(e, s) }))(O);
   try {
-    self['workbox:expiration:6.5.3'] && _();
+    self['workbox:expiration:6.5.4'] && _();
   } catch (t) {}
   const K = 'cache-entries',
     A = (t) => {
@@ -609,7 +609,7 @@ define(['exports'], function (t) {
     }
   }
   try {
-    self['workbox:range-requests:6.5.3'] && _();
+    self['workbox:range-requests:6.5.4'] && _();
   } catch (t) {}
   async function $(t, e) {
     try {
@@ -655,7 +655,7 @@ define(['exports'], function (t) {
     return t.waitUntil(s), s;
   }
   try {
-    self['workbox:precaching:6.5.3'] && _();
+    self['workbox:precaching:6.5.4'] && _();
   } catch (t) {}
   function G(t) {
     if (!t) throw new s('add-to-cache-list-unexpected-type', { entry: t });

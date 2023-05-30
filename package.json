@@ -32,6 +32,9 @@
     "prettier": "2.8.8",
     "prisma": "4.14.1"
   },
+  "resolutions": {
+    "@types/react": "18.2.6"
+  },
   "workspaces": [
     "services/*"
   ]

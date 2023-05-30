@@ -5,28 +5,40 @@ datasource db {
 
 model Country {
   code                 String                     @id
-  name                 Json
+  // Name
+  commonName           String
+  officialName         String
+  // Code
   cca2                 String
   cca3                 String
   ccn3                 String
   cioc                 String
+  fifa                 String
+  // Status
   status               String
   independent          Boolean
   unMember             Boolean
+  startOfWeek          String
   latlng               Float[]
   topLevelDomains      String[]
   capital              String[]
   alternativeSpellings String[]
   continents           String[]
+  borders              String[]
+  // Region
   region               String
   subregion            String
-  area                 Int
+  // Image
   flag                 String
+  flagPNG              String
+  flagSVG              String
+  // Population
+  area                 Int
   population           Int
-  fifa                 String
-  startOfWeek          String
   density              Int
-  borders              String[]
+  // Google
+  googleMaps           String
+  googleTrends         String[]
   currencies           CurrenciesInCountries[]
   languages            LanguagesInCountries[]
   organiztions         OrganizationsInCountries[]
