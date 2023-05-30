@@ -14,7 +14,7 @@ jobs:
             working-directory: services/api
           - name: Web
             working-directory: services/web
-    name: Continuous Delivery
+    name: Continuous Delivery - ${{ matrix.services.name }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
