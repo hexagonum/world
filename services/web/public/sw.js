@@ -1,27 +1,27 @@
 if (!self.define) {
   let e,
     s = {};
-  const a = (a, n) => (
-    (a = new URL(a + '.js', n).href),
-    s[a] ||
+  const n = (n, a) => (
+    (n = new URL(n + '.js', a).href),
+    s[n] ||
       new Promise((s) => {
         if ('document' in self) {
           const e = document.createElement('script');
-          (e.src = a), (e.onload = s), document.head.appendChild(e);
-        } else (e = a), importScripts(a), s();
+          (e.src = n), (e.onload = s), document.head.appendChild(e);
+        } else (e = n), importScripts(n), s();
       }).then(() => {
-        let e = s[a];
-        if (!e) throw new Error(`Module ${a} didn’t register its module`);
+        let e = s[n];
+        if (!e) throw new Error(`Module ${n} didn’t register its module`);
         return e;
       })
   );
-  self.define = (n, t) => {
+  self.define = (a, t) => {
     const c = e || ('document' in self ? document.currentScript.src : '') || location.href;
     if (s[c]) return;
     let i = {};
-    const r = (e) => a(e, c),
+    const r = (e) => n(e, c),
       o = { module: { uri: c }, exports: i, require: r };
-    s[c] = Promise.all(n.map((e) => o[e] || r(e))).then((e) => (t(...e), i));
+    s[c] = Promise.all(a.map((e) => o[e] || r(e))).then((e) => (t(...e), i));
   };
 }
 define(['./workbox-1051b61c'], function (e) {
@@ -31,24 +31,24 @@ define(['./workbox-1051b61c'], function (e) {
     e.clientsClaim(),
     e.precacheAndRoute(
       [
-        { url: '/world//_next/static/chunks/112-1c05dcfd3e4b34dd.js', revision: '1c05dcfd3e4b34dd' },
-        { url: '/world//_next/static/chunks/175-17a00bb2c204c3a0.js', revision: '17a00bb2c204c3a0' },
-        { url: '/world//_next/static/chunks/446-c32ecde51d2cca33.js', revision: 'c32ecde51d2cca33' },
+        { url: '/world//_next/static/chunks/112-d46880be993987b7.js', revision: 'd46880be993987b7' },
+        { url: '/world//_next/static/chunks/175-de2b7134c0d9c467.js', revision: 'de2b7134c0d9c467' },
+        { url: '/world//_next/static/chunks/446-d776f960553ba7bb.js', revision: 'd776f960553ba7bb' },
         { url: '/world//_next/static/chunks/524-deb68c2933e53ac0.js', revision: 'deb68c2933e53ac0' },
         { url: '/world//_next/static/chunks/framework-19f3649580393c10.js', revision: '19f3649580393c10' },
-        { url: '/world//_next/static/chunks/main-3a2833a834eb6d51.js', revision: '3a2833a834eb6d51' },
-        { url: '/world//_next/static/chunks/pages/404-17209594865451c9.js', revision: '17209594865451c9' },
-        { url: '/world//_next/static/chunks/pages/500-3707b151b9bc87f2.js', revision: '3707b151b9bc87f2' },
-        { url: '/world//_next/static/chunks/pages/_app-69e09ab2cf42b477.js', revision: '69e09ab2cf42b477' },
-        { url: '/world//_next/static/chunks/pages/_error-02e9af4a8cd584a3.js', revision: '02e9af4a8cd584a3' },
+        { url: '/world//_next/static/chunks/main-558051abd9b3a08f.js', revision: '558051abd9b3a08f' },
+        { url: '/world//_next/static/chunks/pages/404-5e3c6c5350dc32dc.js', revision: '5e3c6c5350dc32dc' },
+        { url: '/world//_next/static/chunks/pages/500-bd71eae1567eb17b.js', revision: 'bd71eae1567eb17b' },
+        { url: '/world//_next/static/chunks/pages/_app-4313be4234cb96fe.js', revision: '4313be4234cb96fe' },
+        { url: '/world//_next/static/chunks/pages/_error-d27a98e407d27bc1.js', revision: 'd27a98e407d27bc1' },
         { url: '/world//_next/static/chunks/pages/countries-2a24baefe7693f90.js', revision: '2a24baefe7693f90' },
         {
-          url: '/world//_next/static/chunks/pages/countries/%5Bcountry%5D-8c51a2c929a4c9f2.js',
-          revision: '8c51a2c929a4c9f2',
+          url: '/world//_next/static/chunks/pages/countries/%5Bcountry%5D-562354b986ac155e.js',
+          revision: '562354b986ac155e',
         },
         {
-          url: '/world//_next/static/chunks/pages/countries/%5Bcountry%5D/compare-f99d6c84aae75831.js',
-          revision: 'f99d6c84aae75831',
+          url: '/world//_next/static/chunks/pages/countries/%5Bcountry%5D/compare-75e917895a74dd2f.js',
+          revision: '75e917895a74dd2f',
         },
         { url: '/world//_next/static/chunks/pages/countries/area-d511d773e3ade6e9.js', revision: 'd511d773e3ade6e9' },
         {
@@ -83,34 +83,34 @@ define(['./workbox-1051b61c'], function (e) {
           url: '/world//_next/static/chunks/pages/countries/top-level-domains-3de39c66e90689bf.js',
           revision: '3de39c66e90689bf',
         },
-        { url: '/world//_next/static/chunks/pages/currencies-55a99c8ab4a25888.js', revision: '55a99c8ab4a25888' },
+        { url: '/world//_next/static/chunks/pages/currencies-47d5ece95603ac83.js', revision: '47d5ece95603ac83' },
         {
-          url: '/world//_next/static/chunks/pages/currencies/%5Bcurrency%5D-2bb8e0ac36b5e3d2.js',
-          revision: '2bb8e0ac36b5e3d2',
+          url: '/world//_next/static/chunks/pages/currencies/%5Bcurrency%5D-36758165b3a7fff7.js',
+          revision: '36758165b3a7fff7',
         },
         { url: '/world//_next/static/chunks/pages/index-4e6a1172f5ee3e15.js', revision: '4e6a1172f5ee3e15' },
-        { url: '/world//_next/static/chunks/pages/languages-f9ea2448de8d0027.js', revision: 'f9ea2448de8d0027' },
+        { url: '/world//_next/static/chunks/pages/languages-6dfc43361db7b06a.js', revision: '6dfc43361db7b06a' },
         {
-          url: '/world//_next/static/chunks/pages/languages/%5Blanguage%5D-40a10b48a7652689.js',
-          revision: '40a10b48a7652689',
+          url: '/world//_next/static/chunks/pages/languages/%5Blanguage%5D-7bd51a0270e36fe4.js',
+          revision: '7bd51a0270e36fe4',
         },
-        { url: '/world//_next/static/chunks/pages/organizations-1b801806c3ffa7f2.js', revision: '1b801806c3ffa7f2' },
+        { url: '/world//_next/static/chunks/pages/organizations-0e013d46dbe32c44.js', revision: '0e013d46dbe32c44' },
         {
-          url: '/world//_next/static/chunks/pages/organizations/%5Borganization%5D-ae7f6160e6041b80.js',
-          revision: 'ae7f6160e6041b80',
+          url: '/world//_next/static/chunks/pages/organizations/%5Borganization%5D-7bd3f248b0704575.js',
+          revision: '7bd3f248b0704575',
         },
-        { url: '/world//_next/static/chunks/pages/passports-10072aa4196260fc.js', revision: '10072aa4196260fc' },
+        { url: '/world//_next/static/chunks/pages/passports-3f0bbf92e317cdb7.js', revision: '3f0bbf92e317cdb7' },
         {
-          url: '/world//_next/static/chunks/pages/passports/%5Bpassport%5D-1fa03223a61b35b1.js',
-          revision: '1fa03223a61b35b1',
+          url: '/world//_next/static/chunks/pages/passports/%5Bpassport%5D-519dacbf1a07b472.js',
+          revision: '519dacbf1a07b472',
         },
-        { url: '/world//_next/static/chunks/pages/timezones-0334bcb89b032d83.js', revision: '0334bcb89b032d83' },
+        { url: '/world//_next/static/chunks/pages/timezones-86a74f1338a8e31b.js', revision: '86a74f1338a8e31b' },
         {
-          url: '/world//_next/static/chunks/pages/timezones/%5Btimezone%5D-5dbac51e87cf3a8c.js',
-          revision: '5dbac51e87cf3a8c',
+          url: '/world//_next/static/chunks/pages/timezones/%5Btimezone%5D-5d8a781cf60173cf.js',
+          revision: '5d8a781cf60173cf',
         },
-        { url: '/world//_next/static/chunks/pages/trends-911a9d3a480b68e3.js', revision: '911a9d3a480b68e3' },
-        { url: '/world//_next/static/chunks/pages/weather-6b5d7ad30b35f88e.js', revision: '6b5d7ad30b35f88e' },
+        { url: '/world//_next/static/chunks/pages/trends-7613c88ae1da6c01.js', revision: '7613c88ae1da6c01' },
+        { url: '/world//_next/static/chunks/pages/weather-cba218a8a3b081e5.js', revision: 'cba218a8a3b081e5' },
         {
           url: '/world//_next/static/chunks/polyfills-c67a75d1b6f99dc8.js',
           revision: '837c0df77fd5009c9e46d446188ecfd0',
@@ -118,11 +118,11 @@ define(['./workbox-1051b61c'], function (e) {
         { url: '/world//_next/static/chunks/webpack-72f0182628967e4b.js', revision: '72f0182628967e4b' },
         { url: '/world//_next/static/css/62e91d12ad206d49.css', revision: '62e91d12ad206d49' },
         {
-          url: '/world//_next/static/dbYo_BOXDqoFRh1unlnV2/_buildManifest.js',
-          revision: '53b85c9faa4ed6ba1855a5bc8029e4cc',
+          url: '/world//_next/static/pmmkSo0hjLyEYosCcmlmq/_buildManifest.js',
+          revision: 'ed85aaf8c9bc4fea8b0344ade10ec073',
         },
         {
-          url: '/world//_next/static/dbYo_BOXDqoFRh1unlnV2/_ssgManifest.js',
+          url: '/world//_next/static/pmmkSo0hjLyEYosCcmlmq/_ssgManifest.js',
           revision: 'b6652df95db52feb4daf4eca35380933',
         },
         { url: '/world/favicon.ico', revision: 'b7e5d143f696329db9b04f047c8ba284' },
@@ -140,7 +140,7 @@ define(['./workbox-1051b61c'], function (e) {
         cacheName: 'start-url',
         plugins: [
           {
-            cacheWillUpdate: async ({ request: e, response: s, event: a, state: n }) =>
+            cacheWillUpdate: async ({ request: e, response: s, event: n, state: a }) =>
               s && 'opaqueredirect' === s.type
                 ? new Response(s.body, { status: 200, statusText: 'OK', headers: s.headers })
                 : s,
