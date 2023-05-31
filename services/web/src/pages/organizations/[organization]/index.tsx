@@ -1,11 +1,11 @@
-import { TableContainer, Table, Tbody, Tr, Td, Badge, Divider } from '@chakra-ui/react';
+import { Badge, Divider, Table, TableContainer, Tbody, Td, Tr } from '@chakra-ui/react';
 import Container from '@world/components/Container';
 import organizations from '@world/data/organizations.json';
 import unitedNationMembers from '@world/data/united-nation-members.json';
 import Layout from '@world/layout';
 import { NextPage } from 'next';
-import { useRouter } from 'next/router';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 type Organization = { code: string; name: string };
 

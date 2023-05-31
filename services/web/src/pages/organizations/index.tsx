@@ -1,11 +1,15 @@
 import { Table, TableContainer, Tbody, Td, Th, Thead, Tr } from '@chakra-ui/react';
 import Container from '@world/components/Container';
-import organizations from '@world/data/organizations.json';
+import { NEXT_PUBLIC_BASE_API } from '@world/configs';
 import Layout from '@world/layout';
 import { NextPage } from 'next';
 import Link from 'next/link';
 
-const OrganizationsPage: NextPage = () => {
+type Organization = { code: string; name: string };
+
+type OrganizationsPageProps = { organizations: Organization[] };
+
+const OrganizationsPage: NextPage<OrganizationsPageProps> = ({ organizations = [] }) => {
   return (
     <Layout>
       <Container>
@@ -36,6 +40,17 @@ const OrganizationsPage: NextPage = () => {
       </Container>
     </Layout>
   );
+};
+
+export const getStaticProps = async (): Promise<{ props: { organizations: Organization[] } }> => {
+  try {
+    const response = await fetch(`${NEXT_PUBLIC_BASE_API}/organizations`);
+    const organizations: Organization[] = await response.json();
+    return { props: { organizations } };
+  } catch (error) {
+    console.error(error);
+    return { props: { organizations: [] } };
+  }
 };
 
 export default OrganizationsPage;

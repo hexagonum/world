@@ -244,6 +244,80 @@
         "type": "object",
         "description": "From T, pick a set of properties whose keys are in the union K"
       },
+      "Pick_Country.CountryPassports_": {
+        "properties": {
+          "commonName": {
+            "type": "string"
+          },
+          "cca2": {
+            "type": "string"
+          },
+          "cca3": {
+            "type": "string"
+          },
+          "passportGlobalRank": {
+            "type": "number",
+            "format": "double"
+          },
+          "passportIndividualRank": {
+            "type": "number",
+            "format": "double"
+          },
+          "passportMobilityScore": {
+            "type": "number",
+            "format": "double"
+          }
+        },
+        "required": [
+          "commonName",
+          "cca2",
+          "cca3",
+          "passportGlobalRank",
+          "passportIndividualRank",
+          "passportMobilityScore"
+        ],
+        "type": "object",
+        "description": "From T, pick a set of properties whose keys are in the union K"
+      },
+      "Pick_Country.CountryPassports-or-passportRequirements_": {
+        "properties": {
+          "commonName": {
+            "type": "string"
+          },
+          "cca2": {
+            "type": "string"
+          },
+          "cca3": {
+            "type": "string"
+          },
+          "passportGlobalRank": {
+            "type": "number",
+            "format": "double"
+          },
+          "passportIndividualRank": {
+            "type": "number",
+            "format": "double"
+          },
+          "passportMobilityScore": {
+            "type": "number",
+            "format": "double"
+          },
+          "passportRequirements": {
+            "$ref": "#/components/schemas/Prisma.JsonValue"
+          }
+        },
+        "required": [
+          "commonName",
+          "cca2",
+          "cca3",
+          "passportGlobalRank",
+          "passportIndividualRank",
+          "passportMobilityScore",
+          "passportRequirements"
+        ],
+        "type": "object",
+        "description": "From T, pick a set of properties whose keys are in the union K"
+      },
       "Currency": {
         "properties": {
           "updatedAt": {
@@ -386,6 +460,52 @@
         "parameters": []
       }
     },
+    "/countries/google/trends": {
+      "get": {
+        "operationId": "GetTrends",
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/Pick_Country.CountryGoogleTrends_"
+                  },
+                  "type": "array"
+                }
+              }
+            }
+          }
+        },
+        "tags": ["Countries"],
+        "security": [],
+        "parameters": []
+      }
+    },
+    "/countries/passports": {
+      "get": {
+        "operationId": "GetPassports",
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/Pick_Country.CountryPassports_"
+                  },
+                  "type": "array"
+                }
+              }
+            }
+          }
+        },
+        "tags": ["Countries"],
+        "security": [],
+        "parameters": []
+      }
+    },
     "/countries/{code}": {
       "get": {
         "operationId": "GetCountry",
@@ -415,19 +535,16 @@
         ]
       }
     },
-    "/countries/google/trends": {
+    "/countries/{code}/passports": {
       "get": {
-        "operationId": "GetTrends",
+        "operationId": "GetPassport",
         "responses": {
           "200": {
             "description": "Ok",
             "content": {
               "application/json": {
                 "schema": {
-                  "items": {
-                    "$ref": "#/components/schemas/Pick_Country.CountryGoogleTrends_"
-                  },
-                  "type": "array"
+                  "$ref": "#/components/schemas/Pick_Country.CountryPassports-or-passportRequirements_"
                 }
               }
             }
@@ -435,7 +552,16 @@
         },
         "tags": ["Countries"],
         "security": [],
-        "parameters": []
+        "parameters": [
+          {
+            "in": "path",
+            "name": "code",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ]
       }
     },
     "/currencies": {

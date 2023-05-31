@@ -1,19 +1,32 @@
 import { Input, Table, TableContainer, Tbody, Td, Th, Thead, Tr } from '@chakra-ui/react';
 import Container from '@world/components/Container';
-import passports from '@world/data/passports/passports.json';
+import { NEXT_PUBLIC_BASE_API } from '@world/configs';
 import Layout from '@world/layout';
 import { NextPage } from 'next';
 import Link from 'next/link';
 import { ChangeEvent, useState } from 'react';
 
-const PassportsPage: NextPage = () => {
+type Passport = {
+  commonName: string;
+  cca2: string;
+  cca3: string;
+  passportGlobalRank: string;
+  passportIndividualRank: string;
+  passportMobilityScore: string;
+};
+
+type PassportsPageProps = {
+  passports: Passport[];
+};
+
+const PassportsPage: NextPage<PassportsPageProps> = ({ passports = [] }) => {
   const [query, setQuery] = useState<string>('');
 
-  const filterdPassports = passports.filter(({ name = '', cca2 = '', cca3 = '' }) => {
+  const filterdPassports = passports.filter(({ commonName = '', cca2 = '', cca3 = '' }) => {
     const cca2Flag: boolean = query !== '' ? cca2.toLowerCase().includes(query.toLowerCase()) : true;
     const cca3Flag: boolean = query !== '' ? cca3.toLowerCase().includes(query.toLowerCase()) : true;
-    const nameFlag: boolean = query !== '' ? name.toLowerCase().includes(query.toLowerCase()) : true;
-    return cca2Flag || cca3Flag || nameFlag;
+    const commonNameFlag: boolean = query !== '' ? commonName.toLowerCase().includes(query.toLowerCase()) : true;
+    return cca2Flag || cca3Flag || commonNameFlag;
   });
 
   return (
@@ -41,15 +54,21 @@ const PassportsPage: NextPage = () => {
                 </Thead>
                 <Tbody>
                   {filterdPassports.map(
-                    ({ name = '', mobilityScore = 0, id = '', globalRank = 0, individualRank = 0 }) => {
+                    ({
+                      cca3 = '',
+                      commonName = '',
+                      passportMobilityScore = 0,
+                      passportGlobalRank = 0,
+                      passportIndividualRank = 0,
+                    }) => {
                       return (
-                        <Tr key={name}>
-                          <Td>{globalRank}</Td>
-                          <Td>{individualRank}</Td>
+                        <Tr key={cca3}>
+                          <Td>{passportGlobalRank}</Td>
+                          <Td>{passportIndividualRank}</Td>
                           <Td>
-                            <Link href={`/passports/${id}`}>{name}</Link>
+                            <Link href={`/passports/${cca3}`}>{commonName}</Link>
                           </Td>
-                          <Td isNumeric>{mobilityScore}</Td>
+                          <Td isNumeric>{passportMobilityScore}</Td>
                         </Tr>
                       );
                     }
@@ -62,6 +81,17 @@ const PassportsPage: NextPage = () => {
       </Container>
     </Layout>
   );
+};
+
+export const getStaticProps = async (): Promise<{ props: { passports: Passport[] } }> => {
+  try {
+    const response = await fetch(`${NEXT_PUBLIC_BASE_API}/countries/passports`);
+    const passports: Passport[] = await response.json();
+    return { props: { passports } };
+  } catch (error) {
+    console.error(error);
+    return { props: { passports: [] } };
+  }
 };
 
 export default PassportsPage;

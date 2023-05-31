@@ -3,7 +3,7 @@ import { prismaClient } from '../../common/libs/prisma';
 
 export class TimezonesService {
   async getTimezones(): Promise<Timezone[]> {
-    const timezones: Timezone[] = await prismaClient.timezone.findMany();
+    const timezones: Timezone[] = await prismaClient.timezone.findMany({ orderBy: { code: 'asc' } });
     return timezones;
   }
 

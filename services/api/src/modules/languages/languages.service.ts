@@ -9,6 +9,7 @@ export class LanguagesService {
           select: { country: { select: { commonName: true, region: true, subregion: true, population: true } } },
         },
       },
+      orderBy: { countries: { _count: 'desc' } },
     });
     return languages;
   }

@@ -1,11 +1,21 @@
 import { Table, TableContainer, Tbody, Td, Th, Thead, Tr } from '@chakra-ui/react';
 import Container from '@world/components/Container';
-import languages from '@world/data/languages/list.json';
+import { NEXT_PUBLIC_BASE_API } from '@world/configs';
 import Layout from '@world/layout';
 import { NextPage } from 'next';
 import Link from 'next/link';
 
-const LanguagesPage: NextPage = () => {
+type Language = {
+  code: string;
+  name: string;
+  countries: { country: { commonName: string; region: string; subregion: string; population: number } }[];
+};
+
+type LanguagesPageProps = {
+  languages: Language[];
+};
+
+const LanguagesPage: NextPage<LanguagesPageProps> = ({ languages = [] }) => {
   return (
     <Layout>
       <Container>
@@ -20,13 +30,17 @@ const LanguagesPage: NextPage = () => {
                 </Tr>
               </Thead>
               <Tbody>
-                {languages.map(({ code = '', name = '', total = 0, population = 0 }) => {
+                {languages.map(({ code = '', name = '', countries = [] }) => {
+                  const population: number = countries
+                    .map(({ country: { population = 0 } }) => population)
+                    .reduce((previousValue: number, currentValue: number) => previousValue + currentValue, 0);
+
                   return (
                     <Tr key={code}>
                       <Td>
                         <Link href={`/languages/${code}`}>{name}</Link>
                       </Td>
-                      <Td isNumeric>{total}</Td>
+                      <Td isNumeric>{countries.length}</Td>
                       <Td isNumeric>{population.toLocaleString()}</Td>
                     </Tr>
                   );
@@ -38,6 +52,17 @@ const LanguagesPage: NextPage = () => {
       </Container>
     </Layout>
   );
+};
+
+export const getStaticProps = async (): Promise<{ props: { languages: Language[] } }> => {
+  try {
+    const response = await fetch(`${NEXT_PUBLIC_BASE_API}/languages`);
+    const languages: Language[] = await response.json();
+    return { props: { languages } };
+  } catch (error) {
+    console.error(error);
+    return { props: { languages: [] } };
+  }
 };
 
 export default LanguagesPage;

@@ -1,6 +1,6 @@
 import { Card, CardBody, Divider, Select } from '@chakra-ui/react';
 import { Container } from '@world/components/Container';
-import { BASE_API } from '@world/configs';
+import { NEXT_PUBLIC_BASE_API } from '@world/configs';
 import useFetch from '@world/hooks/use-fetch';
 import { Layout } from '@world/layout';
 import { unique } from '@world/utils/unique';
@@ -146,7 +146,7 @@ const GoogleTrendsByCountries: React.FC<GoogleTrendsByCountriesProps> = ({
   filterOption,
   initialTrendsByCountries = [],
 }) => {
-  const { loading, error, data } = useFetch<TrendsByCountry[]>(`${BASE_API}/countries/google/trends`);
+  const { loading, error, data } = useFetch<TrendsByCountry[]>(`${NEXT_PUBLIC_BASE_API}/countries/google/trends`);
 
   if (loading) {
     return (
@@ -242,7 +242,7 @@ const GoogleTrendsPage: NextPage<GoogleTrendsPageProps> = ({ trendsByCountries =
 
 export const getStaticProps = async (): Promise<{ props: { trendsByCountries: TrendsByCountry[] } }> => {
   try {
-    const response = await fetch(`${BASE_API}/countries/google/trends`);
+    const response = await fetch(`${NEXT_PUBLIC_BASE_API}/countries/google/trends`);
     const trendsByCountries: TrendsByCountry[] = await response.json();
     return { props: { trendsByCountries } };
   } catch (error) {
