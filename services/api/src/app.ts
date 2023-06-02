@@ -16,6 +16,7 @@ app.use(helmet());
 app.use(compression());
 app.use(cookieParser());
 app.use(morgan('combined'));
+app.use(express.static('public'));
 app.use(urlencoded({ extended: true }));
 
 RegisterRoutes(app);

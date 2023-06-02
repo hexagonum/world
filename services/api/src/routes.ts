@@ -14,13 +14,15 @@ import {
 // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
 import { CountriesController } from './modules/countries/countries.controller';
 // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
-import { cryptoController } from './modules/crypto/crypto.controller';
+import { CryptoController } from './modules/crypto/crypto.controller';
 // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
 import { CurrenciesController } from './modules/currencies/currencies.controller';
 // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
 import { HealthController } from './modules/health/health.controller';
 // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
 import { LanguagesController } from './modules/languages/languages.controller';
+// WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
+import { NewsController } from './modules/news/news.controller';
 // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
 import { OrganizationsController } from './modules/organizations/organizations.controller';
 // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
@@ -214,6 +216,153 @@ const models: TsoaRoute.Models = {
     },
   },
   // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
+  Article: {
+    dataType: 'refAlias',
+    type: {
+      dataType: 'nestedObjectLiteral',
+      nestedProperties: {
+        content: { dataType: 'string', required: true },
+        publishedAt: { dataType: 'string', required: true },
+        urlToImage: { dataType: 'string', required: true },
+        url: { dataType: 'string', required: true },
+        description: { dataType: 'string', required: true },
+        title: { dataType: 'string', required: true },
+        author: { dataType: 'string', required: true },
+        source: {
+          dataType: 'nestedObjectLiteral',
+          nestedProperties: {
+            name: { dataType: 'string', required: true },
+            id: { dataType: 'string', required: true },
+          },
+          required: true,
+        },
+      },
+      validators: {},
+    },
+  },
+  // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
+  NewsCountry: {
+    dataType: 'refAlias',
+    type: {
+      dataType: 'union',
+      subSchemas: [
+        { dataType: 'enum', enums: ['ae'] },
+        { dataType: 'enum', enums: ['ar'] },
+        { dataType: 'enum', enums: ['at'] },
+        { dataType: 'enum', enums: ['au'] },
+        { dataType: 'enum', enums: ['be'] },
+        { dataType: 'enum', enums: ['bg'] },
+        { dataType: 'enum', enums: ['br'] },
+        { dataType: 'enum', enums: ['ca'] },
+        { dataType: 'enum', enums: ['ch'] },
+        { dataType: 'enum', enums: ['cn'] },
+        { dataType: 'enum', enums: ['co'] },
+        { dataType: 'enum', enums: ['cu'] },
+        { dataType: 'enum', enums: ['cz'] },
+        { dataType: 'enum', enums: ['de'] },
+        { dataType: 'enum', enums: ['eg'] },
+        { dataType: 'enum', enums: ['fr'] },
+        { dataType: 'enum', enums: ['gb'] },
+        { dataType: 'enum', enums: ['gr'] },
+        { dataType: 'enum', enums: ['hk'] },
+        { dataType: 'enum', enums: ['hu'] },
+        { dataType: 'enum', enums: ['id'] },
+        { dataType: 'enum', enums: ['ie'] },
+        { dataType: 'enum', enums: ['il'] },
+        { dataType: 'enum', enums: ['in'] },
+        { dataType: 'enum', enums: ['it'] },
+        { dataType: 'enum', enums: ['jp'] },
+        { dataType: 'enum', enums: ['kr'] },
+        { dataType: 'enum', enums: ['lt'] },
+        { dataType: 'enum', enums: ['lv'] },
+        { dataType: 'enum', enums: ['ma'] },
+        { dataType: 'enum', enums: ['mx'] },
+        { dataType: 'enum', enums: ['my'] },
+        { dataType: 'enum', enums: ['ng'] },
+        { dataType: 'enum', enums: ['nl'] },
+        { dataType: 'enum', enums: ['no'] },
+        { dataType: 'enum', enums: ['nz'] },
+        { dataType: 'enum', enums: ['ph'] },
+        { dataType: 'enum', enums: ['pl'] },
+        { dataType: 'enum', enums: ['pt'] },
+        { dataType: 'enum', enums: ['ro'] },
+        { dataType: 'enum', enums: ['rs'] },
+        { dataType: 'enum', enums: ['ru'] },
+        { dataType: 'enum', enums: ['sa'] },
+        { dataType: 'enum', enums: ['se'] },
+        { dataType: 'enum', enums: ['sg'] },
+        { dataType: 'enum', enums: ['si'] },
+        { dataType: 'enum', enums: ['sk'] },
+        { dataType: 'enum', enums: ['th'] },
+        { dataType: 'enum', enums: ['tr'] },
+        { dataType: 'enum', enums: ['tw'] },
+        { dataType: 'enum', enums: ['ua'] },
+        { dataType: 'enum', enums: ['us'] },
+        { dataType: 'enum', enums: ['ve'] },
+        { dataType: 'enum', enums: ['za'] },
+      ],
+      validators: {},
+    },
+  },
+  // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
+  NewsCategory: {
+    dataType: 'refAlias',
+    type: {
+      dataType: 'union',
+      subSchemas: [
+        { dataType: 'enum', enums: ['business'] },
+        { dataType: 'enum', enums: ['entertainment'] },
+        { dataType: 'enum', enums: ['general'] },
+        { dataType: 'enum', enums: ['health'] },
+        { dataType: 'enum', enums: ['science'] },
+        { dataType: 'enum', enums: ['sports'] },
+        { dataType: 'enum', enums: ['technology'] },
+      ],
+      validators: {},
+    },
+  },
+  // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
+  NewsLanguage: {
+    dataType: 'refAlias',
+    type: {
+      dataType: 'union',
+      subSchemas: [
+        { dataType: 'enum', enums: ['ar'] },
+        { dataType: 'enum', enums: ['de'] },
+        { dataType: 'enum', enums: ['en'] },
+        { dataType: 'enum', enums: ['es'] },
+        { dataType: 'enum', enums: ['fr'] },
+        { dataType: 'enum', enums: ['he'] },
+        { dataType: 'enum', enums: ['it'] },
+        { dataType: 'enum', enums: ['nl'] },
+        { dataType: 'enum', enums: ['no'] },
+        { dataType: 'enum', enums: ['pt'] },
+        { dataType: 'enum', enums: ['ru'] },
+        { dataType: 'enum', enums: ['sv'] },
+        { dataType: 'enum', enums: ['ud'] },
+        { dataType: 'enum', enums: ['zh'] },
+      ],
+      validators: {},
+    },
+  },
+  // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
+  Source: {
+    dataType: 'refAlias',
+    type: {
+      dataType: 'nestedObjectLiteral',
+      nestedProperties: {
+        country: { ref: 'NewsCountry', required: true },
+        language: { ref: 'NewsLanguage', required: true },
+        category: { ref: 'NewsCategory', required: true },
+        url: { dataType: 'string', required: true },
+        description: { dataType: 'string', required: true },
+        name: { dataType: 'string', required: true },
+        id: { dataType: 'string', required: true },
+      },
+      validators: {},
+    },
+  },
+  // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
   Organization: {
     dataType: 'refAlias',
     type: {
@@ -380,10 +529,10 @@ export function RegisterRoutes(app: Router) {
   // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
   app.get(
     '/crypto/coins',
-    ...fetchMiddlewares<RequestHandler>(cryptoController),
-    ...fetchMiddlewares<RequestHandler>(cryptoController.prototype.getcrypto),
+    ...fetchMiddlewares<RequestHandler>(CryptoController),
+    ...fetchMiddlewares<RequestHandler>(CryptoController.prototype.getCoins),
 
-    function cryptoController_getcrypto(request: any, response: any, next: any) {
+    function CryptoController_getCoins(request: any, response: any, next: any) {
       const args = {};
 
       // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
@@ -392,9 +541,9 @@ export function RegisterRoutes(app: Router) {
       try {
         validatedArgs = getValidatedArgs(args, request, response);
 
-        const controller = new cryptoController();
+        const controller = new CryptoController();
 
-        const promise = controller.getcrypto.apply(controller, validatedArgs as any);
+        const promise = controller.getCoins.apply(controller, validatedArgs as any);
         promiseHandler(controller, promise, response, undefined, next);
       } catch (err) {
         return next(err);
@@ -404,10 +553,10 @@ export function RegisterRoutes(app: Router) {
   // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
   app.get(
     '/crypto/coins/:id',
-    ...fetchMiddlewares<RequestHandler>(cryptoController),
-    ...fetchMiddlewares<RequestHandler>(cryptoController.prototype.getCoin),
+    ...fetchMiddlewares<RequestHandler>(CryptoController),
+    ...fetchMiddlewares<RequestHandler>(CryptoController.prototype.getCoin),
 
-    function cryptoController_getCoin(request: any, response: any, next: any) {
+    function CryptoController_getCoin(request: any, response: any, next: any) {
       const args = {
         id: { in: 'path', name: 'id', required: true, dataType: 'string' },
       };
@@ -418,7 +567,7 @@ export function RegisterRoutes(app: Router) {
       try {
         validatedArgs = getValidatedArgs(args, request, response);
 
-        const controller = new cryptoController();
+        const controller = new CryptoController();
 
         const promise = controller.getCoin.apply(controller, validatedArgs as any);
         promiseHandler(controller, promise, response, undefined, next);
@@ -545,6 +694,59 @@ export function RegisterRoutes(app: Router) {
         const controller = new LanguagesController();
 
         const promise = controller.getLanguage.apply(controller, validatedArgs as any);
+        promiseHandler(controller, promise, response, undefined, next);
+      } catch (err) {
+        return next(err);
+      }
+    }
+  );
+  // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
+  app.get(
+    '/news/headlines',
+    ...fetchMiddlewares<RequestHandler>(NewsController),
+    ...fetchMiddlewares<RequestHandler>(NewsController.prototype.getHeadlines),
+
+    function NewsController_getHeadlines(request: any, response: any, next: any) {
+      const args = {
+        country: { in: 'query', name: 'country', ref: 'NewsCountry' },
+        category: { default: 'general', in: 'query', name: 'category', ref: 'NewsCategory' },
+        sources: { default: '', in: 'query', name: 'sources', dataType: 'string' },
+        q: { default: '', in: 'query', name: 'q', dataType: 'string' },
+      };
+
+      // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
+
+      let validatedArgs: any[] = [];
+      try {
+        validatedArgs = getValidatedArgs(args, request, response);
+
+        const controller = new NewsController();
+
+        const promise = controller.getHeadlines.apply(controller, validatedArgs as any);
+        promiseHandler(controller, promise, response, undefined, next);
+      } catch (err) {
+        return next(err);
+      }
+    }
+  );
+  // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
+  app.get(
+    '/news/sources',
+    ...fetchMiddlewares<RequestHandler>(NewsController),
+    ...fetchMiddlewares<RequestHandler>(NewsController.prototype.getSources),
+
+    function NewsController_getSources(request: any, response: any, next: any) {
+      const args = {};
+
+      // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
+
+      let validatedArgs: any[] = [];
+      try {
+        validatedArgs = getValidatedArgs(args, request, response);
+
+        const controller = new NewsController();
+
+        const promise = controller.getSources.apply(controller, validatedArgs as any);
         promiseHandler(controller, promise, response, undefined, next);
       } catch (err) {
         return next(err);

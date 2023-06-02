@@ -1,4 +1,5 @@
 import { Badge, Card, CardBody, Divider, Table, TableContainer, Tbody, Td, Tr } from '@chakra-ui/react';
+import Articles from '@world/components/Articles';
 import { Container } from '@world/components/Container';
 import { Weather } from '@world/components/Weather';
 import { cities } from '@world/data/cities';
@@ -240,6 +241,18 @@ const OrganizationsSection: React.FC<{ organizations?: { code: string; name: str
   );
 };
 
+const NewsSection: React.FC<{ cca2: string }> = ({ cca2 = '' }) => {
+  return (
+    <section className="flex flex-col gap-4 md:gap-8">
+      <h2 className="font-semibold text-xl">
+        <Link href="/news">News</Link>
+      </h2>
+      <Articles country={cca2.toLowerCase()} />
+      <Divider className="border-gray-300" />
+    </section>
+  );
+};
+
 const defaultCountry = {
   name: { common: '', official: '' },
   flags: { svg: '' },
@@ -267,7 +280,7 @@ const defaultCountry = {
 
 const CountryPage: NextPage = () => {
   const { query } = useRouter();
-  const countryCode: string = query.country?.toString() || '';
+  const countryCode: string = query.country?.toString() ?? '';
   const country =
     unitedNationMembers.find(({ cca3 }) => cca3.toLowerCase() === countryCode.toLowerCase()) ?? defaultCountry;
   const citiesByCountry = cities.filter(
@@ -389,10 +402,12 @@ const CountryPage: NextPage = () => {
                     );
                   })}
                 </div>
+                <Divider className="border-gray-300" />
               </div>
             ) : (
               <></>
             )}
+            {country.cca2.length > 0 ? <NewsSection cca2={country.cca2} /> : <></>}
           </div>
         </div>
       </Container>

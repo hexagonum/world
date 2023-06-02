@@ -449,6 +449,139 @@
         "type": "object",
         "description": "Model Language"
       },
+      "Article": {
+        "properties": {
+          "content": {
+            "type": "string"
+          },
+          "publishedAt": {
+            "type": "string"
+          },
+          "urlToImage": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "author": {
+            "type": "string"
+          },
+          "source": {
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "id": {
+                "type": "string"
+              }
+            },
+            "required": ["name", "id"],
+            "type": "object"
+          }
+        },
+        "required": ["content", "publishedAt", "urlToImage", "url", "description", "title", "author", "source"],
+        "type": "object"
+      },
+      "NewsCountry": {
+        "type": "string",
+        "enum": [
+          "ae",
+          "ar",
+          "at",
+          "au",
+          "be",
+          "bg",
+          "br",
+          "ca",
+          "ch",
+          "cn",
+          "co",
+          "cu",
+          "cz",
+          "de",
+          "eg",
+          "fr",
+          "gb",
+          "gr",
+          "hk",
+          "hu",
+          "id",
+          "ie",
+          "il",
+          "in",
+          "it",
+          "jp",
+          "kr",
+          "lt",
+          "lv",
+          "ma",
+          "mx",
+          "my",
+          "ng",
+          "nl",
+          "no",
+          "nz",
+          "ph",
+          "pl",
+          "pt",
+          "ro",
+          "rs",
+          "ru",
+          "sa",
+          "se",
+          "sg",
+          "si",
+          "sk",
+          "th",
+          "tr",
+          "tw",
+          "ua",
+          "us",
+          "ve",
+          "za"
+        ]
+      },
+      "NewsCategory": {
+        "type": "string",
+        "enum": ["business", "entertainment", "general", "health", "science", "sports", "technology"]
+      },
+      "NewsLanguage": {
+        "type": "string",
+        "enum": ["ar", "de", "en", "es", "fr", "he", "it", "nl", "no", "pt", "ru", "sv", "ud", "zh"]
+      },
+      "Source": {
+        "properties": {
+          "country": {
+            "$ref": "#/components/schemas/NewsCountry"
+          },
+          "language": {
+            "$ref": "#/components/schemas/NewsLanguage"
+          },
+          "category": {
+            "$ref": "#/components/schemas/NewsCategory"
+          },
+          "url": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": ["country", "language", "category", "url", "description", "name", "id"],
+        "type": "object"
+      },
       "Organization": {
         "properties": {
           "updatedAt": {
@@ -643,7 +776,7 @@
     },
     "/crypto/coins": {
       "get": {
-        "operationId": "Getcrypto",
+        "operationId": "GetCoins",
         "responses": {
           "200": {
             "description": "Ok",
@@ -659,7 +792,7 @@
             }
           }
         },
-        "tags": ["crypto"],
+        "tags": ["Crypto"],
         "security": [],
         "parameters": []
       }
@@ -679,7 +812,7 @@
             }
           }
         },
-        "tags": ["crypto"],
+        "tags": ["Crypto"],
         "security": [],
         "parameters": [
           {
@@ -815,6 +948,87 @@
             }
           }
         ]
+      }
+    },
+    "/news/headlines": {
+      "get": {
+        "operationId": "GetHeadlines",
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/Article"
+                  },
+                  "type": "array"
+                }
+              }
+            }
+          }
+        },
+        "tags": ["News"],
+        "security": [],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "country",
+            "required": false,
+            "schema": {
+              "$ref": "#/components/schemas/NewsCountry"
+            }
+          },
+          {
+            "in": "query",
+            "name": "category",
+            "required": false,
+            "schema": {
+              "$ref": "#/components/schemas/NewsCategory"
+            }
+          },
+          {
+            "in": "query",
+            "name": "sources",
+            "required": false,
+            "schema": {
+              "default": "",
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "q",
+            "required": false,
+            "schema": {
+              "default": "",
+              "type": "string"
+            }
+          }
+        ]
+      }
+    },
+    "/news/sources": {
+      "get": {
+        "operationId": "GetSources",
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/Source"
+                  },
+                  "type": "array"
+                }
+              }
+            }
+          }
+        },
+        "tags": ["News"],
+        "security": [],
+        "parameters": []
       }
     },
     "/organizations": {

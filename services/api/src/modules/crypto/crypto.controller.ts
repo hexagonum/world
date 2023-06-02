@@ -3,8 +3,8 @@ import { CryptoService } from './crypto.service';
 import { Coin } from './crypto.types';
 
 @Route('/crypto')
-@Tags('crypto')
-export class cryptoController extends Controller {
+@Tags('Crypto')
+export class CryptoController extends Controller {
   private cryptoService: CryptoService;
 
   constructor() {
@@ -13,7 +13,7 @@ export class cryptoController extends Controller {
   }
 
   @Get('coins')
-  async getcrypto(): Promise<Coin[]> {
+  async getCoins(): Promise<Coin[]> {
     return this.cryptoService.getCoins();
   }
 
