@@ -14,6 +14,8 @@ import {
 // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
 import { CountriesController } from './modules/countries/countries.controller';
 // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
+import { cryptoController } from './modules/crypto/crypto.controller';
+// WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
 import { CurrenciesController } from './modules/currencies/currencies.controller';
 // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
 import { HealthController } from './modules/health/health.controller';
@@ -143,6 +145,32 @@ const models: TsoaRoute.Models = {
         passportIndividualRank: { dataType: 'double', required: true },
         passportMobilityScore: { dataType: 'double', required: true },
         passportRequirements: { ref: 'Prisma.JsonValue', required: true },
+      },
+      validators: {},
+    },
+  },
+  // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
+  Coin: {
+    dataType: 'refAlias',
+    type: {
+      dataType: 'nestedObjectLiteral',
+      nestedProperties: {
+        btcPrice: { dataType: 'string', required: true },
+        '24hVolume': { dataType: 'string', required: true },
+        coinrankingUrl: { dataType: 'string', required: true },
+        lowVolume: { dataType: 'boolean', required: true },
+        sparkline: { dataType: 'array', array: { dataType: 'string' }, required: true },
+        rank: { dataType: 'double', required: true },
+        change: { dataType: 'string', required: true },
+        tier: { dataType: 'double', required: true },
+        listedAt: { dataType: 'double', required: true },
+        price: { dataType: 'string', required: true },
+        marketCap: { dataType: 'string', required: true },
+        iconUrl: { dataType: 'string', required: true },
+        color: { dataType: 'string', required: true },
+        name: { dataType: 'string', required: true },
+        symbol: { dataType: 'string', required: true },
+        uuid: { dataType: 'string', required: true },
       },
       validators: {},
     },
@@ -343,6 +371,56 @@ export function RegisterRoutes(app: Router) {
         const controller = new CountriesController();
 
         const promise = controller.getPassport.apply(controller, validatedArgs as any);
+        promiseHandler(controller, promise, response, undefined, next);
+      } catch (err) {
+        return next(err);
+      }
+    }
+  );
+  // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
+  app.get(
+    '/crypto/coins',
+    ...fetchMiddlewares<RequestHandler>(cryptoController),
+    ...fetchMiddlewares<RequestHandler>(cryptoController.prototype.getcrypto),
+
+    function cryptoController_getcrypto(request: any, response: any, next: any) {
+      const args = {};
+
+      // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
+
+      let validatedArgs: any[] = [];
+      try {
+        validatedArgs = getValidatedArgs(args, request, response);
+
+        const controller = new cryptoController();
+
+        const promise = controller.getcrypto.apply(controller, validatedArgs as any);
+        promiseHandler(controller, promise, response, undefined, next);
+      } catch (err) {
+        return next(err);
+      }
+    }
+  );
+  // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
+  app.get(
+    '/crypto/coins/:id',
+    ...fetchMiddlewares<RequestHandler>(cryptoController),
+    ...fetchMiddlewares<RequestHandler>(cryptoController.prototype.getCoin),
+
+    function cryptoController_getCoin(request: any, response: any, next: any) {
+      const args = {
+        id: { in: 'path', name: 'id', required: true, dataType: 'string' },
+      };
+
+      // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
+
+      let validatedArgs: any[] = [];
+      try {
+        validatedArgs = getValidatedArgs(args, request, response);
+
+        const controller = new cryptoController();
+
+        const promise = controller.getCoin.apply(controller, validatedArgs as any);
         promiseHandler(controller, promise, response, undefined, next);
       } catch (err) {
         return next(err);

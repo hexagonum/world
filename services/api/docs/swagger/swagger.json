@@ -318,6 +318,83 @@
         "type": "object",
         "description": "From T, pick a set of properties whose keys are in the union K"
       },
+      "Coin": {
+        "properties": {
+          "btcPrice": {
+            "type": "string"
+          },
+          "24hVolume": {
+            "type": "string"
+          },
+          "coinrankingUrl": {
+            "type": "string"
+          },
+          "lowVolume": {
+            "type": "boolean"
+          },
+          "sparkline": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "rank": {
+            "type": "number",
+            "format": "double"
+          },
+          "change": {
+            "type": "string"
+          },
+          "tier": {
+            "type": "number",
+            "format": "double"
+          },
+          "listedAt": {
+            "type": "number",
+            "format": "double"
+          },
+          "price": {
+            "type": "string"
+          },
+          "marketCap": {
+            "type": "string"
+          },
+          "iconUrl": {
+            "type": "string"
+          },
+          "color": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "symbol": {
+            "type": "string"
+          },
+          "uuid": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "btcPrice",
+          "24hVolume",
+          "coinrankingUrl",
+          "lowVolume",
+          "sparkline",
+          "rank",
+          "change",
+          "tier",
+          "listedAt",
+          "price",
+          "marketCap",
+          "iconUrl",
+          "color",
+          "name",
+          "symbol",
+          "uuid"
+        ],
+        "type": "object"
+      },
       "Currency": {
         "properties": {
           "updatedAt": {
@@ -556,6 +633,58 @@
           {
             "in": "path",
             "name": "code",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ]
+      }
+    },
+    "/crypto/coins": {
+      "get": {
+        "operationId": "Getcrypto",
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/Coin"
+                  },
+                  "type": "array"
+                }
+              }
+            }
+          }
+        },
+        "tags": ["crypto"],
+        "security": [],
+        "parameters": []
+      }
+    },
+    "/crypto/coins/{id}": {
+      "get": {
+        "operationId": "GetCoin",
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Coin"
+                }
+              }
+            }
+          }
+        },
+        "tags": ["crypto"],
+        "security": [],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
             "required": true,
             "schema": {
               "type": "string"
