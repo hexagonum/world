@@ -36,7 +36,7 @@ const NewsPage: NextPage<NewsPageProps> = ({ articles = [] }) => {
                 ))}
               </div>
             </div>
-            <Articles category={category} articles={articles} />
+            <Articles category={category} country="us" articles={articles} />
           </div>
         </div>
       </Container>
