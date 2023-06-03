@@ -1,18 +1,17 @@
 import { Input, Table, TableContainer, Tbody, Td, Th, Thead, Tr } from '@chakra-ui/react';
 import Container from '@world/components/Container';
-import { NEXT_PUBLIC_BASE_API } from '@world/configs';
+import { apolloClient } from '@world/graphql';
+import { PASSPORTS_QUERY } from '@world/graphql/queries/passports';
 import Layout from '@world/layout';
 import { NextPage } from 'next';
 import Link from 'next/link';
 import { ChangeEvent, useState } from 'react';
 
 type Passport = {
-  commonName: string;
-  cca2: string;
-  cca3: string;
-  passportGlobalRank: string;
-  passportIndividualRank: string;
-  passportMobilityScore: string;
+  country: { commonName: string; cca2: string; cca3: string; region: string; subregion: string };
+  globalRank: number;
+  individualRank: number;
+  mobilityScore: number;
 };
 
 type PassportsPageProps = {
@@ -22,7 +21,7 @@ type PassportsPageProps = {
 const PassportsPage: NextPage<PassportsPageProps> = ({ passports = [] }) => {
   const [query, setQuery] = useState<string>('');
 
-  const filterdPassports = passports.filter(({ commonName = '', cca2 = '', cca3 = '' }) => {
+  const filterdPassports = passports.filter(({ country: { commonName = '', cca2 = '', cca3 } }) => {
     const cca2Flag: boolean = query !== '' ? cca2.toLowerCase().includes(query.toLowerCase()) : true;
     const cca3Flag: boolean = query !== '' ? cca3.toLowerCase().includes(query.toLowerCase()) : true;
     const commonNameFlag: boolean = query !== '' ? commonName.toLowerCase().includes(query.toLowerCase()) : true;
@@ -55,20 +54,19 @@ const PassportsPage: NextPage<PassportsPageProps> = ({ passports = [] }) => {
                 <Tbody>
                   {filterdPassports.map(
                     ({
-                      cca3 = '',
-                      commonName = '',
-                      passportMobilityScore = 0,
-                      passportGlobalRank = 0,
-                      passportIndividualRank = 0,
+                      country: { cca2 = '', cca3 = '', commonName = '' },
+                      mobilityScore = 0,
+                      globalRank = 0,
+                      individualRank = 0,
                     }) => {
                       return (
                         <Tr key={cca3}>
-                          <Td>{passportGlobalRank}</Td>
-                          <Td>{passportIndividualRank}</Td>
+                          <Td>{globalRank}</Td>
+                          <Td>{individualRank}</Td>
                           <Td>
                             <Link href={`/passports/${cca3}`}>{commonName}</Link>
                           </Td>
-                          <Td isNumeric>{passportMobilityScore}</Td>
+                          <Td isNumeric>{mobilityScore}</Td>
                         </Tr>
                       );
                     }
@@ -85,8 +83,8 @@ const PassportsPage: NextPage<PassportsPageProps> = ({ passports = [] }) => {
 
 export const getStaticProps = async (): Promise<{ props: { passports: Passport[] } }> => {
   try {
-    const response = await fetch(`${NEXT_PUBLIC_BASE_API}/countries/passports`);
-    const passports: Passport[] = await response.json();
+    const data = await apolloClient.query<{ passports: Passport[] }>({ query: PASSPORTS_QUERY });
+    const passports: Passport[] = data.data.passports;
     return { props: { passports } };
   } catch (error) {
     console.error(error);

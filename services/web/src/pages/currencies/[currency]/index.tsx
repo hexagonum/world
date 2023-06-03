@@ -1,17 +1,5 @@
 import { useQuery } from '@apollo/client';
-import {
-  Badge,
-  Card,
-  CardBody,
-  Divider,
-  Table,
-  TableCaption,
-  TableContainer,
-  Tbody,
-  Td,
-  Tfoot,
-  Tr,
-} from '@chakra-ui/react';
+import { Badge, Card, CardBody, Divider, Table, TableCaption, TableContainer, Tbody, Td, Tr } from '@chakra-ui/react';
 import { Container } from '@world/components/Container';
 import { CURRENCY_QUERY } from '@world/graphql/queries/currencies';
 import Layout from '@world/layout';

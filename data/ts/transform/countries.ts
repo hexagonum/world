@@ -1,8 +1,6 @@
 import { writeFileSync } from 'fs';
 import countries from '../../json/raw/countries.json';
 import trends from '../../json/raw/google-trends.json';
-import passports from '../../json/raw/passports/passports.json';
-import requirements from '../../json/raw/passports/requirements.json';
 import organizations from '../../json/raw/organizations.json';
 
 const main = async () => {
@@ -46,16 +44,6 @@ const main = async () => {
         ({ country = '' }) =>
           country.toLowerCase() === common.toLowerCase() || country.toLowerCase() === official.toLowerCase()
       ) ?? { trends: [] };
-      const {
-        globalRank = 0,
-        mobilityScore = 0,
-        individualRank = 0,
-      } = passports.find(({ cca2: passportCode }) => cca2.toLowerCase() === passportCode.toLowerCase()) ?? {
-        globalRank: 0,
-        mobilityScore: 0,
-        individualRank: 0,
-      };
-      const passportRequirements = (requirements as any)[cca2];
       return {
         code: cca3,
         commonName: common,
@@ -90,10 +78,6 @@ const main = async () => {
         languageCodes,
         currencyCodes,
         organizationCodes,
-        passportGlobalRank: globalRank,
-        passportIndividualRank: individualRank,
-        passportMobilityScore: mobilityScore,
-        passportRequirements,
       };
     }
   );

@@ -25,11 +25,13 @@
     "transform:timezones": "ts-node ./ts/transform/timezones",
     "load:countries": "ts-node ./ts/load/countries",
     "load:countries:organizations": "ts-node ./ts/load/countries-organizations",
+    "load:countries:passports": "ts-node ./ts/load/countries-passports",
     "load:currencies": "ts-node ./ts/load/currencies",
     "load:currencies:countries": "ts-node ./ts/load/currencies-countries",
     "load:languages": "ts-node ./ts/load/languages",
     "load:languages:countries": "ts-node ./ts/load/languages-countries",
     "load:organizations": "ts-node ./ts/load/organizations",
+    "load:passports": "ts-node ./ts/load/passports",
     "load:timezones": "ts-node ./ts/load/timezones"
   },
   "dependencies": {

@@ -1,8 +1,8 @@
-import { gql } from '@apollo/client';
+import { DocumentNode, gql } from '@apollo/client';
 
-export const CURRENCY_QUERY = gql`
-  query CURRENCY_QUERY($code: String!) {
-    currency(code: $code) {
+export const CURRENCIES_QUERY: DocumentNode = gql`
+  query CURRENCIES_QUERY {
+    currencies {
       code
       name
       symbol
@@ -10,6 +10,23 @@ export const CURRENCY_QUERY = gql`
         commonName
         cca2
         cca3
+        region
+        subregion
+        population
+      }
+    }
+  }
+`;
+
+export const CURRENCY_QUERY: DocumentNode = gql`
+  query CURRENCY_QUERY($code: String!) {
+    currency(code: $code) {
+      code
+      name
+      countries {
+        cca2
+        cca3
+        commonName
         region
         subregion
         population

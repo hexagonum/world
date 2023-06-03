@@ -1,30 +1,30 @@
-import { Input, Table, TableCaption, TableContainer, Tbody, Td, Th, Thead, Tr } from '@chakra-ui/react';
+import { Badge, Input, Table, TableCaption, TableContainer, Tbody, Td, Th, Thead, Tr } from '@chakra-ui/react';
 import Container from '@world/components/Container';
-import unitedNationMembers from '@world/data/united-nation-members.json';
+import { apolloClient } from '@world/graphql';
+import { COUNTRIES_CURRENCIES_QUERY } from '@world/graphql/queries/countries';
 import Layout from '@world/layout';
-import { NextPage } from 'next';
+import { GetStaticProps, NextPage } from 'next';
 import Link from 'next/link';
 import { ChangeEvent, useState } from 'react';
 
-const clonedUnitedNationMembers = JSON.parse(JSON.stringify(unitedNationMembers));
-clonedUnitedNationMembers.sort((a: any, b: any) =>
-  Object.keys(a.currencies).length > Object.keys(b.currencies).length ? -1 : 1
-);
+type Country = { commonName: string; cca3: string; currencies: { code: string; name: string; symbol: string }[] };
 
-export const CurrenciesPage: NextPage = () => {
+type CurrenciesPageProps = {
+  countries: Country[];
+};
+
+export const CurrenciesPage: NextPage<CurrenciesPageProps> = ({ countries = [] }) => {
   const [query, setQuery] = useState<string>('');
 
-  const countriesByFilter = clonedUnitedNationMembers.filter(({ name: { common = '' }, currencies = {} }) => {
-    const currencyCodes: string[] = Object.keys(currencies);
-    const currencyNames: string[] = Object.values<{ name: string }>(currencies).map(
-      ({ name = '' }: { name: string }) => name
-    );
+  const countriesByFilter = countries.filter(({ commonName = '', currencies = [] }) => {
+    const currencyCodes: string[] = currencies.map(({ code = '' }: { code: string }) => code);
+    const currencyNames: string[] = currencies.map(({ name = '' }: { name: string }) => name);
     const codeFlag: boolean =
       query !== '' ? currencyCodes.some((code: string) => code.toLowerCase().includes(query.toLowerCase())) : true;
     const nameFlag: boolean =
       query !== '' ? currencyNames.some((name: string) => name.toLowerCase().includes(query.toLowerCase())) : true;
-    const commonFlag: boolean = query !== '' ? common.toLowerCase().includes(query.toLowerCase()) : true;
-    return codeFlag || nameFlag || commonFlag;
+    const commonNameFlag: boolean = query !== '' ? commonName.toLowerCase().includes(query.toLowerCase()) : true;
+    return codeFlag || nameFlag || commonNameFlag;
   });
 
   return (
@@ -51,26 +51,27 @@ export const CurrenciesPage: NextPage = () => {
                     </Tr>
                   </Thead>
                   <Tbody>
-                    {countriesByFilter.map(({ name: { common = '' }, cca3 = '', currencies = {} }) => {
+                    {countriesByFilter.map(({ commonName = '', cca3 = '', currencies = [] }) => {
                       return (
-                        <Tr key={common}>
+                        <Tr key={cca3}>
                           <Td>
-                            <Link href={`/countries/${cca3}`}>{common}</Link>
+                            <Link href={`/countries/${cca3}`}>{commonName}</Link>
                           </Td>
-                          <Td isNumeric>{Object.keys(currencies).length}</Td>
+                          <Td isNumeric>{currencies.length}</Td>
                           <Td>
-                            <div className="flex flex-col gap-2 md:gap-4">
-                              {Object.keys(currencies).length > 0 ? (
-                                <p className="whitespace-normal">
-                                  {Object.keys(currencies)
-                                    .map((code: string) => {
-                                      const value: { name: string; symbol: string } =
-                                        (currencies as Record<string, { name: string; symbol: string }>)[code] || '';
-                                      return `${code} - ${value.name} (${value.symbol})`;
-                                    })
-                                    .sort((a, b) => (a > b ? 1 : -1))
-                                    .join(', ')}
-                                </p>
+                            <div className="whitespace-normal">
+                              {currencies.length > 0 ? (
+                                <div className="flex flex-wrap items-center gap-1 md:gap-2">
+                                  {currencies.map(({ code, name, symbol }) => {
+                                    return (
+                                      <Link key={code} href={`/currencies/${code}`}>
+                                        <Badge colorScheme="teal">
+                                          {symbol} - {name}
+                                        </Badge>
+                                      </Link>
+                                    );
+                                  })}
+                                </div>
                               ) : (
                                 <></>
                               )}
@@ -91,6 +92,18 @@ export const CurrenciesPage: NextPage = () => {
       </Container>
     </Layout>
   );
+};
+
+export const getStaticProps: GetStaticProps = async (): Promise<{ props: { countries: Country[] } }> => {
+  try {
+    const data = await apolloClient.query<{ countries: Country[] }>({ query: COUNTRIES_CURRENCIES_QUERY });
+    const countries: Country[] = [...data.data.countries];
+    countries.sort((a, b) => b.currencies.length - a.currencies.length);
+    return { props: { countries } };
+  } catch (error) {
+    console.error(error);
+    return { props: { countries: [] } };
+  }
 };
 
 export default CurrenciesPage;

@@ -35,12 +35,52 @@ export const COUNTRIES_BORDERS_QUERY: DocumentNode = gql`
   }
 `;
 
+export const COUNTRIES_CURRENCIES_QUERY: DocumentNode = gql`
+  query COUNTRIES_CURRENCIES_QUERY {
+    countries {
+      commonName
+      cca3
+      currencies {
+        code
+        name
+        symbol
+      }
+    }
+  }
+`;
+
 export const COUNTRIES_DENSITY_QUERY: DocumentNode = gql`
   query COUNTRIES_DENSITY_QUERY {
     countries {
       commonName
       cca3
       density
+    }
+  }
+`;
+
+export const COUNTRIES_LANGUAGES_QUERY: DocumentNode = gql`
+  query COUNTRIES_LANGUAGES_QUERY {
+    countries {
+      commonName
+      cca3
+      languages {
+        code
+        name
+      }
+    }
+  }
+`;
+
+export const COUNTRIES_ORGANIZATIONS_QUERY: DocumentNode = gql`
+  query COUNTRIES_ORGANIZATIONS_QUERY {
+    countries {
+      commonName
+      cca3
+      organizations {
+        code
+        name
+      }
     }
   }
 `;

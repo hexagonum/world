@@ -38,10 +38,6 @@ const main = async () => {
         googleMaps = '',
         googleTrends = [],
         timezones = [],
-        passportGlobalRank = 0,
-        passportIndividualRank = 0,
-        passportMobilityScore = 0,
-        passportRequirements = {},
       } = country;
       const data = {
         code,
@@ -74,10 +70,6 @@ const main = async () => {
         googleMaps,
         googleTrends,
         timezones,
-        passportGlobalRank,
-        passportIndividualRank,
-        passportMobilityScore,
-        passportRequirements,
       };
       await prismaClient.country.upsert({
         create: data,

@@ -5,8 +5,10 @@ yarn load:countries
 yarn load:currencies
 yarn load:languages
 yarn load:organizations
+yarn load:passports
 yarn load:timezones
 # many-to-many
 yarn load:countries:organizations
+yarn load:countries:passports
 yarn load:currencies:countries
 yarn load:languages:countries

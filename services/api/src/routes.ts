@@ -26,35 +26,67 @@ import { NewsController } from './modules/news/news.controller';
 // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
 import { OrganizationsController } from './modules/organizations/organizations.controller';
 // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
+import { PassportsController } from './modules/passports/passports.controller';
+// WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
 import { TimezonesController } from './modules/timezones/timezones.controller';
 import type { RequestHandler, Router } from 'express';
 
 // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
 
 const models: TsoaRoute.Models = {
-  JsonObject: {
-    dataType: 'refAlias',
-    type: { dataType: 'nestedObjectLiteral', nestedProperties: {}, validators: {} },
-  },
-  // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
-  JsonArray: {
-    dataType: 'refObject',
-    properties: {},
-    additionalProperties: false,
-  },
-  // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
-  'Prisma.JsonValue': {
+  Currency: {
     dataType: 'refAlias',
     type: {
-      dataType: 'union',
-      subSchemas: [
-        { dataType: 'string' },
-        { dataType: 'double' },
-        { dataType: 'boolean' },
-        { ref: 'JsonObject' },
-        { ref: 'JsonArray' },
-        { dataType: 'enum', enums: [null] },
-      ],
+      dataType: 'nestedObjectLiteral',
+      nestedProperties: {
+        updatedAt: { dataType: 'datetime', required: true },
+        createdAt: { dataType: 'datetime', required: true },
+        symbol: { dataType: 'string', required: true },
+        name: { dataType: 'string', required: true },
+        code: { dataType: 'string', required: true },
+      },
+      validators: {},
+    },
+  },
+  // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
+  Language: {
+    dataType: 'refAlias',
+    type: {
+      dataType: 'nestedObjectLiteral',
+      nestedProperties: {
+        updatedAt: { dataType: 'datetime', required: true },
+        createdAt: { dataType: 'datetime', required: true },
+        name: { dataType: 'string', required: true },
+        code: { dataType: 'string', required: true },
+      },
+      validators: {},
+    },
+  },
+  // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
+  Organization: {
+    dataType: 'refAlias',
+    type: {
+      dataType: 'nestedObjectLiteral',
+      nestedProperties: {
+        updatedAt: { dataType: 'datetime', required: true },
+        createdAt: { dataType: 'datetime', required: true },
+        name: { dataType: 'string', required: true },
+        code: { dataType: 'string', required: true },
+      },
+      validators: {},
+    },
+  },
+  // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
+  'Pick_Country.CountryGoogleTrends_': {
+    dataType: 'refAlias',
+    type: {
+      dataType: 'nestedObjectLiteral',
+      nestedProperties: {
+        commonName: { dataType: 'string', required: true },
+        region: { dataType: 'string', required: true },
+        subregion: { dataType: 'string', required: true },
+        googleTrends: { dataType: 'array', array: { dataType: 'string' }, required: true },
+      },
       validators: {},
     },
   },
@@ -66,10 +98,6 @@ const models: TsoaRoute.Models = {
       nestedProperties: {
         updatedAt: { dataType: 'datetime', required: true },
         createdAt: { dataType: 'datetime', required: true },
-        passportRequirements: { ref: 'Prisma.JsonValue', required: true },
-        passportMobilityScore: { dataType: 'double', required: true },
-        passportIndividualRank: { dataType: 'double', required: true },
-        passportGlobalRank: { dataType: 'double', required: true },
         timezones: { dataType: 'array', array: { dataType: 'string' }, required: true },
         googleTrends: { dataType: 'array', array: { dataType: 'string' }, required: true },
         googleMaps: { dataType: 'string', required: true },
@@ -105,53 +133,6 @@ const models: TsoaRoute.Models = {
     },
   },
   // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
-  'Pick_Country.CountryGoogleTrends_': {
-    dataType: 'refAlias',
-    type: {
-      dataType: 'nestedObjectLiteral',
-      nestedProperties: {
-        commonName: { dataType: 'string', required: true },
-        region: { dataType: 'string', required: true },
-        subregion: { dataType: 'string', required: true },
-        googleTrends: { dataType: 'array', array: { dataType: 'string' }, required: true },
-      },
-      validators: {},
-    },
-  },
-  // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
-  'Pick_Country.CountryPassports_': {
-    dataType: 'refAlias',
-    type: {
-      dataType: 'nestedObjectLiteral',
-      nestedProperties: {
-        commonName: { dataType: 'string', required: true },
-        cca2: { dataType: 'string', required: true },
-        cca3: { dataType: 'string', required: true },
-        passportGlobalRank: { dataType: 'double', required: true },
-        passportIndividualRank: { dataType: 'double', required: true },
-        passportMobilityScore: { dataType: 'double', required: true },
-      },
-      validators: {},
-    },
-  },
-  // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
-  'Pick_Country.CountryPassports-or-passportRequirements_': {
-    dataType: 'refAlias',
-    type: {
-      dataType: 'nestedObjectLiteral',
-      nestedProperties: {
-        commonName: { dataType: 'string', required: true },
-        cca2: { dataType: 'string', required: true },
-        cca3: { dataType: 'string', required: true },
-        passportGlobalRank: { dataType: 'double', required: true },
-        passportIndividualRank: { dataType: 'double', required: true },
-        passportMobilityScore: { dataType: 'double', required: true },
-        passportRequirements: { ref: 'Prisma.JsonValue', required: true },
-      },
-      validators: {},
-    },
-  },
-  // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
   Coin: {
     dataType: 'refAlias',
     type: {
@@ -178,40 +159,11 @@ const models: TsoaRoute.Models = {
     },
   },
   // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
-  Currency: {
-    dataType: 'refAlias',
-    type: {
-      dataType: 'nestedObjectLiteral',
-      nestedProperties: {
-        updatedAt: { dataType: 'datetime', required: true },
-        createdAt: { dataType: 'datetime', required: true },
-        symbol: { dataType: 'string', required: true },
-        name: { dataType: 'string', required: true },
-        code: { dataType: 'string', required: true },
-      },
-      validators: {},
-    },
-  },
-  // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
   HealthResponse: {
     dataType: 'refAlias',
     type: {
       dataType: 'nestedObjectLiteral',
       nestedProperties: { status: { dataType: 'string', required: true } },
-      validators: {},
-    },
-  },
-  // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
-  Language: {
-    dataType: 'refAlias',
-    type: {
-      dataType: 'nestedObjectLiteral',
-      nestedProperties: {
-        updatedAt: { dataType: 'datetime', required: true },
-        createdAt: { dataType: 'datetime', required: true },
-        name: { dataType: 'string', required: true },
-        code: { dataType: 'string', required: true },
-      },
       validators: {},
     },
   },
@@ -363,15 +315,28 @@ const models: TsoaRoute.Models = {
     },
   },
   // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
-  Organization: {
+  Passport: {
     dataType: 'refAlias',
     type: {
       dataType: 'nestedObjectLiteral',
       nestedProperties: {
-        updatedAt: { dataType: 'datetime', required: true },
-        createdAt: { dataType: 'datetime', required: true },
-        name: { dataType: 'string', required: true },
-        code: { dataType: 'string', required: true },
+        mobilityScore: { dataType: 'double', required: true },
+        individualRank: { dataType: 'double', required: true },
+        globalRank: { dataType: 'double', required: true },
+        countryCode: { dataType: 'string', required: true },
+      },
+      validators: {},
+    },
+  },
+  // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
+  PassportRequirement: {
+    dataType: 'refAlias',
+    type: {
+      dataType: 'nestedObjectLiteral',
+      nestedProperties: {
+        requirement: { dataType: 'string', required: true },
+        countryCode: { dataType: 'string', required: true },
+        passportCode: { dataType: 'string', required: true },
       },
       validators: {},
     },
@@ -452,30 +417,6 @@ export function RegisterRoutes(app: Router) {
   );
   // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
   app.get(
-    '/countries/passports',
-    ...fetchMiddlewares<RequestHandler>(CountriesController),
-    ...fetchMiddlewares<RequestHandler>(CountriesController.prototype.getPassports),
-
-    function CountriesController_getPassports(request: any, response: any, next: any) {
-      const args = {};
-
-      // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
-
-      let validatedArgs: any[] = [];
-      try {
-        validatedArgs = getValidatedArgs(args, request, response);
-
-        const controller = new CountriesController();
-
-        const promise = controller.getPassports.apply(controller, validatedArgs as any);
-        promiseHandler(controller, promise, response, undefined, next);
-      } catch (err) {
-        return next(err);
-      }
-    }
-  );
-  // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
-  app.get(
     '/countries/:code',
     ...fetchMiddlewares<RequestHandler>(CountriesController),
     ...fetchMiddlewares<RequestHandler>(CountriesController.prototype.getCountry),
@@ -494,32 +435,6 @@ export function RegisterRoutes(app: Router) {
         const controller = new CountriesController();
 
         const promise = controller.getCountry.apply(controller, validatedArgs as any);
-        promiseHandler(controller, promise, response, undefined, next);
-      } catch (err) {
-        return next(err);
-      }
-    }
-  );
-  // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
-  app.get(
-    '/countries/:code/passports',
-    ...fetchMiddlewares<RequestHandler>(CountriesController),
-    ...fetchMiddlewares<RequestHandler>(CountriesController.prototype.getPassport),
-
-    function CountriesController_getPassport(request: any, response: any, next: any) {
-      const args = {
-        code: { in: 'path', name: 'code', required: true, dataType: 'string' },
-      };
-
-      // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
-
-      let validatedArgs: any[] = [];
-      try {
-        validatedArgs = getValidatedArgs(args, request, response);
-
-        const controller = new CountriesController();
-
-        const promise = controller.getPassport.apply(controller, validatedArgs as any);
         promiseHandler(controller, promise, response, undefined, next);
       } catch (err) {
         return next(err);
@@ -801,6 +716,56 @@ export function RegisterRoutes(app: Router) {
         const controller = new OrganizationsController();
 
         const promise = controller.getOrganization.apply(controller, validatedArgs as any);
+        promiseHandler(controller, promise, response, undefined, next);
+      } catch (err) {
+        return next(err);
+      }
+    }
+  );
+  // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
+  app.get(
+    '/passports',
+    ...fetchMiddlewares<RequestHandler>(PassportsController),
+    ...fetchMiddlewares<RequestHandler>(PassportsController.prototype.getPassports),
+
+    function PassportsController_getPassports(request: any, response: any, next: any) {
+      const args = {};
+
+      // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
+
+      let validatedArgs: any[] = [];
+      try {
+        validatedArgs = getValidatedArgs(args, request, response);
+
+        const controller = new PassportsController();
+
+        const promise = controller.getPassports.apply(controller, validatedArgs as any);
+        promiseHandler(controller, promise, response, undefined, next);
+      } catch (err) {
+        return next(err);
+      }
+    }
+  );
+  // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
+  app.get(
+    '/passports/:code',
+    ...fetchMiddlewares<RequestHandler>(PassportsController),
+    ...fetchMiddlewares<RequestHandler>(PassportsController.prototype.getPassport),
+
+    function PassportsController_getPassport(request: any, response: any, next: any) {
+      const args = {
+        code: { in: 'path', name: 'code', required: true, dataType: 'string' },
+      };
+
+      // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
+
+      let validatedArgs: any[] = [];
+      try {
+        validatedArgs = getValidatedArgs(args, request, response);
+
+        const controller = new PassportsController();
+
+        const promise = controller.getPassport.apply(controller, validatedArgs as any);
         promiseHandler(controller, promise, response, undefined, next);
       } catch (err) {
         return next(err);

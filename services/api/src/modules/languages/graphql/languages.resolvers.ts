@@ -7,5 +7,8 @@ export const resolvers = {
     languages: async (): Promise<Language[]> => {
       return await farfetch<Language[]>(`${BASE_API}/languages`);
     },
+    language: async (_parent: unknown, { code }: { code: string }): Promise<Language> => {
+      return farfetch<Language>(`${BASE_API}/languages/${code}`);
+    },
   },
 };

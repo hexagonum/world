@@ -21,5 +21,9 @@ export const typeDefs = `#graphql
     # Region
     region: String
     subregion: String
+    # Other
+    currencies: [Currency]
+    languages: [Language]
+    organizations: [Organization]
   }
 `;

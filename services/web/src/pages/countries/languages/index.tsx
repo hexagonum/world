@@ -1,28 +1,30 @@
 import { Badge, Input, Table, TableCaption, TableContainer, Tbody, Td, Th, Thead, Tr } from '@chakra-ui/react';
 import Container from '@world/components/Container';
-import unitedNationMembers from '@world/data/united-nation-members.json';
+import { apolloClient } from '@world/graphql';
+import { COUNTRIES_LANGUAGES_QUERY } from '@world/graphql/queries/countries';
 import Layout from '@world/layout';
-import { NextPage } from 'next';
+import { GetStaticProps, NextPage } from 'next';
 import Link from 'next/link';
 import { ChangeEvent, useState } from 'react';
 
-const clonedUnitedNationMembers = JSON.parse(JSON.stringify(unitedNationMembers));
-clonedUnitedNationMembers.sort((a: any, b: any) =>
-  Object.keys(a.languages).length > Object.keys(b.languages).length ? -1 : 1
-);
+type Country = { commonName: string; cca3: string; languages: { code: string; name: string }[] };
 
-export const LanguagesPage: NextPage = () => {
+type LanguagesPageProps = {
+  countries: Country[];
+};
+
+export const LanguagesPage: NextPage<LanguagesPageProps> = ({ countries = [] }) => {
   const [query, setQuery] = useState<string>('');
 
-  const countriesByFilter = clonedUnitedNationMembers.filter(({ name: { common = '' }, languages = {} }) => {
-    const languageCodes: string[] = Object.keys(languages);
-    const languageNames: string[] = Object.values(languages);
+  const countriesByFilter = countries.filter(({ commonName = '', languages = [] }) => {
+    const languageCodes: string[] = languages.map(({ code = '' }: { code: string }) => code);
+    const languageNames: string[] = languages.map(({ name = '' }: { name: string }) => name);
     const codeFlag: boolean =
       query !== '' ? languageCodes.some((code: string) => code.toLowerCase().includes(query.toLowerCase())) : true;
     const nameFlag: boolean =
       query !== '' ? languageNames.some((name: string) => name.toLowerCase().includes(query.toLowerCase())) : true;
-    const commonFlag: boolean = query !== '' ? common.toLowerCase().includes(query.toLowerCase()) : true;
-    return codeFlag || nameFlag || commonFlag;
+    const commonNameFlag: boolean = query !== '' ? commonName.toLowerCase().includes(query.toLowerCase()) : true;
+    return codeFlag || nameFlag || commonNameFlag;
   });
 
   return (
@@ -49,30 +51,29 @@ export const LanguagesPage: NextPage = () => {
                     </Tr>
                   </Thead>
                   <Tbody>
-                    {countriesByFilter.map(({ name: { common = '' }, cca3 = '', languages = {} }) => {
-                      const languageCodes: string[] = Object.keys(languages);
-
+                    {countriesByFilter.map(({ commonName = '', cca3 = '', languages = [] }) => {
                       return (
-                        <Tr key={common}>
+                        <Tr key={cca3}>
                           <Td>
-                            <Link href={`/countries/${cca3}`}>{common}</Link>
+                            <Link href={`/countries/${cca3}`}>{commonName}</Link>
                           </Td>
-                          <Td isNumeric>{Object.keys(languages).length}</Td>
+                          <Td isNumeric>{languages.length}</Td>
                           <Td>
-                            {languageCodes.length > 0 ? (
-                              <div className="flex flex-wrap gap-1 md:gap-2">
-                                {languageCodes.map((code: string) => {
-                                  const name: string = (languages as Record<string, string>)[code] || '';
-                                  return (
-                                    <Link key={code} href={`/languages/${code}`}>
-                                      <Badge colorScheme="teal">{name}</Badge>
-                                    </Link>
-                                  );
-                                })}
-                              </div>
-                            ) : (
-                              <></>
-                            )}
+                            <div className="whitespace-normal">
+                              {languages.length > 0 ? (
+                                <div className="flex flex-wrap items-center gap-1 md:gap-2">
+                                  {languages.map(({ code = '', name = '' }) => {
+                                    return (
+                                      <Link key={code} href={`/languages/${code}`}>
+                                        <Badge colorScheme="teal">{name}</Badge>
+                                      </Link>
+                                    );
+                                  })}
+                                </div>
+                              ) : (
+                                <></>
+                              )}
+                            </div>
                           </Td>
                         </Tr>
                       );
@@ -89,6 +90,18 @@ export const LanguagesPage: NextPage = () => {
       </Container>
     </Layout>
   );
+};
+
+export const getStaticProps: GetStaticProps = async (): Promise<{ props: { countries: Country[] } }> => {
+  try {
+    const data = await apolloClient.query<{ countries: Country[] }>({ query: COUNTRIES_LANGUAGES_QUERY });
+    const countries: Country[] = [...data.data.countries];
+    countries.sort((a, b) => b.languages.length - a.languages.length);
+    return { props: { countries } };
+  } catch (error) {
+    console.error(error);
+    return { props: { countries: [] } };
+  }
 };
 
 export default LanguagesPage;

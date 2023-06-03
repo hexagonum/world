@@ -1,27 +1,21 @@
-import { Organization } from '@prisma/client';
 import { prismaClient } from '../../common/libs/prisma';
 
 export class OrganizationsService {
-  async getOrganizations(): Promise<Organization[]> {
-    const organizations: Organization[] = await prismaClient.organization.findMany({
-      include: {
-        countries: {
-          select: { country: { select: { commonName: true, region: true, subregion: true, population: true } } },
-        },
-      },
+  async getOrganizations() {
+    const organizations = await prismaClient.organization.findMany({
+      include: { countries: { select: { country: true } } },
+      orderBy: { countries: { _count: 'desc' } },
     });
-    return organizations;
+    return organizations.map((organization) => {
+      return { ...organization, countries: organization.countries.map(({ country }) => country) };
+    });
   }
 
-  async getOrganization(code: string): Promise<Organization> {
-    const organization: Organization = await prismaClient.organization.findFirstOrThrow({
+  async getOrganization(code: string) {
+    const organization = await prismaClient.organization.findFirstOrThrow({
+      include: { countries: { select: { country: true } } },
       where: { code },
-      include: {
-        countries: {
-          select: { country: { select: { commonName: true, region: true, subregion: true, population: true } } },
-        },
-      },
     });
-    return organization;
+    return { ...organization, countries: organization.countries.map(({ country }) => country) };
   }
 }

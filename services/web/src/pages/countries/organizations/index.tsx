@@ -1,27 +1,30 @@
 import { Badge, Input, Table, TableCaption, TableContainer, Tbody, Td, Th, Thead, Tr } from '@chakra-ui/react';
 import Container from '@world/components/Container';
-import unitedNationMembers from '@world/data/united-nation-members.json';
+import { apolloClient } from '@world/graphql';
+import { COUNTRIES_ORGANIZATIONS_QUERY } from '@world/graphql/queries/countries';
 import Layout from '@world/layout';
-import { NextPage } from 'next';
+import { GetStaticProps, NextPage } from 'next';
 import Link from 'next/link';
 import { ChangeEvent, useState } from 'react';
 
-const clonedUnitedNationMembers = JSON.parse(JSON.stringify(unitedNationMembers));
-clonedUnitedNationMembers.sort((a: any, b: any) => (a.organizations.length > b.organizations.length ? -1 : 1));
+type Country = { commonName: string; cca3: string; organizations: { code: string; name: string }[] };
 
-export const OrganizationsPage: NextPage = () => {
+type OrganizationsPageProps = {
+  countries: Country[];
+};
+
+export const OrganizationsPage: NextPage<OrganizationsPageProps> = ({ countries = [] }) => {
   const [query, setQuery] = useState<string>('');
 
-  const countriesByFilter = clonedUnitedNationMembers.filter(({ name: { common = '' }, organizations = [] }) => {
-    const commonFlag: boolean = query !== '' ? common.toLowerCase().includes(query.toLowerCase()) : true;
-    const organizationsFlag: boolean =
-      query !== ''
-        ? organizations.some(
-            ({ code = '', name = '' }) =>
-              code.toLowerCase().includes(query.toLowerCase()) || name.toLowerCase().includes(query.toLowerCase())
-          )
-        : true;
-    return commonFlag || organizationsFlag;
+  const countriesByFilter = countries.filter(({ commonName = '', organizations = [] }) => {
+    const organizationCodes: string[] = organizations.map(({ code = '' }: { code: string }) => code);
+    const organizationNames: string[] = organizations.map(({ name = '' }: { name: string }) => name);
+    const codeFlag: boolean =
+      query !== '' ? organizationCodes.some((code: string) => code.toLowerCase().includes(query.toLowerCase())) : true;
+    const nameFlag: boolean =
+      query !== '' ? organizationNames.some((name: string) => name.toLowerCase().includes(query.toLowerCase())) : true;
+    const commonNameFlag: boolean = query !== '' ? commonName.toLowerCase().includes(query.toLowerCase()) : true;
+    return codeFlag || nameFlag || commonNameFlag;
   });
 
   return (
@@ -42,26 +45,24 @@ export const OrganizationsPage: NextPage = () => {
                 <Table>
                   <Thead>
                     <Tr>
-                      <Th>No</Th>
                       <Th>Country ({countriesByFilter.length})</Th>
                       <Th isNumeric>Total</Th>
                       <Th>Organizations</Th>
                     </Tr>
                   </Thead>
                   <Tbody>
-                    {countriesByFilter.map(
-                      ({ name: { common = '' }, cca3 = '', organizations = [] }, index: number) => {
-                        return (
-                          <Tr key={common}>
-                            <Td>{index + 1}</Td>
-                            <Td>
-                              <Link href={`/countries/${cca3}`}>{common}</Link>
-                            </Td>
-                            <Td isNumeric>{organizations.length}</Td>
-                            <Td>
+                    {countriesByFilter.map(({ commonName = '', cca3 = '', organizations = [] }) => {
+                      return (
+                        <Tr key={cca3}>
+                          <Td>
+                            <Link href={`/countries/${cca3}`}>{commonName}</Link>
+                          </Td>
+                          <Td isNumeric>{organizations.length}</Td>
+                          <Td>
+                            <div className="whitespace-normal">
                               {organizations.length > 0 ? (
-                                <div className="flex flex-wrap gap-1 md:gap-2">
-                                  {organizations.map(({ code, name }: { code: string; name: string }) => {
+                                <div className="flex flex-wrap items-center gap-1 md:gap-2">
+                                  {organizations.map(({ code = '', name = '' }) => {
                                     return (
                                       <Link key={code} href={`/organizations/${code}`}>
                                         <Badge colorScheme="teal">{name}</Badge>
@@ -72,11 +73,11 @@ export const OrganizationsPage: NextPage = () => {
                               ) : (
                                 <></>
                               )}
-                            </Td>
-                          </Tr>
-                        );
-                      }
-                    )}
+                            </div>
+                          </Td>
+                        </Tr>
+                      );
+                    })}
                   </Tbody>
                   <TableCaption>
                     <p className="pb-4">Organizations ({countriesByFilter.length})</p>
@@ -89,6 +90,18 @@ export const OrganizationsPage: NextPage = () => {
       </Container>
     </Layout>
   );
+};
+
+export const getStaticProps: GetStaticProps = async (): Promise<{ props: { countries: Country[] } }> => {
+  try {
+    const data = await apolloClient.query<{ countries: Country[] }>({ query: COUNTRIES_ORGANIZATIONS_QUERY });
+    const countries: Country[] = [...data.data.countries];
+    countries.sort((a, b) => b.organizations.length - a.organizations.length);
+    return { props: { countries } };
+  } catch (error) {
+    console.error(error);
+    return { props: { countries: [] } };
+  }
 };
 
 export default OrganizationsPage;

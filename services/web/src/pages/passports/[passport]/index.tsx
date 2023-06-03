@@ -1,7 +1,6 @@
 import { Card, CardBody, Link, Select, Table, TableContainer, Tbody, Td, Th, Thead, Tr } from '@chakra-ui/react';
 import Container from '@world/components/Container';
 import { NEXT_PUBLIC_BASE_API } from '@world/configs';
-import isoAlpha2Codes from '@world/data/codes/iso-alpha-2.json';
 import useFetch from '@world/hooks/use-fetch';
 import Layout from '@world/layout';
 import { unique } from '@world/utils/unique';
@@ -9,21 +8,39 @@ import { NextPage } from 'next';
 import { useRouter } from 'next/router';
 import { ChangeEvent, useState } from 'react';
 
-type Passport = {
-  commonName: string;
-  cca2: string;
-  cca3: string;
-  passportGlobalRank: number;
-  passportIndividualRank: number;
-  passportMobilityScore: number;
-  passportRequirements: Record<string, string>;
+type PassportRequirement = {
+  passportCode: string;
+  countryCode: string;
+  requirement: string;
+  country: {
+    commonName: string;
+    cca2: string;
+    cca3: string;
+    region: string;
+    subregion: string;
+  };
+  passport: {
+    countryCode: string;
+    country: {
+      commonName: string;
+      cca2: string;
+      cca3: string;
+      region: string;
+      subregion: string;
+    };
+    globalRank: number;
+    individualRank: number;
+    mobilityScore: number;
+  };
 };
 
 const PassportSection: React.FC = () => {
   const [filterOptions, setFilterOptions] = useState<{ requirement: string }>({ requirement: '' });
   const { query } = useRouter();
   const countryCode: string = query.passport?.toString() ?? '';
-  const { loading, error, data } = useFetch<Passport>(`${NEXT_PUBLIC_BASE_API}/countries/${countryCode}/passports`);
+  const { loading, error, data } = useFetch<PassportRequirement[]>(
+    `${NEXT_PUBLIC_BASE_API}/countries/${countryCode}/passports`
+  );
 
   if (loading) {
     return (
@@ -45,7 +62,7 @@ const PassportSection: React.FC = () => {
     );
   }
 
-  if (!data) {
+  if (!data || data.length === 0) {
     return (
       <Card className="border border-gray-200">
         <CardBody>
@@ -54,26 +71,27 @@ const PassportSection: React.FC = () => {
       </Card>
     );
   }
-  const requirements = Object.keys(data.passportRequirements).map((cca2: string) => {
-    const fullRequirement: string = data.passportRequirements[cca2] || '';
-    const name: string = (isoAlpha2Codes as Record<string, string>)[cca2];
-    const [part1 = '', part2 = '', part3 = ''] = fullRequirement.split('/');
-    const trim1 = part1.trim();
-    const trim2 = part2.trim();
-    const trim3 = part3.trim();
-    let requirement: string = '';
-    let note: string = '';
-    if (trim3 !== '') {
-      requirement = `${trim1} / ${trim2}`;
-      note = trim3;
-    } else if (trim2 !== '') {
-      requirement = trim1;
-      note = trim2;
-    } else {
-      requirement = trim1;
+
+  const requirements = data.map(
+    ({ requirement: fullRequirement = '', country: { cca3, commonName } }: PassportRequirement) => {
+      const [part1 = '', part2 = '', part3 = ''] = fullRequirement.split('/');
+      const trim1 = part1.trim();
+      const trim2 = part2.trim();
+      const trim3 = part3.trim();
+      let requirement: string = '';
+      let note: string = '';
+      if (trim3 !== '') {
+        requirement = `${trim1} / ${trim2}`;
+        note = trim3;
+      } else if (trim2 !== '') {
+        requirement = trim1;
+        note = trim2;
+      } else {
+        requirement = trim1;
+      }
+      return { cca3, name: commonName, requirement, note: note };
     }
-    return { cca2, name, requirement, note: note };
-  });
+  );
 
   const requirementOptions: string[] = unique(requirements.map(({ requirement }) => requirement.toLowerCase()));
   requirementOptions.sort((a: string, b: string) => (a > b ? 1 : -1));
@@ -87,8 +105,8 @@ const PassportSection: React.FC = () => {
   return (
     <>
       <div className="flex justify-between items-center">
-        <h1 className="capitalize text-2xl md:text-4xl font-bold">{data.commonName}</h1>
-        <p className="capitalize text-xl md:text-2xl">#{data.passportIndividualRank}</p>
+        <h1 className="capitalize text-2xl md:text-4xl font-bold">{data[0].passport.country.commonName}</h1>
+        <p className="capitalize text-xl md:text-2xl">#{data[0].passport.individualRank}</p>
       </div>
       <Select
         id="requirement"
@@ -117,12 +135,12 @@ const PassportSection: React.FC = () => {
             </Tr>
           </Thead>
           <Tbody>
-            {filteredRequirements.map(({ cca2 = '', name = '', requirement = '', note = '' }, index: number) => {
+            {filteredRequirements.map(({ cca3 = '', name = '', requirement = '', note = '' }, index: number) => {
               return (
-                <Tr key={cca2}>
+                <Tr key={cca3}>
                   <Td>{index + 1}</Td>
                   <Td className="capitalize">
-                    <Link href={`/passports/${cca2}`}>{name}</Link>
+                    <Link href={`/passports/${cca3}`}>{name}</Link>
                   </Td>
                   <Td className="capitalize">{requirement}</Td>
                   <Td className="capitalize">{note || 'N/A'}</Td>

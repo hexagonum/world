@@ -9,7 +9,7 @@
           "description": "",
           "item": [
             {
-              "id": "1c3c0655-ecdd-4946-900a-13a52824bda5",
+              "id": "1efd927b-a6a3-45f7-a0d5-8dab86cb46d9",
               "name": "Get Timezone",
               "request": {
                 "name": "Get Timezone",
@@ -27,7 +27,7 @@
               },
               "response": [
                 {
-                  "id": "edc74e58-0c07-45d8-8dc2-f3177882e73b",
+                  "id": "45b7c396-9698-4901-af31-35b09b48ab1e",
                   "name": "Ok",
                   "originalRequest": {
                     "url": { "path": ["timezones", ":code"], "host": ["{{baseUrl}}"], "query": [], "variable": [] },
@@ -49,7 +49,7 @@
           ]
         },
         {
-          "id": "88ea19d3-fa9e-49ee-90d1-0a83f1ebc9b6",
+          "id": "fd0bd26e-9983-4d40-827b-9b8e1df07fe4",
           "name": "Get Timezones",
           "request": {
             "name": "Get Timezones",
@@ -62,7 +62,7 @@
           },
           "response": [
             {
-              "id": "e348a00f-7383-439a-9715-5491cdb13225",
+              "id": "c8ee5f0f-7c33-48f7-b0c6-29d81436961d",
               "name": "Ok",
               "originalRequest": {
                 "url": { "path": ["timezones"], "host": ["{{baseUrl}}"], "query": [], "variable": [] },
@@ -84,6 +84,89 @@
       ]
     },
     {
+      "name": "passports",
+      "description": "",
+      "item": [
+        {
+          "name": "{code}",
+          "description": "",
+          "item": [
+            {
+              "id": "148255e0-7573-40a3-84b3-9a76547101ed",
+              "name": "Get Passport",
+              "request": {
+                "name": "Get Passport",
+                "description": {},
+                "url": {
+                  "path": ["passports", ":code"],
+                  "host": ["{{baseUrl}}"],
+                  "query": [],
+                  "variable": [{ "type": "any", "value": "<string>", "key": "code", "disabled": false }]
+                },
+                "header": [{ "key": "Accept", "value": "application/json" }],
+                "method": "GET",
+                "body": {},
+                "auth": null
+              },
+              "response": [
+                {
+                  "id": "935b377f-2039-41a4-aab4-2942e9153b44",
+                  "name": "Ok",
+                  "originalRequest": {
+                    "url": { "path": ["passports", ":code"], "host": ["{{baseUrl}}"], "query": [], "variable": [] },
+                    "header": [{ "key": "Accept", "value": "application/json" }],
+                    "method": "GET",
+                    "body": {}
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "header": [{ "key": "Content-Type", "value": "application/json" }],
+                  "body": "[\n  {\n    \"requirement\": \"<string>\",\n    \"countryCode\": \"<string>\",\n    \"passportCode\": \"<string>\"\n  },\n  {\n    \"requirement\": \"<string>\",\n    \"countryCode\": \"<string>\",\n    \"passportCode\": \"<string>\"\n  }\n]",
+                  "cookie": [],
+                  "_postman_previewlanguage": "json"
+                }
+              ],
+              "event": [],
+              "protocolProfileBehavior": { "disableBodyPruning": true }
+            }
+          ]
+        },
+        {
+          "id": "b0729419-e02f-4234-aaba-7d3109307280",
+          "name": "Get Passports",
+          "request": {
+            "name": "Get Passports",
+            "description": {},
+            "url": { "path": ["passports"], "host": ["{{baseUrl}}"], "query": [], "variable": [] },
+            "header": [{ "key": "Accept", "value": "application/json" }],
+            "method": "GET",
+            "body": {},
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "79838848-f191-4365-8a57-8d231af45498",
+              "name": "Ok",
+              "originalRequest": {
+                "url": { "path": ["passports"], "host": ["{{baseUrl}}"], "query": [], "variable": [] },
+                "header": [{ "key": "Accept", "value": "application/json" }],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [{ "key": "Content-Type", "value": "application/json" }],
+              "body": "[\n  {\n    \"mobilityScore\": \"<double>\",\n    \"individualRank\": \"<double>\",\n    \"globalRank\": \"<double>\",\n    \"countryCode\": \"<string>\"\n  },\n  {\n    \"mobilityScore\": \"<double>\",\n    \"individualRank\": \"<double>\",\n    \"globalRank\": \"<double>\",\n    \"countryCode\": \"<string>\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": { "disableBodyPruning": true }
+        }
+      ]
+    },
+    {
       "name": "organizations",
       "description": "",
       "item": [
@@ -92,7 +175,7 @@
           "description": "",
           "item": [
             {
-              "id": "a27fe36f-8d56-447d-8ca9-5261a70c8343",
+              "id": "ba98c750-aa31-4453-a86b-96f317bf52fe",
               "name": "Get Organization",
               "request": {
                 "name": "Get Organization",
@@ -110,7 +193,7 @@
               },
               "response": [
                 {
-                  "id": "9e874875-5b00-4e4f-9eed-b86db12ce54e",
+                  "id": "0412afc9-48ae-4d77-9c39-2f1716e0e583",
                   "name": "Ok",
                   "originalRequest": {
                     "url": { "path": ["organizations", ":code"], "host": ["{{baseUrl}}"], "query": [], "variable": [] },
@@ -132,7 +215,7 @@
           ]
         },
         {
-          "id": "98cefb88-79c1-402e-9359-734dd5a93589",
+          "id": "94b510d8-7901-4c10-bdf9-8589f524ec65",
           "name": "Get Organizations",
           "request": {
             "name": "Get Organizations",
@@ -145,7 +228,7 @@
           },
           "response": [
             {
-              "id": "a3d7d440-362f-4893-a508-62bf39d3f45e",
+              "id": "a16ce0f6-0b54-4481-b3bd-e5c5031aa1dd",
               "name": "Ok",
               "originalRequest": {
                 "url": { "path": ["organizations"], "host": ["{{baseUrl}}"], "query": [], "variable": [] },
@@ -175,7 +258,7 @@
           "description": "",
           "item": [
             {
-              "id": "10a3657e-46d9-4445-b758-337a8cbbac7c",
+              "id": "1fd2d050-4c19-4211-b9a2-86bbae264414",
               "name": "Get Sources",
               "request": {
                 "name": "Get Sources",
@@ -188,19 +271,19 @@
                       "disabled": false,
                       "description": { "content": "", "type": "text/plain" },
                       "key": "category",
-                      "value": "science"
+                      "value": "technology"
                     },
                     {
                       "disabled": false,
                       "description": { "content": "", "type": "text/plain" },
                       "key": "language",
-                      "value": "it"
+                      "value": "en"
                     },
                     {
                       "disabled": false,
                       "description": { "content": "", "type": "text/plain" },
                       "key": "country",
-                      "value": "my"
+                      "value": "tr"
                     }
                   ],
                   "variable": []
@@ -212,7 +295,7 @@
               },
               "response": [
                 {
-                  "id": "f7ec304e-0867-4ec5-bbe4-1ab2a7ce6a13",
+                  "id": "3b3c84f2-307e-4a6e-9b9e-5341dbc60d71",
                   "name": "Ok",
                   "originalRequest": {
                     "url": {
@@ -223,19 +306,19 @@
                           "disabled": false,
                           "description": { "content": "", "type": "text/plain" },
                           "key": "category",
-                          "value": "science"
+                          "value": "technology"
                         },
                         {
                           "disabled": false,
                           "description": { "content": "", "type": "text/plain" },
                           "key": "language",
-                          "value": "it"
+                          "value": "en"
                         },
                         {
                           "disabled": false,
                           "description": { "content": "", "type": "text/plain" },
                           "key": "country",
-                          "value": "my"
+                          "value": "tr"
                         }
                       ],
                       "variable": []
@@ -247,7 +330,7 @@
                   "status": "OK",
                   "code": 200,
                   "header": [{ "key": "Content-Type", "value": "application/json" }],
-                  "body": "[\n  {\n    \"country\": \"ru\",\n    \"language\": \"it\",\n    \"category\": \"general\",\n    \"url\": \"<string>\",\n    \"description\": \"<string>\",\n    \"name\": \"<string>\",\n    \"id\": \"<string>\"\n  },\n  {\n    \"country\": \"at\",\n    \"language\": \"he\",\n    \"category\": \"business\",\n    \"url\": \"<string>\",\n    \"description\": \"<string>\",\n    \"name\": \"<string>\",\n    \"id\": \"<string>\"\n  }\n]",
+                  "body": "[\n  {\n    \"country\": \"gb\",\n    \"language\": \"ru\",\n    \"category\": \"business\",\n    \"url\": \"<string>\",\n    \"description\": \"<string>\",\n    \"name\": \"<string>\",\n    \"id\": \"<string>\"\n  },\n  {\n    \"country\": \"ar\",\n    \"language\": \"pt\",\n    \"category\": \"general\",\n    \"url\": \"<string>\",\n    \"description\": \"<string>\",\n    \"name\": \"<string>\",\n    \"id\": \"<string>\"\n  }\n]",
                   "cookie": [],
                   "_postman_previewlanguage": "json"
                 }
@@ -262,7 +345,7 @@
           "description": "",
           "item": [
             {
-              "id": "4b1b1e3c-096d-46cc-aa30-0f9aaabb1d27",
+              "id": "5c8852e9-6056-4c19-b93e-4202b1352287",
               "name": "Get Headlines",
               "request": {
                 "name": "Get Headlines",
@@ -275,13 +358,13 @@
                       "disabled": false,
                       "description": { "content": "", "type": "text/plain" },
                       "key": "country",
-                      "value": "my"
+                      "value": "tr"
                     },
                     {
                       "disabled": false,
                       "description": { "content": "", "type": "text/plain" },
                       "key": "category",
-                      "value": "science"
+                      "value": "technology"
                     },
                     {
                       "disabled": false,
@@ -305,7 +388,7 @@
               },
               "response": [
                 {
-                  "id": "50594a11-25a1-4b0e-b5f2-6675f01d1691",
+                  "id": "e9264dfa-7974-46f8-90f4-0d0e08c5e69d",
                   "name": "Ok",
                   "originalRequest": {
                     "url": {
@@ -316,13 +399,13 @@
                           "disabled": false,
                           "description": { "content": "", "type": "text/plain" },
                           "key": "country",
-                          "value": "my"
+                          "value": "tr"
                         },
                         {
                           "disabled": false,
                           "description": { "content": "", "type": "text/plain" },
                           "key": "category",
-                          "value": "science"
+                          "value": "technology"
                         },
                         {
                           "disabled": false,
@@ -367,7 +450,7 @@
           "description": "",
           "item": [
             {
-              "id": "7a25eb04-2422-46cd-b6a8-e845c27207fe",
+              "id": "ea058267-27bd-4b22-87e1-7e95f84cc3f1",
               "name": "Get Language",
               "request": {
                 "name": "Get Language",
@@ -385,7 +468,7 @@
               },
               "response": [
                 {
-                  "id": "b0f1479b-66f4-4543-9205-32c0941a5da2",
+                  "id": "b959f269-3619-40a4-aa27-4482b6edbdfa",
                   "name": "Ok",
                   "originalRequest": {
                     "url": { "path": ["languages", ":code"], "host": ["{{baseUrl}}"], "query": [], "variable": [] },
@@ -407,7 +490,7 @@
           ]
         },
         {
-          "id": "2baa20c9-11f9-40fe-87df-3e813a29668e",
+          "id": "230b11e3-6ce4-4c22-8688-ab3cb776980d",
           "name": "Get Languages",
           "request": {
             "name": "Get Languages",
@@ -420,7 +503,7 @@
           },
           "response": [
             {
-              "id": "8a7f48d7-d14e-4908-b612-8f6a35015cea",
+              "id": "fc562634-bce8-43b0-be20-38ad020ec223",
               "name": "Ok",
               "originalRequest": {
                 "url": { "path": ["languages"], "host": ["{{baseUrl}}"], "query": [], "variable": [] },
@@ -446,7 +529,7 @@
       "description": "",
       "item": [
         {
-          "id": "64883a0a-d4ef-4166-99b5-3fa5b5a7ff08",
+          "id": "eee645f6-5b73-4b74-83a6-0de5e017033d",
           "name": "Get Health",
           "request": {
             "name": "Get Health",
@@ -459,7 +542,7 @@
           },
           "response": [
             {
-              "id": "62134156-2b8e-480f-b7e4-f5aa3937d46b",
+              "id": "4961d75a-a927-4b2e-a1fe-61921f38dd5d",
               "name": "Ok",
               "originalRequest": {
                 "url": { "path": ["health"], "host": ["{{baseUrl}}"], "query": [], "variable": [] },
@@ -489,7 +572,7 @@
           "description": "",
           "item": [
             {
-              "id": "fc0756e1-d108-4c97-80ec-d74430dc2834",
+              "id": "7b2c7351-607e-40a3-9e9b-a4a3c6bfba9a",
               "name": "Get Currency",
               "request": {
                 "name": "Get Currency",
@@ -507,7 +590,7 @@
               },
               "response": [
                 {
-                  "id": "80ac6deb-5324-4f85-acce-808588e1a3e1",
+                  "id": "1dad8217-3271-483d-96c0-07dcbbac4f74",
                   "name": "Ok",
                   "originalRequest": {
                     "url": { "path": ["currencies", ":code"], "host": ["{{baseUrl}}"], "query": [], "variable": [] },
@@ -529,7 +612,7 @@
           ]
         },
         {
-          "id": "cbdfabd3-8325-42d4-9ba3-0580952c0499",
+          "id": "dff3e0b9-05f5-4323-a22d-0dae2f6b8cd0",
           "name": "Get Currencies",
           "request": {
             "name": "Get Currencies",
@@ -542,7 +625,7 @@
           },
           "response": [
             {
-              "id": "9956793e-b518-4106-94ec-626e95739d8a",
+              "id": "e794af7f-e0c9-4108-b3fa-1e4aa36d626c",
               "name": "Ok",
               "originalRequest": {
                 "url": { "path": ["currencies"], "host": ["{{baseUrl}}"], "query": [], "variable": [] },
@@ -576,7 +659,7 @@
               "description": "",
               "item": [
                 {
-                  "id": "c00f1160-5003-42e4-91d0-b22bf39fd721",
+                  "id": "ec878fc4-7fd3-4cd4-ba7e-b8e06cd335eb",
                   "name": "Get Coin",
                   "request": {
                     "name": "Get Coin",
@@ -594,7 +677,7 @@
                   },
                   "response": [
                     {
-                      "id": "f8341fc8-da80-41fa-b8ed-b91d016c58ba",
+                      "id": "d1f648e8-740b-46a5-a094-56619ffe514c",
                       "name": "Ok",
                       "originalRequest": {
                         "url": {
@@ -621,7 +704,7 @@
               ]
             },
             {
-              "id": "bba5ca04-4119-4409-b7f7-1906472dfa18",
+              "id": "7b992821-300e-49cd-a451-01435d01f194",
               "name": "Get Coins",
               "request": {
                 "name": "Get Coins",
@@ -634,7 +717,7 @@
               },
               "response": [
                 {
-                  "id": "b4b5cae2-51ad-4bfb-854d-1b0073fd5b30",
+                  "id": "d42427e5-691a-409c-b1db-aaa6d8f129f1",
                   "name": "Ok",
                   "originalRequest": {
                     "url": { "path": ["crypto", "coins"], "host": ["{{baseUrl}}"], "query": [], "variable": [] },
@@ -666,56 +749,7 @@
           "description": "",
           "item": [
             {
-              "name": "passports",
-              "description": "",
-              "item": [
-                {
-                  "id": "55c1da7f-e245-4340-98bb-63f6ab59d23b",
-                  "name": "Get Passport",
-                  "request": {
-                    "name": "Get Passport",
-                    "description": {},
-                    "url": {
-                      "path": ["countries", ":code", "passports"],
-                      "host": ["{{baseUrl}}"],
-                      "query": [],
-                      "variable": [{ "type": "any", "value": "<string>", "key": "code", "disabled": false }]
-                    },
-                    "header": [{ "key": "Accept", "value": "application/json" }],
-                    "method": "GET",
-                    "body": {},
-                    "auth": null
-                  },
-                  "response": [
-                    {
-                      "id": "8c0e63b4-d8e8-4747-8f3f-d80a2c1837e1",
-                      "name": "Ok",
-                      "originalRequest": {
-                        "url": {
-                          "path": ["countries", ":code", "passports"],
-                          "host": ["{{baseUrl}}"],
-                          "query": [],
-                          "variable": []
-                        },
-                        "header": [{ "key": "Accept", "value": "application/json" }],
-                        "method": "GET",
-                        "body": {}
-                      },
-                      "status": "OK",
-                      "code": 200,
-                      "header": [{ "key": "Content-Type", "value": "application/json" }],
-                      "body": "{\n  \"commonName\": \"<string>\",\n  \"cca2\": \"<string>\",\n  \"cca3\": \"<string>\",\n  \"passportGlobalRank\": \"<double>\",\n  \"passportIndividualRank\": \"<double>\",\n  \"passportMobilityScore\": \"<double>\",\n  \"passportRequirements\": \"<string>\"\n}",
-                      "cookie": [],
-                      "_postman_previewlanguage": "json"
-                    }
-                  ],
-                  "event": [],
-                  "protocolProfileBehavior": { "disableBodyPruning": true }
-                }
-              ]
-            },
-            {
-              "id": "9cfeba90-b618-4fc8-8213-6de6ca84716d",
+              "id": "af5c6860-a2fa-45db-a412-196ba745d3e2",
               "name": "Get Country",
               "request": {
                 "name": "Get Country",
@@ -733,7 +767,7 @@
               },
               "response": [
                 {
-                  "id": "ffc2d4a0-7dd6-47d8-a496-14850595030f",
+                  "id": "950c4365-ceb1-43f2-a1f1-4a91f6622d00",
                   "name": "Ok",
                   "originalRequest": {
                     "url": { "path": ["countries", ":code"], "host": ["{{baseUrl}}"], "query": [], "variable": [] },
@@ -744,46 +778,7 @@
                   "status": "OK",
                   "code": 200,
                   "header": [{ "key": "Content-Type", "value": "application/json" }],
-                  "body": "{\n  \"updatedAt\": \"<dateTime>\",\n  \"createdAt\": \"<dateTime>\",\n  \"passportRequirements\": \"<string>\",\n  \"passportMobilityScore\": \"<double>\",\n  \"passportIndividualRank\": \"<double>\",\n  \"passportGlobalRank\": \"<double>\",\n  \"timezones\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"googleTrends\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"googleMaps\": \"<string>\",\n  \"density\": \"<double>\",\n  \"population\": \"<double>\",\n  \"area\": \"<double>\",\n  \"flagSVG\": \"<string>\",\n  \"flagPNG\": \"<string>\",\n  \"flag\": \"<string>\",\n  \"subregion\": \"<string>\",\n  \"region\": \"<string>\",\n  \"borders\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"continents\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"alternativeSpellings\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"capital\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"topLevelDomains\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"longitude\": \"<double>\",\n  \"latitude\": \"<double>\",\n  \"startOfWeek\": \"<string>\",\n  \"unMember\": \"<boolean>\",\n  \"independent\": \"<boolean>\",\n  \"status\": \"<string>\",\n  \"fifa\": \"<string>\",\n  \"cioc\": \"<string>\",\n  \"ccn3\": \"<string>\",\n  \"cca3\": \"<string>\",\n  \"cca2\": \"<string>\",\n  \"officialName\": \"<string>\",\n  \"commonName\": \"<string>\",\n  \"code\": \"<string>\"\n}",
-                  "cookie": [],
-                  "_postman_previewlanguage": "json"
-                }
-              ],
-              "event": [],
-              "protocolProfileBehavior": { "disableBodyPruning": true }
-            }
-          ]
-        },
-        {
-          "name": "passports",
-          "description": "",
-          "item": [
-            {
-              "id": "5dea6ba8-acc2-4248-b3dd-258576764d34",
-              "name": "Get Passports",
-              "request": {
-                "name": "Get Passports",
-                "description": {},
-                "url": { "path": ["countries", "passports"], "host": ["{{baseUrl}}"], "query": [], "variable": [] },
-                "header": [{ "key": "Accept", "value": "application/json" }],
-                "method": "GET",
-                "body": {},
-                "auth": null
-              },
-              "response": [
-                {
-                  "id": "e7ed6658-1e2e-4703-ae01-48bac6570942",
-                  "name": "Ok",
-                  "originalRequest": {
-                    "url": { "path": ["countries", "passports"], "host": ["{{baseUrl}}"], "query": [], "variable": [] },
-                    "header": [{ "key": "Accept", "value": "application/json" }],
-                    "method": "GET",
-                    "body": {}
-                  },
-                  "status": "OK",
-                  "code": 200,
-                  "header": [{ "key": "Content-Type", "value": "application/json" }],
-                  "body": "[\n  {\n    \"commonName\": \"<string>\",\n    \"cca2\": \"<string>\",\n    \"cca3\": \"<string>\",\n    \"passportGlobalRank\": \"<double>\",\n    \"passportIndividualRank\": \"<double>\",\n    \"passportMobilityScore\": \"<double>\"\n  },\n  {\n    \"commonName\": \"<string>\",\n    \"cca2\": \"<string>\",\n    \"cca3\": \"<string>\",\n    \"passportGlobalRank\": \"<double>\",\n    \"passportIndividualRank\": \"<double>\",\n    \"passportMobilityScore\": \"<double>\"\n  }\n]",
+                  "body": "{\n  \"updatedAt\": \"<dateTime>\",\n  \"createdAt\": \"<dateTime>\",\n  \"timezones\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"googleTrends\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"googleMaps\": \"<string>\",\n  \"density\": \"<double>\",\n  \"population\": \"<double>\",\n  \"area\": \"<double>\",\n  \"flagSVG\": \"<string>\",\n  \"flagPNG\": \"<string>\",\n  \"flag\": \"<string>\",\n  \"subregion\": \"<string>\",\n  \"region\": \"<string>\",\n  \"borders\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"continents\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"alternativeSpellings\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"capital\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"topLevelDomains\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"longitude\": \"<double>\",\n  \"latitude\": \"<double>\",\n  \"startOfWeek\": \"<string>\",\n  \"unMember\": \"<boolean>\",\n  \"independent\": \"<boolean>\",\n  \"status\": \"<string>\",\n  \"fifa\": \"<string>\",\n  \"cioc\": \"<string>\",\n  \"ccn3\": \"<string>\",\n  \"cca3\": \"<string>\",\n  \"cca2\": \"<string>\",\n  \"officialName\": \"<string>\",\n  \"commonName\": \"<string>\",\n  \"code\": \"<string>\"\n}",
                   "cookie": [],
                   "_postman_previewlanguage": "json"
                 }
@@ -802,7 +797,7 @@
               "description": "",
               "item": [
                 {
-                  "id": "90356486-6f67-4bbb-8440-ac0a903c3cec",
+                  "id": "b182f7dc-9b48-4718-8ff6-8b359cd79e14",
                   "name": "Get Trends",
                   "request": {
                     "name": "Get Trends",
@@ -820,7 +815,7 @@
                   },
                   "response": [
                     {
-                      "id": "5e664d79-6a2b-4e7e-8cc3-3bab01203435",
+                      "id": "ac77d97a-9703-4c92-9ced-a76d29e25377",
                       "name": "Ok",
                       "originalRequest": {
                         "url": {
@@ -849,7 +844,7 @@
           ]
         },
         {
-          "id": "304828f0-7c3a-419d-88c4-6d2cb7f34305",
+          "id": "8a610168-05fe-47b7-9f03-1881fa5ab816",
           "name": "Get Countries",
           "request": {
             "name": "Get Countries",
@@ -862,7 +857,7 @@
           },
           "response": [
             {
-              "id": "6422c74f-7720-4da6-9bb5-17379e358158",
+              "id": "09368b88-efbc-4c39-aa6b-e2ac264026b4",
               "name": "Ok",
               "originalRequest": {
                 "url": { "path": ["countries"], "host": ["{{baseUrl}}"], "query": [], "variable": [] },
@@ -873,7 +868,7 @@
               "status": "OK",
               "code": 200,
               "header": [{ "key": "Content-Type", "value": "application/json" }],
-              "body": "[\n  {\n    \"updatedAt\": \"<dateTime>\",\n    \"createdAt\": \"<dateTime>\",\n    \"passportRequirements\": \"<string>\",\n    \"passportMobilityScore\": \"<double>\",\n    \"passportIndividualRank\": \"<double>\",\n    \"passportGlobalRank\": \"<double>\",\n    \"timezones\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"googleTrends\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"googleMaps\": \"<string>\",\n    \"density\": \"<double>\",\n    \"population\": \"<double>\",\n    \"area\": \"<double>\",\n    \"flagSVG\": \"<string>\",\n    \"flagPNG\": \"<string>\",\n    \"flag\": \"<string>\",\n    \"subregion\": \"<string>\",\n    \"region\": \"<string>\",\n    \"borders\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"continents\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"alternativeSpellings\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"capital\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"topLevelDomains\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"longitude\": \"<double>\",\n    \"latitude\": \"<double>\",\n    \"startOfWeek\": \"<string>\",\n    \"unMember\": \"<boolean>\",\n    \"independent\": \"<boolean>\",\n    \"status\": \"<string>\",\n    \"fifa\": \"<string>\",\n    \"cioc\": \"<string>\",\n    \"ccn3\": \"<string>\",\n    \"cca3\": \"<string>\",\n    \"cca2\": \"<string>\",\n    \"officialName\": \"<string>\",\n    \"commonName\": \"<string>\",\n    \"code\": \"<string>\"\n  },\n  {\n    \"updatedAt\": \"<dateTime>\",\n    \"createdAt\": \"<dateTime>\",\n    \"passportRequirements\": \"<string>\",\n    \"passportMobilityScore\": \"<double>\",\n    \"passportIndividualRank\": \"<double>\",\n    \"passportGlobalRank\": \"<double>\",\n    \"timezones\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"googleTrends\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"googleMaps\": \"<string>\",\n    \"density\": \"<double>\",\n    \"population\": \"<double>\",\n    \"area\": \"<double>\",\n    \"flagSVG\": \"<string>\",\n    \"flagPNG\": \"<string>\",\n    \"flag\": \"<string>\",\n    \"subregion\": \"<string>\",\n    \"region\": \"<string>\",\n    \"borders\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"continents\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"alternativeSpellings\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"capital\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"topLevelDomains\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"longitude\": \"<double>\",\n    \"latitude\": \"<double>\",\n    \"startOfWeek\": \"<string>\",\n    \"unMember\": \"<boolean>\",\n    \"independent\": \"<boolean>\",\n    \"status\": \"<string>\",\n    \"fifa\": \"<string>\",\n    \"cioc\": \"<string>\",\n    \"ccn3\": \"<string>\",\n    \"cca3\": \"<string>\",\n    \"cca2\": \"<string>\",\n    \"officialName\": \"<string>\",\n    \"commonName\": \"<string>\",\n    \"code\": \"<string>\"\n  }\n]",
+              "body": "[\n  {\n    \"updatedAt\": \"<dateTime>\",\n    \"createdAt\": \"<dateTime>\",\n    \"timezones\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"googleTrends\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"googleMaps\": \"<string>\",\n    \"density\": \"<double>\",\n    \"population\": \"<double>\",\n    \"area\": \"<double>\",\n    \"flagSVG\": \"<string>\",\n    \"flagPNG\": \"<string>\",\n    \"flag\": \"<string>\",\n    \"subregion\": \"<string>\",\n    \"region\": \"<string>\",\n    \"borders\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"continents\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"alternativeSpellings\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"capital\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"topLevelDomains\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"longitude\": \"<double>\",\n    \"latitude\": \"<double>\",\n    \"startOfWeek\": \"<string>\",\n    \"unMember\": \"<boolean>\",\n    \"independent\": \"<boolean>\",\n    \"status\": \"<string>\",\n    \"fifa\": \"<string>\",\n    \"cioc\": \"<string>\",\n    \"ccn3\": \"<string>\",\n    \"cca3\": \"<string>\",\n    \"cca2\": \"<string>\",\n    \"officialName\": \"<string>\",\n    \"commonName\": \"<string>\",\n    \"code\": \"<string>\",\n    \"organizations\": [\n      {\n        \"updatedAt\": \"<dateTime>\",\n        \"createdAt\": \"<dateTime>\",\n        \"name\": \"<string>\",\n        \"code\": \"<string>\"\n      },\n      {\n        \"updatedAt\": \"<dateTime>\",\n        \"createdAt\": \"<dateTime>\",\n        \"name\": \"<string>\",\n        \"code\": \"<string>\"\n      }\n    ],\n    \"languages\": [\n      {\n        \"updatedAt\": \"<dateTime>\",\n        \"createdAt\": \"<dateTime>\",\n        \"name\": \"<string>\",\n        \"code\": \"<string>\"\n      },\n      {\n        \"updatedAt\": \"<dateTime>\",\n        \"createdAt\": \"<dateTime>\",\n        \"name\": \"<string>\",\n        \"code\": \"<string>\"\n      }\n    ],\n    \"currencies\": [\n      {\n        \"updatedAt\": \"<dateTime>\",\n        \"createdAt\": \"<dateTime>\",\n        \"symbol\": \"<string>\",\n        \"name\": \"<string>\",\n        \"code\": \"<string>\"\n      },\n      {\n        \"updatedAt\": \"<dateTime>\",\n        \"createdAt\": \"<dateTime>\",\n        \"symbol\": \"<string>\",\n        \"name\": \"<string>\",\n        \"code\": \"<string>\"\n      }\n    ]\n  },\n  {\n    \"updatedAt\": \"<dateTime>\",\n    \"createdAt\": \"<dateTime>\",\n    \"timezones\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"googleTrends\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"googleMaps\": \"<string>\",\n    \"density\": \"<double>\",\n    \"population\": \"<double>\",\n    \"area\": \"<double>\",\n    \"flagSVG\": \"<string>\",\n    \"flagPNG\": \"<string>\",\n    \"flag\": \"<string>\",\n    \"subregion\": \"<string>\",\n    \"region\": \"<string>\",\n    \"borders\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"continents\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"alternativeSpellings\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"capital\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"topLevelDomains\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"longitude\": \"<double>\",\n    \"latitude\": \"<double>\",\n    \"startOfWeek\": \"<string>\",\n    \"unMember\": \"<boolean>\",\n    \"independent\": \"<boolean>\",\n    \"status\": \"<string>\",\n    \"fifa\": \"<string>\",\n    \"cioc\": \"<string>\",\n    \"ccn3\": \"<string>\",\n    \"cca3\": \"<string>\",\n    \"cca2\": \"<string>\",\n    \"officialName\": \"<string>\",\n    \"commonName\": \"<string>\",\n    \"code\": \"<string>\",\n    \"organizations\": [\n      {\n        \"updatedAt\": \"<dateTime>\",\n        \"createdAt\": \"<dateTime>\",\n        \"name\": \"<string>\",\n        \"code\": \"<string>\"\n      },\n      {\n        \"updatedAt\": \"<dateTime>\",\n        \"createdAt\": \"<dateTime>\",\n        \"name\": \"<string>\",\n        \"code\": \"<string>\"\n      }\n    ],\n    \"languages\": [\n      {\n        \"updatedAt\": \"<dateTime>\",\n        \"createdAt\": \"<dateTime>\",\n        \"name\": \"<string>\",\n        \"code\": \"<string>\"\n      },\n      {\n        \"updatedAt\": \"<dateTime>\",\n        \"createdAt\": \"<dateTime>\",\n        \"name\": \"<string>\",\n        \"code\": \"<string>\"\n      }\n    ],\n    \"currencies\": [\n      {\n        \"updatedAt\": \"<dateTime>\",\n        \"createdAt\": \"<dateTime>\",\n        \"symbol\": \"<string>\",\n        \"name\": \"<string>\",\n        \"code\": \"<string>\"\n      },\n      {\n        \"updatedAt\": \"<dateTime>\",\n        \"createdAt\": \"<dateTime>\",\n        \"symbol\": \"<string>\",\n        \"name\": \"<string>\",\n        \"code\": \"<string>\"\n      }\n    ]\n  }\n]",
               "cookie": [],
               "_postman_previewlanguage": "json"
             }
@@ -887,7 +882,7 @@
   "event": [],
   "variable": [{ "key": "baseUrl", "value": "http://localhost:8080" }],
   "info": {
-    "_postman_id": "0eabbba1-6b91-484a-83e4-e2be95bd829a",
+    "_postman_id": "05211da7-a1e8-4ca8-9c20-8f47ea92ef28",
     "name": "@world/api",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
     "description": {

@@ -1,7 +1,7 @@
+import { Country } from '@prisma/client';
 import { Controller, Get, Path, Route, Tags } from 'tsoa';
 import { CountriesService } from './countries.service';
-import { Country } from '@prisma/client';
-import { CountryGoogleTrends, CountryPassports } from './countries.types';
+import { CountryGoogleTrends } from './countries.types';
 
 @Route('/countries')
 @Tags('Countries')
@@ -14,7 +14,7 @@ export class CountriesController extends Controller {
   }
 
   @Get()
-  async getCountries(): Promise<Country[]> {
+  async getCountries() {
     return this.countriesService.getCountries();
   }
 
@@ -23,18 +23,8 @@ export class CountriesController extends Controller {
     return this.countriesService.getGoogleTrends();
   }
 
-  @Get('passports')
-  async getPassports(): Promise<Pick<Country, CountryPassports>[]> {
-    return this.countriesService.getPassports();
-  }
-
   @Get(':code')
   async getCountry(@Path('code') code: string): Promise<Country> {
     return this.countriesService.getCountry(code);
-  }
-
-  @Get(':code/passports')
-  async getPassport(@Path('code') code: string): Promise<Pick<Country, CountryPassports | 'passportRequirements'>> {
-    return this.countriesService.getPassport(code);
   }
 }

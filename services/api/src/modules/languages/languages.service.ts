@@ -1,28 +1,21 @@
-import { Language } from '@prisma/client';
 import { prismaClient } from '../../common/libs/prisma';
 
 export class LanguagesService {
-  async getLanguages(): Promise<Language[]> {
-    const languages: Language[] = await prismaClient.language.findMany({
-      include: {
-        countries: {
-          select: { country: { select: { commonName: true, region: true, subregion: true, population: true } } },
-        },
-      },
+  async getLanguages() {
+    const languages = await prismaClient.language.findMany({
+      include: { countries: { select: { country: true } } },
       orderBy: { countries: { _count: 'desc' } },
     });
-    return languages;
+    return languages.map((language) => {
+      return { ...language, countries: language.countries.map(({ country }) => country) };
+    });
   }
 
-  async getLanguage(code: string): Promise<Language> {
-    const language: Language = await prismaClient.language.findFirstOrThrow({
+  async getLanguage(code: string) {
+    const language = await prismaClient.language.findFirstOrThrow({
+      include: { countries: { select: { country: true } } },
       where: { code },
-      include: {
-        countries: {
-          select: { country: { select: { commonName: true, region: true, subregion: true, population: true } } },
-        },
-      },
     });
-    return language;
+    return { ...language, countries: language.countries.map(({ country }) => country) };
   }
 }

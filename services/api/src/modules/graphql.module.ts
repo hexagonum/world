@@ -3,6 +3,7 @@ import { countriesResolvers, countriesTypeDefs } from './countries/graphql/count
 import { currenciesResolvers, currenciesTypeDefs } from './currencies/graphql/currencies.module';
 import { languagesResolvers, languagesTypeDefs } from './languages/graphql/languages.module';
 import { newsResolvers, newsTypeDefs } from './news/graphql/news.module';
+import { passportsResolvers, passportsTypeDefs } from './passports/graphql/passports.module';
 import { organizationsResolvers, organizationsTypeDefs } from './organizations/graphql/organizations.module';
 import { timezonesResolvers, timezonesTypeDefs } from './timezones/graphql/timezones.module';
 
@@ -20,6 +21,7 @@ export const typeDefs = [
   currenciesTypeDefs,
   languagesTypeDefs,
   newsTypeDefs,
+  passportsTypeDefs,
   organizationsTypeDefs,
   timezonesTypeDefs,
 ];
@@ -30,6 +32,7 @@ export const resolvers = mergeResolvers([
   currenciesResolvers,
   languagesResolvers,
   newsResolvers,
+  passportsResolvers,
   organizationsResolvers,
   timezonesResolvers,
 ]);

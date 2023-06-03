@@ -8,7 +8,7 @@ import Link from 'next/link';
 type Language = {
   code: string;
   name: string;
-  countries: { country: { commonName: string; region: string; subregion: string; population: number } }[];
+  countries: { commonName: string; region: string; subregion: string; population: number }[];
 };
 
 type LanguagesPageProps = {
@@ -32,7 +32,7 @@ const LanguagesPage: NextPage<LanguagesPageProps> = ({ languages = [] }) => {
               <Tbody>
                 {languages.map(({ code = '', name = '', countries = [] }) => {
                   const population: number = countries
-                    .map(({ country: { population = 0 } }) => population)
+                    .map(({ population = 0 }) => population)
                     .reduce((previousValue: number, currentValue: number) => previousValue + currentValue, 0);
 
                   return (
