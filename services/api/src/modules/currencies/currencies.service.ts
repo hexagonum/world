@@ -18,7 +18,11 @@ export class CurrenciesService {
       where: { code },
       include: {
         countries: {
-          select: { country: { select: { commonName: true, region: true, subregion: true, population: true } } },
+          select: {
+            country: {
+              select: { commonName: true, cca2: true, cca3: true, region: true, subregion: true, population: true },
+            },
+          },
         },
       },
     });

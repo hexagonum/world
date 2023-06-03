@@ -1,4 +1,4 @@
-import { Table, TableCaption, TableContainer, Tbody, Td, Th, Thead, Tr } from '@chakra-ui/react';
+import { Card, CardBody, Table, TableCaption, TableContainer, Tbody, Td, Th, Thead, Tr } from '@chakra-ui/react';
 import Container from '@world/components/Container';
 import { NEXT_PUBLIC_BASE_API } from '@world/configs';
 import useFetch from '@world/hooks/use-fetch';
@@ -32,15 +32,27 @@ const CurrenciesList: React.FC<CurrenciesListProps> = ({
   data = null,
 }) => {
   if (loading) {
-    return <div className="flex justify-center items-center py-8">Loading</div>;
+    return (
+      <Card className="border border-gray-200">
+        <CardBody>Loading</CardBody>
+      </Card>
+    );
   }
 
   if (error) {
-    return <div className="flex justify-center items-center py-8">{error.message}</div>;
+    return (
+      <Card className="border border-gray-200">
+        <CardBody>{error.message}</CardBody>
+      </Card>
+    );
   }
 
   if (!data) {
-    return <div className="flex justify-center items-center py-8">No Data</div>;
+    return (
+      <Card className="border border-gray-200">
+        <CardBody>No Data</CardBody>
+      </Card>
+    );
   }
 
   const { rates = {}, base = '' } = data;
