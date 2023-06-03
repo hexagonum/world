@@ -7,6 +7,8 @@ export const typeDefs = `#graphql
     commonName: String
     cca2: String
     cca3: String
+    fifa: String
+    flag: String
     region: String
     subregion: String
   }

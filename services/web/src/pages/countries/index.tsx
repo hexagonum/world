@@ -1,37 +1,59 @@
 import { Divider, Input } from '@chakra-ui/react';
 import Container from '@world/components/Container';
-import unitedNationMembers from '@world/data/united-nation-members.json';
+import { apolloClient } from '@world/graphql';
+import { COUNTRIES_QUERY } from '@world/graphql/queries/countries';
 import { Layout } from '@world/layout';
-import { NextPage } from 'next';
+import { unique } from '@world/utils/unique';
+import { GetStaticProps, NextPage } from 'next';
 import Link from 'next/link';
 import { ChangeEvent, useState } from 'react';
 
-export const CountriesPage: NextPage = () => {
+type Country = {
+  commonName: string;
+  cca2: string;
+  cca3: string;
+  fifa: string;
+  flag: String;
+  region: string;
+  subregion: string;
+};
+
+type CountriesPageProps = {
+  countries: Country[];
+};
+
+export const CountriesPage: NextPage<CountriesPageProps> = ({ countries = [] }) => {
   const [query, setQuery] = useState<string>('');
 
-  const countriesByFilter = unitedNationMembers.filter(
-    ({ name: { common = '' }, region = '', subregion = '', cca2 = '', cca3 = '', fifa = '' }) => {
+  const countriesByFilter = countries.filter(
+    ({ commonName = '', region = '', subregion = '', cca2 = '', cca3 = '', fifa = '' }) => {
       const cca2Flag: boolean = query !== '' ? cca2.toLowerCase().includes(query.toLowerCase()) : true;
       const cca3Flag: boolean = query !== '' ? cca3.toLowerCase().includes(query.toLowerCase()) : true;
       const fifaFlag: boolean = query !== '' ? fifa.toLowerCase().includes(query.toLowerCase()) : true;
-      const commonFlag: boolean = query !== '' ? common.toLowerCase().includes(query.toLowerCase()) : true;
+      const commonNameFlag: boolean = query !== '' ? commonName.toLowerCase().includes(query.toLowerCase()) : true;
       const regionFlag: boolean = query !== '' ? region.toLowerCase().includes(query.toLowerCase()) : true;
       const subregionFlag: boolean = query !== '' ? subregion.toLowerCase().includes(query.toLowerCase()) : true;
-      return cca2Flag || cca3Flag || fifaFlag || commonFlag || regionFlag || subregionFlag;
+      return cca2Flag || cca3Flag || fifaFlag || commonNameFlag || regionFlag || subregionFlag;
     }
   );
   const regions: string[] = [...new Set(countriesByFilter.map(({ region = '' }) => region))].sort(
     (a: string, b: string) => (a > b ? 1 : -1)
   );
-  const countriesByRegions: any[] = regions.map((region: string) => {
-    const countriesByRegions: any[] = countriesByFilter.filter(({ region: countryRegion }) => region === countryRegion);
-    const subregions: string[] = [...new Set(countriesByRegions.map(({ subregion = '' }) => subregion))].sort(
+  const countriesByRegions: {
+    region: string;
+    total: number;
+    subregions: { subregion: string; countries: Country[] }[];
+  }[] = regions.map((region: string) => {
+    const countriesByRegions: Country[] = countriesByFilter.filter(
+      ({ region: countryRegion }) => region === countryRegion
+    );
+    const subregions: string[] = unique(countriesByRegions.map(({ subregion = '' }) => subregion)).sort(
       (a: string, b: string) => (a > b ? 1 : -1)
     );
-    const countriesBySubregions: any[] = subregions.map((subregion: string) => {
-      const countries: any[] = countriesByRegions
-        .filter(({ subregion: countrySubregion }: any) => subregion === countrySubregion)
-        .sort((a, b) => (a.name.common > b.name.common ? 1 : -1));
+    const countriesBySubregions: { subregion: string; countries: Country[] }[] = subregions.map((subregion: string) => {
+      const countries: Country[] = countriesByRegions
+        .filter(({ subregion: countrySubregion }: Country) => subregion === countrySubregion)
+        .sort((a, b) => (a.commonName > b.commonName ? 1 : -1));
       return { subregion, countries };
     });
     return { region, total: countriesByRegions.length, subregions: countriesBySubregions };
@@ -64,27 +86,20 @@ export const CountriesPage: NextPage = () => {
                             {subregion} ({countries.length})
                           </h3>
                           <Divider className="border-gray-200" />
-                          {countries.map(
-                            ({
-                              name: { common = '' } = { common: '' },
-                              cca2 = '',
-                              cca3 = '',
-                              fifa = 'N/A',
-                              flag = '',
-                            }) => {
-                              return (
-                                <div key={cca2} className="flex items-center justify-between">
-                                  <div className="flex items-center gap-2">
-                                    <p>{flag}</p>
-                                    <Link href={`/countries/${cca3}`}>
-                                      <pre className="inline">{cca2}</pre> - <pre className="inline">{cca3}</pre> -{' '}
-                                      <pre className="inline">{fifa}</pre> - <pre className="inline">{common}</pre>
-                                    </Link>
-                                  </div>
+                          {countries.map(({ commonName = '', cca2 = '', cca3 = '', fifa = 'N/A', flag = '' }) => {
+                            return (
+                              <div key={cca2} className="flex items-center justify-between">
+                                <div className="flex items-center gap-2">
+                                  <p>{flag}</p>
+                                  <Link href={`/countries/${cca3}`}>
+                                    <pre className="inline">{cca2}</pre> - <pre className="inline">{cca3}</pre> -{' '}
+                                    <pre className="inline">{fifa || 'N/A'}</pre> -{' '}
+                                    <pre className="inline">{commonName}</pre>
+                                  </Link>
                                 </div>
-                              );
-                            }
-                          )}
+                              </div>
+                            );
+                          })}
                         </div>
                       );
                     })}
@@ -98,6 +113,17 @@ export const CountriesPage: NextPage = () => {
       </Container>
     </Layout>
   );
+};
+
+export const getStaticProps: GetStaticProps = async (): Promise<{ props: { countries: Country[] } }> => {
+  try {
+    const data = await apolloClient.query<{ countries: Country[] }>({ query: COUNTRIES_QUERY });
+    const countries = data.data.countries;
+    return { props: { countries } };
+  } catch (error) {
+    console.error(error);
+    return { props: { countries: [] } };
+  }
 };
 
 export default CountriesPage;
