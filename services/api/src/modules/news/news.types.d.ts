@@ -98,6 +98,12 @@ export type Article = {
   content: string;
 };
 
+export type SourcesRequest = {
+  category?: NewsCategory;
+  language?: NewsLanguage;
+  country?: NewsCountry;
+};
+
 export type SourcesResponse = {
   status: string;
   sources: Source[];

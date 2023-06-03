@@ -1,6 +1,6 @@
 import { Controller, Get, Query, Route, Tags } from 'tsoa';
 import { NewsService } from './news.service';
-import { Article, NewsCategory, NewsCountry, Source } from './news.types';
+import { Article, NewsCategory, NewsCountry, NewsLanguage, Source } from './news.types';
 
 @Route('/news')
 @Tags('News')
@@ -23,7 +23,11 @@ export class NewsController extends Controller {
   }
 
   @Get('sources')
-  async getSources(): Promise<Source[]> {
-    return this.newsService.getSources();
+  async getSources(
+    @Query('category') category?: NewsCategory,
+    @Query('language') language?: NewsLanguage,
+    @Query('country') country?: NewsCountry
+  ): Promise<Source[]> {
+    return this.newsService.getSources({ category, country, language });
   }
 }

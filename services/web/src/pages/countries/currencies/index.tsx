@@ -68,7 +68,7 @@ export const CurrenciesPage: NextPage = () => {
                                         (currencies as Record<string, { name: string; symbol: string }>)[code] || '';
                                       return `${code} - ${value.name} (${value.symbol})`;
                                     })
-                                    .sort()
+                                    .sort((a, b) => (a > b ? 1 : -1))
                                     .join(', ')}
                                 </p>
                               ) : (

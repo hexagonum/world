@@ -1,20 +1,24 @@
 import { Input, Table, TableCaption, TableContainer, Tbody, Td, Th, Thead, Tr } from '@chakra-ui/react';
 import Container from '@world/components/Container';
-import unitedNationMembers from '@world/data/united-nation-members.json';
+import { apolloClient } from '@world/graphql';
+import { COUNTRIES_POPULATION_QUERY } from '@world/graphql/queries/countries';
 import Layout from '@world/layout';
-import { NextPage } from 'next';
+import { GetStaticProps, NextPage } from 'next';
 import Link from 'next/link';
 import { ChangeEvent, useState } from 'react';
 
-const clonedUnitedNationMembers = JSON.parse(JSON.stringify(unitedNationMembers));
-clonedUnitedNationMembers.sort((a: any, b: any) => (a.population > b.population ? -1 : 1));
+type Country = { commonName: string; cca3: string; population: number };
 
-export const CurrenciesPage: NextPage = () => {
+type PopulationPageProps = {
+  countries: Country[];
+};
+
+export const PopulationPage: NextPage<PopulationPageProps> = ({ countries = [] }) => {
   const [query, setQuery] = useState<string>('');
 
-  const countriesByFilter = clonedUnitedNationMembers.filter(({ name: { common = '' } }) => {
-    const commonFlag: boolean = query !== '' ? common.toLowerCase().includes(query.toLowerCase()) : true;
-    return commonFlag;
+  const countriesByFilter = countries.filter(({ commonName = '' }) => {
+    const commonNameFlag: boolean = query !== '' ? commonName.toLowerCase().includes(query.toLowerCase()) : true;
+    return commonNameFlag;
   });
 
   return (
@@ -41,13 +45,14 @@ export const CurrenciesPage: NextPage = () => {
                     </Tr>
                   </Thead>
                   <Tbody>
-                    {countriesByFilter.map(({ name: { common = '' }, cca3 = '', population = 0 }, index: number) => {
+                    {countriesByFilter.map(({ commonName = '', cca3 = '', population = 0 }, index: number) => {
                       return (
-                        <Tr key={common}>
+                        <Tr key={cca3}>
                           <Td>{index + 1}</Td>
                           <Td>
-                            <Link href={`/countries/${cca3}`}>{common}</Link>
+                            <Link href={`/countries/${cca3}`}>{commonName}</Link>
                           </Td>
+
                           <Td isNumeric>{population.toLocaleString()}</Td>
                         </Tr>
                       );
@@ -66,4 +71,16 @@ export const CurrenciesPage: NextPage = () => {
   );
 };
 
-export default CurrenciesPage;
+export const getStaticProps: GetStaticProps = async (): Promise<{ props: { countries: Country[] } }> => {
+  try {
+    const data = await apolloClient.query<{ countries: Country[] }>({ query: COUNTRIES_POPULATION_QUERY });
+    const countries: Country[] = [...data.data.countries];
+    countries.sort((a, b) => b.population - a.population);
+    return { props: { countries } };
+  } catch (error) {
+    console.error(error);
+    return { props: { countries: [] } };
+  }
+};
+
+export default PopulationPage;

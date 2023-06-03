@@ -1,6 +1,6 @@
 import { API_KEY_NEWS } from '../../common/environments';
 import { farfetch } from '../../common/libs/farfetch';
-import { Article, HeadlinesRequest, HeadlinesResponse, Source, SourcesResponse } from './news.types';
+import { Article, HeadlinesRequest, HeadlinesResponse, Source, SourcesRequest, SourcesResponse } from './news.types';
 
 const BASE_URL = 'https://newsapi.org/v2';
 
@@ -24,8 +24,13 @@ export class NewsService {
     }
   }
 
-  public async getSources(): Promise<Source[]> {
-    const url = `${BASE_URL}/top-headlines/sources?apiKey=${API_KEY_NEWS}`;
+  public async getSources({ category, country, language }: SourcesRequest): Promise<Source[]> {
+    const urlSearchParams = new URLSearchParams();
+    urlSearchParams.set('apiKey', API_KEY_NEWS);
+    if (category) urlSearchParams.set('category', category);
+    if (country) urlSearchParams.set('country', country);
+    if (language) urlSearchParams.set('language', language);
+    const url = `${BASE_URL}/top-headlines/sources?${urlSearchParams.toString()}`;
     try {
       const data = await farfetch<SourcesResponse>(url);
       const sources: Source[] = data.sources;

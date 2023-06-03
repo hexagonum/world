@@ -736,7 +736,11 @@ export function RegisterRoutes(app: Router) {
     ...fetchMiddlewares<RequestHandler>(NewsController.prototype.getSources),
 
     function NewsController_getSources(request: any, response: any, next: any) {
-      const args = {};
+      const args = {
+        category: { in: 'query', name: 'category', ref: 'NewsCategory' },
+        language: { in: 'query', name: 'language', ref: 'NewsLanguage' },
+        country: { in: 'query', name: 'country', ref: 'NewsCountry' },
+      };
 
       // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
 

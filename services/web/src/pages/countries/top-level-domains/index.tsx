@@ -1,22 +1,25 @@
-import { Badge, Input, Table, TableCaption, TableContainer, Tbody, Td, Th, Thead, Tr } from '@chakra-ui/react';
+import { Input, Table, TableCaption, TableContainer, Tbody, Td, Th, Thead, Tr } from '@chakra-ui/react';
 import Container from '@world/components/Container';
-import unitedNationMembers from '@world/data/united-nation-members.json';
+import { apolloClient } from '@world/graphql';
+import { COUNTRIES_TOP_LEVEL_DOMAINS_QUERY } from '@world/graphql/queries/countries';
 import Layout from '@world/layout';
-import { NextPage } from 'next';
+import { GetStaticProps, NextPage } from 'next';
 import Link from 'next/link';
 import { ChangeEvent, useState } from 'react';
 
-const clonedUnitedNationMembers = JSON.parse(JSON.stringify(unitedNationMembers));
-clonedUnitedNationMembers.sort((a: any, b: any) => (a.tld.length > b.tld.length ? -1 : 1));
+type Country = { commonName: string; cca3: string; topLevelDomains: string[] };
 
-export const TopLevelDomainsPage: NextPage = () => {
+type TopLevelDomainsPageProps = {
+  countries: Country[];
+};
+export const TopLevelDomainsPage: NextPage<TopLevelDomainsPageProps> = ({ countries = [] }) => {
   const [query, setQuery] = useState<string>('');
 
-  const countriesByFilter = clonedUnitedNationMembers.filter(({ name: { common = '' }, tld = [] }) => {
-    const tldFlag: boolean =
-      query !== '' ? tld.some((code: string) => code.toLowerCase().includes(query.toLowerCase())) : true;
-    const commonFlag: boolean = query !== '' ? common.toLowerCase().includes(query.toLowerCase()) : true;
-    return tldFlag || commonFlag;
+  const countriesByFilter = countries.filter(({ commonName = '', topLevelDomains = [] }) => {
+    const topLevlDomainsFlag: boolean =
+      query !== '' ? topLevelDomains.some((code: string) => code.toLowerCase().includes(query.toLowerCase())) : true;
+    const commonNameFlag: boolean = query !== '' ? commonName.toLowerCase().includes(query.toLowerCase()) : true;
+    return topLevlDomainsFlag || commonNameFlag;
   });
 
   return (
@@ -43,18 +46,18 @@ export const TopLevelDomainsPage: NextPage = () => {
                     </Tr>
                   </Thead>
                   <Tbody>
-                    {countriesByFilter.map(({ name: { common = '' }, cca3 = '', tld = [] }) => {
+                    {countriesByFilter.map(({ commonName = '', cca3 = '', topLevelDomains = [] }) => {
                       return (
-                        <Tr key={common}>
+                        <Tr key={cca3}>
                           <Td>
-                            <Link href={`/countries/${cca3}`}>{common}</Link>
+                            <Link href={`/countries/${cca3}`}>{commonName}</Link>
                           </Td>
-                          <Td isNumeric>{tld.length}</Td>
+                          <Td isNumeric>{topLevelDomains.length}</Td>
                           <Td>
                             <div className="whitespace-normal">
-                              {tld.length > 0 ? (
+                              {topLevelDomains.length > 0 ? (
                                 <div className="flex flex-wrap items-center gap-1 md:gap-2">
-                                  {tld.map((domain: string) => domain).join(', ')}
+                                  {topLevelDomains.map((domain: string) => domain).join(', ')}
                                 </div>
                               ) : (
                                 <p>Island Nation</p>
@@ -76,6 +79,18 @@ export const TopLevelDomainsPage: NextPage = () => {
       </Container>
     </Layout>
   );
+};
+
+export const getStaticProps: GetStaticProps = async (): Promise<{ props: { countries: Country[] } }> => {
+  try {
+    const data = await apolloClient.query<{ countries: Country[] }>({ query: COUNTRIES_TOP_LEVEL_DOMAINS_QUERY });
+    const countries: Country[] = [...data.data.countries];
+    countries.sort((a, b) => b.topLevelDomains.length - a.topLevelDomains.length);
+    return { props: { countries } };
+  } catch (error) {
+    console.error(error);
+    return { props: { countries: [] } };
+  }
 };
 
 export default TopLevelDomainsPage;
