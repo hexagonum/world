@@ -6,5 +6,7 @@ export const typeDefs = `#graphql
   type Timezone {
     code: String
     name: String
+    offset: String
+    utcOffset: String
   }
 `;

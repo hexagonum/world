@@ -95,6 +95,16 @@ export const COUNTRIES_POPULATION_QUERY: DocumentNode = gql`
   }
 `;
 
+export const COUNTRIES_TIMEZONES_QUERY: DocumentNode = gql`
+  query COUNTRIES_TIMEZONES_QUERY {
+    countries {
+      code
+      commonName
+      timezones
+    }
+  }
+`;
+
 export const COUNTRIES_TOP_LEVEL_DOMAINS_QUERY: DocumentNode = gql`
   query COUNTRIES_TOP_LEVEL_DOMAINS_QUERY {
     countries {

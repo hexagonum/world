@@ -1,22 +1,26 @@
-import { Input, Table, TableCaption, TableContainer, Tbody, Td, Th, Thead, Tr } from '@chakra-ui/react';
+import { Badge, Input, Table, TableCaption, TableContainer, Tbody, Td, Th, Thead, Tr } from '@chakra-ui/react';
 import Container from '@world/components/Container';
-import unitedNationMembers from '@world/data/united-nation-members.json';
+import { apolloClient } from '@world/graphql';
+import { COUNTRIES_TIMEZONES_QUERY } from '@world/graphql/queries/countries';
 import Layout from '@world/layout';
-import { NextPage } from 'next';
+import { GetStaticProps, NextPage } from 'next';
 import Link from 'next/link';
 import { ChangeEvent, useState } from 'react';
 
-const clonedUnitedNationMembers = JSON.parse(JSON.stringify(unitedNationMembers));
-clonedUnitedNationMembers.sort((a: any, b: any) => (a.timezones.length > b.timezones.length ? -1 : 1));
+type Country = { code: string; commonName: string; timezones: string[] };
 
-export const TopLevelDomainsPage: NextPage = () => {
+type TimezonesPageProps = {
+  countries: Country[];
+};
+
+export const TimezonesPage: NextPage<TimezonesPageProps> = ({ countries }) => {
   const [query, setQuery] = useState<string>('');
 
-  const countriesByFilter = clonedUnitedNationMembers.filter(({ name: { common = '' }, timezones = [] }) => {
+  const countriesByFilter = countries.filter(({ commonName = '', timezones = [] }) => {
     const timezonesFlag: boolean =
       query !== '' ? timezones.some((timezone: string) => timezone.toLowerCase().includes(query.toLowerCase())) : true;
-    const commonFlag: boolean = query !== '' ? common.toLowerCase().includes(query.toLowerCase()) : true;
-    return timezonesFlag || commonFlag;
+    const commonNameFlag: boolean = query !== '' ? commonName.toLowerCase().includes(query.toLowerCase()) : true;
+    return timezonesFlag || commonNameFlag;
   });
 
   return (
@@ -43,21 +47,25 @@ export const TopLevelDomainsPage: NextPage = () => {
                     </Tr>
                   </Thead>
                   <Tbody>
-                    {countriesByFilter.map(({ name: { common = '' }, cca3 = '', timezones = [] }) => {
+                    {countriesByFilter.map(({ commonName, code = '', timezones = [] }) => {
                       return (
-                        <Tr key={common}>
+                        <Tr key={code}>
                           <Td>
-                            <Link href={`/countries/${cca3}`}>{common}</Link>
+                            <Link href={`/countries/${code}`}>{commonName}</Link>
                           </Td>
                           <Td isNumeric>{timezones.length}</Td>
                           <Td>
                             <div className="whitespace-normal">
                               {timezones.length > 0 ? (
                                 <div className="flex flex-wrap items-center gap-1 md:gap-2">
-                                  {timezones.map((domain: string) => domain).join(', ')}
+                                  {timezones.map((timezone) => (
+                                    <Link key={timezone} href={`/timezones/${timezone}`}>
+                                      <Badge colorScheme="teal">{timezone}</Badge>
+                                    </Link>
+                                  ))}
                                 </div>
                               ) : (
-                                <p>Island Nation</p>
+                                <></>
                               )}
                             </div>
                           </Td>
@@ -78,4 +86,16 @@ export const TopLevelDomainsPage: NextPage = () => {
   );
 };
 
-export default TopLevelDomainsPage;
+export const getStaticProps: GetStaticProps = async (): Promise<{ props: { countries: Country[] } }> => {
+  try {
+    const data = await apolloClient.query<{ countries: Country[] }>({ query: COUNTRIES_TIMEZONES_QUERY });
+    const countries: Country[] = [...data.data.countries];
+    countries.sort((a, b) => b.timezones.length - a.timezones.length);
+    return { props: { countries } };
+  } catch (error) {
+    console.error(error);
+    return { props: { countries: [] } };
+  }
+};
+
+export default TimezonesPage;

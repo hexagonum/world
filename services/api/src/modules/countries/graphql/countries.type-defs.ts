@@ -5,7 +5,9 @@ export const typeDefs = `#graphql
 
   type Country {
     commonName: String
+    officialName: String
     # Code
+    code: String
     cca2: String
     cca3: String
     fifa: String
@@ -21,6 +23,8 @@ export const typeDefs = `#graphql
     # Region
     region: String
     subregion: String
+    # Timezones
+    timezones: [String]
     # Other
     currencies: [Currency]
     languages: [Language]

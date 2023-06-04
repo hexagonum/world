@@ -1,6 +1,9 @@
 name: Rendering
 
 on:
+  push:
+    branches:
+      - master
   schedule:
     - cron: '*/10 * * * *'
 
