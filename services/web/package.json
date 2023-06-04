@@ -18,7 +18,7 @@
     "start": "next start",
     "lint": "next lint",
     "test": "jest",
-    "prebuild": "ts-node ./scripts/extract/trends.ts && rimraf .next out",
+    "prebuild": "rimraf .next out",
     "prepare": "husky install || true"
   },
   "dependencies": {
