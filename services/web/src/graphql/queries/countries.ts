@@ -15,6 +15,7 @@ export const COUNTRIES_QUERY: DocumentNode = gql`
       region
       subregion
       flag
+      flagSVG
       population
       area
       density
@@ -160,11 +161,43 @@ export const COUNTRIES_TOP_LEVEL_DOMAINS_QUERY: DocumentNode = gql`
 `;
 
 export const COUNTRY_QUERY: DocumentNode = gql`
-  query COUNTRY_QUERY {
-    country {
+  query COUNTRY_QUERY($code: String!) {
+    country(code: $code) {
+      code
       cca2
       cca3
+      ccn3
+      cioc
       fifa
+      commonName
+      officialName
+      region
+      subregion
+      flag
+      flagSVG
+      population
+      area
+      density
+      capital
+      googleMaps
+      borders
+      timezones
+      topLevelDomains
+      latitude
+      longitude
+      googleMaps
+      currencies {
+        code
+        name
+      }
+      languages {
+        code
+        name
+      }
+      organizations {
+        code
+        name
+      }
     }
   }
 `;

@@ -122,8 +122,8 @@ const CompareMain: React.FC = () => {
               <Td>
                 <b>Capital</b>
               </Td>
-              <Td>{(country?.capital || []).join(', ')}</Td>
-              <Td>{(comparedCountry?.capital || []).join(', ')}</Td>
+              <Td>{(country?.capital ?? []).join(', ')}</Td>
+              <Td>{(comparedCountry?.capital ?? []).join(', ')}</Td>
             </Tr>
             <Tr>
               <Td>
@@ -138,7 +138,7 @@ const CompareMain: React.FC = () => {
               </Td>
               <Td>
                 <div className="flex flex-wrap gap-1 md:gap-2">
-                  {(country?.currencies || []).map(({ code, name }) => {
+                  {(country?.currencies ?? []).map(({ code, name }) => {
                     return (
                       <Link key={code} href={`/currencies/${code}`}>
                         <Badge colorScheme="teal">{name}</Badge>
@@ -149,7 +149,7 @@ const CompareMain: React.FC = () => {
               </Td>
               <Td>
                 <div className="flex flex-wrap gap-1 md:gap-2">
-                  {(comparedCountry?.currencies || []).map(({ code, name }) => {
+                  {(comparedCountry?.currencies ?? []).map(({ code, name }) => {
                     return (
                       <Link key={code} href={`/currencies/${code}`}>
                         <Badge colorScheme="teal">{name}</Badge>
@@ -165,7 +165,7 @@ const CompareMain: React.FC = () => {
               </Td>
               <Td>
                 <div className="flex flex-wrap gap-1 md:gap-2">
-                  {(country?.languages || []).map(({ code, name }) => {
+                  {(country?.languages ?? []).map(({ code, name }) => {
                     return (
                       <Link key={code} href={`/languages/${code}`}>
                         <Badge colorScheme="teal">{name}</Badge>
@@ -176,7 +176,7 @@ const CompareMain: React.FC = () => {
               </Td>
               <Td>
                 <div className="flex flex-wrap gap-1 md:gap-2">
-                  {(comparedCountry?.languages || []).map(({ code, name }) => {
+                  {(comparedCountry?.languages ?? []).map(({ code, name }) => {
                     return (
                       <Link key={code} href={`/languages/${code}`}>
                         <Badge colorScheme="teal">{name}</Badge>
@@ -243,7 +243,7 @@ const CompareMain: React.FC = () => {
               </Td>
               <Td>
                 <div className="flex flex-wrap gap-1 md:gap-2">
-                  {(country?.timezones || []).map((timezone: string) => (
+                  {(country?.timezones ?? []).map((timezone: string) => (
                     <Link key={timezone} href={`/timezones/${timezone}`}>
                       <Badge colorScheme="teal">{timezone}</Badge>
                     </Link>
@@ -252,7 +252,7 @@ const CompareMain: React.FC = () => {
               </Td>
               <Td>
                 <div className="flex flex-wrap gap-1 md:gap-2">
-                  {(comparedCountry?.timezones || []).map((timezone: string) => (
+                  {(comparedCountry?.timezones ?? []).map((timezone: string) => (
                     <Link key={timezone} href={`/timezones/${timezone}`}>
                       <Badge colorScheme="teal">{timezone}</Badge>
                     </Link>
@@ -268,7 +268,7 @@ const CompareMain: React.FC = () => {
               </Td>
               <Td>
                 <div className="flex flex-wrap gap-1 md:gap-2">
-                  {(country?.borders || []).map((border: string) => {
+                  {(country?.borders ?? []).map((border: string) => {
                     return (
                       <Link key={`/${border}`} href={`/countries/${border}`}>
                         <Badge colorScheme="teal">{codeCountryMap[border]}</Badge>
@@ -324,7 +324,7 @@ const CompareMain: React.FC = () => {
               </Td>
               <Td>
                 <div className="flex flex-wrap gap-1 md:gap-2">
-                  {(country?.organizations || []).map(({ code, name = '' }: { code: string; name: string }) => {
+                  {(country?.organizations ?? []).map(({ code, name = '' }: { code: string; name: string }) => {
                     return (
                       <Link key={code} href={`/organizations/${code}`}>
                         <Badge colorScheme="teal">{code}</Badge>
@@ -335,13 +335,15 @@ const CompareMain: React.FC = () => {
               </Td>
               <Td>
                 <div className="flex flex-wrap gap-1 md:gap-2">
-                  {(comparedCountry?.organizations || []).map(({ code, name = '' }: { code: string; name: string }) => {
-                    return (
-                      <Link key={code} href={`/organizations/${code}`}>
-                        <Badge colorScheme="teal">{code}</Badge>
-                      </Link>
-                    );
-                  })}
+                  {(comparedCountry?.organizations ?? []).map(
+                    ({ code = '', name = '' }: { code: string; name: string }) => {
+                      return (
+                        <Link key={code} href={`/organizations/${code}`}>
+                          <Badge colorScheme="teal">{name}</Badge>
+                        </Link>
+                      );
+                    }
+                  )}
                 </div>
               </Td>
             </Tr>

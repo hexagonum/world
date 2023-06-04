@@ -56,6 +56,22 @@ model Country {
   googleTrends          GoogleTrend[]
 }
 
+model City {
+  id          String @id
+  country     String @default("")
+  countryCode String @default("")
+  region      String @default("")
+  subregion   String @default("")
+  state       String @default("")
+  stateCode   String @default("")
+  stateLevel  String @default("")
+  city        String @default("")
+  cityCode    String @default("")
+  cityLevel   String @default("")
+  latitude    Float  @default(0)
+  longitude   Float  @default(0)
+}
+
 model Currency {
   code      String                  @id
   name      String                  @default("")

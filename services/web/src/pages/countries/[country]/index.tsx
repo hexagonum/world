@@ -1,11 +1,11 @@
+import { useQuery } from '@apollo/client';
 import { Badge, Card, CardBody, Divider, Table, TableContainer, Tbody, Td, Tr } from '@chakra-ui/react';
 import Articles from '@world/components/Articles';
 import { Container } from '@world/components/Container';
 import { Weather } from '@world/components/Weather';
 import { cities } from '@world/data/cities';
 import isoAlpha3Codes from '@world/data/codes/iso-alpha-3.json';
-import trendsByCountries from '@world/data/trends.json';
-import unitedNationMembers from '@world/data/united-nation-members.json';
+import { COUNTRY_QUERY } from '@world/graphql/queries/countries';
 import { Layout } from '@world/layout';
 import { City } from '@world/types';
 import { NextPage } from 'next';
@@ -13,7 +13,35 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 
-const CodeSection: React.FC<{ country: any }> = ({ country }) => {
+type Country = {
+  code: string;
+  commonName: string;
+  officialName: string;
+  cca2: string;
+  flagSVG: string;
+  cca3: string;
+  ccn3: string;
+  cioc: string;
+  fifa: string;
+  region: string;
+  subregion: string;
+  population: number;
+  area: number;
+  density: number;
+  latitude: number;
+  longitude: number;
+  googleMaps: string;
+  capital: string[];
+  borders: string[];
+  timezones: string[];
+  googleTrends: string[];
+  topLevelDomains: string[];
+  currencies: { code: string; name: string }[];
+  languages: { code: string; name: string }[];
+  organizations: { code: string; name: string }[];
+};
+
+const CodeSection: React.FC<{ country: Country }> = ({ country }) => {
   return (
     <section className="flex flex-col gap-4 md:gap-8">
       <h2 className="font-semibold text-xl">Codes</h2>
@@ -53,20 +81,12 @@ const CodeSection: React.FC<{ country: any }> = ({ country }) => {
             <Tr>
               <Td>
                 <Link href="/countries/top-level-domains">
-                  <b>Top-level Domain ({country.tld.length})</b>
+                  <b>Top-level Domain ({country.topLevelDomains.length})</b>
                 </Link>
               </Td>
               <Td>
-                <p className="whitespace-normal text-right">{country.tld.map((domain: string) => domain).join(', ')}</p>
-              </Td>
-            </Tr>
-            <Tr>
-              <Td>
-                <b>IDD Prefixes ({country.idd.suffixes.length})</b>
-              </Td>
-              <Td isNumeric>
                 <p className="whitespace-normal text-right">
-                  {country.idd.suffixes.map((suffix: string) => `${country.idd.root}${suffix}`).join(', ')}
+                  {country.topLevelDomains.map((domain: string) => domain).join(', ')}
                 </p>
               </Td>
             </Tr>
@@ -78,7 +98,7 @@ const CodeSection: React.FC<{ country: any }> = ({ country }) => {
   );
 };
 
-const GeographySection: React.FC<{ country: any }> = ({ country }) => {
+const GeographySection: React.FC<{ country: Country }> = ({ country }) => {
   return (
     <section className="flex flex-col gap-4 md:gap-8">
       <h2 className="font-semibold text-xl">Geography</h2>
@@ -107,15 +127,15 @@ const GeographySection: React.FC<{ country: any }> = ({ country }) => {
                 </span>
               </Td>
               <Td isNumeric>
-                <Link href={country.maps.googleMaps} target="_blank">
+                <Link href={country.googleMaps} target="_blank">
                   <Badge colorScheme="teal" variant="outline" className="px-2">
                     <span>
-                      {country.latlng[0]}&deg;{country.latlng[0] >= 0 ? 'N' : 'S'}
+                      {country.latitude}&deg;{country.latitude >= 0 ? 'N' : 'S'}
                     </span>
                     {', '}
                     <span>
-                      {country.latlng[1]}&deg;
-                      {country.latlng[1] >= 0 ? 'E' : 'W'}
+                      {country.longitude}&deg;
+                      {country.longitude >= 0 ? 'E' : 'W'}
                     </span>
                   </Badge>
                 </Link>
@@ -163,7 +183,7 @@ const GeographySection: React.FC<{ country: any }> = ({ country }) => {
   );
 };
 
-const PopulationSection: React.FC<{ country: any }> = ({ country }) => {
+const PopulationSection: React.FC<{ country: Country }> = ({ country }) => {
   return (
     <section className="flex flex-col gap-4 md:gap-8">
       <h2 className="font-semibold text-xl">Population</h2>
@@ -253,162 +273,169 @@ const NewsSection: React.FC<{ cca2: string }> = ({ cca2 = '' }) => {
   );
 };
 
-const defaultCountry = {
-  name: { common: '', official: '' },
-  flags: { svg: '' },
-  cca2: '',
-  cca3: '',
-  ccn3: '',
-  cioc: '',
-  fifa: '',
-  region: '',
-  subregion: '',
-  tld: [],
-  latlng: [0, 0],
-  area: 0,
-  density: 0,
-  population: 0,
-  maps: { googleMaps: '', openStreetMaps: '' },
-  idd: { root: '', suffixes: [] },
-  capital: [],
-  languages: {},
-  borders: [],
-  currencies: {},
-  timezones: [],
-  organizations: [],
+const CountryMain: React.FC<{ code: string }> = ({ code = '' }) => {
+  const { loading, error, data } = useQuery<{ country: Country }>(COUNTRY_QUERY, { variables: { code } });
+
+  if (loading) {
+    return (
+      <Card className="border border-gray-200">
+        <CardBody>
+          <p className="text-center">Loading</p>
+        </CardBody>
+      </Card>
+    );
+  }
+
+  if (error) {
+    return (
+      <Card className="border border-gray-200">
+        <CardBody>
+          <p className="text-center">{error.message}</p>
+        </CardBody>
+      </Card>
+    );
+  }
+
+  if (!data?.country) {
+    return (
+      <Card className="border border-gray-200">
+        <CardBody>
+          <p className="text-center">No Data</p>
+        </CardBody>
+      </Card>
+    );
+  }
+
+  const country = data.country;
+  const citiesByCountry = cities.filter(
+    ({ country: cityCountry }) => country.commonName.toLowerCase() === cityCountry.toLowerCase()
+  );
+
+  return (
+    <div className="flex flex-col gap-4 md:gap-8">
+      <div className="flex flex-col gap-4 md:gap-8">
+        <div className="flex items-center justify-between">
+          <h1 className="capitalize text-4xl font-bold">{country.commonName}</h1>
+          <Image
+            src={country.flagSVG}
+            alt={country.commonName}
+            width={64}
+            height={32}
+            className="border border-solid rounded"
+          />
+        </div>
+        <TableContainer className="border rounded shadow">
+          <Table>
+            <Tbody>
+              <Tr>
+                <Td>
+                  <b>Capital</b>
+                </Td>
+                <Td isNumeric>{country.capital.join(', ')}</Td>
+              </Tr>
+              <Tr>
+                <Td>
+                  <b>Official</b>
+                </Td>
+                <Td isNumeric>{country.officialName}</Td>
+              </Tr>
+              <Tr>
+                <Td>
+                  <Link href="/countries/currencies">
+                    <b>Currencies ({country.currencies.length})</b>
+                  </Link>
+                </Td>
+                <Td>
+                  <div className="flex flex-wrap justify-end gap-1 md:gap-2">
+                    {country.currencies.map(({ code, name }) => {
+                      return (
+                        <Link key={code} href={`/currencies/${code}`}>
+                          <Badge colorScheme="teal">{name}</Badge>
+                        </Link>
+                      );
+                    })}
+                  </div>
+                </Td>
+              </Tr>
+              <Tr>
+                <Td>
+                  <Link href="/countries/languages">
+                    <b>Languages ({country.languages.length})</b>
+                  </Link>
+                </Td>
+                <Td>
+                  <div className="flex flex-wrap justify-end gap-1 md:gap-2">
+                    {country.languages.map(({ code, name }) => {
+                      return (
+                        <Link key={code} href={`/languages/${code}`}>
+                          <Badge colorScheme="teal">{name}</Badge>
+                        </Link>
+                      );
+                    })}
+                  </div>
+                </Td>
+              </Tr>
+            </Tbody>
+          </Table>
+        </TableContainer>
+        <Divider className="border-gray-300" />
+      </div>
+      <CodeSection country={country} />
+      <GeographySection country={country} />
+      <PopulationSection country={country} />
+      <OrganizationsSection organizations={country.organizations} />
+      {citiesByCountry.length > 0 ? (
+        <>
+          <div className="flex flex-col gap-4 md:gap-8">
+            <h2 className="font-semibold text-xl">Weather ({citiesByCountry.length})</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8">
+              {citiesByCountry.map(({ id, name, latitude, longitude, timezone }: City) => (
+                <Weather key={id} city={name} latitude={latitude} longitude={longitude} timezone={timezone} />
+              ))}
+            </div>
+          </div>
+          <Divider className="border-gray-300" />
+        </>
+      ) : (
+        <></>
+      )}
+      {(country.googleTrends || []).length > 0 ? (
+        <div className="flex flex-col gap-4 md:gap-8">
+          <h2 className="font-semibold text-xl">Google Trends ({country.googleTrends.length})</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-8">
+            {country.googleTrends.map((query: string) => {
+              const encodedQuery: string = encodeURIComponent(query);
+              const googleUrl: string = `https://www.google.com/search?q=${encodedQuery}`;
+              return (
+                <Card key={query} className="border border-gray-200">
+                  <CardBody>
+                    <Link href={googleUrl} target="_blank">
+                      <p className="truncate">{query}</p>
+                    </Link>
+                  </CardBody>
+                </Card>
+              );
+            })}
+          </div>
+          <Divider className="border-gray-300" />
+        </div>
+      ) : (
+        <></>
+      )}
+      {country.cca2.length > 0 ? <NewsSection cca2={country.cca2} /> : <></>}
+    </div>
+  );
 };
 
 const CountryPage: NextPage = () => {
   const { query } = useRouter();
   const countryCode: string = query.country?.toString() ?? '';
-  const country =
-    unitedNationMembers.find(({ cca3 }) => cca3.toLowerCase() === countryCode.toLowerCase()) ?? defaultCountry;
-  const citiesByCountry = cities.filter(
-    ({ country: cityCountry }) => country.name.common.toLowerCase() === cityCountry.toLowerCase()
-  );
-  const { trends = [] }: { trends: string[] } = trendsByCountries.find(
-    ({ country: trendCountry }) => country.name.common.toLowerCase() === trendCountry.toLowerCase()
-  ) ?? { trends: [] };
 
   return (
     <Layout>
       <Container>
         <div className="p-8">
-          <div className="flex flex-col gap-4 md:gap-8">
-            <div className="flex flex-col gap-4 md:gap-8">
-              <div className="flex items-center justify-between">
-                <h1 className="capitalize text-4xl font-bold">{country.name.common}</h1>
-                <Image
-                  src={country.flags.svg}
-                  alt={country.name.common}
-                  width={64}
-                  height={32}
-                  className="border border-solid rounded"
-                />
-              </div>
-              <TableContainer className="border rounded shadow">
-                <Table>
-                  <Tbody>
-                    <Tr>
-                      <Td>
-                        <b>Capital</b>
-                      </Td>
-                      <Td isNumeric>{country.capital.join(', ')}</Td>
-                    </Tr>
-                    <Tr>
-                      <Td>
-                        <b>Official</b>
-                      </Td>
-                      <Td isNumeric>{country.name.official}</Td>
-                    </Tr>
-                    <Tr>
-                      <Td>
-                        <Link href="/countries/currencies">
-                          <b>Currencies ({Object.keys(country.currencies).length})</b>
-                        </Link>
-                      </Td>
-                      <Td>
-                        <div className="flex flex-wrap justify-end gap-1 md:gap-2">
-                          {Object.keys(country.currencies).map((code: string) => {
-                            const currency: { name: string; symbol: string } =
-                              (country.currencies as Record<string, { name: string; symbol: string }>)[code] || '';
-                            return (
-                              <Link key={code} href={`/currencies/${code}`}>
-                                <Badge colorScheme="teal">{currency.name}</Badge>
-                              </Link>
-                            );
-                          })}
-                        </div>
-                      </Td>
-                    </Tr>
-                    <Tr>
-                      <Td>
-                        <Link href="/countries/languages">
-                          <b>Languages ({Object.keys(country.languages).length})</b>
-                        </Link>
-                      </Td>
-                      <Td>
-                        <div className="flex flex-wrap justify-end gap-1 md:gap-2">
-                          {Object.keys(country.languages).map((code: string) => {
-                            const name: string = (country.languages as Record<string, string>)[code] || '';
-                            return (
-                              <Link key={code} href={`/languages/${code}`}>
-                                <Badge colorScheme="teal">{name}</Badge>
-                              </Link>
-                            );
-                          })}
-                        </div>
-                      </Td>
-                    </Tr>
-                  </Tbody>
-                </Table>
-              </TableContainer>
-              <Divider className="border-gray-300" />
-            </div>
-            <CodeSection country={country} />
-            <GeographySection country={country} />
-            <PopulationSection country={country} />
-            <OrganizationsSection organizations={country.organizations} />
-            {citiesByCountry.length > 0 ? (
-              <>
-                <div className="flex flex-col gap-4 md:gap-8">
-                  <h2 className="font-semibold text-xl">Weather ({citiesByCountry.length})</h2>
-                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8">
-                    {citiesByCountry.map(({ id, name, latitude, longitude, timezone }: City) => (
-                      <Weather key={id} city={name} latitude={latitude} longitude={longitude} timezone={timezone} />
-                    ))}
-                  </div>
-                </div>
-                <Divider className="border-gray-300" />
-              </>
-            ) : (
-              <></>
-            )}
-            {trends.length > 0 ? (
-              <div className="flex flex-col gap-4 md:gap-8">
-                <h2 className="font-semibold text-xl">Google Trends ({trends.length})</h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-8">
-                  {trends.map((trend: string) => {
-                    const query: string = encodeURIComponent(trend);
-                    const googleUrl: string = `https://www.google.com/search?q=${query}`;
-                    return (
-                      <Card key={trend} className="border border-gray-200">
-                        <CardBody>
-                          <Link href={googleUrl} target="_blank">
-                            <p className="truncate">{trend}</p>
-                          </Link>
-                        </CardBody>
-                      </Card>
-                    );
-                  })}
-                </div>
-                <Divider className="border-gray-300" />
-              </div>
-            ) : (
-              <></>
-            )}
-            {country.cca2.length > 0 ? <NewsSection cca2={country.cca2} /> : <></>}
-          </div>
+          <CountryMain code={countryCode} />
         </div>
       </Container>
     </Layout>

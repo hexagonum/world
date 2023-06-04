@@ -24,6 +24,8 @@ export const typeDefs = `#graphql
     borders: [String]
     # Flag
     flag: String
+    flagPNG: String
+    flagSVG: String
     # Region
     region: String
     subregion: String
@@ -34,5 +36,8 @@ export const typeDefs = `#graphql
     languages: [Language]
     organizations: [Organization]
     googleTrends: [String]
+    latitude: Float
+    longitude: Float
+    googleMaps: String
   }
 `;

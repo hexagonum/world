@@ -9,7 +9,7 @@
           "description": "",
           "item": [
             {
-              "id": "5cba20fe-a8c1-4149-b2f1-b6585af92436",
+              "id": "6088b981-b536-48f9-912c-75569a9b8cf4",
               "name": "Get Timezone",
               "request": {
                 "name": "Get Timezone",
@@ -27,7 +27,7 @@
               },
               "response": [
                 {
-                  "id": "6871ab82-358a-4825-a277-74241dabd8c6",
+                  "id": "b76d15c7-19c8-4fe5-807a-28b212fc3e74",
                   "name": "Ok",
                   "originalRequest": {
                     "url": { "path": ["timezones", ":code"], "host": ["{{baseUrl}}"], "query": [], "variable": [] },
@@ -49,7 +49,7 @@
           ]
         },
         {
-          "id": "c60134b3-5bea-4720-9f02-327967c7e5e4",
+          "id": "f927f391-27d6-425b-9c14-fab56311efd4",
           "name": "Get Timezones",
           "request": {
             "name": "Get Timezones",
@@ -62,7 +62,7 @@
           },
           "response": [
             {
-              "id": "2ca29646-5ce6-4757-87ff-002a30ce1a9c",
+              "id": "d7850d02-b39f-4c16-b428-2b5119387d84",
               "name": "Ok",
               "originalRequest": {
                 "url": { "path": ["timezones"], "host": ["{{baseUrl}}"], "query": [], "variable": [] },
@@ -92,7 +92,7 @@
           "description": "",
           "item": [
             {
-              "id": "36cd1acc-55ff-4a50-8620-25e50e0c3c11",
+              "id": "835a1f8b-ca4f-4c3f-a085-349308934d45",
               "name": "Get Passport",
               "request": {
                 "name": "Get Passport",
@@ -110,7 +110,7 @@
               },
               "response": [
                 {
-                  "id": "139a83e3-7625-4d5e-aacd-f981c6ae7fbf",
+                  "id": "8bc683d5-6726-4bf4-82a8-2f081b27659d",
                   "name": "Ok",
                   "originalRequest": {
                     "url": { "path": ["passports", ":code"], "host": ["{{baseUrl}}"], "query": [], "variable": [] },
@@ -132,7 +132,7 @@
           ]
         },
         {
-          "id": "fe9e6170-4cc7-4b87-afb5-43547f7dbb61",
+          "id": "1786607c-81f5-4aa1-9686-1eba0ece67b8",
           "name": "Get Passports",
           "request": {
             "name": "Get Passports",
@@ -145,7 +145,7 @@
           },
           "response": [
             {
-              "id": "bc3c91da-8eac-482d-8d82-fed8d289d8d4",
+              "id": "3911ef05-b582-4ed0-b4fd-ec81a235a3bc",
               "name": "Ok",
               "originalRequest": {
                 "url": { "path": ["passports"], "host": ["{{baseUrl}}"], "query": [], "variable": [] },
@@ -175,7 +175,7 @@
           "description": "",
           "item": [
             {
-              "id": "c422696c-d572-48ab-810e-9d582a8c835e",
+              "id": "329df568-ebfb-446e-be6c-3b80ee30cc05",
               "name": "Get Organization",
               "request": {
                 "name": "Get Organization",
@@ -193,7 +193,7 @@
               },
               "response": [
                 {
-                  "id": "708177c3-80c5-4228-8e96-73ce08994541",
+                  "id": "ff512c7e-5fa9-4d51-ad9a-34dda36e604c",
                   "name": "Ok",
                   "originalRequest": {
                     "url": { "path": ["organizations", ":code"], "host": ["{{baseUrl}}"], "query": [], "variable": [] },
@@ -215,7 +215,7 @@
           ]
         },
         {
-          "id": "44686e38-d4bf-494d-ac93-b65dea86aa90",
+          "id": "48eacb09-91d4-404d-ba2e-ad0b9992bffa",
           "name": "Get Organizations",
           "request": {
             "name": "Get Organizations",
@@ -228,7 +228,7 @@
           },
           "response": [
             {
-              "id": "897556bc-6ee5-4094-bcf8-b472bcf7fc40",
+              "id": "6b775e7b-d9be-4741-bbb4-bbfbc96ce5bf",
               "name": "Ok",
               "originalRequest": {
                 "url": { "path": ["organizations"], "host": ["{{baseUrl}}"], "query": [], "variable": [] },
@@ -258,7 +258,7 @@
           "description": "",
           "item": [
             {
-              "id": "d0d93e6f-107e-4de1-ba53-6c6316da5024",
+              "id": "35102a2c-cdc7-4c07-9280-7681ebcee883",
               "name": "Get Sources",
               "request": {
                 "name": "Get Sources",
@@ -271,19 +271,19 @@
                       "disabled": false,
                       "description": { "content": "", "type": "text/plain" },
                       "key": "category",
-                      "value": "technology"
+                      "value": "sports"
                     },
                     {
                       "disabled": false,
                       "description": { "content": "", "type": "text/plain" },
                       "key": "language",
-                      "value": "en"
+                      "value": "ru"
                     },
                     {
                       "disabled": false,
                       "description": { "content": "", "type": "text/plain" },
                       "key": "country",
-                      "value": "gb"
+                      "value": "pl"
                     }
                   ],
                   "variable": []
@@ -295,7 +295,7 @@
               },
               "response": [
                 {
-                  "id": "4f3b286a-c29c-4955-a20c-e6aaadab376f",
+                  "id": "48f7a53f-0652-4be9-9748-7677ad83ea04",
                   "name": "Ok",
                   "originalRequest": {
                     "url": {
@@ -306,19 +306,19 @@
                           "disabled": false,
                           "description": { "content": "", "type": "text/plain" },
                           "key": "category",
-                          "value": "technology"
+                          "value": "sports"
                         },
                         {
                           "disabled": false,
                           "description": { "content": "", "type": "text/plain" },
                           "key": "language",
-                          "value": "en"
+                          "value": "ru"
                         },
                         {
                           "disabled": false,
                           "description": { "content": "", "type": "text/plain" },
                           "key": "country",
-                          "value": "gb"
+                          "value": "pl"
                         }
                       ],
                       "variable": []
@@ -330,7 +330,7 @@
                   "status": "OK",
                   "code": 200,
                   "header": [{ "key": "Content-Type", "value": "application/json" }],
-                  "body": "[\n  {\n    \"country\": \"hk\",\n    \"language\": \"zh\",\n    \"category\": \"science\",\n    \"url\": \"<string>\",\n    \"description\": \"<string>\",\n    \"name\": \"<string>\",\n    \"id\": \"<string>\"\n  },\n  {\n    \"country\": \"us\",\n    \"language\": \"nl\",\n    \"category\": \"science\",\n    \"url\": \"<string>\",\n    \"description\": \"<string>\",\n    \"name\": \"<string>\",\n    \"id\": \"<string>\"\n  }\n]",
+                  "body": "[\n  {\n    \"country\": \"co\",\n    \"language\": \"ru\",\n    \"category\": \"business\",\n    \"url\": \"<string>\",\n    \"description\": \"<string>\",\n    \"name\": \"<string>\",\n    \"id\": \"<string>\"\n  },\n  {\n    \"country\": \"sa\",\n    \"language\": \"it\",\n    \"category\": \"business\",\n    \"url\": \"<string>\",\n    \"description\": \"<string>\",\n    \"name\": \"<string>\",\n    \"id\": \"<string>\"\n  }\n]",
                   "cookie": [],
                   "_postman_previewlanguage": "json"
                 }
@@ -345,7 +345,7 @@
           "description": "",
           "item": [
             {
-              "id": "b10b6bee-ccae-46a8-9f67-563db62b992a",
+              "id": "d488e493-8c9f-4962-b1ff-ef99b7ffdf01",
               "name": "Get Headlines",
               "request": {
                 "name": "Get Headlines",
@@ -358,13 +358,13 @@
                       "disabled": false,
                       "description": { "content": "", "type": "text/plain" },
                       "key": "country",
-                      "value": "gb"
+                      "value": "pl"
                     },
                     {
                       "disabled": false,
                       "description": { "content": "", "type": "text/plain" },
                       "key": "category",
-                      "value": "technology"
+                      "value": "sports"
                     },
                     {
                       "disabled": false,
@@ -388,7 +388,7 @@
               },
               "response": [
                 {
-                  "id": "d23ae51b-32bc-409b-9fa4-b66dcdf792b3",
+                  "id": "fb88496c-74ed-43b9-93ad-5c967d46dedd",
                   "name": "Ok",
                   "originalRequest": {
                     "url": {
@@ -399,13 +399,13 @@
                           "disabled": false,
                           "description": { "content": "", "type": "text/plain" },
                           "key": "country",
-                          "value": "gb"
+                          "value": "pl"
                         },
                         {
                           "disabled": false,
                           "description": { "content": "", "type": "text/plain" },
                           "key": "category",
-                          "value": "technology"
+                          "value": "sports"
                         },
                         {
                           "disabled": false,
@@ -450,7 +450,7 @@
           "description": "",
           "item": [
             {
-              "id": "b02c44f4-36e2-4467-8807-b00669904e25",
+              "id": "7165d26a-793f-44ab-8ee1-13b9f713f804",
               "name": "Get Language",
               "request": {
                 "name": "Get Language",
@@ -468,7 +468,7 @@
               },
               "response": [
                 {
-                  "id": "10c16a12-71d9-417a-af07-6e91686be65a",
+                  "id": "99bb7d6d-5f44-41c6-b1af-1ad6a8a0ef28",
                   "name": "Ok",
                   "originalRequest": {
                     "url": { "path": ["languages", ":code"], "host": ["{{baseUrl}}"], "query": [], "variable": [] },
@@ -490,7 +490,7 @@
           ]
         },
         {
-          "id": "90e625e2-ab2d-425d-9455-a4c7de7754d4",
+          "id": "f548f6e2-88fc-467c-a1f9-078480c4c0e2",
           "name": "Get Languages",
           "request": {
             "name": "Get Languages",
@@ -503,7 +503,7 @@
           },
           "response": [
             {
-              "id": "e5b3895b-d735-4f10-99e6-a5248b849151",
+              "id": "d804f5be-0e77-41a4-b57d-189979aa2348",
               "name": "Ok",
               "originalRequest": {
                 "url": { "path": ["languages"], "host": ["{{baseUrl}}"], "query": [], "variable": [] },
@@ -529,7 +529,7 @@
       "description": "",
       "item": [
         {
-          "id": "aa0fdff4-6069-4c2c-b52d-9ad5f3af4c45",
+          "id": "49b4ba1f-6843-40fb-aa15-80ba5178de53",
           "name": "Get Health",
           "request": {
             "name": "Get Health",
@@ -542,7 +542,7 @@
           },
           "response": [
             {
-              "id": "a240d7a5-a4cc-4790-b687-435ebd544497",
+              "id": "1ff934b3-9f25-4833-adc5-8d558114a6bc",
               "name": "Ok",
               "originalRequest": {
                 "url": { "path": ["health"], "host": ["{{baseUrl}}"], "query": [], "variable": [] },
@@ -572,7 +572,7 @@
           "description": "",
           "item": [
             {
-              "id": "ca95f857-a15b-49b8-8927-fdfc0e872f16",
+              "id": "df9cb78d-ebc6-431b-9d70-c65c00a6b727",
               "name": "Get Currency",
               "request": {
                 "name": "Get Currency",
@@ -590,7 +590,7 @@
               },
               "response": [
                 {
-                  "id": "6abef612-7603-449a-9c8e-db8f5dc913b3",
+                  "id": "3437bea4-58b7-4432-9706-35b7b38c7ba6",
                   "name": "Ok",
                   "originalRequest": {
                     "url": { "path": ["currencies", ":code"], "host": ["{{baseUrl}}"], "query": [], "variable": [] },
@@ -612,7 +612,7 @@
           ]
         },
         {
-          "id": "0e97bcbb-2926-4ae9-b976-604e762b7b0b",
+          "id": "266eedb1-9e30-467f-9d93-86b4b030f0d7",
           "name": "Get Currencies",
           "request": {
             "name": "Get Currencies",
@@ -625,7 +625,7 @@
           },
           "response": [
             {
-              "id": "d1e05e30-0636-4fd1-8a77-448b4dfcb736",
+              "id": "9dd2ba75-0776-4bf8-9b29-137b246aece4",
               "name": "Ok",
               "originalRequest": {
                 "url": { "path": ["currencies"], "host": ["{{baseUrl}}"], "query": [], "variable": [] },
@@ -659,7 +659,7 @@
               "description": "",
               "item": [
                 {
-                  "id": "d42f5911-f9f2-4b40-91c7-29aff5f4a976",
+                  "id": "7ec8ee1b-a848-475b-afff-0b4bb56ab0d5",
                   "name": "Get Coin",
                   "request": {
                     "name": "Get Coin",
@@ -677,7 +677,7 @@
                   },
                   "response": [
                     {
-                      "id": "70b8ee26-61e7-489a-8443-e96861a2f39d",
+                      "id": "da99b67c-3675-41e7-a155-3ade32a01cfa",
                       "name": "Ok",
                       "originalRequest": {
                         "url": {
@@ -704,7 +704,7 @@
               ]
             },
             {
-              "id": "c2bf1165-baed-4652-a6ee-b1ec2c651152",
+              "id": "c36faead-c8ff-4213-98c0-4b901f73b881",
               "name": "Get Coins",
               "request": {
                 "name": "Get Coins",
@@ -717,7 +717,7 @@
               },
               "response": [
                 {
-                  "id": "19a14149-2142-4970-8ef5-91ee34d69bff",
+                  "id": "13822809-a404-4d4d-aa4c-2a75d501a1ac",
                   "name": "Ok",
                   "originalRequest": {
                     "url": { "path": ["crypto", "coins"], "host": ["{{baseUrl}}"], "query": [], "variable": [] },
@@ -749,7 +749,7 @@
           "description": "",
           "item": [
             {
-              "id": "c89170c5-0b23-4591-838b-5afbde824a0c",
+              "id": "b7c5b8db-75ae-4443-9726-1a2290d5739e",
               "name": "Get Country",
               "request": {
                 "name": "Get Country",
@@ -767,7 +767,7 @@
               },
               "response": [
                 {
-                  "id": "235311c7-cbff-408c-a822-b676cd4d54b0",
+                  "id": "c0e02f63-e1a5-48d9-8d5a-951504584500",
                   "name": "Ok",
                   "originalRequest": {
                     "url": { "path": ["countries", ":code"], "host": ["{{baseUrl}}"], "query": [], "variable": [] },
@@ -789,7 +789,7 @@
           ]
         },
         {
-          "id": "d08da2e7-55f8-4ca7-bcd2-da56165da318",
+          "id": "dc7f2943-5c52-48e5-b879-3d10182437f0",
           "name": "Get Countries",
           "request": {
             "name": "Get Countries",
@@ -820,7 +820,7 @@
           },
           "response": [
             {
-              "id": "69565fe4-036f-48db-b7a0-4b59aa18e264",
+              "id": "1c2f2a2d-3a8a-4538-8430-8b7389aa9a56",
               "name": "Ok",
               "originalRequest": {
                 "url": {
@@ -863,7 +863,7 @@
   "event": [],
   "variable": [{ "key": "baseUrl", "value": "http://localhost:8080" }],
   "info": {
-    "_postman_id": "7c38a66c-c9e5-4b6c-a5ca-4a5506bca39f",
+    "_postman_id": "04233d43-6871-4f91-85fb-d2024f52cda8",
     "name": "@world/api",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
     "description": {
