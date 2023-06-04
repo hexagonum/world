@@ -1,0 +1,15 @@
+name: Rendering
+
+on:
+  schedule:
+    - cron: '*/10 * * * *'
+
+jobs:
+  rendering:
+    name: Rendering
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Keep Web Service Running
+        run: curl --location 'https://hexagonum-world.onrender.com/health'
