@@ -8,9 +8,9 @@
   "license": "GNU GPL V3.0",
   "private": true,
   "engines": {
-    "node": "20",
-    "npm": "9",
-    "yarn": "1"
+    "node": "20.2.0",
+    "npm": "9.6.7",
+    "yarn": "1.22.19"
   },
   "scripts": {
     "dev": "kill-port 3000 && next dev -p 3000",
