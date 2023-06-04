@@ -1,7 +1,8 @@
+import { useQuery } from '@apollo/client';
 import { Card, CardBody, Divider, Select } from '@chakra-ui/react';
 import { Container } from '@world/components/Container';
-import { NEXT_PUBLIC_BASE_API } from '@world/configs';
-import useFetch from '@world/hooks/use-fetch';
+import { apolloClient } from '@world/graphql';
+import { COUNTRIES_GOOGLE_TRENDS_QUERY } from '@world/graphql/queries/countries';
 import { Layout } from '@world/layout';
 import { unique } from '@world/utils/unique';
 import { NextPage } from 'next';
@@ -9,7 +10,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { ChangeEvent, Dispatch, SetStateAction, useState } from 'react';
 
-type TrendsByCountry = {
+type Country = {
   commonName: string;
   region: string;
   subregion: string;
@@ -17,35 +18,35 @@ type TrendsByCountry = {
 };
 
 type GoogleTrendsPageProps = {
-  trendsByCountries: TrendsByCountry[];
+  countries: Country[];
 };
 
 type FilterOption = { region: string; subregion: string; country: string };
 
 type FilterOptions = { regions: string[]; subregions: string[]; countries: string[] };
 
-const buildFilterOptions = (trendsByCountries: TrendsByCountry[], filterOption: FilterOption): FilterOptions => {
+const buildFilterOptions = (countries: Country[], filterOption: FilterOption): FilterOptions => {
   // Regions
-  const regions: string[] = unique(trendsByCountries.map(({ region = '' }) => region));
+  const regions: string[] = unique(countries.map(({ region = '' }) => region));
   regions.sort((a: string, b: string) => (a > b ? 1 : -1));
   // Subregions
   const subregions: string[] = unique(
-    trendsByCountries
+    countries
       .filter(({ region = '' }) => (filterOption.region !== '' ? filterOption.region === region : true))
       .map(({ subregion = '' }) => subregion)
   );
   subregions.sort((a: string, b: string) => (a > b ? 1 : -1));
   // Countries
-  const countries: string[] = trendsByCountries
+  const filteredCountries: string[] = countries
     .filter(
       ({ region, subregion }) =>
         (filterOption.region !== '' ? filterOption.region === region : true) &&
         (filterOption.subregion !== '' ? filterOption.subregion === subregion : true)
     )
     .map(({ commonName }) => commonName);
-  countries.sort((a: string, b: string) => (a > b ? 1 : -1));
+  filteredCountries.sort((a: string, b: string) => (a > b ? 1 : -1));
   // Filter Options
-  return { regions, subregions, countries };
+  return { regions, subregions, countries: filteredCountries };
 };
 
 type GoogleTrendsFilterProps = {
@@ -137,16 +138,13 @@ const GoogleTrendsFilter: React.FC<GoogleTrendsFilterProps> = ({
   );
 };
 
-type GoogleTrendsByCountriesProps = {
+type GoogleTrendsProps = {
   filterOption: FilterOption;
-  initialTrendsByCountries: TrendsByCountry[];
+  initialCountries: Country[];
 };
 
-const GoogleTrendsByCountries: React.FC<GoogleTrendsByCountriesProps> = ({
-  filterOption,
-  initialTrendsByCountries = [],
-}) => {
-  const { loading, error, data } = useFetch<TrendsByCountry[]>(`${NEXT_PUBLIC_BASE_API}/countries/google/trends`);
+const GoogleTrends: React.FC<GoogleTrendsProps> = ({ filterOption, initialCountries = [] }) => {
+  const { loading, error, data } = useQuery<{ countries: Country[] }>(COUNTRIES_GOOGLE_TRENDS_QUERY);
 
   if (loading) {
     return (
@@ -162,13 +160,13 @@ const GoogleTrendsByCountries: React.FC<GoogleTrendsByCountriesProps> = ({
     return (
       <Card className="border border-gray-200">
         <CardBody>
-          <p className="text-center">Error</p>
+          <p className="text-center">{error.message}</p>
         </CardBody>
       </Card>
     );
   }
 
-  if (!data) {
+  if (!data?.countries) {
     return (
       <Card className="border border-gray-200">
         <CardBody>
@@ -178,10 +176,10 @@ const GoogleTrendsByCountries: React.FC<GoogleTrendsByCountriesProps> = ({
     );
   }
 
-  const trendsByCountries = data || initialTrendsByCountries;
+  const countries = data.countries || initialCountries;
 
   const trendsByFilteredCountries: string[] = unique(
-    trendsByCountries
+    countries
       .filter(({ region, subregion, commonName }) => {
         const regionFlag: boolean = filterOption.region !== '' ? filterOption.region === region : true;
         const subregionFlag: boolean = filterOption.subregion !== '' ? filterOption.subregion === subregion : true;
@@ -190,18 +188,18 @@ const GoogleTrendsByCountries: React.FC<GoogleTrendsByCountriesProps> = ({
       })
       .map(({ googleTrends = [] }) => googleTrends)
       .flat(1)
-  );
+  ).sort((a: string, b: string) => (a > b ? 1 : -1));
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-      {trendsByFilteredCountries.map((trend: string) => {
-        const query: string = encodeURIComponent(trend);
-        const googleUrl: string = `https://www.google.com/search?q=${query}`;
+      {trendsByFilteredCountries.map((query: string) => {
+        const encodedQuery: string = encodeURIComponent(query);
+        const googleUrl: string = `https://www.google.com/search?q=${encodedQuery}`;
         return (
-          <Card key={trend} className="border border-gray-200">
+          <Card key={encodedQuery} className="border border-gray-200">
             <CardBody>
               <Link href={googleUrl} target="_blank">
-                <p className="truncate">{trend}</p>
+                <p className="truncate">{query}</p>
               </Link>
             </CardBody>
           </Card>
@@ -211,7 +209,7 @@ const GoogleTrendsByCountries: React.FC<GoogleTrendsByCountriesProps> = ({
   );
 };
 
-const GoogleTrendsPage: NextPage<GoogleTrendsPageProps> = ({ trendsByCountries = [] }) => {
+const GoogleTrendsPage: NextPage<GoogleTrendsPageProps> = ({ countries = [] }) => {
   // Filter
   const router = useRouter();
   const [filterOption, setFilterOptions] = useState<FilterOption>({
@@ -219,7 +217,7 @@ const GoogleTrendsPage: NextPage<GoogleTrendsPageProps> = ({ trendsByCountries =
     subregion: router.query.subregion?.toString() ?? '',
     country: router.query.country?.toString() ?? '',
   });
-  const filterOptions = buildFilterOptions(trendsByCountries, filterOption);
+  const filterOptions = buildFilterOptions(countries, filterOption);
 
   return (
     <Layout>
@@ -232,7 +230,7 @@ const GoogleTrendsPage: NextPage<GoogleTrendsPageProps> = ({ trendsByCountries =
               setFilterOptions={setFilterOptions}
             />
             <Divider />
-            <GoogleTrendsByCountries filterOption={filterOption} initialTrendsByCountries={trendsByCountries} />
+            <GoogleTrends filterOption={filterOption} initialCountries={countries} />
           </div>
         </div>
       </Container>
@@ -240,14 +238,16 @@ const GoogleTrendsPage: NextPage<GoogleTrendsPageProps> = ({ trendsByCountries =
   );
 };
 
-export const getStaticProps = async (): Promise<{ props: { trendsByCountries: TrendsByCountry[] } }> => {
+export const getStaticProps = async (): Promise<{ props: { countries: Country[] } }> => {
   try {
-    const response = await fetch(`${NEXT_PUBLIC_BASE_API}/countries/google/trends`);
-    const trendsByCountries: TrendsByCountry[] = await response.json();
-    return { props: { trendsByCountries } };
+    const data = await apolloClient.query<{ countries: Country[] }>({
+      query: COUNTRIES_GOOGLE_TRENDS_QUERY,
+    });
+    const countries: Country[] = [...data.data.countries].filter(({ googleTrends }) => googleTrends.length > 0);
+    return { props: { countries } };
   } catch (error) {
     console.error(error);
-    return { props: { trendsByCountries: [] } };
+    return { props: { countries: [] } };
   }
 };
 

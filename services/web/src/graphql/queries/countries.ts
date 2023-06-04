@@ -28,8 +28,9 @@ export const COUNTRIES_AREA_QUERY: DocumentNode = gql`
 export const COUNTRIES_BORDERS_QUERY: DocumentNode = gql`
   query COUNTRIES_BORDERS_QUERY {
     countries {
-      commonName
       cca3
+      code
+      commonName
       borders
     }
   }
@@ -55,6 +56,20 @@ export const COUNTRIES_DENSITY_QUERY: DocumentNode = gql`
       commonName
       cca3
       density
+    }
+  }
+`;
+
+export const COUNTRIES_GOOGLE_TRENDS_QUERY: DocumentNode = gql`
+  query COUNTRIES_GOOGLE_TRENDS_QUERY {
+    countries {
+      code
+      cca2
+      cca3
+      region
+      subregion
+      commonName
+      googleTrends
     }
   }
 `;
@@ -100,6 +115,7 @@ export const COUNTRIES_TIMEZONES_QUERY: DocumentNode = gql`
     countries {
       code
       commonName
+      region
       timezones
     }
   }
@@ -111,6 +127,16 @@ export const COUNTRIES_TOP_LEVEL_DOMAINS_QUERY: DocumentNode = gql`
       commonName
       cca3
       topLevelDomains
+    }
+  }
+`;
+
+export const COUNTRY_QUERY: DocumentNode = gql`
+  query COUNTRY_QUERY {
+    country {
+      cca2
+      cca3
+      fifa
     }
   }
 `;

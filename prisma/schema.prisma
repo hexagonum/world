@@ -43,7 +43,6 @@ model Country {
   density               Int                        @default(0)
   // Google
   googleMaps            String                     @default("")
-  googleTrends          String[]                   @default([])
   // Other Data
   timezones             String[]                   @default([])
   // Other Data
@@ -54,6 +53,7 @@ model Country {
   updatedAt             DateTime                   @updatedAt
   passports             Passport[]
   passportsRequirements PassportRequirement[]
+  googleTrends          GoogleTrend[]
 }
 
 model Currency {
@@ -63,6 +63,12 @@ model Currency {
   createdAt DateTime                @default(now())
   updatedAt DateTime                @updatedAt
   countries CurrenciesInCountries[]
+}
+
+model GoogleTrend {
+  country     Country  @relation(fields: [countryCode], references: [code])
+  countryCode String   @id
+  queries     String[]
 }
 
 model Language {

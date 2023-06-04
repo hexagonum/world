@@ -40,10 +40,6 @@ const main = async () => {
       const organizationCodes: string[] = organizations
         .filter(({ members = [] }) => members.map(({ code }) => code).includes(cca3))
         .map(({ code }) => code);
-      const { trends: googleTrends = [] } = trends.find(
-        ({ country = '' }) =>
-          country.toLowerCase() === common.toLowerCase() || country.toLowerCase() === official.toLowerCase()
-      ) ?? { trends: [] };
       return {
         code: cca3,
         commonName: common,
@@ -73,7 +69,6 @@ const main = async () => {
         population,
         density,
         googleMaps,
-        googleTrends,
         timezones,
         languageCodes,
         currencyCodes,

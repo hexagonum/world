@@ -1,6 +1,5 @@
 import { Badge, Input, Table, TableCaption, TableContainer, Tbody, Td, Th, Thead, Tr } from '@chakra-ui/react';
 import Container from '@world/components/Container';
-import isoAlpha3Codes from '@world/data/codes/iso-alpha-3.json';
 import { apolloClient } from '@world/graphql';
 import { COUNTRIES_BORDERS_QUERY } from '@world/graphql/queries/countries';
 import Layout from '@world/layout';
@@ -8,17 +7,18 @@ import { GetStaticProps, NextPage } from 'next';
 import Link from 'next/link';
 import { ChangeEvent, useState } from 'react';
 
-type Country = { commonName: string; cca3: string; borders: string[] };
+type Country = { commonName: string; cca3: string; code: string; borders: string[] };
 
 type BordersPageProps = {
   countries: Country[];
+  codeCountryMap: Record<string, string>;
 };
 
-export const BordersPage: NextPage<BordersPageProps> = ({ countries = [] }) => {
+export const BordersPage: NextPage<BordersPageProps> = ({ countries = [], codeCountryMap = {} }) => {
   const [query, setQuery] = useState<string>('');
 
   const countriesByFilter = countries.filter(({ commonName = '', borders = [] }) => {
-    const names: string[] = borders.map((border: string) => (isoAlpha3Codes as Record<string, string>)[border]);
+    const names: string[] = borders.map((border: string) => codeCountryMap[border] ?? '');
     const codeFlag: boolean =
       query !== '' ? borders.some((code: string) => code.toLowerCase().includes(query.toLowerCase())) : true;
     const nameFlag: boolean =
@@ -63,7 +63,7 @@ export const BordersPage: NextPage<BordersPageProps> = ({ countries = [] }) => {
                               {borders.length > 0 ? (
                                 <div className="flex flex-wrap items-center gap-1 md:gap-2">
                                   {borders.map((border: string) => {
-                                    const name: string = (isoAlpha3Codes as Record<string, string>)[border] || '';
+                                    const name: string = codeCountryMap[border] ?? '';
                                     return (
                                       <Link key={border} href={`/countries/${border}`}>
                                         <Badge colorScheme="teal">{name}</Badge>
@@ -93,15 +93,22 @@ export const BordersPage: NextPage<BordersPageProps> = ({ countries = [] }) => {
   );
 };
 
-export const getStaticProps: GetStaticProps = async (): Promise<{ props: { countries: Country[] } }> => {
+export const getStaticProps: GetStaticProps = async (): Promise<{
+  props: { countries: Country[]; codeCountryMap: Record<string, string> };
+}> => {
   try {
     const data = await apolloClient.query<{ countries: Country[] }>({ query: COUNTRIES_BORDERS_QUERY });
     const countries: Country[] = [...data.data.countries];
     countries.sort((a, b) => b.borders.length - a.borders.length);
-    return { props: { countries } };
+    const codeCountryMap: Record<string, string> = {};
+    for (const country of countries) {
+      const { code, commonName } = country;
+      codeCountryMap[code] = commonName;
+    }
+    return { props: { countries, codeCountryMap } };
   } catch (error) {
     console.error(error);
-    return { props: { countries: [] } };
+    return { props: { countries: [], codeCountryMap: {} } };
   }
 };
 

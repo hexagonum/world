@@ -13,6 +13,7 @@ const main = async () => {
       const { cca3: cca3From = '' } = fromCountry;
       const toRequirements = (requirements as Record<string, any>)[cca2From];
       const cca2Tos: string[] = Object.keys(toRequirements);
+      console.log('Passport', cca2From);
       for (const cca2To of cca2Tos) {
         const toCountry: any = countries.find(({ cca2 }: { cca2: string }) => cca2 === cca2To) ?? {};
         const { cca3: cca3To = '' } = toCountry;

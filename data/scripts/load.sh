@@ -3,6 +3,7 @@
 # one-to-one
 yarn load:countries
 yarn load:currencies
+yarn load:google-trends
 yarn load:languages
 yarn load:organizations
 yarn load:passports

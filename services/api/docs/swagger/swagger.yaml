@@ -46,19 +46,6 @@ components:
           type: object,
           description: 'Model Organization',
         },
-      Pick_Country.CountryGoogleTrends_:
-        {
-          properties:
-            {
-              commonName: { type: string },
-              region: { type: string },
-              subregion: { type: string },
-              googleTrends: { items: { type: string }, type: array },
-            },
-          required: [commonName, region, subregion, googleTrends],
-          type: object,
-          description: 'From T, pick a set of properties whose keys are in the union K',
-        },
       Country:
         {
           properties:
@@ -66,7 +53,6 @@ components:
               updatedAt: { type: string, format: date-time },
               createdAt: { type: string, format: date-time },
               timezones: { items: { type: string }, type: array },
-              googleTrends: { items: { type: string }, type: array },
               googleMaps: { type: string },
               density: { type: number, format: double },
               population: { type: number, format: double },
@@ -101,7 +87,6 @@ components:
               updatedAt,
               createdAt,
               timezones,
-              googleTrends,
               googleMaps,
               density,
               population,
@@ -340,7 +325,6 @@ paths:
                                       updatedAt: { type: string, format: date-time },
                                       createdAt: { type: string, format: date-time },
                                       timezones: { items: { type: string }, type: array },
-                                      googleTrends: { items: { type: string }, type: array },
                                       googleMaps: { type: string },
                                       density: { type: number, format: double },
                                       population: { type: number, format: double },
@@ -369,6 +353,7 @@ paths:
                                       officialName: { type: string },
                                       commonName: { type: string },
                                       code: { type: string },
+                                      googleTrends: { items: { type: string }, type: array },
                                       organizations:
                                         { items: { $ref: '#/components/schemas/Organization' }, type: array },
                                       languages: { items: { $ref: '#/components/schemas/Language' }, type: array },
@@ -379,7 +364,6 @@ paths:
                                       updatedAt,
                                       createdAt,
                                       timezones,
-                                      googleTrends,
                                       googleMaps,
                                       density,
                                       population,
@@ -408,6 +392,7 @@ paths:
                                       officialName,
                                       commonName,
                                       code,
+                                      googleTrends,
                                       organizations,
                                       languages,
                                       currencies,
@@ -416,31 +401,6 @@ paths:
                                 },
                               type: array,
                             },
-                        },
-                    },
-                },
-            },
-          tags: [Countries],
-          security: [],
-          parameters: [],
-        },
-    }
-  /countries/google/trends:
-    {
-      get:
-        {
-          operationId: GetTrends,
-          responses:
-            {
-              '200':
-                {
-                  description: Ok,
-                  content:
-                    {
-                      application/json:
-                        {
-                          schema:
-                            { items: { $ref: '#/components/schemas/Pick_Country.CountryGoogleTrends_' }, type: array },
                         },
                     },
                 },

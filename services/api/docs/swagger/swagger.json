@@ -72,28 +72,6 @@
         "type": "object",
         "description": "Model Organization"
       },
-      "Pick_Country.CountryGoogleTrends_": {
-        "properties": {
-          "commonName": {
-            "type": "string"
-          },
-          "region": {
-            "type": "string"
-          },
-          "subregion": {
-            "type": "string"
-          },
-          "googleTrends": {
-            "items": {
-              "type": "string"
-            },
-            "type": "array"
-          }
-        },
-        "required": ["commonName", "region", "subregion", "googleTrends"],
-        "type": "object",
-        "description": "From T, pick a set of properties whose keys are in the union K"
-      },
       "Country": {
         "properties": {
           "updatedAt": {
@@ -105,12 +83,6 @@
             "format": "date-time"
           },
           "timezones": {
-            "items": {
-              "type": "string"
-            },
-            "type": "array"
-          },
-          "googleTrends": {
             "items": {
               "type": "string"
             },
@@ -225,7 +197,6 @@
           "updatedAt",
           "createdAt",
           "timezones",
-          "googleTrends",
           "googleMaps",
           "density",
           "population",
@@ -584,12 +555,6 @@
                         },
                         "type": "array"
                       },
-                      "googleTrends": {
-                        "items": {
-                          "type": "string"
-                        },
-                        "type": "array"
-                      },
                       "googleMaps": {
                         "type": "string"
                       },
@@ -694,6 +659,12 @@
                       "code": {
                         "type": "string"
                       },
+                      "googleTrends": {
+                        "items": {
+                          "type": "string"
+                        },
+                        "type": "array"
+                      },
                       "organizations": {
                         "items": {
                           "$ref": "#/components/schemas/Organization"
@@ -717,7 +688,6 @@
                       "updatedAt",
                       "createdAt",
                       "timezones",
-                      "googleTrends",
                       "googleMaps",
                       "density",
                       "population",
@@ -746,34 +716,12 @@
                       "officialName",
                       "commonName",
                       "code",
+                      "googleTrends",
                       "organizations",
                       "languages",
                       "currencies"
                     ],
                     "type": "object"
-                  },
-                  "type": "array"
-                }
-              }
-            }
-          }
-        },
-        "tags": ["Countries"],
-        "security": [],
-        "parameters": []
-      }
-    },
-    "/countries/google/trends": {
-      "get": {
-        "operationId": "GetTrends",
-        "responses": {
-          "200": {
-            "description": "Ok",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "items": {
-                    "$ref": "#/components/schemas/Pick_Country.CountryGoogleTrends_"
                   },
                   "type": "array"
                 }

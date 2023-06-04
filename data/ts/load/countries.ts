@@ -36,7 +36,6 @@ const main = async () => {
         population = 0,
         density = 0,
         googleMaps = '',
-        googleTrends = [],
         timezones = [],
       } = country;
       const data = {
@@ -68,7 +67,6 @@ const main = async () => {
         population,
         density,
         googleMaps,
-        googleTrends,
         timezones,
       };
       await prismaClient.country.upsert({

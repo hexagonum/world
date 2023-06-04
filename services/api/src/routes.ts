@@ -77,20 +77,6 @@ const models: TsoaRoute.Models = {
     },
   },
   // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
-  'Pick_Country.CountryGoogleTrends_': {
-    dataType: 'refAlias',
-    type: {
-      dataType: 'nestedObjectLiteral',
-      nestedProperties: {
-        commonName: { dataType: 'string', required: true },
-        region: { dataType: 'string', required: true },
-        subregion: { dataType: 'string', required: true },
-        googleTrends: { dataType: 'array', array: { dataType: 'string' }, required: true },
-      },
-      validators: {},
-    },
-  },
-  // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
   Country: {
     dataType: 'refAlias',
     type: {
@@ -99,7 +85,6 @@ const models: TsoaRoute.Models = {
         updatedAt: { dataType: 'datetime', required: true },
         createdAt: { dataType: 'datetime', required: true },
         timezones: { dataType: 'array', array: { dataType: 'string' }, required: true },
-        googleTrends: { dataType: 'array', array: { dataType: 'string' }, required: true },
         googleMaps: { dataType: 'string', required: true },
         density: { dataType: 'double', required: true },
         population: { dataType: 'double', required: true },
@@ -385,30 +370,6 @@ export function RegisterRoutes(app: Router) {
         const controller = new CountriesController();
 
         const promise = controller.getCountries.apply(controller, validatedArgs as any);
-        promiseHandler(controller, promise, response, undefined, next);
-      } catch (err) {
-        return next(err);
-      }
-    }
-  );
-  // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
-  app.get(
-    '/countries/google/trends',
-    ...fetchMiddlewares<RequestHandler>(CountriesController),
-    ...fetchMiddlewares<RequestHandler>(CountriesController.prototype.getTrends),
-
-    function CountriesController_getTrends(request: any, response: any, next: any) {
-      const args = {};
-
-      // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
-
-      let validatedArgs: any[] = [];
-      try {
-        validatedArgs = getValidatedArgs(args, request, response);
-
-        const controller = new CountriesController();
-
-        const promise = controller.getTrends.apply(controller, validatedArgs as any);
         promiseHandler(controller, promise, response, undefined, next);
       } catch (err) {
         return next(err);

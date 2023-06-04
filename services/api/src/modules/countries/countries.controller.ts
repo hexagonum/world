@@ -1,7 +1,6 @@
 import { Country } from '@prisma/client';
 import { Controller, Get, Path, Route, Tags } from 'tsoa';
 import { CountriesService } from './countries.service';
-import { CountryGoogleTrends } from './countries.types';
 
 @Route('/countries')
 @Tags('Countries')
@@ -16,11 +15,6 @@ export class CountriesController extends Controller {
   @Get()
   async getCountries() {
     return this.countriesService.getCountries();
-  }
-
-  @Get('google/trends')
-  async getTrends(): Promise<Pick<Country, CountryGoogleTrends>[]> {
-    return this.countriesService.getGoogleTrends();
   }
 
   @Get(':code')

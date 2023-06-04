@@ -29,5 +29,6 @@ export const typeDefs = `#graphql
     currencies: [Currency]
     languages: [Language]
     organizations: [Organization]
+    googleTrends: [String]
   }
 `;
