@@ -3,13 +3,13 @@ import { Badge, Card, CardBody, Divider, Table, TableContainer, Tbody, Td, Tr } 
 import { Container } from '@world/components/Container';
 import { COUNTRIES_TIMEZONES_QUERY } from '@world/graphql/queries/countries';
 import Layout from '@world/layout';
+import { Country } from '@world/types';
 import { unique } from '@world/utils/unique';
 import { NextPage } from 'next';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import React from 'react';
 
-type Country = { code: string; commonName: string; region: string };
 type Timezone = { code: string; name: string; utcOffset: string };
 
 const TimezoneMain: React.FC<{ timezoneUtcOffset: string }> = ({ timezoneUtcOffset = '' }) => {

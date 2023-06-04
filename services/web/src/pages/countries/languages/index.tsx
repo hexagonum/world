@@ -3,11 +3,10 @@ import Container from '@world/components/Container';
 import { apolloClient } from '@world/graphql';
 import { COUNTRIES_LANGUAGES_QUERY } from '@world/graphql/queries/countries';
 import Layout from '@world/layout';
+import { Country } from '@world/types';
 import { GetStaticProps, NextPage } from 'next';
 import Link from 'next/link';
 import { ChangeEvent, useState } from 'react';
-
-type Country = { commonName: string; cca3: string; languages: { code: string; name: string }[] };
 
 type LanguagesPageProps = {
   countries: Country[];

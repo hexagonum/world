@@ -1,4 +1,5 @@
 import { mergeResolvers } from '@graphql-tools/merge';
+import { citiesResolvers, citiesTypeDefs } from './cities/graphql/cities.module';
 import { countriesResolvers, countriesTypeDefs } from './countries/graphql/countries.module';
 import { currenciesResolvers, currenciesTypeDefs } from './currencies/graphql/currencies.module';
 import { languagesResolvers, languagesTypeDefs } from './languages/graphql/languages.module';
@@ -17,6 +18,7 @@ const rootResolvers = { Query: { status: (): string => 'OK' } };
 
 export const typeDefs = [
   rootTypeDefs,
+  citiesTypeDefs,
   countriesTypeDefs,
   currenciesTypeDefs,
   languagesTypeDefs,
@@ -28,6 +30,7 @@ export const typeDefs = [
 
 export const resolvers = mergeResolvers([
   rootResolvers,
+  citiesResolvers,
   countriesResolvers,
   currenciesResolvers,
   languagesResolvers,

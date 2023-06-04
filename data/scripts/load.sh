@@ -2,6 +2,7 @@
 
 # one-to-one
 yarn load:countries
+yarn load:cities
 yarn load:currencies
 yarn load:google-trends
 yarn load:languages

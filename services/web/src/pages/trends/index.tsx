@@ -4,18 +4,12 @@ import { Container } from '@world/components/Container';
 import { apolloClient } from '@world/graphql';
 import { COUNTRIES_GOOGLE_TRENDS_QUERY } from '@world/graphql/queries/countries';
 import { Layout } from '@world/layout';
+import { Country } from '@world/types';
 import { unique } from '@world/utils/unique';
 import { NextPage } from 'next';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { ChangeEvent, Dispatch, SetStateAction, useState } from 'react';
-
-type Country = {
-  commonName: string;
-  region: string;
-  subregion: string;
-  googleTrends: string[];
-};
 
 type GoogleTrendsPageProps = {
   countries: Country[];

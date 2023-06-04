@@ -19,6 +19,15 @@ export class CountriesService {
     console.log('Where', where);
     const countries = await prismaClient.country.findMany({
       include: {
+        cities: {
+          select: { state: true, city: true, latitude: true, longitude: true, timezone: true },
+          where: {
+            latitude: { not: { equals: 0 } },
+            longitude: { not: { equals: 0 } },
+            timezone: { not: { equals: 0 } },
+          },
+          orderBy: { timezone: 'asc' },
+        },
         currencies: { select: { currency: true } },
         languages: { select: { language: true } },
         organizations: { select: { organization: true } },
@@ -41,6 +50,15 @@ export class CountriesService {
   async getCountry(code: string) {
     const country = await prismaClient.country.findFirstOrThrow({
       include: {
+        cities: {
+          select: { state: true, city: true, latitude: true, longitude: true, timezone: true },
+          where: {
+            latitude: { not: { equals: 0 } },
+            longitude: { not: { equals: 0 } },
+            timezone: { not: { equals: 0 } },
+          },
+          orderBy: { timezone: 'asc' },
+        },
         currencies: { select: { currency: true } },
         languages: { select: { language: true } },
         organizations: { select: { organization: true } },

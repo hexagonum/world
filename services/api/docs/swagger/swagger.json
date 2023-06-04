@@ -6,71 +6,69 @@
     "requestBodies": {},
     "responses": {},
     "schemas": {
-      "Currency": {
+      "City": {
         "properties": {
-          "updatedAt": {
-            "type": "string",
-            "format": "date-time"
+          "timezone": {
+            "type": "number",
+            "format": "double"
           },
-          "createdAt": {
-            "type": "string",
-            "format": "date-time"
+          "longitude": {
+            "type": "number",
+            "format": "double"
           },
-          "symbol": {
+          "latitude": {
+            "type": "number",
+            "format": "double"
+          },
+          "cityLevel": {
             "type": "string"
           },
-          "name": {
+          "cityCode": {
             "type": "string"
           },
-          "code": {
+          "city": {
             "type": "string"
+          },
+          "stateLevel": {
+            "type": "string"
+          },
+          "stateCode": {
+            "type": "string"
+          },
+          "state": {
+            "type": "string"
+          },
+          "subregion": {
+            "type": "string"
+          },
+          "region": {
+            "type": "string"
+          },
+          "countryCode": {
+            "type": "string"
+          },
+          "id": {
+            "type": "number",
+            "format": "double"
           }
         },
-        "required": ["updatedAt", "createdAt", "symbol", "name", "code"],
+        "required": [
+          "timezone",
+          "longitude",
+          "latitude",
+          "cityLevel",
+          "cityCode",
+          "city",
+          "stateLevel",
+          "stateCode",
+          "state",
+          "subregion",
+          "region",
+          "countryCode",
+          "id"
+        ],
         "type": "object",
-        "description": "Model Currency"
-      },
-      "Language": {
-        "properties": {
-          "updatedAt": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "createdAt": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "name": {
-            "type": "string"
-          },
-          "code": {
-            "type": "string"
-          }
-        },
-        "required": ["updatedAt", "createdAt", "name", "code"],
-        "type": "object",
-        "description": "Model Language"
-      },
-      "Organization": {
-        "properties": {
-          "updatedAt": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "createdAt": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "name": {
-            "type": "string"
-          },
-          "code": {
-            "type": "string"
-          }
-        },
-        "required": ["updatedAt", "createdAt", "name", "code"],
-        "type": "object",
-        "description": "Model Organization"
+        "description": "Model City"
       },
       "Country": {
         "properties": {
@@ -228,6 +226,72 @@
         ],
         "type": "object",
         "description": "Model Country"
+      },
+      "Currency": {
+        "properties": {
+          "updatedAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "symbol": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "code": {
+            "type": "string"
+          }
+        },
+        "required": ["updatedAt", "createdAt", "symbol", "name", "code"],
+        "type": "object",
+        "description": "Model Currency"
+      },
+      "Language": {
+        "properties": {
+          "updatedAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "name": {
+            "type": "string"
+          },
+          "code": {
+            "type": "string"
+          }
+        },
+        "required": ["updatedAt", "createdAt", "name", "code"],
+        "type": "object",
+        "description": "Model Language"
+      },
+      "Organization": {
+        "properties": {
+          "updatedAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "name": {
+            "type": "string"
+          },
+          "code": {
+            "type": "string"
+          }
+        },
+        "required": ["updatedAt", "createdAt", "name", "code"],
+        "type": "object",
+        "description": "Model Organization"
       },
       "Coin": {
         "properties": {
@@ -530,6 +594,52 @@
   },
   "openapi": "3.0.0",
   "paths": {
+    "/cities": {
+      "get": {
+        "operationId": "GetCities",
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "allOf": [
+                      {
+                        "$ref": "#/components/schemas/City"
+                      },
+                      {
+                        "properties": {
+                          "country": {
+                            "$ref": "#/components/schemas/Country"
+                          }
+                        },
+                        "required": ["country"],
+                        "type": "object"
+                      }
+                    ]
+                  },
+                  "type": "array"
+                }
+              }
+            }
+          }
+        },
+        "tags": ["Cities"],
+        "security": [],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "countryCode",
+            "required": false,
+            "schema": {
+              "default": "",
+              "type": "string"
+            }
+          }
+        ]
+      }
+    },
     "/countries": {
       "get": {
         "operationId": "GetCountries",
@@ -541,6 +651,33 @@
                 "schema": {
                   "items": {
                     "properties": {
+                      "cities": {
+                        "items": {
+                          "properties": {
+                            "longitude": {
+                              "type": "number",
+                              "format": "double"
+                            },
+                            "latitude": {
+                              "type": "number",
+                              "format": "double"
+                            },
+                            "city": {
+                              "type": "string"
+                            },
+                            "state": {
+                              "type": "string"
+                            },
+                            "timezone": {
+                              "type": "number",
+                              "format": "double"
+                            }
+                          },
+                          "required": ["longitude", "latitude", "city", "state", "timezone"],
+                          "type": "object"
+                        },
+                        "type": "array"
+                      },
                       "updatedAt": {
                         "type": "string",
                         "format": "date-time"
@@ -685,6 +822,7 @@
                       }
                     },
                     "required": [
+                      "cities",
                       "updatedAt",
                       "createdAt",
                       "timezones",

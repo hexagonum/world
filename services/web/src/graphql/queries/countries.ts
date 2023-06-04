@@ -34,6 +34,13 @@ export const COUNTRIES_QUERY: DocumentNode = gql`
         code
         name
       }
+      cities {
+        city
+        state
+        latitude
+        longitude
+        timezone
+      }
     }
   }
 `;
@@ -197,6 +204,13 @@ export const COUNTRY_QUERY: DocumentNode = gql`
       organizations {
         code
         name
+      }
+      cities {
+        city
+        state
+        latitude
+        longitude
+        timezone
       }
     }
   }

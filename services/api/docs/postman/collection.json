@@ -9,7 +9,7 @@
           "description": "",
           "item": [
             {
-              "id": "6088b981-b536-48f9-912c-75569a9b8cf4",
+              "id": "bc0661c3-04ba-417d-aa8d-0f2decaa583f",
               "name": "Get Timezone",
               "request": {
                 "name": "Get Timezone",
@@ -27,7 +27,7 @@
               },
               "response": [
                 {
-                  "id": "b76d15c7-19c8-4fe5-807a-28b212fc3e74",
+                  "id": "e0f028c8-e3a9-4e2a-a083-bd9750ce85e0",
                   "name": "Ok",
                   "originalRequest": {
                     "url": { "path": ["timezones", ":code"], "host": ["{{baseUrl}}"], "query": [], "variable": [] },
@@ -49,7 +49,7 @@
           ]
         },
         {
-          "id": "f927f391-27d6-425b-9c14-fab56311efd4",
+          "id": "f41c9002-b8fd-4641-9c77-a89dac2501cc",
           "name": "Get Timezones",
           "request": {
             "name": "Get Timezones",
@@ -62,7 +62,7 @@
           },
           "response": [
             {
-              "id": "d7850d02-b39f-4c16-b428-2b5119387d84",
+              "id": "617b7744-5dff-4c47-9c72-8223cc1b4f28",
               "name": "Ok",
               "originalRequest": {
                 "url": { "path": ["timezones"], "host": ["{{baseUrl}}"], "query": [], "variable": [] },
@@ -92,7 +92,7 @@
           "description": "",
           "item": [
             {
-              "id": "835a1f8b-ca4f-4c3f-a085-349308934d45",
+              "id": "da64ccaf-29ce-4931-971e-b9db7274d90b",
               "name": "Get Passport",
               "request": {
                 "name": "Get Passport",
@@ -110,7 +110,7 @@
               },
               "response": [
                 {
-                  "id": "8bc683d5-6726-4bf4-82a8-2f081b27659d",
+                  "id": "d26a19de-113a-4b87-8dd3-a20a011d8b96",
                   "name": "Ok",
                   "originalRequest": {
                     "url": { "path": ["passports", ":code"], "host": ["{{baseUrl}}"], "query": [], "variable": [] },
@@ -132,7 +132,7 @@
           ]
         },
         {
-          "id": "1786607c-81f5-4aa1-9686-1eba0ece67b8",
+          "id": "f4878c11-729e-4117-a268-9df89c0ef5bc",
           "name": "Get Passports",
           "request": {
             "name": "Get Passports",
@@ -145,7 +145,7 @@
           },
           "response": [
             {
-              "id": "3911ef05-b582-4ed0-b4fd-ec81a235a3bc",
+              "id": "102c1583-5ed8-4469-8a07-502db889bb26",
               "name": "Ok",
               "originalRequest": {
                 "url": { "path": ["passports"], "host": ["{{baseUrl}}"], "query": [], "variable": [] },
@@ -175,7 +175,7 @@
           "description": "",
           "item": [
             {
-              "id": "329df568-ebfb-446e-be6c-3b80ee30cc05",
+              "id": "01414357-a3eb-4acb-8684-e9483bce9bf9",
               "name": "Get Organization",
               "request": {
                 "name": "Get Organization",
@@ -193,7 +193,7 @@
               },
               "response": [
                 {
-                  "id": "ff512c7e-5fa9-4d51-ad9a-34dda36e604c",
+                  "id": "064327b3-71c3-418b-93b4-e5ee4666cf13",
                   "name": "Ok",
                   "originalRequest": {
                     "url": { "path": ["organizations", ":code"], "host": ["{{baseUrl}}"], "query": [], "variable": [] },
@@ -215,7 +215,7 @@
           ]
         },
         {
-          "id": "48eacb09-91d4-404d-ba2e-ad0b9992bffa",
+          "id": "4172ffea-723c-40a4-89cb-f4157daea6b7",
           "name": "Get Organizations",
           "request": {
             "name": "Get Organizations",
@@ -228,7 +228,7 @@
           },
           "response": [
             {
-              "id": "6b775e7b-d9be-4741-bbb4-bbfbc96ce5bf",
+              "id": "2098089e-55cb-4c8a-b2f4-38878a6ddef5",
               "name": "Ok",
               "originalRequest": {
                 "url": { "path": ["organizations"], "host": ["{{baseUrl}}"], "query": [], "variable": [] },
@@ -258,7 +258,7 @@
           "description": "",
           "item": [
             {
-              "id": "35102a2c-cdc7-4c07-9280-7681ebcee883",
+              "id": "615e6954-84e6-421c-a02f-c83c00ecffda",
               "name": "Get Sources",
               "request": {
                 "name": "Get Sources",
@@ -271,19 +271,19 @@
                       "disabled": false,
                       "description": { "content": "", "type": "text/plain" },
                       "key": "category",
-                      "value": "sports"
+                      "value": "health"
                     },
                     {
                       "disabled": false,
                       "description": { "content": "", "type": "text/plain" },
                       "key": "language",
-                      "value": "ru"
+                      "value": "ud"
                     },
                     {
                       "disabled": false,
                       "description": { "content": "", "type": "text/plain" },
                       "key": "country",
-                      "value": "pl"
+                      "value": "at"
                     }
                   ],
                   "variable": []
@@ -295,7 +295,7 @@
               },
               "response": [
                 {
-                  "id": "48f7a53f-0652-4be9-9748-7677ad83ea04",
+                  "id": "62d7c0f5-42eb-4513-98bc-c2712e914400",
                   "name": "Ok",
                   "originalRequest": {
                     "url": {
@@ -306,19 +306,19 @@
                           "disabled": false,
                           "description": { "content": "", "type": "text/plain" },
                           "key": "category",
-                          "value": "sports"
+                          "value": "health"
                         },
                         {
                           "disabled": false,
                           "description": { "content": "", "type": "text/plain" },
                           "key": "language",
-                          "value": "ru"
+                          "value": "ud"
                         },
                         {
                           "disabled": false,
                           "description": { "content": "", "type": "text/plain" },
                           "key": "country",
-                          "value": "pl"
+                          "value": "at"
                         }
                       ],
                       "variable": []
@@ -330,7 +330,7 @@
                   "status": "OK",
                   "code": 200,
                   "header": [{ "key": "Content-Type", "value": "application/json" }],
-                  "body": "[\n  {\n    \"country\": \"co\",\n    \"language\": \"ru\",\n    \"category\": \"business\",\n    \"url\": \"<string>\",\n    \"description\": \"<string>\",\n    \"name\": \"<string>\",\n    \"id\": \"<string>\"\n  },\n  {\n    \"country\": \"sa\",\n    \"language\": \"it\",\n    \"category\": \"business\",\n    \"url\": \"<string>\",\n    \"description\": \"<string>\",\n    \"name\": \"<string>\",\n    \"id\": \"<string>\"\n  }\n]",
+                  "body": "[\n  {\n    \"country\": \"nl\",\n    \"language\": \"pt\",\n    \"category\": \"general\",\n    \"url\": \"<string>\",\n    \"description\": \"<string>\",\n    \"name\": \"<string>\",\n    \"id\": \"<string>\"\n  },\n  {\n    \"country\": \"ph\",\n    \"language\": \"ru\",\n    \"category\": \"science\",\n    \"url\": \"<string>\",\n    \"description\": \"<string>\",\n    \"name\": \"<string>\",\n    \"id\": \"<string>\"\n  }\n]",
                   "cookie": [],
                   "_postman_previewlanguage": "json"
                 }
@@ -345,7 +345,7 @@
           "description": "",
           "item": [
             {
-              "id": "d488e493-8c9f-4962-b1ff-ef99b7ffdf01",
+              "id": "35336215-34d8-4230-b6a7-38bb63c43087",
               "name": "Get Headlines",
               "request": {
                 "name": "Get Headlines",
@@ -358,13 +358,13 @@
                       "disabled": false,
                       "description": { "content": "", "type": "text/plain" },
                       "key": "country",
-                      "value": "pl"
+                      "value": "at"
                     },
                     {
                       "disabled": false,
                       "description": { "content": "", "type": "text/plain" },
                       "key": "category",
-                      "value": "sports"
+                      "value": "health"
                     },
                     {
                       "disabled": false,
@@ -388,7 +388,7 @@
               },
               "response": [
                 {
-                  "id": "fb88496c-74ed-43b9-93ad-5c967d46dedd",
+                  "id": "5d1b6436-fefe-4085-9507-f15c80e1959a",
                   "name": "Ok",
                   "originalRequest": {
                     "url": {
@@ -399,13 +399,13 @@
                           "disabled": false,
                           "description": { "content": "", "type": "text/plain" },
                           "key": "country",
-                          "value": "pl"
+                          "value": "at"
                         },
                         {
                           "disabled": false,
                           "description": { "content": "", "type": "text/plain" },
                           "key": "category",
-                          "value": "sports"
+                          "value": "health"
                         },
                         {
                           "disabled": false,
@@ -450,7 +450,7 @@
           "description": "",
           "item": [
             {
-              "id": "7165d26a-793f-44ab-8ee1-13b9f713f804",
+              "id": "4e390d21-2b97-4053-a45a-f81083410c9d",
               "name": "Get Language",
               "request": {
                 "name": "Get Language",
@@ -468,7 +468,7 @@
               },
               "response": [
                 {
-                  "id": "99bb7d6d-5f44-41c6-b1af-1ad6a8a0ef28",
+                  "id": "ee521a4c-7fb4-4f6a-baf1-e72d555fc6e6",
                   "name": "Ok",
                   "originalRequest": {
                     "url": { "path": ["languages", ":code"], "host": ["{{baseUrl}}"], "query": [], "variable": [] },
@@ -490,7 +490,7 @@
           ]
         },
         {
-          "id": "f548f6e2-88fc-467c-a1f9-078480c4c0e2",
+          "id": "d8d9788e-e2ee-4f86-a517-e1865d426fa4",
           "name": "Get Languages",
           "request": {
             "name": "Get Languages",
@@ -503,7 +503,7 @@
           },
           "response": [
             {
-              "id": "d804f5be-0e77-41a4-b57d-189979aa2348",
+              "id": "5b771f94-1168-492d-b19d-41e42c077c75",
               "name": "Ok",
               "originalRequest": {
                 "url": { "path": ["languages"], "host": ["{{baseUrl}}"], "query": [], "variable": [] },
@@ -529,7 +529,7 @@
       "description": "",
       "item": [
         {
-          "id": "49b4ba1f-6843-40fb-aa15-80ba5178de53",
+          "id": "32268e0d-c57d-4380-a136-90923340b3a2",
           "name": "Get Health",
           "request": {
             "name": "Get Health",
@@ -542,7 +542,7 @@
           },
           "response": [
             {
-              "id": "1ff934b3-9f25-4833-adc5-8d558114a6bc",
+              "id": "6d43fd53-7800-442c-ab15-6fdca5feff25",
               "name": "Ok",
               "originalRequest": {
                 "url": { "path": ["health"], "host": ["{{baseUrl}}"], "query": [], "variable": [] },
@@ -572,7 +572,7 @@
           "description": "",
           "item": [
             {
-              "id": "df9cb78d-ebc6-431b-9d70-c65c00a6b727",
+              "id": "27e1efec-4224-4dfa-9c55-b58aa7f028ce",
               "name": "Get Currency",
               "request": {
                 "name": "Get Currency",
@@ -590,7 +590,7 @@
               },
               "response": [
                 {
-                  "id": "3437bea4-58b7-4432-9706-35b7b38c7ba6",
+                  "id": "f93b2c69-ca2f-4630-8fee-41846ed8a4c9",
                   "name": "Ok",
                   "originalRequest": {
                     "url": { "path": ["currencies", ":code"], "host": ["{{baseUrl}}"], "query": [], "variable": [] },
@@ -612,7 +612,7 @@
           ]
         },
         {
-          "id": "266eedb1-9e30-467f-9d93-86b4b030f0d7",
+          "id": "999d8dd8-a1c7-42aa-8fc5-18b43b68edbb",
           "name": "Get Currencies",
           "request": {
             "name": "Get Currencies",
@@ -625,7 +625,7 @@
           },
           "response": [
             {
-              "id": "9dd2ba75-0776-4bf8-9b29-137b246aece4",
+              "id": "a95f212c-1ab3-4ec4-9a85-276ee3bf5ef8",
               "name": "Ok",
               "originalRequest": {
                 "url": { "path": ["currencies"], "host": ["{{baseUrl}}"], "query": [], "variable": [] },
@@ -659,7 +659,7 @@
               "description": "",
               "item": [
                 {
-                  "id": "7ec8ee1b-a848-475b-afff-0b4bb56ab0d5",
+                  "id": "265304ab-5991-4119-b909-e512b26553a0",
                   "name": "Get Coin",
                   "request": {
                     "name": "Get Coin",
@@ -677,7 +677,7 @@
                   },
                   "response": [
                     {
-                      "id": "da99b67c-3675-41e7-a155-3ade32a01cfa",
+                      "id": "6bcf6cc0-1a27-4555-9d59-c46f4d619f9f",
                       "name": "Ok",
                       "originalRequest": {
                         "url": {
@@ -704,7 +704,7 @@
               ]
             },
             {
-              "id": "c36faead-c8ff-4213-98c0-4b901f73b881",
+              "id": "12cd0630-0285-4b85-99ce-050836981aab",
               "name": "Get Coins",
               "request": {
                 "name": "Get Coins",
@@ -717,7 +717,7 @@
               },
               "response": [
                 {
-                  "id": "13822809-a404-4d4d-aa4c-2a75d501a1ac",
+                  "id": "f87214a1-5f83-4e1d-95e2-fb4cff8f6858",
                   "name": "Ok",
                   "originalRequest": {
                     "url": { "path": ["crypto", "coins"], "host": ["{{baseUrl}}"], "query": [], "variable": [] },
@@ -749,7 +749,7 @@
           "description": "",
           "item": [
             {
-              "id": "b7c5b8db-75ae-4443-9726-1a2290d5739e",
+              "id": "9ed0e0d0-9d8f-4dc8-bda1-d3bd2b09234f",
               "name": "Get Country",
               "request": {
                 "name": "Get Country",
@@ -767,7 +767,7 @@
               },
               "response": [
                 {
-                  "id": "c0e02f63-e1a5-48d9-8d5a-951504584500",
+                  "id": "b71b8b60-f871-4668-bca5-b5a88cbc3e91",
                   "name": "Ok",
                   "originalRequest": {
                     "url": { "path": ["countries", ":code"], "host": ["{{baseUrl}}"], "query": [], "variable": [] },
@@ -789,7 +789,7 @@
           ]
         },
         {
-          "id": "dc7f2943-5c52-48e5-b879-3d10182437f0",
+          "id": "92d14338-65cf-4353-8a65-bd973b1b9a42",
           "name": "Get Countries",
           "request": {
             "name": "Get Countries",
@@ -820,7 +820,7 @@
           },
           "response": [
             {
-              "id": "1c2f2a2d-3a8a-4538-8430-8b7389aa9a56",
+              "id": "c6ca84a8-ffaf-4900-b3f4-3797b4554007",
               "name": "Ok",
               "originalRequest": {
                 "url": {
@@ -849,7 +849,70 @@
               "status": "OK",
               "code": 200,
               "header": [{ "key": "Content-Type", "value": "application/json" }],
-              "body": "[\n  {\n    \"updatedAt\": \"<dateTime>\",\n    \"createdAt\": \"<dateTime>\",\n    \"timezones\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"googleMaps\": \"<string>\",\n    \"density\": \"<double>\",\n    \"population\": \"<double>\",\n    \"area\": \"<double>\",\n    \"flagSVG\": \"<string>\",\n    \"flagPNG\": \"<string>\",\n    \"flag\": \"<string>\",\n    \"subregion\": \"<string>\",\n    \"region\": \"<string>\",\n    \"borders\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"continents\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"alternativeSpellings\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"capital\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"topLevelDomains\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"longitude\": \"<double>\",\n    \"latitude\": \"<double>\",\n    \"startOfWeek\": \"<string>\",\n    \"unMember\": \"<boolean>\",\n    \"independent\": \"<boolean>\",\n    \"status\": \"<string>\",\n    \"fifa\": \"<string>\",\n    \"cioc\": \"<string>\",\n    \"ccn3\": \"<string>\",\n    \"cca3\": \"<string>\",\n    \"cca2\": \"<string>\",\n    \"officialName\": \"<string>\",\n    \"commonName\": \"<string>\",\n    \"code\": \"<string>\",\n    \"googleTrends\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"organizations\": [\n      {\n        \"updatedAt\": \"<dateTime>\",\n        \"createdAt\": \"<dateTime>\",\n        \"name\": \"<string>\",\n        \"code\": \"<string>\"\n      },\n      {\n        \"updatedAt\": \"<dateTime>\",\n        \"createdAt\": \"<dateTime>\",\n        \"name\": \"<string>\",\n        \"code\": \"<string>\"\n      }\n    ],\n    \"languages\": [\n      {\n        \"updatedAt\": \"<dateTime>\",\n        \"createdAt\": \"<dateTime>\",\n        \"name\": \"<string>\",\n        \"code\": \"<string>\"\n      },\n      {\n        \"updatedAt\": \"<dateTime>\",\n        \"createdAt\": \"<dateTime>\",\n        \"name\": \"<string>\",\n        \"code\": \"<string>\"\n      }\n    ],\n    \"currencies\": [\n      {\n        \"updatedAt\": \"<dateTime>\",\n        \"createdAt\": \"<dateTime>\",\n        \"symbol\": \"<string>\",\n        \"name\": \"<string>\",\n        \"code\": \"<string>\"\n      },\n      {\n        \"updatedAt\": \"<dateTime>\",\n        \"createdAt\": \"<dateTime>\",\n        \"symbol\": \"<string>\",\n        \"name\": \"<string>\",\n        \"code\": \"<string>\"\n      }\n    ]\n  },\n  {\n    \"updatedAt\": \"<dateTime>\",\n    \"createdAt\": \"<dateTime>\",\n    \"timezones\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"googleMaps\": \"<string>\",\n    \"density\": \"<double>\",\n    \"population\": \"<double>\",\n    \"area\": \"<double>\",\n    \"flagSVG\": \"<string>\",\n    \"flagPNG\": \"<string>\",\n    \"flag\": \"<string>\",\n    \"subregion\": \"<string>\",\n    \"region\": \"<string>\",\n    \"borders\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"continents\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"alternativeSpellings\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"capital\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"topLevelDomains\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"longitude\": \"<double>\",\n    \"latitude\": \"<double>\",\n    \"startOfWeek\": \"<string>\",\n    \"unMember\": \"<boolean>\",\n    \"independent\": \"<boolean>\",\n    \"status\": \"<string>\",\n    \"fifa\": \"<string>\",\n    \"cioc\": \"<string>\",\n    \"ccn3\": \"<string>\",\n    \"cca3\": \"<string>\",\n    \"cca2\": \"<string>\",\n    \"officialName\": \"<string>\",\n    \"commonName\": \"<string>\",\n    \"code\": \"<string>\",\n    \"googleTrends\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"organizations\": [\n      {\n        \"updatedAt\": \"<dateTime>\",\n        \"createdAt\": \"<dateTime>\",\n        \"name\": \"<string>\",\n        \"code\": \"<string>\"\n      },\n      {\n        \"updatedAt\": \"<dateTime>\",\n        \"createdAt\": \"<dateTime>\",\n        \"name\": \"<string>\",\n        \"code\": \"<string>\"\n      }\n    ],\n    \"languages\": [\n      {\n        \"updatedAt\": \"<dateTime>\",\n        \"createdAt\": \"<dateTime>\",\n        \"name\": \"<string>\",\n        \"code\": \"<string>\"\n      },\n      {\n        \"updatedAt\": \"<dateTime>\",\n        \"createdAt\": \"<dateTime>\",\n        \"name\": \"<string>\",\n        \"code\": \"<string>\"\n      }\n    ],\n    \"currencies\": [\n      {\n        \"updatedAt\": \"<dateTime>\",\n        \"createdAt\": \"<dateTime>\",\n        \"symbol\": \"<string>\",\n        \"name\": \"<string>\",\n        \"code\": \"<string>\"\n      },\n      {\n        \"updatedAt\": \"<dateTime>\",\n        \"createdAt\": \"<dateTime>\",\n        \"symbol\": \"<string>\",\n        \"name\": \"<string>\",\n        \"code\": \"<string>\"\n      }\n    ]\n  }\n]",
+              "body": "[\n  {\n    \"cities\": [\n      {\n        \"longitude\": \"<double>\",\n        \"latitude\": \"<double>\",\n        \"city\": \"<string>\",\n        \"state\": \"<string>\",\n        \"timezone\": \"<double>\"\n      },\n      {\n        \"longitude\": \"<double>\",\n        \"latitude\": \"<double>\",\n        \"city\": \"<string>\",\n        \"state\": \"<string>\",\n        \"timezone\": \"<double>\"\n      }\n    ],\n    \"updatedAt\": \"<dateTime>\",\n    \"createdAt\": \"<dateTime>\",\n    \"timezones\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"googleMaps\": \"<string>\",\n    \"density\": \"<double>\",\n    \"population\": \"<double>\",\n    \"area\": \"<double>\",\n    \"flagSVG\": \"<string>\",\n    \"flagPNG\": \"<string>\",\n    \"flag\": \"<string>\",\n    \"subregion\": \"<string>\",\n    \"region\": \"<string>\",\n    \"borders\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"continents\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"alternativeSpellings\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"capital\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"topLevelDomains\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"longitude\": \"<double>\",\n    \"latitude\": \"<double>\",\n    \"startOfWeek\": \"<string>\",\n    \"unMember\": \"<boolean>\",\n    \"independent\": \"<boolean>\",\n    \"status\": \"<string>\",\n    \"fifa\": \"<string>\",\n    \"cioc\": \"<string>\",\n    \"ccn3\": \"<string>\",\n    \"cca3\": \"<string>\",\n    \"cca2\": \"<string>\",\n    \"officialName\": \"<string>\",\n    \"commonName\": \"<string>\",\n    \"code\": \"<string>\",\n    \"googleTrends\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"organizations\": [\n      {\n        \"updatedAt\": \"<dateTime>\",\n        \"createdAt\": \"<dateTime>\",\n        \"name\": \"<string>\",\n        \"code\": \"<string>\"\n      },\n      {\n        \"updatedAt\": \"<dateTime>\",\n        \"createdAt\": \"<dateTime>\",\n        \"name\": \"<string>\",\n        \"code\": \"<string>\"\n      }\n    ],\n    \"languages\": [\n      {\n        \"updatedAt\": \"<dateTime>\",\n        \"createdAt\": \"<dateTime>\",\n        \"name\": \"<string>\",\n        \"code\": \"<string>\"\n      },\n      {\n        \"updatedAt\": \"<dateTime>\",\n        \"createdAt\": \"<dateTime>\",\n        \"name\": \"<string>\",\n        \"code\": \"<string>\"\n      }\n    ],\n    \"currencies\": [\n      {\n        \"updatedAt\": \"<dateTime>\",\n        \"createdAt\": \"<dateTime>\",\n        \"symbol\": \"<string>\",\n        \"name\": \"<string>\",\n        \"code\": \"<string>\"\n      },\n      {\n        \"updatedAt\": \"<dateTime>\",\n        \"createdAt\": \"<dateTime>\",\n        \"symbol\": \"<string>\",\n        \"name\": \"<string>\",\n        \"code\": \"<string>\"\n      }\n    ]\n  },\n  {\n    \"cities\": [\n      {\n        \"longitude\": \"<double>\",\n        \"latitude\": \"<double>\",\n        \"city\": \"<string>\",\n        \"state\": \"<string>\",\n        \"timezone\": \"<double>\"\n      },\n      {\n        \"longitude\": \"<double>\",\n        \"latitude\": \"<double>\",\n        \"city\": \"<string>\",\n        \"state\": \"<string>\",\n        \"timezone\": \"<double>\"\n      }\n    ],\n    \"updatedAt\": \"<dateTime>\",\n    \"createdAt\": \"<dateTime>\",\n    \"timezones\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"googleMaps\": \"<string>\",\n    \"density\": \"<double>\",\n    \"population\": \"<double>\",\n    \"area\": \"<double>\",\n    \"flagSVG\": \"<string>\",\n    \"flagPNG\": \"<string>\",\n    \"flag\": \"<string>\",\n    \"subregion\": \"<string>\",\n    \"region\": \"<string>\",\n    \"borders\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"continents\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"alternativeSpellings\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"capital\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"topLevelDomains\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"longitude\": \"<double>\",\n    \"latitude\": \"<double>\",\n    \"startOfWeek\": \"<string>\",\n    \"unMember\": \"<boolean>\",\n    \"independent\": \"<boolean>\",\n    \"status\": \"<string>\",\n    \"fifa\": \"<string>\",\n    \"cioc\": \"<string>\",\n    \"ccn3\": \"<string>\",\n    \"cca3\": \"<string>\",\n    \"cca2\": \"<string>\",\n    \"officialName\": \"<string>\",\n    \"commonName\": \"<string>\",\n    \"code\": \"<string>\",\n    \"googleTrends\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"organizations\": [\n      {\n        \"updatedAt\": \"<dateTime>\",\n        \"createdAt\": \"<dateTime>\",\n        \"name\": \"<string>\",\n        \"code\": \"<string>\"\n      },\n      {\n        \"updatedAt\": \"<dateTime>\",\n        \"createdAt\": \"<dateTime>\",\n        \"name\": \"<string>\",\n        \"code\": \"<string>\"\n      }\n    ],\n    \"languages\": [\n      {\n        \"updatedAt\": \"<dateTime>\",\n        \"createdAt\": \"<dateTime>\",\n        \"name\": \"<string>\",\n        \"code\": \"<string>\"\n      },\n      {\n        \"updatedAt\": \"<dateTime>\",\n        \"createdAt\": \"<dateTime>\",\n        \"name\": \"<string>\",\n        \"code\": \"<string>\"\n      }\n    ],\n    \"currencies\": [\n      {\n        \"updatedAt\": \"<dateTime>\",\n        \"createdAt\": \"<dateTime>\",\n        \"symbol\": \"<string>\",\n        \"name\": \"<string>\",\n        \"code\": \"<string>\"\n      },\n      {\n        \"updatedAt\": \"<dateTime>\",\n        \"createdAt\": \"<dateTime>\",\n        \"symbol\": \"<string>\",\n        \"name\": \"<string>\",\n        \"code\": \"<string>\"\n      }\n    ]\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": { "disableBodyPruning": true }
+        }
+      ]
+    },
+    {
+      "name": "cities",
+      "description": "",
+      "item": [
+        {
+          "id": "1386f0d8-cd4c-479e-83f7-fd68c38646ac",
+          "name": "Get Cities",
+          "request": {
+            "name": "Get Cities",
+            "description": {},
+            "url": {
+              "path": ["cities"],
+              "host": ["{{baseUrl}}"],
+              "query": [
+                {
+                  "disabled": false,
+                  "description": { "content": "", "type": "text/plain" },
+                  "key": "countryCode",
+                  "value": ""
+                }
+              ],
+              "variable": []
+            },
+            "header": [{ "key": "Accept", "value": "application/json" }],
+            "method": "GET",
+            "body": {},
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "736eabdd-9417-4595-a580-392c900c647d",
+              "name": "Ok",
+              "originalRequest": {
+                "url": {
+                  "path": ["cities"],
+                  "host": ["{{baseUrl}}"],
+                  "query": [
+                    {
+                      "disabled": false,
+                      "description": { "content": "", "type": "text/plain" },
+                      "key": "countryCode",
+                      "value": ""
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [{ "key": "Accept", "value": "application/json" }],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [{ "key": "Content-Type", "value": "application/json" }],
+              "body": "[\n  {\n    \"city\": \"<string>\",\n    \"cityCode\": \"<string>\",\n    \"cityLevel\": \"<string>\",\n    \"country\": {\n      \"updatedAt\": \"<dateTime>\",\n      \"createdAt\": \"<dateTime>\",\n      \"timezones\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"googleMaps\": \"<string>\",\n      \"density\": \"<double>\",\n      \"population\": \"<double>\",\n      \"area\": \"<double>\",\n      \"flagSVG\": \"<string>\",\n      \"flagPNG\": \"<string>\",\n      \"flag\": \"<string>\",\n      \"subregion\": \"<string>\",\n      \"region\": \"<string>\",\n      \"borders\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"continents\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"alternativeSpellings\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"capital\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"topLevelDomains\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"longitude\": \"<double>\",\n      \"latitude\": \"<double>\",\n      \"startOfWeek\": \"<string>\",\n      \"unMember\": \"<boolean>\",\n      \"independent\": \"<boolean>\",\n      \"status\": \"<string>\",\n      \"fifa\": \"<string>\",\n      \"cioc\": \"<string>\",\n      \"ccn3\": \"<string>\",\n      \"cca3\": \"<string>\",\n      \"cca2\": \"<string>\",\n      \"officialName\": \"<string>\",\n      \"commonName\": \"<string>\",\n      \"code\": \"<string>\"\n    },\n    \"countryCode\": \"<string>\",\n    \"id\": \"<double>\",\n    \"latitude\": \"<double>\",\n    \"longitude\": \"<double>\",\n    \"region\": \"<string>\",\n    \"state\": \"<string>\",\n    \"stateCode\": \"<string>\",\n    \"stateLevel\": \"<string>\",\n    \"subregion\": \"<string>\",\n    \"timezone\": \"<double>\"\n  },\n  {\n    \"city\": \"<string>\",\n    \"cityCode\": \"<string>\",\n    \"cityLevel\": \"<string>\",\n    \"country\": {\n      \"updatedAt\": \"<dateTime>\",\n      \"createdAt\": \"<dateTime>\",\n      \"timezones\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"googleMaps\": \"<string>\",\n      \"density\": \"<double>\",\n      \"population\": \"<double>\",\n      \"area\": \"<double>\",\n      \"flagSVG\": \"<string>\",\n      \"flagPNG\": \"<string>\",\n      \"flag\": \"<string>\",\n      \"subregion\": \"<string>\",\n      \"region\": \"<string>\",\n      \"borders\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"continents\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"alternativeSpellings\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"capital\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"topLevelDomains\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"longitude\": \"<double>\",\n      \"latitude\": \"<double>\",\n      \"startOfWeek\": \"<string>\",\n      \"unMember\": \"<boolean>\",\n      \"independent\": \"<boolean>\",\n      \"status\": \"<string>\",\n      \"fifa\": \"<string>\",\n      \"cioc\": \"<string>\",\n      \"ccn3\": \"<string>\",\n      \"cca3\": \"<string>\",\n      \"cca2\": \"<string>\",\n      \"officialName\": \"<string>\",\n      \"commonName\": \"<string>\",\n      \"code\": \"<string>\"\n    },\n    \"countryCode\": \"<string>\",\n    \"id\": \"<double>\",\n    \"latitude\": \"<double>\",\n    \"longitude\": \"<double>\",\n    \"region\": \"<string>\",\n    \"state\": \"<string>\",\n    \"stateCode\": \"<string>\",\n    \"stateLevel\": \"<string>\",\n    \"subregion\": \"<string>\",\n    \"timezone\": \"<double>\"\n  }\n]",
               "cookie": [],
               "_postman_previewlanguage": "json"
             }
@@ -863,7 +926,7 @@
   "event": [],
   "variable": [{ "key": "baseUrl", "value": "http://localhost:8080" }],
   "info": {
-    "_postman_id": "04233d43-6871-4f91-85fb-d2024f52cda8",
+    "_postman_id": "48ec15e3-2ad8-45af-be24-1458a6251777",
     "name": "@world/api",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
     "description": {

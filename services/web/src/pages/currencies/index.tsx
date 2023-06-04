@@ -3,16 +3,10 @@ import Container from '@world/components/Container';
 import { NEXT_PUBLIC_BASE_API } from '@world/configs';
 import useFetch from '@world/hooks/use-fetch';
 import Layout from '@world/layout';
+import { Country } from '@world/types';
 import { currencyFormatter } from '@world/utils/currency-formatter';
 import { NextPage } from 'next';
 import Link from 'next/link';
-
-type Country = {
-  commonName: string;
-  region: string;
-  subregion: string;
-  population: number;
-};
 
 type Currency = { code: string; name: string; countries: { country: Country }[] };
 

@@ -3,32 +3,11 @@ import { Badge, Card, CardBody, Select, Table, TableContainer, Tbody, Td, Th, Th
 import Container from '@world/components/Container';
 import { COUNTRIES_QUERY } from '@world/graphql/queries/countries';
 import Layout from '@world/layout';
+import { Country } from '@world/types';
 import { NextPage } from 'next';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
-
-type Country = {
-  code: string;
-  commonName: string;
-  officialName: string;
-  cca2: string;
-  cca3: string;
-  ccn3: string;
-  cioc: string;
-  fifa: string;
-  region: string;
-  subregion: string;
-  population: number;
-  area: number;
-  density: number;
-  capital: string[];
-  borders: string[];
-  timezones: string[];
-  currencies: { code: string; name: string }[];
-  languages: { code: string; name: string }[];
-  organizations: { code: string; name: string }[];
-};
 
 const CompareMain: React.FC = () => {
   const { query } = useRouter();

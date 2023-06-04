@@ -3,20 +3,11 @@ import Container from '@world/components/Container';
 import { apolloClient } from '@world/graphql';
 import { COUNTRIES_QUERY } from '@world/graphql/queries/countries';
 import { Layout } from '@world/layout';
+import { Country } from '@world/types';
 import { unique } from '@world/utils/unique';
 import { GetStaticProps, NextPage } from 'next';
 import Link from 'next/link';
 import { ChangeEvent, useState } from 'react';
-
-type Country = {
-  commonName: string;
-  cca2: string;
-  cca3: string;
-  fifa: string;
-  flag: String;
-  region: string;
-  subregion: string;
-};
 
 type CountriesPageProps = {
   countries: Country[];

@@ -54,22 +54,24 @@ model Country {
   passports             Passport[]
   passportsRequirements PassportRequirement[]
   googleTrends          GoogleTrend[]
+  cities                City[]
 }
 
 model City {
-  id          String @id
-  country     String @default("")
-  countryCode String @default("")
-  region      String @default("")
-  subregion   String @default("")
-  state       String @default("")
-  stateCode   String @default("")
-  stateLevel  String @default("")
-  city        String @default("")
-  cityCode    String @default("")
-  cityLevel   String @default("")
-  latitude    Float  @default(0)
-  longitude   Float  @default(0)
+  id          Int     @id @default(autoincrement())
+  country     Country @relation(fields: [countryCode], references: [code])
+  countryCode String
+  region      String  @default("")
+  subregion   String  @default("")
+  state       String  @default("")
+  stateCode   String  @default("")
+  stateLevel  String  @default("")
+  city        String  @default("")
+  cityCode    String  @default("")
+  cityLevel   String  @default("")
+  latitude    Float   @default(0)
+  longitude   Float   @default(0)
+  timezone    Float   @default(0)
 }
 
 model Currency {

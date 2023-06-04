@@ -3,15 +3,15 @@ import Container from '@world/components/Container';
 import { apolloClient } from '@world/graphql';
 import { COUNTRIES_TOP_LEVEL_DOMAINS_QUERY } from '@world/graphql/queries/countries';
 import Layout from '@world/layout';
+import { Country } from '@world/types';
 import { GetStaticProps, NextPage } from 'next';
 import Link from 'next/link';
 import { ChangeEvent, useState } from 'react';
 
-type Country = { commonName: string; cca3: string; topLevelDomains: string[] };
-
 type TopLevelDomainsPageProps = {
   countries: Country[];
 };
+
 export const TopLevelDomainsPage: NextPage<TopLevelDomainsPageProps> = ({ countries = [] }) => {
   const [query, setQuery] = useState<string>('');
 

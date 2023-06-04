@@ -3,43 +3,14 @@ import { Badge, Card, CardBody, Divider, Table, TableContainer, Tbody, Td, Tr } 
 import Articles from '@world/components/Articles';
 import { Container } from '@world/components/Container';
 import { Weather } from '@world/components/Weather';
-import { cities } from '@world/data/cities';
 import isoAlpha3Codes from '@world/data/codes/iso-alpha-3.json';
 import { COUNTRY_QUERY } from '@world/graphql/queries/countries';
 import { Layout } from '@world/layout';
-import { City } from '@world/types';
+import { City, Country } from '@world/types';
 import { NextPage } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-
-type Country = {
-  code: string;
-  commonName: string;
-  officialName: string;
-  cca2: string;
-  flagSVG: string;
-  cca3: string;
-  ccn3: string;
-  cioc: string;
-  fifa: string;
-  region: string;
-  subregion: string;
-  population: number;
-  area: number;
-  density: number;
-  latitude: number;
-  longitude: number;
-  googleMaps: string;
-  capital: string[];
-  borders: string[];
-  timezones: string[];
-  googleTrends: string[];
-  topLevelDomains: string[];
-  currencies: { code: string; name: string }[];
-  languages: { code: string; name: string }[];
-  organizations: { code: string; name: string }[];
-};
 
 const CodeSection: React.FC<{ country: Country }> = ({ country }) => {
   return (
@@ -307,9 +278,6 @@ const CountryMain: React.FC<{ code: string }> = ({ code = '' }) => {
   }
 
   const country = data.country;
-  const citiesByCountry = cities.filter(
-    ({ country: cityCountry }) => country.commonName.toLowerCase() === cityCountry.toLowerCase()
-  );
 
   return (
     <div className="flex flex-col gap-4 md:gap-8">
@@ -384,13 +352,13 @@ const CountryMain: React.FC<{ code: string }> = ({ code = '' }) => {
       <GeographySection country={country} />
       <PopulationSection country={country} />
       <OrganizationsSection organizations={country.organizations} />
-      {citiesByCountry.length > 0 ? (
+      {(country.cities || []).length > 0 ? (
         <>
           <div className="flex flex-col gap-4 md:gap-8">
-            <h2 className="font-semibold text-xl">Weather ({citiesByCountry.length})</h2>
+            <h2 className="font-semibold text-xl">Weather ({(country.cities || []).length})</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8">
-              {citiesByCountry.map(({ id, name, latitude, longitude, timezone }: City) => (
-                <Weather key={id} city={name} latitude={latitude} longitude={longitude} timezone={timezone} />
+              {(country.cities || []).map(({ id, city, latitude, longitude, timezone }: City) => (
+                <Weather key={id} city={city} latitude={latitude} longitude={longitude} timezone={timezone} />
               ))}
             </div>
           </div>
@@ -430,6 +398,8 @@ const CountryMain: React.FC<{ code: string }> = ({ code = '' }) => {
 const CountryPage: NextPage = () => {
   const { query } = useRouter();
   const countryCode: string = query.country?.toString() ?? '';
+
+  if (!countryCode) return <></>;
 
   return (
     <Layout>

@@ -12,6 +12,8 @@ import {
   fetchMiddlewares,
 } from '@tsoa/runtime';
 // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
+import { CitiesController } from './modules/cities/cities.controller';
+// WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
 import { CountriesController } from './modules/countries/countries.controller';
 // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
 import { CryptoController } from './modules/crypto/crypto.controller';
@@ -34,44 +36,24 @@ import type { RequestHandler, Router } from 'express';
 // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
 
 const models: TsoaRoute.Models = {
-  Currency: {
+  City: {
     dataType: 'refAlias',
     type: {
       dataType: 'nestedObjectLiteral',
       nestedProperties: {
-        updatedAt: { dataType: 'datetime', required: true },
-        createdAt: { dataType: 'datetime', required: true },
-        symbol: { dataType: 'string', required: true },
-        name: { dataType: 'string', required: true },
-        code: { dataType: 'string', required: true },
-      },
-      validators: {},
-    },
-  },
-  // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
-  Language: {
-    dataType: 'refAlias',
-    type: {
-      dataType: 'nestedObjectLiteral',
-      nestedProperties: {
-        updatedAt: { dataType: 'datetime', required: true },
-        createdAt: { dataType: 'datetime', required: true },
-        name: { dataType: 'string', required: true },
-        code: { dataType: 'string', required: true },
-      },
-      validators: {},
-    },
-  },
-  // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
-  Organization: {
-    dataType: 'refAlias',
-    type: {
-      dataType: 'nestedObjectLiteral',
-      nestedProperties: {
-        updatedAt: { dataType: 'datetime', required: true },
-        createdAt: { dataType: 'datetime', required: true },
-        name: { dataType: 'string', required: true },
-        code: { dataType: 'string', required: true },
+        timezone: { dataType: 'double', required: true },
+        longitude: { dataType: 'double', required: true },
+        latitude: { dataType: 'double', required: true },
+        cityLevel: { dataType: 'string', required: true },
+        cityCode: { dataType: 'string', required: true },
+        city: { dataType: 'string', required: true },
+        stateLevel: { dataType: 'string', required: true },
+        stateCode: { dataType: 'string', required: true },
+        state: { dataType: 'string', required: true },
+        subregion: { dataType: 'string', required: true },
+        region: { dataType: 'string', required: true },
+        countryCode: { dataType: 'string', required: true },
+        id: { dataType: 'double', required: true },
       },
       validators: {},
     },
@@ -112,6 +94,49 @@ const models: TsoaRoute.Models = {
         cca2: { dataType: 'string', required: true },
         officialName: { dataType: 'string', required: true },
         commonName: { dataType: 'string', required: true },
+        code: { dataType: 'string', required: true },
+      },
+      validators: {},
+    },
+  },
+  // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
+  Currency: {
+    dataType: 'refAlias',
+    type: {
+      dataType: 'nestedObjectLiteral',
+      nestedProperties: {
+        updatedAt: { dataType: 'datetime', required: true },
+        createdAt: { dataType: 'datetime', required: true },
+        symbol: { dataType: 'string', required: true },
+        name: { dataType: 'string', required: true },
+        code: { dataType: 'string', required: true },
+      },
+      validators: {},
+    },
+  },
+  // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
+  Language: {
+    dataType: 'refAlias',
+    type: {
+      dataType: 'nestedObjectLiteral',
+      nestedProperties: {
+        updatedAt: { dataType: 'datetime', required: true },
+        createdAt: { dataType: 'datetime', required: true },
+        name: { dataType: 'string', required: true },
+        code: { dataType: 'string', required: true },
+      },
+      validators: {},
+    },
+  },
+  // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
+  Organization: {
+    dataType: 'refAlias',
+    type: {
+      dataType: 'nestedObjectLiteral',
+      nestedProperties: {
+        updatedAt: { dataType: 'datetime', required: true },
+        createdAt: { dataType: 'datetime', required: true },
+        name: { dataType: 'string', required: true },
         code: { dataType: 'string', required: true },
       },
       validators: {},
@@ -353,6 +378,32 @@ export function RegisterRoutes(app: Router) {
   //  NOTE: If you do not see routes for all of your controllers in this file, then you might not have informed tsoa of where to look
   //      Please look into the "controllerPathGlobs" config option described in the readme: https://github.com/lukeautry/tsoa
   // ###########################################################################################################
+  app.get(
+    '/cities',
+    ...fetchMiddlewares<RequestHandler>(CitiesController),
+    ...fetchMiddlewares<RequestHandler>(CitiesController.prototype.getCities),
+
+    function CitiesController_getCities(request: any, response: any, next: any) {
+      const args = {
+        countryCode: { default: '', in: 'query', name: 'countryCode', dataType: 'string' },
+      };
+
+      // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
+
+      let validatedArgs: any[] = [];
+      try {
+        validatedArgs = getValidatedArgs(args, request, response);
+
+        const controller = new CitiesController();
+
+        const promise = controller.getCities.apply(controller, validatedArgs as any);
+        promiseHandler(controller, promise, response, undefined, next);
+      } catch (err) {
+        return next(err);
+      }
+    }
+  );
+  // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
   app.get(
     '/countries',
     ...fetchMiddlewares<RequestHandler>(CountriesController),
