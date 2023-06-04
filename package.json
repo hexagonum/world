@@ -40,7 +40,7 @@
     "prisma": "4.15.0"
   },
   "resolutions": {
-    "@types/react": "18.2.7"
+    "@types/react": "18.2.8"
   },
   "workspaces": [
     "services/*"
