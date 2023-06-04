@@ -1,92 +1,123 @@
-import { Badge, Divider, Table, TableContainer, Tbody, Td, Tr } from '@chakra-ui/react';
+import { useQuery } from '@apollo/client';
+import { Badge, Card, CardBody, Divider, Table, TableContainer, Tbody, Td, Tr } from '@chakra-ui/react';
 import { Container } from '@world/components/Container';
-import isoAlpha3Codes from '@world/data/codes/iso-alpha-3.json';
-import timezones from '@world/data/timezones/list.json';
-import unitedNationMembers from '@world/data/united-nation-members.json';
+import { COUNTRIES_TIMEZONES_QUERY } from '@world/graphql/queries/countries';
 import Layout from '@world/layout';
+import { unique } from '@world/utils/unique';
 import { NextPage } from 'next';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import React from 'react';
 
-type Timezone = { name: string; offset: number; total: number; countries: string[]; timezones: string[] };
-const defaultTimezone: Timezone = {
-  name: '',
-  offset: 0,
-  total: 0,
-  countries: [],
-  timezones: [],
+type Country = { code: string; commonName: string; region: string };
+type Timezone = { code: string; name: string; utcOffset: string };
+
+const TimezoneMain: React.FC<{ timezoneUtcOffset: string }> = ({ timezoneUtcOffset = '' }) => {
+  const { loading, error, data } = useQuery<{ countries: Country[]; timezones: Timezone[] }>(
+    COUNTRIES_TIMEZONES_QUERY,
+    { variables: { timezone: timezoneUtcOffset } }
+  );
+
+  if (loading) {
+    return (
+      <Card className="border border-gray-200">
+        <CardBody>
+          <p className="text-center">Loading</p>
+        </CardBody>
+      </Card>
+    );
+  }
+
+  if (error) {
+    return (
+      <Card className="border border-gray-200">
+        <CardBody>
+          <p className="text-center">Error</p>
+        </CardBody>
+      </Card>
+    );
+  }
+
+  if (!data) {
+    return (
+      <Card className="border border-gray-200">
+        <CardBody>
+          <p className="text-center">No Data</p>
+        </CardBody>
+      </Card>
+    );
+  }
+
+  const timezones: Timezone[] = data.timezones.filter(({ utcOffset }) => utcOffset === timezoneUtcOffset);
+  const regions: string[] = unique(data.countries.map(({ region }: Country) => region)).sort((a: string, b: string) =>
+    a > b ? 1 : -1
+  );
+
+  return (
+    <div className="flex flex-col gap-4 md:gap-8">
+      <h1 className="capitalize text-4xl font-bold">{timezoneUtcOffset}</h1>
+      <TableContainer className="shadow border rounded">
+        <Table>
+          <Tbody>
+            <Tr>
+              <Td>Offset</Td>
+              <Td isNumeric>{timezoneUtcOffset}</Td>
+            </Tr>
+            <Tr>
+              <Td>Timezones ({timezones.length})</Td>
+              <Td>
+                <div className="flex flex-wrap justify-end gap-1 md:gap-2">
+                  {timezones.map((timezone: Timezone) => (
+                    <Badge key={timezone.code}>{timezone.name}</Badge>
+                  ))}
+                </div>
+              </Td>
+            </Tr>
+          </Tbody>
+        </Table>
+      </TableContainer>
+      <Divider className="border-gray-300" />
+      <h2 className="font-semibold text-xl">Countries ({data.countries.length})</h2>{' '}
+      <TableContainer className="shadow border rounded">
+        <Table>
+          <Tbody>
+            {regions.map((region: string) => {
+              const countriesByRegion = data.countries.filter(({ region: countryRegion }) => region === countryRegion);
+              return (
+                <Tr key={region}>
+                  <Td>
+                    {region} ({countriesByRegion.length})
+                  </Td>
+                  <Td isNumeric>
+                    <div className="flex flex-wrap justify-end gap-1 md:gap-2">
+                      {countriesByRegion.map(({ code, commonName }) => {
+                        return (
+                          <Link key={code} href={`/countries/${code}`}>
+                            <Badge colorScheme="teal">{commonName}</Badge>
+                          </Link>
+                        );
+                      })}
+                    </div>
+                  </Td>
+                </Tr>
+              );
+            })}
+          </Tbody>
+        </Table>
+      </TableContainer>
+    </div>
+  );
 };
 
 const TimezonePage: NextPage = () => {
   const { query } = useRouter();
-  const timezoneName: string = query.timezone?.toString() ?? '';
-  const timezone: Timezone =
-    timezones.find(({ name }) => name.toLowerCase() === timezoneName.toLowerCase()) ?? defaultTimezone;
-  const timezoneCountries = unitedNationMembers.filter(({ cca3 }) => timezone.countries.includes(cca3));
-  const regions: string[] = [...new Set(timezoneCountries.map(({ region }: { region: string }) => region))].sort(
-    (a: string, b: string) => (a > b ? 1 : -1)
-  );
+  const timezoneUtcOffset: string = query.timezone?.toString() ?? '';
 
   return (
     <Layout>
       <Container>
         <div className="p-8">
-          <div className="flex flex-col gap-4 md:gap-8">
-            <h1 className="capitalize text-4xl font-bold">{timezone.name}</h1>
-            <TableContainer className="shadow border rounded">
-              <Table>
-                <Tbody>
-                  <Tr>
-                    <Td>Offset</Td>
-                    <Td isNumeric>{timezone.offset}</Td>
-                  </Tr>
-                  <Tr>
-                    <Td>Timezones ({timezone.timezones.length})</Td>
-                    <Td>
-                      <div className="flex flex-wrap justify-end gap-1 md:gap-2">
-                        {timezone.timezones.map((tz: string) => (
-                          <Badge key={tz}>{tz}</Badge>
-                        ))}
-                      </div>
-                    </Td>
-                  </Tr>
-                </Tbody>
-              </Table>
-            </TableContainer>
-            <Divider className="border-gray-300" />
-            <h2 className="font-semibold text-xl">Countries ({timezone.countries.length})</h2>{' '}
-            <TableContainer className="shadow border rounded">
-              <Table>
-                <Tbody>
-                  {regions.map((region: string) => {
-                    const timezoneCountriesByRegion = timezoneCountries.filter(
-                      ({ region: countryRegion }) => region === countryRegion
-                    );
-                    return (
-                      <Tr key={region}>
-                        <Td>
-                          {region} ({timezoneCountriesByRegion.length})
-                        </Td>
-                        <Td isNumeric>
-                          <div className="flex flex-wrap justify-end gap-1 md:gap-2">
-                            {timezoneCountriesByRegion.map(({ cca3 }) => {
-                              return (
-                                <Link key={cca3} href={`/countries/${cca3}`}>
-                                  <Badge colorScheme="teal">
-                                    {(isoAlpha3Codes as Record<string, string>)[cca3] || ''}
-                                  </Badge>
-                                </Link>
-                              );
-                            })}
-                          </div>
-                        </Td>
-                      </Tr>
-                    );
-                  })}
-                </Tbody>
-              </Table>
-            </TableContainer>
-          </div>
+          <TimezoneMain timezoneUtcOffset={timezoneUtcOffset} />
         </div>
       </Container>
     </Layout>

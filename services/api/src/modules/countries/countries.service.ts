@@ -1,8 +1,22 @@
-import { Country } from '@prisma/client';
 import { prismaClient } from '../../common/libs/prisma';
 
 export class CountriesService {
-  async getCountries() {
+  async getCountries({ codes = '', timezone = '' }: { codes: string; timezone: string }) {
+    let where = {};
+    if (codes.length > 0)
+      where = {
+        ...where,
+        OR: [
+          { code: { in: codes.split(',') } },
+          { cca2: { in: codes.split(',') } },
+          { cca3: { in: codes.split(',') } },
+          { fifa: { in: codes.split(',') } },
+        ],
+      };
+    if (timezone.length > 0) {
+      where = { ...where, timezones: { has: timezone } };
+    }
+    console.log('Where', where);
     const countries = await prismaClient.country.findMany({
       include: {
         currencies: { select: { currency: true } },
@@ -10,9 +24,10 @@ export class CountriesService {
         organizations: { select: { organization: true } },
         googleTrends: { select: { queries: true } },
       },
+      where,
     });
     return countries.map((country) => {
-      const googleTrends: string[] = country.googleTrends.map(({ queries }) => queries)[0] ?? [];
+      const googleTrends: string[] = country.googleTrends.map(({ queries }: { queries: string[] }) => queries)[0] ?? [];
       return {
         ...country,
         currencies: country.currencies.map(({ currency }) => currency),
@@ -23,10 +38,23 @@ export class CountriesService {
     });
   }
 
-  async getCountry(code: string): Promise<Country> {
-    const country: Country = await prismaClient.country.findFirstOrThrow({
-      where: { OR: [{ code }, { cca2: code }, { cca3: code }] },
+  async getCountry(code: string) {
+    const country = await prismaClient.country.findFirstOrThrow({
+      include: {
+        currencies: { select: { currency: true } },
+        languages: { select: { language: true } },
+        organizations: { select: { organization: true } },
+        googleTrends: { select: { queries: true } },
+      },
+      where: { OR: [{ code }, { cca2: code }, { cca3: code }, { fifa: code }] },
     });
-    return country;
+    const googleTrends: string[] = country.googleTrends.map(({ queries }) => queries)[0] ?? [];
+    return {
+      ...country,
+      currencies: country.currencies.map(({ currency }) => currency),
+      languages: country.languages.map(({ language }) => language),
+      organizations: country.organizations.map(({ organization }) => organization),
+      googleTrends,
+    };
   }
 }

@@ -1,6 +1,7 @@
 export const typeDefs = `#graphql
   extend type Query {
-    countries: [Country]
+    countries(codes: String, timezone: String): [Country]
+    country(code: String!): Country
   }
 
   type Country {
@@ -10,8 +11,11 @@ export const typeDefs = `#graphql
     code: String
     cca2: String
     cca3: String
+    ccn3: String
+    cioc: String
     fifa: String
     topLevelDomains: [String]
+    capital: [String]
     # Population
     population: Int
     area: Float

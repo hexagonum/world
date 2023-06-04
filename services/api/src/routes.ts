@@ -359,7 +359,10 @@ export function RegisterRoutes(app: Router) {
     ...fetchMiddlewares<RequestHandler>(CountriesController.prototype.getCountries),
 
     function CountriesController_getCountries(request: any, response: any, next: any) {
-      const args = {};
+      const args = {
+        codes: { default: '', in: 'query', name: 'codes', dataType: 'string' },
+        timezone: { default: '', in: 'query', name: 'timezone', dataType: 'string' },
+      };
 
       // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
 

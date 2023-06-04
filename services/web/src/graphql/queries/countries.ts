@@ -2,15 +2,37 @@ import { gql } from '@apollo/client';
 import { DocumentNode } from 'graphql';
 
 export const COUNTRIES_QUERY: DocumentNode = gql`
-  query COUNTRIES_QUERY {
-    countries {
-      commonName
+  query COUNTRIES_QUERY($codes: String, $timezone: String) {
+    countries(codes: $codes, timezone: $timezone) {
+      code
       cca2
       cca3
+      ccn3
+      cioc
       fifa
-      flag
+      commonName
+      officialName
       region
       subregion
+      flag
+      population
+      area
+      density
+      capital
+      borders
+      timezones
+      currencies {
+        code
+        name
+      }
+      languages {
+        code
+        name
+      }
+      organizations {
+        code
+        name
+      }
     }
   }
 `;
@@ -111,12 +133,18 @@ export const COUNTRIES_POPULATION_QUERY: DocumentNode = gql`
 `;
 
 export const COUNTRIES_TIMEZONES_QUERY: DocumentNode = gql`
-  query COUNTRIES_TIMEZONES_QUERY {
-    countries {
+  query COUNTRIES_TIMEZONES_QUERY($timezone: String) {
+    countries(timezone: $timezone) {
       code
       commonName
       region
       timezones
+    }
+    timezones {
+      code
+      name
+      offset
+      utcOffset
     }
   }
 `;
