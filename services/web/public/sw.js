@@ -31,14 +31,6 @@ define(['./workbox-1051b61c'], function (e) {
     e.clientsClaim(),
     e.precacheAndRoute(
       [
-        {
-          url: '/world//_next/static/YMGcZzfoqpKbxkDUwCyxi/_buildManifest.js',
-          revision: 'a43a69dab119605ec3ffbff596e15157',
-        },
-        {
-          url: '/world//_next/static/YMGcZzfoqpKbxkDUwCyxi/_ssgManifest.js',
-          revision: 'b6652df95db52feb4daf4eca35380933',
-        },
         { url: '/world//_next/static/chunks/438-8c2a18be20943c6e.js', revision: '8c2a18be20943c6e' },
         { url: '/world//_next/static/chunks/896-edb0f369b587ea75.js', revision: 'edb0f369b587ea75' },
         { url: '/world//_next/static/chunks/979-301151d297081b68.js', revision: '301151d297081b68' },
@@ -46,7 +38,7 @@ define(['./workbox-1051b61c'], function (e) {
         { url: '/world//_next/static/chunks/main-558051abd9b3a08f.js', revision: '558051abd9b3a08f' },
         { url: '/world//_next/static/chunks/pages/404-58d95707ab7badbe.js', revision: '58d95707ab7badbe' },
         { url: '/world//_next/static/chunks/pages/500-902665299875bf56.js', revision: '902665299875bf56' },
-        { url: '/world//_next/static/chunks/pages/_app-fd0d01d48a6b9b4c.js', revision: 'fd0d01d48a6b9b4c' },
+        { url: '/world//_next/static/chunks/pages/_app-d4ac9224b7cdb159.js', revision: 'd4ac9224b7cdb159' },
         { url: '/world//_next/static/chunks/pages/_error-adc65c75b737d004.js', revision: 'adc65c75b737d004' },
         { url: '/world//_next/static/chunks/pages/countries-0781949d45a811aa.js', revision: '0781949d45a811aa' },
         {
@@ -130,6 +122,14 @@ define(['./workbox-1051b61c'], function (e) {
         },
         { url: '/world//_next/static/chunks/webpack-72f0182628967e4b.js', revision: '72f0182628967e4b' },
         { url: '/world//_next/static/css/b6a52f841db78191.css', revision: 'b6a52f841db78191' },
+        {
+          url: '/world//_next/static/saj5t3H3qLHfyOX0qYkxw/_buildManifest.js',
+          revision: 'a43a69dab119605ec3ffbff596e15157',
+        },
+        {
+          url: '/world//_next/static/saj5t3H3qLHfyOX0qYkxw/_ssgManifest.js',
+          revision: 'b6652df95db52feb4daf4eca35380933',
+        },
         { url: '/world/favicon.ico', revision: 'b7e5d143f696329db9b04f047c8ba284' },
         { url: '/world/manifest.json', revision: 'da0164d5cdfa9dd960ff4b15e98bf1bd' },
         { url: '/world/next.svg', revision: '8e061864f388b47f33a1c3780831193e' },
