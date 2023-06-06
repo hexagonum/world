@@ -5,7 +5,7 @@ import { COUNTRIES_QUERY } from '@world/graphql/queries/countries';
 import { Layout } from '@world/layout';
 import { Country } from '@world/types';
 import { unique } from '@world/utils/unique';
-import { GetStaticProps, NextPage } from 'next';
+import { GetStaticProps, GetStaticPropsContext, NextPage } from 'next';
 import Link from 'next/link';
 import { ChangeEvent, useState } from 'react';
 
@@ -106,7 +106,9 @@ export const CountriesPage: NextPage<CountriesPageProps> = ({ countries = [] }) 
   );
 };
 
-export const getStaticProps: GetStaticProps = async (): Promise<{ props: { countries: Country[] } }> => {
+export const getStaticProps: GetStaticProps = async (
+  context: GetStaticPropsContext
+): Promise<{ props: { countries: Country[] } }> => {
   try {
     const data = await apolloClient.query<{ countries: Country[] }>({ query: COUNTRIES_QUERY });
     const countries = data.data.countries;
