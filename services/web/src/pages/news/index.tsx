@@ -19,7 +19,7 @@ const NewsPage: NextPage<NewsPageProps> = ({ articles = [] }) => {
     <Layout>
       <Container>
         <div className="p-8">
-          <div className="flex flex-col gap-8">
+          <div className="flex flex-col gap-4 md:gap-8">
             <div className="w-full overflow-auto">
               <div className="flex gap-4">
                 {categories.map((c) => (
