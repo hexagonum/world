@@ -20,6 +20,8 @@ import { CryptoController } from './modules/crypto/crypto.controller';
 // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
 import { CurrenciesController } from './modules/currencies/currencies.controller';
 // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
+import { FootballController } from './modules/football/football.controller';
+// WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
 import { HealthController } from './modules/health/health.controller';
 // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
 import { LanguagesController } from './modules/languages/languages.controller';
@@ -164,6 +166,107 @@ const models: TsoaRoute.Models = {
         name: { dataType: 'string', required: true },
         symbol: { dataType: 'string', required: true },
         uuid: { dataType: 'string', required: true },
+      },
+      validators: {},
+    },
+  },
+  // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
+  Area: {
+    dataType: 'refAlias',
+    type: {
+      dataType: 'nestedObjectLiteral',
+      nestedProperties: {
+        parentArea: { dataType: 'string', required: true },
+        parentAreaId: { dataType: 'double', required: true },
+        flag: { dataType: 'string', required: true },
+        countryCode: { dataType: 'string', required: true },
+        name: { dataType: 'string', required: true },
+        id: { dataType: 'double', required: true },
+      },
+      validators: {},
+    },
+  },
+  // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
+  Competition: {
+    dataType: 'refAlias',
+    type: {
+      dataType: 'nestedObjectLiteral',
+      nestedProperties: {
+        lastUpdated: { dataType: 'string', required: true },
+        numberOfAvailableSeasons: { dataType: 'double', required: true },
+        plan: { dataType: 'string', required: true },
+        emblem: { dataType: 'string', required: true },
+        type: { dataType: 'string', required: true },
+        code: { dataType: 'string', required: true },
+        name: { dataType: 'string', required: true },
+        id: { dataType: 'double', required: true },
+        area: { ref: 'Area', required: true },
+      },
+      validators: {},
+    },
+  },
+  // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
+  Team: {
+    dataType: 'refAlias',
+    type: {
+      dataType: 'nestedObjectLiteral',
+      nestedProperties: {
+        crest: { dataType: 'string', required: true },
+        tla: { dataType: 'string', required: true },
+        shortName: { dataType: 'string', required: true },
+        name: { dataType: 'string', required: true },
+        id: { dataType: 'double', required: true },
+      },
+      validators: {},
+    },
+  },
+  // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
+  Match: {
+    dataType: 'refAlias',
+    type: {
+      dataType: 'nestedObjectLiteral',
+      nestedProperties: {
+        lastUpdated: { dataType: 'string', required: true },
+        group: { dataType: 'string', required: true },
+        stage: { dataType: 'string', required: true },
+        matchday: { dataType: 'double', required: true },
+        status: { dataType: 'string', required: true },
+        utcDate: { dataType: 'string', required: true },
+        id: { dataType: 'double', required: true },
+        score: {
+          dataType: 'nestedObjectLiteral',
+          nestedProperties: {
+            halfTime: {
+              dataType: 'nestedObjectLiteral',
+              nestedProperties: {
+                away: { dataType: 'double', required: true },
+                home: { dataType: 'double', required: true },
+              },
+              required: true,
+            },
+            fullTime: {
+              dataType: 'nestedObjectLiteral',
+              nestedProperties: {
+                away: { dataType: 'double', required: true },
+                home: { dataType: 'double', required: true },
+              },
+              required: true,
+            },
+            duration: { dataType: 'enum', enums: ['REGULAR'], required: true },
+            winner: {
+              dataType: 'union',
+              subSchemas: [
+                { dataType: 'enum', enums: ['AWAY_TEAM'] },
+                { dataType: 'enum', enums: ['HOME_TEAM'] },
+              ],
+              required: true,
+            },
+          },
+          required: true,
+        },
+        awayTeam: { ref: 'Team', required: true },
+        homeTeam: { ref: 'Team', required: true },
+        competition: { ref: 'Competition', required: true },
       },
       validators: {},
     },
@@ -550,6 +653,192 @@ export function RegisterRoutes(app: Router) {
         const controller = new CurrenciesController();
 
         const promise = controller.getCurrency.apply(controller, validatedArgs as any);
+        promiseHandler(controller, promise, response, undefined, next);
+      } catch (err) {
+        return next(err);
+      }
+    }
+  );
+  // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
+  app.get(
+    '/football/areas',
+    ...fetchMiddlewares<RequestHandler>(FootballController),
+    ...fetchMiddlewares<RequestHandler>(FootballController.prototype.getAreas),
+
+    function FootballController_getAreas(request: any, response: any, next: any) {
+      const args = {};
+
+      // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
+
+      let validatedArgs: any[] = [];
+      try {
+        validatedArgs = getValidatedArgs(args, request, response);
+
+        const controller = new FootballController();
+
+        const promise = controller.getAreas.apply(controller, validatedArgs as any);
+        promiseHandler(controller, promise, response, undefined, next);
+      } catch (err) {
+        return next(err);
+      }
+    }
+  );
+  // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
+  app.get(
+    '/football/areas/:areaId',
+    ...fetchMiddlewares<RequestHandler>(FootballController),
+    ...fetchMiddlewares<RequestHandler>(FootballController.prototype.getArea),
+
+    function FootballController_getArea(request: any, response: any, next: any) {
+      const args = {
+        areaId: { in: 'path', name: 'areaId', required: true, dataType: 'string' },
+      };
+
+      // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
+
+      let validatedArgs: any[] = [];
+      try {
+        validatedArgs = getValidatedArgs(args, request, response);
+
+        const controller = new FootballController();
+
+        const promise = controller.getArea.apply(controller, validatedArgs as any);
+        promiseHandler(controller, promise, response, undefined, next);
+      } catch (err) {
+        return next(err);
+      }
+    }
+  );
+  // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
+  app.get(
+    '/football/areas/:areaId/competitions',
+    ...fetchMiddlewares<RequestHandler>(FootballController),
+    ...fetchMiddlewares<RequestHandler>(FootballController.prototype.getCompetitions),
+
+    function FootballController_getCompetitions(request: any, response: any, next: any) {
+      const args = {
+        areaId: { in: 'path', name: 'areaId', required: true, dataType: 'string' },
+      };
+
+      // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
+
+      let validatedArgs: any[] = [];
+      try {
+        validatedArgs = getValidatedArgs(args, request, response);
+
+        const controller = new FootballController();
+
+        const promise = controller.getCompetitions.apply(controller, validatedArgs as any);
+        promiseHandler(controller, promise, response, undefined, next);
+      } catch (err) {
+        return next(err);
+      }
+    }
+  );
+  // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
+  app.get(
+    '/football/areas/:areaId/competitions/:competitionId',
+    ...fetchMiddlewares<RequestHandler>(FootballController),
+    ...fetchMiddlewares<RequestHandler>(FootballController.prototype.getCompetition),
+
+    function FootballController_getCompetition(request: any, response: any, next: any) {
+      const args = {
+        areaId: { in: 'path', name: 'areaId', required: true, dataType: 'string' },
+        competitionId: { in: 'path', name: 'competitionId', required: true, dataType: 'string' },
+      };
+
+      // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
+
+      let validatedArgs: any[] = [];
+      try {
+        validatedArgs = getValidatedArgs(args, request, response);
+
+        const controller = new FootballController();
+
+        const promise = controller.getCompetition.apply(controller, validatedArgs as any);
+        promiseHandler(controller, promise, response, undefined, next);
+      } catch (err) {
+        return next(err);
+      }
+    }
+  );
+  // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
+  app.get(
+    '/football/areas/:areaId/competitions/:competitionId/standings',
+    ...fetchMiddlewares<RequestHandler>(FootballController),
+    ...fetchMiddlewares<RequestHandler>(FootballController.prototype.getStandings),
+
+    function FootballController_getStandings(request: any, response: any, next: any) {
+      const args = {
+        areaId: { in: 'path', name: 'areaId', required: true, dataType: 'string' },
+        competitionId: { in: 'path', name: 'competitionId', required: true, dataType: 'string' },
+      };
+
+      // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
+
+      let validatedArgs: any[] = [];
+      try {
+        validatedArgs = getValidatedArgs(args, request, response);
+
+        const controller = new FootballController();
+
+        const promise = controller.getStandings.apply(controller, validatedArgs as any);
+        promiseHandler(controller, promise, response, undefined, next);
+      } catch (err) {
+        return next(err);
+      }
+    }
+  );
+  // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
+  app.get(
+    '/football/areas/:areaId/competitions/:competitionId/standings/:teamId',
+    ...fetchMiddlewares<RequestHandler>(FootballController),
+    ...fetchMiddlewares<RequestHandler>(FootballController.prototype.getTeam),
+
+    function FootballController_getTeam(request: any, response: any, next: any) {
+      const args = {
+        areaId: { in: 'path', name: 'areaId', required: true, dataType: 'string' },
+        competitionId: { in: 'path', name: 'competitionId', required: true, dataType: 'string' },
+        teamId: { in: 'path', name: 'teamId', required: true, dataType: 'string' },
+      };
+
+      // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
+
+      let validatedArgs: any[] = [];
+      try {
+        validatedArgs = getValidatedArgs(args, request, response);
+
+        const controller = new FootballController();
+
+        const promise = controller.getTeam.apply(controller, validatedArgs as any);
+        promiseHandler(controller, promise, response, undefined, next);
+      } catch (err) {
+        return next(err);
+      }
+    }
+  );
+  // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
+  app.get(
+    '/football/areas/:areaId/competitions/:competitionId/standings/:teamId/matches',
+    ...fetchMiddlewares<RequestHandler>(FootballController),
+    ...fetchMiddlewares<RequestHandler>(FootballController.prototype.getMatches),
+
+    function FootballController_getMatches(request: any, response: any, next: any) {
+      const args = {
+        areaId: { in: 'path', name: 'areaId', required: true, dataType: 'string' },
+        competitionId: { in: 'path', name: 'competitionId', required: true, dataType: 'string' },
+        teamId: { in: 'path', name: 'teamId', required: true, dataType: 'string' },
+      };
+
+      // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
+
+      let validatedArgs: any[] = [];
+      try {
+        validatedArgs = getValidatedArgs(args, request, response);
+
+        const controller = new FootballController();
+
+        const promise = controller.getMatches.apply(controller, validatedArgs as any);
         promiseHandler(controller, promise, response, undefined, next);
       } catch (err) {
         return next(err);

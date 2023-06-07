@@ -15,3 +15,4 @@ export const SALT_OR_ROUNDS: string = process.env.SALT_OR_ROUNDS ?? '10';
 export const BASE_API: string = process.env.BASE_API ?? 'https://hexagonum-world.onrender.com';
 
 export const API_KEY_NEWS: string = process.env.API_KEY_NEWS ?? 'api-key-news';
+export const API_KEY_FOOTBALL_DATA: string = process.env.API_KEY_FOOTBALL_DATA ?? 'api-key-football-data';

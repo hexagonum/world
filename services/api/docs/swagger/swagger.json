@@ -370,6 +370,182 @@
         ],
         "type": "object"
       },
+      "Area": {
+        "properties": {
+          "parentArea": {
+            "type": "string"
+          },
+          "parentAreaId": {
+            "type": "number",
+            "format": "double"
+          },
+          "flag": {
+            "type": "string"
+          },
+          "countryCode": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "id": {
+            "type": "number",
+            "format": "double"
+          }
+        },
+        "required": ["parentArea", "parentAreaId", "flag", "countryCode", "name", "id"],
+        "type": "object"
+      },
+      "Competition": {
+        "properties": {
+          "lastUpdated": {
+            "type": "string"
+          },
+          "numberOfAvailableSeasons": {
+            "type": "number",
+            "format": "double"
+          },
+          "plan": {
+            "type": "string"
+          },
+          "emblem": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string"
+          },
+          "code": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "id": {
+            "type": "number",
+            "format": "double"
+          },
+          "area": {
+            "$ref": "#/components/schemas/Area"
+          }
+        },
+        "required": ["lastUpdated", "numberOfAvailableSeasons", "plan", "emblem", "type", "code", "name", "id", "area"],
+        "type": "object"
+      },
+      "Team": {
+        "properties": {
+          "crest": {
+            "type": "string"
+          },
+          "tla": {
+            "type": "string"
+          },
+          "shortName": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "id": {
+            "type": "number",
+            "format": "double"
+          }
+        },
+        "required": ["crest", "tla", "shortName", "name", "id"],
+        "type": "object"
+      },
+      "Match": {
+        "properties": {
+          "lastUpdated": {
+            "type": "string"
+          },
+          "group": {
+            "type": "string"
+          },
+          "stage": {
+            "type": "string"
+          },
+          "matchday": {
+            "type": "number",
+            "format": "double"
+          },
+          "status": {
+            "type": "string"
+          },
+          "utcDate": {
+            "type": "string"
+          },
+          "id": {
+            "type": "number",
+            "format": "double"
+          },
+          "score": {
+            "properties": {
+              "halfTime": {
+                "properties": {
+                  "away": {
+                    "type": "number",
+                    "format": "double"
+                  },
+                  "home": {
+                    "type": "number",
+                    "format": "double"
+                  }
+                },
+                "required": ["away", "home"],
+                "type": "object"
+              },
+              "fullTime": {
+                "properties": {
+                  "away": {
+                    "type": "number",
+                    "format": "double"
+                  },
+                  "home": {
+                    "type": "number",
+                    "format": "double"
+                  }
+                },
+                "required": ["away", "home"],
+                "type": "object"
+              },
+              "duration": {
+                "type": "string",
+                "enum": ["REGULAR"],
+                "nullable": false
+              },
+              "winner": {
+                "type": "string",
+                "enum": ["AWAY_TEAM", "HOME_TEAM"]
+              }
+            },
+            "required": ["halfTime", "fullTime", "duration", "winner"],
+            "type": "object"
+          },
+          "awayTeam": {
+            "$ref": "#/components/schemas/Team"
+          },
+          "homeTeam": {
+            "$ref": "#/components/schemas/Team"
+          },
+          "competition": {
+            "$ref": "#/components/schemas/Competition"
+          }
+        },
+        "required": [
+          "lastUpdated",
+          "group",
+          "stage",
+          "matchday",
+          "status",
+          "utcDate",
+          "id",
+          "score",
+          "awayTeam",
+          "homeTeam",
+          "competition"
+        ],
+        "type": "object"
+      },
       "HealthResponse": {
         "properties": {
           "status": {
@@ -1016,6 +1192,459 @@
           {
             "in": "path",
             "name": "code",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ]
+      }
+    },
+    "/football/areas": {
+      "get": {
+        "operationId": "GetAreas",
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/Area"
+                  },
+                  "type": "array"
+                }
+              }
+            }
+          }
+        },
+        "tags": ["Football"],
+        "security": [],
+        "parameters": []
+      }
+    },
+    "/football/areas/{areaId}": {
+      "get": {
+        "operationId": "GetArea",
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Area"
+                }
+              }
+            }
+          }
+        },
+        "tags": ["Football"],
+        "security": [],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "areaId",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ]
+      }
+    },
+    "/football/areas/{areaId}/competitions": {
+      "get": {
+        "operationId": "GetCompetitions",
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "properties": {
+                      "lastUpdated": {
+                        "type": "string"
+                      },
+                      "numberOfAvailableSeasons": {
+                        "type": "number",
+                        "format": "double"
+                      },
+                      "plan": {
+                        "type": "string"
+                      },
+                      "emblem": {
+                        "type": "string"
+                      },
+                      "type": {
+                        "type": "string"
+                      },
+                      "code": {
+                        "type": "string"
+                      },
+                      "name": {
+                        "type": "string"
+                      },
+                      "id": {
+                        "type": "number",
+                        "format": "double"
+                      },
+                      "area": {
+                        "$ref": "#/components/schemas/Area"
+                      },
+                      "areaId": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "lastUpdated",
+                      "numberOfAvailableSeasons",
+                      "plan",
+                      "emblem",
+                      "type",
+                      "code",
+                      "name",
+                      "id",
+                      "area",
+                      "areaId"
+                    ],
+                    "type": "object"
+                  },
+                  "type": "array"
+                }
+              }
+            }
+          }
+        },
+        "tags": ["Football"],
+        "security": [],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "areaId",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ]
+      }
+    },
+    "/football/areas/{areaId}/competitions/{competitionId}": {
+      "get": {
+        "operationId": "GetCompetition",
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "lastUpdated": {
+                      "type": "string"
+                    },
+                    "numberOfAvailableSeasons": {
+                      "type": "number",
+                      "format": "double"
+                    },
+                    "plan": {
+                      "type": "string"
+                    },
+                    "emblem": {
+                      "type": "string"
+                    },
+                    "type": {
+                      "type": "string"
+                    },
+                    "code": {
+                      "type": "string"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "id": {
+                      "type": "number",
+                      "format": "double"
+                    },
+                    "area": {
+                      "$ref": "#/components/schemas/Area"
+                    },
+                    "areaId": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "lastUpdated",
+                    "numberOfAvailableSeasons",
+                    "plan",
+                    "emblem",
+                    "type",
+                    "code",
+                    "name",
+                    "id",
+                    "area",
+                    "areaId"
+                  ],
+                  "type": "object"
+                }
+              }
+            }
+          }
+        },
+        "tags": ["Football"],
+        "security": [],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "areaId",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "path",
+            "name": "competitionId",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ]
+      }
+    },
+    "/football/areas/{areaId}/competitions/{competitionId}/standings": {
+      "get": {
+        "operationId": "GetStandings",
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "properties": {
+                      "goalDifference": {
+                        "type": "number",
+                        "format": "double"
+                      },
+                      "goalsAgainst": {
+                        "type": "number",
+                        "format": "double"
+                      },
+                      "goalsFor": {
+                        "type": "number",
+                        "format": "double"
+                      },
+                      "points": {
+                        "type": "number",
+                        "format": "double"
+                      },
+                      "lost": {
+                        "type": "number",
+                        "format": "double"
+                      },
+                      "draw": {
+                        "type": "number",
+                        "format": "double"
+                      },
+                      "won": {
+                        "type": "number",
+                        "format": "double"
+                      },
+                      "form": {
+                        "type": "string"
+                      },
+                      "playedGames": {
+                        "type": "number",
+                        "format": "double"
+                      },
+                      "position": {
+                        "type": "number",
+                        "format": "double"
+                      },
+                      "crest": {
+                        "type": "string"
+                      },
+                      "tla": {
+                        "type": "string"
+                      },
+                      "shortName": {
+                        "type": "string"
+                      },
+                      "name": {
+                        "type": "string"
+                      },
+                      "id": {
+                        "type": "number",
+                        "format": "double"
+                      },
+                      "competitionId": {
+                        "type": "string"
+                      },
+                      "areaId": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "goalDifference",
+                      "goalsAgainst",
+                      "goalsFor",
+                      "points",
+                      "lost",
+                      "draw",
+                      "won",
+                      "form",
+                      "playedGames",
+                      "position",
+                      "crest",
+                      "tla",
+                      "shortName",
+                      "name",
+                      "id",
+                      "competitionId",
+                      "areaId"
+                    ],
+                    "type": "object"
+                  },
+                  "type": "array"
+                }
+              }
+            }
+          }
+        },
+        "tags": ["Football"],
+        "security": [],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "areaId",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "path",
+            "name": "competitionId",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ]
+      }
+    },
+    "/football/areas/{areaId}/competitions/{competitionId}/standings/{teamId}": {
+      "get": {
+        "operationId": "GetTeam",
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "crest": {
+                      "type": "string"
+                    },
+                    "tla": {
+                      "type": "string"
+                    },
+                    "shortName": {
+                      "type": "string"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "id": {
+                      "type": "number",
+                      "format": "double"
+                    },
+                    "competitionId": {
+                      "type": "string"
+                    },
+                    "areaId": {
+                      "type": "string"
+                    }
+                  },
+                  "required": ["crest", "tla", "shortName", "name", "id", "competitionId", "areaId"],
+                  "type": "object"
+                }
+              }
+            }
+          }
+        },
+        "tags": ["Football"],
+        "security": [],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "areaId",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "path",
+            "name": "competitionId",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "path",
+            "name": "teamId",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ]
+      }
+    },
+    "/football/areas/{areaId}/competitions/{competitionId}/standings/{teamId}/matches": {
+      "get": {
+        "operationId": "GetMatches",
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/Match"
+                  },
+                  "type": "array"
+                }
+              }
+            }
+          }
+        },
+        "tags": ["Football"],
+        "security": [],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "areaId",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "path",
+            "name": "competitionId",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "path",
+            "name": "teamId",
             "required": true,
             "schema": {
               "type": "string"

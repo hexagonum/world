@@ -2,10 +2,11 @@ import { mergeResolvers } from '@graphql-tools/merge';
 import { citiesResolvers, citiesTypeDefs } from './cities/graphql/cities.module';
 import { countriesResolvers, countriesTypeDefs } from './countries/graphql/countries.module';
 import { currenciesResolvers, currenciesTypeDefs } from './currencies/graphql/currencies.module';
+import { footballResolvers, footballTypeDefs } from './football/graphql/football.module';
 import { languagesResolvers, languagesTypeDefs } from './languages/graphql/languages.module';
 import { newsResolvers, newsTypeDefs } from './news/graphql/news.module';
-import { passportsResolvers, passportsTypeDefs } from './passports/graphql/passports.module';
 import { organizationsResolvers, organizationsTypeDefs } from './organizations/graphql/organizations.module';
+import { passportsResolvers, passportsTypeDefs } from './passports/graphql/passports.module';
 import { timezonesResolvers, timezonesTypeDefs } from './timezones/graphql/timezones.module';
 
 const rootTypeDefs = `#graphql
@@ -21,6 +22,7 @@ export const typeDefs = [
   citiesTypeDefs,
   countriesTypeDefs,
   currenciesTypeDefs,
+  footballTypeDefs,
   languagesTypeDefs,
   newsTypeDefs,
   passportsTypeDefs,
@@ -33,6 +35,7 @@ export const resolvers = mergeResolvers([
   citiesResolvers,
   countriesResolvers,
   currenciesResolvers,
+  footballResolvers,
   languagesResolvers,
   newsResolvers,
   passportsResolvers,
