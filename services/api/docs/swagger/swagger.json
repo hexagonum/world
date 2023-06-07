@@ -752,6 +752,83 @@
         "required": ["updatedAt", "createdAt", "utcOffset", "offset", "name", "code"],
         "type": "object",
         "description": "Model Timezone"
+      },
+      "YouTubeCategory": {
+        "properties": {
+          "channelId": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": ["channelId", "title", "id"],
+        "type": "object"
+      },
+      "Thumbnail": {
+        "properties": {
+          "height": {
+            "type": "number",
+            "format": "double"
+          },
+          "width": {
+            "type": "number",
+            "format": "double"
+          },
+          "url": {
+            "type": "string"
+          }
+        },
+        "required": ["height", "width", "url"],
+        "type": "object"
+      },
+      "Thumbnails": {
+        "properties": {
+          "maxres": {
+            "$ref": "#/components/schemas/Thumbnail"
+          },
+          "standard": {
+            "$ref": "#/components/schemas/Thumbnail"
+          },
+          "high": {
+            "$ref": "#/components/schemas/Thumbnail"
+          },
+          "medium": {
+            "$ref": "#/components/schemas/Thumbnail"
+          },
+          "default": {
+            "$ref": "#/components/schemas/Thumbnail"
+          }
+        },
+        "required": ["maxres", "standard", "high", "medium", "default"],
+        "type": "object"
+      },
+      "YouTubeVideo": {
+        "properties": {
+          "thumbnails": {
+            "$ref": "#/components/schemas/Thumbnails"
+          },
+          "channelTitle": {
+            "type": "string"
+          },
+          "channelId": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": ["thumbnails", "channelTitle", "channelId", "description", "title", "id"],
+        "type": "object"
       }
     },
     "securitySchemes": {}
@@ -1984,6 +2061,81 @@
             "name": "code",
             "required": true,
             "schema": {
+              "type": "string"
+            }
+          }
+        ]
+      }
+    },
+    "/youtube/categories": {
+      "get": {
+        "operationId": "GetVideoCategories",
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/YouTubeCategory"
+                  },
+                  "type": "array"
+                }
+              }
+            }
+          }
+        },
+        "tags": ["YouTube"],
+        "security": [],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "countryCode",
+            "required": false,
+            "schema": {
+              "default": "US",
+              "type": "string"
+            }
+          }
+        ]
+      }
+    },
+    "/youtube/videos": {
+      "get": {
+        "operationId": "GetVideos",
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/YouTubeVideo"
+                  },
+                  "type": "array"
+                }
+              }
+            }
+          }
+        },
+        "tags": ["YouTube"],
+        "security": [],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "countryCode",
+            "required": false,
+            "schema": {
+              "default": "US",
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "categoryId",
+            "required": false,
+            "schema": {
+              "default": "",
               "type": "string"
             }
           }

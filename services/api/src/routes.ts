@@ -33,6 +33,8 @@ import { OrganizationsController } from './modules/organizations/organizations.c
 import { PassportsController } from './modules/passports/passports.controller';
 // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
 import { TimezonesController } from './modules/timezones/timezones.controller';
+// WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
+import { YouTubeController } from './modules/youtube/youtube.controller';
 import type { RequestHandler, Router } from 'express';
 
 // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
@@ -466,6 +468,63 @@ const models: TsoaRoute.Models = {
         offset: { dataType: 'string', required: true },
         name: { dataType: 'string', required: true },
         code: { dataType: 'string', required: true },
+      },
+      validators: {},
+    },
+  },
+  // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
+  YouTubeCategory: {
+    dataType: 'refAlias',
+    type: {
+      dataType: 'nestedObjectLiteral',
+      nestedProperties: {
+        channelId: { dataType: 'string', required: true },
+        title: { dataType: 'string', required: true },
+        id: { dataType: 'string', required: true },
+      },
+      validators: {},
+    },
+  },
+  // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
+  Thumbnail: {
+    dataType: 'refAlias',
+    type: {
+      dataType: 'nestedObjectLiteral',
+      nestedProperties: {
+        height: { dataType: 'double', required: true },
+        width: { dataType: 'double', required: true },
+        url: { dataType: 'string', required: true },
+      },
+      validators: {},
+    },
+  },
+  // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
+  Thumbnails: {
+    dataType: 'refAlias',
+    type: {
+      dataType: 'nestedObjectLiteral',
+      nestedProperties: {
+        maxres: { ref: 'Thumbnail', required: true },
+        standard: { ref: 'Thumbnail', required: true },
+        high: { ref: 'Thumbnail', required: true },
+        medium: { ref: 'Thumbnail', required: true },
+        default: { ref: 'Thumbnail', required: true },
+      },
+      validators: {},
+    },
+  },
+  // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
+  YouTubeVideo: {
+    dataType: 'refAlias',
+    type: {
+      dataType: 'nestedObjectLiteral',
+      nestedProperties: {
+        thumbnails: { ref: 'Thumbnails', required: true },
+        channelTitle: { dataType: 'string', required: true },
+        channelId: { dataType: 'string', required: true },
+        description: { dataType: 'string', required: true },
+        title: { dataType: 'string', required: true },
+        id: { dataType: 'string', required: true },
       },
       validators: {},
     },
@@ -1120,6 +1179,59 @@ export function RegisterRoutes(app: Router) {
         const controller = new TimezonesController();
 
         const promise = controller.getTimezone.apply(controller, validatedArgs as any);
+        promiseHandler(controller, promise, response, undefined, next);
+      } catch (err) {
+        return next(err);
+      }
+    }
+  );
+  // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
+  app.get(
+    '/youtube/categories',
+    ...fetchMiddlewares<RequestHandler>(YouTubeController),
+    ...fetchMiddlewares<RequestHandler>(YouTubeController.prototype.getVideoCategories),
+
+    function YouTubeController_getVideoCategories(request: any, response: any, next: any) {
+      const args = {
+        countryCode: { default: 'US', in: 'query', name: 'countryCode', dataType: 'string' },
+      };
+
+      // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
+
+      let validatedArgs: any[] = [];
+      try {
+        validatedArgs = getValidatedArgs(args, request, response);
+
+        const controller = new YouTubeController();
+
+        const promise = controller.getVideoCategories.apply(controller, validatedArgs as any);
+        promiseHandler(controller, promise, response, undefined, next);
+      } catch (err) {
+        return next(err);
+      }
+    }
+  );
+  // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
+  app.get(
+    '/youtube/videos',
+    ...fetchMiddlewares<RequestHandler>(YouTubeController),
+    ...fetchMiddlewares<RequestHandler>(YouTubeController.prototype.getVideos),
+
+    function YouTubeController_getVideos(request: any, response: any, next: any) {
+      const args = {
+        countryCode: { default: 'US', in: 'query', name: 'countryCode', dataType: 'string' },
+        categoryId: { default: '', in: 'query', name: 'categoryId', dataType: 'string' },
+      };
+
+      // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
+
+      let validatedArgs: any[] = [];
+      try {
+        validatedArgs = getValidatedArgs(args, request, response);
+
+        const controller = new YouTubeController();
+
+        const promise = controller.getVideos.apply(controller, validatedArgs as any);
         promiseHandler(controller, promise, response, undefined, next);
       } catch (err) {
         return next(err);

@@ -8,6 +8,7 @@ import { newsResolvers, newsTypeDefs } from './news/graphql/news.module';
 import { organizationsResolvers, organizationsTypeDefs } from './organizations/graphql/organizations.module';
 import { passportsResolvers, passportsTypeDefs } from './passports/graphql/passports.module';
 import { timezonesResolvers, timezonesTypeDefs } from './timezones/graphql/timezones.module';
+import { youtubeResolvers, youtubeTypeDefs } from './youtube/graphql/youtube.module';
 
 const rootTypeDefs = `#graphql
   type Query {
@@ -28,6 +29,7 @@ export const typeDefs = [
   passportsTypeDefs,
   organizationsTypeDefs,
   timezonesTypeDefs,
+  youtubeTypeDefs,
 ];
 
 export const resolvers = mergeResolvers([
@@ -41,4 +43,5 @@ export const resolvers = mergeResolvers([
   passportsResolvers,
   organizationsResolvers,
   timezonesResolvers,
+  youtubeResolvers,
 ]);
