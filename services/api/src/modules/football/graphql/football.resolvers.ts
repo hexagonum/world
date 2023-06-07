@@ -3,14 +3,14 @@ import { farfetch } from '../../../common/libs/farfetch';
 import { Competition, Position, Team } from '../football.types';
 
 type FilterOptions = {
-  areaId: number;
-  competitionId: number;
-  teamId: number;
+  areaId?: number;
+  competitionId?: number;
+  teamId?: number;
 };
 
 export const resolvers = {
   Query: {
-    football(_: unknown, { filterOptions }: { filterOptions: FilterOptions }) {
+    football(_: unknown, { filterOptions = {} }: { filterOptions: FilterOptions }) {
       return { filterOptions };
     },
   },
