@@ -1,11 +1,16 @@
 export const typeDefs = `#graphql
   extend type Query {
-    football: Football
+    football(filterOptions: FootballFilterOptions): Football
+  }
+
+  input FootballFilterOptions {
+    areaId: Int
+    competitionId: Int
+    teamId: Int
   }
 
   type Football {
     areas: [FootballArea]
-    area(id: String!): FootballArea
   }
 
   type FootballArea {
