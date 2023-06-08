@@ -1,0 +1,27 @@
+name: GitHub Page
+
+on:
+  push:
+    branches:
+      - master
+  schedule:
+    - cron: '0 * * * *'
+
+jobs:
+  google-trends:
+    name: Google Trends
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Install Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20.x
+      - name: Install Dependencies
+        run: yarn install --network-timeout 86400000
+      - name: Set Up Prisma
+        run: yarn prisma format && yarn prisma generate
+      - name: ETL
+        run: ./scripts/google-trends.sh
+        working-directory: ./data
