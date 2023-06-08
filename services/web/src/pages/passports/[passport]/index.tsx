@@ -34,13 +34,10 @@ type PassportRequirement = {
   };
 };
 
-const PassportSection: React.FC = () => {
+const PassportSection: React.FC<{ countryCode: string }> = ({ countryCode = '' }) => {
   const [filterOptions, setFilterOptions] = useState<{ requirement: string }>({ requirement: '' });
-  const { query } = useRouter();
-  const countryCode: string = query.passport?.toString() ?? '';
-  const { loading, error, data } = useFetch<PassportRequirement[]>(
-    `${NEXT_PUBLIC_BASE_API}/countries/${countryCode}/passports`
-  );
+  const url = `${NEXT_PUBLIC_BASE_API}/passports/${countryCode}`;
+  const { loading, error, data } = useFetch<PassportRequirement[]>(url);
 
   if (loading) {
     return (
@@ -103,7 +100,7 @@ const PassportSection: React.FC = () => {
   });
 
   return (
-    <>
+    <div className="flex flex-col gap-4 md:gap-8">
       <div className="flex justify-between items-center">
         <h1 className="capitalize text-2xl md:text-4xl font-bold">{data[0].passport.country.commonName}</h1>
         <p className="capitalize text-xl md:text-2xl">#{data[0].passport.individualRank}</p>
@@ -150,18 +147,35 @@ const PassportSection: React.FC = () => {
           </Tbody>
         </Table>
       </TableContainer>
-    </>
+    </div>
   );
 };
 
 const PassportPage: NextPage = () => {
+  const { query } = useRouter();
+  const countryCode: string = query.passport?.toString() ?? '';
+
+  if (!countryCode) {
+    return (
+      <Layout>
+        <Container>
+          <div className="p-8">
+            <Card className="border border-gray-200">
+              <CardBody>
+                <p className="text-center">Loading</p>
+              </CardBody>
+            </Card>
+          </div>
+        </Container>
+      </Layout>
+    );
+  }
+
   return (
     <Layout>
       <Container>
         <div className="p-8">
-          <div className="flex flex-col gap-4 md:gap-8">
-            <PassportSection />
-          </div>
+          <PassportSection countryCode={countryCode} />
         </div>
       </Container>
     </Layout>
