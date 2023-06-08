@@ -22,9 +22,13 @@ jobs:
         run: yarn install --network-timeout 86400000
       - name: Set Up Prisma
         run: yarn prisma format && yarn prisma generate
+        env:
+          POSTGRESQL_URL: ${{ secrets.POSTGRESQL_URL }}
       - name: Install Dependencies (Data)
         run: yarn install --network-timeout 86400000
         working-directory: ./data
       - name: ETL
         run: ./scripts/google-trends.sh
         working-directory: ./data
+        env:
+          POSTGRESQL_URL: ${{ secrets.POSTGRESQL_URL }}
