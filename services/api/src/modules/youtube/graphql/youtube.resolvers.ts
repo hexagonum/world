@@ -4,8 +4,15 @@ import { YouTubeCategory } from '../youtube.types';
 
 export const resolvers = {
   Query: {
-    youtube: (_parent: unknown, { categoryId = '', countryCode = '' }: { categoryId: string; countryCode: string }) => {
-      return { categoryId, countryCode };
+    youtube: (
+      _parent: unknown,
+      {
+        categoryId = '',
+        countryCode = '',
+        maxResults = 50,
+      }: { categoryId: string; countryCode: string; maxResults: number }
+    ) => {
+      return { categoryId, countryCode, maxResults };
     },
   },
   YouTube: {
@@ -16,10 +23,19 @@ export const resolvers = {
       const categories: YouTubeCategory[] = await farfetch<YouTubeCategory[]>(url);
       return categories.map((category: YouTubeCategory) => ({ ...category, countryCode }));
     },
-    videos: async ({ categoryId, countryCode }: { categoryId: string; countryCode: string }) => {
+    videos: async ({
+      categoryId = '',
+      countryCode = '',
+      maxResults = 50,
+    }: {
+      categoryId: string;
+      countryCode: string;
+      maxResults: number;
+    }) => {
       const urlSearchParams = new URLSearchParams();
       if (categoryId) urlSearchParams.set('categoryId', categoryId);
       if (countryCode) urlSearchParams.set('countryCode', countryCode);
+      if (maxResults) urlSearchParams.set('maxResults', maxResults.toString());
       const url = `${BASE_API}/youtube/videos?${urlSearchParams.toString()}`;
       console.log(url);
       return farfetch(url);

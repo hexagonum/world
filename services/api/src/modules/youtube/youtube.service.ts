@@ -17,11 +17,11 @@ export class YouTubeService {
     });
   }
 
-  async getVideos({ categoryId = '', regionCode = 'US' }): Promise<YouTubeVideo[]> {
+  async getVideos({ categoryId = '', regionCode = 'US', maxResults = 50 }): Promise<YouTubeVideo[]> {
     const urlSearchParams = new URLSearchParams();
     urlSearchParams.set('key', API_KEY_YOUTUBE_V3);
     urlSearchParams.set('part', 'snippet');
-    urlSearchParams.set('maxResults', '50');
+    urlSearchParams.set('maxResults', maxResults.toString());
     urlSearchParams.set('chart', 'mostPopular');
     if (regionCode) urlSearchParams.set('regionCode', regionCode);
     if (categoryId) urlSearchParams.set('videoCategoryId', categoryId);

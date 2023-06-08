@@ -1,6 +1,6 @@
 export const typeDefs = `#graphql
   extend type Query {
-    youtube(categoryId: String, countryCode: String): YouTube
+    youtube(categoryId: String, countryCode: String, maxResults: Int): YouTube
   }
 
   type YouTube {

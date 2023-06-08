@@ -13,8 +13,8 @@ export const YOUTUBE_CATEGORIES_QUERY: DocumentNode = gql`
 `;
 
 export const YOUTUBE_VIDEOS_QUERY: DocumentNode = gql`
-  query YOUTUBE_VIDEOS_QUERY($categoryId: String) {
-    youtube(categoryId: $categoryId) {
+  query YOUTUBE_VIDEOS_QUERY($categoryId: String, $countryCode: String, $maxResults: Int) {
+    youtube(categoryId: $categoryId, countryCode: $countryCode, maxResults: $maxResults) {
       videos {
         id
         title

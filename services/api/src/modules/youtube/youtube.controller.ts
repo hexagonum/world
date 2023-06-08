@@ -17,7 +17,11 @@ export class YouTubeController extends Controller {
   }
 
   @Get('/videos')
-  async getVideos(@Query('countryCode') countryCode = 'US', @Query('categoryId') categoryId = '') {
-    return this.youTubeService.getVideos({ categoryId, regionCode: countryCode });
+  async getVideos(
+    @Query('countryCode') countryCode = 'US',
+    @Query('categoryId') categoryId = '',
+    @Query('maxResults') maxResults = 50
+  ) {
+    return this.youTubeService.getVideos({ categoryId, regionCode: countryCode, maxResults });
   }
 }

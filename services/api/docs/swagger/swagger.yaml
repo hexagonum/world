@@ -1284,6 +1284,7 @@ paths:
             [
               { in: query, name: countryCode, required: false, schema: { default: US, type: string } },
               { in: query, name: categoryId, required: false, schema: { default: '', type: string } },
+              { in: query, name: maxResults, required: false, schema: { default: 50, format: double, type: number } },
             ],
         },
     }

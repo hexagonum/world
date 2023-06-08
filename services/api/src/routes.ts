@@ -1221,6 +1221,7 @@ export function RegisterRoutes(app: Router) {
       const args = {
         countryCode: { default: 'US', in: 'query', name: 'countryCode', dataType: 'string' },
         categoryId: { default: '', in: 'query', name: 'categoryId', dataType: 'string' },
+        maxResults: { default: 50, in: 'query', name: 'maxResults', dataType: 'double' },
       };
 
       // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa

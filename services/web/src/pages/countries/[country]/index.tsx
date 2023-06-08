@@ -2,6 +2,7 @@ import { useQuery } from '@apollo/client';
 import { Badge, Card, CardBody, Divider, Table, TableContainer, Tbody, Td, Tr } from '@chakra-ui/react';
 import Articles from '@world/components/Articles';
 import { Container } from '@world/components/Container';
+import { Videos } from '@world/components/Videos';
 import { Weather } from '@world/components/Weather';
 import isoAlpha3Codes from '@world/data/codes/iso-alpha-3.json';
 import { COUNTRY_QUERY } from '@world/graphql/queries/countries';
@@ -244,6 +245,21 @@ const NewsSection: React.FC<{ cca2: string }> = ({ cca2 = '' }) => {
   );
 };
 
+const YouTubeSection: React.FC<{ title: string; categoryId: string; countryCode: string; maxResults: number }> = ({
+  title = '',
+  categoryId = '',
+  countryCode = '',
+  maxResults = 8,
+}) => {
+  return (
+    <section className="flex flex-col gap-4 md:gap-8">
+      <h2 className="font-semibold text-xl">{title}</h2>
+      <Videos categoryId={categoryId} countryCode={countryCode.toUpperCase()} maxResults={maxResults} />
+      <Divider className="border-gray-300" />
+    </section>
+  );
+};
+
 const CountryMain: React.FC<{ code: string }> = ({ code = '' }) => {
   const { loading, error, data } = useQuery<{ country: Country }>(COUNTRY_QUERY, { variables: { code } });
 
@@ -391,6 +407,26 @@ const CountryMain: React.FC<{ code: string }> = ({ code = '' }) => {
         <></>
       )}
       {country.cca2.length > 0 ? <NewsSection cca2={country.cca2} /> : <></>}
+      {country.cca2.length > 0 ? (
+        <YouTubeSection title={'YouTube General'} categoryId={''} countryCode={country.cca2} maxResults={8} />
+      ) : (
+        <></>
+      )}
+      {country.cca2.length > 0 ? (
+        <YouTubeSection title={'YouTube Music'} categoryId={'10'} countryCode={country.cca2} maxResults={8} />
+      ) : (
+        <></>
+      )}
+      {country.cca2.length > 0 ? (
+        <YouTubeSection title={'YouTube Sports'} categoryId={'17'} countryCode={country.cca2} maxResults={8} />
+      ) : (
+        <></>
+      )}
+      {country.cca2.length > 0 ? (
+        <YouTubeSection title={'YouTube News'} categoryId={'25'} countryCode={country.cca2} maxResults={8} />
+      ) : (
+        <></>
+      )}
     </div>
   );
 };

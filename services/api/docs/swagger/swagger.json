@@ -2138,6 +2138,16 @@
               "default": "",
               "type": "string"
             }
+          },
+          {
+            "in": "query",
+            "name": "maxResults",
+            "required": false,
+            "schema": {
+              "default": 50,
+              "format": "double",
+              "type": "number"
+            }
           }
         ]
       }
