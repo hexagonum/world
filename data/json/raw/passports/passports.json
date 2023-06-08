@@ -1120,20 +1120,12 @@
     "individualRank": 140
   },
   {
-    "id": "uzbekistan",
-    "name": "Uzbekistan",
-    "cca2": "UZ",
-    "globalRank": 69,
-    "mobilityScore": 70,
-    "individualRank": 141
-  },
-  {
     "id": "india",
     "name": "India",
     "cca2": "IN",
     "globalRank": 69,
     "mobilityScore": 70,
-    "individualRank": 142
+    "individualRank": 141
   },
   {
     "id": "zimbabwe",
@@ -1141,15 +1133,15 @@
     "cca2": "ZW",
     "globalRank": 70,
     "mobilityScore": 69,
-    "individualRank": 143
+    "individualRank": 142
   },
   {
-    "id": "tajikistan",
-    "name": "Tajikistan",
-    "cca2": "TJ",
+    "id": "uzbekistan",
+    "name": "Uzbekistan",
+    "cca2": "UZ",
     "globalRank": 70,
     "mobilityScore": 69,
-    "individualRank": 144
+    "individualRank": 143
   },
   {
     "id": "cambodia",
@@ -1157,7 +1149,7 @@
     "cca2": "KH",
     "globalRank": 70,
     "mobilityScore": 69,
-    "individualRank": 145
+    "individualRank": 144
   },
   {
     "id": "sierra-leone",
@@ -1165,7 +1157,7 @@
     "cca2": "SL",
     "globalRank": 71,
     "mobilityScore": 68,
-    "individualRank": 146
+    "individualRank": 145
   },
   {
     "id": "senegal",
@@ -1173,7 +1165,7 @@
     "cca2": "SN",
     "globalRank": 71,
     "mobilityScore": 68,
-    "individualRank": 147
+    "individualRank": 146
   },
   {
     "id": "benin",
@@ -1181,12 +1173,20 @@
     "cca2": "BJ",
     "globalRank": 71,
     "mobilityScore": 68,
-    "individualRank": 148
+    "individualRank": 147
   },
   {
     "id": "burkina-faso",
     "name": "Burkina Faso",
     "cca2": "BF",
+    "globalRank": 71,
+    "mobilityScore": 68,
+    "individualRank": 148
+  },
+  {
+    "id": "tajikistan",
+    "name": "Tajikistan",
+    "cca2": "TJ",
     "globalRank": 71,
     "mobilityScore": 68,
     "individualRank": 149

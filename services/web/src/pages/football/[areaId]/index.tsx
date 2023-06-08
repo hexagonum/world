@@ -19,7 +19,7 @@ import { Container } from '@world/components/Container';
 import { FOOTBALL_COMPETITIONS_QUERY } from '@world/graphql/queries/football';
 import Layout from '@world/layout';
 import area from '@world/pages/countries/area';
-import { Football, FootballCompetition } from '@world/types';
+import { Football, FootballCompetition } from '@world/types/football';
 import { NextPage } from 'next';
 import { useRouter } from 'next/router';
 

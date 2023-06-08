@@ -4,7 +4,7 @@ export const typeDefs = `#graphql
   }
 
   type News {
-    headlines: [Article]
+    headlines(pageSize: Int): [Article]
     sources: [Source]
   }
 

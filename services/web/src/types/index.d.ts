@@ -48,40 +48,10 @@ type Language = { code: string; name: string };
 
 type Organization = { code: string; name: string };
 
-type Football = {
-  areas: FootballArea[];
-};
-
-type FootballArea = {
-  id: number;
-  name: string;
-  competitions: FootballCompetition[];
-};
-
-type FootballCompetition = {
-  id: number;
-  name: string;
-  standings: FootballStanding[];
-};
-
-type FootballStanding = {
-  position: number;
-  id: number;
-  name: string;
-  won: number;
-  draw: number;
-  lost: number;
-  points: number;
-  goalsFor: number;
-  goalsAgainst: number;
-  goalDifference: number;
-  matches: FootballMatch[];
-};
-
-type FootballMatch = {
-  status: string;
-  utcDate: string;
-  score: { fullTime: { home: number; away: number } };
-  homeTeam: { id: string; name: string };
-  awayTeam: { id: string; name: string };
+type Passport = {
+  countryCode: string;
+  globalRank: number;
+  individualRank: number;
+  mobilityScore: number;
+  country: Country;
 };

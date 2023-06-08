@@ -1,5 +1,5 @@
 import { Currency } from '@prisma/client';
-import { Controller, Get, Path, Route, Tags } from 'tsoa';
+import { Controller, Get, Path, Query, Route, Tags } from 'tsoa';
 import { CurrenciesService } from './currencies.service';
 
 @Route('/currencies')
@@ -15,6 +15,11 @@ export class CurrenciesController extends Controller {
   @Get()
   async getCurrencies(): Promise<Currency[]> {
     return this.currenciesService.getCurrencies();
+  }
+
+  @Get('rates')
+  async getRates(@Query('amount') amount = 1, @Query('base') base = 'EUR'): Promise<{ code: string; rate: number }[]> {
+    return this.currenciesService.getRates({ amount, base });
   }
 
   @Get(':code')

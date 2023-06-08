@@ -3,7 +3,7 @@ import Container from '@world/components/Container';
 import { apolloClient } from '@world/graphql';
 import { FOOTBALL_AREAS_QUERY } from '@world/graphql/queries/football';
 import Layout from '@world/layout';
-import { FootballArea } from '@world/types';
+import { FootballArea } from '@world/types/football';
 import { NextPage } from 'next';
 import Link from 'next/link';
 import { ChangeEvent, useState } from 'react';

@@ -546,6 +546,22 @@
         ],
         "type": "object"
       },
+      "GoogleTrend": {
+        "properties": {
+          "queries": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "countryCode": {
+            "type": "string"
+          }
+        },
+        "required": ["queries", "countryCode"],
+        "type": "object",
+        "description": "Model GoogleTrend"
+      },
       "HealthResponse": {
         "properties": {
           "status": {
@@ -1248,6 +1264,59 @@
         "parameters": []
       }
     },
+    "/currencies/rates": {
+      "get": {
+        "operationId": "GetRates",
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "properties": {
+                      "rate": {
+                        "type": "number",
+                        "format": "double"
+                      },
+                      "code": {
+                        "type": "string"
+                      }
+                    },
+                    "required": ["rate", "code"],
+                    "type": "object"
+                  },
+                  "type": "array"
+                }
+              }
+            }
+          }
+        },
+        "tags": ["Currencies"],
+        "security": [],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "amount",
+            "required": false,
+            "schema": {
+              "default": 1,
+              "format": "double",
+              "type": "number"
+            }
+          },
+          {
+            "in": "query",
+            "name": "base",
+            "required": false,
+            "schema": {
+              "default": "EUR",
+              "type": "string"
+            }
+          }
+        ]
+      }
+    },
     "/currencies/{code}": {
       "get": {
         "operationId": "GetCurrency",
@@ -1730,6 +1799,87 @@
         ]
       }
     },
+    "/google/trends": {
+      "get": {
+        "operationId": "GetTrends",
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/GoogleTrend"
+                  },
+                  "type": "array"
+                }
+              }
+            }
+          }
+        },
+        "tags": ["Google"],
+        "security": [],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "countryCode",
+            "required": false,
+            "schema": {
+              "default": "",
+              "type": "string"
+            }
+          }
+        ]
+      }
+    },
+    "/google/ranks": {
+      "get": {
+        "operationId": "GetRanks",
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "properties": {
+                      "count": {
+                        "type": "number",
+                        "format": "double"
+                      },
+                      "query": {
+                        "type": "string"
+                      },
+                      "rank": {
+                        "type": "number",
+                        "format": "double"
+                      }
+                    },
+                    "required": ["count", "query", "rank"],
+                    "type": "object"
+                  },
+                  "type": "array"
+                }
+              }
+            }
+          }
+        },
+        "tags": ["Google"],
+        "security": [],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "schema": {
+              "default": 10,
+              "format": "double",
+              "type": "number"
+            }
+          }
+        ]
+      }
+    },
     "/health": {
       "get": {
         "operationId": "GetHealth",
@@ -1856,6 +2006,16 @@
               "default": "",
               "type": "string"
             }
+          },
+          {
+            "in": "query",
+            "name": "pageSize",
+            "required": false,
+            "schema": {
+              "default": 10,
+              "format": "double",
+              "type": "number"
+            }
           }
         ]
       }
@@ -1980,7 +2140,18 @@
         },
         "tags": ["Passports"],
         "security": [],
-        "parameters": []
+        "parameters": [
+          {
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "schema": {
+              "default": 0,
+              "format": "double",
+              "type": "number"
+            }
+          }
+        ]
       }
     },
     "/passports/{code}": {

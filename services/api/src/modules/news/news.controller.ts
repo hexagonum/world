@@ -17,9 +17,10 @@ export class NewsController extends Controller {
     @Query('country') country?: NewsCountry,
     @Query('category') category: NewsCategory = 'general',
     @Query('sources') sources = '',
-    @Query('q') q = ''
+    @Query('q') q = '',
+    @Query('pageSize') pageSize = 10
   ): Promise<Article[]> {
-    return this.newsService.getHeadlines({ category, country, sources, q });
+    return this.newsService.getHeadlines({ category, country, sources, q, pageSize });
   }
 
   @Get('sources')

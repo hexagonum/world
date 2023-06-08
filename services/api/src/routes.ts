@@ -22,6 +22,8 @@ import { CurrenciesController } from './modules/currencies/currencies.controller
 // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
 import { FootballController } from './modules/football/football.controller';
 // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
+import { GoogleController } from './modules/google/google.controller';
+// WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
 import { HealthController } from './modules/health/health.controller';
 // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
 import { LanguagesController } from './modules/languages/languages.controller';
@@ -269,6 +271,18 @@ const models: TsoaRoute.Models = {
         awayTeam: { ref: 'Team', required: true },
         homeTeam: { ref: 'Team', required: true },
         competition: { ref: 'Competition', required: true },
+      },
+      validators: {},
+    },
+  },
+  // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
+  GoogleTrend: {
+    dataType: 'refAlias',
+    type: {
+      dataType: 'nestedObjectLiteral',
+      nestedProperties: {
+        queries: { dataType: 'array', array: { dataType: 'string' }, required: true },
+        countryCode: { dataType: 'string', required: true },
       },
       validators: {},
     },
@@ -694,6 +708,33 @@ export function RegisterRoutes(app: Router) {
   );
   // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
   app.get(
+    '/currencies/rates',
+    ...fetchMiddlewares<RequestHandler>(CurrenciesController),
+    ...fetchMiddlewares<RequestHandler>(CurrenciesController.prototype.getRates),
+
+    function CurrenciesController_getRates(request: any, response: any, next: any) {
+      const args = {
+        amount: { default: 1, in: 'query', name: 'amount', dataType: 'double' },
+        base: { default: 'EUR', in: 'query', name: 'base', dataType: 'string' },
+      };
+
+      // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
+
+      let validatedArgs: any[] = [];
+      try {
+        validatedArgs = getValidatedArgs(args, request, response);
+
+        const controller = new CurrenciesController();
+
+        const promise = controller.getRates.apply(controller, validatedArgs as any);
+        promiseHandler(controller, promise, response, undefined, next);
+      } catch (err) {
+        return next(err);
+      }
+    }
+  );
+  // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
+  app.get(
     '/currencies/:code',
     ...fetchMiddlewares<RequestHandler>(CurrenciesController),
     ...fetchMiddlewares<RequestHandler>(CurrenciesController.prototype.getCurrency),
@@ -906,6 +947,58 @@ export function RegisterRoutes(app: Router) {
   );
   // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
   app.get(
+    '/google/trends',
+    ...fetchMiddlewares<RequestHandler>(GoogleController),
+    ...fetchMiddlewares<RequestHandler>(GoogleController.prototype.getTrends),
+
+    function GoogleController_getTrends(request: any, response: any, next: any) {
+      const args = {
+        countryCode: { default: '', in: 'query', name: 'countryCode', dataType: 'string' },
+      };
+
+      // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
+
+      let validatedArgs: any[] = [];
+      try {
+        validatedArgs = getValidatedArgs(args, request, response);
+
+        const controller = new GoogleController();
+
+        const promise = controller.getTrends.apply(controller, validatedArgs as any);
+        promiseHandler(controller, promise, response, undefined, next);
+      } catch (err) {
+        return next(err);
+      }
+    }
+  );
+  // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
+  app.get(
+    '/google/ranks',
+    ...fetchMiddlewares<RequestHandler>(GoogleController),
+    ...fetchMiddlewares<RequestHandler>(GoogleController.prototype.getRanks),
+
+    function GoogleController_getRanks(request: any, response: any, next: any) {
+      const args = {
+        limit: { default: 10, in: 'query', name: 'limit', dataType: 'double' },
+      };
+
+      // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
+
+      let validatedArgs: any[] = [];
+      try {
+        validatedArgs = getValidatedArgs(args, request, response);
+
+        const controller = new GoogleController();
+
+        const promise = controller.getRanks.apply(controller, validatedArgs as any);
+        promiseHandler(controller, promise, response, undefined, next);
+      } catch (err) {
+        return next(err);
+      }
+    }
+  );
+  // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
+  app.get(
     '/health',
     ...fetchMiddlewares<RequestHandler>(HealthController),
     ...fetchMiddlewares<RequestHandler>(HealthController.prototype.getHealth),
@@ -990,6 +1083,7 @@ export function RegisterRoutes(app: Router) {
         category: { default: 'general', in: 'query', name: 'category', ref: 'NewsCategory' },
         sources: { default: '', in: 'query', name: 'sources', dataType: 'string' },
         q: { default: '', in: 'query', name: 'q', dataType: 'string' },
+        pageSize: { default: 10, in: 'query', name: 'pageSize', dataType: 'double' },
       };
 
       // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
@@ -1092,7 +1186,9 @@ export function RegisterRoutes(app: Router) {
     ...fetchMiddlewares<RequestHandler>(PassportsController.prototype.getPassports),
 
     function PassportsController_getPassports(request: any, response: any, next: any) {
-      const args = {};
+      const args = {
+        limit: { default: 0, in: 'query', name: 'limit', dataType: 'double' },
+      };
 
       // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
 

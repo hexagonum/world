@@ -1,104 +1,155 @@
-import { Divider, Input } from '@chakra-ui/react';
+import { Badge, Button, Table, TableCaption, TableContainer, Tbody, Td, Th, Thead, Tr } from '@chakra-ui/react';
 import Container from '@world/components/Container';
+import { Weather } from '@world/components/Weather';
 import { apolloClient } from '@world/graphql';
-import { COUNTRIES_QUERY } from '@world/graphql/queries/countries';
+import { HOME_QUERY } from '@world/graphql/queries/home';
 import { Layout } from '@world/layout';
-import { Country } from '@world/types';
-import { unique } from '@world/utils/unique';
+import { City, Passport } from '@world/types';
+import { GoogleRank } from '@world/types/google';
+import currencyFormatter from '@world/utils/currency-formatter';
 import { GetStaticProps, GetStaticPropsContext, NextPage } from 'next';
 import Link from 'next/link';
-import { ChangeEvent, useState } from 'react';
 
 type CountriesPageProps = {
-  countries: Country[];
+  cities: City[];
+  passports: Passport[];
+  googleRanks: GoogleRank[];
+  rates: { code: string; rate: number }[];
 };
 
-export const CountriesPage: NextPage<CountriesPageProps> = ({ countries = [] }) => {
-  const [query, setQuery] = useState<string>('');
-
-  const countriesByFilter = countries.filter(
-    ({ commonName = '', region = '', subregion = '', cca2 = '', cca3 = '', fifa = '' }) => {
-      const cca2Flag: boolean = query !== '' ? cca2.toLowerCase().includes(query.toLowerCase()) : true;
-      const cca3Flag: boolean = query !== '' ? cca3.toLowerCase().includes(query.toLowerCase()) : true;
-      const fifaFlag: boolean = query !== '' ? fifa.toLowerCase().includes(query.toLowerCase()) : true;
-      const commonNameFlag: boolean = query !== '' ? commonName.toLowerCase().includes(query.toLowerCase()) : true;
-      const regionFlag: boolean = query !== '' ? region.toLowerCase().includes(query.toLowerCase()) : true;
-      const subregionFlag: boolean = query !== '' ? subregion.toLowerCase().includes(query.toLowerCase()) : true;
-      return cca2Flag || cca3Flag || fifaFlag || commonNameFlag || regionFlag || subregionFlag;
-    }
-  );
-  const regions: string[] = [...new Set(countriesByFilter.map(({ region = '' }) => region))].sort(
-    (a: string, b: string) => (a > b ? 1 : -1)
-  );
-  const countriesByRegions: {
-    region: string;
-    total: number;
-    subregions: { subregion: string; countries: Country[] }[];
-  }[] = regions.map((region: string) => {
-    const countriesByRegions: Country[] = countriesByFilter.filter(
-      ({ region: countryRegion }) => region === countryRegion
-    );
-    const subregions: string[] = unique(countriesByRegions.map(({ subregion = '' }) => subregion)).sort(
-      (a: string, b: string) => (a > b ? 1 : -1)
-    );
-    const countriesBySubregions: { subregion: string; countries: Country[] }[] = subregions.map((subregion: string) => {
-      const countries: Country[] = countriesByRegions
-        .filter(({ subregion: countrySubregion }: Country) => subregion === countrySubregion)
-        .sort((a, b) => (a.commonName > b.commonName ? 1 : -1));
-      return { subregion, countries };
-    });
-    return { region, total: countriesByRegions.length, subregions: countriesBySubregions };
-  });
-
+export const CountriesPage: NextPage<CountriesPageProps> = ({
+  cities = [],
+  googleRanks = [],
+  rates = [],
+  passports = [],
+}) => {
   return (
     <Layout>
       <Container>
-        <div className="p-8">
+        <div className="p-4 md:p-8">
           <div className="flex flex-col gap-4 md:gap-8">
-            <Input
-              id="query"
-              name="query"
-              placeholder="Query"
-              value={query}
-              onChange={(event: ChangeEvent<HTMLInputElement>) => setQuery(event.target.value)}
-              className="shadow"
-            />
-            {countriesByRegions.map(({ region = '', total = 0, subregions = [] }) => {
-              return (
-                <div key={region} className="flex flex-col gap-4 md:gap-8">
-                  <h2 className="text-lg">
-                    {region} ({total})
-                  </h2>
-                  <div className="flex flex-col gap-4 md:gap-8">
-                    {subregions.map(({ subregion = '', countries = [] }) => {
-                      return (
-                        <div key={subregion} className="flex flex-col gap-2 md:gap-4">
-                          <h3>
-                            {subregion} ({countries.length})
-                          </h3>
-                          <Divider className="border-gray-200" />
-                          {countries.map(({ commonName = '', cca2 = '', cca3 = '', fifa = 'N/A', flag = '' }) => {
-                            return (
-                              <div key={cca2} className="flex items-center justify-between">
-                                <div className="flex items-center gap-2">
-                                  <p>{flag}</p>
-                                  <Link href={`/countries/${cca3}`}>
-                                    <pre className="inline">{cca2}</pre> - <pre className="inline">{cca3}</pre> -{' '}
-                                    <pre className="inline">{fifa || 'N/A'}</pre> -{' '}
-                                    <pre className="inline">{commonName}</pre>
-                                  </Link>
-                                </div>
-                              </div>
-                            );
-                          })}
-                        </div>
-                      );
-                    })}
-                  </div>
-                  <Divider className="border-gray-200" />
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8">
+              {cities.map(({ id, city, latitude, longitude, timezone }: City) => (
+                <div key={id} className="col-span-1">
+                  <Weather city={city} latitude={latitude} longitude={longitude} timezone={timezone} />
                 </div>
-              );
-            })}
+              ))}
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8">
+              {googleRanks.length > 0 ? (
+                <div className="col-span-1">
+                  <TableContainer className="border rounded shadow">
+                    <Table>
+                      <Thead>
+                        <Tr>
+                          <Th>Google Trends ({googleRanks.length})</Th>
+                          <Th isNumeric>Occurrences</Th>
+                        </Tr>
+                      </Thead>
+                      <Tbody>
+                        {googleRanks.map(({ rank, query, count }) => {
+                          return (
+                            <Tr key={rank}>
+                              <Td>
+                                <Link href={`https://google.com/search?q=${encodeURIComponent(query)}`} target="_blank">
+                                  <Badge colorScheme="teal">{query}</Badge>
+                                </Link>
+                              </Td>
+                              <Td isNumeric>
+                                <b>{count}</b>
+                              </Td>
+                            </Tr>
+                          );
+                        })}
+                      </Tbody>
+                      <TableCaption>
+                        <Link href="/trends" className="uppercase">
+                          <Button colorScheme="teal" className="w-full mb-4">
+                            View Full Table
+                          </Button>
+                        </Link>
+                      </TableCaption>
+                    </Table>
+                  </TableContainer>
+                </div>
+              ) : (
+                <></>
+              )}
+              {rates.length > 0 ? (
+                <div className="col-span-1">
+                  <TableContainer className="border rounded shadow">
+                    <Table>
+                      <Thead>
+                        <Tr>
+                          <Th>USD</Th>
+                          <Th isNumeric>1000</Th>
+                        </Tr>
+                      </Thead>
+                      <Tbody>
+                        {rates.map(({ code, rate }) => {
+                          return (
+                            <Tr key={code}>
+                              <Td>
+                                <Link href={`/currencies/${code}`}>
+                                  <Badge colorScheme="teal">{code}</Badge>
+                                </Link>
+                              </Td>
+                              <Td isNumeric>{currencyFormatter(rate, code)}</Td>
+                            </Tr>
+                          );
+                        })}
+                      </Tbody>
+                      <TableCaption>
+                        <Link href="/currencies" className="uppercase">
+                          <Button colorScheme="teal" className="w-full mb-4">
+                            View Full Table
+                          </Button>
+                        </Link>
+                      </TableCaption>
+                    </Table>
+                  </TableContainer>
+                </div>
+              ) : (
+                <></>
+              )}
+              {passports.length > 0 ? (
+                <div className="col-span-1">
+                  <TableContainer className="border rounded shadow">
+                    <Table>
+                      <Thead>
+                        <Tr>
+                          <Th>Rank</Th>
+                          <Th isNumeric>Country</Th>
+                        </Tr>
+                      </Thead>
+                      <Tbody>
+                        {passports.map(({ countryCode, individualRank, country: { commonName } }) => {
+                          return (
+                            <Tr key={countryCode}>
+                              <Td>{individualRank}</Td>
+                              <Td isNumeric>
+                                <Link href={`/countries/${countryCode}`}>
+                                  <Badge colorScheme="teal">{commonName}</Badge>
+                                </Link>
+                              </Td>
+                            </Tr>
+                          );
+                        })}
+                      </Tbody>
+                      <TableCaption>
+                        <Link href="/passports" className="uppercase">
+                          <Button colorScheme="teal" className="w-full mb-4">
+                            View Full Table
+                          </Button>
+                        </Link>
+                      </TableCaption>
+                    </Table>
+                  </TableContainer>
+                </div>
+              ) : (
+                <></>
+              )}
+            </div>
           </div>
         </div>
       </Container>
@@ -107,15 +158,27 @@ export const CountriesPage: NextPage<CountriesPageProps> = ({ countries = [] }) 
 };
 
 export const getStaticProps: GetStaticProps = async (
-  context: GetStaticPropsContext
-): Promise<{ props: { countries: Country[] } }> => {
+  _context: GetStaticPropsContext
+): Promise<{
+  props: { cities: City[]; googleRanks: GoogleRank[]; rates: { code: string; rate: number }[]; passports: Passport[] };
+}> => {
   try {
-    const data = await apolloClient.query<{ countries: Country[] }>({ query: COUNTRIES_QUERY });
-    const countries = data.data.countries;
-    return { props: { countries } };
+    const data = await apolloClient.query<{
+      cities: City[];
+      rates: { code: string; rate: number }[];
+      google: { ranks: GoogleRank[] };
+      passports: Passport[];
+    }>({ query: HOME_QUERY, variables: { amount: 1000, base: 'USD', limit: 10 } });
+    const cities = [...data.data.cities]
+      .filter(({ city }) => ['Hà Nội', 'Melbourne', 'Dallas'].includes(city))
+      .sort((a, b) => (a.timezone > b.timezone ? 1 : -1));
+    const rates = [...data.data.rates].splice(0, 10);
+    const googleRanks = [...data.data.google.ranks];
+    const passports = [...data.data.passports];
+    return { props: { cities, googleRanks, rates, passports } };
   } catch (error) {
     console.error(error);
-    return { props: { countries: [] } };
+    return { props: { cities: [], googleRanks: [], rates: [], passports: [] } };
   }
 };
 

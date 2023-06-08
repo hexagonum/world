@@ -4,6 +4,7 @@ export const typeDefs = `#graphql
   }
 
   type City {
+    id: String
     countryCode: String
     region: String
     subregion: String

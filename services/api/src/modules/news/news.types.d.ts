@@ -77,6 +77,7 @@ export type HeadlinesRequest = {
   country?: Country;
   sources?: string;
   q?: string;
+  pageSize?: number;
 };
 
 export type HeadlinesResponse = {

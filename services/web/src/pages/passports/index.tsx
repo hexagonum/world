@@ -84,7 +84,7 @@ const PassportsPage: NextPage<PassportsPageProps> = ({ passports = [] }) => {
 export const getStaticProps = async (): Promise<{ props: { passports: Passport[] } }> => {
   try {
     const data = await apolloClient.query<{ passports: Passport[] }>({ query: PASSPORTS_QUERY });
-    const passports: Passport[] = data.data.passports;
+    const passports: Passport[] = [...data.data.passports].sort((a, b) => a.individualRank - b.individualRank);
     return { props: { passports } };
   } catch (error) {
     console.error(error);

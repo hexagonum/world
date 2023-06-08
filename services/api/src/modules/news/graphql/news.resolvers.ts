@@ -9,9 +9,10 @@ export const resolvers = {
     },
   },
   News: {
-    headlines: async ({ country = '' }): Promise<Article[]> => {
+    headlines: async ({ country = '' }, { pageSize = 10 }: { pageSize: number }): Promise<Article[]> => {
       const urlSearchParams = new URLSearchParams();
       if (country) urlSearchParams.set('country', country);
+      if (pageSize) urlSearchParams.set('pageSize', pageSize.toString());
       return await farfetch<Article[]>(`${BASE_API}/news/headlines?${urlSearchParams.toString()}`);
     },
     sources: async ({ country = '' }): Promise<Source[]> => {

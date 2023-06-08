@@ -18,7 +18,7 @@ import {
 import { Container } from '@world/components/Container';
 import { FOOTBALL_TEAMS_QUERY } from '@world/graphql/queries/football';
 import Layout from '@world/layout';
-import { Football, FootballStanding } from '@world/types';
+import { Football, FootballStanding } from '@world/types/football';
 import { NextPage } from 'next';
 import { useRouter } from 'next/router';
 

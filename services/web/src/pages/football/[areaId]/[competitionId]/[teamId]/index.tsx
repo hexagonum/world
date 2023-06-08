@@ -1,24 +1,9 @@
 import { useQuery } from '@apollo/client';
-import {
-  Breadcrumb,
-  BreadcrumbItem,
-  BreadcrumbLink,
-  Card,
-  CardBody,
-  Link,
-  Table,
-  TableCaption,
-  TableContainer,
-  Tbody,
-  Td,
-  Th,
-  Thead,
-  Tr,
-} from '@chakra-ui/react';
+import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, Card, CardBody } from '@chakra-ui/react';
 import { Container } from '@world/components/Container';
 import { FOOTBALL_MATCHES_QUERY } from '@world/graphql/queries/football';
 import Layout from '@world/layout';
-import { Football, FootballMatch } from '@world/types';
+import { Football, FootballMatch } from '@world/types/football';
 import { NextPage } from 'next';
 import { useRouter } from 'next/router';
 

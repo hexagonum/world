@@ -26,7 +26,7 @@ export const WeatherPage: NextPage<{ cities: City[] }> = ({ cities = [] }) => {
     <Layout>
       <Container>
         <div className="p-8">
-          <div className="flex flex-col gap-4">
+          <div className="flex flex-col gap-8">
             <Input
               id="query"
               name="query"

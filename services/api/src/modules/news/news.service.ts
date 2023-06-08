@@ -5,13 +5,14 @@ import { Article, HeadlinesRequest, HeadlinesResponse, Source, SourcesRequest, S
 const BASE_URL = 'https://newsapi.org/v2';
 
 export class NewsService {
-  public async getHeadlines({ category, country, sources, q }: HeadlinesRequest): Promise<Article[]> {
+  public async getHeadlines({ category, country, sources, q, pageSize = 10 }: HeadlinesRequest): Promise<Article[]> {
     const urlSearchParams = new URLSearchParams();
     urlSearchParams.set('apiKey', API_KEY_NEWS);
     if (category) urlSearchParams.set('category', category);
     if (country) urlSearchParams.set('country', country);
     if (sources) urlSearchParams.set('sources', sources);
     if (q) urlSearchParams.set('q', q);
+    if (pageSize) urlSearchParams.set('pageSize', pageSize.toString());
     const url = `${BASE_URL}/top-headlines?${urlSearchParams.toString()}`;
     console.log(url);
     try {

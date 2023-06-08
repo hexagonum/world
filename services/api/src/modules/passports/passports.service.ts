@@ -2,9 +2,11 @@ import { Passport, PassportRequirement } from '@prisma/client';
 import { prismaClient } from '../../common/libs/prisma';
 
 export class PassportsService {
-  async getPassports(): Promise<Passport[]> {
+  async getPassports({ limit = 0 }: { limit: number }): Promise<Passport[]> {
     const passports: Passport[] = await prismaClient.passport.findMany({
       include: { country: { select: { commonName: true, cca2: true, cca3: true, region: true, subregion: true } } },
+      orderBy: { individualRank: 'asc' },
+      take: limit > 0 ? limit : undefined,
     });
     return passports;
   }

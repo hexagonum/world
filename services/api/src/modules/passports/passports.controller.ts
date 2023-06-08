@@ -1,5 +1,5 @@
 import { Passport, PassportRequirement } from '@prisma/client';
-import { Controller, Get, Path, Route, Tags } from 'tsoa';
+import { Controller, Get, Path, Query, Route, Tags } from 'tsoa';
 import { PassportsService } from './passports.service';
 
 @Route('/passports')
@@ -13,8 +13,8 @@ export class PassportsController extends Controller {
   }
 
   @Get()
-  async getPassports(): Promise<Passport[]> {
-    return this.passportsService.getPassports();
+  async getPassports(@Query('limit') limit = 0): Promise<Passport[]> {
+    return this.passportsService.getPassports({ limit });
   }
 
   @Get(':code')
