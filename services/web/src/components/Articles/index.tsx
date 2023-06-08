@@ -1,21 +1,8 @@
 import { Box, Card, CardBody, Heading, Text } from '@chakra-ui/react';
 import { NEXT_PUBLIC_BASE_API } from '@world/configs';
 import useFetch from '@world/hooks/use-fetch';
+import { Article } from '@world/types/news';
 import Link from 'next/link';
-
-export type Article = {
-  source: {
-    id: string;
-    name: string;
-  };
-  author: string;
-  title: string;
-  description: string;
-  url: string;
-  urlToImage: string;
-  publishedAt: string;
-  content: string;
-};
 
 export type ArticlesProps = {
   category?: string;

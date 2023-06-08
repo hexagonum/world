@@ -16,6 +16,7 @@ export const typeDefs = `#graphql
     urlToImage: String
     publishedAt: String
     content: String
+    source: Source
   }
 
   type Source {

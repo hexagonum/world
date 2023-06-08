@@ -2,7 +2,7 @@ import { gql } from '@apollo/client';
 import { DocumentNode } from 'graphql';
 
 export const HOME_QUERY: DocumentNode = gql`
-  query HOME_QUERY($amount: Float, $base: String, $limit: Int) {
+  query HOME_QUERY($amount: Float, $base: String, $limit: Int, $pageSize: Int, $country: String) {
     cities {
       id
       city
@@ -10,12 +10,22 @@ export const HOME_QUERY: DocumentNode = gql`
       latitude
       longitude
     }
-
     google {
       ranks {
         rank
         query
         count
+      }
+    }
+    news(country: $country) {
+      headlines(pageSize: $pageSize) {
+        title
+        author
+        url
+        urlToImage
+        source {
+          name
+        }
       }
     }
     passports(limit: $limit) {
