@@ -8,9 +8,9 @@
   "license": "GNU GPL V3.0",
   "private": true,
   "engines": {
-    "node": "20",
-    "npm": "9",
-    "yarn": "1"
+    "node": "20.3.0",
+    "npm": "9.7.1",
+    "yarn": "1.22.19"
   },
   "scripts": {
     "dev:api": "yarn workspace @world/api start:dev",
