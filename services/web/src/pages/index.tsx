@@ -4,16 +4,16 @@ import {
   Card,
   CardBody,
   CardHeader,
+  Divider,
   Table,
   TableCaption,
   TableContainer,
   Tbody,
   Td,
+  Text,
   Th,
   Thead,
   Tr,
-  Text,
-  Divider,
 } from '@chakra-ui/react';
 import Container from '@world/components/Container';
 import { Weather } from '@world/components/Weather';
@@ -397,7 +397,9 @@ export const getStaticProps: GetStaticProps = async (
     const passports = [...data.data.passports];
     const articles = [...data.data.news.headlines];
     const videos = [...data.data.youtube.videos];
-    return { props: { cities, googleRanks, forexRates, passports, articles, forexHistory, videos } };
+    const props = { cities, googleRanks, forexRates, passports, articles, forexHistory, videos };
+    console.log('props', props);
+    return { props };
   } catch (error) {
     console.error(error);
     return {
