@@ -79,7 +79,7 @@ export const getStaticProps: GetStaticProps = async (): Promise<{ props: { count
     countries.sort((a, b) => b.density - a.density);
     return { props: { countries } };
   } catch (error) {
-    console.error(error);
+    console.error('DensityPage', error);
     return { props: { countries: [] } };
   }
 };

@@ -98,7 +98,7 @@ export const getStaticProps: GetStaticProps = async (): Promise<{ props: { count
     countries.sort((a, b) => b.languages.length - a.languages.length);
     return { props: { countries } };
   } catch (error) {
-    console.error(error);
+    console.error('LanguagesPage', error);
     return { props: { countries: [] } };
   }
 };

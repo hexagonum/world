@@ -106,7 +106,7 @@ export const getStaticProps: GetStaticProps = async (): Promise<{
     }
     return { props: { countries, codeCountryMap } };
   } catch (error) {
-    console.error(error);
+    console.error('BordersPage', error);
     return { props: { countries: [], codeCountryMap: {} } };
   }
 };

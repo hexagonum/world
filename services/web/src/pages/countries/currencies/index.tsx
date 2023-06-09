@@ -100,7 +100,7 @@ export const getStaticProps: GetStaticProps = async (): Promise<{ props: { count
     countries.sort((a, b) => b.currencies.length - a.currencies.length);
     return { props: { countries } };
   } catch (error) {
-    console.error(error);
+    console.error('CurrenciesPage', error);
     return { props: { countries: [] } };
   }
 };

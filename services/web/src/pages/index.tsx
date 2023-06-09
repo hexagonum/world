@@ -401,10 +401,17 @@ export const getStaticProps: GetStaticProps = async (
     console.log('props', props);
     return { props };
   } catch (error) {
-    console.error(error);
-    return {
-      props: { cities: [], googleRanks: [], forexRates: [], passports: [], articles: [], forexHistory: [], videos: [] },
+    console.error('HomePage', error);
+    const props = {
+      cities: [],
+      googleRanks: [],
+      forexRates: [],
+      passports: [],
+      articles: [],
+      forexHistory: [],
+      videos: [],
     };
+    return { props };
   }
 };
 

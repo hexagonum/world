@@ -112,7 +112,7 @@ export const getStaticProps: GetStaticProps = async (): Promise<{ props: { count
     const countries = data.data.countries;
     return { props: { countries } };
   } catch (error) {
-    console.error(error);
+    console.error('CountriesPage', error);
     return { props: { countries: [] } };
   }
 };

@@ -79,7 +79,7 @@ export const getStaticProps: GetStaticProps = async (): Promise<{ props: { count
     countries.sort((a, b) => b.area - a.area);
     return { props: { countries } };
   } catch (error) {
-    console.error(error);
+    console.error('AreaPage', error);
     return { props: { countries: [] } };
   }
 };
