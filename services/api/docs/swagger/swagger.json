@@ -1376,6 +1376,16 @@
           },
           {
             "in": "query",
+            "name": "days",
+            "required": false,
+            "schema": {
+              "default": 7,
+              "format": "double",
+              "type": "number"
+            }
+          },
+          {
+            "in": "query",
             "name": "from",
             "required": false,
             "schema": {

@@ -30,10 +30,11 @@ export class CurrenciesController extends Controller {
   @Get('history')
   async getHistory(
     @Query('amount') amount = 1,
+    @Query('days') days = 7,
     @Query('from') from = 'EUR',
     @Query('to') to = ''
   ): Promise<ForexHistory[]> {
-    return this.currenciesService.getHistory({ amount, from, to });
+    return this.currenciesService.getHistory({ amount, days, from, to });
   }
 
   @Get(':code')

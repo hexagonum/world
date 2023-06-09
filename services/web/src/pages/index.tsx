@@ -3,6 +3,7 @@ import {
   Button,
   Card,
   CardBody,
+  CardHeader,
   Table,
   TableCaption,
   TableContainer,
@@ -11,6 +12,8 @@ import {
   Th,
   Thead,
   Tr,
+  Text,
+  Divider,
 } from '@chakra-ui/react';
 import Container from '@world/components/Container';
 import { Weather } from '@world/components/Weather';
@@ -18,13 +21,13 @@ import { apolloClient } from '@world/graphql';
 import { HOME_QUERY } from '@world/graphql/queries/home';
 import { Layout } from '@world/layout';
 import { City, Passport } from '@world/types';
-import { Rate } from '@world/types/currency';
+import { ForexHistory, ForexRate } from '@world/types/currency';
 import { GoogleRank } from '@world/types/google';
 import { Article } from '@world/types/news';
 import currencyFormatter from '@world/utils/currency-formatter';
 import { GetStaticProps, GetStaticPropsContext, NextPage } from 'next';
 import Link from 'next/link';
-import { LineChart, ResponsiveContainer } from 'recharts';
+import { CartesianGrid, Legend, Line, LineChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts';
 
 const GoogleRanksSection: React.FC<{ googleRanks: GoogleRank[] }> = ({ googleRanks = [] }) => {
   return (
@@ -70,11 +73,10 @@ const GoogleRanksSection: React.FC<{ googleRanks: GoogleRank[] }> = ({ googleRan
   );
 };
 
-const ForexRates: React.FC<{ rates: Rate[] }> = ({ rates = [] }) => {
+const ForexRates: React.FC<{ forexRates: ForexRate[] }> = ({ forexRates = [] }) => {
   return (
     <>
-      {' '}
-      {rates.length > 0 ? (
+      {forexRates.length > 0 ? (
         <TableContainer className="border rounded shadow">
           <Table>
             <Thead>
@@ -84,7 +86,7 @@ const ForexRates: React.FC<{ rates: Rate[] }> = ({ rates = [] }) => {
               </Tr>
             </Thead>
             <Tbody>
-              {rates.map(({ code, rate }) => {
+              {forexRates.map(({ code, rate }) => {
                 return (
                   <Tr key={code}>
                     <Td>
@@ -113,13 +115,26 @@ const ForexRates: React.FC<{ rates: Rate[] }> = ({ rates = [] }) => {
   );
 };
 
-const ForexChart: React.FC<{ rates: Rate[] }> = ({ rates = [] }) => {
+const ForexChart: React.FC<{ forexHistory: ForexHistory[] }> = ({ forexHistory = [] }) => {
   return (
     <Card className="border border-gray-200 shadow">
+      <CardHeader>
+        <Text className="text-center font-bold">USD to EUR</Text>
+      </CardHeader>
+      <Divider />
       <CardBody>
-        <ResponsiveContainer width="100%" height="100%">
-          <LineChart width={1600} height={900} data={[]} />
-        </ResponsiveContainer>
+        <div className="h-[450px]">
+          <ResponsiveContainer width="100%" height="100%">
+            <LineChart width={1600} height={900} data={forexHistory}>
+              <CartesianGrid strokeDasharray="3 3" />
+              <XAxis dataKey="date" />
+              <YAxis domain={[0.5, 1]} />
+              <Tooltip />
+              <Legend />
+              <Line type="monotone" dataKey="to" stroke="#82ca9d" />
+            </LineChart>
+          </ResponsiveContainer>
+        </div>
       </CardBody>
     </Card>
   );
@@ -214,14 +229,16 @@ type CountriesPageProps = {
   cities: City[];
   passports: Passport[];
   googleRanks: GoogleRank[];
-  rates: Rate[];
+  forexRates: ForexRate[];
+  forexHistory: ForexHistory[];
   articles: Article[];
 };
 
 export const CountriesPage: NextPage<CountriesPageProps> = ({
   cities = [],
   googleRanks = [],
-  rates = [],
+  forexRates = [],
+  forexHistory = [],
   passports = [],
   articles = [],
 }) => {
@@ -238,11 +255,11 @@ export const CountriesPage: NextPage<CountriesPageProps> = ({
               ))}
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8">
-              <div className="col-span-1">
-                <ForexRates rates={rates} />
+              <div className="col-span-1 order-2 md:order-1">
+                <ForexRates forexRates={forexRates} />
               </div>
-              <div className="col-span-2">
-                <ForexChart rates={rates} />
+              <div className="col-span-2 order-1 md:order-2">
+                <ForexChart forexHistory={forexHistory} />
               </div>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8">
@@ -269,30 +286,36 @@ export const getStaticProps: GetStaticProps = async (
   props: {
     cities: City[];
     googleRanks: GoogleRank[];
-    rates: Rate[];
     passports: Passport[];
     articles: Article[];
+    forexRates: ForexRate[];
+    forexHistory: ForexHistory[];
   };
 }> => {
   try {
     const data = await apolloClient.query<{
       cities: City[];
-      rates: Rate[];
+      rates: ForexRate[];
       google: { ranks: GoogleRank[] };
       passports: Passport[];
       news: { headlines: Article[] };
-    }>({ query: HOME_QUERY, variables: { amount: 1000, base: 'USD', limit: 10, pageSize: 10, country: 'us' } });
+      history: ForexHistory[];
+    }>({
+      query: HOME_QUERY,
+      variables: { from: 'USD', to: 'EUR', amount: 1000, base: 'USD', limit: 10, pageSize: 10, country: 'us' },
+    });
     const cities = [...data.data.cities]
       .filter(({ city }) => ['Hà Nội', 'Melbourne', 'Dallas'].includes(city))
       .sort((a, b) => (a.timezone > b.timezone ? 1 : -1));
-    const rates = [...data.data.rates].splice(0, 10);
+    const forexRates = [...data.data.rates].splice(0, 10);
+    const forexHistory = [...data.data.history];
     const googleRanks = [...data.data.google.ranks];
     const passports = [...data.data.passports];
     const articles = [...data.data.news.headlines];
-    return { props: { cities, googleRanks, rates, passports, articles } };
+    return { props: { cities, googleRanks, forexRates, passports, articles, forexHistory } };
   } catch (error) {
     console.error(error);
-    return { props: { cities: [], googleRanks: [], rates: [], passports: [], articles: [] } };
+    return { props: { cities: [], googleRanks: [], forexRates: [], passports: [], articles: [], forexHistory: [] } };
   }
 };
 

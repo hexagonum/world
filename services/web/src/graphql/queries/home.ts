@@ -2,7 +2,15 @@ import { gql } from '@apollo/client';
 import { DocumentNode } from 'graphql';
 
 export const HOME_QUERY: DocumentNode = gql`
-  query HOME_QUERY($amount: Float, $base: String, $limit: Int, $pageSize: Int, $country: String) {
+  query HOME_QUERY(
+    $from: String!
+    $to: String!
+    $amount: Float
+    $base: String
+    $limit: Int
+    $pageSize: Int
+    $country: String
+  ) {
     cities {
       id
       city
@@ -42,6 +50,11 @@ export const HOME_QUERY: DocumentNode = gql`
     rates(amount: $amount, base: $base) {
       code
       rate
+    }
+    history(from: $from, to: $to) {
+      date
+      from
+      to
     }
   }
 `;

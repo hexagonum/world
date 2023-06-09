@@ -26,10 +26,11 @@ export const resolvers = {
     },
     history: async (
       _parent: unknown,
-      { amount = 1, from = 'EUR', to = 'USD' }: { amount: number; from: string; to: string }
+      { amount = 1, days = 7, from = 'EUR', to = 'USD' }: { amount: number; days: number; from: string; to: string }
     ): Promise<ForexHistory[]> => {
       const urlSearchParams = new URLSearchParams();
       if (amount) urlSearchParams.set('amount', amount.toString());
+      if (days) urlSearchParams.set('days', days.toString());
       if (from) urlSearchParams.set('from', from);
       if (to) urlSearchParams.set('to', to);
       const url = `${BASE_API}/currencies/history?${urlSearchParams.toString()}`;

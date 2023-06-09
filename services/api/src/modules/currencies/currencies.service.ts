@@ -38,10 +38,12 @@ export class CurrenciesService {
   }
 
   public async getHistory({
+    days = 7,
     amount = 1,
     from = 'EUR',
     to = '',
   }: {
+    days: number;
     amount: number;
     from: string;
     to: string;
@@ -49,7 +51,7 @@ export class CurrenciesService {
     const toD = new Date();
     const [toDate] = toD.toISOString().split('T');
     const toTime = toD.getTime();
-    const fromD = new Date(toTime - 7 * ONE_DAY);
+    const fromD = new Date(toTime - days * ONE_DAY);
     const [fromDate] = fromD.toISOString().split('T');
 
     const urlSearchParams = new URLSearchParams();

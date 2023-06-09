@@ -3,7 +3,7 @@ export const typeDefs = `#graphql
     currencies: [Currency]
     currency(code: String!): Currency
     rates(amount: Float, base: String, to: String): [ForexRate]
-    history(amount: Float, from: String!, to: String!): [ForexHistory]
+    history(amount: Float, days: String, from: String!, to: String!): [ForexHistory]
   }
 
   type Currency {

@@ -783,6 +783,7 @@ paths:
           parameters:
             [
               { in: query, name: amount, required: false, schema: { default: 1, format: double, type: number } },
+              { in: query, name: days, required: false, schema: { default: 7, format: double, type: number } },
               { in: query, name: from, required: false, schema: { default: EUR, type: string } },
               { in: query, name: to, required: false, schema: { default: '', type: string } },
             ],

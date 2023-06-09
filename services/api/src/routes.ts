@@ -756,6 +756,7 @@ export function RegisterRoutes(app: Router) {
     function CurrenciesController_getHistory(request: any, response: any, next: any) {
       const args = {
         amount: { default: 1, in: 'query', name: 'amount', dataType: 'double' },
+        days: { default: 7, in: 'query', name: 'days', dataType: 'double' },
         from: { default: 'EUR', in: 'query', name: 'from', dataType: 'string' },
         to: { default: '', in: 'query', name: 'to', dataType: 'string' },
       };
