@@ -18,4 +18,4 @@ export const API_KEY_NEWS: string = process.env.API_KEY_NEWS ?? 'api-key-news';
 export const API_KEY_FOOTBALL_DATA: string = process.env.API_KEY_FOOTBALL_DATA ?? 'api-key-football-data';
 export const API_KEY_YOUTUBE_V3: string = process.env.API_KEY_YOUTUBE_V3 ?? 'api-key-youtube-v3';
 
-export const REDIS_PASSWORD = process.env.REDIS_PASSWORD ?? 'redis-password';
+export const REDIS_URI = process.env.REDIS_URI ?? 'redis-uri';

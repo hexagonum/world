@@ -13,12 +13,12 @@ export class YouTubeController extends Controller {
 
   @Get('/categories')
   async getVideoCategories(@Query('countryCode') countryCode = 'US') {
-    return this.youTubeService.getVideoCategories(countryCode);
+    return this.youTubeService.getVideoCategories({ regionCode: countryCode });
   }
 
   @Get('/videos')
   async getVideos(
-    @Query('countryCode') countryCode = 'US',
+    @Query('countryCode') countryCode = '',
     @Query('categoryId') categoryId = '',
     @Query('maxResults') maxResults = 50
   ) {

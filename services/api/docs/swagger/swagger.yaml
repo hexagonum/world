@@ -249,6 +249,37 @@ components:
           required: [crest, tla, shortName, name, id],
           type: object,
         },
+      Position:
+        {
+          properties:
+            {
+              goalDifference: { type: number, format: double },
+              goalsAgainst: { type: number, format: double },
+              goalsFor: { type: number, format: double },
+              points: { type: number, format: double },
+              lost: { type: number, format: double },
+              draw: { type: number, format: double },
+              won: { type: number, format: double },
+              form: { type: string },
+              playedGames: { type: number, format: double },
+              position: { type: number, format: double },
+              team: { $ref: '#/components/schemas/Team' },
+            },
+          required:
+            [goalDifference, goalsAgainst, goalsFor, points, lost, draw, won, form, playedGames, position, team],
+          type: object,
+        },
+      Standing:
+        {
+          properties:
+            {
+              table: { items: { $ref: '#/components/schemas/Position' }, type: array },
+              type: { type: string, enum: [TOTAL, HOME, AWAY] },
+              stage: { type: string, enum: [REGULAR_SEASON], nullable: false },
+            },
+          required: [table, type, stage],
+          type: object,
+        },
       Match:
         {
           properties:
@@ -854,42 +885,7 @@ paths:
                   content:
                     {
                       application/json:
-                        {
-                          schema:
-                            {
-                              items:
-                                {
-                                  properties:
-                                    {
-                                      lastUpdated: { type: string },
-                                      numberOfAvailableSeasons: { type: number, format: double },
-                                      plan: { type: string },
-                                      emblem: { type: string },
-                                      type: { type: string },
-                                      code: { type: string },
-                                      name: { type: string },
-                                      id: { type: number, format: double },
-                                      area: { $ref: '#/components/schemas/Area' },
-                                      areaId: { type: string },
-                                    },
-                                  required:
-                                    [
-                                      lastUpdated,
-                                      numberOfAvailableSeasons,
-                                      plan,
-                                      emblem,
-                                      type,
-                                      code,
-                                      name,
-                                      id,
-                                      area,
-                                      areaId,
-                                    ],
-                                  type: object,
-                                },
-                              type: array,
-                            },
-                        },
+                        { schema: { items: { $ref: '#/components/schemas/Competition' }, type: array } },
                     },
                 },
             },
@@ -908,42 +904,7 @@ paths:
               '200':
                 {
                   description: Ok,
-                  content:
-                    {
-                      application/json:
-                        {
-                          schema:
-                            {
-                              properties:
-                                {
-                                  lastUpdated: { type: string },
-                                  numberOfAvailableSeasons: { type: number, format: double },
-                                  plan: { type: string },
-                                  emblem: { type: string },
-                                  type: { type: string },
-                                  code: { type: string },
-                                  name: { type: string },
-                                  id: { type: number, format: double },
-                                  area: { $ref: '#/components/schemas/Area' },
-                                  areaId: { type: string },
-                                },
-                              required:
-                                [
-                                  lastUpdated,
-                                  numberOfAvailableSeasons,
-                                  plan,
-                                  emblem,
-                                  type,
-                                  code,
-                                  name,
-                                  id,
-                                  area,
-                                  areaId,
-                                ],
-                              type: object,
-                            },
-                        },
-                    },
+                  content: { application/json: { schema: { $ref: '#/components/schemas/Competition' } } },
                 },
             },
           tags: [Football],
@@ -971,51 +932,57 @@ paths:
                         {
                           schema:
                             {
-                              items:
-                                {
-                                  properties:
-                                    {
-                                      goalDifference: { type: number, format: double },
-                                      goalsAgainst: { type: number, format: double },
-                                      goalsFor: { type: number, format: double },
-                                      points: { type: number, format: double },
-                                      lost: { type: number, format: double },
-                                      draw: { type: number, format: double },
-                                      won: { type: number, format: double },
-                                      form: { type: string },
-                                      playedGames: { type: number, format: double },
-                                      position: { type: number, format: double },
-                                      crest: { type: string },
-                                      tla: { type: string },
-                                      shortName: { type: string },
-                                      name: { type: string },
-                                      id: { type: number, format: double },
-                                      competitionId: { type: string },
-                                      areaId: { type: string },
-                                    },
-                                  required:
-                                    [
-                                      goalDifference,
-                                      goalsAgainst,
-                                      goalsFor,
-                                      points,
-                                      lost,
-                                      draw,
-                                      won,
-                                      form,
-                                      playedGames,
-                                      position,
-                                      crest,
-                                      tla,
-                                      shortName,
-                                      name,
-                                      id,
-                                      competitionId,
-                                      areaId,
-                                    ],
-                                  type: object,
-                                },
-                              type: array,
+                              anyOf:
+                                [
+                                  { items: { $ref: '#/components/schemas/Standing' }, type: array },
+                                  {
+                                    items:
+                                      {
+                                        properties:
+                                          {
+                                            goalDifference: { type: number, format: double },
+                                            goalsAgainst: { type: number, format: double },
+                                            goalsFor: { type: number, format: double },
+                                            points: { type: number, format: double },
+                                            lost: { type: number, format: double },
+                                            draw: { type: number, format: double },
+                                            won: { type: number, format: double },
+                                            form: { type: string },
+                                            playedGames: { type: number, format: double },
+                                            position: { type: number, format: double },
+                                            crest: { type: string },
+                                            tla: { type: string },
+                                            shortName: { type: string },
+                                            name: { type: string },
+                                            id: { type: number, format: double },
+                                            competitionId: { type: string },
+                                            areaId: { type: string },
+                                          },
+                                        required:
+                                          [
+                                            goalDifference,
+                                            goalsAgainst,
+                                            goalsFor,
+                                            points,
+                                            lost,
+                                            draw,
+                                            won,
+                                            form,
+                                            playedGames,
+                                            position,
+                                            crest,
+                                            tla,
+                                            shortName,
+                                            name,
+                                            id,
+                                            competitionId,
+                                            areaId,
+                                          ],
+                                        type: object,
+                                      },
+                                    type: array,
+                                  },
+                                ],
                             },
                         },
                     },
@@ -1038,30 +1005,7 @@ paths:
           responses:
             {
               '200':
-                {
-                  description: Ok,
-                  content:
-                    {
-                      application/json:
-                        {
-                          schema:
-                            {
-                              properties:
-                                {
-                                  crest: { type: string },
-                                  tla: { type: string },
-                                  shortName: { type: string },
-                                  name: { type: string },
-                                  id: { type: number, format: double },
-                                  competitionId: { type: string },
-                                  areaId: { type: string },
-                                },
-                              required: [crest, tla, shortName, name, id, competitionId, areaId],
-                              type: object,
-                            },
-                        },
-                    },
-                },
+                { description: Ok, content: { application/json: { schema: { $ref: '#/components/schemas/Team' } } } },
             },
           tags: [Football],
           security: [],
@@ -1382,6 +1326,21 @@ paths:
           parameters: [{ in: path, name: code, required: true, schema: { type: string } }],
         },
     }
+  /Weather:
+    {
+      get:
+        {
+          operationId: GetVideoCategories,
+          responses: { '200': { description: Ok, content: { application/json: { schema: {} } } } },
+          tags: [Weather],
+          security: [],
+          parameters:
+            [
+              { in: query, name: latitude, required: false, schema: { default: 0, format: double, type: number } },
+              { in: query, name: longitude, required: false, schema: { default: 0, format: double, type: number } },
+            ],
+        },
+    }
   /youtube/categories:
     {
       get:
@@ -1425,7 +1384,7 @@ paths:
           security: [],
           parameters:
             [
-              { in: query, name: countryCode, required: false, schema: { default: US, type: string } },
+              { in: query, name: countryCode, required: false, schema: { default: '', type: string } },
               { in: query, name: categoryId, required: false, schema: { default: '', type: string } },
               { in: query, name: maxResults, required: false, schema: { default: 50, format: double, type: number } },
             ],
