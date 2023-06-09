@@ -758,7 +758,7 @@ export function RegisterRoutes(app: Router) {
         amount: { default: 1, in: 'query', name: 'amount', dataType: 'double' },
         days: { default: 7, in: 'query', name: 'days', dataType: 'double' },
         from: { default: 'EUR', in: 'query', name: 'from', dataType: 'string' },
-        to: { default: '', in: 'query', name: 'to', dataType: 'string' },
+        to: { default: 'USD', in: 'query', name: 'to', dataType: 'string' },
       };
 
       // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa

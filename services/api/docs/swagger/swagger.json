@@ -1398,7 +1398,7 @@
             "name": "to",
             "required": false,
             "schema": {
-              "default": "",
+              "default": "USD",
               "type": "string"
             }
           }

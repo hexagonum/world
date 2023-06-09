@@ -41,7 +41,7 @@ export class CurrenciesService {
     days = 7,
     amount = 1,
     from = 'EUR',
-    to = '',
+    to = 'USD',
   }: {
     days: number;
     amount: number;

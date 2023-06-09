@@ -32,7 +32,7 @@ export class CurrenciesController extends Controller {
     @Query('amount') amount = 1,
     @Query('days') days = 7,
     @Query('from') from = 'EUR',
-    @Query('to') to = ''
+    @Query('to') to = 'USD'
   ): Promise<ForexHistory[]> {
     return this.currenciesService.getHistory({ amount, days, from, to });
   }

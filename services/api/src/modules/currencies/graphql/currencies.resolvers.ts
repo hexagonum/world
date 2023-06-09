@@ -26,13 +26,20 @@ export const resolvers = {
     },
     history: async (
       _parent: unknown,
-      { amount = 1, days = 7, from = 'EUR', to = 'USD' }: { amount: number; days: number; from: string; to: string }
+      { amount = 1, days = 7, from = 'EUR', to = 'USD' }: { amount: number; days: number; from: string; to: string } = {
+        amount: 1,
+        days: 7,
+        from: 'EUR',
+        to: 'USD',
+      }
     ): Promise<ForexHistory[]> => {
       const urlSearchParams = new URLSearchParams();
+      from = from ?? 'EUR';
+      to = to ?? 'USD';
       if (amount) urlSearchParams.set('amount', amount.toString());
       if (days) urlSearchParams.set('days', days.toString());
-      if (from) urlSearchParams.set('from', from);
-      if (to) urlSearchParams.set('to', to);
+      urlSearchParams.set('from', from);
+      urlSearchParams.set('to', to);
       const url = `${BASE_API}/currencies/history?${urlSearchParams.toString()}`;
       console.log(url);
       return farfetch<ForexHistory[]>(url);
