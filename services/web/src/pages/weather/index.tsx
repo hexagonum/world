@@ -23,19 +23,23 @@ export const WeatherPage: NextPage<{ cities: City[] }> = ({ cities = [] }) => {
   });
 
   return (
-    <Layout>
+    <Layout
+      searchSection={
+        <>
+          <Input
+            id="query"
+            name="query"
+            value={query}
+            placeholder="Query"
+            onChange={(event: ChangeEvent<HTMLInputElement>) => setQuery(event.target.value)}
+            className="shadow"
+          />
+        </>
+      }
+    >
       <Container>
         <div className="p-8">
           <div className="flex flex-col gap-8">
-            <Input
-              id="query"
-              name="query"
-              value={query}
-              placeholder="Query"
-              onChange={(event: ChangeEvent<HTMLInputElement>) => setQuery(event.target.value)}
-              size="lg"
-            />
-            <Divider />
             {citiesByCountries.map(({ country = '', cities = [] }) => {
               return (
                 <div key={country} className="flex flex-col gap-4">

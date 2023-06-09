@@ -1,14 +1,11 @@
-import { useQuery } from '@apollo/client';
-import { Button, Card, CardBody } from '@chakra-ui/react';
+import { Button } from '@chakra-ui/react';
 import Container from '@world/components/Container';
 import { Videos } from '@world/components/Videos';
 import { apolloClient } from '@world/graphql';
-import { YOUTUBE_CATEGORIES_QUERY, YOUTUBE_VIDEOS_QUERY } from '@world/graphql/queries/youtube';
+import { YOUTUBE_CATEGORIES_QUERY } from '@world/graphql/queries/youtube';
 import Layout from '@world/layout';
-import { YouTube, YouTubeCategory, YouTubeVideo } from '@world/types/youtube';
+import { YouTube, YouTubeCategory } from '@world/types/youtube';
 import { NextPage } from 'next';
-import Image from 'next/image';
-import Link from 'next/link';
 import { useState } from 'react';
 
 type YouTubePageProps = { categories: YouTubeCategory[] };

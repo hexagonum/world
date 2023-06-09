@@ -1,9 +1,10 @@
 import { useQuery } from '@apollo/client';
-import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, Card, CardBody } from '@chakra-ui/react';
+import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, Card, CardBody, Divider, Text } from '@chakra-ui/react';
 import { Container } from '@world/components/Container';
 import { FOOTBALL_MATCHES_QUERY } from '@world/graphql/queries/football';
 import Layout from '@world/layout';
 import { Football, FootballMatch } from '@world/types/football';
+import { unique } from '@world/utils/unique';
 import { NextPage } from 'next';
 import { useRouter } from 'next/router';
 
@@ -56,6 +57,11 @@ const MatchesMain: React.FC<{ areaId: string; competitionId: string; teamId: str
   const competition = data.football.areas[0].competitions[0] ?? {};
   const team = data.football.areas[0].competitions[0].standings[0] ?? {};
   const matches: FootballMatch[] = data.football.areas[0].competitions[0].standings[0].matches ?? [];
+  const statuses = unique(matches.map(({ status }) => status));
+  const matchesByStatuses: { status: string; matches: FootballMatch[] }[] = statuses.map((status) => {
+    const matchesByStatus: FootballMatch[] = matches.filter(({ status: matchStatus }) => status === matchStatus);
+    return { status, matches: matchesByStatus };
+  });
 
   return (
     <div className="flex flex-col gap-4 md:gap-8">
@@ -74,34 +80,42 @@ const MatchesMain: React.FC<{ areaId: string; competitionId: string; teamId: str
         </BreadcrumbItem>
       </Breadcrumb>
       <div className="flex flex-col gap-4 md:gap-8">
-        {matches.map(({ homeTeam, awayTeam, score, utcDate }) => {
-          const utcOffset: number = new Date().getTimezoneOffset() / -60;
-          const d: Date = new Date(utcDate);
-          d.setUTCMilliseconds(1000 * 60 * 60 * utcOffset);
-
+        {matchesByStatuses.map(({ status, matches }) => {
           return (
-            <Card key={`${homeTeam.id}-${awayTeam.id}`} className="border border-gray-200">
-              <CardBody>
-                <div className="flex flex-col gap-2 md:gap-4">
-                  <div className="flex justify-between items-center">
-                    <p>
-                      <b>{competition.name}</b>
-                    </p>
-                    <p>
-                      {d.toLocaleDateString()} {d.toLocaleTimeString()}
-                    </p>
-                  </div>
-                  <div className="flex justify-between items-center">
-                    <p>{homeTeam.name}</p>
-                    <p>{score.fullTime.home}</p>
-                  </div>
-                  <div className="flex justify-between items-center">
-                    <p>{awayTeam.name}</p>
-                    <p>{score.fullTime.away}</p>
-                  </div>
-                </div>
-              </CardBody>
-            </Card>
+            <div key={status} className="flex flex-col gap-4">
+              <h2 className="text-xl">{status}</h2>
+              <Divider />
+              {matches.map(({ homeTeam, awayTeam, score, utcDate }) => {
+                const d: Date = new Date(utcDate);
+                d.setTime(d.getTime());
+                return (
+                  <Card key={`${homeTeam.id}-${awayTeam.id}`} className="border border-gray-200">
+                    <CardBody>
+                      <div className="flex flex-col gap-2 md:gap-4">
+                        <div className="flex justify-between items-center">
+                          <Text className="font-medium">{competition.name}</Text>
+                          <Text className="text-gray-500">
+                            {d.toLocaleDateString()} {d.toLocaleTimeString()}
+                          </Text>
+                        </div>
+                        <div className={`${homeTeam.name === team.name ? 'font-bold' : ''}`}>
+                          <div className="flex justify-between items-center">
+                            <p>{homeTeam.name}</p>
+                            <p>{score.fullTime.home}</p>
+                          </div>
+                        </div>
+                        <div className={`${awayTeam.name === team.name ? 'font-bold' : ''}`}>
+                          <div className="flex justify-between items-center">
+                            <p>{awayTeam.name}</p>
+                            <p>{score.fullTime.away}</p>
+                          </div>
+                        </div>
+                      </div>
+                    </CardBody>
+                  </Card>
+                );
+              })}
+            </div>
           );
         })}
       </div>

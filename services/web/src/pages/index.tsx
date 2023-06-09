@@ -40,7 +40,7 @@ const GoogleRanksSection: React.FC<{ googleRanks: GoogleRank[] }> = ({ googleRan
           <Table>
             <Thead>
               <Tr>
-                <Th>Google Trends ({googleRanks.length})</Th>
+                <Th>Queries ({googleRanks.length})</Th>
                 <Th isNumeric>Occurrences</Th>
               </Tr>
             </Thead>
@@ -61,7 +61,7 @@ const GoogleRanksSection: React.FC<{ googleRanks: GoogleRank[] }> = ({ googleRan
               })}
             </Tbody>
             <TableCaption>
-              <Link href="/trends" className="uppercase">
+              <Link href="/google/trends" className="uppercase">
                 <Button colorScheme="teal" className="w-full mb-4">
                   View Full Table
                 </Button>
@@ -295,7 +295,7 @@ export const CountriesPage: NextPage<CountriesPageProps> = ({
       <Container>
         <div className="p-4 md:p-8">
           <div className="flex flex-col gap-4 md:gap-8">
-            <section className="flex flex-col gap-2 md:gap-4">
+            <section className="flex flex-col gap-y-2 md:gap-y-4">
               <h1 className="text-2xl uppercase">Weather</h1>
               <Divider />
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8">
@@ -306,10 +306,10 @@ export const CountriesPage: NextPage<CountriesPageProps> = ({
                 ))}
               </div>
             </section>
-            <section className="flex flex-col gap-2 md:gap-4">
+            <section className="flex flex-col gap-y-2 md:gap-y-4">
               <h1 className="text-2xl uppercase">Forex</h1>
               <Divider />
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-y-4 md:gap-x-8">
                 <div className="col-span-1 order-2 md:order-1">
                   <ForexRates forexRates={forexRates} />
                 </div>
@@ -318,10 +318,10 @@ export const CountriesPage: NextPage<CountriesPageProps> = ({
                 </div>
               </div>
             </section>
-            <section className="flex flex-col gap-2 md:gap-4">
+            <section className="flex flex-col gap-y-2 md:gap-y-4">
               <h1 className="text-2xl uppercase">News</h1>
               <Divider />
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-y-4 md:gap-x-8">
                 <div className="col-span-1">
                   <GoogleRanksSection googleRanks={googleRanks} />
                 </div>
@@ -330,17 +330,17 @@ export const CountriesPage: NextPage<CountriesPageProps> = ({
                 </div>
               </div>
             </section>
-            <section className="flex flex-col gap-2 md:gap-4">
+            <section className="flex flex-col gap-y-2 md:gap-y-4">
               <h1 className="text-2xl uppercase">YouTube</h1>
               <Divider />
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-y-4 md:gap-x-8">
                 <YouTubeVideos videos={videos} />
               </div>
             </section>
-            <section className="flex flex-col gap-2 md:gap-4">
+            <section className="flex flex-col gap-y-2 md:gap-y-4">
               <h1 className="text-2xl uppercase">Passports</h1>
               <Divider />
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-y-4 md:gap-x-8">
                 <div className="col-span-1">
                   <PassportsSection passports={passports} />
                 </div>

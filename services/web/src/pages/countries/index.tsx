@@ -51,18 +51,23 @@ export const CountriesPage: NextPage<CountriesPageProps> = ({ countries = [] }) 
   });
 
   return (
-    <Layout>
+    <Layout
+      searchSection={
+        <>
+          <Input
+            id="query"
+            name="query"
+            placeholder="Query"
+            value={query}
+            onChange={(event: ChangeEvent<HTMLInputElement>) => setQuery(event.target.value)}
+            className="shadow"
+          />
+        </>
+      }
+    >
       <Container>
         <div className="p-8">
           <div className="flex flex-col gap-4 md:gap-8">
-            <Input
-              id="query"
-              name="query"
-              placeholder="Query"
-              value={query}
-              onChange={(event: ChangeEvent<HTMLInputElement>) => setQuery(event.target.value)}
-              className="shadow"
-            />
             {countriesByRegions.map(({ region = '', total = 0, subregions = [] }) => {
               return (
                 <div key={region} className="flex flex-col gap-4 md:gap-8">

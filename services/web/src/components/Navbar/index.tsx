@@ -8,53 +8,47 @@ import {
   DrawerFooter,
   DrawerHeader,
   DrawerOverlay,
-  Input,
+  Icon,
   useDisclosure,
 } from '@chakra-ui/react';
 import Container from '@world/components/Container';
-import { APP_NAME } from '@world/configs';
+import { APP_NAME, YEAR } from '@world/configs';
+import { LINKS } from '@world/content';
 import Link from 'next/link';
+import { ReactNode } from 'react';
+import { FaUser } from 'react-icons/fa';
 
-export const Navbar: React.FC = () => {
-  const year = new Date().getFullYear();
+type NavbarProps = {
+  searchSection: ReactNode;
+};
+
+export const Navbar: React.FC<NavbarProps> = ({ searchSection = <></> }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
-
-  const links = [
-    { id: 'countries', href: '/countries', name: 'Countries' },
-    { id: 'currencies', href: '/currencies', name: 'Currencies' },
-    { id: 'languages', href: '/languages', name: 'Languages' },
-    { id: 'organizations', href: '/organizations', name: 'Organizations' },
-    { id: 'passports', href: '/passports', name: 'Passports' },
-    { id: 'timezones', href: '/timezones', name: 'Timezones' },
-    { id: 'trends', href: '/trends', name: 'Trends' },
-    { id: 'weather', href: '/weather', name: 'Weather' },
-  ];
 
   return (
     <>
-      <nav className="border-b shadow">
+      <nav className="border-b">
         <Container>
           <div className="px-8 py-4">
-            <div className="flex items-center justify-between gap-4 lg:gap-8">
-              <div className="flex items-center gap-4 lg:gap-8">
-                <Link href="/" className="text-xl uppercase">
-                  {APP_NAME}
-                </Link>
-                <div className="hidden lg:block">
-                  <div className="flex items-center gap-2 lg:gap-4">
-                    {links.map(({ id, href, name }) => {
-                      return (
-                        <Link key={id} href={href}>
-                          {name}
-                        </Link>
-                      );
-                    })}
+            <div className="flex items-center gap-4 md:gap-8">
+              <div className="grow">
+                <div className="flex items-center gap-4">
+                  <div className="block md:hidden">
+                    <Link href="/" className="uppercase font-semibold">
+                      {APP_NAME}
+                    </Link>
                   </div>
+                  {searchSection}
                 </div>
               </div>
-              <div className="block lg:hidden">
-                <Button colorScheme="teal" onClick={onOpen}>
-                  <HamburgerIcon />
+              <div className="flex items-center gap-4">
+                <div className="block md:hidden">
+                  <Button colorScheme="teal" onClick={onOpen}>
+                    <HamburgerIcon />
+                  </Button>
+                </div>
+                <Button colorScheme="teal">
+                  <Icon as={FaUser} />
                 </Button>
               </div>
             </div>
@@ -67,8 +61,8 @@ export const Navbar: React.FC = () => {
           <DrawerCloseButton />
           <DrawerHeader>{APP_NAME}</DrawerHeader>
           <DrawerBody>
-            <div className="flex flex-col gap-2 lg:gap-4">
-              {links.map(({ id, href, name }) => {
+            <div className="flex flex-col gap-2 md:gap-4">
+              {LINKS.map(({ id, href, name }) => {
                 return (
                   <div key={id}>
                     <Link href={href}>{name}</Link>
@@ -78,7 +72,7 @@ export const Navbar: React.FC = () => {
             </div>
           </DrawerBody>
           <DrawerFooter>
-            &copy; {year} {APP_NAME}
+            &copy; {YEAR} {APP_NAME}
           </DrawerFooter>
         </DrawerContent>
       </Drawer>

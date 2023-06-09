@@ -190,13 +190,13 @@ const GoogleTrends: React.FC<GoogleTrendsProps> = ({ filterOption, initialCountr
         const encodedQuery: string = encodeURIComponent(query);
         const googleUrl: string = `https://www.google.com/search?q=${encodedQuery}`;
         return (
-          <Card key={encodedQuery} className="border border-gray-200">
-            <CardBody>
-              <Link href={googleUrl} target="_blank">
+          <Link key={encodedQuery} href={googleUrl} target="_blank">
+            <Card className="border border-gray-200 hover:bg-teal-600 hover:text-white hover:border-teal-600">
+              <CardBody>
                 <p className="truncate">{query}</p>
-              </Link>
-            </CardBody>
-          </Card>
+              </CardBody>
+            </Card>
+          </Link>
         );
       })}
     </div>

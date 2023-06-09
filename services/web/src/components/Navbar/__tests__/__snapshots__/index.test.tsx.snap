@@ -3,7 +3,7 @@
 exports[`Navbar to match snapshot 1`] = `
 <div>
   <nav
-    class="border-b shadow"
+    class="border-b"
   >
     <div
       class="container mx-auto"
@@ -12,81 +12,65 @@ exports[`Navbar to match snapshot 1`] = `
         class="px-8 py-4"
       >
         <div
-          class="flex items-center justify-between gap-4 lg:gap-8"
+          class="flex items-center gap-4 md:gap-8"
         >
           <div
-            class="flex items-center gap-4 lg:gap-8"
+            class="grow"
           >
-            <a
-              class="text-xl uppercase"
-              href="/"
-            >
-              World
-            </a>
             <div
-              class="hidden lg:block"
+              class="flex items-center gap-4"
             >
               <div
-                class="flex items-center gap-2 lg:gap-4"
+                class="block md:hidden"
               >
                 <a
-                  href="/countries"
+                  class="uppercase font-semibold"
+                  href="/"
                 >
-                  Countries
-                </a>
-                <a
-                  href="/currencies"
-                >
-                  Currencies
-                </a>
-                <a
-                  href="/languages"
-                >
-                  Languages
-                </a>
-                <a
-                  href="/organizations"
-                >
-                  Organizations
-                </a>
-                <a
-                  href="/passports"
-                >
-                  Passports
-                </a>
-                <a
-                  href="/timezones"
-                >
-                  Timezones
-                </a>
-                <a
-                  href="/trends"
-                >
-                  Trends
-                </a>
-                <a
-                  href="/weather"
-                >
-                  Weather
+                  World
                 </a>
               </div>
             </div>
           </div>
           <div
-            class="block lg:hidden"
+            class="flex items-center gap-4"
           >
+            <div
+              class="block md:hidden"
+            >
+              <button
+                class="chakra-button css-4xx2wk"
+                type="button"
+              >
+                <svg
+                  class="chakra-icon css-onkibi"
+                  focusable="false"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M 3 5 A 1.0001 1.0001 0 1 0 3 7 L 21 7 A 1.0001 1.0001 0 1 0 21 5 L 3 5 z M 3 11 A 1.0001 1.0001 0 1 0 3 13 L 21 13 A 1.0001 1.0001 0 1 0 21 11 L 3 11 z M 3 17 A 1.0001 1.0001 0 1 0 3 19 L 21 19 A 1.0001 1.0001 0 1 0 21 17 L 3 17 z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </button>
+            </div>
             <button
               class="chakra-button css-4xx2wk"
               type="button"
             >
               <svg
-                class="chakra-icon css-onkibi"
+                class="chakra-icon css-13otjrl"
+                fill="currentColor"
                 focusable="false"
-                viewBox="0 0 24 24"
+                height="1em"
+                stroke="currentColor"
+                stroke-width="0"
+                viewBox="0 0 448 512"
+                width="1em"
+                xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  d="M 3 5 A 1.0001 1.0001 0 1 0 3 7 L 21 7 A 1.0001 1.0001 0 1 0 21 5 L 3 5 z M 3 11 A 1.0001 1.0001 0 1 0 3 13 L 21 13 A 1.0001 1.0001 0 1 0 21 11 L 3 11 z M 3 17 A 1.0001 1.0001 0 1 0 3 19 L 21 19 A 1.0001 1.0001 0 1 0 21 17 L 3 17 z"
-                  fill="currentColor"
+                  d="M224 256c70.7 0 128-57.3 128-128S294.7 0 224 0 96 57.3 96 128s57.3 128 128 128zm89.6 32h-16.7c-22.2 10.2-46.9 16-72.9 16s-50.6-5.8-72.9-16h-16.7C60.2 288 0 348.2 0 422.4V464c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48v-41.6c0-74.2-60.2-134.4-134.4-134.4z"
                 />
               </svg>
             </button>

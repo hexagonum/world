@@ -75,8 +75,7 @@ const CompetitionMain: React.FC<{ areaId: string }> = ({ areaId }) => {
         <Table>
           <Thead>
             <Tr>
-              <Th>ID</Th>
-              <Th isNumeric>Name</Th>
+              <Th>Name</Th>
             </Tr>
           </Thead>
           <Tbody>
@@ -84,9 +83,8 @@ const CompetitionMain: React.FC<{ areaId: string }> = ({ areaId }) => {
               return (
                 <Tr key={id}>
                   <Td>
-                    <Link href={`/football/${areaId}/${id}`}>{id}</Link>
+                    <Link href={`/football/${areaId}/${id}`}>{name}</Link>
                   </Td>
-                  <Td isNumeric>{name}</Td>
                 </Tr>
               );
             })}

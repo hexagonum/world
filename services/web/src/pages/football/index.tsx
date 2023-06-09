@@ -17,24 +17,28 @@ export const FootballPage: NextPage<{ areas: FootballArea[] }> = ({ areas = [] }
   });
 
   return (
-    <Layout>
+    <Layout
+      searchSection={
+        <>
+          <Input
+            id="query"
+            name="query"
+            placeholder="Query"
+            value={query}
+            onChange={(event: ChangeEvent<HTMLInputElement>) => setQuery(event.target.value)}
+            className="shadow"
+          />
+        </>
+      }
+    >
       <Container>
         <div className="p-8">
           <div className="flex flex-col gap-4 md:gap-8">
-            <Input
-              id="query"
-              name="query"
-              placeholder="Query"
-              value={query}
-              onChange={(event: ChangeEvent<HTMLInputElement>) => setQuery(event.target.value)}
-              className="shadow"
-            />
             <TableContainer className="border rounded shadow">
               <Table>
                 <Thead>
                   <Tr>
-                    <Th>ID</Th>
-                    <Th isNumeric>Name</Th>
+                    <Th>Name</Th>
                   </Tr>
                 </Thead>
                 <Tbody>
@@ -42,9 +46,8 @@ export const FootballPage: NextPage<{ areas: FootballArea[] }> = ({ areas = [] }
                     return (
                       <Tr key={id}>
                         <Td>
-                          <Link href={`/football/${id}`}>{id}</Link>
+                          <Link href={`/football/${id}`}>{name}</Link>
                         </Td>
-                        <Td isNumeric>{name}</Td>
                       </Tr>
                     );
                   })}
