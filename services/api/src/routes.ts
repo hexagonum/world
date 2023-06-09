@@ -175,6 +175,19 @@ const models: TsoaRoute.Models = {
     },
   },
   // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
+  ForexHistory: {
+    dataType: 'refAlias',
+    type: {
+      dataType: 'nestedObjectLiteral',
+      nestedProperties: {
+        to: { dataType: 'double', required: true },
+        from: { dataType: 'double', required: true },
+        date: { dataType: 'string', required: true },
+      },
+      validators: {},
+    },
+  },
+  // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
   Area: {
     dataType: 'refAlias',
     type: {
@@ -716,6 +729,7 @@ export function RegisterRoutes(app: Router) {
       const args = {
         amount: { default: 1, in: 'query', name: 'amount', dataType: 'double' },
         base: { default: 'EUR', in: 'query', name: 'base', dataType: 'string' },
+        to: { default: '', in: 'query', name: 'to', dataType: 'string' },
       };
 
       // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
@@ -727,6 +741,34 @@ export function RegisterRoutes(app: Router) {
         const controller = new CurrenciesController();
 
         const promise = controller.getRates.apply(controller, validatedArgs as any);
+        promiseHandler(controller, promise, response, undefined, next);
+      } catch (err) {
+        return next(err);
+      }
+    }
+  );
+  // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
+  app.get(
+    '/currencies/history',
+    ...fetchMiddlewares<RequestHandler>(CurrenciesController),
+    ...fetchMiddlewares<RequestHandler>(CurrenciesController.prototype.getHistory),
+
+    function CurrenciesController_getHistory(request: any, response: any, next: any) {
+      const args = {
+        amount: { default: 1, in: 'query', name: 'amount', dataType: 'double' },
+        from: { default: 'EUR', in: 'query', name: 'from', dataType: 'string' },
+        to: { default: '', in: 'query', name: 'to', dataType: 'string' },
+      };
+
+      // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
+
+      let validatedArgs: any[] = [];
+      try {
+        validatedArgs = getValidatedArgs(args, request, response);
+
+        const controller = new CurrenciesController();
+
+        const promise = controller.getHistory.apply(controller, validatedArgs as any);
         promiseHandler(controller, promise, response, undefined, next);
       } catch (err) {
         return next(err);

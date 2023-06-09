@@ -1,7 +1,7 @@
 import { Country, Currency } from '@prisma/client';
 import { BASE_API } from '../../../common/environments';
 import { farfetch } from '../../../common/libs/farfetch';
-import { Rate } from '../currencies.types';
+import { ForexHistory, ForexRate } from '../currencies.types';
 
 export const resolvers = {
   Query: {
@@ -14,14 +14,27 @@ export const resolvers = {
     },
     rates: async (
       _parent: unknown,
-      { amount = 1, base = 'EUR' }: { amount: number; base: string }
-    ): Promise<Rate[]> => {
+      { amount = 1, base = 'EUR', to = '' }: { amount: number; base: string; to: string }
+    ): Promise<ForexRate[]> => {
       const urlSearchParams = new URLSearchParams();
       if (amount) urlSearchParams.set('amount', amount.toString());
       if (base) urlSearchParams.set('base', base);
+      if (to) urlSearchParams.set('to', to);
       const url = `${BASE_API}/currencies/rates?${urlSearchParams.toString()}`;
       console.log(url);
-      return farfetch<Rate[]>(url);
+      return farfetch<ForexRate[]>(url);
+    },
+    history: async (
+      _parent: unknown,
+      { amount = 1, from = 'EUR', to = 'USD' }: { amount: number; from: string; to: string }
+    ): Promise<ForexHistory[]> => {
+      const urlSearchParams = new URLSearchParams();
+      if (amount) urlSearchParams.set('amount', amount.toString());
+      if (from) urlSearchParams.set('base', from);
+      if (to) urlSearchParams.set('to', to);
+      const url = `${BASE_API}/currencies/history?${urlSearchParams.toString()}`;
+      console.log(url);
+      return farfetch<ForexHistory[]>(url);
     },
   },
   Currency: {

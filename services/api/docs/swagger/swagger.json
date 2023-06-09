@@ -370,6 +370,23 @@
         ],
         "type": "object"
       },
+      "ForexHistory": {
+        "properties": {
+          "to": {
+            "type": "number",
+            "format": "double"
+          },
+          "from": {
+            "type": "number",
+            "format": "double"
+          },
+          "date": {
+            "type": "string"
+          }
+        },
+        "required": ["to", "from", "date"],
+        "type": "object"
+      },
       "Area": {
         "properties": {
           "parentArea": {
@@ -1311,6 +1328,67 @@
             "required": false,
             "schema": {
               "default": "EUR",
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "to",
+            "required": false,
+            "schema": {
+              "default": "",
+              "type": "string"
+            }
+          }
+        ]
+      }
+    },
+    "/currencies/history": {
+      "get": {
+        "operationId": "GetHistory",
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/ForexHistory"
+                  },
+                  "type": "array"
+                }
+              }
+            }
+          }
+        },
+        "tags": ["Currencies"],
+        "security": [],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "amount",
+            "required": false,
+            "schema": {
+              "default": 1,
+              "format": "double",
+              "type": "number"
+            }
+          },
+          {
+            "in": "query",
+            "name": "from",
+            "required": false,
+            "schema": {
+              "default": "EUR",
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "to",
+            "required": false,
+            "schema": {
+              "default": "",
               "type": "string"
             }
           }
