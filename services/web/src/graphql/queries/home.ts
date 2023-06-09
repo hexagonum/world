@@ -3,6 +3,7 @@ import { DocumentNode } from 'graphql';
 
 export const HOME_QUERY: DocumentNode = gql`
   query HOME_QUERY(
+    $days: Int
     $from: String!
     $to: String!
     $amount: Float
@@ -52,7 +53,7 @@ export const HOME_QUERY: DocumentNode = gql`
       code
       rate
     }
-    history(from: $from, to: $to) {
+    history(days: $days, from: $from, to: $to) {
       date
       from
       to

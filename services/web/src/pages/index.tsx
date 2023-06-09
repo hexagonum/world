@@ -293,38 +293,58 @@ export const CountriesPage: NextPage<CountriesPageProps> = ({
       <Container>
         <div className="p-4 md:p-8">
           <div className="flex flex-col gap-4 md:gap-8">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8">
-              {cities.map(({ id, city, latitude, longitude, timezone }: City) => (
-                <div key={id} className="col-span-1">
-                  <Weather city={city} latitude={latitude} longitude={longitude} timezone={timezone} />
+            <section className="flex flex-col gap-2 md:gap-4">
+              <h1 className="text-2xl uppercase">Weather</h1>
+              <Divider />
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8">
+                {cities.map(({ id, city, latitude, longitude, timezone }: City) => (
+                  <div key={id} className="col-span-1">
+                    <Weather city={city} latitude={latitude} longitude={longitude} timezone={timezone} />
+                  </div>
+                ))}
+              </div>
+            </section>
+            <section className="flex flex-col gap-2 md:gap-4">
+              <h1 className="text-2xl uppercase">Forex</h1>
+              <Divider />
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8">
+                <div className="col-span-1 order-2 md:order-1">
+                  <ForexRates forexRates={forexRates} />
                 </div>
-              ))}
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8">
-              <div className="col-span-1 order-2 md:order-1">
-                <ForexRates forexRates={forexRates} />
+                <div className="col-span-2 order-1 md:order-2">
+                  <ForexChart forexHistory={forexHistory} />
+                </div>
               </div>
-              <div className="col-span-2 order-1 md:order-2">
-                <ForexChart forexHistory={forexHistory} />
+            </section>
+            <section className="flex flex-col gap-2 md:gap-4">
+              <h1 className="text-2xl uppercase">News</h1>
+              <Divider />
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8">
+                <div className="col-span-1">
+                  <GoogleRanksSection googleRanks={googleRanks} />
+                </div>
+                <div className="col-span-2">
+                  <NewsSection articles={articles} />
+                </div>
               </div>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8">
-              <div className="col-span-1">
-                <GoogleRanksSection googleRanks={googleRanks} />
+            </section>
+            <section className="flex flex-col gap-2 md:gap-4">
+              <h1 className="text-2xl uppercase">YouTube</h1>
+              <Divider />
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8">
+                <YouTubeVideos videos={videos} />
               </div>
-              <div className="col-span-2">
-                <NewsSection articles={articles} />
+            </section>
+            <section className="flex flex-col gap-2 md:gap-4">
+              <h1 className="text-2xl uppercase">Passports</h1>
+              <Divider />
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8">
+                <div className="col-span-1">
+                  <PassportsSection passports={passports} />
+                </div>
+                <div className="col-span-2"></div>
               </div>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8">
-              <YouTubeVideos videos={videos} />
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8">
-              <div className="col-span-1">
-                <PassportsSection passports={passports} />
-              </div>
-              <div className="col-span-2"></div>
-            </div>
+            </section>
           </div>
         </div>
       </Container>
