@@ -1,6 +1,10 @@
 import request from 'supertest';
 import app from '../src/app';
 
+jest.mock('ioredis', () => {
+  return jest.fn();
+});
+
 describe('app', () => {
   it('/health', () => {
     request(app)
