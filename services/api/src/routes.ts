@@ -177,6 +177,54 @@ const models: TsoaRoute.Models = {
     },
   },
   // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
+  TimePeriod: {
+    dataType: 'refAlias',
+    type: {
+      dataType: 'union',
+      subSchemas: [
+        { dataType: 'enum', enums: ['1h'] },
+        { dataType: 'enum', enums: ['3h'] },
+        { dataType: 'enum', enums: ['12h'] },
+        { dataType: 'enum', enums: ['24h'] },
+        { dataType: 'enum', enums: ['7d'] },
+        { dataType: 'enum', enums: ['30d'] },
+        { dataType: 'enum', enums: ['3m'] },
+        { dataType: 'enum', enums: ['1y'] },
+        { dataType: 'enum', enums: ['3y'] },
+        { dataType: 'enum', enums: ['5y'] },
+      ],
+      validators: {},
+    },
+  },
+  // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
+  Tier: {
+    dataType: 'refAlias',
+    type: {
+      dataType: 'union',
+      subSchemas: [
+        { dataType: 'enum', enums: ['1'] },
+        { dataType: 'enum', enums: ['2'] },
+        { dataType: 'enum', enums: ['3'] },
+      ],
+      validators: {},
+    },
+  },
+  // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
+  OrderBy: {
+    dataType: 'refAlias',
+    type: {
+      dataType: 'union',
+      subSchemas: [
+        { dataType: 'enum', enums: ['price'] },
+        { dataType: 'enum', enums: ['marketCap'] },
+        { dataType: 'enum', enums: ['24hVolume'] },
+        { dataType: 'enum', enums: ['change'] },
+        { dataType: 'enum', enums: ['listedAt'] },
+      ],
+      validators: {},
+    },
+  },
+  // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
   ForexHistory: {
     dataType: 'refAlias',
     type: {
@@ -696,7 +744,12 @@ export function RegisterRoutes(app: Router) {
     ...fetchMiddlewares<RequestHandler>(CryptoController.prototype.getCoins),
 
     function CryptoController_getCoins(request: any, response: any, next: any) {
-      const args = {};
+      const args = {
+        timePeriod: { default: '24h', in: 'query', name: 'timePeriod', ref: 'TimePeriod' },
+        tier: { default: '1', in: 'query', name: 'tier', ref: 'Tier' },
+        orderBy: { default: 'change', in: 'query', name: 'orderBy', ref: 'OrderBy' },
+        limit: { default: 500, in: 'query', name: 'limit', dataType: 'double' },
+      };
 
       // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
 

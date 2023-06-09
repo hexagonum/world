@@ -23,3 +23,9 @@ export type Coin = {
   '24hVolume': string;
   btcPrice: string;
 };
+
+export type TimePeriod = '1h' | '3h' | '12h' | '24h' | '7d' | '30d' | '3m' | '1y' | '3y' | '5y';
+
+export type Tier = '1' | '2' | '3';
+
+export type OrderBy = 'price' | 'marketCap' | '24hVolume' | 'change' | 'listedAt';

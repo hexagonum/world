@@ -198,6 +198,9 @@ components:
             ],
           type: object,
         },
+      TimePeriod: { type: string, enum: [1h, 3h, 12h, 24h, 7d, 30d, 3m, 1y, 3y, 5y] },
+      Tier: { type: string, enum: ['1', '2', '3'] },
+      OrderBy: { type: string, enum: [price, marketCap, 24hVolume, change, listedAt] },
       ForexHistory:
         {
           properties:
@@ -717,7 +720,13 @@ paths:
             },
           tags: [Crypto],
           security: [],
-          parameters: [],
+          parameters:
+            [
+              { in: query, name: timePeriod, required: false, schema: { $ref: '#/components/schemas/TimePeriod' } },
+              { in: query, name: tier, required: false, schema: { $ref: '#/components/schemas/Tier' } },
+              { in: query, name: orderBy, required: false, schema: { $ref: '#/components/schemas/OrderBy' } },
+              { in: query, name: limit, required: false, schema: { default: 500, format: double, type: number } },
+            ],
         },
     }
   '/crypto/coins/{id}':

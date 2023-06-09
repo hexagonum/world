@@ -1,6 +1,6 @@
-import { Controller, Get, Path, Route, Tags } from 'tsoa';
+import { Controller, Get, Path, Query, Route, Tags } from 'tsoa';
 import { CryptoService } from './crypto.service';
-import { Coin } from './crypto.types';
+import { Coin, OrderBy, Tier, TimePeriod } from './crypto.types';
 
 @Route('/crypto')
 @Tags('Crypto')
@@ -13,8 +13,13 @@ export class CryptoController extends Controller {
   }
 
   @Get('coins')
-  async getCoins(): Promise<Coin[]> {
-    return this.cryptoService.getCoins();
+  async getCoins(
+    @Query('timePeriod') timePeriod: TimePeriod = '24h',
+    @Query('tier') tier: Tier = '1',
+    @Query('orderBy') orderBy: OrderBy = 'change',
+    @Query('limit') limit = 500
+  ): Promise<Coin[]> {
+    return this.cryptoService.getCoins({ timePeriod, tier, orderBy, limit });
   }
 
   @Get('coins/:id')
