@@ -1,3 +1,4 @@
+import { ApolloError } from '@apollo/client';
 import {
   Badge,
   Button,
@@ -26,6 +27,7 @@ import { GoogleRank } from '@world/types/google';
 import { Article } from '@world/types/news';
 import { YouTubeVideo } from '@world/types/youtube';
 import currencyFormatter from '@world/utils/currency-formatter';
+import { error } from 'console';
 import { GetStaticProps, GetStaticPropsContext, NextPage } from 'next';
 import Link from 'next/link';
 import { CartesianGrid, Legend, Line, LineChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts';
@@ -401,7 +403,8 @@ export const getStaticProps: GetStaticProps = async (
     console.log('props', props);
     return { props };
   } catch (error) {
-    console.error('HomePage', error);
+    console.error('HomePage message', (error as ApolloError).message);
+    console.error('HomePage graphQLErrors', JSON.stringify((error as ApolloError).graphQLErrors, null, 2));
     const props = {
       cities: [],
       googleRanks: [],
