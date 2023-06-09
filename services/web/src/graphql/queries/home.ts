@@ -10,6 +10,7 @@ export const HOME_QUERY: DocumentNode = gql`
     $limit: Int
     $pageSize: Int
     $country: String
+    $maxResults: Int
   ) {
     cities {
       id
@@ -55,6 +56,30 @@ export const HOME_QUERY: DocumentNode = gql`
       date
       from
       to
+    }
+    youtube(maxResults: $maxResults) {
+      videos {
+        id
+        title
+        channelTitle
+        thumbnails {
+          default {
+            url
+          }
+          medium {
+            url
+          }
+          high {
+            url
+          }
+          standard {
+            url
+          }
+          maxres {
+            url
+          }
+        }
+      }
     }
   }
 `;

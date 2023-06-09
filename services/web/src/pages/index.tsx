@@ -24,6 +24,7 @@ import { City, Passport } from '@world/types';
 import { ForexHistory, ForexRate } from '@world/types/currency';
 import { GoogleRank } from '@world/types/google';
 import { Article } from '@world/types/news';
+import { YouTubeVideo } from '@world/types/youtube';
 import currencyFormatter from '@world/utils/currency-formatter';
 import { GetStaticProps, GetStaticPropsContext, NextPage } from 'next';
 import Link from 'next/link';
@@ -59,115 +60,6 @@ const GoogleRanksSection: React.FC<{ googleRanks: GoogleRank[] }> = ({ googleRan
             </Tbody>
             <TableCaption>
               <Link href="/trends" className="uppercase">
-                <Button colorScheme="teal" className="w-full mb-4">
-                  View Full Table
-                </Button>
-              </Link>
-            </TableCaption>
-          </Table>
-        </TableContainer>
-      ) : (
-        <></>
-      )}
-    </>
-  );
-};
-
-const ForexRates: React.FC<{ forexRates: ForexRate[] }> = ({ forexRates = [] }) => {
-  return (
-    <>
-      {forexRates.length > 0 ? (
-        <TableContainer className="border rounded shadow">
-          <Table>
-            <Thead>
-              <Tr>
-                <Th>USD</Th>
-                <Th isNumeric>1000</Th>
-              </Tr>
-            </Thead>
-            <Tbody>
-              {forexRates.map(({ code, rate }) => {
-                return (
-                  <Tr key={code}>
-                    <Td>
-                      <Link href={`/currencies/${code}`}>
-                        <Badge colorScheme="teal">{code}</Badge>
-                      </Link>
-                    </Td>
-                    <Td isNumeric>{currencyFormatter(rate, code)}</Td>
-                  </Tr>
-                );
-              })}
-            </Tbody>
-            <TableCaption>
-              <Link href="/currencies" className="uppercase">
-                <Button colorScheme="teal" className="w-full mb-4">
-                  View Full Table
-                </Button>
-              </Link>
-            </TableCaption>
-          </Table>
-        </TableContainer>
-      ) : (
-        <></>
-      )}
-    </>
-  );
-};
-
-const ForexChart: React.FC<{ forexHistory: ForexHistory[] }> = ({ forexHistory = [] }) => {
-  return (
-    <Card className="border border-gray-200 shadow">
-      <CardHeader>
-        <Text className="text-center font-bold">USD to EUR</Text>
-      </CardHeader>
-      <Divider />
-      <CardBody>
-        <div className="h-[450px]">
-          <ResponsiveContainer width="100%" height="100%">
-            <LineChart width={1600} height={900} data={forexHistory}>
-              <CartesianGrid strokeDasharray="3 3" />
-              <XAxis dataKey="date" />
-              <YAxis domain={[0.5, 1]} />
-              <Tooltip />
-              <Legend />
-              <Line type="monotone" dataKey="to" stroke="#82ca9d" />
-            </LineChart>
-          </ResponsiveContainer>
-        </div>
-      </CardBody>
-    </Card>
-  );
-};
-
-const PassportsSection: React.FC<{ passports: Passport[] }> = ({ passports = [] }) => {
-  return (
-    <>
-      {passports.length > 0 ? (
-        <TableContainer className="border rounded shadow">
-          <Table>
-            <Thead>
-              <Tr>
-                <Th>Rank</Th>
-                <Th isNumeric>Country</Th>
-              </Tr>
-            </Thead>
-            <Tbody>
-              {passports.map(({ countryCode, individualRank, country: { commonName } }) => {
-                return (
-                  <Tr key={countryCode}>
-                    <Td>{individualRank}</Td>
-                    <Td isNumeric>
-                      <Link href={`/countries/${countryCode}`}>
-                        <Badge colorScheme="teal">{commonName}</Badge>
-                      </Link>
-                    </Td>
-                  </Tr>
-                );
-              })}
-            </Tbody>
-            <TableCaption>
-              <Link href="/passports" className="uppercase">
                 <Button colorScheme="teal" className="w-full mb-4">
                   View Full Table
                 </Button>
@@ -225,6 +117,158 @@ const NewsSection: React.FC<{ articles: Article[] }> = ({ articles = [] }) => {
   );
 };
 
+const ForexRates: React.FC<{ forexRates: ForexRate[] }> = ({ forexRates = [] }) => {
+  return (
+    <>
+      {forexRates.length > 0 ? (
+        <TableContainer className="border rounded shadow">
+          <Table>
+            <Thead>
+              <Tr>
+                <Th>USD</Th>
+                <Th isNumeric>1000</Th>
+              </Tr>
+            </Thead>
+            <Tbody>
+              {forexRates.map(({ code, rate }) => {
+                return (
+                  <Tr key={code}>
+                    <Td>
+                      <Link href={`/currencies/${code}`}>
+                        <Badge colorScheme="teal">{code}</Badge>
+                      </Link>
+                    </Td>
+                    <Td isNumeric>{currencyFormatter(rate, code)}</Td>
+                  </Tr>
+                );
+              })}
+            </Tbody>
+            <TableCaption>
+              <Link href="/currencies" className="uppercase">
+                <Button colorScheme="teal" className="w-full mb-4">
+                  View Full Table
+                </Button>
+              </Link>
+            </TableCaption>
+          </Table>
+        </TableContainer>
+      ) : (
+        <></>
+      )}
+    </>
+  );
+};
+
+const ForexChart: React.FC<{ forexHistory: ForexHistory[] }> = ({ forexHistory = [] }) => {
+  const tos: number[] = forexHistory.map(({ to }) => to);
+  const min: number = Math.min(...tos);
+  const max: number = Math.max(...tos);
+  console.log(min, max);
+  return (
+    <>
+      {forexHistory.length > 0 ? (
+        <Card className="border border-gray-200 shadow">
+          <CardHeader>
+            <Text className="text-center font-bold">USD to EUR</Text>
+          </CardHeader>
+          <Divider />
+          <CardBody>
+            <div className="h-[300px] md:h-[450px]">
+              <ResponsiveContainer width="100%" height="100%">
+                <LineChart width={1600} height={900} data={forexHistory}>
+                  <CartesianGrid strokeDasharray="3 3" />
+                  <XAxis dataKey="date" />
+                  <YAxis domain={[0.9, 0.95]} />
+                  <Tooltip />
+                  <Legend />
+                  <Line type="monotone" dataKey="to" stroke="#82ca9d" />
+                </LineChart>
+              </ResponsiveContainer>
+            </div>
+          </CardBody>
+        </Card>
+      ) : (
+        <></>
+      )}
+    </>
+  );
+};
+
+const YouTubeVideos: React.FC<{ videos: YouTubeVideo[] }> = ({ videos = [] }) => {
+  return (
+    <>
+      {videos.map(({ id, title, channelTitle, thumbnails }) => {
+        const url: string =
+          thumbnails?.maxres?.url ||
+          thumbnails?.standard?.url ||
+          thumbnails?.high?.url ||
+          thumbnails?.medium?.url ||
+          thumbnails?.default?.url;
+        return (
+          <div key={id} className="col-span-1">
+            <Link href={`https://youtu.be/${id}`} target="_blank">
+              <Card className="border border-gray-200 shadow">
+                <div
+                  className="aspect-video bg-cover bg-center bg-teal-500"
+                  style={{ backgroundImage: `url(${url || ''})` }}
+                />
+                <CardBody>
+                  <h2 className="font-bold line-clamp-2" title={title}>
+                    {title}
+                  </h2>
+                  <p>{channelTitle || ''}</p>
+                </CardBody>
+              </Card>
+            </Link>
+          </div>
+        );
+      })}
+    </>
+  );
+};
+
+const PassportsSection: React.FC<{ passports: Passport[] }> = ({ passports = [] }) => {
+  return (
+    <>
+      {passports.length > 0 ? (
+        <TableContainer className="border rounded shadow">
+          <Table>
+            <Thead>
+              <Tr>
+                <Th>Rank</Th>
+                <Th isNumeric>Country</Th>
+              </Tr>
+            </Thead>
+            <Tbody>
+              {passports.map(({ countryCode, individualRank, country: { commonName } }) => {
+                return (
+                  <Tr key={countryCode}>
+                    <Td>{individualRank}</Td>
+                    <Td isNumeric>
+                      <Link href={`/countries/${countryCode}`}>
+                        <Badge colorScheme="teal">{commonName}</Badge>
+                      </Link>
+                    </Td>
+                  </Tr>
+                );
+              })}
+            </Tbody>
+            <TableCaption>
+              <Link href="/passports" className="uppercase">
+                <Button colorScheme="teal" className="w-full mb-4">
+                  View Full Table
+                </Button>
+              </Link>
+            </TableCaption>
+          </Table>
+        </TableContainer>
+      ) : (
+        <></>
+      )}
+    </>
+  );
+};
+
 type CountriesPageProps = {
   cities: City[];
   passports: Passport[];
@@ -232,6 +276,7 @@ type CountriesPageProps = {
   forexRates: ForexRate[];
   forexHistory: ForexHistory[];
   articles: Article[];
+  videos: YouTubeVideo[];
 };
 
 export const CountriesPage: NextPage<CountriesPageProps> = ({
@@ -241,6 +286,7 @@ export const CountriesPage: NextPage<CountriesPageProps> = ({
   forexHistory = [],
   passports = [],
   articles = [],
+  videos = [],
 }) => {
   return (
     <Layout>
@@ -264,14 +310,20 @@ export const CountriesPage: NextPage<CountriesPageProps> = ({
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8">
               <div className="col-span-1">
-                <div className="flex flex-col gap-4 md:gap-8">
-                  <GoogleRanksSection googleRanks={googleRanks} />
-                  <PassportsSection passports={passports} />
-                </div>
+                <GoogleRanksSection googleRanks={googleRanks} />
               </div>
               <div className="col-span-2">
                 <NewsSection articles={articles} />
               </div>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8">
+              <YouTubeVideos videos={videos} />
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8">
+              <div className="col-span-1">
+                <PassportsSection passports={passports} />
+              </div>
+              <div className="col-span-2"></div>
             </div>
           </div>
         </div>
@@ -290,19 +342,31 @@ export const getStaticProps: GetStaticProps = async (
     articles: Article[];
     forexRates: ForexRate[];
     forexHistory: ForexHistory[];
+    videos: YouTubeVideo[];
   };
 }> => {
   try {
     const data = await apolloClient.query<{
       cities: City[];
       rates: ForexRate[];
-      google: { ranks: GoogleRank[] };
       passports: Passport[];
-      news: { headlines: Article[] };
       history: ForexHistory[];
+      google: { ranks: GoogleRank[] };
+      news: { headlines: Article[] };
+      youtube: { videos: YouTubeVideo[] };
     }>({
       query: HOME_QUERY,
-      variables: { from: 'USD', to: 'EUR', amount: 1000, base: 'USD', limit: 10, pageSize: 10, country: 'us' },
+      variables: {
+        days: 30,
+        from: 'USD',
+        to: 'EUR',
+        amount: 1000,
+        base: 'USD',
+        limit: 10,
+        pageSize: 4,
+        country: 'us',
+        maxResults: 6,
+      },
     });
     const cities = [...data.data.cities]
       .filter(({ city }) => ['Hà Nội', 'Melbourne', 'Dallas'].includes(city))
@@ -312,10 +376,13 @@ export const getStaticProps: GetStaticProps = async (
     const googleRanks = [...data.data.google.ranks];
     const passports = [...data.data.passports];
     const articles = [...data.data.news.headlines];
-    return { props: { cities, googleRanks, forexRates, passports, articles, forexHistory } };
+    const videos = [...data.data.youtube.videos];
+    return { props: { cities, googleRanks, forexRates, passports, articles, forexHistory, videos } };
   } catch (error) {
     console.error(error);
-    return { props: { cities: [], googleRanks: [], forexRates: [], passports: [], articles: [], forexHistory: [] } };
+    return {
+      props: { cities: [], googleRanks: [], forexRates: [], passports: [], articles: [], forexHistory: [], videos: [] },
+    };
   }
 };
 
