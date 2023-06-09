@@ -1,5 +1,5 @@
 import { useQuery } from '@apollo/client';
-import { Card, CardBody } from '@chakra-ui/react';
+import { Card, CardBody, Text } from '@chakra-ui/react';
 import { YOUTUBE_VIDEOS_QUERY } from '@world/graphql/queries/youtube';
 import { YouTube, YouTubeVideo } from '@world/types/youtube';
 import Image from 'next/image';
@@ -52,31 +52,17 @@ export const Videos: React.FC<VideosProps> = ({ categoryId = '', countryCode = '
           thumbnails?.high?.url ||
           thumbnails?.medium?.url ||
           thumbnails?.default?.url;
-        const width: number =
-          thumbnails?.maxres?.width ||
-          thumbnails?.standard?.width ||
-          thumbnails?.high?.width ||
-          thumbnails?.medium?.width ||
-          thumbnails?.default?.width;
-        const height: number =
-          thumbnails?.maxres?.height ||
-          thumbnails?.standard?.height ||
-          thumbnails?.high?.height ||
-          thumbnails?.medium?.height ||
-          thumbnails?.default?.height;
         return (
           <div key={id} className="col-span-1">
             <Link href={`https://youtu.be/${id}`} target="_blank">
               <Card className="border border-gray-200 overflow-hidden">
-                <div className="w-full">
-                  <Image src={src} alt={title} width={width} height={height} className="w-full" />
-                </div>
+                <div className="aspect-video bg-center bg-cover" style={{ backgroundImage: `url(${src})` }} />
                 <CardBody>
-                  <h2 className="font-bold truncate" title={title}>
+                  <h2 className="font-bold line-clamp-2" title={title}>
                     {title}
                   </h2>
                   <Link href={`https://www.youtube.com/channel/${channelId}`} target="_blank">
-                    <p className="text-gray-500">{channelTitle}</p>
+                    <Text className="text-gray-500 line-clamp-2">{channelTitle}</Text>
                   </Link>
                 </CardBody>
               </Card>

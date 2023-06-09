@@ -43,12 +43,12 @@ export const Layout: React.FC<LayoutProps> = ({ searchSection = <></>, children 
             <menu className="grow overflow-hidden">
               <div className="h-full overflow-auto">
                 <div className="p-8">
-                  <Accordion allowMultiple allowToggle>
+                  <Accordion allowMultiple>
                     {LINKS.map(({ id, icon, href, name, subpages = [] }) => {
                       const mainActive = asPath === href;
                       const mainActiveClass = mainActive ? 'bg-teal-600 text-white' : '';
                       return (
-                        <AccordionItem key={id} className="border-none">
+                        <AccordionItem key={id} border={'unset'}>
                           <div className="flex items-center w-full">
                             <div className="grow">
                               <Link href={href}>

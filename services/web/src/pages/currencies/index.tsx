@@ -1,4 +1,16 @@
-import { Card, CardBody, Table, TableCaption, TableContainer, Tbody, Td, Th, Thead, Tr } from '@chakra-ui/react';
+import {
+  Card,
+  CardBody,
+  Divider,
+  Table,
+  TableCaption,
+  TableContainer,
+  Tbody,
+  Td,
+  Th,
+  Thead,
+  Tr,
+} from '@chakra-ui/react';
 import Container from '@world/components/Container';
 import { NEXT_PUBLIC_BASE_API } from '@world/configs';
 import useFetch from '@world/hooks/use-fetch';
@@ -10,16 +22,46 @@ import Link from 'next/link';
 
 type Currency = { code: string; name: string; countries: { country: Country }[] };
 
-type CurrenciesPageProps = { currencies: Currency[] };
+const CurrenciesTable: React.FC<{ currencies: (Currency & { rate: string })[] }> = ({ currencies = [] }) => {
+  return (
+    <TableContainer className="border rounded shadow">
+      <Table>
+        <Thead>
+          <Tr>
+            <Th>Currencies ({currencies.length})</Th>
+            <Th isNumeric>Countries</Th>
+            <Th isNumeric>Rate</Th>
+          </Tr>
+        </Thead>
+        <Tbody>
+          {currencies.map(({ code = '', name = '', countries = [], rate = '' }) => {
+            return (
+              <Tr key={code}>
+                <Td>
+                  <Link href={`/currencies/${code}`}>{name}</Link>
+                </Td>
+                <Td isNumeric>{countries.length}</Td>
+                <Td isNumeric>{rate}</Td>
+              </Tr>
+            );
+          })}
+        </Tbody>
+        <TableCaption>
+          <p className="pb-4">Currencies ({currencies.length})</p>
+        </TableCaption>
+      </Table>
+    </TableContainer>
+  );
+};
 
-type CurrenciesListProps = {
+type CurrenciesRatesProps = {
   currencies: Currency[];
   loading?: boolean;
   error?: Error;
   data?: RatesResponse;
 };
 
-const CurrenciesList: React.FC<CurrenciesListProps> = ({
+const CurrenciesRates: React.FC<CurrenciesRatesProps> = ({
   currencies = [],
   loading = false,
   error = null,
@@ -50,43 +92,34 @@ const CurrenciesList: React.FC<CurrenciesListProps> = ({
   }
 
   const { rates = {}, base = '' } = data;
+  const currenciesRates = currencies.map(({ code = '', name = '', countries = [] }) => {
+    let rate: string = 'N/A';
+    if (base === code) {
+      rate = '1';
+    } else if (rates[code]) {
+      rate = currencyFormatter(rates[code], code);
+    }
+    return { code, name, countries, rate };
+  });
+  const currenciesWithRates = currenciesRates.filter(({ rate }) => rate !== 'N/A');
+  const currenciesWithoutRates = currenciesRates.filter(({ rate }) => rate === 'N/A');
 
   return (
-    <TableContainer className="border rounded shadow">
-      <Table>
-        <Thead>
-          <Tr>
-            <Th>Currencies ({currencies.length})</Th>
-            <Th isNumeric>Countries</Th>
-            <Th isNumeric>Rate</Th>
-          </Tr>
-        </Thead>
-        <Tbody>
-          {currencies.map(({ code = '', name = '', countries = [] }) => {
-            let rate: string = 'N/A';
-            if (base === code) {
-              rate = '1';
-            } else if (rates[code]) {
-              rate = currencyFormatter(rates[code], code);
-            }
-            return (
-              <Tr key={code}>
-                <Td>
-                  <Link href={`/currencies/${code}`}>{name}</Link>
-                </Td>
-                <Td isNumeric>{countries.length}</Td>
-                <Td isNumeric>{rate}</Td>
-              </Tr>
-            );
-          })}
-        </Tbody>
-        <TableCaption>
-          <p className="pb-4">Currencies ({currencies.length})</p>
-        </TableCaption>
-      </Table>
-    </TableContainer>
+    <div className="flex flex-col gap-4 md:gap-8">
+      <section className="flex flex-col gap-2 md:gap-4">
+        <h2 className="text-xl">Rates ({currenciesWithRates.length})</h2>
+        <CurrenciesTable currencies={currenciesWithRates} />
+      </section>
+      <Divider />
+      <section className="flex flex-col gap-2 md:gap-4">
+        <h2 className="text-xl">Other ({currenciesWithoutRates.length})</h2>
+        <CurrenciesTable currencies={currenciesWithoutRates} />
+      </section>
+    </div>
   );
 };
+
+type CurrenciesPageProps = { currencies: Currency[] };
 
 type RatesResponse = {
   amount: number;
@@ -104,7 +137,7 @@ const CurrenciesPage: NextPage<CurrenciesPageProps> = ({ currencies = [] }) => {
     <Layout>
       <Container>
         <div className="p-8">
-          <CurrenciesList currencies={currencies} loading={loading} error={error} data={data} />
+          <CurrenciesRates currencies={currencies} loading={loading} error={error} data={data} />
         </div>
       </Container>
     </Layout>

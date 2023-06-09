@@ -1,5 +1,10 @@
 import { HamburgerIcon } from '@chakra-ui/icons';
 import {
+  Accordion,
+  AccordionButton,
+  AccordionIcon,
+  AccordionItem,
+  AccordionPanel,
   Button,
   Drawer,
   DrawerBody,
@@ -59,20 +64,56 @@ export const Navbar: React.FC<NavbarProps> = ({ searchSection = <></> }) => {
         <DrawerOverlay />
         <DrawerContent>
           <DrawerCloseButton />
-          <DrawerHeader>{APP_NAME}</DrawerHeader>
+          <DrawerHeader className="border-b">{APP_NAME}</DrawerHeader>
           <DrawerBody>
-            <div className="flex flex-col gap-2 md:gap-4">
-              {LINKS.map(({ id, href, name }) => {
-                return (
-                  <div key={id}>
-                    <Link href={href}>{name}</Link>
-                  </div>
-                );
-              })}
+            <div className="py-4">
+              <Accordion>
+                {LINKS.map(({ id = '', icon = <></>, href = '', name = '', subpages = [] }) => {
+                  return (
+                    <AccordionItem key={id}>
+                      <div className="flex items-center w-full">
+                        <div className="grow">
+                          <Link href={href}>
+                            <div className="flex items-center gap-2 p-2">
+                              {icon}
+                              {name}
+                            </div>
+                          </Link>
+                        </div>
+                        {subpages.length > 0 ? (
+                          <AccordionButton className="w-auto">
+                            <AccordionIcon />
+                          </AccordionButton>
+                        ) : (
+                          <></>
+                        )}
+                      </div>
+                      {subpages.length > 0 ? (
+                        <AccordionPanel className="p-0">
+                          {subpages.map(({ id, name, href, icon }) => {
+                            return (
+                              <Link key={id} href={href}>
+                                <div className={`flex items-center gap-2 rounded p-2`}>
+                                  <div className="rounded bg-white p-2 flex items-center">{icon}</div>
+                                  {name}
+                                </div>
+                              </Link>
+                            );
+                          })}
+                        </AccordionPanel>
+                      ) : (
+                        <></>
+                      )}
+                    </AccordionItem>
+                  );
+                })}
+              </Accordion>
             </div>
           </DrawerBody>
-          <DrawerFooter>
-            &copy; {YEAR} {APP_NAME}
+          <DrawerFooter className="border-t">
+            <div className="w-full">
+              &copy; {YEAR} {APP_NAME}
+            </div>
           </DrawerFooter>
         </DrawerContent>
       </Drawer>

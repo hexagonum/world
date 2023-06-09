@@ -1,6 +1,8 @@
-import { Card, CardBody, CardFooter, Divider } from '@chakra-ui/react';
+import { Card, CardBody, CardFooter, Divider, Text } from '@chakra-ui/react';
 import Clock from '@world/components/Clock';
+import { BASE_API } from '@world/configs';
 import useFetch from '@world/hooks/use-fetch';
+import Link from 'next/link';
 
 export type WeatherProps = {
   city: string;
@@ -59,7 +61,11 @@ const weatherCodes: Record<number, string> = {
 };
 
 export const Weather: React.FC<WeatherProps> = ({ city = '', latitude = 0, longitude = 0, timezone = 0 }) => {
-  const url = `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current_weather=true`;
+  const urlSearchParams = new URLSearchParams();
+  urlSearchParams.set('latitude', latitude.toString());
+  urlSearchParams.set('longitude', longitude.toString());
+  const url = `${BASE_API}/weather?${urlSearchParams.toString()}`;
+  console.log(url);
   const { data, loading, error } = useFetch<WeatherResponse>(url);
 
   if (loading) {
@@ -92,16 +98,20 @@ export const Weather: React.FC<WeatherProps> = ({ city = '', latitude = 0, longi
     );
   }
 
+  const googleMapsUrl = `https://www.google.com/maps/search/?api=1&query=${data.latitude},${data.longitude}`;
+
   return (
     <Card className="border border-gray-200">
       <CardBody>
         <div className="flex justify-between items-center">
           <div className="capitalize">
-            <p className="font-bold">{city}</p>
-            <p className="text-xs">
-              {Math.abs(data.latitude).toFixed(2)}&deg;{data.latitude >= 0 ? 'N' : 'S'} -{' '}
-              {Math.abs(data.longitude).toFixed(2)}&deg;{data.longitude >= 0 ? 'E' : 'W'}
-            </p>
+            <Text className="font-bold">{city}</Text>
+            <Link href={googleMapsUrl} target="_blank">
+              <Text className="text-xs">
+                {Math.abs(data.latitude).toFixed(2)}&deg;{data.latitude >= 0 ? 'N' : 'S'} -{' '}
+                {Math.abs(data.longitude).toFixed(2)}&deg;{data.longitude >= 0 ? 'E' : 'W'}
+              </Text>
+            </Link>
           </div>
           <div className="text-right">
             <p className="font-bold">{data.current_weather.temperature}&deg;C</p>

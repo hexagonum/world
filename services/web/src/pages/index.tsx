@@ -27,7 +27,6 @@ import { GoogleRank } from '@world/types/google';
 import { Article } from '@world/types/news';
 import { YouTubeVideo } from '@world/types/youtube';
 import currencyFormatter from '@world/utils/currency-formatter';
-import { error } from 'console';
 import { GetStaticProps, GetStaticPropsContext, NextPage } from 'next';
 import Link from 'next/link';
 import { CartesianGrid, Legend, Line, LineChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts';
@@ -36,39 +35,28 @@ const GoogleRanksSection: React.FC<{ googleRanks: GoogleRank[] }> = ({ googleRan
   return (
     <>
       {googleRanks.length > 0 ? (
-        <TableContainer className="border rounded shadow">
-          <Table>
-            <Thead>
-              <Tr>
-                <Th>Queries ({googleRanks.length})</Th>
-                <Th isNumeric>Occurrences</Th>
-              </Tr>
-            </Thead>
-            <Tbody>
-              {googleRanks.map(({ rank, query, count }) => {
-                return (
-                  <Tr key={rank}>
-                    <Td>
-                      <Link href={`https://google.com/search?q=${encodeURIComponent(query)}`} target="_blank">
-                        <Badge colorScheme="teal">{query}</Badge>
-                      </Link>
-                    </Td>
-                    <Td isNumeric>
-                      <b>{count}</b>
-                    </Td>
-                  </Tr>
-                );
-              })}
-            </Tbody>
-            <TableCaption>
-              <Link href="/google/trends" className="uppercase">
-                <Button colorScheme="teal" className="w-full mb-4">
-                  View Full Table
-                </Button>
-              </Link>
-            </TableCaption>
-          </Table>
-        </TableContainer>
+        <Card className="border border-gray-200">
+          <div className="px-4 py-2">
+            <div className="flex items-center justify-between">
+              <Text className="font-semibold text-gray-700">Queries ({googleRanks.length})</Text>
+              <Text className="font-semibold text-gray-700">Occurrences</Text>
+            </div>
+          </div>
+          {googleRanks.map(({ rank, query, count }) => {
+            return (
+              <div key={rank} className="px-4 py-2 border-t">
+                <div className="flex items-center justify-between">
+                  <Link href={`https://google.com/search?q=${encodeURIComponent(query)}`} target="_blank">
+                    <Badge colorScheme="teal">{query}</Badge>
+                  </Link>
+                  <Text>
+                    <b>{count}</b>
+                  </Text>
+                </div>
+              </div>
+            );
+          })}
+        </Card>
       ) : (
         <></>
       )}
@@ -321,7 +309,7 @@ export const CountriesPage: NextPage<CountriesPageProps> = ({
             <section className="flex flex-col gap-y-2 md:gap-y-4">
               <h1 className="text-2xl uppercase">News</h1>
               <Divider />
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-y-4 md:gap-x-8">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-y-4 md:gap-8">
                 <div className="col-span-1">
                   <GoogleRanksSection googleRanks={googleRanks} />
                 </div>
@@ -333,7 +321,7 @@ export const CountriesPage: NextPage<CountriesPageProps> = ({
             <section className="flex flex-col gap-y-2 md:gap-y-4">
               <h1 className="text-2xl uppercase">YouTube</h1>
               <Divider />
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-y-4 md:gap-x-8">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-y-4 md:gap-8">
                 <YouTubeVideos videos={videos} />
               </div>
             </section>
@@ -400,7 +388,6 @@ export const getStaticProps: GetStaticProps = async (
     const articles = [...data.data.news.headlines];
     const videos = [...data.data.youtube.videos];
     const props = { cities, googleRanks, forexRates, passports, articles, forexHistory, videos };
-    console.log('props', props);
     return { props };
   } catch (error) {
     console.error('HomePage message', (error as ApolloError).message);

@@ -58,7 +58,6 @@ export const LINKS = [
     ],
   },
   { id: 'football', icon: <Icon as={FaFutbol} color={'teal'} />, href: '/football', name: 'Football', subpages: [] },
-  { id: 'news', icon: <Icon as={FaNewspaper} color={'teal'} />, href: '/news', name: 'News', subpages: [] },
   {
     id: 'google',
     icon: <Icon as={FaGoogle} color={'teal'} />,
