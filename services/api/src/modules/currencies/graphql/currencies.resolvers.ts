@@ -30,7 +30,7 @@ export const resolvers = {
     ): Promise<ForexHistory[]> => {
       const urlSearchParams = new URLSearchParams();
       if (amount) urlSearchParams.set('amount', amount.toString());
-      if (from) urlSearchParams.set('base', from);
+      if (from) urlSearchParams.set('from', from);
       if (to) urlSearchParams.set('to', to);
       const url = `${BASE_API}/currencies/history?${urlSearchParams.toString()}`;
       console.log(url);
