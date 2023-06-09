@@ -67,7 +67,7 @@ export const Navbar: React.FC<NavbarProps> = ({ searchSection = <></> }) => {
           <DrawerHeader className="border-b">{APP_NAME}</DrawerHeader>
           <DrawerBody>
             <div className="py-4">
-              <Accordion>
+              <Accordion allowMultiple>
                 {LINKS.map(({ id = '', icon = <></>, href = '', name = '', subpages = [] }) => {
                   return (
                     <AccordionItem key={id}>

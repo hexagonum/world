@@ -8,6 +8,48 @@ import { NextPage } from 'next';
 import Link from 'next/link';
 import { ChangeEvent, useState } from 'react';
 
+const FootballTable: React.FC<{ areas: FootballArea[] }> = ({ areas = [] }) => {
+  return (
+    <TableContainer className="border rounded shadow">
+      <Table>
+        <Thead>
+          <Tr>
+            <Th>Name ({areas.length})</Th>
+          </Tr>
+        </Thead>
+        <Tbody>
+          {areas.map(({ id, name }) => {
+            return (
+              <Tr key={id}>
+                <Td>
+                  <Link href={`/football/${id}`}>{name}</Link>
+                </Td>
+              </Tr>
+            );
+          })}
+        </Tbody>
+        <TableCaption>
+          <p className="pb-4">Areas ({areas.length})</p>
+        </TableCaption>
+      </Table>
+    </TableContainer>
+  );
+};
+
+const top: string[] = [
+  'england',
+  'world',
+  'europe',
+  'germany',
+  'netherlands',
+  'brazil',
+  'spain',
+  'france',
+  'portugal',
+  'italy',
+  'south america',
+];
+
 export const FootballPage: NextPage<{ areas: FootballArea[] }> = ({ areas = [] }) => {
   const [query, setQuery] = useState<string>('');
 
@@ -15,6 +57,8 @@ export const FootballPage: NextPage<{ areas: FootballArea[] }> = ({ areas = [] }
     const nameFlag = query !== '' ? name.toLowerCase().includes(query.toLowerCase()) : true;
     return nameFlag;
   });
+  const topAreas = filteredAreas.filter(({ name }) => top.includes(name.toLowerCase()));
+  const otherAreas = filteredAreas.filter(({ name }) => !top.includes(name.toLowerCase()));
 
   return (
     <Layout
@@ -34,29 +78,8 @@ export const FootballPage: NextPage<{ areas: FootballArea[] }> = ({ areas = [] }
       <Container>
         <div className="p-8">
           <div className="flex flex-col gap-4 md:gap-8">
-            <TableContainer className="border rounded shadow">
-              <Table>
-                <Thead>
-                  <Tr>
-                    <Th>Name</Th>
-                  </Tr>
-                </Thead>
-                <Tbody>
-                  {filteredAreas.map(({ id, name }) => {
-                    return (
-                      <Tr key={id}>
-                        <Td>
-                          <Link href={`/football/${id}`}>{name}</Link>
-                        </Td>
-                      </Tr>
-                    );
-                  })}
-                </Tbody>
-                <TableCaption>
-                  <p className="pb-4">Areas ({areas.length})</p>
-                </TableCaption>
-              </Table>
-            </TableContainer>
+            <FootballTable areas={topAreas} />
+            <FootballTable areas={otherAreas} />
           </div>
         </div>
       </Container>
