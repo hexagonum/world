@@ -1,7 +1,7 @@
 import { Currency } from '@prisma/client';
 import { farfetch } from '../../common/libs/farfetch';
 import { prismaClient } from '../../common/libs/prisma';
-import { ForexHistory } from './currencies.types';
+import { ForexHistory, ForexRate } from './currencies.types';
 import logger from '../../common/libs/logger';
 import { getJSON, setJSON } from '../../common/libs/redis';
 
@@ -29,14 +29,37 @@ export class CurrenciesService {
     to: string;
   }): Promise<{ code: string; rate: number }[]> {
     const urlSearchParams = new URLSearchParams();
-    if (amount) urlSearchParams.set('amount', amount.toString());
-    if (base) urlSearchParams.set('base', base);
-    if (to) urlSearchParams.set('to', to);
-    const url = `https://api.frankfurter.app/latest?${urlSearchParams.toString()}`;
-    const response = await farfetch<{ amount: number; base: string; date: string; rates: Record<string, number> }>(url);
-    return Object.entries(response.rates)
-      .map(([code, rate]) => ({ code, rate }))
-      .sort((a, b) => a.rate - b.rate);
+    let redisKey = `currencies-history`;
+
+    if (amount) {
+      urlSearchParams.set('amount', amount.toString());
+      redisKey = `${redisKey}-${amount}`;
+    }
+    if (base) {
+      urlSearchParams.set('base', base);
+      redisKey = `${redisKey}-${base}`;
+    }
+    if (to) {
+      urlSearchParams.set('to', to);
+      redisKey = `${redisKey}-${to}`;
+    }
+    try {
+      const cacheRates = await getJSON<ForexRate[]>(redisKey);
+      if (cacheRates) return cacheRates;
+
+      const url = `https://api.frankfurter.app/latest?${urlSearchParams.toString()}`;
+      const response = await farfetch<{ amount: number; base: string; date: string; rates: Record<string, number> }>(
+        url
+      );
+      const rates = Object.entries(response.rates)
+        .map(([code, rate]) => ({ code, rate }))
+        .sort((a, b) => a.rate - b.rate);
+      setJSON(redisKey, rates, { expiresIn: 60 * 60 * 24 }).catch(logger.error);
+      return rates;
+    } catch (error) {
+      logger.error(`getRates error ${error}`);
+      return [];
+    }
   }
 
   public async getHistory({
@@ -71,6 +94,7 @@ export class CurrenciesService {
       redisKey = `${redisKey}-${to}`;
     }
     logger.info(`redisKey ${redisKey}`);
+
     try {
       const cacheHistory = await getJSON<ForexHistory[]>(redisKey);
       if (cacheHistory) return cacheHistory;

@@ -1,12 +1,18 @@
 import Redis from 'ioredis';
 import { REDIS_URI } from '../../environments';
 import { jsonParse } from '../../utils/json-parse';
+import logger from '../logger';
 
 export const redis = new Redis(REDIS_URI);
 
 export const getJSON = async <T>(key: string): Promise<T | null> => {
-  const data: string | null = await redis.get(key);
-  return jsonParse<T>(data);
+  try {
+    const data: string | null = await redis.get(key);
+    return jsonParse<T>(data);
+  } catch (error) {
+    logger.error(`getJSON error ${error}`);
+    return null;
+  }
 };
 
 export const setJSON = async <T>(
