@@ -2,6 +2,8 @@ import { Currency } from '@prisma/client';
 import { farfetch } from '../../common/libs/farfetch';
 import { prismaClient } from '../../common/libs/prisma';
 import { ForexHistory } from './currencies.types';
+import logger from '../../common/libs/logger';
+import { getJSON, setJSON } from '../../common/libs/redis';
 
 const ONE_DAY = 1000 * 60 * 60 * 24;
 
@@ -55,24 +57,44 @@ export class CurrenciesService {
     const [fromDate] = fromD.toISOString().split('T');
 
     const urlSearchParams = new URLSearchParams();
-    if (amount) urlSearchParams.set('amount', amount.toString());
-    if (from) urlSearchParams.set('base', from);
-    if (to) urlSearchParams.set('to', to);
-    const url = `https://api.frankfurter.app/${fromDate}..${toDate}?${urlSearchParams.toString()}`;
-    const response = await farfetch<{
-      amount: number;
-      base: string;
-      start_date: string;
-      end_date: string;
-      rates: Record<string, Record<string, number>>;
-    }>(url);
-    const { rates } = response;
-    const dates: string[] = Object.keys(rates);
-    return dates.map((date) => {
-      const value: Record<string, number> = rates[date];
-      const toAmount: number = value[to];
-      return { date, from: response.amount, to: toAmount };
-    });
+    let redisKey = `currencies-history`;
+    if (amount) {
+      urlSearchParams.set('amount', amount.toString());
+      redisKey = `${redisKey}-${amount}`;
+    }
+    if (from) {
+      urlSearchParams.set('base', from);
+      redisKey = `${redisKey}-${from}`;
+    }
+    if (to) {
+      urlSearchParams.set('to', to);
+      redisKey = `${redisKey}-${to}`;
+    }
+    logger.info(`redisKey ${redisKey}`);
+    try {
+      const cacheHistory = await getJSON<ForexHistory[]>(redisKey);
+      if (cacheHistory) return cacheHistory;
+      const url = `https://api.frankfurter.app/${fromDate}..${toDate}?${urlSearchParams.toString()}`;
+      const response = await farfetch<{
+        amount: number;
+        base: string;
+        start_date: string;
+        end_date: string;
+        rates: Record<string, Record<string, number>>;
+      }>(url);
+      const { rates } = response;
+      const dates: string[] = Object.keys(rates);
+      const history: ForexHistory[] = dates.map((date) => {
+        const value: Record<string, number> = rates[date];
+        const toAmount: number = value[to];
+        return { date, from: response.amount, to: toAmount };
+      });
+      setJSON(redisKey, history, { expiresIn: 60 * 60 * 24 }).catch(logger.error);
+      return history;
+    } catch (error) {
+      logger.error(`getHistory error ${error}`);
+      return [];
+    }
   }
 
   public async getCurrency(code: string): Promise<Currency> {

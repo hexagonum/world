@@ -9,7 +9,11 @@ export const getJSON = async <T>(key: string): Promise<T | null> => {
   return jsonParse<T>(data);
 };
 
-export const setJSON = async <T>(key: string, value: T): Promise<'OK'> => {
+export const setJSON = async <T>(
+  key: string,
+  value: T,
+  { expiresIn = 60 * 30 }: { expiresIn?: number } = { expiresIn: 60 * 30 }
+): Promise<'OK'> => {
   const jsonString = JSON.stringify(value);
-  return redis.set(key, jsonString, 'EX', 60 * 30);
+  return redis.set(key, jsonString, 'EX', expiresIn);
 };
