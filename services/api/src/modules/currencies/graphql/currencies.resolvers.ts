@@ -1,4 +1,4 @@
-import { Country, Currency } from '@prisma/client';
+import { Currency } from '@prisma/client';
 import { BASE_API } from '../../../common/environments';
 import { farfetch } from '../../../common/libs/farfetch';
 import { ForexHistory, ForexRate } from '../currencies.types';
@@ -49,7 +49,7 @@ export const resolvers = {
     code: ({ code }: Currency) => code,
     name: ({ name }: Currency) => name,
     symbol: ({ symbol }: Currency) => symbol,
-    countries: ({ countries = [] }: { countries: { country: Country }[] }) => {
+    countries: ({ countries = [] }) => {
       return countries.map(({ country: { commonName, cca2, cca3, region, subregion, population } }) => {
         return { commonName, cca2, cca3, region, subregion, population };
       });

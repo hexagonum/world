@@ -1,22 +1,28 @@
 import { Currency } from '@prisma/client';
 import { farfetch } from '../../common/libs/farfetch';
-import { prismaClient } from '../../common/libs/prisma';
-import { ForexHistory, ForexRate } from './currencies.types';
 import logger from '../../common/libs/logger';
+import { prismaClient } from '../../common/libs/prisma';
 import { getJSON, setJSON } from '../../common/libs/redis';
+import { ForexHistory, ForexRate } from './currencies.types';
 
 const ONE_DAY = 1000 * 60 * 60 * 24;
 
 export class CurrenciesService {
-  public async getCurrencies(): Promise<Currency[]> {
-    const currencies: Currency[] = await prismaClient.currency.findMany({
+  public async getCurrencies() {
+    const currencies = await prismaClient.currency.findMany({
       include: {
         countries: {
-          select: { country: { select: { commonName: true, region: true, subregion: true, population: true } } },
+          select: {
+            country: {
+              include: { region: true, subregion: true },
+            },
+          },
         },
       },
     });
-    return currencies;
+    return currencies.map((currency) => {
+      return { ...currency, countries: currency.countries.map(({ country }) => country) };
+    });
   }
 
   public async getRates({
@@ -121,19 +127,19 @@ export class CurrenciesService {
     }
   }
 
-  public async getCurrency(code: string): Promise<Currency> {
-    const currency: Currency = await prismaClient.currency.findFirstOrThrow({
+  public async getCurrency(code: string) {
+    const currency = await prismaClient.currency.findFirstOrThrow({
       where: { code },
       include: {
         countries: {
           select: {
             country: {
-              select: { commonName: true, cca2: true, cca3: true, region: true, subregion: true, population: true },
+              include: { region: true, subregion: true },
             },
           },
         },
       },
     });
-    return currency;
+    return { ...currency, countries: currency.countries.map(({ country }) => country) };
   }
 }

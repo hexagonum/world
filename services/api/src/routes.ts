@@ -82,8 +82,16 @@ const models: TsoaRoute.Models = {
         flagSVG: { dataType: 'string', required: true },
         flagPNG: { dataType: 'string', required: true },
         flag: { dataType: 'string', required: true },
-        subregion: { dataType: 'string', required: true },
-        region: { dataType: 'string', required: true },
+        subregionCode: {
+          dataType: 'union',
+          subSchemas: [{ dataType: 'string' }, { dataType: 'enum', enums: [null] }],
+          required: true,
+        },
+        regionCode: {
+          dataType: 'union',
+          subSchemas: [{ dataType: 'string' }, { dataType: 'enum', enums: [null] }],
+          required: true,
+        },
         borders: { dataType: 'array', array: { dataType: 'string' }, required: true },
         continents: { dataType: 'array', array: { dataType: 'string' }, required: true },
         alternativeSpellings: { dataType: 'array', array: { dataType: 'string' }, required: true },
