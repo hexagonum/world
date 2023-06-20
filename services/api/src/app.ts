@@ -9,7 +9,7 @@ import errorHandler from './common/middlewares/error';
 import notFoundHandler from './common/middlewares/not-found';
 import { RegisterRoutes } from './routes';
 
-const app = express();
+export const app = express();
 const helmetOptions: Readonly<HelmetOptions> = { contentSecurityPolicy: NODE_ENV === 'production' ? undefined : false };
 
 app.use(cors());
@@ -25,5 +25,3 @@ RegisterRoutes(app);
 
 app.use(notFoundHandler({ whitelist: ['/graphql'] }));
 app.use(errorHandler);
-
-export default app;

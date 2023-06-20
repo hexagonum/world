@@ -5,11 +5,10 @@ import {
   ApolloServerPluginLandingPageLocalDefault,
   ApolloServerPluginLandingPageProductionDefault,
 } from '@apollo/server/plugin/landingPage/default';
-import graphql from 'graphql';
 import graphqlDepthLimit from 'graphql-depth-limit';
 import http from 'http';
 import { HttpError } from 'http-errors';
-import app from './app';
+import { app } from './app';
 import { NODE_ENV, PORT } from './common/environments';
 import logger from './common/libs/logger';
 import { resolvers, typeDefs } from './modules/graphql.module';
