@@ -1,4 +1,3 @@
-import { Currency } from '@prisma/client';
 import { farfetch } from '../../common/libs/farfetch';
 import logger from '../../common/libs/logger';
 import { prismaClient } from '../../common/libs/prisma';
