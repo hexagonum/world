@@ -110,13 +110,11 @@
 					"flag": {
 						"type": "string"
 					},
-					"subregionCode": {
-						"type": "string",
-						"nullable": true
+					"subregion": {
+						"type": "string"
 					},
-					"regionCode": {
-						"type": "string",
-						"nullable": true
+					"region": {
+						"type": "string"
 					},
 					"borders": {
 						"items": {
@@ -204,8 +202,8 @@
 					"flagSVG",
 					"flagPNG",
 					"flag",
-					"subregionCode",
-					"regionCode",
+					"subregion",
+					"region",
 					"borders",
 					"continents",
 					"alternativeSpellings",
@@ -1282,10 +1280,10 @@
 											"flag": {
 												"type": "string"
 											},
-											"subregionCode": {
+											"subregion": {
 												"type": "string"
 											},
-											"regionCode": {
+											"region": {
 												"type": "string"
 											},
 											"borders": {
@@ -1399,8 +1397,8 @@
 											"flagSVG",
 											"flagPNG",
 											"flag",
-											"subregionCode",
-											"regionCode",
+											"subregion",
+											"region",
 											"borders",
 											"continents",
 											"alternativeSpellings",

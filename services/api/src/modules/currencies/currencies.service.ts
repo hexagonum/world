@@ -12,9 +12,7 @@ export class CurrenciesService {
       include: {
         countries: {
           select: {
-            country: {
-              include: { region: true, subregion: true },
-            },
+            country: true,
           },
         },
       },
@@ -132,9 +130,7 @@ export class CurrenciesService {
       include: {
         countries: {
           select: {
-            country: {
-              include: { region: true, subregion: true },
-            },
+            country: true,
           },
         },
       },
