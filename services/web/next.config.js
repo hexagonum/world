@@ -9,12 +9,6 @@ const withPWA = require('next-pwa')({
   disable: !isProd,
 });
 
-const nextConfig = {
-  output: 'export',
-  reactStrictMode: true,
-  basePath: isProd ? '/world' : undefined,
-  assetPrefix: isProd ? '/world/' : undefined,
-  images: { unoptimized: true },
-};
+const nextConfig = {};
 
 module.exports = withPWA(nextConfig);
