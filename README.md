@@ -1,5 +1,16 @@
 # World
 
+## Techstack
+
+- Next.js
+- Node.js
+- Express.js
+- GraphQL
+- PostgreSQL
+- Prisma
+
+## Category
+
 - Countries
 - Crypto
   - Coins
