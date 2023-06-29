@@ -18,6 +18,7 @@
     "test:web": "yarn workspace @world/web test",
     "build:web": "yarn workspace @world/web build",
     "start:web": "yarn workspace @world/web start",
+    "prepare": "husky install || true",
     "prettify": "prettier --write .",
     "prisma:format": "prisma format",
     "prisma:studio": "prisma studio",
