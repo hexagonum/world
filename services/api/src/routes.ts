@@ -35,29 +35,19 @@ import type { RequestHandler, Router } from 'express';
 // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
 
 const models: TsoaRoute.Models = {
-    "City": {
+    "GetResult_any.any.any_": {
         "dataType": "refAlias",
-        "type": {"dataType":"nestedObjectLiteral","nestedProperties":{"timezone":{"dataType":"double","required":true},"longitude":{"dataType":"double","required":true},"latitude":{"dataType":"double","required":true},"cityLevel":{"dataType":"string","required":true},"cityCode":{"dataType":"string","required":true},"city":{"dataType":"string","required":true},"stateLevel":{"dataType":"string","required":true},"stateCode":{"dataType":"string","required":true},"state":{"dataType":"string","required":true},"subregion":{"dataType":"string","required":true},"region":{"dataType":"string","required":true},"countryCode":{"dataType":"string","required":true},"id":{"dataType":"double","required":true}},"validators":{}},
+        "type": {"dataType":"nestedObjectLiteral","nestedProperties":{},"validators":{}},
+    },
+    // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
+    "runtime.Types.DefaultSelection_CountryPayload_": {
+        "dataType": "refAlias",
+        "type": {"dataType":"intersection","subSchemas":[{"ref":"GetResult_any.any.any_"},{"dataType":"nestedObjectLiteral","nestedProperties":{}}],"validators":{}},
     },
     // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
     "Country": {
         "dataType": "refAlias",
-        "type": {"dataType":"nestedObjectLiteral","nestedProperties":{"updatedAt":{"dataType":"datetime","required":true},"createdAt":{"dataType":"datetime","required":true},"timezones":{"dataType":"array","array":{"dataType":"string"},"required":true},"googleMaps":{"dataType":"string","required":true},"density":{"dataType":"double","required":true},"population":{"dataType":"double","required":true},"area":{"dataType":"double","required":true},"flagSVG":{"dataType":"string","required":true},"flagPNG":{"dataType":"string","required":true},"flag":{"dataType":"string","required":true},"subregion":{"dataType":"string","required":true},"region":{"dataType":"string","required":true},"borders":{"dataType":"array","array":{"dataType":"string"},"required":true},"continents":{"dataType":"array","array":{"dataType":"string"},"required":true},"alternativeSpellings":{"dataType":"array","array":{"dataType":"string"},"required":true},"capital":{"dataType":"array","array":{"dataType":"string"},"required":true},"topLevelDomains":{"dataType":"array","array":{"dataType":"string"},"required":true},"longitude":{"dataType":"double","required":true},"latitude":{"dataType":"double","required":true},"startOfWeek":{"dataType":"string","required":true},"unMember":{"dataType":"boolean","required":true},"independent":{"dataType":"boolean","required":true},"status":{"dataType":"string","required":true},"fifa":{"dataType":"string","required":true},"cioc":{"dataType":"string","required":true},"ccn3":{"dataType":"string","required":true},"cca3":{"dataType":"string","required":true},"cca2":{"dataType":"string","required":true},"officialName":{"dataType":"string","required":true},"commonName":{"dataType":"string","required":true},"code":{"dataType":"string","required":true}},"validators":{}},
-    },
-    // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
-    "Currency": {
-        "dataType": "refAlias",
-        "type": {"dataType":"nestedObjectLiteral","nestedProperties":{"updatedAt":{"dataType":"datetime","required":true},"createdAt":{"dataType":"datetime","required":true},"symbol":{"dataType":"string","required":true},"name":{"dataType":"string","required":true},"code":{"dataType":"string","required":true}},"validators":{}},
-    },
-    // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
-    "Language": {
-        "dataType": "refAlias",
-        "type": {"dataType":"nestedObjectLiteral","nestedProperties":{"updatedAt":{"dataType":"datetime","required":true},"createdAt":{"dataType":"datetime","required":true},"name":{"dataType":"string","required":true},"code":{"dataType":"string","required":true}},"validators":{}},
-    },
-    // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
-    "Organization": {
-        "dataType": "refAlias",
-        "type": {"dataType":"nestedObjectLiteral","nestedProperties":{"updatedAt":{"dataType":"datetime","required":true},"createdAt":{"dataType":"datetime","required":true},"name":{"dataType":"string","required":true},"code":{"dataType":"string","required":true}},"validators":{}},
+        "type": {"ref":"runtime.Types.DefaultSelection_CountryPayload_","validators":{}},
     },
     // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
     "Coin": {
@@ -78,6 +68,16 @@ const models: TsoaRoute.Models = {
     "OrderBy": {
         "dataType": "refAlias",
         "type": {"dataType":"union","subSchemas":[{"dataType":"enum","enums":["price"]},{"dataType":"enum","enums":["marketCap"]},{"dataType":"enum","enums":["24hVolume"]},{"dataType":"enum","enums":["change"]},{"dataType":"enum","enums":["listedAt"]}],"validators":{}},
+    },
+    // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
+    "runtime.Types.DefaultSelection_CurrencyPayload_": {
+        "dataType": "refAlias",
+        "type": {"dataType":"intersection","subSchemas":[{"ref":"GetResult_any.any.any_"},{"dataType":"nestedObjectLiteral","nestedProperties":{}}],"validators":{}},
+    },
+    // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
+    "Currency": {
+        "dataType": "refAlias",
+        "type": {"ref":"runtime.Types.DefaultSelection_CurrencyPayload_","validators":{}},
     },
     // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
     "ForexHistory": {
@@ -115,14 +115,19 @@ const models: TsoaRoute.Models = {
         "type": {"dataType":"nestedObjectLiteral","nestedProperties":{"lastUpdated":{"dataType":"string","required":true},"group":{"dataType":"string","required":true},"stage":{"dataType":"string","required":true},"matchday":{"dataType":"double","required":true},"status":{"dataType":"string","required":true},"utcDate":{"dataType":"string","required":true},"id":{"dataType":"double","required":true},"score":{"dataType":"nestedObjectLiteral","nestedProperties":{"halfTime":{"dataType":"nestedObjectLiteral","nestedProperties":{"away":{"dataType":"double","required":true},"home":{"dataType":"double","required":true}},"required":true},"fullTime":{"dataType":"nestedObjectLiteral","nestedProperties":{"away":{"dataType":"double","required":true},"home":{"dataType":"double","required":true}},"required":true},"duration":{"dataType":"enum","enums":["REGULAR"],"required":true},"winner":{"dataType":"union","subSchemas":[{"dataType":"enum","enums":["AWAY_TEAM"]},{"dataType":"enum","enums":["HOME_TEAM"]}],"required":true}},"required":true},"awayTeam":{"ref":"Team","required":true},"homeTeam":{"ref":"Team","required":true},"competition":{"ref":"Competition","required":true}},"validators":{}},
     },
     // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
-    "GoogleTrend": {
-        "dataType": "refAlias",
-        "type": {"dataType":"nestedObjectLiteral","nestedProperties":{"queries":{"dataType":"array","array":{"dataType":"string"},"required":true},"countryCode":{"dataType":"string","required":true}},"validators":{}},
-    },
-    // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
     "HealthResponse": {
         "dataType": "refAlias",
         "type": {"dataType":"nestedObjectLiteral","nestedProperties":{"status":{"dataType":"string","required":true}},"validators":{}},
+    },
+    // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
+    "runtime.Types.DefaultSelection_LanguagePayload_": {
+        "dataType": "refAlias",
+        "type": {"dataType":"intersection","subSchemas":[{"ref":"GetResult_any.any.any_"},{"dataType":"nestedObjectLiteral","nestedProperties":{}}],"validators":{}},
+    },
+    // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
+    "Language": {
+        "dataType": "refAlias",
+        "type": {"ref":"runtime.Types.DefaultSelection_LanguagePayload_","validators":{}},
     },
     // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
     "Article": {
@@ -150,19 +155,44 @@ const models: TsoaRoute.Models = {
         "type": {"dataType":"nestedObjectLiteral","nestedProperties":{"country":{"ref":"NewsCountry","required":true},"language":{"ref":"NewsLanguage","required":true},"category":{"ref":"NewsCategory","required":true},"url":{"dataType":"string","required":true},"description":{"dataType":"string","required":true},"name":{"dataType":"string","required":true},"id":{"dataType":"string","required":true}},"validators":{}},
     },
     // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
+    "runtime.Types.DefaultSelection_OrganizationPayload_": {
+        "dataType": "refAlias",
+        "type": {"dataType":"intersection","subSchemas":[{"ref":"GetResult_any.any.any_"},{"dataType":"nestedObjectLiteral","nestedProperties":{}}],"validators":{}},
+    },
+    // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
+    "Organization": {
+        "dataType": "refAlias",
+        "type": {"ref":"runtime.Types.DefaultSelection_OrganizationPayload_","validators":{}},
+    },
+    // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
+    "runtime.Types.DefaultSelection_PassportPayload_": {
+        "dataType": "refAlias",
+        "type": {"dataType":"intersection","subSchemas":[{"ref":"GetResult_any.any.any_"},{"dataType":"nestedObjectLiteral","nestedProperties":{}}],"validators":{}},
+    },
+    // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
     "Passport": {
         "dataType": "refAlias",
-        "type": {"dataType":"nestedObjectLiteral","nestedProperties":{"mobilityScore":{"dataType":"double","required":true},"individualRank":{"dataType":"double","required":true},"globalRank":{"dataType":"double","required":true},"countryCode":{"dataType":"string","required":true}},"validators":{}},
+        "type": {"ref":"runtime.Types.DefaultSelection_PassportPayload_","validators":{}},
+    },
+    // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
+    "runtime.Types.DefaultSelection_PassportRequirementPayload_": {
+        "dataType": "refAlias",
+        "type": {"dataType":"intersection","subSchemas":[{"ref":"GetResult_any.any.any_"},{"dataType":"nestedObjectLiteral","nestedProperties":{}}],"validators":{}},
     },
     // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
     "PassportRequirement": {
         "dataType": "refAlias",
-        "type": {"dataType":"nestedObjectLiteral","nestedProperties":{"requirement":{"dataType":"string","required":true},"countryCode":{"dataType":"string","required":true},"passportCode":{"dataType":"string","required":true}},"validators":{}},
+        "type": {"ref":"runtime.Types.DefaultSelection_PassportRequirementPayload_","validators":{}},
+    },
+    // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
+    "runtime.Types.DefaultSelection_TimezonePayload_": {
+        "dataType": "refAlias",
+        "type": {"dataType":"intersection","subSchemas":[{"ref":"GetResult_any.any.any_"},{"dataType":"nestedObjectLiteral","nestedProperties":{}}],"validators":{}},
     },
     // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
     "Timezone": {
         "dataType": "refAlias",
-        "type": {"dataType":"nestedObjectLiteral","nestedProperties":{"updatedAt":{"dataType":"datetime","required":true},"createdAt":{"dataType":"datetime","required":true},"utcOffset":{"dataType":"string","required":true},"offset":{"dataType":"string","required":true},"name":{"dataType":"string","required":true},"code":{"dataType":"string","required":true}},"validators":{}},
+        "type": {"ref":"runtime.Types.DefaultSelection_TimezonePayload_","validators":{}},
     },
     // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
     "YouTubeCategory": {
