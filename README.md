@@ -1,6 +1,7 @@
 # World
 
 - [World](#world)
+  - [Demo](#demo)
   - [Techstack](#techstack)
     - [Language](#language)
     - [Development](#development)
@@ -11,7 +12,12 @@
     - [Database](#database)
     - [Serverless](#serverless)
     - [Continuous Integration and Continuous Delivery](#continuous-integration-and-continuous-delivery)
-  - [APIs](#apis)
+    - [APIs](#apis)
+
+## Demo
+
+- [API](https://dashboardworldapi.vercel.app/)
+- [API](https://dashboardworldweb.vercel.app/)
 
 ## Techstack
 
@@ -25,6 +31,7 @@
 - [x] [prettier](https://prettier.io/)
 - [x] [husky](https://typicode.github.io/husky/)
 - [x] [webpack](https://webpack.js.org/)
+- [x] [pino](https://getpino.io/)
 
 ### Front-end
 
@@ -49,8 +56,13 @@
 
 ### Database
 
-- [x] [Prisma](https://www.prisma.io/)
 - [x] [PostgreSQL](https://www.postgresql.org/)
+- [x] [Prisma](https://www.prisma.io/)
+  - [x] [Generators](https://www.prisma.io/docs/concepts/components/prisma-schema/generators)
+    - [x] [prisma-client-js](https://www.prisma.io/docs/concepts/components/prisma-client)
+    - [x] [prisma-dbml-generator](https://github.com/notiz-dev/prisma-dbml-generator) - [dbdiagram](https://dbdiagram.io)
+    - [x] [prisma-docs-generator](https://github.com/pantharshit00/prisma-docs-generator)
+    - [x] [prisma-json-schema-generator](https://github.com/valentinpalkovic/prisma-json-schema-generator)
 
 ### Serverless
 
@@ -60,7 +72,7 @@
 
 - [x] [GitHub Actions](https://github.com/features/actions)
 
-## APIs
+### APIs
 
 - [REST Countries](https://restcountries.com/)
 - [Coinranking](https://developers.coinranking.com/api/documentation)
