@@ -2018,4 +2018,4 @@ paths:
         },
     }
 servers:
-  - { url: 'http://localhost:8080', description: Local }
+  - { url: 'http://localhost:8080/api', description: Local }

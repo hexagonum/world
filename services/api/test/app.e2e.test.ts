@@ -8,7 +8,7 @@ jest.mock('ioredis', () => {
 describe('app', () => {
   it('/health', () => {
     request(app)
-      .get('/health')
+      .get('/api/health')
       .expect(200)
       .end((error: Error) => {
         if (error) throw error;

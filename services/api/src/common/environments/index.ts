@@ -6,7 +6,7 @@ dotenvExpand.expand(environments);
 
 export const NODE_ENV: string = process.env.NODE_ENV ?? 'development';
 
-export const PORT: string = process.env.PORT ?? '8000';
+export const PORT: string = process.env.PORT ?? '8080';
 
 export const JWT_SECRET: string = process.env.JWT_SECRET ?? 'jwt-secret';
 
