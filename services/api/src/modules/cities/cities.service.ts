@@ -9,7 +9,10 @@ export class CitiesService {
       timezone: { not: { equals: 0 } },
     };
     if (countryCode.length > 0) where = { ...where, countryCode };
-    const cities = await prismaClient.city.findMany({ include: { country: true }, where });
+    const cities = await prismaClient.city.findMany({
+      include: { country: true },
+      where,
+    });
     return cities;
   }
 }

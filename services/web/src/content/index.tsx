@@ -17,8 +17,20 @@ import {
 } from 'react-icons/fa';
 
 export const LINKS = [
-  { id: 'overview', icon: <Icon as={FaWarehouse} color={'teal'} />, href: '/', name: 'Overview', subpages: [] },
-  { id: 'crypto', icon: <Icon as={FaBitcoin} color={'teal'} />, href: '/crypto/coins', name: 'Crypto', subpages: [] },
+  {
+    id: 'overview',
+    icon: <Icon as={FaWarehouse} color={'teal'} />,
+    href: '/',
+    name: 'Overview',
+    subpages: [],
+  },
+  {
+    id: 'crypto',
+    icon: <Icon as={FaBitcoin} color={'teal'} />,
+    href: '/crypto/coins',
+    name: 'Crypto',
+    subpages: [],
+  },
   {
     id: 'countries',
     icon: <Icon as={FaMap} color={'teal'} />,
@@ -57,7 +69,13 @@ export const LINKS = [
       },
     ],
   },
-  { id: 'football', icon: <Icon as={FaFutbol} color={'teal'} />, href: '/football', name: 'Football', subpages: [] },
+  {
+    id: 'football',
+    icon: <Icon as={FaFutbol} color={'teal'} />,
+    href: '/football',
+    name: 'Football',
+    subpages: [],
+  },
   {
     id: 'google',
     icon: <Icon as={FaGoogle} color={'teal'} />,
@@ -78,5 +96,11 @@ export const LINKS = [
       },
     ],
   },
-  { id: 'weather', icon: <Icon as={FaCloudSunRain} color={'teal'} />, href: '/weather', name: 'Weather', subpages: [] },
+  {
+    id: 'weather',
+    icon: <Icon as={FaCloudSunRain} color={'teal'} />,
+    href: '/weather',
+    name: 'Weather',
+    subpages: [],
+  },
 ];

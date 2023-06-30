@@ -20,8 +20,13 @@ export const resolvers = {
       const urlSearchParams = new URLSearchParams();
       urlSearchParams.set('countryCode', countryCode);
       const url = `${BASE_API}/youtube/categories?${urlSearchParams.toString()}`;
-      const categories: YouTubeCategory[] = await farfetch<YouTubeCategory[]>(url);
-      return categories.map((category: YouTubeCategory) => ({ ...category, countryCode }));
+      const categories: YouTubeCategory[] = await farfetch<YouTubeCategory[]>(
+        url
+      );
+      return categories.map((category: YouTubeCategory) => ({
+        ...category,
+        countryCode,
+      }));
     },
     videos: async ({
       categoryId = '',
@@ -42,7 +47,13 @@ export const resolvers = {
     },
   },
   YouTubeCategory: {
-    videos: async ({ id: categoryId, countryCode }: { id: string; countryCode: string }) => {
+    videos: async ({
+      id: categoryId,
+      countryCode,
+    }: {
+      id: string;
+      countryCode: string;
+    }) => {
       const urlSearchParams = new URLSearchParams();
       urlSearchParams.set('categoryId', categoryId);
       urlSearchParams.set('countryCode', countryCode);

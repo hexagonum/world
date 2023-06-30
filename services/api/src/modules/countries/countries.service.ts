@@ -1,7 +1,13 @@
 import { prismaClient } from '../../common/libs/prisma';
 
 export class CountriesService {
-  async getCountries({ codes = '', timezone = '' }: { codes: string; timezone: string }) {
+  async getCountries({
+    codes = '',
+    timezone = '',
+  }: {
+    codes: string;
+    timezone: string;
+  }) {
     let where = {};
     if (codes.length > 0)
       where = {
@@ -20,7 +26,13 @@ export class CountriesService {
     const countries = await prismaClient.country.findMany({
       include: {
         cities: {
-          select: { state: true, city: true, latitude: true, longitude: true, timezone: true },
+          select: {
+            state: true,
+            city: true,
+            latitude: true,
+            longitude: true,
+            timezone: true,
+          },
           where: {
             latitude: { not: { equals: 0 } },
             longitude: { not: { equals: 0 } },
@@ -36,12 +48,17 @@ export class CountriesService {
       where,
     });
     return countries.map((country) => {
-      const googleTrends: string[] = country.googleTrends.map(({ queries }: { queries: string[] }) => queries)[0] ?? [];
+      const googleTrends: string[] =
+        country.googleTrends.map(
+          ({ queries }: { queries: string[] }) => queries
+        )[0] ?? [];
       return {
         ...country,
         currencies: country.currencies.map(({ currency }) => currency),
         languages: country.languages.map(({ language }) => language),
-        organizations: country.organizations.map(({ organization }) => organization),
+        organizations: country.organizations.map(
+          ({ organization }) => organization
+        ),
         googleTrends,
       };
     });
@@ -51,7 +68,13 @@ export class CountriesService {
     const country = await prismaClient.country.findFirstOrThrow({
       include: {
         cities: {
-          select: { state: true, city: true, latitude: true, longitude: true, timezone: true },
+          select: {
+            state: true,
+            city: true,
+            latitude: true,
+            longitude: true,
+            timezone: true,
+          },
           where: {
             latitude: { not: { equals: 0 } },
             longitude: { not: { equals: 0 } },
@@ -66,12 +89,15 @@ export class CountriesService {
       },
       where: { OR: [{ code }, { cca2: code }, { cca3: code }, { fifa: code }] },
     });
-    const googleTrends: string[] = country.googleTrends.map(({ queries }) => queries)[0] ?? [];
+    const googleTrends: string[] =
+      country.googleTrends.map(({ queries }) => queries)[0] ?? [];
     return {
       ...country,
       currencies: country.currencies.map(({ currency }) => currency),
       languages: country.languages.map(({ language }) => language),
-      organizations: country.organizations.map(({ organization }) => organization),
+      organizations: country.organizations.map(
+        ({ organization }) => organization
+      ),
       googleTrends,
     };
   }

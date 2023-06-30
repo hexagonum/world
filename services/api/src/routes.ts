@@ -46,21 +46,31 @@ import type { RequestHandler, Router } from 'express';
 const models: TsoaRoute.Models = {
   'GetResult_any.any.any_': {
     dataType: 'refAlias',
-    type: { dataType: 'nestedObjectLiteral', nestedProperties: {}, validators: {} },
+    type: {
+      dataType: 'nestedObjectLiteral',
+      nestedProperties: {},
+      validators: {},
+    },
   },
   // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
   'runtime.Types.DefaultSelection_CountryPayload_': {
     dataType: 'refAlias',
     type: {
       dataType: 'intersection',
-      subSchemas: [{ ref: 'GetResult_any.any.any_' }, { dataType: 'nestedObjectLiteral', nestedProperties: {} }],
+      subSchemas: [
+        { ref: 'GetResult_any.any.any_' },
+        { dataType: 'nestedObjectLiteral', nestedProperties: {} },
+      ],
       validators: {},
     },
   },
   // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
   Country: {
     dataType: 'refAlias',
-    type: { ref: 'runtime.Types.DefaultSelection_CountryPayload_', validators: {} },
+    type: {
+      ref: 'runtime.Types.DefaultSelection_CountryPayload_',
+      validators: {},
+    },
   },
   // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
   Coin: {
@@ -72,7 +82,11 @@ const models: TsoaRoute.Models = {
         '24hVolume': { dataType: 'string', required: true },
         coinrankingUrl: { dataType: 'string', required: true },
         lowVolume: { dataType: 'boolean', required: true },
-        sparkline: { dataType: 'array', array: { dataType: 'string' }, required: true },
+        sparkline: {
+          dataType: 'array',
+          array: { dataType: 'string' },
+          required: true,
+        },
         rank: { dataType: 'double', required: true },
         change: { dataType: 'string', required: true },
         tier: { dataType: 'double', required: true },
@@ -141,14 +155,20 @@ const models: TsoaRoute.Models = {
     dataType: 'refAlias',
     type: {
       dataType: 'intersection',
-      subSchemas: [{ ref: 'GetResult_any.any.any_' }, { dataType: 'nestedObjectLiteral', nestedProperties: {} }],
+      subSchemas: [
+        { ref: 'GetResult_any.any.any_' },
+        { dataType: 'nestedObjectLiteral', nestedProperties: {} },
+      ],
       validators: {},
     },
   },
   // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
   Currency: {
     dataType: 'refAlias',
-    type: { ref: 'runtime.Types.DefaultSelection_CurrencyPayload_', validators: {} },
+    type: {
+      ref: 'runtime.Types.DefaultSelection_CurrencyPayload_',
+      validators: {},
+    },
   },
   // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
   ForexHistory: {
@@ -240,7 +260,11 @@ const models: TsoaRoute.Models = {
     type: {
       dataType: 'nestedObjectLiteral',
       nestedProperties: {
-        table: { dataType: 'array', array: { dataType: 'refAlias', ref: 'Position' }, required: true },
+        table: {
+          dataType: 'array',
+          array: { dataType: 'refAlias', ref: 'Position' },
+          required: true,
+        },
         type: {
           dataType: 'union',
           subSchemas: [
@@ -320,14 +344,20 @@ const models: TsoaRoute.Models = {
     dataType: 'refAlias',
     type: {
       dataType: 'intersection',
-      subSchemas: [{ ref: 'GetResult_any.any.any_' }, { dataType: 'nestedObjectLiteral', nestedProperties: {} }],
+      subSchemas: [
+        { ref: 'GetResult_any.any.any_' },
+        { dataType: 'nestedObjectLiteral', nestedProperties: {} },
+      ],
       validators: {},
     },
   },
   // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
   Language: {
     dataType: 'refAlias',
-    type: { ref: 'runtime.Types.DefaultSelection_LanguagePayload_', validators: {} },
+    type: {
+      ref: 'runtime.Types.DefaultSelection_LanguagePayload_',
+      validators: {},
+    },
   },
   // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
   Article: {
@@ -481,56 +511,80 @@ const models: TsoaRoute.Models = {
     dataType: 'refAlias',
     type: {
       dataType: 'intersection',
-      subSchemas: [{ ref: 'GetResult_any.any.any_' }, { dataType: 'nestedObjectLiteral', nestedProperties: {} }],
+      subSchemas: [
+        { ref: 'GetResult_any.any.any_' },
+        { dataType: 'nestedObjectLiteral', nestedProperties: {} },
+      ],
       validators: {},
     },
   },
   // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
   Organization: {
     dataType: 'refAlias',
-    type: { ref: 'runtime.Types.DefaultSelection_OrganizationPayload_', validators: {} },
+    type: {
+      ref: 'runtime.Types.DefaultSelection_OrganizationPayload_',
+      validators: {},
+    },
   },
   // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
   'runtime.Types.DefaultSelection_PassportPayload_': {
     dataType: 'refAlias',
     type: {
       dataType: 'intersection',
-      subSchemas: [{ ref: 'GetResult_any.any.any_' }, { dataType: 'nestedObjectLiteral', nestedProperties: {} }],
+      subSchemas: [
+        { ref: 'GetResult_any.any.any_' },
+        { dataType: 'nestedObjectLiteral', nestedProperties: {} },
+      ],
       validators: {},
     },
   },
   // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
   Passport: {
     dataType: 'refAlias',
-    type: { ref: 'runtime.Types.DefaultSelection_PassportPayload_', validators: {} },
+    type: {
+      ref: 'runtime.Types.DefaultSelection_PassportPayload_',
+      validators: {},
+    },
   },
   // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
   'runtime.Types.DefaultSelection_PassportRequirementPayload_': {
     dataType: 'refAlias',
     type: {
       dataType: 'intersection',
-      subSchemas: [{ ref: 'GetResult_any.any.any_' }, { dataType: 'nestedObjectLiteral', nestedProperties: {} }],
+      subSchemas: [
+        { ref: 'GetResult_any.any.any_' },
+        { dataType: 'nestedObjectLiteral', nestedProperties: {} },
+      ],
       validators: {},
     },
   },
   // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
   PassportRequirement: {
     dataType: 'refAlias',
-    type: { ref: 'runtime.Types.DefaultSelection_PassportRequirementPayload_', validators: {} },
+    type: {
+      ref: 'runtime.Types.DefaultSelection_PassportRequirementPayload_',
+      validators: {},
+    },
   },
   // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
   'runtime.Types.DefaultSelection_TimezonePayload_': {
     dataType: 'refAlias',
     type: {
       dataType: 'intersection',
-      subSchemas: [{ ref: 'GetResult_any.any.any_' }, { dataType: 'nestedObjectLiteral', nestedProperties: {} }],
+      subSchemas: [
+        { ref: 'GetResult_any.any.any_' },
+        { dataType: 'nestedObjectLiteral', nestedProperties: {} },
+      ],
       validators: {},
     },
   },
   // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
   Timezone: {
     dataType: 'refAlias',
-    type: { ref: 'runtime.Types.DefaultSelection_TimezonePayload_', validators: {} },
+    type: {
+      ref: 'runtime.Types.DefaultSelection_TimezonePayload_',
+      validators: {},
+    },
   },
   // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
   YouTubeCategory: {
@@ -605,9 +659,18 @@ export function RegisterRoutes(app: Router) {
     ...fetchMiddlewares<RequestHandler>(CitiesController),
     ...fetchMiddlewares<RequestHandler>(CitiesController.prototype.getCities),
 
-    function CitiesController_getCities(request: any, response: any, next: any) {
+    function CitiesController_getCities(
+      request: any,
+      response: any,
+      next: any
+    ) {
       const args = {
-        countryCode: { default: '', in: 'query', name: 'countryCode', dataType: 'string' },
+        countryCode: {
+          default: '',
+          in: 'query',
+          name: 'countryCode',
+          dataType: 'string',
+        },
       };
 
       // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
@@ -618,7 +681,10 @@ export function RegisterRoutes(app: Router) {
 
         const controller = new CitiesController();
 
-        const promise = controller.getCities.apply(controller, validatedArgs as any);
+        const promise = controller.getCities.apply(
+          controller,
+          validatedArgs as any
+        );
         promiseHandler(controller, promise, response, undefined, next);
       } catch (err) {
         return next(err);
@@ -629,12 +695,23 @@ export function RegisterRoutes(app: Router) {
   app.get(
     '/countries',
     ...fetchMiddlewares<RequestHandler>(CountriesController),
-    ...fetchMiddlewares<RequestHandler>(CountriesController.prototype.getCountries),
+    ...fetchMiddlewares<RequestHandler>(
+      CountriesController.prototype.getCountries
+    ),
 
-    function CountriesController_getCountries(request: any, response: any, next: any) {
+    function CountriesController_getCountries(
+      request: any,
+      response: any,
+      next: any
+    ) {
       const args = {
         codes: { default: '', in: 'query', name: 'codes', dataType: 'string' },
-        timezone: { default: '', in: 'query', name: 'timezone', dataType: 'string' },
+        timezone: {
+          default: '',
+          in: 'query',
+          name: 'timezone',
+          dataType: 'string',
+        },
       };
 
       // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
@@ -645,7 +722,10 @@ export function RegisterRoutes(app: Router) {
 
         const controller = new CountriesController();
 
-        const promise = controller.getCountries.apply(controller, validatedArgs as any);
+        const promise = controller.getCountries.apply(
+          controller,
+          validatedArgs as any
+        );
         promiseHandler(controller, promise, response, undefined, next);
       } catch (err) {
         return next(err);
@@ -656,9 +736,15 @@ export function RegisterRoutes(app: Router) {
   app.get(
     '/countries/:code',
     ...fetchMiddlewares<RequestHandler>(CountriesController),
-    ...fetchMiddlewares<RequestHandler>(CountriesController.prototype.getCountry),
+    ...fetchMiddlewares<RequestHandler>(
+      CountriesController.prototype.getCountry
+    ),
 
-    function CountriesController_getCountry(request: any, response: any, next: any) {
+    function CountriesController_getCountry(
+      request: any,
+      response: any,
+      next: any
+    ) {
       const args = {
         code: { in: 'path', name: 'code', required: true, dataType: 'string' },
       };
@@ -671,7 +757,10 @@ export function RegisterRoutes(app: Router) {
 
         const controller = new CountriesController();
 
-        const promise = controller.getCountry.apply(controller, validatedArgs as any);
+        const promise = controller.getCountry.apply(
+          controller,
+          validatedArgs as any
+        );
         promiseHandler(controller, promise, response, undefined, next);
       } catch (err) {
         return next(err);
@@ -686,9 +775,19 @@ export function RegisterRoutes(app: Router) {
 
     function CryptoController_getCoins(request: any, response: any, next: any) {
       const args = {
-        timePeriod: { default: '24h', in: 'query', name: 'timePeriod', ref: 'TimePeriod' },
+        timePeriod: {
+          default: '24h',
+          in: 'query',
+          name: 'timePeriod',
+          ref: 'TimePeriod',
+        },
         tier: { default: '1', in: 'query', name: 'tier', ref: 'Tier' },
-        orderBy: { default: 'change', in: 'query', name: 'orderBy', ref: 'OrderBy' },
+        orderBy: {
+          default: 'change',
+          in: 'query',
+          name: 'orderBy',
+          ref: 'OrderBy',
+        },
         limit: { default: 500, in: 'query', name: 'limit', dataType: 'double' },
       };
 
@@ -700,7 +799,10 @@ export function RegisterRoutes(app: Router) {
 
         const controller = new CryptoController();
 
-        const promise = controller.getCoins.apply(controller, validatedArgs as any);
+        const promise = controller.getCoins.apply(
+          controller,
+          validatedArgs as any
+        );
         promiseHandler(controller, promise, response, undefined, next);
       } catch (err) {
         return next(err);
@@ -726,7 +828,10 @@ export function RegisterRoutes(app: Router) {
 
         const controller = new CryptoController();
 
-        const promise = controller.getCoin.apply(controller, validatedArgs as any);
+        const promise = controller.getCoin.apply(
+          controller,
+          validatedArgs as any
+        );
         promiseHandler(controller, promise, response, undefined, next);
       } catch (err) {
         return next(err);
@@ -737,9 +842,15 @@ export function RegisterRoutes(app: Router) {
   app.get(
     '/currencies',
     ...fetchMiddlewares<RequestHandler>(CurrenciesController),
-    ...fetchMiddlewares<RequestHandler>(CurrenciesController.prototype.getCurrencies),
+    ...fetchMiddlewares<RequestHandler>(
+      CurrenciesController.prototype.getCurrencies
+    ),
 
-    function CurrenciesController_getCurrencies(request: any, response: any, next: any) {
+    function CurrenciesController_getCurrencies(
+      request: any,
+      response: any,
+      next: any
+    ) {
       const args = {};
 
       // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
@@ -750,7 +861,10 @@ export function RegisterRoutes(app: Router) {
 
         const controller = new CurrenciesController();
 
-        const promise = controller.getCurrencies.apply(controller, validatedArgs as any);
+        const promise = controller.getCurrencies.apply(
+          controller,
+          validatedArgs as any
+        );
         promiseHandler(controller, promise, response, undefined, next);
       } catch (err) {
         return next(err);
@@ -761,9 +875,15 @@ export function RegisterRoutes(app: Router) {
   app.get(
     '/currencies/rates',
     ...fetchMiddlewares<RequestHandler>(CurrenciesController),
-    ...fetchMiddlewares<RequestHandler>(CurrenciesController.prototype.getRates),
+    ...fetchMiddlewares<RequestHandler>(
+      CurrenciesController.prototype.getRates
+    ),
 
-    function CurrenciesController_getRates(request: any, response: any, next: any) {
+    function CurrenciesController_getRates(
+      request: any,
+      response: any,
+      next: any
+    ) {
       const args = {
         amount: { default: 1, in: 'query', name: 'amount', dataType: 'double' },
         base: { default: 'EUR', in: 'query', name: 'base', dataType: 'string' },
@@ -778,7 +898,10 @@ export function RegisterRoutes(app: Router) {
 
         const controller = new CurrenciesController();
 
-        const promise = controller.getRates.apply(controller, validatedArgs as any);
+        const promise = controller.getRates.apply(
+          controller,
+          validatedArgs as any
+        );
         promiseHandler(controller, promise, response, undefined, next);
       } catch (err) {
         return next(err);
@@ -789,9 +912,15 @@ export function RegisterRoutes(app: Router) {
   app.get(
     '/currencies/history',
     ...fetchMiddlewares<RequestHandler>(CurrenciesController),
-    ...fetchMiddlewares<RequestHandler>(CurrenciesController.prototype.getHistory),
+    ...fetchMiddlewares<RequestHandler>(
+      CurrenciesController.prototype.getHistory
+    ),
 
-    function CurrenciesController_getHistory(request: any, response: any, next: any) {
+    function CurrenciesController_getHistory(
+      request: any,
+      response: any,
+      next: any
+    ) {
       const args = {
         amount: { default: 1, in: 'query', name: 'amount', dataType: 'double' },
         days: { default: 7, in: 'query', name: 'days', dataType: 'double' },
@@ -807,7 +936,10 @@ export function RegisterRoutes(app: Router) {
 
         const controller = new CurrenciesController();
 
-        const promise = controller.getHistory.apply(controller, validatedArgs as any);
+        const promise = controller.getHistory.apply(
+          controller,
+          validatedArgs as any
+        );
         promiseHandler(controller, promise, response, undefined, next);
       } catch (err) {
         return next(err);
@@ -818,9 +950,15 @@ export function RegisterRoutes(app: Router) {
   app.get(
     '/currencies/:code',
     ...fetchMiddlewares<RequestHandler>(CurrenciesController),
-    ...fetchMiddlewares<RequestHandler>(CurrenciesController.prototype.getCurrency),
+    ...fetchMiddlewares<RequestHandler>(
+      CurrenciesController.prototype.getCurrency
+    ),
 
-    function CurrenciesController_getCurrency(request: any, response: any, next: any) {
+    function CurrenciesController_getCurrency(
+      request: any,
+      response: any,
+      next: any
+    ) {
       const args = {
         code: { in: 'path', name: 'code', required: true, dataType: 'string' },
       };
@@ -833,7 +971,10 @@ export function RegisterRoutes(app: Router) {
 
         const controller = new CurrenciesController();
 
-        const promise = controller.getCurrency.apply(controller, validatedArgs as any);
+        const promise = controller.getCurrency.apply(
+          controller,
+          validatedArgs as any
+        );
         promiseHandler(controller, promise, response, undefined, next);
       } catch (err) {
         return next(err);
@@ -846,7 +987,11 @@ export function RegisterRoutes(app: Router) {
     ...fetchMiddlewares<RequestHandler>(FootballController),
     ...fetchMiddlewares<RequestHandler>(FootballController.prototype.getAreas),
 
-    function FootballController_getAreas(request: any, response: any, next: any) {
+    function FootballController_getAreas(
+      request: any,
+      response: any,
+      next: any
+    ) {
       const args = {};
 
       // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
@@ -857,7 +1002,10 @@ export function RegisterRoutes(app: Router) {
 
         const controller = new FootballController();
 
-        const promise = controller.getAreas.apply(controller, validatedArgs as any);
+        const promise = controller.getAreas.apply(
+          controller,
+          validatedArgs as any
+        );
         promiseHandler(controller, promise, response, undefined, next);
       } catch (err) {
         return next(err);
@@ -870,9 +1018,18 @@ export function RegisterRoutes(app: Router) {
     ...fetchMiddlewares<RequestHandler>(FootballController),
     ...fetchMiddlewares<RequestHandler>(FootballController.prototype.getArea),
 
-    function FootballController_getArea(request: any, response: any, next: any) {
+    function FootballController_getArea(
+      request: any,
+      response: any,
+      next: any
+    ) {
       const args = {
-        areaId: { in: 'path', name: 'areaId', required: true, dataType: 'string' },
+        areaId: {
+          in: 'path',
+          name: 'areaId',
+          required: true,
+          dataType: 'string',
+        },
       };
 
       // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
@@ -883,7 +1040,10 @@ export function RegisterRoutes(app: Router) {
 
         const controller = new FootballController();
 
-        const promise = controller.getArea.apply(controller, validatedArgs as any);
+        const promise = controller.getArea.apply(
+          controller,
+          validatedArgs as any
+        );
         promiseHandler(controller, promise, response, undefined, next);
       } catch (err) {
         return next(err);
@@ -894,11 +1054,22 @@ export function RegisterRoutes(app: Router) {
   app.get(
     '/football/areas/:areaId/competitions',
     ...fetchMiddlewares<RequestHandler>(FootballController),
-    ...fetchMiddlewares<RequestHandler>(FootballController.prototype.getCompetitions),
+    ...fetchMiddlewares<RequestHandler>(
+      FootballController.prototype.getCompetitions
+    ),
 
-    function FootballController_getCompetitions(request: any, response: any, next: any) {
+    function FootballController_getCompetitions(
+      request: any,
+      response: any,
+      next: any
+    ) {
       const args = {
-        areaId: { in: 'path', name: 'areaId', required: true, dataType: 'string' },
+        areaId: {
+          in: 'path',
+          name: 'areaId',
+          required: true,
+          dataType: 'string',
+        },
       };
 
       // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
@@ -909,7 +1080,10 @@ export function RegisterRoutes(app: Router) {
 
         const controller = new FootballController();
 
-        const promise = controller.getCompetitions.apply(controller, validatedArgs as any);
+        const promise = controller.getCompetitions.apply(
+          controller,
+          validatedArgs as any
+        );
         promiseHandler(controller, promise, response, undefined, next);
       } catch (err) {
         return next(err);
@@ -920,12 +1094,28 @@ export function RegisterRoutes(app: Router) {
   app.get(
     '/football/areas/:areaId/competitions/:competitionId',
     ...fetchMiddlewares<RequestHandler>(FootballController),
-    ...fetchMiddlewares<RequestHandler>(FootballController.prototype.getCompetition),
+    ...fetchMiddlewares<RequestHandler>(
+      FootballController.prototype.getCompetition
+    ),
 
-    function FootballController_getCompetition(request: any, response: any, next: any) {
+    function FootballController_getCompetition(
+      request: any,
+      response: any,
+      next: any
+    ) {
       const args = {
-        areaId: { in: 'path', name: 'areaId', required: true, dataType: 'string' },
-        competitionId: { in: 'path', name: 'competitionId', required: true, dataType: 'string' },
+        areaId: {
+          in: 'path',
+          name: 'areaId',
+          required: true,
+          dataType: 'string',
+        },
+        competitionId: {
+          in: 'path',
+          name: 'competitionId',
+          required: true,
+          dataType: 'string',
+        },
       };
 
       // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
@@ -936,7 +1126,10 @@ export function RegisterRoutes(app: Router) {
 
         const controller = new FootballController();
 
-        const promise = controller.getCompetition.apply(controller, validatedArgs as any);
+        const promise = controller.getCompetition.apply(
+          controller,
+          validatedArgs as any
+        );
         promiseHandler(controller, promise, response, undefined, next);
       } catch (err) {
         return next(err);
@@ -947,12 +1140,28 @@ export function RegisterRoutes(app: Router) {
   app.get(
     '/football/areas/:areaId/competitions/:competitionId/standings',
     ...fetchMiddlewares<RequestHandler>(FootballController),
-    ...fetchMiddlewares<RequestHandler>(FootballController.prototype.getStandings),
+    ...fetchMiddlewares<RequestHandler>(
+      FootballController.prototype.getStandings
+    ),
 
-    function FootballController_getStandings(request: any, response: any, next: any) {
+    function FootballController_getStandings(
+      request: any,
+      response: any,
+      next: any
+    ) {
       const args = {
-        areaId: { in: 'path', name: 'areaId', required: true, dataType: 'string' },
-        competitionId: { in: 'path', name: 'competitionId', required: true, dataType: 'string' },
+        areaId: {
+          in: 'path',
+          name: 'areaId',
+          required: true,
+          dataType: 'string',
+        },
+        competitionId: {
+          in: 'path',
+          name: 'competitionId',
+          required: true,
+          dataType: 'string',
+        },
       };
 
       // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
@@ -963,7 +1172,10 @@ export function RegisterRoutes(app: Router) {
 
         const controller = new FootballController();
 
-        const promise = controller.getStandings.apply(controller, validatedArgs as any);
+        const promise = controller.getStandings.apply(
+          controller,
+          validatedArgs as any
+        );
         promiseHandler(controller, promise, response, undefined, next);
       } catch (err) {
         return next(err);
@@ -976,11 +1188,30 @@ export function RegisterRoutes(app: Router) {
     ...fetchMiddlewares<RequestHandler>(FootballController),
     ...fetchMiddlewares<RequestHandler>(FootballController.prototype.getTeam),
 
-    function FootballController_getTeam(request: any, response: any, next: any) {
+    function FootballController_getTeam(
+      request: any,
+      response: any,
+      next: any
+    ) {
       const args = {
-        areaId: { in: 'path', name: 'areaId', required: true, dataType: 'string' },
-        competitionId: { in: 'path', name: 'competitionId', required: true, dataType: 'string' },
-        teamId: { in: 'path', name: 'teamId', required: true, dataType: 'string' },
+        areaId: {
+          in: 'path',
+          name: 'areaId',
+          required: true,
+          dataType: 'string',
+        },
+        competitionId: {
+          in: 'path',
+          name: 'competitionId',
+          required: true,
+          dataType: 'string',
+        },
+        teamId: {
+          in: 'path',
+          name: 'teamId',
+          required: true,
+          dataType: 'string',
+        },
       };
 
       // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
@@ -991,7 +1222,10 @@ export function RegisterRoutes(app: Router) {
 
         const controller = new FootballController();
 
-        const promise = controller.getTeam.apply(controller, validatedArgs as any);
+        const promise = controller.getTeam.apply(
+          controller,
+          validatedArgs as any
+        );
         promiseHandler(controller, promise, response, undefined, next);
       } catch (err) {
         return next(err);
@@ -1002,13 +1236,34 @@ export function RegisterRoutes(app: Router) {
   app.get(
     '/football/areas/:areaId/competitions/:competitionId/standings/:teamId/matches',
     ...fetchMiddlewares<RequestHandler>(FootballController),
-    ...fetchMiddlewares<RequestHandler>(FootballController.prototype.getMatches),
+    ...fetchMiddlewares<RequestHandler>(
+      FootballController.prototype.getMatches
+    ),
 
-    function FootballController_getMatches(request: any, response: any, next: any) {
+    function FootballController_getMatches(
+      request: any,
+      response: any,
+      next: any
+    ) {
       const args = {
-        areaId: { in: 'path', name: 'areaId', required: true, dataType: 'string' },
-        competitionId: { in: 'path', name: 'competitionId', required: true, dataType: 'string' },
-        teamId: { in: 'path', name: 'teamId', required: true, dataType: 'string' },
+        areaId: {
+          in: 'path',
+          name: 'areaId',
+          required: true,
+          dataType: 'string',
+        },
+        competitionId: {
+          in: 'path',
+          name: 'competitionId',
+          required: true,
+          dataType: 'string',
+        },
+        teamId: {
+          in: 'path',
+          name: 'teamId',
+          required: true,
+          dataType: 'string',
+        },
       };
 
       // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
@@ -1019,7 +1274,10 @@ export function RegisterRoutes(app: Router) {
 
         const controller = new FootballController();
 
-        const promise = controller.getMatches.apply(controller, validatedArgs as any);
+        const promise = controller.getMatches.apply(
+          controller,
+          validatedArgs as any
+        );
         promiseHandler(controller, promise, response, undefined, next);
       } catch (err) {
         return next(err);
@@ -1032,9 +1290,18 @@ export function RegisterRoutes(app: Router) {
     ...fetchMiddlewares<RequestHandler>(GoogleController),
     ...fetchMiddlewares<RequestHandler>(GoogleController.prototype.getTrends),
 
-    function GoogleController_getTrends(request: any, response: any, next: any) {
+    function GoogleController_getTrends(
+      request: any,
+      response: any,
+      next: any
+    ) {
       const args = {
-        countryCode: { default: '', in: 'query', name: 'countryCode', dataType: 'string' },
+        countryCode: {
+          default: '',
+          in: 'query',
+          name: 'countryCode',
+          dataType: 'string',
+        },
       };
 
       // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
@@ -1045,7 +1312,10 @@ export function RegisterRoutes(app: Router) {
 
         const controller = new GoogleController();
 
-        const promise = controller.getTrends.apply(controller, validatedArgs as any);
+        const promise = controller.getTrends.apply(
+          controller,
+          validatedArgs as any
+        );
         promiseHandler(controller, promise, response, undefined, next);
       } catch (err) {
         return next(err);
@@ -1071,7 +1341,10 @@ export function RegisterRoutes(app: Router) {
 
         const controller = new GoogleController();
 
-        const promise = controller.getRanks.apply(controller, validatedArgs as any);
+        const promise = controller.getRanks.apply(
+          controller,
+          validatedArgs as any
+        );
         promiseHandler(controller, promise, response, undefined, next);
       } catch (err) {
         return next(err);
@@ -1084,7 +1357,11 @@ export function RegisterRoutes(app: Router) {
     ...fetchMiddlewares<RequestHandler>(HealthController),
     ...fetchMiddlewares<RequestHandler>(HealthController.prototype.getHealth),
 
-    function HealthController_getHealth(request: any, response: any, next: any) {
+    function HealthController_getHealth(
+      request: any,
+      response: any,
+      next: any
+    ) {
       const args = {};
 
       // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
@@ -1095,7 +1372,10 @@ export function RegisterRoutes(app: Router) {
 
         const controller = new HealthController();
 
-        const promise = controller.getHealth.apply(controller, validatedArgs as any);
+        const promise = controller.getHealth.apply(
+          controller,
+          validatedArgs as any
+        );
         promiseHandler(controller, promise, response, undefined, next);
       } catch (err) {
         return next(err);
@@ -1106,9 +1386,15 @@ export function RegisterRoutes(app: Router) {
   app.get(
     '/languages',
     ...fetchMiddlewares<RequestHandler>(LanguagesController),
-    ...fetchMiddlewares<RequestHandler>(LanguagesController.prototype.getLanguages),
+    ...fetchMiddlewares<RequestHandler>(
+      LanguagesController.prototype.getLanguages
+    ),
 
-    function LanguagesController_getLanguages(request: any, response: any, next: any) {
+    function LanguagesController_getLanguages(
+      request: any,
+      response: any,
+      next: any
+    ) {
       const args = {};
 
       // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
@@ -1119,7 +1405,10 @@ export function RegisterRoutes(app: Router) {
 
         const controller = new LanguagesController();
 
-        const promise = controller.getLanguages.apply(controller, validatedArgs as any);
+        const promise = controller.getLanguages.apply(
+          controller,
+          validatedArgs as any
+        );
         promiseHandler(controller, promise, response, undefined, next);
       } catch (err) {
         return next(err);
@@ -1130,9 +1419,15 @@ export function RegisterRoutes(app: Router) {
   app.get(
     '/languages/:code',
     ...fetchMiddlewares<RequestHandler>(LanguagesController),
-    ...fetchMiddlewares<RequestHandler>(LanguagesController.prototype.getLanguage),
+    ...fetchMiddlewares<RequestHandler>(
+      LanguagesController.prototype.getLanguage
+    ),
 
-    function LanguagesController_getLanguage(request: any, response: any, next: any) {
+    function LanguagesController_getLanguage(
+      request: any,
+      response: any,
+      next: any
+    ) {
       const args = {
         code: { in: 'path', name: 'code', required: true, dataType: 'string' },
       };
@@ -1145,7 +1440,10 @@ export function RegisterRoutes(app: Router) {
 
         const controller = new LanguagesController();
 
-        const promise = controller.getLanguage.apply(controller, validatedArgs as any);
+        const promise = controller.getLanguage.apply(
+          controller,
+          validatedArgs as any
+        );
         promiseHandler(controller, promise, response, undefined, next);
       } catch (err) {
         return next(err);
@@ -1158,13 +1456,32 @@ export function RegisterRoutes(app: Router) {
     ...fetchMiddlewares<RequestHandler>(NewsController),
     ...fetchMiddlewares<RequestHandler>(NewsController.prototype.getHeadlines),
 
-    function NewsController_getHeadlines(request: any, response: any, next: any) {
+    function NewsController_getHeadlines(
+      request: any,
+      response: any,
+      next: any
+    ) {
       const args = {
         country: { in: 'query', name: 'country', ref: 'NewsCountry' },
-        category: { default: 'general', in: 'query', name: 'category', ref: 'NewsCategory' },
-        sources: { default: '', in: 'query', name: 'sources', dataType: 'string' },
+        category: {
+          default: 'general',
+          in: 'query',
+          name: 'category',
+          ref: 'NewsCategory',
+        },
+        sources: {
+          default: '',
+          in: 'query',
+          name: 'sources',
+          dataType: 'string',
+        },
         q: { default: '', in: 'query', name: 'q', dataType: 'string' },
-        pageSize: { default: 10, in: 'query', name: 'pageSize', dataType: 'double' },
+        pageSize: {
+          default: 10,
+          in: 'query',
+          name: 'pageSize',
+          dataType: 'double',
+        },
       };
 
       // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
@@ -1175,7 +1492,10 @@ export function RegisterRoutes(app: Router) {
 
         const controller = new NewsController();
 
-        const promise = controller.getHeadlines.apply(controller, validatedArgs as any);
+        const promise = controller.getHeadlines.apply(
+          controller,
+          validatedArgs as any
+        );
         promiseHandler(controller, promise, response, undefined, next);
       } catch (err) {
         return next(err);
@@ -1203,7 +1523,10 @@ export function RegisterRoutes(app: Router) {
 
         const controller = new NewsController();
 
-        const promise = controller.getSources.apply(controller, validatedArgs as any);
+        const promise = controller.getSources.apply(
+          controller,
+          validatedArgs as any
+        );
         promiseHandler(controller, promise, response, undefined, next);
       } catch (err) {
         return next(err);
@@ -1214,9 +1537,15 @@ export function RegisterRoutes(app: Router) {
   app.get(
     '/organizations',
     ...fetchMiddlewares<RequestHandler>(OrganizationsController),
-    ...fetchMiddlewares<RequestHandler>(OrganizationsController.prototype.getOrganizations),
+    ...fetchMiddlewares<RequestHandler>(
+      OrganizationsController.prototype.getOrganizations
+    ),
 
-    function OrganizationsController_getOrganizations(request: any, response: any, next: any) {
+    function OrganizationsController_getOrganizations(
+      request: any,
+      response: any,
+      next: any
+    ) {
       const args = {};
 
       // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
@@ -1227,7 +1556,10 @@ export function RegisterRoutes(app: Router) {
 
         const controller = new OrganizationsController();
 
-        const promise = controller.getOrganizations.apply(controller, validatedArgs as any);
+        const promise = controller.getOrganizations.apply(
+          controller,
+          validatedArgs as any
+        );
         promiseHandler(controller, promise, response, undefined, next);
       } catch (err) {
         return next(err);
@@ -1238,9 +1570,15 @@ export function RegisterRoutes(app: Router) {
   app.get(
     '/organizations/:code',
     ...fetchMiddlewares<RequestHandler>(OrganizationsController),
-    ...fetchMiddlewares<RequestHandler>(OrganizationsController.prototype.getOrganization),
+    ...fetchMiddlewares<RequestHandler>(
+      OrganizationsController.prototype.getOrganization
+    ),
 
-    function OrganizationsController_getOrganization(request: any, response: any, next: any) {
+    function OrganizationsController_getOrganization(
+      request: any,
+      response: any,
+      next: any
+    ) {
       const args = {
         code: { in: 'path', name: 'code', required: true, dataType: 'string' },
       };
@@ -1253,7 +1591,10 @@ export function RegisterRoutes(app: Router) {
 
         const controller = new OrganizationsController();
 
-        const promise = controller.getOrganization.apply(controller, validatedArgs as any);
+        const promise = controller.getOrganization.apply(
+          controller,
+          validatedArgs as any
+        );
         promiseHandler(controller, promise, response, undefined, next);
       } catch (err) {
         return next(err);
@@ -1264,9 +1605,15 @@ export function RegisterRoutes(app: Router) {
   app.get(
     '/passports',
     ...fetchMiddlewares<RequestHandler>(PassportsController),
-    ...fetchMiddlewares<RequestHandler>(PassportsController.prototype.getPassports),
+    ...fetchMiddlewares<RequestHandler>(
+      PassportsController.prototype.getPassports
+    ),
 
-    function PassportsController_getPassports(request: any, response: any, next: any) {
+    function PassportsController_getPassports(
+      request: any,
+      response: any,
+      next: any
+    ) {
       const args = {
         limit: { default: 0, in: 'query', name: 'limit', dataType: 'double' },
       };
@@ -1279,7 +1626,10 @@ export function RegisterRoutes(app: Router) {
 
         const controller = new PassportsController();
 
-        const promise = controller.getPassports.apply(controller, validatedArgs as any);
+        const promise = controller.getPassports.apply(
+          controller,
+          validatedArgs as any
+        );
         promiseHandler(controller, promise, response, undefined, next);
       } catch (err) {
         return next(err);
@@ -1290,9 +1640,15 @@ export function RegisterRoutes(app: Router) {
   app.get(
     '/passports/:code',
     ...fetchMiddlewares<RequestHandler>(PassportsController),
-    ...fetchMiddlewares<RequestHandler>(PassportsController.prototype.getPassport),
+    ...fetchMiddlewares<RequestHandler>(
+      PassportsController.prototype.getPassport
+    ),
 
-    function PassportsController_getPassport(request: any, response: any, next: any) {
+    function PassportsController_getPassport(
+      request: any,
+      response: any,
+      next: any
+    ) {
       const args = {
         code: { in: 'path', name: 'code', required: true, dataType: 'string' },
       };
@@ -1305,7 +1661,10 @@ export function RegisterRoutes(app: Router) {
 
         const controller = new PassportsController();
 
-        const promise = controller.getPassport.apply(controller, validatedArgs as any);
+        const promise = controller.getPassport.apply(
+          controller,
+          validatedArgs as any
+        );
         promiseHandler(controller, promise, response, undefined, next);
       } catch (err) {
         return next(err);
@@ -1316,9 +1675,15 @@ export function RegisterRoutes(app: Router) {
   app.get(
     '/timezones',
     ...fetchMiddlewares<RequestHandler>(TimezonesController),
-    ...fetchMiddlewares<RequestHandler>(TimezonesController.prototype.getTimezones),
+    ...fetchMiddlewares<RequestHandler>(
+      TimezonesController.prototype.getTimezones
+    ),
 
-    function TimezonesController_getTimezones(request: any, response: any, next: any) {
+    function TimezonesController_getTimezones(
+      request: any,
+      response: any,
+      next: any
+    ) {
       const args = {};
 
       // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
@@ -1329,7 +1694,10 @@ export function RegisterRoutes(app: Router) {
 
         const controller = new TimezonesController();
 
-        const promise = controller.getTimezones.apply(controller, validatedArgs as any);
+        const promise = controller.getTimezones.apply(
+          controller,
+          validatedArgs as any
+        );
         promiseHandler(controller, promise, response, undefined, next);
       } catch (err) {
         return next(err);
@@ -1340,9 +1708,15 @@ export function RegisterRoutes(app: Router) {
   app.get(
     '/timezones/:code',
     ...fetchMiddlewares<RequestHandler>(TimezonesController),
-    ...fetchMiddlewares<RequestHandler>(TimezonesController.prototype.getTimezone),
+    ...fetchMiddlewares<RequestHandler>(
+      TimezonesController.prototype.getTimezone
+    ),
 
-    function TimezonesController_getTimezone(request: any, response: any, next: any) {
+    function TimezonesController_getTimezone(
+      request: any,
+      response: any,
+      next: any
+    ) {
       const args = {
         code: { in: 'path', name: 'code', required: true, dataType: 'string' },
       };
@@ -1355,7 +1729,10 @@ export function RegisterRoutes(app: Router) {
 
         const controller = new TimezonesController();
 
-        const promise = controller.getTimezone.apply(controller, validatedArgs as any);
+        const promise = controller.getTimezone.apply(
+          controller,
+          validatedArgs as any
+        );
         promiseHandler(controller, promise, response, undefined, next);
       } catch (err) {
         return next(err);
@@ -1366,12 +1743,28 @@ export function RegisterRoutes(app: Router) {
   app.get(
     '/Weather',
     ...fetchMiddlewares<RequestHandler>(WeatherController),
-    ...fetchMiddlewares<RequestHandler>(WeatherController.prototype.getVideoCategories),
+    ...fetchMiddlewares<RequestHandler>(
+      WeatherController.prototype.getVideoCategories
+    ),
 
-    function WeatherController_getVideoCategories(request: any, response: any, next: any) {
+    function WeatherController_getVideoCategories(
+      request: any,
+      response: any,
+      next: any
+    ) {
       const args = {
-        latitude: { default: 0, in: 'query', name: 'latitude', dataType: 'double' },
-        longitude: { default: 0, in: 'query', name: 'longitude', dataType: 'double' },
+        latitude: {
+          default: 0,
+          in: 'query',
+          name: 'latitude',
+          dataType: 'double',
+        },
+        longitude: {
+          default: 0,
+          in: 'query',
+          name: 'longitude',
+          dataType: 'double',
+        },
       };
 
       // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
@@ -1382,7 +1775,10 @@ export function RegisterRoutes(app: Router) {
 
         const controller = new WeatherController();
 
-        const promise = controller.getVideoCategories.apply(controller, validatedArgs as any);
+        const promise = controller.getVideoCategories.apply(
+          controller,
+          validatedArgs as any
+        );
         promiseHandler(controller, promise, response, undefined, next);
       } catch (err) {
         return next(err);
@@ -1393,11 +1789,22 @@ export function RegisterRoutes(app: Router) {
   app.get(
     '/youtube/categories',
     ...fetchMiddlewares<RequestHandler>(YouTubeController),
-    ...fetchMiddlewares<RequestHandler>(YouTubeController.prototype.getVideoCategories),
+    ...fetchMiddlewares<RequestHandler>(
+      YouTubeController.prototype.getVideoCategories
+    ),
 
-    function YouTubeController_getVideoCategories(request: any, response: any, next: any) {
+    function YouTubeController_getVideoCategories(
+      request: any,
+      response: any,
+      next: any
+    ) {
       const args = {
-        countryCode: { default: 'US', in: 'query', name: 'countryCode', dataType: 'string' },
+        countryCode: {
+          default: 'US',
+          in: 'query',
+          name: 'countryCode',
+          dataType: 'string',
+        },
       };
 
       // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
@@ -1408,7 +1815,10 @@ export function RegisterRoutes(app: Router) {
 
         const controller = new YouTubeController();
 
-        const promise = controller.getVideoCategories.apply(controller, validatedArgs as any);
+        const promise = controller.getVideoCategories.apply(
+          controller,
+          validatedArgs as any
+        );
         promiseHandler(controller, promise, response, undefined, next);
       } catch (err) {
         return next(err);
@@ -1421,11 +1831,30 @@ export function RegisterRoutes(app: Router) {
     ...fetchMiddlewares<RequestHandler>(YouTubeController),
     ...fetchMiddlewares<RequestHandler>(YouTubeController.prototype.getVideos),
 
-    function YouTubeController_getVideos(request: any, response: any, next: any) {
+    function YouTubeController_getVideos(
+      request: any,
+      response: any,
+      next: any
+    ) {
       const args = {
-        countryCode: { default: '', in: 'query', name: 'countryCode', dataType: 'string' },
-        categoryId: { default: '', in: 'query', name: 'categoryId', dataType: 'string' },
-        maxResults: { default: 50, in: 'query', name: 'maxResults', dataType: 'double' },
+        countryCode: {
+          default: '',
+          in: 'query',
+          name: 'countryCode',
+          dataType: 'string',
+        },
+        categoryId: {
+          default: '',
+          in: 'query',
+          name: 'categoryId',
+          dataType: 'string',
+        },
+        maxResults: {
+          default: 50,
+          in: 'query',
+          name: 'maxResults',
+          dataType: 'double',
+        },
       };
 
       // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
@@ -1436,7 +1865,10 @@ export function RegisterRoutes(app: Router) {
 
         const controller = new YouTubeController();
 
-        const promise = controller.getVideos.apply(controller, validatedArgs as any);
+        const promise = controller.getVideos.apply(
+          controller,
+          validatedArgs as any
+        );
         promiseHandler(controller, promise, response, undefined, next);
       } catch (err) {
         return next(err);
@@ -1450,10 +1882,18 @@ export function RegisterRoutes(app: Router) {
   // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
 
   function isController(object: any): object is Controller {
-    return 'getHeaders' in object && 'getStatus' in object && 'setStatus' in object;
+    return (
+      'getHeaders' in object && 'getStatus' in object && 'setStatus' in object
+    );
   }
 
-  function promiseHandler(controllerObj: any, promise: any, response: any, successStatus: any, next: any) {
+  function promiseHandler(
+    controllerObj: any,
+    promise: any,
+    response: any,
+    successStatus: any,
+    next: any
+  ) {
     return Promise.resolve(promise)
       .then((data: any) => {
         let statusCode = successStatus;
@@ -1472,14 +1912,24 @@ export function RegisterRoutes(app: Router) {
 
   // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
 
-  function returnHandler(response: any, statusCode?: number, data?: any, headers: any = {}) {
+  function returnHandler(
+    response: any,
+    statusCode?: number,
+    data?: any,
+    headers: any = {}
+  ) {
     if (response.headersSent) {
       return;
     }
     Object.keys(headers).forEach((name: string) => {
       response.set(name, headers[name]);
     });
-    if (data && typeof data.pipe === 'function' && data.readable && typeof data._read === 'function') {
+    if (
+      data &&
+      typeof data.pipe === 'function' &&
+      data.readable &&
+      typeof data._read === 'function'
+    ) {
       response.status(statusCode || 200);
       data.pipe(response);
     } else if (data !== null && data !== undefined) {
@@ -1491,7 +1941,9 @@ export function RegisterRoutes(app: Router) {
 
   // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
 
-  function responder(response: any): TsoaResponse<HttpStatusCodeLiteral, unknown> {
+  function responder(
+    response: any
+  ): TsoaResponse<HttpStatusCodeLiteral, unknown> {
     return function (status, data, headers) {
       returnHandler(response, status, data, headers);
     };
@@ -1507,42 +1959,90 @@ export function RegisterRoutes(app: Router) {
         case 'request':
           return request;
         case 'query':
-          return validationService.ValidateParam(args[key], request.query[name], name, fieldErrors, undefined, {
-            noImplicitAdditionalProperties: 'throw-on-extras',
-          });
+          return validationService.ValidateParam(
+            args[key],
+            request.query[name],
+            name,
+            fieldErrors,
+            undefined,
+            { noImplicitAdditionalProperties: 'throw-on-extras' }
+          );
         case 'queries':
-          return validationService.ValidateParam(args[key], request.query, name, fieldErrors, undefined, {
-            noImplicitAdditionalProperties: 'throw-on-extras',
-          });
+          return validationService.ValidateParam(
+            args[key],
+            request.query,
+            name,
+            fieldErrors,
+            undefined,
+            { noImplicitAdditionalProperties: 'throw-on-extras' }
+          );
         case 'path':
-          return validationService.ValidateParam(args[key], request.params[name], name, fieldErrors, undefined, {
-            noImplicitAdditionalProperties: 'throw-on-extras',
-          });
+          return validationService.ValidateParam(
+            args[key],
+            request.params[name],
+            name,
+            fieldErrors,
+            undefined,
+            { noImplicitAdditionalProperties: 'throw-on-extras' }
+          );
         case 'header':
-          return validationService.ValidateParam(args[key], request.header(name), name, fieldErrors, undefined, {
-            noImplicitAdditionalProperties: 'throw-on-extras',
-          });
+          return validationService.ValidateParam(
+            args[key],
+            request.header(name),
+            name,
+            fieldErrors,
+            undefined,
+            { noImplicitAdditionalProperties: 'throw-on-extras' }
+          );
         case 'body':
-          return validationService.ValidateParam(args[key], request.body, name, fieldErrors, undefined, {
-            noImplicitAdditionalProperties: 'throw-on-extras',
-          });
+          return validationService.ValidateParam(
+            args[key],
+            request.body,
+            name,
+            fieldErrors,
+            undefined,
+            { noImplicitAdditionalProperties: 'throw-on-extras' }
+          );
         case 'body-prop':
-          return validationService.ValidateParam(args[key], request.body[name], name, fieldErrors, 'body.', {
-            noImplicitAdditionalProperties: 'throw-on-extras',
-          });
+          return validationService.ValidateParam(
+            args[key],
+            request.body[name],
+            name,
+            fieldErrors,
+            'body.',
+            { noImplicitAdditionalProperties: 'throw-on-extras' }
+          );
         case 'formData':
           if (args[key].dataType === 'file') {
-            return validationService.ValidateParam(args[key], request.file, name, fieldErrors, undefined, {
-              noImplicitAdditionalProperties: 'throw-on-extras',
-            });
-          } else if (args[key].dataType === 'array' && args[key].array.dataType === 'file') {
-            return validationService.ValidateParam(args[key], request.files, name, fieldErrors, undefined, {
-              noImplicitAdditionalProperties: 'throw-on-extras',
-            });
+            return validationService.ValidateParam(
+              args[key],
+              request.file,
+              name,
+              fieldErrors,
+              undefined,
+              { noImplicitAdditionalProperties: 'throw-on-extras' }
+            );
+          } else if (
+            args[key].dataType === 'array' &&
+            args[key].array.dataType === 'file'
+          ) {
+            return validationService.ValidateParam(
+              args[key],
+              request.files,
+              name,
+              fieldErrors,
+              undefined,
+              { noImplicitAdditionalProperties: 'throw-on-extras' }
+            );
           } else {
-            return validationService.ValidateParam(args[key], request.body[name], name, fieldErrors, undefined, {
-              noImplicitAdditionalProperties: 'throw-on-extras',
-            });
+            return validationService.ValidateParam(
+              args[key],
+              request.body[name],
+              name,
+              fieldErrors,
+              undefined,
+              { noImplicitAdditionalProperties: 'throw-on-extras' }
+            );
           }
         case 'res':
           return responder(response);

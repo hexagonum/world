@@ -19,7 +19,10 @@ import { FaGithub } from 'react-icons/fa';
 
 export type LayoutProps = { searchSection?: ReactNode; children?: ReactNode };
 
-export const Layout: React.FC<LayoutProps> = ({ searchSection = <></>, children = <></> }) => {
+export const Layout: React.FC<LayoutProps> = ({
+  searchSection = <></>,
+  children = <></>,
+}) => {
   const router = useRouter();
   const { asPath } = router;
 
@@ -32,7 +35,10 @@ export const Layout: React.FC<LayoutProps> = ({ searchSection = <></>, children 
               <div className="px-8 py-4">
                 <div className="flex items-center justify-between">
                   <Text className="uppercase font-semibold">{APP_NAME}</Text>
-                  <Link href="https://github.com/hexagonum/world" target="_blank">
+                  <Link
+                    href="https://github.com/hexagonum/world"
+                    target="_blank"
+                  >
                     <Button colorScheme="teal">
                       <Icon as={FaGithub} />
                     </Button>
@@ -46,14 +52,20 @@ export const Layout: React.FC<LayoutProps> = ({ searchSection = <></>, children 
                   <Accordion allowMultiple>
                     {LINKS.map(({ id, icon, href, name, subpages = [] }) => {
                       const mainActive = asPath === href;
-                      const mainActiveClass = mainActive ? 'bg-teal-600 text-white' : '';
+                      const mainActiveClass = mainActive
+                        ? 'bg-teal-600 text-white'
+                        : '';
                       return (
                         <AccordionItem key={id} border={'unset'}>
                           <div className="flex items-center w-full">
                             <div className="grow">
                               <Link href={href}>
-                                <div className={`flex items-center gap-2 rounded p-2 ${mainActiveClass}`}>
-                                  <div className="rounded bg-white p-2 flex items-center">{icon}</div>
+                                <div
+                                  className={`flex items-center gap-2 rounded p-2 ${mainActiveClass}`}
+                                >
+                                  <div className="rounded bg-white p-2 flex items-center">
+                                    {icon}
+                                  </div>
                                   {name}
                                 </div>
                               </Link>
@@ -70,11 +82,17 @@ export const Layout: React.FC<LayoutProps> = ({ searchSection = <></>, children 
                             <AccordionPanel className="p-0">
                               {subpages.map(({ id, name, href, icon }) => {
                                 const subActive = asPath === href;
-                                const subActiveClass = subActive ? 'bg-teal-600 text-white' : '';
+                                const subActiveClass = subActive
+                                  ? 'bg-teal-600 text-white'
+                                  : '';
                                 return (
                                   <Link key={id} href={href}>
-                                    <div className={`flex items-center gap-2 rounded p-2 ${subActiveClass}`}>
-                                      <div className="rounded bg-white p-2 flex items-center">{icon}</div>
+                                    <div
+                                      className={`flex items-center gap-2 rounded p-2 ${subActiveClass}`}
+                                    >
+                                      <div className="rounded bg-white p-2 flex items-center">
+                                        {icon}
+                                      </div>
                                       {name}
                                     </div>
                                   </Link>

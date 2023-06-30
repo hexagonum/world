@@ -17,7 +17,9 @@ export class GoogleController extends Controller {
   }
 
   @Get('ranks')
-  async getRanks(@Query('limit') limit = 10): Promise<{ rank: number; query: string; count: number }[]> {
+  async getRanks(
+    @Query('limit') limit = 10
+  ): Promise<{ rank: number; query: string; count: number }[]> {
     return this.googleService.getGoogleRanks(limit);
   }
 }

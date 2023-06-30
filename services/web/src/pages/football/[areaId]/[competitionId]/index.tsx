@@ -22,10 +22,21 @@ import { Football, FootballStanding } from '@world/types/football';
 import { NextPage } from 'next';
 import { useRouter } from 'next/router';
 
-const StandingsMain: React.FC<{ areaId: string; competitionId: string }> = ({ areaId, competitionId }) => {
-  const { loading, error, data } = useQuery<{ football: Football }>(FOOTBALL_TEAMS_QUERY, {
-    variables: { filterOptions: { areaId: parseInt(areaId, 10), competitionId: parseInt(competitionId, 10) } },
-  });
+const StandingsMain: React.FC<{ areaId: string; competitionId: string }> = ({
+  areaId,
+  competitionId,
+}) => {
+  const { loading, error, data } = useQuery<{ football: Football }>(
+    FOOTBALL_TEAMS_QUERY,
+    {
+      variables: {
+        filterOptions: {
+          areaId: parseInt(areaId, 10),
+          competitionId: parseInt(competitionId, 10),
+        },
+      },
+    }
+  );
 
   if (loading) {
     return (
@@ -59,7 +70,8 @@ const StandingsMain: React.FC<{ areaId: string; competitionId: string }> = ({ ar
 
   const area = data.football.areas[0] ?? {};
   const competition = data.football.areas[0].competitions[0] ?? {};
-  const standings: FootballStanding[] = data.football.areas[0].competitions[0].standings ?? [];
+  const standings: FootballStanding[] =
+    data.football.areas[0].competitions[0].standings ?? [];
 
   return (
     <div className="flex flex-col gap-4 md:gap-8">
@@ -68,10 +80,14 @@ const StandingsMain: React.FC<{ areaId: string; competitionId: string }> = ({ ar
           <BreadcrumbLink href="/football">Football</BreadcrumbLink>
         </BreadcrumbItem>
         <BreadcrumbItem>
-          <BreadcrumbLink href={`/football/${area.id}`}>{area.name}</BreadcrumbLink>
+          <BreadcrumbLink href={`/football/${area.id}`}>
+            {area.name}
+          </BreadcrumbLink>
         </BreadcrumbItem>
         <BreadcrumbItem isCurrentPage>
-          <BreadcrumbLink href={`/football/${area.id}/${competition.id}`}>{competition.name}</BreadcrumbLink>
+          <BreadcrumbLink href={`/football/${area.id}/${competition.id}`}>
+            {competition.name}
+          </BreadcrumbLink>
         </BreadcrumbItem>
       </Breadcrumb>
       <TableContainer className="border rounded shadow">
@@ -91,12 +107,25 @@ const StandingsMain: React.FC<{ areaId: string; competitionId: string }> = ({ ar
           </Thead>
           <Tbody>
             {standings.map(
-              ({ position, id, name, won, draw, lost, points, goalsFor, goalsAgainst, goalDifference }) => {
+              ({
+                position,
+                id,
+                name,
+                won,
+                draw,
+                lost,
+                points,
+                goalsFor,
+                goalsAgainst,
+                goalDifference,
+              }) => {
                 return (
                   <Tr key={id}>
                     <Td>{position}</Td>
                     <Td>
-                      <Link href={`/football/${areaId}/${competitionId}/${id}`}>{name}</Link>
+                      <Link href={`/football/${areaId}/${competitionId}/${id}`}>
+                        {name}
+                      </Link>
                     </Td>
                     <Td isNumeric>{won}</Td>
                     <Td isNumeric>{draw}</Td>
@@ -128,7 +157,11 @@ const StandingsPage: NextPage = () => {
     <Layout>
       <Container>
         <div className="p-8">
-          {areaId && competitionId ? <StandingsMain areaId={areaId} competitionId={competitionId} /> : <></>}
+          {areaId && competitionId ? (
+            <StandingsMain areaId={areaId} competitionId={competitionId} />
+          ) : (
+            <></>
+          )}
         </div>
       </Container>
     </Layout>

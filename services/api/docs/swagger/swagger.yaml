@@ -8,9 +8,18 @@ components:
     {
       GetResult_any.any.any_: { properties: {}, type: object },
       runtime.Types.DefaultSelection_CountryPayload_:
-        { allOf: [{ $ref: '#/components/schemas/GetResult_any.any.any_' }, { properties: {}, type: object }] },
+        {
+          allOf:
+            [
+              { $ref: '#/components/schemas/GetResult_any.any.any_' },
+              { properties: {}, type: object },
+            ],
+        },
       Country:
-        { $ref: '#/components/schemas/runtime.Types.DefaultSelection_CountryPayload_', description: 'Model Country' },
+        {
+          $ref: '#/components/schemas/runtime.Types.DefaultSelection_CountryPayload_',
+          description: 'Model Country',
+        },
       Coin:
         {
           properties:
@@ -53,17 +62,32 @@ components:
             ],
           type: object,
         },
-      TimePeriod: { type: string, enum: [1h, 3h, 12h, 24h, 7d, 30d, 3m, 1y, 3y, 5y] },
+      TimePeriod:
+        { type: string, enum: [1h, 3h, 12h, 24h, 7d, 30d, 3m, 1y, 3y, 5y] },
       Tier: { type: string, enum: ['1', '2', '3'] },
-      OrderBy: { type: string, enum: [price, marketCap, 24hVolume, change, listedAt] },
+      OrderBy:
+        { type: string, enum: [price, marketCap, 24hVolume, change, listedAt] },
       runtime.Types.DefaultSelection_CurrencyPayload_:
-        { allOf: [{ $ref: '#/components/schemas/GetResult_any.any.any_' }, { properties: {}, type: object }] },
+        {
+          allOf:
+            [
+              { $ref: '#/components/schemas/GetResult_any.any.any_' },
+              { properties: {}, type: object },
+            ],
+        },
       Currency:
-        { $ref: '#/components/schemas/runtime.Types.DefaultSelection_CurrencyPayload_', description: 'Model Currency' },
+        {
+          $ref: '#/components/schemas/runtime.Types.DefaultSelection_CurrencyPayload_',
+          description: 'Model Currency',
+        },
       ForexHistory:
         {
           properties:
-            { to: { type: number, format: double }, from: { type: number, format: double }, date: { type: string } },
+            {
+              to: { type: number, format: double },
+              from: { type: number, format: double },
+              date: { type: string },
+            },
           required: [to, from, date],
           type: object,
         },
@@ -95,7 +119,18 @@ components:
               id: { type: number, format: double },
               area: { $ref: '#/components/schemas/Area' },
             },
-          required: [lastUpdated, numberOfAvailableSeasons, plan, emblem, type, code, name, id, area],
+          required:
+            [
+              lastUpdated,
+              numberOfAvailableSeasons,
+              plan,
+              emblem,
+              type,
+              code,
+              name,
+              id,
+              area,
+            ],
           type: object,
         },
       Team:
@@ -128,14 +163,30 @@ components:
               team: { $ref: '#/components/schemas/Team' },
             },
           required:
-            [goalDifference, goalsAgainst, goalsFor, points, lost, draw, won, form, playedGames, position, team],
+            [
+              goalDifference,
+              goalsAgainst,
+              goalsFor,
+              points,
+              lost,
+              draw,
+              won,
+              form,
+              playedGames,
+              position,
+              team,
+            ],
           type: object,
         },
       Standing:
         {
           properties:
             {
-              table: { items: { $ref: '#/components/schemas/Position' }, type: array },
+              table:
+                {
+                  items: { $ref: '#/components/schemas/Position' },
+                  type: array,
+                },
               type: { type: string, enum: [TOTAL, HOME, AWAY] },
               stage: { type: string, enum: [REGULAR_SEASON], nullable: false },
             },
@@ -160,18 +211,25 @@ components:
                       halfTime:
                         {
                           properties:
-                            { away: { type: number, format: double }, home: { type: number, format: double } },
+                            {
+                              away: { type: number, format: double },
+                              home: { type: number, format: double },
+                            },
                           required: [away, home],
                           type: object,
                         },
                       fullTime:
                         {
                           properties:
-                            { away: { type: number, format: double }, home: { type: number, format: double } },
+                            {
+                              away: { type: number, format: double },
+                              home: { type: number, format: double },
+                            },
                           required: [away, home],
                           type: object,
                         },
-                      duration: { type: string, enum: [REGULAR], nullable: false },
+                      duration:
+                        { type: string, enum: [REGULAR], nullable: false },
                       winner: { type: string, enum: [AWAY_TEAM, HOME_TEAM] },
                     },
                   required: [halfTime, fullTime, duration, winner],
@@ -181,14 +239,41 @@ components:
               homeTeam: { $ref: '#/components/schemas/Team' },
               competition: { $ref: '#/components/schemas/Competition' },
             },
-          required: [lastUpdated, group, stage, matchday, status, utcDate, id, score, awayTeam, homeTeam, competition],
+          required:
+            [
+              lastUpdated,
+              group,
+              stage,
+              matchday,
+              status,
+              utcDate,
+              id,
+              score,
+              awayTeam,
+              homeTeam,
+              competition,
+            ],
           type: object,
         },
-      HealthResponse: { properties: { status: { type: string } }, required: [status], type: object },
+      HealthResponse:
+        {
+          properties: { status: { type: string } },
+          required: [status],
+          type: object,
+        },
       runtime.Types.DefaultSelection_LanguagePayload_:
-        { allOf: [{ $ref: '#/components/schemas/GetResult_any.any.any_' }, { properties: {}, type: object }] },
+        {
+          allOf:
+            [
+              { $ref: '#/components/schemas/GetResult_any.any.any_' },
+              { properties: {}, type: object },
+            ],
+        },
       Language:
-        { $ref: '#/components/schemas/runtime.Types.DefaultSelection_LanguagePayload_', description: 'Model Language' },
+        {
+          $ref: '#/components/schemas/runtime.Types.DefaultSelection_LanguagePayload_',
+          description: 'Model Language',
+        },
       Article:
         {
           properties:
@@ -201,9 +286,23 @@ components:
               title: { type: string },
               author: { type: string },
               source:
-                { properties: { name: { type: string }, id: { type: string } }, required: [name, id], type: object },
+                {
+                  properties: { name: { type: string }, id: { type: string } },
+                  required: [name, id],
+                  type: object,
+                },
             },
-          required: [content, publishedAt, urlToImage, url, description, title, author, source],
+          required:
+            [
+              content,
+              publishedAt,
+              urlToImage,
+              url,
+              description,
+              title,
+              author,
+              source,
+            ],
           type: object,
         },
       NewsCountry:
@@ -267,8 +366,25 @@ components:
               za,
             ],
         },
-      NewsCategory: { type: string, enum: [business, entertainment, general, health, science, sports, technology] },
-      NewsLanguage: { type: string, enum: [ar, de, en, es, fr, he, it, nl, no, pt, ru, sv, ud, zh] },
+      NewsCategory:
+        {
+          type: string,
+          enum:
+            [
+              business,
+              entertainment,
+              general,
+              health,
+              science,
+              sports,
+              technology,
+            ],
+        },
+      NewsLanguage:
+        {
+          type: string,
+          enum: [ar, de, en, es, fr, he, it, nl, no, pt, ru, sv, ud, zh],
+        },
       Source:
         {
           properties:
@@ -285,30 +401,65 @@ components:
           type: object,
         },
       runtime.Types.DefaultSelection_OrganizationPayload_:
-        { allOf: [{ $ref: '#/components/schemas/GetResult_any.any.any_' }, { properties: {}, type: object }] },
+        {
+          allOf:
+            [
+              { $ref: '#/components/schemas/GetResult_any.any.any_' },
+              { properties: {}, type: object },
+            ],
+        },
       Organization:
         {
           $ref: '#/components/schemas/runtime.Types.DefaultSelection_OrganizationPayload_',
           description: 'Model Organization',
         },
       runtime.Types.DefaultSelection_PassportPayload_:
-        { allOf: [{ $ref: '#/components/schemas/GetResult_any.any.any_' }, { properties: {}, type: object }] },
+        {
+          allOf:
+            [
+              { $ref: '#/components/schemas/GetResult_any.any.any_' },
+              { properties: {}, type: object },
+            ],
+        },
       Passport:
-        { $ref: '#/components/schemas/runtime.Types.DefaultSelection_PassportPayload_', description: 'Model Passport' },
+        {
+          $ref: '#/components/schemas/runtime.Types.DefaultSelection_PassportPayload_',
+          description: 'Model Passport',
+        },
       runtime.Types.DefaultSelection_PassportRequirementPayload_:
-        { allOf: [{ $ref: '#/components/schemas/GetResult_any.any.any_' }, { properties: {}, type: object }] },
+        {
+          allOf:
+            [
+              { $ref: '#/components/schemas/GetResult_any.any.any_' },
+              { properties: {}, type: object },
+            ],
+        },
       PassportRequirement:
         {
           $ref: '#/components/schemas/runtime.Types.DefaultSelection_PassportRequirementPayload_',
           description: 'Model PassportRequirement',
         },
       runtime.Types.DefaultSelection_TimezonePayload_:
-        { allOf: [{ $ref: '#/components/schemas/GetResult_any.any.any_' }, { properties: {}, type: object }] },
+        {
+          allOf:
+            [
+              { $ref: '#/components/schemas/GetResult_any.any.any_' },
+              { properties: {}, type: object },
+            ],
+        },
       Timezone:
-        { $ref: '#/components/schemas/runtime.Types.DefaultSelection_TimezonePayload_', description: 'Model Timezone' },
+        {
+          $ref: '#/components/schemas/runtime.Types.DefaultSelection_TimezonePayload_',
+          description: 'Model Timezone',
+        },
       YouTubeCategory:
         {
-          properties: { channelId: { type: string }, title: { type: string }, id: { type: string } },
+          properties:
+            {
+              channelId: { type: string },
+              title: { type: string },
+              id: { type: string },
+            },
           required: [channelId, title, id],
           type: object,
         },
@@ -347,7 +498,8 @@ components:
               title: { type: string },
               id: { type: string },
             },
-          required: [thumbnails, channelTitle, channelId, description, title, id],
+          required:
+            [thumbnails, channelTitle, channelId, description, title, id],
           type: object,
         },
     }
@@ -387,15 +539,22 @@ paths:
                                               {
                                                 allOf:
                                                   [
-                                                    { $ref: '#/components/schemas/GetResult_any.any.any_' },
-                                                    { properties: {}, type: object },
+                                                    {
+                                                      $ref: '#/components/schemas/GetResult_any.any.any_',
+                                                    },
+                                                    {
+                                                      properties: {},
+                                                      type: object,
+                                                    },
                                                   ],
                                               },
                                           },
                                         required: [country],
                                         type: object,
                                       },
-                                      { $ref: '#/components/schemas/GetResult_any.any.any_' },
+                                      {
+                                        $ref: '#/components/schemas/GetResult_any.any.any_',
+                                      },
                                       { properties: {}, type: object },
                                     ],
                                 },
@@ -407,7 +566,15 @@ paths:
             },
           tags: [Cities],
           security: [],
-          parameters: [{ in: query, name: countryCode, required: false, schema: { default: '', type: string } }],
+          parameters:
+            [
+              {
+                in: query,
+                name: countryCode,
+                required: false,
+                schema: { default: '', type: string },
+              },
+            ],
         },
     }
   /countries:
@@ -430,21 +597,48 @@ paths:
                                 {
                                   properties:
                                     {
-                                      updatedAt: { type: string, format: date-time },
-                                      createdAt: { type: string, format: date-time },
-                                      timezones: { items: { type: string }, type: array },
+                                      updatedAt:
+                                        { type: string, format: date-time },
+                                      createdAt:
+                                        { type: string, format: date-time },
+                                      timezones:
+                                        {
+                                          items: { type: string },
+                                          type: array,
+                                        },
                                       googleMaps: { type: string },
                                       density: { type: number, format: double },
-                                      population: { type: number, format: double },
+                                      population:
+                                        { type: number, format: double },
                                       area: { type: number, format: double },
                                       flagSVG: { type: string },
                                       flagPNG: { type: string },
                                       flag: { type: string },
-                                      borders: { items: { type: string }, type: array },
-                                      continents: { items: { type: string }, type: array },
-                                      alternativeSpellings: { items: { type: string }, type: array },
-                                      capital: { items: { type: string }, type: array },
-                                      topLevelDomains: { items: { type: string }, type: array },
+                                      borders:
+                                        {
+                                          items: { type: string },
+                                          type: array,
+                                        },
+                                      continents:
+                                        {
+                                          items: { type: string },
+                                          type: array,
+                                        },
+                                      alternativeSpellings:
+                                        {
+                                          items: { type: string },
+                                          type: array,
+                                        },
+                                      capital:
+                                        {
+                                          items: { type: string },
+                                          type: array,
+                                        },
+                                      topLevelDomains:
+                                        {
+                                          items: { type: string },
+                                          type: array,
+                                        },
                                       startOfWeek: { type: string },
                                       unMember: { type: boolean },
                                       independent: { type: boolean },
@@ -457,8 +651,10 @@ paths:
                                       officialName: { type: string },
                                       commonName: { type: string },
                                       code: { type: string },
-                                      longitude: { type: number, format: double },
-                                      latitude: { type: number, format: double },
+                                      longitude:
+                                        { type: number, format: double },
+                                      latitude:
+                                        { type: number, format: double },
                                       subregion: { type: string },
                                       region: { type: string },
                                       cities:
@@ -467,26 +663,54 @@ paths:
                                             {
                                               properties:
                                                 {
-                                                  timezone: { type: number, format: double },
-                                                  longitude: { type: number, format: double },
-                                                  latitude: { type: number, format: double },
+                                                  timezone:
+                                                    {
+                                                      type: number,
+                                                      format: double,
+                                                    },
+                                                  longitude:
+                                                    {
+                                                      type: number,
+                                                      format: double,
+                                                    },
+                                                  latitude:
+                                                    {
+                                                      type: number,
+                                                      format: double,
+                                                    },
                                                   city: { type: string },
                                                   state: { type: string },
                                                 },
-                                              required: [timezone, longitude, latitude, city, state],
+                                              required:
+                                                [
+                                                  timezone,
+                                                  longitude,
+                                                  latitude,
+                                                  city,
+                                                  state,
+                                                ],
                                               type: object,
                                             },
                                           type: array,
                                         },
-                                      googleTrends: { items: { type: string }, type: array },
+                                      googleTrends:
+                                        {
+                                          items: { type: string },
+                                          type: array,
+                                        },
                                       organizations:
                                         {
                                           items:
                                             {
                                               allOf:
                                                 [
-                                                  { $ref: '#/components/schemas/GetResult_any.any.any_' },
-                                                  { properties: {}, type: object },
+                                                  {
+                                                    $ref: '#/components/schemas/GetResult_any.any.any_',
+                                                  },
+                                                  {
+                                                    properties: {},
+                                                    type: object,
+                                                  },
                                                 ],
                                             },
                                           type: array,
@@ -497,8 +721,13 @@ paths:
                                             {
                                               allOf:
                                                 [
-                                                  { $ref: '#/components/schemas/GetResult_any.any.any_' },
-                                                  { properties: {}, type: object },
+                                                  {
+                                                    $ref: '#/components/schemas/GetResult_any.any.any_',
+                                                  },
+                                                  {
+                                                    properties: {},
+                                                    type: object,
+                                                  },
                                                 ],
                                             },
                                           type: array,
@@ -509,8 +738,13 @@ paths:
                                             {
                                               allOf:
                                                 [
-                                                  { $ref: '#/components/schemas/GetResult_any.any.any_' },
-                                                  { properties: {}, type: object },
+                                                  {
+                                                    $ref: '#/components/schemas/GetResult_any.any.any_',
+                                                  },
+                                                  {
+                                                    properties: {},
+                                                    type: object,
+                                                  },
                                                 ],
                                             },
                                           type: array,
@@ -567,8 +801,18 @@ paths:
           security: [],
           parameters:
             [
-              { in: query, name: codes, required: false, schema: { default: '', type: string } },
-              { in: query, name: timezone, required: false, schema: { default: '', type: string } },
+              {
+                in: query,
+                name: codes,
+                required: false,
+                schema: { default: '', type: string },
+              },
+              {
+                in: query,
+                name: timezone,
+                required: false,
+                schema: { default: '', type: string },
+              },
             ],
         },
     }
@@ -582,12 +826,24 @@ paths:
               '200':
                 {
                   description: Ok,
-                  content: { application/json: { schema: { $ref: '#/components/schemas/Country' } } },
+                  content:
+                    {
+                      application/json:
+                        { schema: { $ref: '#/components/schemas/Country' } },
+                    },
                 },
             },
           tags: [Countries],
           security: [],
-          parameters: [{ in: path, name: code, required: true, schema: { type: string } }],
+          parameters:
+            [
+              {
+                in: path,
+                name: code,
+                required: true,
+                schema: { type: string },
+              },
+            ],
         },
     }
   /crypto/coins:
@@ -601,17 +857,46 @@ paths:
                 {
                   description: Ok,
                   content:
-                    { application/json: { schema: { items: { $ref: '#/components/schemas/Coin' }, type: array } } },
+                    {
+                      application/json:
+                        {
+                          schema:
+                            {
+                              items: { $ref: '#/components/schemas/Coin' },
+                              type: array,
+                            },
+                        },
+                    },
                 },
             },
           tags: [Crypto],
           security: [],
           parameters:
             [
-              { in: query, name: timePeriod, required: false, schema: { $ref: '#/components/schemas/TimePeriod' } },
-              { in: query, name: tier, required: false, schema: { $ref: '#/components/schemas/Tier' } },
-              { in: query, name: orderBy, required: false, schema: { $ref: '#/components/schemas/OrderBy' } },
-              { in: query, name: limit, required: false, schema: { default: 500, format: double, type: number } },
+              {
+                in: query,
+                name: timePeriod,
+                required: false,
+                schema: { $ref: '#/components/schemas/TimePeriod' },
+              },
+              {
+                in: query,
+                name: tier,
+                required: false,
+                schema: { $ref: '#/components/schemas/Tier' },
+              },
+              {
+                in: query,
+                name: orderBy,
+                required: false,
+                schema: { $ref: '#/components/schemas/OrderBy' },
+              },
+              {
+                in: query,
+                name: limit,
+                required: false,
+                schema: { default: 500, format: double, type: number },
+              },
             ],
         },
     }
@@ -623,11 +908,19 @@ paths:
           responses:
             {
               '200':
-                { description: Ok, content: { application/json: { schema: { $ref: '#/components/schemas/Coin' } } } },
+                {
+                  description: Ok,
+                  content:
+                    {
+                      application/json:
+                        { schema: { $ref: '#/components/schemas/Coin' } },
+                    },
+                },
             },
           tags: [Crypto],
           security: [],
-          parameters: [{ in: path, name: id, required: true, schema: { type: string } }],
+          parameters:
+            [{ in: path, name: id, required: true, schema: { type: string } }],
         },
     }
   /currencies:
@@ -641,7 +934,16 @@ paths:
                 {
                   description: Ok,
                   content:
-                    { application/json: { schema: { items: { $ref: '#/components/schemas/Currency' }, type: array } } },
+                    {
+                      application/json:
+                        {
+                          schema:
+                            {
+                              items: { $ref: '#/components/schemas/Currency' },
+                              type: array,
+                            },
+                        },
+                    },
                 },
             },
           tags: [Currencies],
@@ -667,7 +969,11 @@ paths:
                             {
                               items:
                                 {
-                                  properties: { rate: { type: number, format: double }, code: { type: string } },
+                                  properties:
+                                    {
+                                      rate: { type: number, format: double },
+                                      code: { type: string },
+                                    },
                                   required: [rate, code],
                                   type: object,
                                 },
@@ -681,9 +987,24 @@ paths:
           security: [],
           parameters:
             [
-              { in: query, name: amount, required: false, schema: { default: 1, format: double, type: number } },
-              { in: query, name: base, required: false, schema: { default: EUR, type: string } },
-              { in: query, name: to, required: false, schema: { default: '', type: string } },
+              {
+                in: query,
+                name: amount,
+                required: false,
+                schema: { default: 1, format: double, type: number },
+              },
+              {
+                in: query,
+                name: base,
+                required: false,
+                schema: { default: EUR, type: string },
+              },
+              {
+                in: query,
+                name: to,
+                required: false,
+                schema: { default: '', type: string },
+              },
             ],
         },
     }
@@ -700,7 +1021,14 @@ paths:
                   content:
                     {
                       application/json:
-                        { schema: { items: { $ref: '#/components/schemas/ForexHistory' }, type: array } },
+                        {
+                          schema:
+                            {
+                              items:
+                                { $ref: '#/components/schemas/ForexHistory' },
+                              type: array,
+                            },
+                        },
                     },
                 },
             },
@@ -708,10 +1036,30 @@ paths:
           security: [],
           parameters:
             [
-              { in: query, name: amount, required: false, schema: { default: 1, format: double, type: number } },
-              { in: query, name: days, required: false, schema: { default: 7, format: double, type: number } },
-              { in: query, name: from, required: false, schema: { default: EUR, type: string } },
-              { in: query, name: to, required: false, schema: { default: USD, type: string } },
+              {
+                in: query,
+                name: amount,
+                required: false,
+                schema: { default: 1, format: double, type: number },
+              },
+              {
+                in: query,
+                name: days,
+                required: false,
+                schema: { default: 7, format: double, type: number },
+              },
+              {
+                in: query,
+                name: from,
+                required: false,
+                schema: { default: EUR, type: string },
+              },
+              {
+                in: query,
+                name: to,
+                required: false,
+                schema: { default: USD, type: string },
+              },
             ],
         },
     }
@@ -725,12 +1073,24 @@ paths:
               '200':
                 {
                   description: Ok,
-                  content: { application/json: { schema: { $ref: '#/components/schemas/Currency' } } },
+                  content:
+                    {
+                      application/json:
+                        { schema: { $ref: '#/components/schemas/Currency' } },
+                    },
                 },
             },
           tags: [Currencies],
           security: [],
-          parameters: [{ in: path, name: code, required: true, schema: { type: string } }],
+          parameters:
+            [
+              {
+                in: path,
+                name: code,
+                required: true,
+                schema: { type: string },
+              },
+            ],
         },
     }
   /football/areas:
@@ -744,7 +1104,16 @@ paths:
                 {
                   description: Ok,
                   content:
-                    { application/json: { schema: { items: { $ref: '#/components/schemas/Area' }, type: array } } },
+                    {
+                      application/json:
+                        {
+                          schema:
+                            {
+                              items: { $ref: '#/components/schemas/Area' },
+                              type: array,
+                            },
+                        },
+                    },
                 },
             },
           tags: [Football],
@@ -760,11 +1129,26 @@ paths:
           responses:
             {
               '200':
-                { description: Ok, content: { application/json: { schema: { $ref: '#/components/schemas/Area' } } } },
+                {
+                  description: Ok,
+                  content:
+                    {
+                      application/json:
+                        { schema: { $ref: '#/components/schemas/Area' } },
+                    },
+                },
             },
           tags: [Football],
           security: [],
-          parameters: [{ in: path, name: areaId, required: true, schema: { type: string } }],
+          parameters:
+            [
+              {
+                in: path,
+                name: areaId,
+                required: true,
+                schema: { type: string },
+              },
+            ],
         },
     }
   '/football/areas/{areaId}/competitions':
@@ -780,13 +1164,28 @@ paths:
                   content:
                     {
                       application/json:
-                        { schema: { items: { $ref: '#/components/schemas/Competition' }, type: array } },
+                        {
+                          schema:
+                            {
+                              items:
+                                { $ref: '#/components/schemas/Competition' },
+                              type: array,
+                            },
+                        },
                     },
                 },
             },
           tags: [Football],
           security: [],
-          parameters: [{ in: path, name: areaId, required: true, schema: { type: string } }],
+          parameters:
+            [
+              {
+                in: path,
+                name: areaId,
+                required: true,
+                schema: { type: string },
+              },
+            ],
         },
     }
   '/football/areas/{areaId}/competitions/{competitionId}':
@@ -799,15 +1198,31 @@ paths:
               '200':
                 {
                   description: Ok,
-                  content: { application/json: { schema: { $ref: '#/components/schemas/Competition' } } },
+                  content:
+                    {
+                      application/json:
+                        {
+                          schema: { $ref: '#/components/schemas/Competition' },
+                        },
+                    },
                 },
             },
           tags: [Football],
           security: [],
           parameters:
             [
-              { in: path, name: areaId, required: true, schema: { type: string } },
-              { in: path, name: competitionId, required: true, schema: { type: string } },
+              {
+                in: path,
+                name: areaId,
+                required: true,
+                schema: { type: string },
+              },
+              {
+                in: path,
+                name: competitionId,
+                required: true,
+                schema: { type: string },
+              },
             ],
         },
     }
@@ -829,27 +1244,41 @@ paths:
                             {
                               anyOf:
                                 [
-                                  { items: { $ref: '#/components/schemas/Standing' }, type: array },
+                                  {
+                                    items:
+                                      { $ref: '#/components/schemas/Standing' },
+                                    type: array,
+                                  },
                                   {
                                     items:
                                       {
                                         properties:
                                           {
-                                            goalDifference: { type: number, format: double },
-                                            goalsAgainst: { type: number, format: double },
-                                            goalsFor: { type: number, format: double },
-                                            points: { type: number, format: double },
-                                            lost: { type: number, format: double },
-                                            draw: { type: number, format: double },
-                                            won: { type: number, format: double },
+                                            goalDifference:
+                                              { type: number, format: double },
+                                            goalsAgainst:
+                                              { type: number, format: double },
+                                            goalsFor:
+                                              { type: number, format: double },
+                                            points:
+                                              { type: number, format: double },
+                                            lost:
+                                              { type: number, format: double },
+                                            draw:
+                                              { type: number, format: double },
+                                            won:
+                                              { type: number, format: double },
                                             form: { type: string },
-                                            playedGames: { type: number, format: double },
-                                            position: { type: number, format: double },
+                                            playedGames:
+                                              { type: number, format: double },
+                                            position:
+                                              { type: number, format: double },
                                             crest: { type: string },
                                             tla: { type: string },
                                             shortName: { type: string },
                                             name: { type: string },
-                                            id: { type: number, format: double },
+                                            id:
+                                              { type: number, format: double },
                                             competitionId: { type: string },
                                             areaId: { type: string },
                                           },
@@ -887,8 +1316,18 @@ paths:
           security: [],
           parameters:
             [
-              { in: path, name: areaId, required: true, schema: { type: string } },
-              { in: path, name: competitionId, required: true, schema: { type: string } },
+              {
+                in: path,
+                name: areaId,
+                required: true,
+                schema: { type: string },
+              },
+              {
+                in: path,
+                name: competitionId,
+                required: true,
+                schema: { type: string },
+              },
             ],
         },
     }
@@ -900,15 +1339,37 @@ paths:
           responses:
             {
               '200':
-                { description: Ok, content: { application/json: { schema: { $ref: '#/components/schemas/Team' } } } },
+                {
+                  description: Ok,
+                  content:
+                    {
+                      application/json:
+                        { schema: { $ref: '#/components/schemas/Team' } },
+                    },
+                },
             },
           tags: [Football],
           security: [],
           parameters:
             [
-              { in: path, name: areaId, required: true, schema: { type: string } },
-              { in: path, name: competitionId, required: true, schema: { type: string } },
-              { in: path, name: teamId, required: true, schema: { type: string } },
+              {
+                in: path,
+                name: areaId,
+                required: true,
+                schema: { type: string },
+              },
+              {
+                in: path,
+                name: competitionId,
+                required: true,
+                schema: { type: string },
+              },
+              {
+                in: path,
+                name: teamId,
+                required: true,
+                schema: { type: string },
+              },
             ],
         },
     }
@@ -923,16 +1384,40 @@ paths:
                 {
                   description: Ok,
                   content:
-                    { application/json: { schema: { items: { $ref: '#/components/schemas/Match' }, type: array } } },
+                    {
+                      application/json:
+                        {
+                          schema:
+                            {
+                              items: { $ref: '#/components/schemas/Match' },
+                              type: array,
+                            },
+                        },
+                    },
                 },
             },
           tags: [Football],
           security: [],
           parameters:
             [
-              { in: path, name: areaId, required: true, schema: { type: string } },
-              { in: path, name: competitionId, required: true, schema: { type: string } },
-              { in: path, name: teamId, required: true, schema: { type: string } },
+              {
+                in: path,
+                name: areaId,
+                required: true,
+                schema: { type: string },
+              },
+              {
+                in: path,
+                name: competitionId,
+                required: true,
+                schema: { type: string },
+              },
+              {
+                in: path,
+                name: teamId,
+                required: true,
+                schema: { type: string },
+              },
             ],
         },
     }
@@ -956,7 +1441,9 @@ paths:
                                 {
                                   allOf:
                                     [
-                                      { $ref: '#/components/schemas/GetResult_any.any.any_' },
+                                      {
+                                        $ref: '#/components/schemas/GetResult_any.any.any_',
+                                      },
                                       { properties: {}, type: object },
                                     ],
                                 },
@@ -968,7 +1455,15 @@ paths:
             },
           tags: [Google],
           security: [],
-          parameters: [{ in: query, name: countryCode, required: false, schema: { default: '', type: string } }],
+          parameters:
+            [
+              {
+                in: query,
+                name: countryCode,
+                required: false,
+                schema: { default: '', type: string },
+              },
+            ],
         },
     }
   /google/ranks:
@@ -1007,7 +1502,14 @@ paths:
           tags: [Google],
           security: [],
           parameters:
-            [{ in: query, name: limit, required: false, schema: { default: 10, format: double, type: number } }],
+            [
+              {
+                in: query,
+                name: limit,
+                required: false,
+                schema: { default: 10, format: double, type: number },
+              },
+            ],
         },
     }
   /health:
@@ -1020,7 +1522,14 @@ paths:
               '200':
                 {
                   description: Ok,
-                  content: { application/json: { schema: { $ref: '#/components/schemas/HealthResponse' } } },
+                  content:
+                    {
+                      application/json:
+                        {
+                          schema:
+                            { $ref: '#/components/schemas/HealthResponse' },
+                        },
+                    },
                 },
             },
           tags: [Health],
@@ -1039,7 +1548,16 @@ paths:
                 {
                   description: Ok,
                   content:
-                    { application/json: { schema: { items: { $ref: '#/components/schemas/Language' }, type: array } } },
+                    {
+                      application/json:
+                        {
+                          schema:
+                            {
+                              items: { $ref: '#/components/schemas/Language' },
+                              type: array,
+                            },
+                        },
+                    },
                 },
             },
           tags: [Languages],
@@ -1057,12 +1575,24 @@ paths:
               '200':
                 {
                   description: Ok,
-                  content: { application/json: { schema: { $ref: '#/components/schemas/Language' } } },
+                  content:
+                    {
+                      application/json:
+                        { schema: { $ref: '#/components/schemas/Language' } },
+                    },
                 },
             },
           tags: [Languages],
           security: [],
-          parameters: [{ in: path, name: code, required: true, schema: { type: string } }],
+          parameters:
+            [
+              {
+                in: path,
+                name: code,
+                required: true,
+                schema: { type: string },
+              },
+            ],
         },
     }
   /news/headlines:
@@ -1076,18 +1606,52 @@ paths:
                 {
                   description: Ok,
                   content:
-                    { application/json: { schema: { items: { $ref: '#/components/schemas/Article' }, type: array } } },
+                    {
+                      application/json:
+                        {
+                          schema:
+                            {
+                              items: { $ref: '#/components/schemas/Article' },
+                              type: array,
+                            },
+                        },
+                    },
                 },
             },
           tags: [News],
           security: [],
           parameters:
             [
-              { in: query, name: country, required: false, schema: { $ref: '#/components/schemas/NewsCountry' } },
-              { in: query, name: category, required: false, schema: { $ref: '#/components/schemas/NewsCategory' } },
-              { in: query, name: sources, required: false, schema: { default: '', type: string } },
-              { in: query, name: q, required: false, schema: { default: '', type: string } },
-              { in: query, name: pageSize, required: false, schema: { default: 10, format: double, type: number } },
+              {
+                in: query,
+                name: country,
+                required: false,
+                schema: { $ref: '#/components/schemas/NewsCountry' },
+              },
+              {
+                in: query,
+                name: category,
+                required: false,
+                schema: { $ref: '#/components/schemas/NewsCategory' },
+              },
+              {
+                in: query,
+                name: sources,
+                required: false,
+                schema: { default: '', type: string },
+              },
+              {
+                in: query,
+                name: q,
+                required: false,
+                schema: { default: '', type: string },
+              },
+              {
+                in: query,
+                name: pageSize,
+                required: false,
+                schema: { default: 10, format: double, type: number },
+              },
             ],
         },
     }
@@ -1102,16 +1666,40 @@ paths:
                 {
                   description: Ok,
                   content:
-                    { application/json: { schema: { items: { $ref: '#/components/schemas/Source' }, type: array } } },
+                    {
+                      application/json:
+                        {
+                          schema:
+                            {
+                              items: { $ref: '#/components/schemas/Source' },
+                              type: array,
+                            },
+                        },
+                    },
                 },
             },
           tags: [News],
           security: [],
           parameters:
             [
-              { in: query, name: category, required: false, schema: { $ref: '#/components/schemas/NewsCategory' } },
-              { in: query, name: language, required: false, schema: { $ref: '#/components/schemas/NewsLanguage' } },
-              { in: query, name: country, required: false, schema: { $ref: '#/components/schemas/NewsCountry' } },
+              {
+                in: query,
+                name: category,
+                required: false,
+                schema: { $ref: '#/components/schemas/NewsCategory' },
+              },
+              {
+                in: query,
+                name: language,
+                required: false,
+                schema: { $ref: '#/components/schemas/NewsLanguage' },
+              },
+              {
+                in: query,
+                name: country,
+                required: false,
+                schema: { $ref: '#/components/schemas/NewsCountry' },
+              },
             ],
         },
     }
@@ -1128,7 +1716,14 @@ paths:
                   content:
                     {
                       application/json:
-                        { schema: { items: { $ref: '#/components/schemas/Organization' }, type: array } },
+                        {
+                          schema:
+                            {
+                              items:
+                                { $ref: '#/components/schemas/Organization' },
+                              type: array,
+                            },
+                        },
                     },
                 },
             },
@@ -1147,12 +1742,26 @@ paths:
               '200':
                 {
                   description: Ok,
-                  content: { application/json: { schema: { $ref: '#/components/schemas/Organization' } } },
+                  content:
+                    {
+                      application/json:
+                        {
+                          schema: { $ref: '#/components/schemas/Organization' },
+                        },
+                    },
                 },
             },
           tags: [Organizations],
           security: [],
-          parameters: [{ in: path, name: code, required: true, schema: { type: string } }],
+          parameters:
+            [
+              {
+                in: path,
+                name: code,
+                required: true,
+                schema: { type: string },
+              },
+            ],
         },
     }
   /passports:
@@ -1166,13 +1775,29 @@ paths:
                 {
                   description: Ok,
                   content:
-                    { application/json: { schema: { items: { $ref: '#/components/schemas/Passport' }, type: array } } },
+                    {
+                      application/json:
+                        {
+                          schema:
+                            {
+                              items: { $ref: '#/components/schemas/Passport' },
+                              type: array,
+                            },
+                        },
+                    },
                 },
             },
           tags: [Passports],
           security: [],
           parameters:
-            [{ in: query, name: limit, required: false, schema: { default: 0, format: double, type: number } }],
+            [
+              {
+                in: query,
+                name: limit,
+                required: false,
+                schema: { default: 0, format: double, type: number },
+              },
+            ],
         },
     }
   '/passports/{code}':
@@ -1188,13 +1813,30 @@ paths:
                   content:
                     {
                       application/json:
-                        { schema: { items: { $ref: '#/components/schemas/PassportRequirement' }, type: array } },
+                        {
+                          schema:
+                            {
+                              items:
+                                {
+                                  $ref: '#/components/schemas/PassportRequirement',
+                                },
+                              type: array,
+                            },
+                        },
                     },
                 },
             },
           tags: [Passports],
           security: [],
-          parameters: [{ in: path, name: code, required: true, schema: { type: string } }],
+          parameters:
+            [
+              {
+                in: path,
+                name: code,
+                required: true,
+                schema: { type: string },
+              },
+            ],
         },
     }
   /timezones:
@@ -1208,7 +1850,16 @@ paths:
                 {
                   description: Ok,
                   content:
-                    { application/json: { schema: { items: { $ref: '#/components/schemas/Timezone' }, type: array } } },
+                    {
+                      application/json:
+                        {
+                          schema:
+                            {
+                              items: { $ref: '#/components/schemas/Timezone' },
+                              type: array,
+                            },
+                        },
+                    },
                 },
             },
           tags: [Timezones],
@@ -1226,12 +1877,24 @@ paths:
               '200':
                 {
                   description: Ok,
-                  content: { application/json: { schema: { $ref: '#/components/schemas/Timezone' } } },
+                  content:
+                    {
+                      application/json:
+                        { schema: { $ref: '#/components/schemas/Timezone' } },
+                    },
                 },
             },
           tags: [Timezones],
           security: [],
-          parameters: [{ in: path, name: code, required: true, schema: { type: string } }],
+          parameters:
+            [
+              {
+                in: path,
+                name: code,
+                required: true,
+                schema: { type: string },
+              },
+            ],
         },
     }
   /Weather:
@@ -1239,13 +1902,30 @@ paths:
       get:
         {
           operationId: GetVideoCategories,
-          responses: { '200': { description: Ok, content: { application/json: { schema: {} } } } },
+          responses:
+            {
+              '200':
+                {
+                  description: Ok,
+                  content: { application/json: { schema: {} } },
+                },
+            },
           tags: [Weather],
           security: [],
           parameters:
             [
-              { in: query, name: latitude, required: false, schema: { default: 0, format: double, type: number } },
-              { in: query, name: longitude, required: false, schema: { default: 0, format: double, type: number } },
+              {
+                in: query,
+                name: latitude,
+                required: false,
+                schema: { default: 0, format: double, type: number },
+              },
+              {
+                in: query,
+                name: longitude,
+                required: false,
+                schema: { default: 0, format: double, type: number },
+              },
             ],
         },
     }
@@ -1262,13 +1942,30 @@ paths:
                   content:
                     {
                       application/json:
-                        { schema: { items: { $ref: '#/components/schemas/YouTubeCategory' }, type: array } },
+                        {
+                          schema:
+                            {
+                              items:
+                                {
+                                  $ref: '#/components/schemas/YouTubeCategory',
+                                },
+                              type: array,
+                            },
+                        },
                     },
                 },
             },
           tags: [YouTube],
           security: [],
-          parameters: [{ in: query, name: countryCode, required: false, schema: { default: US, type: string } }],
+          parameters:
+            [
+              {
+                in: query,
+                name: countryCode,
+                required: false,
+                schema: { default: US, type: string },
+              },
+            ],
         },
     }
   /youtube/videos:
@@ -1284,7 +1981,14 @@ paths:
                   content:
                     {
                       application/json:
-                        { schema: { items: { $ref: '#/components/schemas/YouTubeVideo' }, type: array } },
+                        {
+                          schema:
+                            {
+                              items:
+                                { $ref: '#/components/schemas/YouTubeVideo' },
+                              type: array,
+                            },
+                        },
                     },
                 },
             },
@@ -1292,9 +1996,24 @@ paths:
           security: [],
           parameters:
             [
-              { in: query, name: countryCode, required: false, schema: { default: '', type: string } },
-              { in: query, name: categoryId, required: false, schema: { default: '', type: string } },
-              { in: query, name: maxResults, required: false, schema: { default: 50, format: double, type: number } },
+              {
+                in: query,
+                name: countryCode,
+                required: false,
+                schema: { default: '', type: string },
+              },
+              {
+                in: query,
+                name: categoryId,
+                required: false,
+                schema: { default: '', type: string },
+              },
+              {
+                in: query,
+                name: maxResults,
+                required: false,
+                schema: { default: 50, format: double, type: number },
+              },
             ],
         },
     }

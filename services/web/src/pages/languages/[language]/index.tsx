@@ -1,5 +1,15 @@
 import { useQuery } from '@apollo/client';
-import { Badge, Card, CardBody, Divider, Table, TableContainer, Tbody, Td, Tr } from '@chakra-ui/react';
+import {
+  Badge,
+  Card,
+  CardBody,
+  Divider,
+  Table,
+  TableContainer,
+  Tbody,
+  Td,
+  Tr,
+} from '@chakra-ui/react';
 import Container from '@world/components/Container';
 import { LANGUAGE_QUERY } from '@world/graphql/queries/languages';
 import Layout from '@world/layout';
@@ -11,13 +21,21 @@ import { useRouter } from 'next/router';
 type Language = {
   code: string;
   name: string;
-  countries: { cca2: string; cca3: string; commonName: string; region: string }[];
+  countries: {
+    cca2: string;
+    cca3: string;
+    commonName: string;
+    region: string;
+  }[];
 };
 
 const LanguageSection: React.FC<{ code: string }> = ({ code }) => {
-  const { loading, error, data } = useQuery<{ language: Language }>(LANGUAGE_QUERY, {
-    variables: { code },
-  });
+  const { loading, error, data } = useQuery<{ language: Language }>(
+    LANGUAGE_QUERY,
+    {
+      variables: { code },
+    }
+  );
 
   if (loading) {
     return (
@@ -50,7 +68,9 @@ const LanguageSection: React.FC<{ code: string }> = ({ code }) => {
   }
 
   const language = data.language;
-  const regions: string[] = unique(language.countries.map(({ region }: { region: string }) => region));
+  const regions: string[] = unique(
+    language.countries.map(({ region }: { region: string }) => region)
+  );
   regions.sort((a: string, b: string) => (a > b ? 1 : -1));
 
   return (
@@ -67,7 +87,9 @@ const LanguageSection: React.FC<{ code: string }> = ({ code }) => {
         </Table>
       </TableContainer>
       <Divider className="border-gray-300" />
-      <h2 className="font-semibold text-xl">Countries ({language.countries.length})</h2>{' '}
+      <h2 className="font-semibold text-xl">
+        Countries ({language.countries.length})
+      </h2>{' '}
       <TableContainer className="shadow border rounded">
         <Table>
           <Tbody>

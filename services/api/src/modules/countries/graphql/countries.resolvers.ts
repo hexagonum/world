@@ -11,9 +11,14 @@ export const resolvers = {
       const urlSearchParams = new URLSearchParams();
       if (codes.length > 0) urlSearchParams.set('codes', codes);
       if (timezone.length > 0) urlSearchParams.set('timezone', timezone);
-      return await farfetch<Country[]>(`${BASE_API}/countries?${urlSearchParams.toString()}`);
+      return await farfetch<Country[]>(
+        `${BASE_API}/countries?${urlSearchParams.toString()}`
+      );
     },
-    country: async (_parent: unknown, { code = '' }: { code: string }): Promise<Country> => {
+    country: async (
+      _parent: unknown,
+      { code = '' }: { code: string }
+    ): Promise<Country> => {
       return await farfetch<Country>(`${BASE_API}/countries/${code}`);
     },
   },

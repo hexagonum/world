@@ -10,7 +10,11 @@ export type ArticlesProps = {
   articles?: Article[];
 };
 
-export const Articles: React.FC<ArticlesProps> = ({ category = 'general', country = '', articles = [] }) => {
+export const Articles: React.FC<ArticlesProps> = ({
+  category = 'general',
+  country = '',
+  articles = [],
+}) => {
   const urlSearchParams = new URLSearchParams();
   urlSearchParams.set('pageSize', '12');
   if (country) urlSearchParams.set('country', country);
@@ -51,11 +55,20 @@ export const Articles: React.FC<ArticlesProps> = ({ category = 'general', countr
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-8">
       {(data || articles).map(
-        ({ title, description = '', url = '', urlToImage = '', source: { name: sourceName = '' } }) => {
+        ({
+          title,
+          description = '',
+          url = '',
+          urlToImage = '',
+          source: { name: sourceName = '' },
+        }) => {
           return (
             <div key={title} className="col-span-1">
               <Card className="border border-gray-200 overflow-hidden">
-                <div className="aspect-video bg-teal-600" style={{ backgroundImage: `url(${urlToImage || ''})` }}></div>
+                <div
+                  className="aspect-video bg-teal-600"
+                  style={{ backgroundImage: `url(${urlToImage || ''})` }}
+                ></div>
                 <CardBody>
                   <Link href={url} target="_blank">
                     <Box className="flex flex-col gap-2">
@@ -63,7 +76,9 @@ export const Articles: React.FC<ArticlesProps> = ({ category = 'general', countr
                         {title}
                       </Heading>
                       {(description || '').length > 0 ? (
-                        <Text className="line-clamp-4 text-gray-500">{description || 'N/A'}</Text>
+                        <Text className="line-clamp-4 text-gray-500">
+                          {description || 'N/A'}
+                        </Text>
                       ) : (
                         <></>
                       )}

@@ -18,7 +18,10 @@ export class CurrenciesService {
       },
     });
     return currencies.map((currency) => {
-      return { ...currency, countries: currency.countries.map(({ country }) => country) };
+      return {
+        ...currency,
+        countries: currency.countries.map(({ country }) => country),
+      };
     });
   }
 
@@ -51,9 +54,12 @@ export class CurrenciesService {
       if (cacheRates) return cacheRates;
 
       const url = `https://api.frankfurter.app/latest?${urlSearchParams.toString()}`;
-      const response = await farfetch<{ amount: number; base: string; date: string; rates: Record<string, number> }>(
-        url
-      );
+      const response = await farfetch<{
+        amount: number;
+        base: string;
+        date: string;
+        rates: Record<string, number>;
+      }>(url);
       const rates = Object.entries(response.rates)
         .map(([code, rate]) => ({ code, rate }))
         .sort((a, b) => a.rate - b.rate);
@@ -116,7 +122,9 @@ export class CurrenciesService {
         const toAmount: number = value[to];
         return { date, from: response.amount, to: toAmount };
       });
-      setJSON(redisKey, history, { expiresIn: 60 * 60 * 24 }).catch(logger.error);
+      setJSON(redisKey, history, { expiresIn: 60 * 60 * 24 }).catch(
+        logger.error
+      );
       return history;
     } catch (error) {
       logger.error(`getHistory error ${error}`);
@@ -135,6 +143,9 @@ export class CurrenciesService {
         },
       },
     });
-    return { ...currency, countries: currency.countries.map(({ country }) => country) };
+    return {
+      ...currency,
+      countries: currency.countries.map(({ country }) => country),
+    };
   }
 }

@@ -12,7 +12,10 @@ const main = async () => {
       return { code, name };
     })
     .sort((a, b) => (a.code > b.code ? 1 : -1));
-  writeFileSync('./json/raw/languages.json', JSON.stringify(languages, null, 2));
+  writeFileSync(
+    './json/raw/languages.json',
+    JSON.stringify(languages, null, 2)
+  );
 };
 
 main().catch(console.error);

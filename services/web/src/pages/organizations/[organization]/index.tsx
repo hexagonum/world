@@ -1,5 +1,15 @@
 import { useQuery } from '@apollo/client';
-import { Badge, Card, CardBody, Divider, Table, TableContainer, Tbody, Td, Tr } from '@chakra-ui/react';
+import {
+  Badge,
+  Card,
+  CardBody,
+  Divider,
+  Table,
+  TableContainer,
+  Tbody,
+  Td,
+  Tr,
+} from '@chakra-ui/react';
 import Container from '@world/components/Container';
 import { ORGANIZATION_QUERY } from '@world/graphql/queries/organizations';
 import Layout from '@world/layout';
@@ -11,13 +21,21 @@ import { useRouter } from 'next/router';
 type Organization = {
   code: string;
   name: string;
-  countries: { cca2: string; cca3: string; commonName: string; region: string }[];
+  countries: {
+    cca2: string;
+    cca3: string;
+    commonName: string;
+    region: string;
+  }[];
 };
 
 const OrganizationSection: React.FC<{ code: string }> = ({ code }) => {
-  const { loading, error, data } = useQuery<{ organization: Organization }>(ORGANIZATION_QUERY, {
-    variables: { code },
-  });
+  const { loading, error, data } = useQuery<{ organization: Organization }>(
+    ORGANIZATION_QUERY,
+    {
+      variables: { code },
+    }
+  );
 
   if (loading) {
     return (
@@ -50,7 +68,9 @@ const OrganizationSection: React.FC<{ code: string }> = ({ code }) => {
   }
 
   const organization = data.organization;
-  const regions: string[] = unique(organization.countries.map(({ region }: { region: string }) => region));
+  const regions: string[] = unique(
+    organization.countries.map(({ region }: { region: string }) => region)
+  );
   regions.sort((a: string, b: string) => (a > b ? 1 : -1));
 
   return (
@@ -67,7 +87,9 @@ const OrganizationSection: React.FC<{ code: string }> = ({ code }) => {
         </Table>
       </TableContainer>
       <Divider className="border-gray-300" />
-      <h2 className="font-semibold text-xl">Countries ({organization.countries.length})</h2>{' '}
+      <h2 className="font-semibold text-xl">
+        Countries ({organization.countries.length})
+      </h2>{' '}
       <TableContainer className="shadow border rounded">
         <Table>
           <Tbody>

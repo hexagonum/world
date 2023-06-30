@@ -12,7 +12,9 @@ const main = async () => {
         await prismaClient.countriesInOrganizations.upsert({
           create: { countryCode, organizationCode },
           update: { countryCode, organizationCode },
-          where: { countryCode_organizationCode: { countryCode, organizationCode } },
+          where: {
+            countryCode_organizationCode: { countryCode, organizationCode },
+          },
         });
       }
     }

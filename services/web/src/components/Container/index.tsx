@@ -1,6 +1,8 @@
 import { ReactNode } from 'react';
 
-export const Container: React.FC<{ children?: ReactNode }> = ({ children = <></> }) => {
+export const Container: React.FC<{ children?: ReactNode }> = ({
+  children = <></>,
+}) => {
   return <div className="container mx-auto">{children}</div>;
 };
 

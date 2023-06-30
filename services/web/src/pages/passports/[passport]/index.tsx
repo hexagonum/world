@@ -1,4 +1,16 @@
-import { Card, CardBody, Link, Select, Table, TableContainer, Tbody, Td, Th, Thead, Tr } from '@chakra-ui/react';
+import {
+  Card,
+  CardBody,
+  Link,
+  Select,
+  Table,
+  TableContainer,
+  Tbody,
+  Td,
+  Th,
+  Thead,
+  Tr,
+} from '@chakra-ui/react';
 import Container from '@world/components/Container';
 import { NEXT_PUBLIC_BASE_API } from '@world/configs';
 import useFetch from '@world/hooks/use-fetch';
@@ -34,8 +46,12 @@ type PassportRequirement = {
   };
 };
 
-const PassportSection: React.FC<{ countryCode: string }> = ({ countryCode = '' }) => {
-  const [filterOptions, setFilterOptions] = useState<{ requirement: string }>({ requirement: '' });
+const PassportSection: React.FC<{ countryCode: string }> = ({
+  countryCode = '',
+}) => {
+  const [filterOptions, setFilterOptions] = useState<{ requirement: string }>({
+    requirement: '',
+  });
   const url = `${NEXT_PUBLIC_BASE_API}/passports/${countryCode}`;
   const { loading, error, data } = useFetch<PassportRequirement[]>(url);
 
@@ -70,7 +86,10 @@ const PassportSection: React.FC<{ countryCode: string }> = ({ countryCode = '' }
   }
 
   const requirements = data.map(
-    ({ requirement: fullRequirement = '', country: { cca3, commonName } }: PassportRequirement) => {
+    ({
+      requirement: fullRequirement = '',
+      country: { cca3, commonName },
+    }: PassportRequirement) => {
       const [part1 = '', part2 = '', part3 = ''] = fullRequirement.split('/');
       const trim1 = part1.trim();
       const trim2 = part2.trim();
@@ -90,20 +109,28 @@ const PassportSection: React.FC<{ countryCode: string }> = ({ countryCode = '' }
     }
   );
 
-  const requirementOptions: string[] = unique(requirements.map(({ requirement }) => requirement.toLowerCase()));
+  const requirementOptions: string[] = unique(
+    requirements.map(({ requirement }) => requirement.toLowerCase())
+  );
   requirementOptions.sort((a: string, b: string) => (a > b ? 1 : -1));
 
   const filteredRequirements = requirements.filter(({ requirement = '' }) => {
     const requirementFlag: boolean =
-      filterOptions.requirement === '' ? true : requirement.toLowerCase() === filterOptions.requirement.toLowerCase();
+      filterOptions.requirement === ''
+        ? true
+        : requirement.toLowerCase() === filterOptions.requirement.toLowerCase();
     return requirementFlag;
   });
 
   return (
     <div className="flex flex-col gap-4 md:gap-8">
       <div className="flex justify-between items-center">
-        <h1 className="capitalize text-2xl md:text-4xl font-bold">{data[0].passport.country.commonName}</h1>
-        <p className="capitalize text-xl md:text-2xl">#{data[0].passport.individualRank}</p>
+        <h1 className="capitalize text-2xl md:text-4xl font-bold">
+          {data[0].passport.country.commonName}
+        </h1>
+        <p className="capitalize text-xl md:text-2xl">
+          #{data[0].passport.individualRank}
+        </p>
       </div>
       <Select
         id="requirement"
@@ -111,7 +138,10 @@ const PassportSection: React.FC<{ countryCode: string }> = ({ countryCode = '' }
         placeholder="Requirement"
         value={filterOptions.requirement}
         onChange={(event: ChangeEvent<HTMLSelectElement>) =>
-          setFilterOptions({ ...filterOptions, requirement: event.target.value })
+          setFilterOptions({
+            ...filterOptions,
+            requirement: event.target.value,
+          })
         }
         className="shadow uppercase"
       >
@@ -132,18 +162,23 @@ const PassportSection: React.FC<{ countryCode: string }> = ({ countryCode = '' }
             </Tr>
           </Thead>
           <Tbody>
-            {filteredRequirements.map(({ cca3 = '', name = '', requirement = '', note = '' }, index: number) => {
-              return (
-                <Tr key={cca3}>
-                  <Td>{index + 1}</Td>
-                  <Td className="capitalize">
-                    <Link href={`/passports/${cca3}`}>{name}</Link>
-                  </Td>
-                  <Td className="capitalize">{requirement}</Td>
-                  <Td className="capitalize">{note || 'N/A'}</Td>
-                </Tr>
-              );
-            })}
+            {filteredRequirements.map(
+              (
+                { cca3 = '', name = '', requirement = '', note = '' },
+                index: number
+              ) => {
+                return (
+                  <Tr key={cca3}>
+                    <Td>{index + 1}</Td>
+                    <Td className="capitalize">
+                      <Link href={`/passports/${cca3}`}>{name}</Link>
+                    </Td>
+                    <Td className="capitalize">{requirement}</Td>
+                    <Td className="capitalize">{note || 'N/A'}</Td>
+                  </Tr>
+                );
+              }
+            )}
           </Tbody>
         </Table>
       </TableContainer>

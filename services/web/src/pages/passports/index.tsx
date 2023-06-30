@@ -1,4 +1,13 @@
-import { Input, Table, TableContainer, Tbody, Td, Th, Thead, Tr } from '@chakra-ui/react';
+import {
+  Input,
+  Table,
+  TableContainer,
+  Tbody,
+  Td,
+  Th,
+  Thead,
+  Tr,
+} from '@chakra-ui/react';
 import Container from '@world/components/Container';
 import { apolloClient } from '@world/graphql';
 import { PASSPORTS_QUERY } from '@world/graphql/queries/passports';
@@ -8,7 +17,13 @@ import Link from 'next/link';
 import { ChangeEvent, useState } from 'react';
 
 type Passport = {
-  country: { commonName: string; cca2: string; cca3: string; region: string; subregion: string };
+  country: {
+    commonName: string;
+    cca2: string;
+    cca3: string;
+    region: string;
+    subregion: string;
+  };
   globalRank: number;
   individualRank: number;
   mobilityScore: number;
@@ -21,12 +36,19 @@ type PassportsPageProps = {
 const PassportsPage: NextPage<PassportsPageProps> = ({ passports = [] }) => {
   const [query, setQuery] = useState<string>('');
 
-  const filterdPassports = passports.filter(({ country: { commonName = '', cca2 = '', cca3 } }) => {
-    const cca2Flag: boolean = query !== '' ? cca2.toLowerCase().includes(query.toLowerCase()) : true;
-    const cca3Flag: boolean = query !== '' ? cca3.toLowerCase().includes(query.toLowerCase()) : true;
-    const commonNameFlag: boolean = query !== '' ? commonName.toLowerCase().includes(query.toLowerCase()) : true;
-    return cca2Flag || cca3Flag || commonNameFlag;
-  });
+  const filterdPassports = passports.filter(
+    ({ country: { commonName = '', cca2 = '', cca3 } }) => {
+      const cca2Flag: boolean =
+        query !== '' ? cca2.toLowerCase().includes(query.toLowerCase()) : true;
+      const cca3Flag: boolean =
+        query !== '' ? cca3.toLowerCase().includes(query.toLowerCase()) : true;
+      const commonNameFlag: boolean =
+        query !== ''
+          ? commonName.toLowerCase().includes(query.toLowerCase())
+          : true;
+      return cca2Flag || cca3Flag || commonNameFlag;
+    }
+  );
 
   return (
     <Layout
@@ -37,7 +59,9 @@ const PassportsPage: NextPage<PassportsPageProps> = ({ passports = [] }) => {
             name="query"
             placeholder="Query"
             value={query}
-            onChange={(event: ChangeEvent<HTMLInputElement>) => setQuery(event.target.value)}
+            onChange={(event: ChangeEvent<HTMLInputElement>) =>
+              setQuery(event.target.value)
+            }
             className="shadow"
           />
         </>
@@ -69,7 +93,9 @@ const PassportsPage: NextPage<PassportsPageProps> = ({ passports = [] }) => {
                           <Td>{globalRank}</Td>
                           <Td>{individualRank}</Td>
                           <Td>
-                            <Link href={`/passports/${cca3}`}>{commonName}</Link>
+                            <Link href={`/passports/${cca3}`}>
+                              {commonName}
+                            </Link>
                           </Td>
                           <Td isNumeric>{mobilityScore}</Td>
                         </Tr>
@@ -86,10 +112,16 @@ const PassportsPage: NextPage<PassportsPageProps> = ({ passports = [] }) => {
   );
 };
 
-export const getStaticProps = async (): Promise<{ props: { passports: Passport[] } }> => {
+export const getStaticProps = async (): Promise<{
+  props: { passports: Passport[] };
+}> => {
   try {
-    const data = await apolloClient.query<{ passports: Passport[] }>({ query: PASSPORTS_QUERY });
-    const passports: Passport[] = [...data.data.passports].sort((a, b) => a.individualRank - b.individualRank);
+    const data = await apolloClient.query<{ passports: Passport[] }>({
+      query: PASSPORTS_QUERY,
+    });
+    const passports: Passport[] = [...data.data.passports].sort(
+      (a, b) => a.individualRank - b.individualRank
+    );
     return { props: { passports } };
   } catch (error) {
     console.error(error);

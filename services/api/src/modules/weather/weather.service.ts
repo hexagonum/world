@@ -3,7 +3,13 @@ import logger from '../../common/libs/logger';
 import { getJSON, setJSON } from '../../common/libs/redis';
 
 export class WeatherService {
-  async getWeather({ latitude = 0, longitude = 0 }: { latitude: number; longitude: number }) {
+  async getWeather({
+    latitude = 0,
+    longitude = 0,
+  }: {
+    latitude: number;
+    longitude: number;
+  }) {
     const urlSearchParams = new URLSearchParams();
     urlSearchParams.set('current_weather', 'true');
     urlSearchParams.set('latitude', latitude.toString());

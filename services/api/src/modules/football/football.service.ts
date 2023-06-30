@@ -37,14 +37,21 @@ export class FootballService {
   public async getCompetitions(areaId: string) {
     // Cache
     const redisKey = `football-areas-${areaId}-competitions`;
-    const cacheCompetitions: Competition[] | null = await getJSON<Competition[]>(redisKey);
+    const cacheCompetitions: Competition[] | null = await getJSON<
+      Competition[]
+    >(redisKey);
     if (cacheCompetitions) return cacheCompetitions;
     // API
     const urlSearchParams = new URLSearchParams();
     urlSearchParams.set('areas', areaId);
     const url = `${BASE_URL}/competitions?${urlSearchParams.toString()}`;
-    const response = await farfetch<{ competitions: Competition[] }>(url, { headers });
-    const competitions = (response.competitions || []).map((competition) => ({ ...competition, areaId }));
+    const response = await farfetch<{ competitions: Competition[] }>(url, {
+      headers,
+    });
+    const competitions = (response.competitions || []).map((competition) => ({
+      ...competition,
+      areaId,
+    }));
     setJSON(redisKey, competitions).catch(logger.error);
     return competitions;
   }
@@ -52,7 +59,9 @@ export class FootballService {
   public async getCompetition(areaId: string, competitionId: string) {
     // Cache
     const redisKey = `football-areas-${areaId}-competitions-${competitionId}`;
-    const cacheCompetition: Competition | null = await getJSON<Competition>(redisKey);
+    const cacheCompetition: Competition | null = await getJSON<Competition>(
+      redisKey
+    );
     if (cacheCompetition) return cacheCompetition;
     // API
     const url = `${BASE_URL}/competitions/${competitionId}`;
@@ -65,12 +74,18 @@ export class FootballService {
   public async getStandings(areaId: string, competitionId: string) {
     // Cache
     const redisKey = `football-areas-${areaId}-competitions-${competitionId}-teams`;
-    const cacheStandings: Standing[] | null = await getJSON<Standing[]>(redisKey);
+    const cacheStandings: Standing[] | null = await getJSON<Standing[]>(
+      redisKey
+    );
     if (cacheStandings) return cacheStandings;
     // API
     const url = `${BASE_URL}/competitions/${competitionId}/standings`;
-    const response = await farfetch<{ standings: Standing[] }>(url, { headers });
-    const totalStanding = (response.standings ?? []).find(({ type }) => type === 'TOTAL');
+    const response = await farfetch<{ standings: Standing[] }>(url, {
+      headers,
+    });
+    const totalStanding = (response.standings ?? []).find(
+      ({ type }) => type === 'TOTAL'
+    );
     const standings = (totalStanding?.table ?? []).map(
       ({
         team: { id = 0, name = '', shortName = '', tla = '', crest = '' },
@@ -121,7 +136,11 @@ export class FootballService {
     return enhancedTeam;
   }
 
-  public async getMatches(areaId: string, competitionId: string, teamId: string) {
+  public async getMatches(
+    areaId: string,
+    competitionId: string,
+    teamId: string
+  ) {
     // Cache
     const redisKey = `football-areas-${areaId}-competitions-${competitionId}-teams-${teamId}-matches`;
     const cacheMatches: Match[] | null = await getJSON<Match[]>(redisKey);

@@ -1,4 +1,7 @@
-export const farfetch = <T>(input: RequestInfo | URL, init?: RequestInit): Promise<T> => {
+export const farfetch = <T>(
+  input: RequestInfo | URL,
+  init?: RequestInit
+): Promise<T> => {
   return new Promise((resolve, reject) => {
     fetch(input, init)
       .then(responseHandler)

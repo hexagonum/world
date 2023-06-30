@@ -1,4 +1,12 @@
-import { Table, TableContainer, Tbody, Td, Th, Thead, Tr } from '@chakra-ui/react';
+import {
+  Table,
+  TableContainer,
+  Tbody,
+  Td,
+  Th,
+  Thead,
+  Tr,
+} from '@chakra-ui/react';
 import Container from '@world/components/Container';
 import { NEXT_PUBLIC_BASE_API } from '@world/configs';
 import Layout from '@world/layout';
@@ -46,27 +54,52 @@ const CoinsPage: NextPage<CoinsPageProps> = ({ coins = [] }) => {
                 </Tr>
               </Thead>
               <Tbody>
-                {coins.map(({ uuid = '', iconUrl = '', symbol = '', name = '', price = '', change = '' }) => {
-                  const changeNumber: number = parseFloat(change || '0');
-                  return (
-                    <Tr key={uuid}>
-                      <Td>
-                        <div className="w-8">
-                          <Image src={iconUrl || ''} alt={symbol} width={32} height={32} className="w-8" />
-                        </div>
-                      </Td>
-                      <Td>
-                        <Link href={`/crypto/coins/${uuid}`}>
-                          {symbol} - {name}
-                        </Link>
-                      </Td>
-                      <Td isNumeric>{currencyFormatter(parseFloat(price || '0'), 'USD')}</Td>
-                      <Td isNumeric>
-                        <p className={changeNumber >= 0 ? 'text-green-500' : 'text-red-500'}>{changeNumber}%</p>
-                      </Td>
-                    </Tr>
-                  );
-                })}
+                {coins.map(
+                  ({
+                    uuid = '',
+                    iconUrl = '',
+                    symbol = '',
+                    name = '',
+                    price = '',
+                    change = '',
+                  }) => {
+                    const changeNumber: number = parseFloat(change || '0');
+                    return (
+                      <Tr key={uuid}>
+                        <Td>
+                          <div className="w-8">
+                            <Image
+                              src={iconUrl || ''}
+                              alt={symbol}
+                              width={32}
+                              height={32}
+                              className="w-8"
+                            />
+                          </div>
+                        </Td>
+                        <Td>
+                          <Link href={`/crypto/coins/${uuid}`}>
+                            {symbol} - {name}
+                          </Link>
+                        </Td>
+                        <Td isNumeric>
+                          {currencyFormatter(parseFloat(price || '0'), 'USD')}
+                        </Td>
+                        <Td isNumeric>
+                          <p
+                            className={
+                              changeNumber >= 0
+                                ? 'text-green-500'
+                                : 'text-red-500'
+                            }
+                          >
+                            {changeNumber}%
+                          </p>
+                        </Td>
+                      </Tr>
+                    );
+                  }
+                )}
               </Tbody>
             </Table>
           </TableContainer>
@@ -76,7 +109,9 @@ const CoinsPage: NextPage<CoinsPageProps> = ({ coins = [] }) => {
   );
 };
 
-export const getStaticProps = async (): Promise<{ props: { coins: Coin[] } }> => {
+export const getStaticProps = async (): Promise<{
+  props: { coins: Coin[] };
+}> => {
   try {
     const response = await fetch(`${NEXT_PUBLIC_BASE_API}/crypto/coins`);
     const coins: Coin[] = await response.json();

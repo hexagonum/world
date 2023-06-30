@@ -13,7 +13,10 @@ const main = async () => {
     const members = await csvToJson().fromFile(membersFilePath);
     processedOrganizations.push({ ...organization, members });
   }
-  writeFileSync('./json/raw/organizations.json', JSON.stringify(processedOrganizations, null, 2));
+  writeFileSync(
+    './json/raw/organizations.json',
+    JSON.stringify(processedOrganizations, null, 2)
+  );
 };
 
 main().catch(console.error);

@@ -8,13 +8,22 @@ export const resolvers = {
     currencies: async (): Promise<Currency[]> => {
       return await farfetch<Currency[]>(`${BASE_API}/currencies`);
     },
-    currency: async (_parent: unknown, { code }: { code: string }): Promise<Currency> => {
-      const currency = await farfetch<Currency>(`${BASE_API}/currencies/${code}`);
+    currency: async (
+      _parent: unknown,
+      { code }: { code: string }
+    ): Promise<Currency> => {
+      const currency = await farfetch<Currency>(
+        `${BASE_API}/currencies/${code}`
+      );
       return currency;
     },
     rates: async (
       _parent: unknown,
-      { amount = 1, base = 'EUR', to = '' }: { amount: number; base: string; to: string }
+      {
+        amount = 1,
+        base = 'EUR',
+        to = '',
+      }: { amount: number; base: string; to: string }
     ): Promise<ForexRate[]> => {
       const urlSearchParams = new URLSearchParams();
       if (amount) urlSearchParams.set('amount', amount.toString());
@@ -26,7 +35,12 @@ export const resolvers = {
     },
     history: async (
       _parent: unknown,
-      { amount = 1, days = 7, from = 'EUR', to = 'USD' }: { amount: number; days: number; from: string; to: string } = {
+      {
+        amount = 1,
+        days = 7,
+        from = 'EUR',
+        to = 'USD',
+      }: { amount: number; days: number; from: string; to: string } = {
         amount: 1,
         days: 7,
         from: 'EUR',
@@ -50,9 +64,13 @@ export const resolvers = {
     name: ({ name }: Currency) => name,
     symbol: ({ symbol }: Currency) => symbol,
     countries: ({ countries = [] }) => {
-      return countries.map(({ country: { commonName, cca2, cca3, region, subregion, population } }) => {
-        return { commonName, cca2, cca3, region, subregion, population };
-      });
+      return countries.map(
+        ({
+          country: { commonName, cca2, cca3, region, subregion, population },
+        }) => {
+          return { commonName, cca2, cca3, region, subregion, population };
+        }
+      );
     },
   },
 };

@@ -5,7 +5,7 @@
       "description": "",
       "item": [
         {
-          "id": "c922e6b0-94e5-438c-ae64-313e076347c6",
+          "id": "ab4b2380-1d73-42ca-bbbd-106a1467f090",
           "name": "Get Cities",
           "request": {
             "name": "Get Cities",
@@ -30,7 +30,7 @@
           },
           "response": [
             {
-              "id": "30825696-cf7f-4256-80ed-61ee8e6cc2d9",
+              "id": "f4d3486b-d664-4faf-a928-af186691cdd5",
               "name": "Ok",
               "originalRequest": {
                 "url": {
@@ -52,7 +52,9 @@
               },
               "status": "OK",
               "code": 200,
-              "header": [{ "key": "Content-Type", "value": "application/json" }],
+              "header": [
+                { "key": "Content-Type", "value": "application/json" }
+              ],
               "body": "[\n  {\n    \"country\": {}\n  },\n  {\n    \"country\": {}\n  }\n]",
               "cookie": [],
               "_postman_previewlanguage": "json"
@@ -68,7 +70,7 @@
       "description": "",
       "item": [
         {
-          "id": "6caa0362-8aeb-47e2-9c32-533eaab6b69f",
+          "id": "b56dc3c8-16d3-4623-aff3-3abdbdb6c4d7",
           "name": "Get Countries",
           "request": {
             "name": "Get Countries",
@@ -99,7 +101,7 @@
           },
           "response": [
             {
-              "id": "940d9424-297a-442c-9562-edf6f2f43ff6",
+              "id": "b371bcc5-4e26-4094-8788-5d2001f38401",
               "name": "Ok",
               "originalRequest": {
                 "url": {
@@ -127,7 +129,9 @@
               },
               "status": "OK",
               "code": 200,
-              "header": [{ "key": "Content-Type", "value": "application/json" }],
+              "header": [
+                { "key": "Content-Type", "value": "application/json" }
+              ],
               "body": "[\n  {\n    \"updatedAt\": \"<dateTime>\",\n    \"createdAt\": \"<dateTime>\",\n    \"timezones\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"googleMaps\": \"<string>\",\n    \"density\": \"<double>\",\n    \"population\": \"<double>\",\n    \"area\": \"<double>\",\n    \"flagSVG\": \"<string>\",\n    \"flagPNG\": \"<string>\",\n    \"flag\": \"<string>\",\n    \"borders\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"continents\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"alternativeSpellings\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"capital\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"topLevelDomains\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"startOfWeek\": \"<string>\",\n    \"unMember\": \"<boolean>\",\n    \"independent\": \"<boolean>\",\n    \"status\": \"<string>\",\n    \"fifa\": \"<string>\",\n    \"cioc\": \"<string>\",\n    \"ccn3\": \"<string>\",\n    \"cca3\": \"<string>\",\n    \"cca2\": \"<string>\",\n    \"officialName\": \"<string>\",\n    \"commonName\": \"<string>\",\n    \"code\": \"<string>\",\n    \"longitude\": \"<double>\",\n    \"latitude\": \"<double>\",\n    \"subregion\": \"<string>\",\n    \"region\": \"<string>\",\n    \"cities\": [\n      {\n        \"timezone\": \"<double>\",\n        \"longitude\": \"<double>\",\n        \"latitude\": \"<double>\",\n        \"city\": \"<string>\",\n        \"state\": \"<string>\"\n      },\n      {\n        \"timezone\": \"<double>\",\n        \"longitude\": \"<double>\",\n        \"latitude\": \"<double>\",\n        \"city\": \"<string>\",\n        \"state\": \"<string>\"\n      }\n    ],\n    \"googleTrends\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"organizations\": [],\n    \"languages\": [],\n    \"currencies\": []\n  },\n  {\n    \"updatedAt\": \"<dateTime>\",\n    \"createdAt\": \"<dateTime>\",\n    \"timezones\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"googleMaps\": \"<string>\",\n    \"density\": \"<double>\",\n    \"population\": \"<double>\",\n    \"area\": \"<double>\",\n    \"flagSVG\": \"<string>\",\n    \"flagPNG\": \"<string>\",\n    \"flag\": \"<string>\",\n    \"borders\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"continents\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"alternativeSpellings\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"capital\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"topLevelDomains\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"startOfWeek\": \"<string>\",\n    \"unMember\": \"<boolean>\",\n    \"independent\": \"<boolean>\",\n    \"status\": \"<string>\",\n    \"fifa\": \"<string>\",\n    \"cioc\": \"<string>\",\n    \"ccn3\": \"<string>\",\n    \"cca3\": \"<string>\",\n    \"cca2\": \"<string>\",\n    \"officialName\": \"<string>\",\n    \"commonName\": \"<string>\",\n    \"code\": \"<string>\",\n    \"longitude\": \"<double>\",\n    \"latitude\": \"<double>\",\n    \"subregion\": \"<string>\",\n    \"region\": \"<string>\",\n    \"cities\": [\n      {\n        \"timezone\": \"<double>\",\n        \"longitude\": \"<double>\",\n        \"latitude\": \"<double>\",\n        \"city\": \"<string>\",\n        \"state\": \"<string>\"\n      },\n      {\n        \"timezone\": \"<double>\",\n        \"longitude\": \"<double>\",\n        \"latitude\": \"<double>\",\n        \"city\": \"<string>\",\n        \"state\": \"<string>\"\n      }\n    ],\n    \"googleTrends\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"organizations\": [],\n    \"languages\": [],\n    \"currencies\": []\n  }\n]",
               "cookie": [],
               "_postman_previewlanguage": "json"
@@ -141,7 +145,7 @@
           "description": "",
           "item": [
             {
-              "id": "7947e955-d3a1-4352-8b8b-8a050fccb011",
+              "id": "b2523a66-5cb1-4a34-8130-52aacb3e23c4",
               "name": "Get Country",
               "request": {
                 "name": "Get Country",
@@ -150,7 +154,14 @@
                   "path": ["countries", ":code"],
                   "host": ["{{baseUrl}}"],
                   "query": [],
-                  "variable": [{ "type": "any", "value": "<string>", "key": "code", "disabled": false }]
+                  "variable": [
+                    {
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "code",
+                      "disabled": false
+                    }
+                  ]
                 },
                 "header": [{ "key": "Accept", "value": "application/json" }],
                 "method": "GET",
@@ -159,17 +170,26 @@
               },
               "response": [
                 {
-                  "id": "221fc9cc-9eb2-4e68-89f8-cc83782c53d8",
+                  "id": "eb050da8-18fb-4785-a97d-06b663fea3c4",
                   "name": "Ok",
                   "originalRequest": {
-                    "url": { "path": ["countries", ":code"], "host": ["{{baseUrl}}"], "query": [], "variable": [] },
-                    "header": [{ "key": "Accept", "value": "application/json" }],
+                    "url": {
+                      "path": ["countries", ":code"],
+                      "host": ["{{baseUrl}}"],
+                      "query": [],
+                      "variable": []
+                    },
+                    "header": [
+                      { "key": "Accept", "value": "application/json" }
+                    ],
                     "method": "GET",
                     "body": {}
                   },
                   "status": "OK",
                   "code": 200,
-                  "header": [{ "key": "Content-Type", "value": "application/json" }],
+                  "header": [
+                    { "key": "Content-Type", "value": "application/json" }
+                  ],
                   "body": "{}",
                   "cookie": [],
                   "_postman_previewlanguage": "json"
@@ -191,7 +211,7 @@
           "description": "",
           "item": [
             {
-              "id": "fe8d6dd4-fe5a-4cd9-ba11-43885d894187",
+              "id": "1291e0b7-67d8-4e0f-aa5c-0046044c0280",
               "name": "Get Coins",
               "request": {
                 "name": "Get Coins",
@@ -204,7 +224,7 @@
                       "disabled": false,
                       "description": { "content": "", "type": "text/plain" },
                       "key": "timePeriod",
-                      "value": "1y"
+                      "value": "12h"
                     },
                     {
                       "disabled": false,
@@ -216,7 +236,7 @@
                       "disabled": false,
                       "description": { "content": "", "type": "text/plain" },
                       "key": "orderBy",
-                      "value": "listedAt"
+                      "value": "marketCap"
                     },
                     {
                       "disabled": false,
@@ -234,7 +254,7 @@
               },
               "response": [
                 {
-                  "id": "3b02a8fa-beb2-4419-96f0-fa8be02d9a79",
+                  "id": "b8121ab3-0b0b-4fc6-94bf-3da99cf4c89c",
                   "name": "Ok",
                   "originalRequest": {
                     "url": {
@@ -243,38 +263,54 @@
                       "query": [
                         {
                           "disabled": false,
-                          "description": { "content": "", "type": "text/plain" },
+                          "description": {
+                            "content": "",
+                            "type": "text/plain"
+                          },
                           "key": "timePeriod",
-                          "value": "1y"
+                          "value": "12h"
                         },
                         {
                           "disabled": false,
-                          "description": { "content": "", "type": "text/plain" },
+                          "description": {
+                            "content": "",
+                            "type": "text/plain"
+                          },
                           "key": "tier",
                           "value": "2"
                         },
                         {
                           "disabled": false,
-                          "description": { "content": "", "type": "text/plain" },
+                          "description": {
+                            "content": "",
+                            "type": "text/plain"
+                          },
                           "key": "orderBy",
-                          "value": "listedAt"
+                          "value": "marketCap"
                         },
                         {
                           "disabled": false,
-                          "description": { "content": "", "type": "text/plain" },
+                          "description": {
+                            "content": "",
+                            "type": "text/plain"
+                          },
                           "key": "limit",
                           "value": "500"
                         }
                       ],
                       "variable": []
                     },
-                    "header": [{ "key": "Accept", "value": "application/json" }],
+                    "header": [
+                      { "key": "Accept", "value": "application/json" }
+                    ],
                     "method": "GET",
                     "body": {}
                   },
                   "status": "OK",
                   "code": 200,
-                  "header": [{ "key": "Content-Type", "value": "application/json" }],
+                  "header": [
+                    { "key": "Content-Type", "value": "application/json" }
+                  ],
                   "body": "[\n  {\n    \"btcPrice\": \"<string>\",\n    \"24hVolume\": \"<string>\",\n    \"coinrankingUrl\": \"<string>\",\n    \"lowVolume\": \"<boolean>\",\n    \"sparkline\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"rank\": \"<double>\",\n    \"change\": \"<string>\",\n    \"tier\": \"<double>\",\n    \"listedAt\": \"<double>\",\n    \"price\": \"<string>\",\n    \"marketCap\": \"<string>\",\n    \"iconUrl\": \"<string>\",\n    \"color\": \"<string>\",\n    \"name\": \"<string>\",\n    \"symbol\": \"<string>\",\n    \"uuid\": \"<string>\"\n  },\n  {\n    \"btcPrice\": \"<string>\",\n    \"24hVolume\": \"<string>\",\n    \"coinrankingUrl\": \"<string>\",\n    \"lowVolume\": \"<boolean>\",\n    \"sparkline\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"rank\": \"<double>\",\n    \"change\": \"<string>\",\n    \"tier\": \"<double>\",\n    \"listedAt\": \"<double>\",\n    \"price\": \"<string>\",\n    \"marketCap\": \"<string>\",\n    \"iconUrl\": \"<string>\",\n    \"color\": \"<string>\",\n    \"name\": \"<string>\",\n    \"symbol\": \"<string>\",\n    \"uuid\": \"<string>\"\n  }\n]",
                   "cookie": [],
                   "_postman_previewlanguage": "json"
@@ -288,7 +324,7 @@
               "description": "",
               "item": [
                 {
-                  "id": "3367523a-49dc-4258-88c0-0355cfe6c992",
+                  "id": "760cd819-0b81-40cc-9b20-ce53ed19810b",
                   "name": "Get Coin",
                   "request": {
                     "name": "Get Coin",
@@ -297,16 +333,25 @@
                       "path": ["crypto", "coins", ":id"],
                       "host": ["{{baseUrl}}"],
                       "query": [],
-                      "variable": [{ "type": "any", "value": "<string>", "key": "id", "disabled": false }]
+                      "variable": [
+                        {
+                          "type": "any",
+                          "value": "<string>",
+                          "key": "id",
+                          "disabled": false
+                        }
+                      ]
                     },
-                    "header": [{ "key": "Accept", "value": "application/json" }],
+                    "header": [
+                      { "key": "Accept", "value": "application/json" }
+                    ],
                     "method": "GET",
                     "body": {},
                     "auth": null
                   },
                   "response": [
                     {
-                      "id": "10311640-740d-4764-89a9-016750597c53",
+                      "id": "ca5c4799-edc4-4e35-99b5-284e6ce43424",
                       "name": "Ok",
                       "originalRequest": {
                         "url": {
@@ -315,13 +360,17 @@
                           "query": [],
                           "variable": []
                         },
-                        "header": [{ "key": "Accept", "value": "application/json" }],
+                        "header": [
+                          { "key": "Accept", "value": "application/json" }
+                        ],
                         "method": "GET",
                         "body": {}
                       },
                       "status": "OK",
                       "code": 200,
-                      "header": [{ "key": "Content-Type", "value": "application/json" }],
+                      "header": [
+                        { "key": "Content-Type", "value": "application/json" }
+                      ],
                       "body": "{\n  \"btcPrice\": \"<string>\",\n  \"24hVolume\": \"<string>\",\n  \"coinrankingUrl\": \"<string>\",\n  \"lowVolume\": \"<boolean>\",\n  \"sparkline\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"rank\": \"<double>\",\n  \"change\": \"<string>\",\n  \"tier\": \"<double>\",\n  \"listedAt\": \"<double>\",\n  \"price\": \"<string>\",\n  \"marketCap\": \"<string>\",\n  \"iconUrl\": \"<string>\",\n  \"color\": \"<string>\",\n  \"name\": \"<string>\",\n  \"symbol\": \"<string>\",\n  \"uuid\": \"<string>\"\n}",
                       "cookie": [],
                       "_postman_previewlanguage": "json"
@@ -341,12 +390,17 @@
       "description": "",
       "item": [
         {
-          "id": "98e5ef80-d234-470f-998d-152e3efcbf2c",
+          "id": "a9926968-80c5-4cc4-86b5-a14874f7f57d",
           "name": "Get Currencies",
           "request": {
             "name": "Get Currencies",
             "description": {},
-            "url": { "path": ["currencies"], "host": ["{{baseUrl}}"], "query": [], "variable": [] },
+            "url": {
+              "path": ["currencies"],
+              "host": ["{{baseUrl}}"],
+              "query": [],
+              "variable": []
+            },
             "header": [{ "key": "Accept", "value": "application/json" }],
             "method": "GET",
             "body": {},
@@ -354,17 +408,24 @@
           },
           "response": [
             {
-              "id": "cf616c84-ec29-4fc0-abdb-522f62536fb1",
+              "id": "a75f885d-6fb8-46f0-a438-a3f58374aa4e",
               "name": "Ok",
               "originalRequest": {
-                "url": { "path": ["currencies"], "host": ["{{baseUrl}}"], "query": [], "variable": [] },
+                "url": {
+                  "path": ["currencies"],
+                  "host": ["{{baseUrl}}"],
+                  "query": [],
+                  "variable": []
+                },
                 "header": [{ "key": "Accept", "value": "application/json" }],
                 "method": "GET",
                 "body": {}
               },
               "status": "OK",
               "code": 200,
-              "header": [{ "key": "Content-Type", "value": "application/json" }],
+              "header": [
+                { "key": "Content-Type", "value": "application/json" }
+              ],
               "body": "[]",
               "cookie": [],
               "_postman_previewlanguage": "json"
@@ -378,7 +439,7 @@
           "description": "",
           "item": [
             {
-              "id": "37024bb7-1363-41ae-bea9-9e9e880564b9",
+              "id": "d0c04b76-2e7a-4e67-9e57-e267ccc6a131",
               "name": "Get Rates",
               "request": {
                 "name": "Get Rates",
@@ -415,7 +476,7 @@
               },
               "response": [
                 {
-                  "id": "a493c92a-0da6-433a-92af-8dca04ec3a43",
+                  "id": "53ee1f0f-86a2-464c-97fb-d9bc492ed5f0",
                   "name": "Ok",
                   "originalRequest": {
                     "url": {
@@ -424,32 +485,45 @@
                       "query": [
                         {
                           "disabled": false,
-                          "description": { "content": "", "type": "text/plain" },
+                          "description": {
+                            "content": "",
+                            "type": "text/plain"
+                          },
                           "key": "amount",
                           "value": "1"
                         },
                         {
                           "disabled": false,
-                          "description": { "content": "", "type": "text/plain" },
+                          "description": {
+                            "content": "",
+                            "type": "text/plain"
+                          },
                           "key": "base",
                           "value": "EUR"
                         },
                         {
                           "disabled": false,
-                          "description": { "content": "", "type": "text/plain" },
+                          "description": {
+                            "content": "",
+                            "type": "text/plain"
+                          },
                           "key": "to",
                           "value": ""
                         }
                       ],
                       "variable": []
                     },
-                    "header": [{ "key": "Accept", "value": "application/json" }],
+                    "header": [
+                      { "key": "Accept", "value": "application/json" }
+                    ],
                     "method": "GET",
                     "body": {}
                   },
                   "status": "OK",
                   "code": 200,
-                  "header": [{ "key": "Content-Type", "value": "application/json" }],
+                  "header": [
+                    { "key": "Content-Type", "value": "application/json" }
+                  ],
                   "body": "[\n  {\n    \"rate\": \"<double>\",\n    \"code\": \"<string>\"\n  },\n  {\n    \"rate\": \"<double>\",\n    \"code\": \"<string>\"\n  }\n]",
                   "cookie": [],
                   "_postman_previewlanguage": "json"
@@ -465,7 +539,7 @@
           "description": "",
           "item": [
             {
-              "id": "fb6d32a4-57be-4d63-af67-c9ad6229d1f3",
+              "id": "ba2da4e2-013d-40e5-8301-8f50bf667238",
               "name": "Get History",
               "request": {
                 "name": "Get History",
@@ -508,7 +582,7 @@
               },
               "response": [
                 {
-                  "id": "f35ba381-30e3-47b3-8ef1-4dda0e0dd07d",
+                  "id": "9b15dab1-7aac-45a3-b6c6-20b4fce29d31",
                   "name": "Ok",
                   "originalRequest": {
                     "url": {
@@ -517,38 +591,54 @@
                       "query": [
                         {
                           "disabled": false,
-                          "description": { "content": "", "type": "text/plain" },
+                          "description": {
+                            "content": "",
+                            "type": "text/plain"
+                          },
                           "key": "amount",
                           "value": "1"
                         },
                         {
                           "disabled": false,
-                          "description": { "content": "", "type": "text/plain" },
+                          "description": {
+                            "content": "",
+                            "type": "text/plain"
+                          },
                           "key": "days",
                           "value": "7"
                         },
                         {
                           "disabled": false,
-                          "description": { "content": "", "type": "text/plain" },
+                          "description": {
+                            "content": "",
+                            "type": "text/plain"
+                          },
                           "key": "from",
                           "value": "EUR"
                         },
                         {
                           "disabled": false,
-                          "description": { "content": "", "type": "text/plain" },
+                          "description": {
+                            "content": "",
+                            "type": "text/plain"
+                          },
                           "key": "to",
                           "value": "USD"
                         }
                       ],
                       "variable": []
                     },
-                    "header": [{ "key": "Accept", "value": "application/json" }],
+                    "header": [
+                      { "key": "Accept", "value": "application/json" }
+                    ],
                     "method": "GET",
                     "body": {}
                   },
                   "status": "OK",
                   "code": 200,
-                  "header": [{ "key": "Content-Type", "value": "application/json" }],
+                  "header": [
+                    { "key": "Content-Type", "value": "application/json" }
+                  ],
                   "body": "[\n  {\n    \"to\": \"<double>\",\n    \"from\": \"<double>\",\n    \"date\": \"<string>\"\n  },\n  {\n    \"to\": \"<double>\",\n    \"from\": \"<double>\",\n    \"date\": \"<string>\"\n  }\n]",
                   "cookie": [],
                   "_postman_previewlanguage": "json"
@@ -564,7 +654,7 @@
           "description": "",
           "item": [
             {
-              "id": "fc957abb-861a-4ca7-9064-1560f19535d1",
+              "id": "0fa142b9-704a-44e6-aadc-3c2b5d1fd2ef",
               "name": "Get Currency",
               "request": {
                 "name": "Get Currency",
@@ -573,7 +663,14 @@
                   "path": ["currencies", ":code"],
                   "host": ["{{baseUrl}}"],
                   "query": [],
-                  "variable": [{ "type": "any", "value": "<string>", "key": "code", "disabled": false }]
+                  "variable": [
+                    {
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "code",
+                      "disabled": false
+                    }
+                  ]
                 },
                 "header": [{ "key": "Accept", "value": "application/json" }],
                 "method": "GET",
@@ -582,17 +679,26 @@
               },
               "response": [
                 {
-                  "id": "941e6e75-4437-408a-a8ea-9b7ba4c41504",
+                  "id": "b74ad412-277b-4e02-9798-75767e9dc067",
                   "name": "Ok",
                   "originalRequest": {
-                    "url": { "path": ["currencies", ":code"], "host": ["{{baseUrl}}"], "query": [], "variable": [] },
-                    "header": [{ "key": "Accept", "value": "application/json" }],
+                    "url": {
+                      "path": ["currencies", ":code"],
+                      "host": ["{{baseUrl}}"],
+                      "query": [],
+                      "variable": []
+                    },
+                    "header": [
+                      { "key": "Accept", "value": "application/json" }
+                    ],
                     "method": "GET",
                     "body": {}
                   },
                   "status": "OK",
                   "code": 200,
-                  "header": [{ "key": "Content-Type", "value": "application/json" }],
+                  "header": [
+                    { "key": "Content-Type", "value": "application/json" }
+                  ],
                   "body": "{}",
                   "cookie": [],
                   "_postman_previewlanguage": "json"
@@ -614,12 +720,17 @@
           "description": "",
           "item": [
             {
-              "id": "26b5aedc-b795-4548-87be-77e16076e4ef",
+              "id": "53a4adbf-205c-44fd-abb5-69426edbde68",
               "name": "Get Areas",
               "request": {
                 "name": "Get Areas",
                 "description": {},
-                "url": { "path": ["football", "areas"], "host": ["{{baseUrl}}"], "query": [], "variable": [] },
+                "url": {
+                  "path": ["football", "areas"],
+                  "host": ["{{baseUrl}}"],
+                  "query": [],
+                  "variable": []
+                },
                 "header": [{ "key": "Accept", "value": "application/json" }],
                 "method": "GET",
                 "body": {},
@@ -627,17 +738,26 @@
               },
               "response": [
                 {
-                  "id": "5c16d37a-5e7a-4646-bf27-502c50495612",
+                  "id": "074d02bb-534b-44eb-8055-dd3a1102ccb1",
                   "name": "Ok",
                   "originalRequest": {
-                    "url": { "path": ["football", "areas"], "host": ["{{baseUrl}}"], "query": [], "variable": [] },
-                    "header": [{ "key": "Accept", "value": "application/json" }],
+                    "url": {
+                      "path": ["football", "areas"],
+                      "host": ["{{baseUrl}}"],
+                      "query": [],
+                      "variable": []
+                    },
+                    "header": [
+                      { "key": "Accept", "value": "application/json" }
+                    ],
                     "method": "GET",
                     "body": {}
                   },
                   "status": "OK",
                   "code": 200,
-                  "header": [{ "key": "Content-Type", "value": "application/json" }],
+                  "header": [
+                    { "key": "Content-Type", "value": "application/json" }
+                  ],
                   "body": "[\n  {\n    \"parentArea\": \"<string>\",\n    \"parentAreaId\": \"<double>\",\n    \"flag\": \"<string>\",\n    \"countryCode\": \"<string>\",\n    \"name\": \"<string>\",\n    \"id\": \"<double>\"\n  },\n  {\n    \"parentArea\": \"<string>\",\n    \"parentAreaId\": \"<double>\",\n    \"flag\": \"<string>\",\n    \"countryCode\": \"<string>\",\n    \"name\": \"<string>\",\n    \"id\": \"<double>\"\n  }\n]",
                   "cookie": [],
                   "_postman_previewlanguage": "json"
@@ -651,7 +771,7 @@
               "description": "",
               "item": [
                 {
-                  "id": "eabd2d5d-fb7e-4fe5-8a07-325b91e1dea1",
+                  "id": "62038d9e-7534-4df8-b71f-5cff35246756",
                   "name": "Get Area",
                   "request": {
                     "name": "Get Area",
@@ -660,16 +780,25 @@
                       "path": ["football", "areas", ":areaId"],
                       "host": ["{{baseUrl}}"],
                       "query": [],
-                      "variable": [{ "type": "any", "value": "<string>", "key": "areaId", "disabled": false }]
+                      "variable": [
+                        {
+                          "type": "any",
+                          "value": "<string>",
+                          "key": "areaId",
+                          "disabled": false
+                        }
+                      ]
                     },
-                    "header": [{ "key": "Accept", "value": "application/json" }],
+                    "header": [
+                      { "key": "Accept", "value": "application/json" }
+                    ],
                     "method": "GET",
                     "body": {},
                     "auth": null
                   },
                   "response": [
                     {
-                      "id": "63410bdd-0dd1-4a3f-a338-d7fe0501a890",
+                      "id": "f05146f6-e095-4635-b9db-2dd5913a4cb5",
                       "name": "Ok",
                       "originalRequest": {
                         "url": {
@@ -678,13 +807,17 @@
                           "query": [],
                           "variable": []
                         },
-                        "header": [{ "key": "Accept", "value": "application/json" }],
+                        "header": [
+                          { "key": "Accept", "value": "application/json" }
+                        ],
                         "method": "GET",
                         "body": {}
                       },
                       "status": "OK",
                       "code": 200,
-                      "header": [{ "key": "Content-Type", "value": "application/json" }],
+                      "header": [
+                        { "key": "Content-Type", "value": "application/json" }
+                      ],
                       "body": "{\n  \"parentArea\": \"<string>\",\n  \"parentAreaId\": \"<double>\",\n  \"flag\": \"<string>\",\n  \"countryCode\": \"<string>\",\n  \"name\": \"<string>\",\n  \"id\": \"<double>\"\n}",
                       "cookie": [],
                       "_postman_previewlanguage": "json"
@@ -698,40 +831,66 @@
                   "description": "",
                   "item": [
                     {
-                      "id": "ea4243eb-695c-47fb-8f7d-3171ddc0d77f",
+                      "id": "8651061e-4c69-4541-9636-0809130ed610",
                       "name": "Get Competitions",
                       "request": {
                         "name": "Get Competitions",
                         "description": {},
                         "url": {
-                          "path": ["football", "areas", ":areaId", "competitions"],
+                          "path": [
+                            "football",
+                            "areas",
+                            ":areaId",
+                            "competitions"
+                          ],
                           "host": ["{{baseUrl}}"],
                           "query": [],
-                          "variable": [{ "type": "any", "value": "<string>", "key": "areaId", "disabled": false }]
+                          "variable": [
+                            {
+                              "type": "any",
+                              "value": "<string>",
+                              "key": "areaId",
+                              "disabled": false
+                            }
+                          ]
                         },
-                        "header": [{ "key": "Accept", "value": "application/json" }],
+                        "header": [
+                          { "key": "Accept", "value": "application/json" }
+                        ],
                         "method": "GET",
                         "body": {},
                         "auth": null
                       },
                       "response": [
                         {
-                          "id": "44f04e08-c907-4725-a850-27b647543d34",
+                          "id": "23cc6c6e-15e2-4651-8c5a-26037276e6f6",
                           "name": "Ok",
                           "originalRequest": {
                             "url": {
-                              "path": ["football", "areas", ":areaId", "competitions"],
+                              "path": [
+                                "football",
+                                "areas",
+                                ":areaId",
+                                "competitions"
+                              ],
                               "host": ["{{baseUrl}}"],
                               "query": [],
                               "variable": []
                             },
-                            "header": [{ "key": "Accept", "value": "application/json" }],
+                            "header": [
+                              { "key": "Accept", "value": "application/json" }
+                            ],
                             "method": "GET",
                             "body": {}
                           },
                           "status": "OK",
                           "code": 200,
-                          "header": [{ "key": "Content-Type", "value": "application/json" }],
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
                           "body": "[\n  {\n    \"lastUpdated\": \"<string>\",\n    \"numberOfAvailableSeasons\": \"<double>\",\n    \"plan\": \"<string>\",\n    \"emblem\": \"<string>\",\n    \"type\": \"<string>\",\n    \"code\": \"<string>\",\n    \"name\": \"<string>\",\n    \"id\": \"<double>\",\n    \"area\": {\n      \"parentArea\": \"<string>\",\n      \"parentAreaId\": \"<double>\",\n      \"flag\": \"<string>\",\n      \"countryCode\": \"<string>\",\n      \"name\": \"<string>\",\n      \"id\": \"<double>\"\n    }\n  },\n  {\n    \"lastUpdated\": \"<string>\",\n    \"numberOfAvailableSeasons\": \"<double>\",\n    \"plan\": \"<string>\",\n    \"emblem\": \"<string>\",\n    \"type\": \"<string>\",\n    \"code\": \"<string>\",\n    \"name\": \"<string>\",\n    \"id\": \"<double>\",\n    \"area\": {\n      \"parentArea\": \"<string>\",\n      \"parentAreaId\": \"<double>\",\n      \"flag\": \"<string>\",\n      \"countryCode\": \"<string>\",\n      \"name\": \"<string>\",\n      \"id\": \"<double>\"\n    }\n  }\n]",
                           "cookie": [],
                           "_postman_previewlanguage": "json"
@@ -745,57 +904,93 @@
                       "description": "",
                       "item": [
                         {
-                          "id": "bd873b5f-8176-43b5-af7f-c879aa031fbb",
+                          "id": "b4159cfc-7d32-49fe-b601-b2e0c4193a0b",
                           "name": "Get Competition",
                           "request": {
                             "name": "Get Competition",
                             "description": {},
                             "url": {
-                              "path": ["football", "areas", ":areaId", "competitions", ":competitionId"],
+                              "path": [
+                                "football",
+                                "areas",
+                                ":areaId",
+                                "competitions",
+                                ":competitionId"
+                              ],
                               "host": ["{{baseUrl}}"],
                               "query": [],
                               "variable": [
-                                { "type": "any", "value": "<string>", "key": "areaId", "disabled": false },
-                                { "type": "any", "value": "<string>", "key": "competitionId", "disabled": false }
+                                {
+                                  "type": "any",
+                                  "value": "<string>",
+                                  "key": "areaId",
+                                  "disabled": false
+                                },
+                                {
+                                  "type": "any",
+                                  "value": "<string>",
+                                  "key": "competitionId",
+                                  "disabled": false
+                                }
                               ]
                             },
-                            "header": [{ "key": "Accept", "value": "application/json" }],
+                            "header": [
+                              { "key": "Accept", "value": "application/json" }
+                            ],
                             "method": "GET",
                             "body": {},
                             "auth": null
                           },
                           "response": [
                             {
-                              "id": "8fc6c06e-e4ad-460b-8b2d-bdb684b6d608",
+                              "id": "0011995c-2286-4db7-bddf-061dc567bd87",
                               "name": "Ok",
                               "originalRequest": {
                                 "url": {
-                                  "path": ["football", "areas", ":areaId", "competitions", ":competitionId"],
+                                  "path": [
+                                    "football",
+                                    "areas",
+                                    ":areaId",
+                                    "competitions",
+                                    ":competitionId"
+                                  ],
                                   "host": ["{{baseUrl}}"],
                                   "query": [],
                                   "variable": []
                                 },
-                                "header": [{ "key": "Accept", "value": "application/json" }],
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  }
+                                ],
                                 "method": "GET",
                                 "body": {}
                               },
                               "status": "OK",
                               "code": 200,
-                              "header": [{ "key": "Content-Type", "value": "application/json" }],
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
                               "body": "{\n  \"lastUpdated\": \"<string>\",\n  \"numberOfAvailableSeasons\": \"<double>\",\n  \"plan\": \"<string>\",\n  \"emblem\": \"<string>\",\n  \"type\": \"<string>\",\n  \"code\": \"<string>\",\n  \"name\": \"<string>\",\n  \"id\": \"<double>\",\n  \"area\": {\n    \"parentArea\": \"<string>\",\n    \"parentAreaId\": \"<double>\",\n    \"flag\": \"<string>\",\n    \"countryCode\": \"<string>\",\n    \"name\": \"<string>\",\n    \"id\": \"<double>\"\n  }\n}",
                               "cookie": [],
                               "_postman_previewlanguage": "json"
                             }
                           ],
                           "event": [],
-                          "protocolProfileBehavior": { "disableBodyPruning": true }
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          }
                         },
                         {
                           "name": "standings",
                           "description": "",
                           "item": [
                             {
-                              "id": "6d0b4ee1-fbb8-4684-bbfe-9e4d41a1878b",
+                              "id": "fac1fd09-f00b-4585-a893-fdb66a541d5f",
                               "name": "Get Standings",
                               "request": {
                                 "name": "Get Standings",
@@ -812,18 +1007,33 @@
                                   "host": ["{{baseUrl}}"],
                                   "query": [],
                                   "variable": [
-                                    { "type": "any", "value": "<string>", "key": "areaId", "disabled": false },
-                                    { "type": "any", "value": "<string>", "key": "competitionId", "disabled": false }
+                                    {
+                                      "type": "any",
+                                      "value": "<string>",
+                                      "key": "areaId",
+                                      "disabled": false
+                                    },
+                                    {
+                                      "type": "any",
+                                      "value": "<string>",
+                                      "key": "competitionId",
+                                      "disabled": false
+                                    }
                                   ]
                                 },
-                                "header": [{ "key": "Accept", "value": "application/json" }],
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  }
+                                ],
                                 "method": "GET",
                                 "body": {},
                                 "auth": null
                               },
                               "response": [
                                 {
-                                  "id": "73a8c776-204d-4ae8-ae30-11a58cd037b7",
+                                  "id": "69d20e68-8f68-45b3-9447-a00ad9bcb0e4",
                                   "name": "Ok",
                                   "originalRequest": {
                                     "url": {
@@ -839,27 +1049,39 @@
                                       "query": [],
                                       "variable": []
                                     },
-                                    "header": [{ "key": "Accept", "value": "application/json" }],
+                                    "header": [
+                                      {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                      }
+                                    ],
                                     "method": "GET",
                                     "body": {}
                                   },
                                   "status": "OK",
                                   "code": 200,
-                                  "header": [{ "key": "Content-Type", "value": "application/json" }],
+                                  "header": [
+                                    {
+                                      "key": "Content-Type",
+                                      "value": "application/json"
+                                    }
+                                  ],
                                   "body": "[\n  {\n    \"table\": [\n      {\n        \"goalDifference\": \"<double>\",\n        \"goalsAgainst\": \"<double>\",\n        \"goalsFor\": \"<double>\",\n        \"points\": \"<double>\",\n        \"lost\": \"<double>\",\n        \"draw\": \"<double>\",\n        \"won\": \"<double>\",\n        \"form\": \"<string>\",\n        \"playedGames\": \"<double>\",\n        \"position\": \"<double>\",\n        \"team\": {\n          \"crest\": \"<string>\",\n          \"tla\": \"<string>\",\n          \"shortName\": \"<string>\",\n          \"name\": \"<string>\",\n          \"id\": \"<double>\"\n        }\n      },\n      {\n        \"goalDifference\": \"<double>\",\n        \"goalsAgainst\": \"<double>\",\n        \"goalsFor\": \"<double>\",\n        \"points\": \"<double>\",\n        \"lost\": \"<double>\",\n        \"draw\": \"<double>\",\n        \"won\": \"<double>\",\n        \"form\": \"<string>\",\n        \"playedGames\": \"<double>\",\n        \"position\": \"<double>\",\n        \"team\": {\n          \"crest\": \"<string>\",\n          \"tla\": \"<string>\",\n          \"shortName\": \"<string>\",\n          \"name\": \"<string>\",\n          \"id\": \"<double>\"\n        }\n      }\n    ],\n    \"type\": \"TOTAL\",\n    \"stage\": \"REGULAR_SEASON\"\n  },\n  {\n    \"table\": [\n      {\n        \"goalDifference\": \"<double>\",\n        \"goalsAgainst\": \"<double>\",\n        \"goalsFor\": \"<double>\",\n        \"points\": \"<double>\",\n        \"lost\": \"<double>\",\n        \"draw\": \"<double>\",\n        \"won\": \"<double>\",\n        \"form\": \"<string>\",\n        \"playedGames\": \"<double>\",\n        \"position\": \"<double>\",\n        \"team\": {\n          \"crest\": \"<string>\",\n          \"tla\": \"<string>\",\n          \"shortName\": \"<string>\",\n          \"name\": \"<string>\",\n          \"id\": \"<double>\"\n        }\n      },\n      {\n        \"goalDifference\": \"<double>\",\n        \"goalsAgainst\": \"<double>\",\n        \"goalsFor\": \"<double>\",\n        \"points\": \"<double>\",\n        \"lost\": \"<double>\",\n        \"draw\": \"<double>\",\n        \"won\": \"<double>\",\n        \"form\": \"<string>\",\n        \"playedGames\": \"<double>\",\n        \"position\": \"<double>\",\n        \"team\": {\n          \"crest\": \"<string>\",\n          \"tla\": \"<string>\",\n          \"shortName\": \"<string>\",\n          \"name\": \"<string>\",\n          \"id\": \"<double>\"\n        }\n      }\n    ],\n    \"type\": \"AWAY\",\n    \"stage\": \"REGULAR_SEASON\"\n  }\n]",
                                   "cookie": [],
                                   "_postman_previewlanguage": "json"
                                 }
                               ],
                               "event": [],
-                              "protocolProfileBehavior": { "disableBodyPruning": true }
+                              "protocolProfileBehavior": {
+                                "disableBodyPruning": true
+                              }
                             },
                             {
                               "name": "{teamId}",
                               "description": "",
                               "item": [
                                 {
-                                  "id": "e8e09380-d866-4a89-b143-d87e966302fd",
+                                  "id": "7763c0fc-e7bd-4056-afc5-5e036ae584d9",
                                   "name": "Get Team",
                                   "request": {
                                     "name": "Get Team",
@@ -877,24 +1099,39 @@
                                       "host": ["{{baseUrl}}"],
                                       "query": [],
                                       "variable": [
-                                        { "type": "any", "value": "<string>", "key": "areaId", "disabled": false },
+                                        {
+                                          "type": "any",
+                                          "value": "<string>",
+                                          "key": "areaId",
+                                          "disabled": false
+                                        },
                                         {
                                           "type": "any",
                                           "value": "<string>",
                                           "key": "competitionId",
                                           "disabled": false
                                         },
-                                        { "type": "any", "value": "<string>", "key": "teamId", "disabled": false }
+                                        {
+                                          "type": "any",
+                                          "value": "<string>",
+                                          "key": "teamId",
+                                          "disabled": false
+                                        }
                                       ]
                                     },
-                                    "header": [{ "key": "Accept", "value": "application/json" }],
+                                    "header": [
+                                      {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                      }
+                                    ],
                                     "method": "GET",
                                     "body": {},
                                     "auth": null
                                   },
                                   "response": [
                                     {
-                                      "id": "970088f1-6dc6-4d16-9c62-76e6ee450724",
+                                      "id": "dde2564d-c3ba-4b2d-9623-5821abf3d591",
                                       "name": "Ok",
                                       "originalRequest": {
                                         "url": {
@@ -911,27 +1148,39 @@
                                           "query": [],
                                           "variable": []
                                         },
-                                        "header": [{ "key": "Accept", "value": "application/json" }],
+                                        "header": [
+                                          {
+                                            "key": "Accept",
+                                            "value": "application/json"
+                                          }
+                                        ],
                                         "method": "GET",
                                         "body": {}
                                       },
                                       "status": "OK",
                                       "code": 200,
-                                      "header": [{ "key": "Content-Type", "value": "application/json" }],
+                                      "header": [
+                                        {
+                                          "key": "Content-Type",
+                                          "value": "application/json"
+                                        }
+                                      ],
                                       "body": "{\n  \"crest\": \"<string>\",\n  \"tla\": \"<string>\",\n  \"shortName\": \"<string>\",\n  \"name\": \"<string>\",\n  \"id\": \"<double>\"\n}",
                                       "cookie": [],
                                       "_postman_previewlanguage": "json"
                                     }
                                   ],
                                   "event": [],
-                                  "protocolProfileBehavior": { "disableBodyPruning": true }
+                                  "protocolProfileBehavior": {
+                                    "disableBodyPruning": true
+                                  }
                                 },
                                 {
                                   "name": "matches",
                                   "description": "",
                                   "item": [
                                     {
-                                      "id": "9e8702aa-fc98-4f76-88ca-4b308b11c089",
+                                      "id": "25954c41-7f21-46fb-9d30-fa24144b8c1a",
                                       "name": "Get Matches",
                                       "request": {
                                         "name": "Get Matches",
@@ -950,24 +1199,39 @@
                                           "host": ["{{baseUrl}}"],
                                           "query": [],
                                           "variable": [
-                                            { "type": "any", "value": "<string>", "key": "areaId", "disabled": false },
+                                            {
+                                              "type": "any",
+                                              "value": "<string>",
+                                              "key": "areaId",
+                                              "disabled": false
+                                            },
                                             {
                                               "type": "any",
                                               "value": "<string>",
                                               "key": "competitionId",
                                               "disabled": false
                                             },
-                                            { "type": "any", "value": "<string>", "key": "teamId", "disabled": false }
+                                            {
+                                              "type": "any",
+                                              "value": "<string>",
+                                              "key": "teamId",
+                                              "disabled": false
+                                            }
                                           ]
                                         },
-                                        "header": [{ "key": "Accept", "value": "application/json" }],
+                                        "header": [
+                                          {
+                                            "key": "Accept",
+                                            "value": "application/json"
+                                          }
+                                        ],
                                         "method": "GET",
                                         "body": {},
                                         "auth": null
                                       },
                                       "response": [
                                         {
-                                          "id": "44d76ce3-bdea-433c-b8aa-48c95be1f62d",
+                                          "id": "78d21728-e80d-4f9f-992a-fd90aa1fffc4",
                                           "name": "Ok",
                                           "originalRequest": {
                                             "url": {
@@ -985,20 +1249,32 @@
                                               "query": [],
                                               "variable": []
                                             },
-                                            "header": [{ "key": "Accept", "value": "application/json" }],
+                                            "header": [
+                                              {
+                                                "key": "Accept",
+                                                "value": "application/json"
+                                              }
+                                            ],
                                             "method": "GET",
                                             "body": {}
                                           },
                                           "status": "OK",
                                           "code": 200,
-                                          "header": [{ "key": "Content-Type", "value": "application/json" }],
-                                          "body": "[\n  {\n    \"lastUpdated\": \"<string>\",\n    \"group\": \"<string>\",\n    \"stage\": \"<string>\",\n    \"matchday\": \"<double>\",\n    \"status\": \"<string>\",\n    \"utcDate\": \"<string>\",\n    \"id\": \"<double>\",\n    \"score\": {\n      \"halfTime\": {\n        \"away\": \"<double>\",\n        \"home\": \"<double>\"\n      },\n      \"fullTime\": {\n        \"away\": \"<double>\",\n        \"home\": \"<double>\"\n      },\n      \"duration\": \"REGULAR\",\n      \"winner\": \"AWAY_TEAM\"\n    },\n    \"awayTeam\": {\n      \"crest\": \"<string>\",\n      \"tla\": \"<string>\",\n      \"shortName\": \"<string>\",\n      \"name\": \"<string>\",\n      \"id\": \"<double>\"\n    },\n    \"homeTeam\": {\n      \"crest\": \"<string>\",\n      \"tla\": \"<string>\",\n      \"shortName\": \"<string>\",\n      \"name\": \"<string>\",\n      \"id\": \"<double>\"\n    },\n    \"competition\": {\n      \"lastUpdated\": \"<string>\",\n      \"numberOfAvailableSeasons\": \"<double>\",\n      \"plan\": \"<string>\",\n      \"emblem\": \"<string>\",\n      \"type\": \"<string>\",\n      \"code\": \"<string>\",\n      \"name\": \"<string>\",\n      \"id\": \"<double>\",\n      \"area\": {\n        \"parentArea\": \"<string>\",\n        \"parentAreaId\": \"<double>\",\n        \"flag\": \"<string>\",\n        \"countryCode\": \"<string>\",\n        \"name\": \"<string>\",\n        \"id\": \"<double>\"\n      }\n    }\n  },\n  {\n    \"lastUpdated\": \"<string>\",\n    \"group\": \"<string>\",\n    \"stage\": \"<string>\",\n    \"matchday\": \"<double>\",\n    \"status\": \"<string>\",\n    \"utcDate\": \"<string>\",\n    \"id\": \"<double>\",\n    \"score\": {\n      \"halfTime\": {\n        \"away\": \"<double>\",\n        \"home\": \"<double>\"\n      },\n      \"fullTime\": {\n        \"away\": \"<double>\",\n        \"home\": \"<double>\"\n      },\n      \"duration\": \"REGULAR\",\n      \"winner\": \"HOME_TEAM\"\n    },\n    \"awayTeam\": {\n      \"crest\": \"<string>\",\n      \"tla\": \"<string>\",\n      \"shortName\": \"<string>\",\n      \"name\": \"<string>\",\n      \"id\": \"<double>\"\n    },\n    \"homeTeam\": {\n      \"crest\": \"<string>\",\n      \"tla\": \"<string>\",\n      \"shortName\": \"<string>\",\n      \"name\": \"<string>\",\n      \"id\": \"<double>\"\n    },\n    \"competition\": {\n      \"lastUpdated\": \"<string>\",\n      \"numberOfAvailableSeasons\": \"<double>\",\n      \"plan\": \"<string>\",\n      \"emblem\": \"<string>\",\n      \"type\": \"<string>\",\n      \"code\": \"<string>\",\n      \"name\": \"<string>\",\n      \"id\": \"<double>\",\n      \"area\": {\n        \"parentArea\": \"<string>\",\n        \"parentAreaId\": \"<double>\",\n        \"flag\": \"<string>\",\n        \"countryCode\": \"<string>\",\n        \"name\": \"<string>\",\n        \"id\": \"<double>\"\n      }\n    }\n  }\n]",
+                                          "header": [
+                                            {
+                                              "key": "Content-Type",
+                                              "value": "application/json"
+                                            }
+                                          ],
+                                          "body": "[\n  {\n    \"lastUpdated\": \"<string>\",\n    \"group\": \"<string>\",\n    \"stage\": \"<string>\",\n    \"matchday\": \"<double>\",\n    \"status\": \"<string>\",\n    \"utcDate\": \"<string>\",\n    \"id\": \"<double>\",\n    \"score\": {\n      \"halfTime\": {\n        \"away\": \"<double>\",\n        \"home\": \"<double>\"\n      },\n      \"fullTime\": {\n        \"away\": \"<double>\",\n        \"home\": \"<double>\"\n      },\n      \"duration\": \"REGULAR\",\n      \"winner\": \"HOME_TEAM\"\n    },\n    \"awayTeam\": {\n      \"crest\": \"<string>\",\n      \"tla\": \"<string>\",\n      \"shortName\": \"<string>\",\n      \"name\": \"<string>\",\n      \"id\": \"<double>\"\n    },\n    \"homeTeam\": {\n      \"crest\": \"<string>\",\n      \"tla\": \"<string>\",\n      \"shortName\": \"<string>\",\n      \"name\": \"<string>\",\n      \"id\": \"<double>\"\n    },\n    \"competition\": {\n      \"lastUpdated\": \"<string>\",\n      \"numberOfAvailableSeasons\": \"<double>\",\n      \"plan\": \"<string>\",\n      \"emblem\": \"<string>\",\n      \"type\": \"<string>\",\n      \"code\": \"<string>\",\n      \"name\": \"<string>\",\n      \"id\": \"<double>\",\n      \"area\": {\n        \"parentArea\": \"<string>\",\n        \"parentAreaId\": \"<double>\",\n        \"flag\": \"<string>\",\n        \"countryCode\": \"<string>\",\n        \"name\": \"<string>\",\n        \"id\": \"<double>\"\n      }\n    }\n  },\n  {\n    \"lastUpdated\": \"<string>\",\n    \"group\": \"<string>\",\n    \"stage\": \"<string>\",\n    \"matchday\": \"<double>\",\n    \"status\": \"<string>\",\n    \"utcDate\": \"<string>\",\n    \"id\": \"<double>\",\n    \"score\": {\n      \"halfTime\": {\n        \"away\": \"<double>\",\n        \"home\": \"<double>\"\n      },\n      \"fullTime\": {\n        \"away\": \"<double>\",\n        \"home\": \"<double>\"\n      },\n      \"duration\": \"REGULAR\",\n      \"winner\": \"HOME_TEAM\"\n    },\n    \"awayTeam\": {\n      \"crest\": \"<string>\",\n      \"tla\": \"<string>\",\n      \"shortName\": \"<string>\",\n      \"name\": \"<string>\",\n      \"id\": \"<double>\"\n    },\n    \"homeTeam\": {\n      \"crest\": \"<string>\",\n      \"tla\": \"<string>\",\n      \"shortName\": \"<string>\",\n      \"name\": \"<string>\",\n      \"id\": \"<double>\"\n    },\n    \"competition\": {\n      \"lastUpdated\": \"<string>\",\n      \"numberOfAvailableSeasons\": \"<double>\",\n      \"plan\": \"<string>\",\n      \"emblem\": \"<string>\",\n      \"type\": \"<string>\",\n      \"code\": \"<string>\",\n      \"name\": \"<string>\",\n      \"id\": \"<double>\",\n      \"area\": {\n        \"parentArea\": \"<string>\",\n        \"parentAreaId\": \"<double>\",\n        \"flag\": \"<string>\",\n        \"countryCode\": \"<string>\",\n        \"name\": \"<string>\",\n        \"id\": \"<double>\"\n      }\n    }\n  }\n]",
                                           "cookie": [],
                                           "_postman_previewlanguage": "json"
                                         }
                                       ],
                                       "event": [],
-                                      "protocolProfileBehavior": { "disableBodyPruning": true }
+                                      "protocolProfileBehavior": {
+                                        "disableBodyPruning": true
+                                      }
                                     }
                                   ]
                                 }
@@ -1025,7 +1301,7 @@
           "description": "",
           "item": [
             {
-              "id": "3979a17e-224f-492c-8e3c-7932942e75bf",
+              "id": "c2a12a40-760a-4ea5-b2b0-94fabd3472f1",
               "name": "Get Trends",
               "request": {
                 "name": "Get Trends",
@@ -1050,7 +1326,7 @@
               },
               "response": [
                 {
-                  "id": "209da3d4-375c-499a-9dc1-6247f04cd62b",
+                  "id": "dd9e6151-cace-4c4d-9a17-b1938da1cd97",
                   "name": "Ok",
                   "originalRequest": {
                     "url": {
@@ -1059,20 +1335,27 @@
                       "query": [
                         {
                           "disabled": false,
-                          "description": { "content": "", "type": "text/plain" },
+                          "description": {
+                            "content": "",
+                            "type": "text/plain"
+                          },
                           "key": "countryCode",
                           "value": ""
                         }
                       ],
                       "variable": []
                     },
-                    "header": [{ "key": "Accept", "value": "application/json" }],
+                    "header": [
+                      { "key": "Accept", "value": "application/json" }
+                    ],
                     "method": "GET",
                     "body": {}
                   },
                   "status": "OK",
                   "code": 200,
-                  "header": [{ "key": "Content-Type", "value": "application/json" }],
+                  "header": [
+                    { "key": "Content-Type", "value": "application/json" }
+                  ],
                   "body": "[]",
                   "cookie": [],
                   "_postman_previewlanguage": "json"
@@ -1088,7 +1371,7 @@
           "description": "",
           "item": [
             {
-              "id": "14ae7e30-b306-47df-9e32-6150810a6b56",
+              "id": "e8b2ba21-2428-4318-8f4f-b2179f95333d",
               "name": "Get Ranks",
               "request": {
                 "name": "Get Ranks",
@@ -1113,7 +1396,7 @@
               },
               "response": [
                 {
-                  "id": "6167dc2a-c87e-4c44-accc-1f16b72218f9",
+                  "id": "04240257-9c84-4c6f-88a8-6c8390e87beb",
                   "name": "Ok",
                   "originalRequest": {
                     "url": {
@@ -1122,20 +1405,27 @@
                       "query": [
                         {
                           "disabled": false,
-                          "description": { "content": "", "type": "text/plain" },
+                          "description": {
+                            "content": "",
+                            "type": "text/plain"
+                          },
                           "key": "limit",
                           "value": "10"
                         }
                       ],
                       "variable": []
                     },
-                    "header": [{ "key": "Accept", "value": "application/json" }],
+                    "header": [
+                      { "key": "Accept", "value": "application/json" }
+                    ],
                     "method": "GET",
                     "body": {}
                   },
                   "status": "OK",
                   "code": 200,
-                  "header": [{ "key": "Content-Type", "value": "application/json" }],
+                  "header": [
+                    { "key": "Content-Type", "value": "application/json" }
+                  ],
                   "body": "[\n  {\n    \"count\": \"<double>\",\n    \"query\": \"<string>\",\n    \"rank\": \"<double>\"\n  },\n  {\n    \"count\": \"<double>\",\n    \"query\": \"<string>\",\n    \"rank\": \"<double>\"\n  }\n]",
                   "cookie": [],
                   "_postman_previewlanguage": "json"
@@ -1153,12 +1443,17 @@
       "description": "",
       "item": [
         {
-          "id": "1f139cd7-9305-4567-82a6-855c230c0d20",
+          "id": "4849e1ad-cbee-411e-b1ef-0ba300c6a4dd",
           "name": "Get Health",
           "request": {
             "name": "Get Health",
             "description": {},
-            "url": { "path": ["health"], "host": ["{{baseUrl}}"], "query": [], "variable": [] },
+            "url": {
+              "path": ["health"],
+              "host": ["{{baseUrl}}"],
+              "query": [],
+              "variable": []
+            },
             "header": [{ "key": "Accept", "value": "application/json" }],
             "method": "GET",
             "body": {},
@@ -1166,17 +1461,24 @@
           },
           "response": [
             {
-              "id": "ded6e21b-b97f-42d6-9911-0dcceebd48a2",
+              "id": "c559f623-bab1-4c6d-b13f-490804d3ace4",
               "name": "Ok",
               "originalRequest": {
-                "url": { "path": ["health"], "host": ["{{baseUrl}}"], "query": [], "variable": [] },
+                "url": {
+                  "path": ["health"],
+                  "host": ["{{baseUrl}}"],
+                  "query": [],
+                  "variable": []
+                },
                 "header": [{ "key": "Accept", "value": "application/json" }],
                 "method": "GET",
                 "body": {}
               },
               "status": "OK",
               "code": 200,
-              "header": [{ "key": "Content-Type", "value": "application/json" }],
+              "header": [
+                { "key": "Content-Type", "value": "application/json" }
+              ],
               "body": "{\n  \"status\": \"<string>\"\n}",
               "cookie": [],
               "_postman_previewlanguage": "json"
@@ -1192,12 +1494,17 @@
       "description": "",
       "item": [
         {
-          "id": "50994eec-cca3-4067-8c52-ef7cdf5aced1",
+          "id": "ac1c81a0-b8dc-4a40-9a4a-e3be423b5902",
           "name": "Get Languages",
           "request": {
             "name": "Get Languages",
             "description": {},
-            "url": { "path": ["languages"], "host": ["{{baseUrl}}"], "query": [], "variable": [] },
+            "url": {
+              "path": ["languages"],
+              "host": ["{{baseUrl}}"],
+              "query": [],
+              "variable": []
+            },
             "header": [{ "key": "Accept", "value": "application/json" }],
             "method": "GET",
             "body": {},
@@ -1205,17 +1512,24 @@
           },
           "response": [
             {
-              "id": "065eafb5-536d-40b2-8e1e-08be88125c5a",
+              "id": "24bf060d-9b60-497b-b24d-cea007e514ef",
               "name": "Ok",
               "originalRequest": {
-                "url": { "path": ["languages"], "host": ["{{baseUrl}}"], "query": [], "variable": [] },
+                "url": {
+                  "path": ["languages"],
+                  "host": ["{{baseUrl}}"],
+                  "query": [],
+                  "variable": []
+                },
                 "header": [{ "key": "Accept", "value": "application/json" }],
                 "method": "GET",
                 "body": {}
               },
               "status": "OK",
               "code": 200,
-              "header": [{ "key": "Content-Type", "value": "application/json" }],
+              "header": [
+                { "key": "Content-Type", "value": "application/json" }
+              ],
               "body": "[]",
               "cookie": [],
               "_postman_previewlanguage": "json"
@@ -1229,7 +1543,7 @@
           "description": "",
           "item": [
             {
-              "id": "89373b6e-5494-4df1-993d-36e2759154f1",
+              "id": "6815ce0e-641c-4e2c-879f-6a7a62d2ea33",
               "name": "Get Language",
               "request": {
                 "name": "Get Language",
@@ -1238,7 +1552,14 @@
                   "path": ["languages", ":code"],
                   "host": ["{{baseUrl}}"],
                   "query": [],
-                  "variable": [{ "type": "any", "value": "<string>", "key": "code", "disabled": false }]
+                  "variable": [
+                    {
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "code",
+                      "disabled": false
+                    }
+                  ]
                 },
                 "header": [{ "key": "Accept", "value": "application/json" }],
                 "method": "GET",
@@ -1247,17 +1568,26 @@
               },
               "response": [
                 {
-                  "id": "5960dcba-b5ee-4ec9-ba33-b038e0375b7b",
+                  "id": "080c68b9-d6ee-475f-ad9e-d8fdafcc82db",
                   "name": "Ok",
                   "originalRequest": {
-                    "url": { "path": ["languages", ":code"], "host": ["{{baseUrl}}"], "query": [], "variable": [] },
-                    "header": [{ "key": "Accept", "value": "application/json" }],
+                    "url": {
+                      "path": ["languages", ":code"],
+                      "host": ["{{baseUrl}}"],
+                      "query": [],
+                      "variable": []
+                    },
+                    "header": [
+                      { "key": "Accept", "value": "application/json" }
+                    ],
                     "method": "GET",
                     "body": {}
                   },
                   "status": "OK",
                   "code": 200,
-                  "header": [{ "key": "Content-Type", "value": "application/json" }],
+                  "header": [
+                    { "key": "Content-Type", "value": "application/json" }
+                  ],
                   "body": "{}",
                   "cookie": [],
                   "_postman_previewlanguage": "json"
@@ -1279,7 +1609,7 @@
           "description": "",
           "item": [
             {
-              "id": "a7f14888-764d-4c7f-9b26-4861276fa315",
+              "id": "8258873a-2da1-44ce-a381-b08f101d2faf",
               "name": "Get Headlines",
               "request": {
                 "name": "Get Headlines",
@@ -1292,13 +1622,13 @@
                       "disabled": false,
                       "description": { "content": "", "type": "text/plain" },
                       "key": "country",
-                      "value": "no"
+                      "value": "us"
                     },
                     {
                       "disabled": false,
                       "description": { "content": "", "type": "text/plain" },
                       "key": "category",
-                      "value": "general"
+                      "value": "science"
                     },
                     {
                       "disabled": false,
@@ -1328,7 +1658,7 @@
               },
               "response": [
                 {
-                  "id": "56a7a8cc-ec2d-45f1-adb1-4e3d6dd54b5a",
+                  "id": "217ccfe1-8c90-4b84-9a85-dbfabe9bb969",
                   "name": "Ok",
                   "originalRequest": {
                     "url": {
@@ -1337,44 +1667,63 @@
                       "query": [
                         {
                           "disabled": false,
-                          "description": { "content": "", "type": "text/plain" },
+                          "description": {
+                            "content": "",
+                            "type": "text/plain"
+                          },
                           "key": "country",
-                          "value": "no"
+                          "value": "us"
                         },
                         {
                           "disabled": false,
-                          "description": { "content": "", "type": "text/plain" },
+                          "description": {
+                            "content": "",
+                            "type": "text/plain"
+                          },
                           "key": "category",
-                          "value": "general"
+                          "value": "science"
                         },
                         {
                           "disabled": false,
-                          "description": { "content": "", "type": "text/plain" },
+                          "description": {
+                            "content": "",
+                            "type": "text/plain"
+                          },
                           "key": "sources",
                           "value": ""
                         },
                         {
                           "disabled": false,
-                          "description": { "content": "", "type": "text/plain" },
+                          "description": {
+                            "content": "",
+                            "type": "text/plain"
+                          },
                           "key": "q",
                           "value": ""
                         },
                         {
                           "disabled": false,
-                          "description": { "content": "", "type": "text/plain" },
+                          "description": {
+                            "content": "",
+                            "type": "text/plain"
+                          },
                           "key": "pageSize",
                           "value": "10"
                         }
                       ],
                       "variable": []
                     },
-                    "header": [{ "key": "Accept", "value": "application/json" }],
+                    "header": [
+                      { "key": "Accept", "value": "application/json" }
+                    ],
                     "method": "GET",
                     "body": {}
                   },
                   "status": "OK",
                   "code": 200,
-                  "header": [{ "key": "Content-Type", "value": "application/json" }],
+                  "header": [
+                    { "key": "Content-Type", "value": "application/json" }
+                  ],
                   "body": "[\n  {\n    \"content\": \"<string>\",\n    \"publishedAt\": \"<string>\",\n    \"urlToImage\": \"<string>\",\n    \"url\": \"<string>\",\n    \"description\": \"<string>\",\n    \"title\": \"<string>\",\n    \"author\": \"<string>\",\n    \"source\": {\n      \"name\": \"<string>\",\n      \"id\": \"<string>\"\n    }\n  },\n  {\n    \"content\": \"<string>\",\n    \"publishedAt\": \"<string>\",\n    \"urlToImage\": \"<string>\",\n    \"url\": \"<string>\",\n    \"description\": \"<string>\",\n    \"title\": \"<string>\",\n    \"author\": \"<string>\",\n    \"source\": {\n      \"name\": \"<string>\",\n      \"id\": \"<string>\"\n    }\n  }\n]",
                   "cookie": [],
                   "_postman_previewlanguage": "json"
@@ -1390,7 +1739,7 @@
           "description": "",
           "item": [
             {
-              "id": "c081ef6d-b8e0-4f0f-b7c3-55c7a49471dd",
+              "id": "836ba375-aa09-4f0e-91b1-0346c864af62",
               "name": "Get Sources",
               "request": {
                 "name": "Get Sources",
@@ -1403,19 +1752,19 @@
                       "disabled": false,
                       "description": { "content": "", "type": "text/plain" },
                       "key": "category",
-                      "value": "general"
+                      "value": "science"
                     },
                     {
                       "disabled": false,
                       "description": { "content": "", "type": "text/plain" },
                       "key": "language",
-                      "value": "ru"
+                      "value": "it"
                     },
                     {
                       "disabled": false,
                       "description": { "content": "", "type": "text/plain" },
                       "key": "country",
-                      "value": "no"
+                      "value": "us"
                     }
                   ],
                   "variable": []
@@ -1427,7 +1776,7 @@
               },
               "response": [
                 {
-                  "id": "1e5b253e-90d1-4bca-a483-82a62f4b6921",
+                  "id": "1b466044-3f2b-4fcc-882c-16de469cdefa",
                   "name": "Ok",
                   "originalRequest": {
                     "url": {
@@ -1436,33 +1785,46 @@
                       "query": [
                         {
                           "disabled": false,
-                          "description": { "content": "", "type": "text/plain" },
+                          "description": {
+                            "content": "",
+                            "type": "text/plain"
+                          },
                           "key": "category",
-                          "value": "general"
+                          "value": "science"
                         },
                         {
                           "disabled": false,
-                          "description": { "content": "", "type": "text/plain" },
+                          "description": {
+                            "content": "",
+                            "type": "text/plain"
+                          },
                           "key": "language",
-                          "value": "ru"
+                          "value": "it"
                         },
                         {
                           "disabled": false,
-                          "description": { "content": "", "type": "text/plain" },
+                          "description": {
+                            "content": "",
+                            "type": "text/plain"
+                          },
                           "key": "country",
-                          "value": "no"
+                          "value": "us"
                         }
                       ],
                       "variable": []
                     },
-                    "header": [{ "key": "Accept", "value": "application/json" }],
+                    "header": [
+                      { "key": "Accept", "value": "application/json" }
+                    ],
                     "method": "GET",
                     "body": {}
                   },
                   "status": "OK",
                   "code": 200,
-                  "header": [{ "key": "Content-Type", "value": "application/json" }],
-                  "body": "[\n  {\n    \"country\": \"sk\",\n    \"language\": \"ud\",\n    \"category\": \"general\",\n    \"url\": \"<string>\",\n    \"description\": \"<string>\",\n    \"name\": \"<string>\",\n    \"id\": \"<string>\"\n  },\n  {\n    \"country\": \"mx\",\n    \"language\": \"ru\",\n    \"category\": \"health\",\n    \"url\": \"<string>\",\n    \"description\": \"<string>\",\n    \"name\": \"<string>\",\n    \"id\": \"<string>\"\n  }\n]",
+                  "header": [
+                    { "key": "Content-Type", "value": "application/json" }
+                  ],
+                  "body": "[\n  {\n    \"country\": \"sg\",\n    \"language\": \"en\",\n    \"category\": \"health\",\n    \"url\": \"<string>\",\n    \"description\": \"<string>\",\n    \"name\": \"<string>\",\n    \"id\": \"<string>\"\n  },\n  {\n    \"country\": \"ru\",\n    \"language\": \"pt\",\n    \"category\": \"business\",\n    \"url\": \"<string>\",\n    \"description\": \"<string>\",\n    \"name\": \"<string>\",\n    \"id\": \"<string>\"\n  }\n]",
                   "cookie": [],
                   "_postman_previewlanguage": "json"
                 }
@@ -1479,12 +1841,17 @@
       "description": "",
       "item": [
         {
-          "id": "0633829d-d4a9-4573-92ae-8e62ceb6c1d0",
+          "id": "8e788b34-f6ed-4a38-a0cf-c9d55bc09b09",
           "name": "Get Organizations",
           "request": {
             "name": "Get Organizations",
             "description": {},
-            "url": { "path": ["organizations"], "host": ["{{baseUrl}}"], "query": [], "variable": [] },
+            "url": {
+              "path": ["organizations"],
+              "host": ["{{baseUrl}}"],
+              "query": [],
+              "variable": []
+            },
             "header": [{ "key": "Accept", "value": "application/json" }],
             "method": "GET",
             "body": {},
@@ -1492,17 +1859,24 @@
           },
           "response": [
             {
-              "id": "f35d75b4-ef6b-4a90-88a1-b84b665754bb",
+              "id": "8f4bd00b-f7cc-4e21-b504-65d6e7cf0eb2",
               "name": "Ok",
               "originalRequest": {
-                "url": { "path": ["organizations"], "host": ["{{baseUrl}}"], "query": [], "variable": [] },
+                "url": {
+                  "path": ["organizations"],
+                  "host": ["{{baseUrl}}"],
+                  "query": [],
+                  "variable": []
+                },
                 "header": [{ "key": "Accept", "value": "application/json" }],
                 "method": "GET",
                 "body": {}
               },
               "status": "OK",
               "code": 200,
-              "header": [{ "key": "Content-Type", "value": "application/json" }],
+              "header": [
+                { "key": "Content-Type", "value": "application/json" }
+              ],
               "body": "[]",
               "cookie": [],
               "_postman_previewlanguage": "json"
@@ -1516,7 +1890,7 @@
           "description": "",
           "item": [
             {
-              "id": "69133f85-f9c8-4a30-8903-3dd256ec66f8",
+              "id": "386f0709-8fa3-4bda-8503-9446ec39a14f",
               "name": "Get Organization",
               "request": {
                 "name": "Get Organization",
@@ -1525,7 +1899,14 @@
                   "path": ["organizations", ":code"],
                   "host": ["{{baseUrl}}"],
                   "query": [],
-                  "variable": [{ "type": "any", "value": "<string>", "key": "code", "disabled": false }]
+                  "variable": [
+                    {
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "code",
+                      "disabled": false
+                    }
+                  ]
                 },
                 "header": [{ "key": "Accept", "value": "application/json" }],
                 "method": "GET",
@@ -1534,17 +1915,26 @@
               },
               "response": [
                 {
-                  "id": "f17fcb40-6e80-4d52-8ec2-9e0b939ddd68",
+                  "id": "a8176299-54d0-400b-989c-b5e4df14319e",
                   "name": "Ok",
                   "originalRequest": {
-                    "url": { "path": ["organizations", ":code"], "host": ["{{baseUrl}}"], "query": [], "variable": [] },
-                    "header": [{ "key": "Accept", "value": "application/json" }],
+                    "url": {
+                      "path": ["organizations", ":code"],
+                      "host": ["{{baseUrl}}"],
+                      "query": [],
+                      "variable": []
+                    },
+                    "header": [
+                      { "key": "Accept", "value": "application/json" }
+                    ],
                     "method": "GET",
                     "body": {}
                   },
                   "status": "OK",
                   "code": 200,
-                  "header": [{ "key": "Content-Type", "value": "application/json" }],
+                  "header": [
+                    { "key": "Content-Type", "value": "application/json" }
+                  ],
                   "body": "{}",
                   "cookie": [],
                   "_postman_previewlanguage": "json"
@@ -1562,7 +1952,7 @@
       "description": "",
       "item": [
         {
-          "id": "7627aec7-f42d-4e21-84a7-b119e4152b14",
+          "id": "172d0913-ce53-4e1a-bfa2-78d24ff695b3",
           "name": "Get Passports",
           "request": {
             "name": "Get Passports",
@@ -1587,7 +1977,7 @@
           },
           "response": [
             {
-              "id": "8787e9bc-1034-4517-89db-147b69ac3cc2",
+              "id": "0da48dd9-1f92-4b7e-a2e5-11537f37a270",
               "name": "Ok",
               "originalRequest": {
                 "url": {
@@ -1609,7 +1999,9 @@
               },
               "status": "OK",
               "code": 200,
-              "header": [{ "key": "Content-Type", "value": "application/json" }],
+              "header": [
+                { "key": "Content-Type", "value": "application/json" }
+              ],
               "body": "[]",
               "cookie": [],
               "_postman_previewlanguage": "json"
@@ -1623,7 +2015,7 @@
           "description": "",
           "item": [
             {
-              "id": "21e4e484-9af3-465a-a9c8-ab6f8a54d124",
+              "id": "f77ae16b-053d-45cc-9266-3b392821dd85",
               "name": "Get Passport",
               "request": {
                 "name": "Get Passport",
@@ -1632,7 +2024,14 @@
                   "path": ["passports", ":code"],
                   "host": ["{{baseUrl}}"],
                   "query": [],
-                  "variable": [{ "type": "any", "value": "<string>", "key": "code", "disabled": false }]
+                  "variable": [
+                    {
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "code",
+                      "disabled": false
+                    }
+                  ]
                 },
                 "header": [{ "key": "Accept", "value": "application/json" }],
                 "method": "GET",
@@ -1641,17 +2040,26 @@
               },
               "response": [
                 {
-                  "id": "eb52ef93-bbb1-4ec2-ae08-836a0e56cf49",
+                  "id": "0704b9a5-fd03-4890-a3c8-89cae4748fd2",
                   "name": "Ok",
                   "originalRequest": {
-                    "url": { "path": ["passports", ":code"], "host": ["{{baseUrl}}"], "query": [], "variable": [] },
-                    "header": [{ "key": "Accept", "value": "application/json" }],
+                    "url": {
+                      "path": ["passports", ":code"],
+                      "host": ["{{baseUrl}}"],
+                      "query": [],
+                      "variable": []
+                    },
+                    "header": [
+                      { "key": "Accept", "value": "application/json" }
+                    ],
                     "method": "GET",
                     "body": {}
                   },
                   "status": "OK",
                   "code": 200,
-                  "header": [{ "key": "Content-Type", "value": "application/json" }],
+                  "header": [
+                    { "key": "Content-Type", "value": "application/json" }
+                  ],
                   "body": "[]",
                   "cookie": [],
                   "_postman_previewlanguage": "json"
@@ -1669,12 +2077,17 @@
       "description": "",
       "item": [
         {
-          "id": "2df88fbd-65d5-4dfa-a9d2-a80afb29b655",
+          "id": "00a342a2-3c67-461d-9232-6e6dfa11bc70",
           "name": "Get Timezones",
           "request": {
             "name": "Get Timezones",
             "description": {},
-            "url": { "path": ["timezones"], "host": ["{{baseUrl}}"], "query": [], "variable": [] },
+            "url": {
+              "path": ["timezones"],
+              "host": ["{{baseUrl}}"],
+              "query": [],
+              "variable": []
+            },
             "header": [{ "key": "Accept", "value": "application/json" }],
             "method": "GET",
             "body": {},
@@ -1682,17 +2095,24 @@
           },
           "response": [
             {
-              "id": "9270c21a-1c3f-49af-854c-e67a87115255",
+              "id": "8de00a64-8e4f-4401-8e23-138be180503a",
               "name": "Ok",
               "originalRequest": {
-                "url": { "path": ["timezones"], "host": ["{{baseUrl}}"], "query": [], "variable": [] },
+                "url": {
+                  "path": ["timezones"],
+                  "host": ["{{baseUrl}}"],
+                  "query": [],
+                  "variable": []
+                },
                 "header": [{ "key": "Accept", "value": "application/json" }],
                 "method": "GET",
                 "body": {}
               },
               "status": "OK",
               "code": 200,
-              "header": [{ "key": "Content-Type", "value": "application/json" }],
+              "header": [
+                { "key": "Content-Type", "value": "application/json" }
+              ],
               "body": "[]",
               "cookie": [],
               "_postman_previewlanguage": "json"
@@ -1706,7 +2126,7 @@
           "description": "",
           "item": [
             {
-              "id": "8ba58882-3d2f-44f7-8d80-4f448f6cc530",
+              "id": "e778e799-f467-4665-9a04-789f93606414",
               "name": "Get Timezone",
               "request": {
                 "name": "Get Timezone",
@@ -1715,7 +2135,14 @@
                   "path": ["timezones", ":code"],
                   "host": ["{{baseUrl}}"],
                   "query": [],
-                  "variable": [{ "type": "any", "value": "<string>", "key": "code", "disabled": false }]
+                  "variable": [
+                    {
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "code",
+                      "disabled": false
+                    }
+                  ]
                 },
                 "header": [{ "key": "Accept", "value": "application/json" }],
                 "method": "GET",
@@ -1724,17 +2151,26 @@
               },
               "response": [
                 {
-                  "id": "03690a0e-f86a-4b65-8806-86e8f6930575",
+                  "id": "ec24d295-a86e-4d88-aedb-e4ba707a8027",
                   "name": "Ok",
                   "originalRequest": {
-                    "url": { "path": ["timezones", ":code"], "host": ["{{baseUrl}}"], "query": [], "variable": [] },
-                    "header": [{ "key": "Accept", "value": "application/json" }],
+                    "url": {
+                      "path": ["timezones", ":code"],
+                      "host": ["{{baseUrl}}"],
+                      "query": [],
+                      "variable": []
+                    },
+                    "header": [
+                      { "key": "Accept", "value": "application/json" }
+                    ],
                     "method": "GET",
                     "body": {}
                   },
                   "status": "OK",
                   "code": 200,
-                  "header": [{ "key": "Content-Type", "value": "application/json" }],
+                  "header": [
+                    { "key": "Content-Type", "value": "application/json" }
+                  ],
                   "body": "{}",
                   "cookie": [],
                   "_postman_previewlanguage": "json"
@@ -1752,7 +2188,7 @@
       "description": "",
       "item": [
         {
-          "id": "ee0a7851-725a-48b7-8290-c534464e3d3e",
+          "id": "e5c07421-13a0-41c8-b546-1a8a93049da6",
           "name": "Get Video Categories",
           "request": {
             "name": "Get Video Categories",
@@ -1783,7 +2219,7 @@
           },
           "response": [
             {
-              "id": "65e9b4e5-c9d8-4303-97d7-c8665199fbe1",
+              "id": "e0ba2720-afcc-453a-8a59-bbf445c757e5",
               "name": "Ok",
               "originalRequest": {
                 "url": {
@@ -1811,7 +2247,9 @@
               },
               "status": "OK",
               "code": 200,
-              "header": [{ "key": "Content-Type", "value": "application/json" }],
+              "header": [
+                { "key": "Content-Type", "value": "application/json" }
+              ],
               "body": "{}",
               "cookie": [],
               "_postman_previewlanguage": "json"
@@ -1831,7 +2269,7 @@
           "description": "",
           "item": [
             {
-              "id": "1227ca17-1d2f-4947-9393-065dc607c938",
+              "id": "4f8c3602-ec7b-4cef-893b-4d4ac4be3597",
               "name": "Get Video Categories",
               "request": {
                 "name": "Get Video Categories",
@@ -1856,7 +2294,7 @@
               },
               "response": [
                 {
-                  "id": "28e07c4f-1347-4a1e-8286-057cffbe62f3",
+                  "id": "19c4b780-f0da-4fcc-862f-0ffcc4e0d5f3",
                   "name": "Ok",
                   "originalRequest": {
                     "url": {
@@ -1865,20 +2303,27 @@
                       "query": [
                         {
                           "disabled": false,
-                          "description": { "content": "", "type": "text/plain" },
+                          "description": {
+                            "content": "",
+                            "type": "text/plain"
+                          },
                           "key": "countryCode",
                           "value": "US"
                         }
                       ],
                       "variable": []
                     },
-                    "header": [{ "key": "Accept", "value": "application/json" }],
+                    "header": [
+                      { "key": "Accept", "value": "application/json" }
+                    ],
                     "method": "GET",
                     "body": {}
                   },
                   "status": "OK",
                   "code": 200,
-                  "header": [{ "key": "Content-Type", "value": "application/json" }],
+                  "header": [
+                    { "key": "Content-Type", "value": "application/json" }
+                  ],
                   "body": "[\n  {\n    \"channelId\": \"<string>\",\n    \"title\": \"<string>\",\n    \"id\": \"<string>\"\n  },\n  {\n    \"channelId\": \"<string>\",\n    \"title\": \"<string>\",\n    \"id\": \"<string>\"\n  }\n]",
                   "cookie": [],
                   "_postman_previewlanguage": "json"
@@ -1894,7 +2339,7 @@
           "description": "",
           "item": [
             {
-              "id": "dd7803e7-6259-48e7-8eda-d3dc4a58cd69",
+              "id": "803f156b-839d-4fde-b638-585932baf05b",
               "name": "Get Videos",
               "request": {
                 "name": "Get Videos",
@@ -1931,7 +2376,7 @@
               },
               "response": [
                 {
-                  "id": "1bfdf990-bbf7-4970-9f5a-ed92509b4bdb",
+                  "id": "6af0cad6-744d-4685-bfa9-b59df18224be",
                   "name": "Ok",
                   "originalRequest": {
                     "url": {
@@ -1940,32 +2385,45 @@
                       "query": [
                         {
                           "disabled": false,
-                          "description": { "content": "", "type": "text/plain" },
+                          "description": {
+                            "content": "",
+                            "type": "text/plain"
+                          },
                           "key": "countryCode",
                           "value": ""
                         },
                         {
                           "disabled": false,
-                          "description": { "content": "", "type": "text/plain" },
+                          "description": {
+                            "content": "",
+                            "type": "text/plain"
+                          },
                           "key": "categoryId",
                           "value": ""
                         },
                         {
                           "disabled": false,
-                          "description": { "content": "", "type": "text/plain" },
+                          "description": {
+                            "content": "",
+                            "type": "text/plain"
+                          },
                           "key": "maxResults",
                           "value": "50"
                         }
                       ],
                       "variable": []
                     },
-                    "header": [{ "key": "Accept", "value": "application/json" }],
+                    "header": [
+                      { "key": "Accept", "value": "application/json" }
+                    ],
                     "method": "GET",
                     "body": {}
                   },
                   "status": "OK",
                   "code": 200,
-                  "header": [{ "key": "Content-Type", "value": "application/json" }],
+                  "header": [
+                    { "key": "Content-Type", "value": "application/json" }
+                  ],
                   "body": "[\n  {\n    \"thumbnails\": {\n      \"maxres\": {\n        \"height\": \"<double>\",\n        \"width\": \"<double>\",\n        \"url\": \"<string>\"\n      },\n      \"standard\": {\n        \"height\": \"<double>\",\n        \"width\": \"<double>\",\n        \"url\": \"<string>\"\n      },\n      \"high\": {\n        \"height\": \"<double>\",\n        \"width\": \"<double>\",\n        \"url\": \"<string>\"\n      },\n      \"medium\": {\n        \"height\": \"<double>\",\n        \"width\": \"<double>\",\n        \"url\": \"<string>\"\n      },\n      \"default\": {\n        \"height\": \"<double>\",\n        \"width\": \"<double>\",\n        \"url\": \"<string>\"\n      }\n    },\n    \"channelTitle\": \"<string>\",\n    \"channelId\": \"<string>\",\n    \"description\": \"<string>\",\n    \"title\": \"<string>\",\n    \"id\": \"<string>\"\n  },\n  {\n    \"thumbnails\": {\n      \"maxres\": {\n        \"height\": \"<double>\",\n        \"width\": \"<double>\",\n        \"url\": \"<string>\"\n      },\n      \"standard\": {\n        \"height\": \"<double>\",\n        \"width\": \"<double>\",\n        \"url\": \"<string>\"\n      },\n      \"high\": {\n        \"height\": \"<double>\",\n        \"width\": \"<double>\",\n        \"url\": \"<string>\"\n      },\n      \"medium\": {\n        \"height\": \"<double>\",\n        \"width\": \"<double>\",\n        \"url\": \"<string>\"\n      },\n      \"default\": {\n        \"height\": \"<double>\",\n        \"width\": \"<double>\",\n        \"url\": \"<string>\"\n      }\n    },\n    \"channelTitle\": \"<string>\",\n    \"channelId\": \"<string>\",\n    \"description\": \"<string>\",\n    \"title\": \"<string>\",\n    \"id\": \"<string>\"\n  }\n]",
                   "cookie": [],
                   "_postman_previewlanguage": "json"
@@ -1982,7 +2440,7 @@
   "event": [],
   "variable": [{ "key": "baseUrl", "value": "http://localhost:8080" }],
   "info": {
-    "_postman_id": "b295d7b3-eb63-4f46-b2e6-3467cf8b91d1",
+    "_postman_id": "f5b9f73b-be43-423c-b4f5-52610e7dab9d",
     "name": "@world/api",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
     "description": {

@@ -38,7 +38,9 @@ const main = async () => {
       const languageCodes: string[] = Object.keys(languages);
       const currencyCodes: string[] = Object.keys(currencies);
       const organizationCodes: string[] = organizations
-        .filter(({ members = [] }) => members.map(({ code }) => code).includes(cca3))
+        .filter(({ members = [] }) =>
+          members.map(({ code }) => code).includes(cca3)
+        )
         .map(({ code }) => code);
       return {
         code: cca3,
@@ -76,7 +78,10 @@ const main = async () => {
       };
     }
   );
-  writeFileSync('./json/transformed/countries.json', JSON.stringify(transformedCountries, null, 2));
+  writeFileSync(
+    './json/transformed/countries.json',
+    JSON.stringify(transformedCountries, null, 2)
+  );
 };
 
 main().catch(console.error);

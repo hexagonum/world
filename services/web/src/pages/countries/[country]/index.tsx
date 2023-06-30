@@ -1,5 +1,15 @@
 import { useQuery } from '@apollo/client';
-import { Badge, Card, CardBody, Divider, Table, TableContainer, Tbody, Td, Tr } from '@chakra-ui/react';
+import {
+  Badge,
+  Card,
+  CardBody,
+  Divider,
+  Table,
+  TableContainer,
+  Tbody,
+  Td,
+  Tr,
+} from '@chakra-ui/react';
 import Articles from '@world/components/Articles';
 import { Container } from '@world/components/Container';
 import { Videos } from '@world/components/Videos';
@@ -58,7 +68,9 @@ const CodeSection: React.FC<{ country: Country }> = ({ country }) => {
               </Td>
               <Td>
                 <p className="whitespace-normal text-right">
-                  {country.topLevelDomains.map((domain: string) => domain).join(', ')}
+                  {country.topLevelDomains
+                    .map((domain: string) => domain)
+                    .join(', ')}
                 </p>
               </Td>
             </Tr>
@@ -140,7 +152,9 @@ const GeographySection: React.FC<{ country: Country }> = ({ country }) => {
                   {country.borders.map((border: string) => {
                     return (
                       <Link key={`/${border}`} href={`/countries/${border}`}>
-                        <Badge colorScheme="teal">{(isoAlpha3Codes as Record<string, string>)[border]}</Badge>
+                        <Badge colorScheme="teal">
+                          {(isoAlpha3Codes as Record<string, string>)[border]}
+                        </Badge>
                       </Link>
                     );
                   })}
@@ -198,9 +212,9 @@ const PopulationSection: React.FC<{ country: Country }> = ({ country }) => {
   );
 };
 
-const OrganizationsSection: React.FC<{ organizations?: { code: string; name: string }[] }> = ({
-  organizations = [],
-}) => {
+const OrganizationsSection: React.FC<{
+  organizations?: { code: string; name: string }[];
+}> = ({ organizations = [] }) => {
   if (organizations.length === 0) {
     return <></>;
   }
@@ -213,18 +227,20 @@ const OrganizationsSection: React.FC<{ organizations?: { code: string; name: str
       <TableContainer className="border rounded shadow">
         <Table>
           <Tbody>
-            {organizations.map(({ code, name = '' }: { code: string; name: string }) => {
-              return (
-                <Tr key={code}>
-                  <Td>
-                    <Link href={`/organizations/${code}`}>
-                      <b>{code}</b>
-                    </Link>
-                  </Td>
-                  <Td isNumeric>{name}</Td>
-                </Tr>
-              );
-            })}
+            {organizations.map(
+              ({ code, name = '' }: { code: string; name: string }) => {
+                return (
+                  <Tr key={code}>
+                    <Td>
+                      <Link href={`/organizations/${code}`}>
+                        <b>{code}</b>
+                      </Link>
+                    </Td>
+                    <Td isNumeric>{name}</Td>
+                  </Tr>
+                );
+              }
+            )}
           </Tbody>
         </Table>
       </TableContainer>
@@ -245,23 +261,30 @@ const NewsSection: React.FC<{ cca2: string }> = ({ cca2 = '' }) => {
   );
 };
 
-const YouTubeSection: React.FC<{ title: string; categoryId: string; countryCode: string; maxResults: number }> = ({
-  title = '',
-  categoryId = '',
-  countryCode = '',
-  maxResults = 8,
-}) => {
+const YouTubeSection: React.FC<{
+  title: string;
+  categoryId: string;
+  countryCode: string;
+  maxResults: number;
+}> = ({ title = '', categoryId = '', countryCode = '', maxResults = 8 }) => {
   return (
     <section className="flex flex-col gap-4 md:gap-8">
       <h2 className="font-semibold text-xl">{title}</h2>
-      <Videos categoryId={categoryId} countryCode={countryCode.toUpperCase()} maxResults={maxResults} />
+      <Videos
+        categoryId={categoryId}
+        countryCode={countryCode.toUpperCase()}
+        maxResults={maxResults}
+      />
       <Divider className="border-gray-300" />
     </section>
   );
 };
 
 const CountryMain: React.FC<{ code: string }> = ({ code = '' }) => {
-  const { loading, error, data } = useQuery<{ country: Country }>(COUNTRY_QUERY, { variables: { code } });
+  const { loading, error, data } = useQuery<{ country: Country }>(
+    COUNTRY_QUERY,
+    { variables: { code } }
+  );
 
   if (loading) {
     return (
@@ -299,7 +322,9 @@ const CountryMain: React.FC<{ code: string }> = ({ code = '' }) => {
     <div className="flex flex-col gap-4 md:gap-8">
       <div className="flex flex-col gap-4 md:gap-8">
         <div className="flex items-center justify-between">
-          <h1 className="capitalize text-4xl font-bold">{country.commonName}</h1>
+          <h1 className="capitalize text-4xl font-bold">
+            {country.commonName}
+          </h1>
           <Image
             src={country.flagSVG}
             alt={country.commonName}
@@ -371,11 +396,21 @@ const CountryMain: React.FC<{ code: string }> = ({ code = '' }) => {
       {(country.cities || []).length > 0 ? (
         <>
           <div className="flex flex-col gap-4 md:gap-8">
-            <h2 className="font-semibold text-xl">Weather ({(country.cities || []).length})</h2>
+            <h2 className="font-semibold text-xl">
+              Weather ({(country.cities || []).length})
+            </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8">
-              {(country.cities || []).map(({ id, city, latitude, longitude, timezone }: City) => (
-                <Weather key={id} city={city} latitude={latitude} longitude={longitude} timezone={timezone} />
-              ))}
+              {(country.cities || []).map(
+                ({ id, city, latitude, longitude, timezone }: City) => (
+                  <Weather
+                    key={id}
+                    city={city}
+                    latitude={latitude}
+                    longitude={longitude}
+                    timezone={timezone}
+                  />
+                )
+              )}
             </div>
           </div>
           <Divider className="border-gray-300" />
@@ -385,7 +420,9 @@ const CountryMain: React.FC<{ code: string }> = ({ code = '' }) => {
       )}
       {(country.googleTrends || []).length > 0 ? (
         <div className="flex flex-col gap-4 md:gap-8">
-          <h2 className="font-semibold text-xl">Google Trends ({country.googleTrends.length})</h2>
+          <h2 className="font-semibold text-xl">
+            Google Trends ({country.googleTrends.length})
+          </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-8">
             {country.googleTrends.map((query: string) => {
               const encodedQuery: string = encodeURIComponent(query);
@@ -408,22 +445,42 @@ const CountryMain: React.FC<{ code: string }> = ({ code = '' }) => {
       )}
       {country.cca2.length > 0 ? <NewsSection cca2={country.cca2} /> : <></>}
       {country.cca2.length > 0 ? (
-        <YouTubeSection title={'YouTube General'} categoryId={''} countryCode={country.cca2} maxResults={8} />
+        <YouTubeSection
+          title={'YouTube General'}
+          categoryId={''}
+          countryCode={country.cca2}
+          maxResults={8}
+        />
       ) : (
         <></>
       )}
       {country.cca2.length > 0 ? (
-        <YouTubeSection title={'YouTube Music'} categoryId={'10'} countryCode={country.cca2} maxResults={8} />
+        <YouTubeSection
+          title={'YouTube Music'}
+          categoryId={'10'}
+          countryCode={country.cca2}
+          maxResults={8}
+        />
       ) : (
         <></>
       )}
       {country.cca2.length > 0 ? (
-        <YouTubeSection title={'YouTube Sports'} categoryId={'17'} countryCode={country.cca2} maxResults={8} />
+        <YouTubeSection
+          title={'YouTube Sports'}
+          categoryId={'17'}
+          countryCode={country.cca2}
+          maxResults={8}
+        />
       ) : (
         <></>
       )}
       {country.cca2.length > 0 ? (
-        <YouTubeSection title={'YouTube News'} categoryId={'25'} countryCode={country.cca2} maxResults={8} />
+        <YouTubeSection
+          title={'YouTube News'}
+          categoryId={'25'}
+          countryCode={country.cca2}
+          maxResults={8}
+        />
       ) : (
         <></>
       )}

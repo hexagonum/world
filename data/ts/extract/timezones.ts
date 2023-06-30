@@ -13,7 +13,11 @@ const main = async () => {
     const response: Response = await fetch(`${url}/${timezone}`);
     const detail = await response.json();
     details.push(detail);
-    if (details.length > 0) writeFileSync('./json/raw/timezones.json', JSON.stringify(details, null, 2));
+    if (details.length > 0)
+      writeFileSync(
+        './json/raw/timezones.json',
+        JSON.stringify(details, null, 2)
+      );
   }
   process.exit(0);
 };

@@ -11,7 +11,15 @@ type GooglePageProps = {
   articles: Article[];
 };
 
-const categories = ['general', 'business', 'entertainment', 'health', 'science', 'sports', 'technology'];
+const categories = [
+  'general',
+  'business',
+  'entertainment',
+  'health',
+  'science',
+  'sports',
+  'technology',
+];
 
 const GooglePage: NextPage<GooglePageProps> = ({ articles = [] }) => {
   const [category, setCategory] = useState('general');
@@ -45,9 +53,13 @@ const GooglePage: NextPage<GooglePageProps> = ({ articles = [] }) => {
   );
 };
 
-export const getStaticProps = async (): Promise<{ props: { articles: Article[] } }> => {
+export const getStaticProps = async (): Promise<{
+  props: { articles: Article[] };
+}> => {
   try {
-    const response = await fetch(`${NEXT_PUBLIC_BASE_API}/news/headlines?country=us`);
+    const response = await fetch(
+      `${NEXT_PUBLIC_BASE_API}/news/headlines?country=us`
+    );
     const articles: Article[] = await response.json();
     return { props: { articles } };
   } catch (error) {

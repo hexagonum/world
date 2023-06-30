@@ -14,7 +14,10 @@ const main = async () => {
       timezone: parseFloat(city.timezone || '0') || 0,
     };
   });
-  writeFileSync('./json/raw/cities.json', JSON.stringify(processedCities, null, 2));
+  writeFileSync(
+    './json/raw/cities.json',
+    JSON.stringify(processedCities, null, 2)
+  );
 };
 
 main().catch(console.error);

@@ -1,5 +1,13 @@
 import { useQuery } from '@apollo/client';
-import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, Card, CardBody, Divider, Text } from '@chakra-ui/react';
+import {
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  Card,
+  CardBody,
+  Divider,
+  Text,
+} from '@chakra-ui/react';
 import { Container } from '@world/components/Container';
 import { FOOTBALL_MATCHES_QUERY } from '@world/graphql/queries/football';
 import Layout from '@world/layout';
@@ -8,20 +16,23 @@ import { unique } from '@world/utils/unique';
 import { NextPage } from 'next';
 import { useRouter } from 'next/router';
 
-const MatchesMain: React.FC<{ areaId: string; competitionId: string; teamId: string }> = ({
-  areaId,
-  competitionId,
-  teamId,
-}) => {
-  const { loading, error, data } = useQuery<{ football: Football }>(FOOTBALL_MATCHES_QUERY, {
-    variables: {
-      filterOptions: {
-        areaId: parseInt(areaId, 10),
-        competitionId: parseInt(competitionId, 10),
-        teamId: parseInt(teamId, 10),
+const MatchesMain: React.FC<{
+  areaId: string;
+  competitionId: string;
+  teamId: string;
+}> = ({ areaId, competitionId, teamId }) => {
+  const { loading, error, data } = useQuery<{ football: Football }>(
+    FOOTBALL_MATCHES_QUERY,
+    {
+      variables: {
+        filterOptions: {
+          areaId: parseInt(areaId, 10),
+          competitionId: parseInt(competitionId, 10),
+          teamId: parseInt(teamId, 10),
+        },
       },
-    },
-  });
+    }
+  );
 
   if (loading) {
     return (
@@ -56,12 +67,16 @@ const MatchesMain: React.FC<{ areaId: string; competitionId: string; teamId: str
   const area = data.football.areas[0] ?? {};
   const competition = data.football.areas[0].competitions[0] ?? {};
   const team = data.football.areas[0].competitions[0].standings[0] ?? {};
-  const matches: FootballMatch[] = data.football.areas[0].competitions[0].standings[0].matches ?? [];
+  const matches: FootballMatch[] =
+    data.football.areas[0].competitions[0].standings[0].matches ?? [];
   const statuses = unique(matches.map(({ status }) => status));
-  const matchesByStatuses: { status: string; matches: FootballMatch[] }[] = statuses.map((status) => {
-    const matchesByStatus: FootballMatch[] = matches.filter(({ status: matchStatus }) => status === matchStatus);
-    return { status, matches: matchesByStatus };
-  });
+  const matchesByStatuses: { status: string; matches: FootballMatch[] }[] =
+    statuses.map((status) => {
+      const matchesByStatus: FootballMatch[] = matches.filter(
+        ({ status: matchStatus }) => status === matchStatus
+      );
+      return { status, matches: matchesByStatus };
+    });
 
   return (
     <div className="flex flex-col gap-4 md:gap-8">
@@ -70,13 +85,21 @@ const MatchesMain: React.FC<{ areaId: string; competitionId: string; teamId: str
           <BreadcrumbLink href="/football">Football</BreadcrumbLink>
         </BreadcrumbItem>
         <BreadcrumbItem>
-          <BreadcrumbLink href={`/football/${area.id}`}>{area.name}</BreadcrumbLink>
+          <BreadcrumbLink href={`/football/${area.id}`}>
+            {area.name}
+          </BreadcrumbLink>
         </BreadcrumbItem>
         <BreadcrumbItem>
-          <BreadcrumbLink href={`/football/${area.id}/${competition.id}`}>{competition.name}</BreadcrumbLink>
+          <BreadcrumbLink href={`/football/${area.id}/${competition.id}`}>
+            {competition.name}
+          </BreadcrumbLink>
         </BreadcrumbItem>
         <BreadcrumbItem isCurrentPage>
-          <BreadcrumbLink href={`/football/${area.id}/${competition.id}.${team.id}`}>{team.name}</BreadcrumbLink>
+          <BreadcrumbLink
+            href={`/football/${area.id}/${competition.id}.${team.id}`}
+          >
+            {team.name}
+          </BreadcrumbLink>
         </BreadcrumbItem>
       </Breadcrumb>
       <div className="flex flex-col gap-4 md:gap-8">
@@ -89,22 +112,35 @@ const MatchesMain: React.FC<{ areaId: string; competitionId: string; teamId: str
                 const d: Date = new Date(utcDate);
                 d.setTime(d.getTime());
                 return (
-                  <Card key={`${homeTeam.id}-${awayTeam.id}`} className="border border-gray-200">
+                  <Card
+                    key={`${homeTeam.id}-${awayTeam.id}`}
+                    className="border border-gray-200"
+                  >
                     <CardBody>
                       <div className="flex flex-col gap-2 md:gap-4">
                         <div className="flex justify-between items-center">
-                          <Text className="font-medium">{competition.name}</Text>
+                          <Text className="font-medium">
+                            {competition.name}
+                          </Text>
                           <Text className="text-gray-500">
                             {d.toLocaleDateString()} {d.toLocaleTimeString()}
                           </Text>
                         </div>
-                        <div className={`${homeTeam.name === team.name ? 'font-bold' : ''}`}>
+                        <div
+                          className={`${
+                            homeTeam.name === team.name ? 'font-bold' : ''
+                          }`}
+                        >
                           <div className="flex justify-between items-center">
                             <p>{homeTeam.name}</p>
                             <p>{score.fullTime.home}</p>
                           </div>
                         </div>
-                        <div className={`${awayTeam.name === team.name ? 'font-bold' : ''}`}>
+                        <div
+                          className={`${
+                            awayTeam.name === team.name ? 'font-bold' : ''
+                          }`}
+                        >
                           <div className="flex justify-between items-center">
                             <p>{awayTeam.name}</p>
                             <p>{score.fullTime.away}</p>
@@ -134,7 +170,11 @@ const MatchesPage: NextPage = () => {
       <Container>
         <div className="p-8">
           {areaId && competitionId && teamId ? (
-            <MatchesMain areaId={areaId} competitionId={competitionId} teamId={teamId} />
+            <MatchesMain
+              areaId={areaId}
+              competitionId={competitionId}
+              teamId={teamId}
+            />
           ) : (
             <></>
           )}

@@ -12,7 +12,10 @@ const main = async () => {
       return { ...value, code };
     })
     .sort((a, b) => (a.code > b.code ? 1 : -1));
-  writeFileSync('./json/raw/currencies.json', JSON.stringify(currencies, null, 2));
+  writeFileSync(
+    './json/raw/currencies.json',
+    JSON.stringify(currencies, null, 2)
+  );
 };
 
 main().catch(console.error);

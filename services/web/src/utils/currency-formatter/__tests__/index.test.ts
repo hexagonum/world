@@ -1,4 +1,10 @@
-import { audFormatter, eurFormatter, gbpFormatter, usdFormatter, vndFormatter } from '..';
+import {
+  audFormatter,
+  eurFormatter,
+  gbpFormatter,
+  usdFormatter,
+  vndFormatter,
+} from '..';
 
 describe('currencyFormatter', () => {
   it('audFormatter', () => {

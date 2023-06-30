@@ -16,7 +16,9 @@ const YouTubePage: NextPage<YouTubePageProps> = ({ categories = [] }) => {
   const [categoryId, setCategoryId] = useState('10');
 
   const topCategories = categories.filter(({ title }) => top.includes(title));
-  const otherCategories = categories.filter(({ title }) => !top.includes(title));
+  const otherCategories = categories.filter(
+    ({ title }) => !top.includes(title)
+  );
 
   return (
     <Layout>
@@ -64,12 +66,16 @@ const YouTubePage: NextPage<YouTubePageProps> = ({ categories = [] }) => {
   );
 };
 
-export const getStaticProps = async (): Promise<{ props: { categories: YouTubeCategory[] } }> => {
+export const getStaticProps = async (): Promise<{
+  props: { categories: YouTubeCategory[] };
+}> => {
   try {
-    const data = await apolloClient.query<{ youtube: YouTube }>({ query: YOUTUBE_CATEGORIES_QUERY });
-    const categories: YouTubeCategory[] = [...data.data.youtube.categories].sort((a, b) =>
-      a.title > b.title ? 1 : -1
-    );
+    const data = await apolloClient.query<{ youtube: YouTube }>({
+      query: YOUTUBE_CATEGORIES_QUERY,
+    });
+    const categories: YouTubeCategory[] = [
+      ...data.data.youtube.categories,
+    ].sort((a, b) => (a.title > b.title ? 1 : -1));
     return { props: { categories } };
   } catch (error) {
     console.error(error);

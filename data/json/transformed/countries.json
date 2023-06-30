@@ -15,7 +15,11 @@
     "longitude": 36,
     "topLevelDomains": [".jo", "الاردن."],
     "capital": ["Amman"],
-    "alternativeSpellings": ["JO", "Hashemite Kingdom of Jordan", "al-Mamlakah al-Urdunīyah al-Hāshimīyah"],
+    "alternativeSpellings": [
+      "JO",
+      "Hashemite Kingdom of Jordan",
+      "al-Mamlakah al-Urdunīyah al-Hāshimīyah"
+    ],
     "continents": ["Asia"],
     "borders": ["IRQ", "ISR", "PSE", "SAU", "SYR"],
     "region": "Asia",
@@ -49,7 +53,11 @@
     "longitude": 145.75,
     "topLevelDomains": [".mp"],
     "capital": ["Saipan"],
-    "alternativeSpellings": ["MP", "Commonwealth of the Northern Mariana Islands", "Sankattan Siha Na Islas Mariånas"],
+    "alternativeSpellings": [
+      "MP",
+      "Commonwealth of the Northern Mariana Islands",
+      "Sankattan Siha Na Islas Mariånas"
+    ],
     "continents": ["Oceania"],
     "borders": [],
     "region": "Oceania",
@@ -83,7 +91,13 @@
     "longitude": 21,
     "topLevelDomains": [".rs", ".срб"],
     "capital": ["Belgrade"],
-    "alternativeSpellings": ["RS", "Srbija", "Republic of Serbia", "Република Србија", "Republika Srbija"],
+    "alternativeSpellings": [
+      "RS",
+      "Srbija",
+      "Republic of Serbia",
+      "Република Србија",
+      "Republika Srbija"
+    ],
     "continents": ["Europe"],
     "borders": ["BIH", "BGR", "HRV", "HUN", "UNK", "MKD", "MNE", "ROU"],
     "region": "Europe",
@@ -117,7 +131,11 @@
     "longitude": 1.5,
     "topLevelDomains": [".ad"],
     "capital": ["Andorra la Vella"],
-    "alternativeSpellings": ["AD", "Principality of Andorra", "Principat d'Andorra"],
+    "alternativeSpellings": [
+      "AD",
+      "Principality of Andorra",
+      "Principat d'Andorra"
+    ],
     "continents": ["Europe"],
     "borders": ["FRA", "ESP"],
     "region": "Europe",
@@ -185,7 +203,12 @@
     "longitude": -64.75,
     "topLevelDomains": [".bm"],
     "capital": ["Hamilton"],
-    "alternativeSpellings": ["BM", "The Islands of Bermuda", "The Bermudas", "Somers Isles"],
+    "alternativeSpellings": [
+      "BM",
+      "The Islands of Bermuda",
+      "The Bermudas",
+      "Somers Isles"
+    ],
     "continents": ["North America"],
     "borders": [],
     "region": "Americas",
@@ -374,7 +397,12 @@
     "longitude": 45,
     "topLevelDomains": [".am"],
     "capital": ["Yerevan"],
-    "alternativeSpellings": ["AM", "Hayastan", "Republic of Armenia", "Հայաստանի Հանրապետություն"],
+    "alternativeSpellings": [
+      "AM",
+      "Hayastan",
+      "Republic of Armenia",
+      "Հայաստանի Հանրապետություն"
+    ],
     "continents": ["Asia"],
     "borders": ["AZE", "GEO", "IRN", "TUR"],
     "region": "Asia",
@@ -408,7 +436,11 @@
     "longitude": 57.55,
     "topLevelDomains": [".mu"],
     "capital": ["Port Louis"],
-    "alternativeSpellings": ["MU", "Republic of Mauritius", "République de Maurice"],
+    "alternativeSpellings": [
+      "MU",
+      "Republic of Mauritius",
+      "République de Maurice"
+    ],
     "continents": ["Africa"],
     "borders": [],
     "region": "Africa",
@@ -442,7 +474,12 @@
     "longitude": 73,
     "topLevelDomains": [".mv"],
     "capital": ["Malé"],
-    "alternativeSpellings": ["MV", "Maldive Islands", "Republic of the Maldives", "Dhivehi Raajjeyge Jumhooriyya"],
+    "alternativeSpellings": [
+      "MV",
+      "Maldive Islands",
+      "Republic of the Maldives",
+      "Dhivehi Raajjeyge Jumhooriyya"
+    ],
     "continents": ["Asia"],
     "borders": [],
     "region": "Asia",
@@ -476,7 +513,12 @@
     "longitude": -170,
     "topLevelDomains": [".as"],
     "capital": ["Pago Pago"],
-    "alternativeSpellings": ["AS", "Amerika Sāmoa", "Amelika Sāmoa", "Sāmoa Amelika"],
+    "alternativeSpellings": [
+      "AS",
+      "Amerika Sāmoa",
+      "Amelika Sāmoa",
+      "Sāmoa Amelika"
+    ],
     "continents": ["Oceania"],
     "borders": [],
     "region": "Oceania",
@@ -759,7 +801,13 @@
     "longitude": -56,
     "topLevelDomains": [".sr"],
     "capital": ["Paramaribo"],
-    "alternativeSpellings": ["SR", "Sarnam", "Sranangron", "Republic of Suriname", "Republiek Suriname"],
+    "alternativeSpellings": [
+      "SR",
+      "Sarnam",
+      "Sranangron",
+      "Republic of Suriname",
+      "Republiek Suriname"
+    ],
     "continents": ["South America"],
     "borders": ["BRA", "GUF", "GUY"],
     "region": "Americas",
@@ -861,7 +909,12 @@
     "longitude": 149.4068,
     "topLevelDomains": [".pf"],
     "capital": ["Papeetē"],
-    "alternativeSpellings": ["PF", "Polynésie française", "French Polynesia", "Pōrīnetia Farāni"],
+    "alternativeSpellings": [
+      "PF",
+      "Polynésie française",
+      "French Polynesia",
+      "Pōrīnetia Farāni"
+    ],
     "continents": ["Oceania"],
     "borders": [],
     "region": "Oceania",
@@ -929,7 +982,12 @@
     "longitude": 26,
     "topLevelDomains": [".ee"],
     "capital": ["Tallinn"],
-    "alternativeSpellings": ["EE", "Eesti", "Republic of Estonia", "Eesti Vabariik"],
+    "alternativeSpellings": [
+      "EE",
+      "Eesti",
+      "Republic of Estonia",
+      "Eesti Vabariik"
+    ],
     "continents": ["Europe"],
     "borders": ["LVA", "RUS"],
     "region": "Europe",
@@ -963,7 +1021,11 @@
     "longitude": -59,
     "topLevelDomains": [".fk"],
     "capital": ["Stanley"],
-    "alternativeSpellings": ["FK", "Islas Malvinas", "Falkland Islands (Malvinas)"],
+    "alternativeSpellings": [
+      "FK",
+      "Islas Malvinas",
+      "Falkland Islands (Malvinas)"
+    ],
     "continents": ["South America"],
     "borders": [],
     "region": "Americas",
@@ -1149,7 +1211,11 @@
     "longitude": -77.5,
     "topLevelDomains": [".ec"],
     "capital": ["Quito"],
-    "alternativeSpellings": ["EC", "Republic of Ecuador", "República del Ecuador"],
+    "alternativeSpellings": [
+      "EC",
+      "Republic of Ecuador",
+      "República del Ecuador"
+    ],
     "continents": ["South America"],
     "borders": ["COL", "PER"],
     "region": "Americas",
@@ -1183,7 +1249,12 @@
     "longitude": 45,
     "topLevelDomains": [".sa", ".السعودية"],
     "capital": ["Riyadh"],
-    "alternativeSpellings": ["Saudi", "SA", "Kingdom of Saudi Arabia", "Al-Mamlakah al-‘Arabiyyah as-Su‘ūdiyyah"],
+    "alternativeSpellings": [
+      "Saudi",
+      "SA",
+      "Kingdom of Saudi Arabia",
+      "Al-Mamlakah al-‘Arabiyyah as-Su‘ūdiyyah"
+    ],
     "continents": ["Asia"],
     "borders": ["IRQ", "JOR", "KWT", "OMN", "QAT", "ARE", "YEM"],
     "region": "Asia",
@@ -1319,7 +1390,11 @@
     "longitude": 21,
     "topLevelDomains": [".cf"],
     "capital": ["Bangui"],
-    "alternativeSpellings": ["CF", "Central African Republic", "République centrafricaine"],
+    "alternativeSpellings": [
+      "CF",
+      "Central African Republic",
+      "République centrafricaine"
+    ],
     "continents": ["Africa"],
     "borders": ["CMR", "TCD", "COD", "COG", "SSD", "SDN"],
     "region": "Africa",
@@ -1426,7 +1501,11 @@
     "longitude": 38,
     "topLevelDomains": [".sy", "سوريا."],
     "capital": ["Damascus"],
-    "alternativeSpellings": ["SY", "Syrian Arab Republic", "Al-Jumhūrīyah Al-ʻArabīyah As-Sūrīyah"],
+    "alternativeSpellings": [
+      "SY",
+      "Syrian Arab Republic",
+      "Al-Jumhūrīyah Al-ʻArabīyah As-Sūrīyah"
+    ],
     "continents": ["Asia"],
     "borders": ["IRQ", "ISR", "JOR", "LBN", "TUR"],
     "region": "Asia",
@@ -1460,7 +1539,12 @@
     "longitude": 167,
     "topLevelDomains": [".vu"],
     "capital": ["Port Vila"],
-    "alternativeSpellings": ["VU", "Republic of Vanuatu", "Ripablik blong Vanuatu", "République de Vanuatu"],
+    "alternativeSpellings": [
+      "VU",
+      "Republic of Vanuatu",
+      "Ripablik blong Vanuatu",
+      "République de Vanuatu"
+    ],
     "continents": ["Oceania"],
     "borders": [],
     "region": "Oceania",
@@ -1494,7 +1578,11 @@
     "longitude": -86.5,
     "topLevelDomains": [".hn"],
     "capital": ["Tegucigalpa"],
-    "alternativeSpellings": ["HN", "Republic of Honduras", "República de Honduras"],
+    "alternativeSpellings": [
+      "HN",
+      "Republic of Honduras",
+      "República de Honduras"
+    ],
     "continents": ["North America"],
     "borders": ["GTM", "SLV", "NIC"],
     "region": "Americas",
@@ -1528,7 +1616,11 @@
     "longitude": 173,
     "topLevelDomains": [".ki"],
     "capital": ["South Tarawa"],
-    "alternativeSpellings": ["KI", "Republic of Kiribati", "Ribaberiki Kiribati"],
+    "alternativeSpellings": [
+      "KI",
+      "Republic of Kiribati",
+      "Ribaberiki Kiribati"
+    ],
     "continents": ["Oceania"],
     "borders": [],
     "region": "Oceania",
@@ -1703,7 +1795,12 @@
     "longitude": -102,
     "topLevelDomains": [".mx"],
     "capital": ["Mexico City"],
-    "alternativeSpellings": ["MX", "Mexicanos", "United Mexican States", "Estados Unidos Mexicanos"],
+    "alternativeSpellings": [
+      "MX",
+      "Mexicanos",
+      "United Mexican States",
+      "Estados Unidos Mexicanos"
+    ],
     "continents": ["North America"],
     "borders": ["BLZ", "GTM", "USA"],
     "region": "Americas",
@@ -1948,7 +2045,12 @@
     "longitude": 64,
     "topLevelDomains": [".uz"],
     "capital": ["Tashkent"],
-    "alternativeSpellings": ["UZ", "Republic of Uzbekistan", "O‘zbekiston Respublikasi", "Ўзбекистон Республикаси"],
+    "alternativeSpellings": [
+      "UZ",
+      "Republic of Uzbekistan",
+      "O‘zbekiston Respublikasi",
+      "Ўзбекистон Республикаси"
+    ],
     "continents": ["Asia"],
     "borders": ["AFG", "KAZ", "KGZ", "TJK", "TKM"],
     "region": "Asia",
@@ -1982,7 +2084,11 @@
     "longitude": 120,
     "topLevelDomains": [".id"],
     "capital": ["Jakarta"],
-    "alternativeSpellings": ["ID", "Republic of Indonesia", "Republik Indonesia"],
+    "alternativeSpellings": [
+      "ID",
+      "Republic of Indonesia",
+      "Republik Indonesia"
+    ],
     "continents": ["Asia"],
     "borders": ["TLS", "MYS", "PNG"],
     "region": "Asia",
@@ -2016,7 +2122,12 @@
     "longitude": -58,
     "topLevelDomains": [".py"],
     "capital": ["Asunción"],
-    "alternativeSpellings": ["PY", "Republic of Paraguay", "República del Paraguay", "Tetã Paraguái"],
+    "alternativeSpellings": [
+      "PY",
+      "Republic of Paraguay",
+      "República del Paraguay",
+      "Tetã Paraguái"
+    ],
     "continents": ["South America"],
     "borders": ["ARG", "BOL", "BRA"],
     "region": "Americas",
@@ -2050,7 +2161,11 @@
     "longitude": 7.4,
     "topLevelDomains": [".mc"],
     "capital": ["Monaco"],
-    "alternativeSpellings": ["MC", "Principality of Monaco", "Principauté de Monaco"],
+    "alternativeSpellings": [
+      "MC",
+      "Principality of Monaco",
+      "Principauté de Monaco"
+    ],
     "continents": ["Europe"],
     "borders": ["FRA"],
     "region": "Europe",
@@ -2118,7 +2233,12 @@
     "longitude": 15.5,
     "topLevelDomains": [".hr"],
     "capital": ["Zagreb"],
-    "alternativeSpellings": ["HR", "Hrvatska", "Republic of Croatia", "Republika Hrvatska"],
+    "alternativeSpellings": [
+      "HR",
+      "Hrvatska",
+      "Republic of Croatia",
+      "Republika Hrvatska"
+    ],
     "continents": ["Europe"],
     "borders": ["BIH", "HUN", "MNE", "SRB", "SVN"],
     "region": "Europe",
@@ -2152,7 +2272,11 @@
     "longitude": 20,
     "topLevelDomains": [".pl"],
     "capital": ["Warsaw"],
-    "alternativeSpellings": ["PL", "Republic of Poland", "Rzeczpospolita Polska"],
+    "alternativeSpellings": [
+      "PL",
+      "Republic of Poland",
+      "Rzeczpospolita Polska"
+    ],
     "continents": ["Europe"],
     "borders": ["BLR", "CZE", "DEU", "LTU", "RUS", "SVK", "UKR"],
     "region": "Europe",
@@ -2233,7 +2357,14 @@
     "population": 38005238,
     "density": 4,
     "googleMaps": "https://goo.gl/maps/jmEVLugreeqiZXxbA",
-    "timezones": ["UTC-08:00", "UTC-07:00", "UTC-06:00", "UTC-05:00", "UTC-04:00", "UTC-03:30"],
+    "timezones": [
+      "UTC-08:00",
+      "UTC-07:00",
+      "UTC-06:00",
+      "UTC-05:00",
+      "UTC-04:00",
+      "UTC-03:30"
+    ],
     "languageCodes": ["eng", "fra"],
     "currencyCodes": ["CAD"],
     "organizationCodes": ["APEC", "CMW", "NATO"]
@@ -2254,7 +2385,12 @@
     "longitude": -8,
     "topLevelDomains": [".pt"],
     "capital": ["Lisbon"],
-    "alternativeSpellings": ["PT", "Portuguesa", "Portuguese Republic", "República Portuguesa"],
+    "alternativeSpellings": [
+      "PT",
+      "Portuguesa",
+      "Portuguese Republic",
+      "República Portuguesa"
+    ],
     "continents": ["Europe"],
     "borders": ["ESP"],
     "region": "Europe",
@@ -2288,9 +2424,25 @@
     "longitude": -55,
     "topLevelDomains": [".br"],
     "capital": ["Brasília"],
-    "alternativeSpellings": ["BR", "Brasil", "Federative Republic of Brazil", "República Federativa do Brasil"],
+    "alternativeSpellings": [
+      "BR",
+      "Brasil",
+      "Federative Republic of Brazil",
+      "República Federativa do Brasil"
+    ],
     "continents": ["South America"],
-    "borders": ["ARG", "BOL", "COL", "GUF", "GUY", "PRY", "PER", "SUR", "URY", "VEN"],
+    "borders": [
+      "ARG",
+      "BOL",
+      "COL",
+      "GUF",
+      "GUY",
+      "PRY",
+      "PER",
+      "SUR",
+      "URY",
+      "VEN"
+    ],
     "region": "Americas",
     "subregion": "South America",
     "startOfWeek": "monday",
@@ -2322,7 +2474,11 @@
     "longitude": -12,
     "topLevelDomains": [".mr"],
     "capital": ["Nouakchott"],
-    "alternativeSpellings": ["MR", "Islamic Republic of Mauritania", "al-Jumhūriyyah al-ʾIslāmiyyah al-Mūrītāniyyah"],
+    "alternativeSpellings": [
+      "MR",
+      "Islamic Republic of Mauritania",
+      "al-Jumhūriyyah al-ʾIslāmiyyah al-Mūrītāniyyah"
+    ],
     "continents": ["Africa"],
     "borders": ["DZA", "MLI", "SEN", "ESH"],
     "region": "Africa",
@@ -2390,7 +2546,14 @@
     "longitude": -68.933333,
     "topLevelDomains": [".cw"],
     "capital": ["Willemstad"],
-    "alternativeSpellings": ["CW", "Curacao", "Kòrsou", "Country of Curaçao", "Land Curaçao", "Pais Kòrsou"],
+    "alternativeSpellings": [
+      "CW",
+      "Curacao",
+      "Kòrsou",
+      "Country of Curaçao",
+      "Land Curaçao",
+      "Pais Kòrsou"
+    ],
     "continents": ["North America"],
     "borders": [],
     "region": "Americas",
@@ -2424,7 +2587,12 @@
     "longitude": 114.66666666,
     "topLevelDomains": [".bn"],
     "capital": ["Bandar Seri Begawan"],
-    "alternativeSpellings": ["BN", "Brunei Darussalam", "Nation of Brunei", "the Abode of Peace"],
+    "alternativeSpellings": [
+      "BN",
+      "Brunei Darussalam",
+      "Nation of Brunei",
+      "the Abode of Peace"
+    ],
     "continents": ["Asia"],
     "borders": ["MYS"],
     "region": "Asia",
@@ -2458,7 +2626,11 @@
     "longitude": 18.5,
     "topLevelDomains": [".ao"],
     "capital": ["Luanda"],
-    "alternativeSpellings": ["AO", "República de Angola", "ʁɛpublika de an'ɡɔla"],
+    "alternativeSpellings": [
+      "AO",
+      "República de Angola",
+      "ʁɛpublika de an'ɡɔla"
+    ],
     "continents": ["Africa"],
     "borders": ["COG", "COD", "ZMB", "NAM"],
     "region": "Africa",
@@ -2526,7 +2698,13 @@
     "longitude": 28,
     "topLevelDomains": [".by"],
     "capital": ["Minsk"],
-    "alternativeSpellings": ["BY", "Bielaruś", "Republic of Belarus", "Белоруссия", "Республика Белоруссия"],
+    "alternativeSpellings": [
+      "BY",
+      "Bielaruś",
+      "Republic of Belarus",
+      "Белоруссия",
+      "Республика Белоруссия"
+    ],
     "continents": ["Europe"],
     "borders": ["LVA", "LTU", "POL", "RUS", "UKR"],
     "region": "Europe",
@@ -2560,7 +2738,12 @@
     "longitude": 35,
     "topLevelDomains": [".tr"],
     "capital": ["Ankara"],
-    "alternativeSpellings": ["TR", "Turkiye", "Republic of Turkey", "Türkiye Cumhuriyeti"],
+    "alternativeSpellings": [
+      "TR",
+      "Turkiye",
+      "Republic of Turkey",
+      "Türkiye Cumhuriyeti"
+    ],
     "continents": ["Asia"],
     "borders": ["ARM", "AZE", "BGR", "GEO", "GRC", "IRN", "IRQ", "SYR"],
     "region": "Asia",
@@ -2594,7 +2777,13 @@
     "longitude": 26,
     "topLevelDomains": [".fi"],
     "capital": ["Helsinki"],
-    "alternativeSpellings": ["FI", "Suomi", "Republic of Finland", "Suomen tasavalta", "Republiken Finland"],
+    "alternativeSpellings": [
+      "FI",
+      "Suomi",
+      "Republic of Finland",
+      "Suomen tasavalta",
+      "Republiken Finland"
+    ],
     "continents": ["Europe"],
     "borders": ["NOR", "SWE", "RUS"],
     "region": "Europe",
@@ -2939,7 +3128,13 @@
     "longitude": 77,
     "topLevelDomains": [".in"],
     "capital": ["New Delhi"],
-    "alternativeSpellings": ["IN", "Bhārat", "Republic of India", "Bharat Ganrajya", "இந்தியா"],
+    "alternativeSpellings": [
+      "IN",
+      "Bhārat",
+      "Republic of India",
+      "Bharat Ganrajya",
+      "இந்தியா"
+    ],
     "continents": ["Asia"],
     "borders": ["BGD", "BTN", "MMR", "CHN", "NPL", "PAK"],
     "region": "Asia",
@@ -2986,7 +3181,13 @@
     "population": 5084300,
     "density": 19,
     "googleMaps": "https://goo.gl/maps/xXiDQo65dwdpw9iu8",
-    "timezones": ["UTC-11:00", "UTC-10:00", "UTC+12:00", "UTC+12:45", "UTC+13:00"],
+    "timezones": [
+      "UTC-11:00",
+      "UTC-10:00",
+      "UTC+12:00",
+      "UTC+12:45",
+      "UTC+13:00"
+    ],
     "languageCodes": ["eng", "mri", "nzs"],
     "currencyCodes": ["NZD"],
     "organizationCodes": ["APEC", "CMW"]
@@ -3075,7 +3276,11 @@
     "longitude": 12.41666666,
     "topLevelDomains": [".sm"],
     "capital": ["City of San Marino"],
-    "alternativeSpellings": ["SM", "Republic of San Marino", "Repubblica di San Marino"],
+    "alternativeSpellings": [
+      "SM",
+      "Republic of San Marino",
+      "Repubblica di San Marino"
+    ],
     "continents": ["Europe"],
     "borders": ["ITA"],
     "region": "Europe",
@@ -3143,7 +3348,12 @@
     "longitude": 70,
     "topLevelDomains": [".pk"],
     "capital": ["Islamabad"],
-    "alternativeSpellings": ["PK", "Pākistān", "Islamic Republic of Pakistan", "Islāmī Jumhūriya'eh Pākistān"],
+    "alternativeSpellings": [
+      "PK",
+      "Pākistān",
+      "Islamic Republic of Pakistan",
+      "Islāmī Jumhūriya'eh Pākistān"
+    ],
     "continents": ["Asia"],
     "borders": ["AFG", "CHN", "IND", "IRN"],
     "region": "Asia",
@@ -3303,7 +3513,13 @@
     "longitude": 178.065,
     "topLevelDomains": [".fj"],
     "capital": ["Suva"],
-    "alternativeSpellings": ["FJ", "Viti", "Republic of Fiji", "Matanitu ko Viti", "Fijī Gaṇarājya"],
+    "alternativeSpellings": [
+      "FJ",
+      "Viti",
+      "Republic of Fiji",
+      "Matanitu ko Viti",
+      "Fijī Gaṇarājya"
+    ],
     "continents": ["Oceania"],
     "borders": [],
     "region": "Oceania",
@@ -3337,7 +3553,12 @@
     "longitude": -18,
     "topLevelDomains": [".is"],
     "capital": ["Reykjavik"],
-    "alternativeSpellings": ["IS", "Island", "Republic of Iceland", "Lýðveldið Ísland"],
+    "alternativeSpellings": [
+      "IS",
+      "Island",
+      "Republic of Iceland",
+      "Lýðveldið Ísland"
+    ],
     "continents": ["Europe"],
     "borders": [],
     "region": "Europe",
@@ -3371,7 +3592,12 @@
     "longitude": 98,
     "topLevelDomains": [".mm"],
     "capital": ["Naypyidaw"],
-    "alternativeSpellings": ["MM", "Burma", "Republic of the Union of Myanmar", "Pyidaunzu Thanmăda Myăma Nainngandaw"],
+    "alternativeSpellings": [
+      "MM",
+      "Burma",
+      "Republic of the Union of Myanmar",
+      "Pyidaunzu Thanmăda Myăma Nainngandaw"
+    ],
     "continents": ["Asia"],
     "borders": ["BGD", "CHN", "IND", "LAO", "THA"],
     "region": "Asia",
@@ -3405,7 +3631,11 @@
     "longitude": 90,
     "topLevelDomains": [".bd"],
     "capital": ["Dhaka"],
-    "alternativeSpellings": ["BD", "People's Republic of Bangladesh", "Gônôprôjatôntri Bangladesh"],
+    "alternativeSpellings": [
+      "BD",
+      "People's Republic of Bangladesh",
+      "Gônôprôjatôntri Bangladesh"
+    ],
     "continents": ["Asia"],
     "borders": ["MMR", "IND"],
     "region": "Asia",
@@ -3439,7 +3669,11 @@
     "longitude": 122,
     "topLevelDomains": [".ph"],
     "capital": ["Manila"],
-    "alternativeSpellings": ["PH", "Republic of the Philippines", "Repúblika ng Pilipinas"],
+    "alternativeSpellings": [
+      "PH",
+      "Republic of the Philippines",
+      "Repúblika ng Pilipinas"
+    ],
     "continents": ["Asia"],
     "borders": [],
     "region": "Asia",
@@ -3513,7 +3747,12 @@
     "longitude": -8,
     "topLevelDomains": [".ie"],
     "capital": ["Dublin"],
-    "alternativeSpellings": ["IE", "Éire", "Republic of Ireland", "Poblacht na hÉireann"],
+    "alternativeSpellings": [
+      "IE",
+      "Éire",
+      "Republic of Ireland",
+      "Poblacht na hÉireann"
+    ],
     "continents": ["Europe"],
     "borders": ["GBR"],
     "region": "Europe",
@@ -3547,7 +3786,11 @@
     "longitude": 84,
     "topLevelDomains": [".np"],
     "capital": ["Kathmandu"],
-    "alternativeSpellings": ["NP", "Federal Democratic Republic of Nepal", "Loktāntrik Ganatantra Nepāl"],
+    "alternativeSpellings": [
+      "NP",
+      "Federal Democratic Republic of Nepal",
+      "Loktāntrik Ganatantra Nepāl"
+    ],
     "continents": ["Asia"],
     "borders": ["CHN", "IND"],
     "region": "Asia",
@@ -3581,7 +3824,11 @@
     "longitude": 48,
     "topLevelDomains": [".ye"],
     "capital": ["Sana'a"],
-    "alternativeSpellings": ["YE", "Yemeni Republic", "al-Jumhūriyyah al-Yamaniyyah"],
+    "alternativeSpellings": [
+      "YE",
+      "Yemeni Republic",
+      "al-Jumhūriyyah al-Yamaniyyah"
+    ],
     "continents": ["Asia"],
     "borders": ["OMN", "SAU"],
     "region": "Asia",
@@ -3615,7 +3862,13 @@
     "longitude": 127.5,
     "topLevelDomains": [".kr", ".한국"],
     "capital": ["Seoul"],
-    "alternativeSpellings": ["KR", "Korea, Republic of", "Republic of Korea", "남한", "남조선"],
+    "alternativeSpellings": [
+      "KR",
+      "Korea, Republic of",
+      "Republic of Korea",
+      "남한",
+      "남조선"
+    ],
     "continents": ["Asia"],
     "borders": ["PRK"],
     "region": "Asia",
@@ -3649,7 +3902,12 @@
     "longitude": 10,
     "topLevelDomains": [".dk"],
     "capital": ["Copenhagen"],
-    "alternativeSpellings": ["DK", "Danmark", "Kingdom of Denmark", "Kongeriget Danmark"],
+    "alternativeSpellings": [
+      "DK",
+      "Danmark",
+      "Kingdom of Denmark",
+      "Kongeriget Danmark"
+    ],
     "continents": ["Europe"],
     "borders": ["DEU"],
     "region": "Europe",
@@ -3751,7 +4009,14 @@
     "longitude": 39,
     "topLevelDomains": [".er"],
     "capital": ["Asmara"],
-    "alternativeSpellings": ["ER", "State of Eritrea", "ሃገረ ኤርትራ", "Dawlat Iritriyá", "ʾErtrā", "Iritriyā"],
+    "alternativeSpellings": [
+      "ER",
+      "State of Eritrea",
+      "ሃገረ ኤርትራ",
+      "Dawlat Iritriyá",
+      "ʾErtrā",
+      "Iritriyā"
+    ],
     "continents": ["Africa"],
     "borders": ["DJI", "ETH", "SDN"],
     "region": "Africa",
@@ -3867,7 +4132,11 @@
     "longitude": -88.91666666,
     "topLevelDomains": [".sv"],
     "capital": ["San Salvador"],
-    "alternativeSpellings": ["SV", "Republic of El Salvador", "República de El Salvador"],
+    "alternativeSpellings": [
+      "SV",
+      "Republic of El Salvador",
+      "República de El Salvador"
+    ],
     "continents": ["North America"],
     "borders": ["GTM", "HND"],
     "region": "Americas",
@@ -4076,7 +4345,12 @@
     "longitude": 22,
     "topLevelDomains": [".gr"],
     "capital": ["Athens"],
-    "alternativeSpellings": ["GR", "Elláda", "Hellenic Republic", "Ελληνική Δημοκρατία"],
+    "alternativeSpellings": [
+      "GR",
+      "Elláda",
+      "Hellenic Republic",
+      "Ελληνική Δημοκρατία"
+    ],
     "continents": ["Europe"],
     "borders": ["ALB", "BGR", "TUR", "MKD"],
     "region": "Europe",
@@ -4110,7 +4384,11 @@
     "longitude": -2.58333333,
     "topLevelDomains": [".gg"],
     "capital": ["St. Peter Port"],
-    "alternativeSpellings": ["GG", "Bailiwick of Guernsey", "Bailliage de Guernesey"],
+    "alternativeSpellings": [
+      "GG",
+      "Bailiwick of Guernsey",
+      "Bailliage de Guernesey"
+    ],
     "continents": ["Europe"],
     "borders": [],
     "region": "Europe",
@@ -4144,7 +4422,12 @@
     "longitude": 30,
     "topLevelDomains": [".rw"],
     "capital": ["Kigali"],
-    "alternativeSpellings": ["RW", "Republic of Rwanda", "Repubulika y'u Rwanda", "République du Rwanda"],
+    "alternativeSpellings": [
+      "RW",
+      "Republic of Rwanda",
+      "Repubulika y'u Rwanda",
+      "République du Rwanda"
+    ],
     "continents": ["Africa"],
     "borders": ["BDI", "COD", "TZA", "UGA"],
     "region": "Africa",
@@ -4178,7 +4461,10 @@
     "longitude": -56.33333333,
     "topLevelDomains": [".pm"],
     "capital": ["Saint-Pierre"],
-    "alternativeSpellings": ["PM", "Collectivité territoriale de Saint-Pierre-et-Miquelon"],
+    "alternativeSpellings": [
+      "PM",
+      "Collectivité territoriale de Saint-Pierre-et-Miquelon"
+    ],
     "continents": ["North America"],
     "borders": [],
     "region": "Americas",
@@ -4246,7 +4532,14 @@
     "longitude": 121,
     "topLevelDomains": [".tw", ".台灣", ".台湾"],
     "capital": ["Taipei"],
-    "alternativeSpellings": ["TW", "Táiwān", "Republic of China", "中華民國", "Zhōnghuá Mínguó", "Chinese Taipei"],
+    "alternativeSpellings": [
+      "TW",
+      "Táiwān",
+      "Republic of China",
+      "中華民國",
+      "Zhōnghuá Mínguó",
+      "Chinese Taipei"
+    ],
     "continents": ["Asia"],
     "borders": [],
     "region": "Asia",
@@ -4314,7 +4607,12 @@
     "longitude": 55.66666666,
     "topLevelDomains": [".sc"],
     "capital": ["Victoria"],
-    "alternativeSpellings": ["SC", "Republic of Seychelles", "Repiblik Sesel", "République des Seychelles"],
+    "alternativeSpellings": [
+      "SC",
+      "Republic of Seychelles",
+      "Repiblik Sesel",
+      "République des Seychelles"
+    ],
     "continents": ["Africa"],
     "borders": [],
     "region": "Africa",
@@ -4391,7 +4689,11 @@
     "longitude": 24,
     "topLevelDomains": [".bw"],
     "capital": ["Gaborone"],
-    "alternativeSpellings": ["BW", "Republic of Botswana", "Lefatshe la Botswana"],
+    "alternativeSpellings": [
+      "BW",
+      "Republic of Botswana",
+      "Lefatshe la Botswana"
+    ],
     "continents": ["Africa"],
     "borders": ["NAM", "ZAF", "ZMB", "ZWE"],
     "region": "Africa",
@@ -4493,7 +4795,11 @@
     "longitude": -72,
     "topLevelDomains": [".co"],
     "capital": ["Bogotá"],
-    "alternativeSpellings": ["CO", "Republic of Colombia", "República de Colombia"],
+    "alternativeSpellings": [
+      "CO",
+      "Republic of Colombia",
+      "República de Colombia"
+    ],
     "continents": ["South America"],
     "borders": ["BRA", "ECU", "PAN", "PER", "VEN"],
     "region": "Americas",
@@ -4601,7 +4907,13 @@
     "longitude": 166.91666666,
     "topLevelDomains": [".nr"],
     "capital": ["Yaren"],
-    "alternativeSpellings": ["NR", "Naoero", "Pleasant Island", "Republic of Nauru", "Ripublik Naoero"],
+    "alternativeSpellings": [
+      "NR",
+      "Naoero",
+      "Pleasant Island",
+      "Republic of Nauru",
+      "Ripublik Naoero"
+    ],
     "continents": ["Oceania"],
     "borders": [],
     "region": "Oceania",
@@ -4649,7 +4961,17 @@
     "density": 3,
     "googleMaps": "https://goo.gl/maps/oR1i8BFEYX3EY83WA",
     "timezones": ["UTC+01:00"],
-    "languageCodes": ["afr", "deu", "eng", "her", "hgm", "kwn", "loz", "ndo", "tsn"],
+    "languageCodes": [
+      "afr",
+      "deu",
+      "eng",
+      "her",
+      "hgm",
+      "kwn",
+      "loz",
+      "ndo",
+      "tsn"
+    ],
     "currencyCodes": ["NAD", "ZAR"],
     "organizationCodes": ["AU", "CMW"]
   },
@@ -4669,7 +4991,12 @@
     "longitude": 19,
     "topLevelDomains": [".td"],
     "capital": ["N'Djamena"],
-    "alternativeSpellings": ["TD", "Tchad", "Republic of Chad", "République du Tchad"],
+    "alternativeSpellings": [
+      "TD",
+      "Tchad",
+      "Republic of Chad",
+      "République du Tchad"
+    ],
     "continents": ["Africa"],
     "borders": ["CMR", "CAF", "LBY", "NER", "NGA", "SDN"],
     "region": "Africa",
@@ -4839,7 +5166,11 @@
     "longitude": 168,
     "topLevelDomains": [".mh"],
     "capital": ["Majuro"],
-    "alternativeSpellings": ["MH", "Republic of the Marshall Islands", "Aolepān Aorōkin M̧ajeļ"],
+    "alternativeSpellings": [
+      "MH",
+      "Republic of the Marshall Islands",
+      "Aolepān Aorōkin M̧ajeļ"
+    ],
     "continents": ["Oceania"],
     "borders": [],
     "region": "Oceania",
@@ -4873,7 +5204,11 @@
     "longitude": -84,
     "topLevelDomains": [".cr"],
     "capital": ["San José"],
-    "alternativeSpellings": ["CR", "Republic of Costa Rica", "República de Costa Rica"],
+    "alternativeSpellings": [
+      "CR",
+      "Republic of Costa Rica",
+      "República de Costa Rica"
+    ],
     "continents": ["North America"],
     "borders": ["NIC", "PAN"],
     "region": "Americas",
@@ -4975,7 +5310,10 @@
     "longitude": -5.72,
     "topLevelDomains": [".sh", ".ac"],
     "capital": ["Jamestown"],
-    "alternativeSpellings": ["Saint Helena", "St. Helena, Ascension and Tristan da Cunha"],
+    "alternativeSpellings": [
+      "Saint Helena",
+      "St. Helena, Ascension and Tristan da Cunha"
+    ],
     "continents": ["Africa"],
     "borders": [],
     "region": "Africa",
@@ -5009,7 +5347,12 @@
     "longitude": 35.2,
     "topLevelDomains": [".ps", "فلسطين."],
     "capital": ["Ramallah", "Jerusalem"],
-    "alternativeSpellings": ["PS", "Palestine, State of", "State of Palestine", "Dawlat Filasṭin"],
+    "alternativeSpellings": [
+      "PS",
+      "Palestine, State of",
+      "State of Palestine",
+      "Dawlat Filasṭin"
+    ],
     "continents": ["Asia"],
     "borders": ["ISR", "EGY", "JOR"],
     "region": "Asia",
@@ -5111,7 +5454,11 @@
     "longitude": 158.25,
     "topLevelDomains": [".fm"],
     "capital": ["Palikir"],
-    "alternativeSpellings": ["FM", "Federated States of Micronesia", "Micronesia, Federated States of"],
+    "alternativeSpellings": [
+      "FM",
+      "Federated States of Micronesia",
+      "Micronesia, Federated States of"
+    ],
     "continents": ["Oceania"],
     "borders": [],
     "region": "Oceania",
@@ -5286,9 +5633,28 @@
     "longitude": 100,
     "topLevelDomains": [".ru", ".su", ".рф"],
     "capital": ["Moscow"],
-    "alternativeSpellings": ["RU", "Russian Federation", "Российская Федерация"],
+    "alternativeSpellings": [
+      "RU",
+      "Russian Federation",
+      "Российская Федерация"
+    ],
     "continents": ["Europe"],
-    "borders": ["AZE", "BLR", "CHN", "EST", "FIN", "GEO", "KAZ", "PRK", "LVA", "LTU", "MNG", "NOR", "POL", "UKR"],
+    "borders": [
+      "AZE",
+      "BLR",
+      "CHN",
+      "EST",
+      "FIN",
+      "GEO",
+      "KAZ",
+      "PRK",
+      "LVA",
+      "LTU",
+      "MNG",
+      "NOR",
+      "POL",
+      "UKR"
+    ],
     "region": "Europe",
     "subregion": "Eastern Europe",
     "startOfWeek": "monday",
@@ -5404,7 +5770,11 @@
     "longitude": -85,
     "topLevelDomains": [".ni"],
     "capital": ["Managua"],
-    "alternativeSpellings": ["NI", "Republic of Nicaragua", "República de Nicaragua"],
+    "alternativeSpellings": [
+      "NI",
+      "Republic of Nicaragua",
+      "República de Nicaragua"
+    ],
     "continents": ["North America"],
     "borders": ["CRI", "HND"],
     "region": "Americas",
@@ -5438,7 +5808,11 @@
     "longitude": 9,
     "topLevelDomains": [".tn"],
     "capital": ["Tunis"],
-    "alternativeSpellings": ["TN", "Republic of Tunisia", "al-Jumhūriyyah at-Tūnisiyyah"],
+    "alternativeSpellings": [
+      "TN",
+      "Republic of Tunisia",
+      "al-Jumhūriyyah at-Tūnisiyyah"
+    ],
     "continents": ["Africa"],
     "borders": ["DZA", "LBY"],
     "region": "Africa",
@@ -5472,7 +5846,13 @@
     "longitude": 25,
     "topLevelDomains": [".cd"],
     "capital": ["Kinshasa"],
-    "alternativeSpellings": ["CD", "DR Congo", "Congo-Kinshasa", "Congo, the Democratic Republic of the", "DRC"],
+    "alternativeSpellings": [
+      "CD",
+      "DR Congo",
+      "Congo-Kinshasa",
+      "Congo, the Democratic Republic of the",
+      "DRC"
+    ],
     "continents": ["Africa"],
     "borders": ["AGO", "BDI", "CAF", "COG", "RWA", "SSD", "TZA", "UGA", "ZMB"],
     "region": "Africa",
@@ -5540,7 +5920,12 @@
     "longitude": 24,
     "topLevelDomains": [".za"],
     "capital": ["Pretoria", "Bloemfontein", "Cape Town"],
-    "alternativeSpellings": ["ZA", "RSA", "Suid-Afrika", "Republic of South Africa"],
+    "alternativeSpellings": [
+      "ZA",
+      "RSA",
+      "Suid-Afrika",
+      "Republic of South Africa"
+    ],
     "continents": ["Africa"],
     "borders": ["BWA", "LSO", "MOZ", "NAM", "SWZ", "ZWE"],
     "region": "Africa",
@@ -5554,7 +5939,19 @@
     "density": 49,
     "googleMaps": "https://goo.gl/maps/CLCZ1R8Uz1KpYhRv6",
     "timezones": ["UTC+02:00"],
-    "languageCodes": ["afr", "eng", "nbl", "nso", "sot", "ssw", "tsn", "tso", "ven", "xho", "zul"],
+    "languageCodes": [
+      "afr",
+      "eng",
+      "nbl",
+      "nso",
+      "sot",
+      "ssw",
+      "tsn",
+      "tso",
+      "ven",
+      "xho",
+      "zul"
+    ],
     "currencyCodes": ["ZAR"],
     "organizationCodes": ["AU", "CMW"]
   },
@@ -5642,7 +6039,10 @@
     "longitude": -37,
     "topLevelDomains": [".gs"],
     "capital": ["King Edward Point"],
-    "alternativeSpellings": ["GS", "South Georgia and the South Sandwich Islands"],
+    "alternativeSpellings": [
+      "GS",
+      "South Georgia and the South Sandwich Islands"
+    ],
     "continents": ["Antarctica"],
     "borders": [],
     "region": "Antarctic",
@@ -5786,7 +6186,11 @@
     "longitude": 81,
     "topLevelDomains": [".lk", ".இலங்கை", ".ලංකා"],
     "capital": ["Sri Jayawardenepura Kotte"],
-    "alternativeSpellings": ["LK", "ilaṅkai", "Democratic Socialist Republic of Sri Lanka"],
+    "alternativeSpellings": [
+      "LK",
+      "ilaṅkai",
+      "Democratic Socialist Republic of Sri Lanka"
+    ],
     "continents": ["Asia"],
     "borders": ["IND"],
     "region": "Asia",
@@ -5854,7 +6258,11 @@
     "longitude": -172.33333333,
     "topLevelDomains": [".ws"],
     "capital": ["Apia"],
-    "alternativeSpellings": ["WS", "Independent State of Samoa", "Malo Saʻoloto Tutoʻatasi o Sāmoa"],
+    "alternativeSpellings": [
+      "WS",
+      "Independent State of Samoa",
+      "Malo Saʻoloto Tutoʻatasi o Sāmoa"
+    ],
     "continents": ["Oceania"],
     "borders": [],
     "region": "Oceania",
@@ -5922,7 +6330,11 @@
     "longitude": -66.5,
     "topLevelDomains": [".pr"],
     "capital": ["San Juan"],
-    "alternativeSpellings": ["PR", "Commonwealth of Puerto Rico", "Estado Libre Asociado de Puerto Rico"],
+    "alternativeSpellings": [
+      "PR",
+      "Commonwealth of Puerto Rico",
+      "Estado Libre Asociado de Puerto Rico"
+    ],
     "continents": ["North America"],
     "borders": [],
     "region": "Americas",
@@ -6058,7 +6470,11 @@
     "longitude": -14,
     "topLevelDomains": [".sn"],
     "capital": ["Dakar"],
-    "alternativeSpellings": ["SN", "Republic of Senegal", "République du Sénégal"],
+    "alternativeSpellings": [
+      "SN",
+      "Republic of Senegal",
+      "République du Sénégal"
+    ],
     "continents": ["Africa"],
     "borders": ["GMB", "GIN", "GNB", "MLI", "MRT"],
     "region": "Africa",
@@ -6136,7 +6552,12 @@
     "longitude": 29,
     "topLevelDomains": [".md"],
     "capital": ["Chișinău"],
-    "alternativeSpellings": ["MD", "Moldova, Republic of", "Republic of Moldova", "Republica Moldova"],
+    "alternativeSpellings": [
+      "MD",
+      "Moldova, Republic of",
+      "Republic of Moldova",
+      "Republica Moldova"
+    ],
     "continents": ["Europe"],
     "borders": ["ROU", "UKR"],
     "region": "Europe",
@@ -6170,7 +6591,11 @@
     "longitude": 9.53333333,
     "topLevelDomains": [".li"],
     "capital": ["Vaduz"],
-    "alternativeSpellings": ["LI", "Principality of Liechtenstein", "Fürstentum Liechtenstein"],
+    "alternativeSpellings": [
+      "LI",
+      "Principality of Liechtenstein",
+      "Fürstentum Liechtenstein"
+    ],
     "continents": ["Europe"],
     "borders": ["AUT", "CHE"],
     "region": "Europe",
@@ -6238,7 +6663,11 @@
     "longitude": 35.83333333,
     "topLevelDomains": [".lb"],
     "capital": ["Beirut"],
-    "alternativeSpellings": ["LB", "Lebanese Republic", "Al-Jumhūrīyah Al-Libnānīyah"],
+    "alternativeSpellings": [
+      "LB",
+      "Lebanese Republic",
+      "Al-Jumhūrīyah Al-Libnānīyah"
+    ],
     "continents": ["Asia"],
     "borders": ["ISR", "SYR"],
     "region": "Asia",
@@ -6306,7 +6735,14 @@
     "longitude": 10,
     "topLevelDomains": [".no"],
     "capital": ["Oslo"],
-    "alternativeSpellings": ["NO", "Norge", "Noreg", "Kingdom of Norway", "Kongeriket Norge", "Kongeriket Noreg"],
+    "alternativeSpellings": [
+      "NO",
+      "Norge",
+      "Noreg",
+      "Kingdom of Norway",
+      "Kongeriket Norge",
+      "Kongeriket Noreg"
+    ],
     "continents": ["Europe"],
     "borders": ["FIN", "SWE", "RUS"],
     "region": "Europe",
@@ -6374,7 +6810,11 @@
     "longitude": 12,
     "topLevelDomains": [".cm"],
     "capital": ["Yaoundé"],
-    "alternativeSpellings": ["CM", "Republic of Cameroon", "République du Cameroun"],
+    "alternativeSpellings": [
+      "CM",
+      "Republic of Cameroon",
+      "République du Cameroun"
+    ],
     "continents": ["Africa"],
     "borders": ["CAF", "TCD", "COG", "GNQ", "GAB", "NGA"],
     "region": "Africa",
@@ -6408,7 +6848,14 @@
     "longitude": 100,
     "topLevelDomains": [".th", ".ไทย"],
     "capital": ["Bangkok"],
-    "alternativeSpellings": ["TH", "Prathet", "Thai", "Kingdom of Thailand", "ราชอาณาจักรไทย", "Ratcha Anachak Thai"],
+    "alternativeSpellings": [
+      "TH",
+      "Prathet",
+      "Thai",
+      "Kingdom of Thailand",
+      "ราชอาณาจักรไทย",
+      "Ratcha Anachak Thai"
+    ],
     "continents": ["Asia"],
     "borders": ["MMR", "KHM", "LAO", "MYS"],
     "region": "Asia",
@@ -6442,7 +6889,12 @@
     "longitude": 8,
     "topLevelDomains": [".ng"],
     "capital": ["Abuja"],
-    "alternativeSpellings": ["NG", "Nijeriya", "Naíjíríà", "Federal Republic of Nigeria"],
+    "alternativeSpellings": [
+      "NG",
+      "Nijeriya",
+      "Naíjíríà",
+      "Federal Republic of Nigeria"
+    ],
     "continents": ["Africa"],
     "borders": ["BEN", "CMR", "TCD", "NER"],
     "region": "Africa",
@@ -6510,7 +6962,11 @@
     "longitude": 23.0418,
     "topLevelDomains": [".cv"],
     "capital": ["Praia"],
-    "alternativeSpellings": ["CV", "Republic of Cabo Verde", "República de Cabo Verde"],
+    "alternativeSpellings": [
+      "CV",
+      "Republic of Cabo Verde",
+      "República de Cabo Verde"
+    ],
     "continents": ["Africa"],
     "borders": [],
     "region": "Africa",
@@ -6544,7 +7000,12 @@
     "longitude": -2.16666666,
     "topLevelDomains": [".je"],
     "capital": ["Saint Helier"],
-    "alternativeSpellings": ["JE", "Bailiwick of Jersey", "Bailliage de Jersey", "Bailliage dé Jèrri"],
+    "alternativeSpellings": [
+      "JE",
+      "Bailiwick of Jersey",
+      "Bailliage de Jersey",
+      "Bailliage dé Jèrri"
+    ],
     "continents": ["Europe"],
     "borders": [],
     "region": "Europe",
@@ -6612,7 +7073,12 @@
     "longitude": 105,
     "topLevelDomains": [".la"],
     "capital": ["Vientiane"],
-    "alternativeSpellings": ["LA", "Lao", "Lao People's Democratic Republic", "Sathalanalat Paxathipatai Paxaxon Lao"],
+    "alternativeSpellings": [
+      "LA",
+      "Lao",
+      "Lao People's Democratic Republic",
+      "Sathalanalat Paxathipatai Paxaxon Lao"
+    ],
     "continents": ["Asia"],
     "borders": ["MMR", "KHM", "CHN", "THA", "VNM"],
     "region": "Asia",
@@ -6680,7 +7146,11 @@
     "longitude": 47.5,
     "topLevelDomains": [".az"],
     "capital": ["Baku"],
-    "alternativeSpellings": ["AZ", "Republic of Azerbaijan", "Azərbaycan Respublikası"],
+    "alternativeSpellings": [
+      "AZ",
+      "Republic of Azerbaijan",
+      "Azərbaycan Respublikası"
+    ],
     "continents": ["Asia"],
     "borders": ["ARM", "GEO", "IRN", "RUS", "TUR"],
     "region": "Asia",
@@ -6748,7 +7218,11 @@
     "longitude": -5,
     "topLevelDomains": [".ma", "المغرب."],
     "capital": ["Rabat"],
-    "alternativeSpellings": ["MA", "Kingdom of Morocco", "Al-Mamlakah al-Maġribiyah"],
+    "alternativeSpellings": [
+      "MA",
+      "Kingdom of Morocco",
+      "Al-Mamlakah al-Maġribiyah"
+    ],
     "continents": ["Africa"],
     "borders": ["DZA", "ESH", "ESP"],
     "region": "Africa",
@@ -6816,7 +7290,11 @@
     "longitude": 25,
     "topLevelDomains": [".bg"],
     "capital": ["Sofia"],
-    "alternativeSpellings": ["BG", "Republic of Bulgaria", "Република България"],
+    "alternativeSpellings": [
+      "BG",
+      "Republic of Bulgaria",
+      "Република България"
+    ],
     "continents": ["Europe"],
     "borders": ["GRC", "MKD", "ROU", "SRB", "TUR"],
     "region": "Europe",
@@ -6850,7 +7328,12 @@
     "longitude": 30,
     "topLevelDomains": [".bi"],
     "capital": ["Gitega"],
-    "alternativeSpellings": ["BI", "Republic of Burundi", "Republika y'Uburundi", "République du Burundi"],
+    "alternativeSpellings": [
+      "BI",
+      "Republic of Burundi",
+      "Republika y'Uburundi",
+      "République du Burundi"
+    ],
     "continents": ["Africa"],
     "borders": ["COD", "RWA", "TZA"],
     "region": "Africa",
@@ -6952,7 +7435,11 @@
     "longitude": 35,
     "topLevelDomains": [".mz"],
     "capital": ["Maputo"],
-    "alternativeSpellings": ["MZ", "Republic of Mozambique", "República de Moçambique"],
+    "alternativeSpellings": [
+      "MZ",
+      "Republic of Mozambique",
+      "República de Moçambique"
+    ],
     "continents": ["Africa"],
     "borders": ["MWI", "ZAF", "SWZ", "TZA", "ZMB", "ZWE"],
     "region": "Africa",
@@ -7102,7 +7589,11 @@
     "longitude": -130.1,
     "topLevelDomains": [".pn"],
     "capital": ["Adamstown"],
-    "alternativeSpellings": ["PN", "Pitcairn", "Pitcairn Henderson Ducie and Oeno Islands"],
+    "alternativeSpellings": [
+      "PN",
+      "Pitcairn",
+      "Pitcairn Henderson Ducie and Oeno Islands"
+    ],
     "continents": ["Oceania"],
     "borders": [],
     "region": "Oceania",
@@ -7170,7 +7661,12 @@
     "longitude": 107.83333333,
     "topLevelDomains": [".vn"],
     "capital": ["Hanoi"],
-    "alternativeSpellings": ["VN", "Socialist Republic of Vietnam", "Cộng hòa Xã hội chủ nghĩa Việt Nam", "Viet Nam"],
+    "alternativeSpellings": [
+      "VN",
+      "Socialist Republic of Vietnam",
+      "Cộng hòa Xã hội chủ nghĩa Việt Nam",
+      "Viet Nam"
+    ],
     "continents": ["Asia"],
     "borders": ["KHM", "CHN", "LAO"],
     "region": "Asia",
@@ -7374,7 +7870,11 @@
     "longitude": 24,
     "topLevelDomains": [".lt"],
     "capital": ["Vilnius"],
-    "alternativeSpellings": ["LT", "Republic of Lithuania", "Lietuvos Respublika"],
+    "alternativeSpellings": [
+      "LT",
+      "Republic of Lithuania",
+      "Lietuvos Respublika"
+    ],
     "continents": ["Europe"],
     "borders": ["BLR", "LVA", "POL", "RUS"],
     "region": "Europe",
@@ -7408,7 +7908,12 @@
     "longitude": -72.41666666,
     "topLevelDomains": [".ht"],
     "capital": ["Port-au-Prince"],
-    "alternativeSpellings": ["HT", "Republic of Haiti", "République d'Haïti", "Repiblik Ayiti"],
+    "alternativeSpellings": [
+      "HT",
+      "Republic of Haiti",
+      "République d'Haïti",
+      "Repiblik Ayiti"
+    ],
     "continents": ["North America"],
     "borders": ["DOM"],
     "region": "Americas",
@@ -7476,7 +7981,11 @@
     "longitude": 147,
     "topLevelDomains": [".pg"],
     "capital": ["Port Moresby"],
-    "alternativeSpellings": ["PG", "Independent State of Papua New Guinea", "Independen Stet bilong Papua Niugini"],
+    "alternativeSpellings": [
+      "PG",
+      "Independent State of Papua New Guinea",
+      "Independen Stet bilong Papua Niugini"
+    ],
     "continents": ["Oceania"],
     "borders": ["IDN"],
     "region": "Oceania",
@@ -7544,7 +8053,13 @@
     "longitude": 75,
     "topLevelDomains": [".kg"],
     "capital": ["Bishkek"],
-    "alternativeSpellings": ["KG", "Киргизия", "Kyrgyz Republic", "Кыргыз Республикасы", "Kyrgyz Respublikasy"],
+    "alternativeSpellings": [
+      "KG",
+      "Киргизия",
+      "Kyrgyz Republic",
+      "Кыргыз Республикасы",
+      "Kyrgyz Respublikasy"
+    ],
     "continents": ["Asia"],
     "borders": ["CHN", "KAZ", "TJK", "UZB"],
     "region": "Asia",
@@ -7612,7 +8127,12 @@
     "longitude": 47,
     "topLevelDomains": [".mg"],
     "capital": ["Antananarivo"],
-    "alternativeSpellings": ["MG", "Republic of Madagascar", "Repoblikan'i Madagasikara", "République de Madagascar"],
+    "alternativeSpellings": [
+      "MG",
+      "Republic of Madagascar",
+      "Repoblikan'i Madagasikara",
+      "République de Madagascar"
+    ],
     "continents": ["Africa"],
     "borders": [],
     "region": "Africa",
@@ -7680,7 +8200,12 @@
     "longitude": 1.16666666,
     "topLevelDomains": [".tg"],
     "capital": ["Lomé"],
-    "alternativeSpellings": ["TG", "Togolese", "Togolese Republic", "République Togolaise"],
+    "alternativeSpellings": [
+      "TG",
+      "Togolese",
+      "Togolese Republic",
+      "République Togolaise"
+    ],
     "continents": ["Africa"],
     "borders": ["BEN", "BFA", "GHA"],
     "region": "Africa",
@@ -7748,7 +8273,11 @@
     "longitude": 14.81666666,
     "topLevelDomains": [".si"],
     "capital": ["Ljubljana"],
-    "alternativeSpellings": ["SI", "Republic of Slovenia", "Republika Slovenija"],
+    "alternativeSpellings": [
+      "SI",
+      "Republic of Slovenia",
+      "Republika Slovenija"
+    ],
     "continents": ["Europe"],
     "borders": ["AUT", "HRV", "ITA", "HUN"],
     "region": "Europe",
@@ -7782,7 +8311,12 @@
     "longitude": 103.8,
     "topLevelDomains": [".sg", ".新加坡", ".சிங்கப்பூர்"],
     "capital": ["Singapore"],
-    "alternativeSpellings": ["SG", "Singapura", "Republik Singapura", "新加坡共和国"],
+    "alternativeSpellings": [
+      "SG",
+      "Singapura",
+      "Republik Singapura",
+      "新加坡共和国"
+    ],
     "continents": ["Asia"],
     "borders": [],
     "region": "Asia",
@@ -7964,7 +8498,11 @@
     "longitude": 9,
     "topLevelDomains": [".de"],
     "capital": ["Berlin"],
-    "alternativeSpellings": ["DE", "Federal Republic of Germany", "Bundesrepublik Deutschland"],
+    "alternativeSpellings": [
+      "DE",
+      "Federal Republic of Germany",
+      "Bundesrepublik Deutschland"
+    ],
     "continents": ["Europe"],
     "borders": ["AUT", "BEL", "CZE", "DNK", "FRA", "LUX", "NLD", "POL", "CHE"],
     "region": "Europe",
@@ -8186,7 +8724,11 @@
     "longitude": 45.16666666,
     "topLevelDomains": [".yt"],
     "capital": ["Mamoudzou"],
-    "alternativeSpellings": ["YT", "Department of Mayotte", "Département de Mayotte"],
+    "alternativeSpellings": [
+      "YT",
+      "Department of Mayotte",
+      "Département de Mayotte"
+    ],
     "continents": ["Africa"],
     "borders": [],
     "region": "Africa",
@@ -8220,7 +8762,12 @@
     "longitude": -61.33333333,
     "topLevelDomains": [".dm"],
     "capital": ["Roseau"],
-    "alternativeSpellings": ["DM", "Dominique", "Wai‘tu kubuli", "Commonwealth of Dominica"],
+    "alternativeSpellings": [
+      "DM",
+      "Dominique",
+      "Wai‘tu kubuli",
+      "Commonwealth of Dominica"
+    ],
     "continents": ["North America"],
     "borders": [],
     "region": "Americas",
@@ -8390,7 +8937,11 @@
     "longitude": -10,
     "topLevelDomains": [".gn"],
     "capital": ["Conakry"],
-    "alternativeSpellings": ["GN", "Republic of Guinea", "République de Guinée"],
+    "alternativeSpellings": [
+      "GN",
+      "Republic of Guinea",
+      "République de Guinée"
+    ],
     "continents": ["Africa"],
     "borders": ["CIV", "GNB", "LBR", "MLI", "SEN", "SLE"],
     "region": "Africa",
@@ -8498,7 +9049,14 @@
     "longitude": 8,
     "topLevelDomains": [".ch"],
     "capital": ["Bern"],
-    "alternativeSpellings": ["CH", "Swiss Confederation", "Schweiz", "Suisse", "Svizzera", "Svizra"],
+    "alternativeSpellings": [
+      "CH",
+      "Swiss Confederation",
+      "Schweiz",
+      "Suisse",
+      "Svizzera",
+      "Svizra"
+    ],
     "continents": ["Europe"],
     "borders": ["AUT", "FRA", "ITA", "LIE", "DEU"],
     "region": "Europe",
@@ -8532,7 +9090,11 @@
     "longitude": 167.95,
     "topLevelDomains": [".nf"],
     "capital": ["Kingston"],
-    "alternativeSpellings": ["NF", "Territory of Norfolk Island", "Teratri of Norf'k Ailen"],
+    "alternativeSpellings": [
+      "NF",
+      "Territory of Norfolk Island",
+      "Teratri of Norf'k Ailen"
+    ],
     "continents": ["Oceania"],
     "borders": [],
     "region": "Oceania",
@@ -8600,7 +9162,11 @@
     "longitude": 30,
     "topLevelDomains": [".sd"],
     "capital": ["Khartoum"],
-    "alternativeSpellings": ["SD", "Republic of the Sudan", "Jumhūrīyat as-Sūdān"],
+    "alternativeSpellings": [
+      "SD",
+      "Republic of the Sudan",
+      "Jumhūrīyat as-Sūdān"
+    ],
     "continents": ["Africa"],
     "borders": ["CAF", "TCD", "EGY", "ERI", "ETH", "LBY", "SSD"],
     "region": "Africa",
@@ -8674,7 +9240,11 @@
     "longitude": -56,
     "topLevelDomains": [".uy"],
     "capital": ["Montevideo"],
-    "alternativeSpellings": ["UY", "Oriental Republic of Uruguay", "República Oriental del Uruguay"],
+    "alternativeSpellings": [
+      "UY",
+      "Oriental Republic of Uruguay",
+      "República Oriental del Uruguay"
+    ],
     "continents": ["South America"],
     "borders": ["ARG", "BRA"],
     "region": "Americas",
@@ -8749,7 +9319,11 @@
     "longitude": -15,
     "topLevelDomains": [".gw"],
     "capital": ["Bissau"],
-    "alternativeSpellings": ["GW", "Republic of Guinea-Bissau", "República da Guiné-Bissau"],
+    "alternativeSpellings": [
+      "GW",
+      "Republic of Guinea-Bissau",
+      "República da Guiné-Bissau"
+    ],
     "continents": ["Africa"],
     "borders": ["GIN", "SEN"],
     "region": "Africa",

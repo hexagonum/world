@@ -1,4 +1,14 @@
-import { Input, Table, TableCaption, TableContainer, Tbody, Td, Th, Thead, Tr } from '@chakra-ui/react';
+import {
+  Input,
+  Table,
+  TableCaption,
+  TableContainer,
+  Tbody,
+  Td,
+  Th,
+  Thead,
+  Tr,
+} from '@chakra-ui/react';
 import Container from '@world/components/Container';
 import { apolloClient } from '@world/graphql';
 import { COUNTRIES_DENSITY_QUERY } from '@world/graphql/queries/countries';
@@ -16,7 +26,10 @@ export const DensityPage: NextPage<DensityPageProps> = ({ countries = [] }) => {
   const [query, setQuery] = useState<string>('');
 
   const countriesByFilter = countries.filter(({ commonName = '' }) => {
-    const commonNameFlag: boolean = query !== '' ? commonName.toLowerCase().includes(query.toLowerCase()) : true;
+    const commonNameFlag: boolean =
+      query !== ''
+        ? commonName.toLowerCase().includes(query.toLowerCase())
+        : true;
     return commonNameFlag;
   });
 
@@ -30,7 +43,9 @@ export const DensityPage: NextPage<DensityPageProps> = ({ countries = [] }) => {
               name="query"
               placeholder="Query"
               value={query}
-              onChange={(event: ChangeEvent<HTMLInputElement>) => setQuery(event.target.value)}
+              onChange={(event: ChangeEvent<HTMLInputElement>) =>
+                setQuery(event.target.value)
+              }
               className="shadow"
             />
             <div className="shadow">
@@ -46,18 +61,25 @@ export const DensityPage: NextPage<DensityPageProps> = ({ countries = [] }) => {
                     </Tr>
                   </Thead>
                   <Tbody>
-                    {countriesByFilter.map(({ commonName = '', cca3 = '', density = 0 }, index: number) => {
-                      return (
-                        <Tr key={cca3}>
-                          <Td>{index + 1}</Td>
-                          <Td>
-                            <Link href={`/countries/${cca3}`}>{commonName}</Link>
-                          </Td>
+                    {countriesByFilter.map(
+                      (
+                        { commonName = '', cca3 = '', density = 0 },
+                        index: number
+                      ) => {
+                        return (
+                          <Tr key={cca3}>
+                            <Td>{index + 1}</Td>
+                            <Td>
+                              <Link href={`/countries/${cca3}`}>
+                                {commonName}
+                              </Link>
+                            </Td>
 
-                          <Td isNumeric>{density.toLocaleString()}</Td>
-                        </Tr>
-                      );
-                    })}
+                            <Td isNumeric>{density.toLocaleString()}</Td>
+                          </Tr>
+                        );
+                      }
+                    )}
                   </Tbody>
                   <TableCaption>
                     <p className="pb-4">Density ({countriesByFilter.length})</p>
@@ -72,9 +94,13 @@ export const DensityPage: NextPage<DensityPageProps> = ({ countries = [] }) => {
   );
 };
 
-export const getStaticProps: GetStaticProps = async (): Promise<{ props: { countries: Country[] } }> => {
+export const getStaticProps: GetStaticProps = async (): Promise<{
+  props: { countries: Country[] };
+}> => {
   try {
-    const data = await apolloClient.query<{ countries: Country[] }>({ query: COUNTRIES_DENSITY_QUERY });
+    const data = await apolloClient.query<{ countries: Country[] }>({
+      query: COUNTRIES_DENSITY_QUERY,
+    });
     const countries: Country[] = [...data.data.countries];
     countries.sort((a, b) => b.density - a.density);
     return { props: { countries } };

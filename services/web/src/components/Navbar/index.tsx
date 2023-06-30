@@ -68,7 +68,9 @@ export const Navbar: React.FC<NavbarProps> = ({ searchSection = <></> }) => {
           <DrawerBody>
             <div className="py-4">
               <Accordion allowMultiple>
-                {LINKS.map(({ id = '', icon = <></>, href = '', name = '', subpages = [] }) => {
+                {LINKS.map(({ id = '', icon = <>
+
+                    </>, href = '', name = '', subpages = [] }) => {
                   return (
                     <AccordionItem key={id}>
                       <div className="flex items-center w-full">
@@ -93,8 +95,12 @@ export const Navbar: React.FC<NavbarProps> = ({ searchSection = <></> }) => {
                           {subpages.map(({ id, name, href, icon }) => {
                             return (
                               <Link key={id} href={href}>
-                                <div className={`flex items-center gap-2 rounded p-2`}>
-                                  <div className="rounded bg-white p-2 flex items-center">{icon}</div>
+                                <div
+                                  className={`flex items-center gap-2 rounded p-2`}
+                                >
+                                  <div className="rounded bg-white p-2 flex items-center">
+                                    {icon}
+                                  </div>
                                   {name}
                                 </div>
                               </Link>

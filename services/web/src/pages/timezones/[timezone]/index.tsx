@@ -1,5 +1,15 @@
 import { useQuery } from '@apollo/client';
-import { Badge, Card, CardBody, Divider, Table, TableContainer, Tbody, Td, Tr } from '@chakra-ui/react';
+import {
+  Badge,
+  Card,
+  CardBody,
+  Divider,
+  Table,
+  TableContainer,
+  Tbody,
+  Td,
+  Tr,
+} from '@chakra-ui/react';
 import { Container } from '@world/components/Container';
 import { COUNTRIES_TIMEZONES_QUERY } from '@world/graphql/queries/countries';
 import Layout from '@world/layout';
@@ -12,11 +22,13 @@ import React from 'react';
 
 type Timezone = { code: string; name: string; utcOffset: string };
 
-const TimezoneMain: React.FC<{ timezoneUtcOffset: string }> = ({ timezoneUtcOffset = '' }) => {
-  const { loading, error, data } = useQuery<{ countries: Country[]; timezones: Timezone[] }>(
-    COUNTRIES_TIMEZONES_QUERY,
-    { variables: { timezone: timezoneUtcOffset } }
-  );
+const TimezoneMain: React.FC<{ timezoneUtcOffset: string }> = ({
+  timezoneUtcOffset = '',
+}) => {
+  const { loading, error, data } = useQuery<{
+    countries: Country[];
+    timezones: Timezone[];
+  }>(COUNTRIES_TIMEZONES_QUERY, { variables: { timezone: timezoneUtcOffset } });
 
   if (loading) {
     return (
@@ -48,10 +60,12 @@ const TimezoneMain: React.FC<{ timezoneUtcOffset: string }> = ({ timezoneUtcOffs
     );
   }
 
-  const timezones: Timezone[] = data.timezones.filter(({ utcOffset }) => utcOffset === timezoneUtcOffset);
-  const regions: string[] = unique(data.countries.map(({ region }: Country) => region)).sort((a: string, b: string) =>
-    a > b ? 1 : -1
+  const timezones: Timezone[] = data.timezones.filter(
+    ({ utcOffset }) => utcOffset === timezoneUtcOffset
   );
+  const regions: string[] = unique(
+    data.countries.map(({ region }: Country) => region)
+  ).sort((a: string, b: string) => (a > b ? 1 : -1));
 
   return (
     <div className="flex flex-col gap-4 md:gap-8">
@@ -77,12 +91,16 @@ const TimezoneMain: React.FC<{ timezoneUtcOffset: string }> = ({ timezoneUtcOffs
         </Table>
       </TableContainer>
       <Divider className="border-gray-300" />
-      <h2 className="font-semibold text-xl">Countries ({data.countries.length})</h2>{' '}
+      <h2 className="font-semibold text-xl">
+        Countries ({data.countries.length})
+      </h2>{' '}
       <TableContainer className="shadow border rounded">
         <Table>
           <Tbody>
             {regions.map((region: string) => {
-              const countriesByRegion = data.countries.filter(({ region: countryRegion }) => region === countryRegion);
+              const countriesByRegion = data.countries.filter(
+                ({ region: countryRegion }) => region === countryRegion
+              );
               return (
                 <Tr key={region}>
                   <Td>

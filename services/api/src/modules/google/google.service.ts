@@ -9,9 +9,13 @@ export class GoogleService {
     return googleTrends;
   }
 
-  public async getGoogleRanks(limit: number): Promise<{ rank: number; query: string; count: number }[]> {
+  public async getGoogleRanks(
+    limit: number
+  ): Promise<{ rank: number; query: string; count: number }[]> {
     const googleTrends = await prismaClient.googleTrend.findMany();
-    const queries: string[] = googleTrends.map(({ queries = [] }) => queries).flat(1);
+    const queries: string[] = googleTrends
+      .map(({ queries = [] }) => queries)
+      .flat(1);
     const queryByCount: Record<string, number> = {};
     for (const query of queries) {
       if (queryByCount[query]) queryByCount[query] += 1;

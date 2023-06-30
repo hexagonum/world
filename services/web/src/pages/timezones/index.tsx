@@ -1,4 +1,12 @@
-import { Table, TableContainer, Tbody, Td, Th, Thead, Tr } from '@chakra-ui/react';
+import {
+  Table,
+  TableContainer,
+  Tbody,
+  Td,
+  Th,
+  Thead,
+  Tr,
+} from '@chakra-ui/react';
 import Container from '@world/components/Container';
 import { NEXT_PUBLIC_BASE_API } from '@world/configs';
 import Layout from '@world/layout';
@@ -31,17 +39,21 @@ const TimezonesPage: NextPage<TimezonesPageProps> = ({ timezones = [] }) => {
                 </Tr>
               </Thead>
               <Tbody>
-                {timezones.map(({ code = '', name = '', offset = '', utcOffset = '' }) => {
-                  return (
-                    <Tr key={code}>
-                      <Td>{name}</Td>
-                      <Td isNumeric>{offset}</Td>
-                      <Td isNumeric>
-                        <Link href={`/timezones/${utcOffset}`}>{utcOffset}</Link>
-                      </Td>
-                    </Tr>
-                  );
-                })}
+                {timezones.map(
+                  ({ code = '', name = '', offset = '', utcOffset = '' }) => {
+                    return (
+                      <Tr key={code}>
+                        <Td>{name}</Td>
+                        <Td isNumeric>{offset}</Td>
+                        <Td isNumeric>
+                          <Link href={`/timezones/${utcOffset}`}>
+                            {utcOffset}
+                          </Link>
+                        </Td>
+                      </Tr>
+                    );
+                  }
+                )}
               </Tbody>
             </Table>
           </TableContainer>
@@ -51,7 +63,9 @@ const TimezonesPage: NextPage<TimezonesPageProps> = ({ timezones = [] }) => {
   );
 };
 
-export const getStaticProps = async (): Promise<{ props: { timezones: Timezone[] } }> => {
+export const getStaticProps = async (): Promise<{
+  props: { timezones: Timezone[] };
+}> => {
   try {
     const response = await fetch(`${NEXT_PUBLIC_BASE_API}/timezones`);
     const timezones: Timezone[] = await response.json();

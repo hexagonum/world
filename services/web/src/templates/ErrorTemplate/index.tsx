@@ -3,7 +3,10 @@ import { NextPage } from 'next';
 
 export type ErrorTemplateProps = { code?: number; message?: string };
 
-export const ErrorTemplate: NextPage<ErrorTemplateProps> = ({ code = 200, message = 'Error' }) => {
+export const ErrorTemplate: NextPage<ErrorTemplateProps> = ({
+  code = 200,
+  message = 'Error',
+}) => {
   return (
     <Layout>
       <div className="flex items-center justify-center h-full">

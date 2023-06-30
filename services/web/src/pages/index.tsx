@@ -29,16 +29,29 @@ import { YouTubeVideo } from '@world/types/youtube';
 import currencyFormatter from '@world/utils/currency-formatter';
 import { GetStaticProps, GetStaticPropsContext, NextPage } from 'next';
 import Link from 'next/link';
-import { CartesianGrid, Legend, Line, LineChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts';
+import {
+  CartesianGrid,
+  Legend,
+  Line,
+  LineChart,
+  ResponsiveContainer,
+  Tooltip,
+  XAxis,
+  YAxis,
+} from 'recharts';
 
-const GoogleRanksSection: React.FC<{ googleRanks: GoogleRank[] }> = ({ googleRanks = [] }) => {
+const GoogleRanksSection: React.FC<{ googleRanks: GoogleRank[] }> = ({
+  googleRanks = [],
+}) => {
   return (
     <>
       {googleRanks.length > 0 ? (
         <Card className="border border-gray-200">
           <div className="px-4 py-2">
             <div className="flex items-center justify-between">
-              <Text className="font-semibold text-gray-700">Queries ({googleRanks.length})</Text>
+              <Text className="font-semibold text-gray-700">
+                Queries ({googleRanks.length})
+              </Text>
               <Text className="font-semibold text-gray-700">Occurrences</Text>
             </div>
           </div>
@@ -46,7 +59,12 @@ const GoogleRanksSection: React.FC<{ googleRanks: GoogleRank[] }> = ({ googleRan
             return (
               <div key={rank} className="px-4 py-2 border-t">
                 <div className="flex items-center justify-between">
-                  <Link href={`https://google.com/search?q=${encodeURIComponent(query)}`} target="_blank">
+                  <Link
+                    href={`https://google.com/search?q=${encodeURIComponent(
+                      query
+                    )}`}
+                    target="_blank"
+                  >
                     <Badge colorScheme="teal">{query}</Badge>
                   </Link>
                   <Text>
@@ -107,7 +125,9 @@ const NewsSection: React.FC<{ articles: Article[] }> = ({ articles = [] }) => {
   );
 };
 
-const ForexRates: React.FC<{ forexRates: ForexRate[] }> = ({ forexRates = [] }) => {
+const ForexRates: React.FC<{ forexRates: ForexRate[] }> = ({
+  forexRates = [],
+}) => {
   return (
     <>
       {forexRates.length > 0 ? (
@@ -149,7 +169,9 @@ const ForexRates: React.FC<{ forexRates: ForexRate[] }> = ({ forexRates = [] }) 
   );
 };
 
-const ForexChart: React.FC<{ forexHistory: ForexHistory[] }> = ({ forexHistory = [] }) => {
+const ForexChart: React.FC<{ forexHistory: ForexHistory[] }> = ({
+  forexHistory = [],
+}) => {
   const tos: number[] = forexHistory.map(({ to }) => to);
   const min: number = Math.min(...tos);
   const max: number = Math.max(...tos);
@@ -184,7 +206,9 @@ const ForexChart: React.FC<{ forexHistory: ForexHistory[] }> = ({ forexHistory =
   );
 };
 
-const YouTubeVideos: React.FC<{ videos: YouTubeVideo[] }> = ({ videos = [] }) => {
+const YouTubeVideos: React.FC<{ videos: YouTubeVideo[] }> = ({
+  videos = [],
+}) => {
   return (
     <>
       {videos.map(({ id, title, channelTitle, thumbnails }) => {
@@ -217,7 +241,9 @@ const YouTubeVideos: React.FC<{ videos: YouTubeVideo[] }> = ({ videos = [] }) =>
   );
 };
 
-const PassportsSection: React.FC<{ passports: Passport[] }> = ({ passports = [] }) => {
+const PassportsSection: React.FC<{ passports: Passport[] }> = ({
+  passports = [],
+}) => {
   return (
     <>
       {passports.length > 0 ? (
@@ -230,18 +256,20 @@ const PassportsSection: React.FC<{ passports: Passport[] }> = ({ passports = [] 
               </Tr>
             </Thead>
             <Tbody>
-              {passports.map(({ countryCode, individualRank, country: { commonName } }) => {
-                return (
-                  <Tr key={countryCode}>
-                    <Td>{individualRank}</Td>
-                    <Td isNumeric>
-                      <Link href={`/countries/${countryCode}`}>
-                        <Badge colorScheme="teal">{commonName}</Badge>
-                      </Link>
-                    </Td>
-                  </Tr>
-                );
-              })}
+              {passports.map(
+                ({ countryCode, individualRank, country: { commonName } }) => {
+                  return (
+                    <Tr key={countryCode}>
+                      <Td>{individualRank}</Td>
+                      <Td isNumeric>
+                        <Link href={`/countries/${countryCode}`}>
+                          <Badge colorScheme="teal">{commonName}</Badge>
+                        </Link>
+                      </Td>
+                    </Tr>
+                  );
+                }
+              )}
             </Tbody>
             <TableCaption>
               <Link href="/passports" className="uppercase">
@@ -287,11 +315,18 @@ export const CountriesPage: NextPage<CountriesPageProps> = ({
               <h1 className="text-2xl uppercase">Weather</h1>
               <Divider />
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8">
-                {cities.map(({ id, city, latitude, longitude, timezone }: City) => (
-                  <div key={id} className="col-span-1">
-                    <Weather city={city} latitude={latitude} longitude={longitude} timezone={timezone} />
-                  </div>
-                ))}
+                {cities.map(
+                  ({ id, city, latitude, longitude, timezone }: City) => (
+                    <div key={id} className="col-span-1">
+                      <Weather
+                        city={city}
+                        latitude={latitude}
+                        longitude={longitude}
+                        timezone={timezone}
+                      />
+                    </div>
+                  )
+                )}
               </div>
             </section>
             <section className="flex flex-col gap-y-2 md:gap-y-4">
@@ -387,11 +422,22 @@ export const getStaticProps: GetStaticProps = async (
     const passports = [...data.data.passports];
     const articles = [...data.data.news.headlines];
     const videos = [...data.data.youtube.videos];
-    const props = { cities, googleRanks, forexRates, passports, articles, forexHistory, videos };
+    const props = {
+      cities,
+      googleRanks,
+      forexRates,
+      passports,
+      articles,
+      forexHistory,
+      videos,
+    };
     return { props };
   } catch (error) {
     console.error('HomePage message', (error as ApolloError).message);
-    console.error('HomePage graphQLErrors', JSON.stringify((error as ApolloError).graphQLErrors, null, 2));
+    console.error(
+      'HomePage graphQLErrors',
+      JSON.stringify((error as ApolloError).graphQLErrors, null, 2)
+    );
     const props = {
       cities: [],
       googleRanks: [],

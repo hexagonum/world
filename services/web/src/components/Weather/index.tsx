@@ -60,7 +60,12 @@ const weatherCodes: Record<number, string> = {
   99: 'heavy hail thunderstorm',
 };
 
-export const Weather: React.FC<WeatherProps> = ({ city = '', latitude = 0, longitude = 0, timezone = 0 }) => {
+export const Weather: React.FC<WeatherProps> = ({
+  city = '',
+  latitude = 0,
+  longitude = 0,
+  timezone = 0,
+}) => {
   const urlSearchParams = new URLSearchParams();
   urlSearchParams.set('latitude', latitude.toString());
   urlSearchParams.set('longitude', longitude.toString());
@@ -82,7 +87,9 @@ export const Weather: React.FC<WeatherProps> = ({ city = '', latitude = 0, longi
     return (
       <Card className="border border-gray-200">
         <CardBody>
-          <div className="flex justify-center items-center">{error.message}</div>
+          <div className="flex justify-center items-center">
+            {error.message}
+          </div>
         </CardBody>
       </Card>
     );
@@ -108,14 +115,20 @@ export const Weather: React.FC<WeatherProps> = ({ city = '', latitude = 0, longi
             <Text className="font-bold">{city}</Text>
             <Link href={googleMapsUrl} target="_blank">
               <Text className="text-xs">
-                {Math.abs(data.latitude).toFixed(2)}&deg;{data.latitude >= 0 ? 'N' : 'S'} -{' '}
-                {Math.abs(data.longitude).toFixed(2)}&deg;{data.longitude >= 0 ? 'E' : 'W'}
+                {Math.abs(data.latitude).toFixed(2)}&deg;
+                {data.latitude >= 0 ? 'N' : 'S'} -{' '}
+                {Math.abs(data.longitude).toFixed(2)}&deg;
+                {data.longitude >= 0 ? 'E' : 'W'}
               </Text>
             </Link>
           </div>
           <div className="text-right">
-            <p className="font-bold">{data.current_weather.temperature}&deg;C</p>
-            <p className="capitalize text-xs">{weatherCodes[data.current_weather.weathercode] || 'N/A'}</p>
+            <p className="font-bold">
+              {data.current_weather.temperature}&deg;C
+            </p>
+            <p className="capitalize text-xs">
+              {weatherCodes[data.current_weather.weathercode] || 'N/A'}
+            </p>
           </div>
         </div>
       </CardBody>

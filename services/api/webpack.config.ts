@@ -8,7 +8,12 @@ const config = {
   mode,
   target: 'node',
   entry: path.resolve(__dirname, 'src/server.ts'),
-  externals: [nodeExternals(), nodeExternals({ modulesDir: path.resolve(__dirname, '../../node_modules') })],
+  externals: [
+    nodeExternals(),
+    nodeExternals({
+      modulesDir: path.resolve(__dirname, '../../node_modules'),
+    }),
+  ],
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'server.js',

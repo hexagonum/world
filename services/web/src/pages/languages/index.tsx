@@ -1,4 +1,12 @@
-import { Table, TableContainer, Tbody, Td, Th, Thead, Tr } from '@chakra-ui/react';
+import {
+  Table,
+  TableContainer,
+  Tbody,
+  Td,
+  Th,
+  Thead,
+  Tr,
+} from '@chakra-ui/react';
 import Container from '@world/components/Container';
 import { NEXT_PUBLIC_BASE_API } from '@world/configs';
 import Layout from '@world/layout';
@@ -8,7 +16,12 @@ import Link from 'next/link';
 type Language = {
   code: string;
   name: string;
-  countries: { commonName: string; region: string; subregion: string; population: number }[];
+  countries: {
+    commonName: string;
+    region: string;
+    subregion: string;
+    population: number;
+  }[];
 };
 
 type LanguagesPageProps = {
@@ -33,7 +46,11 @@ const LanguagesPage: NextPage<LanguagesPageProps> = ({ languages = [] }) => {
                 {languages.map(({ code = '', name = '', countries = [] }) => {
                   const population: number = countries
                     .map(({ population = 0 }) => population)
-                    .reduce((previousValue: number, currentValue: number) => previousValue + currentValue, 0);
+                    .reduce(
+                      (previousValue: number, currentValue: number) =>
+                        previousValue + currentValue,
+                      0
+                    );
 
                   return (
                     <Tr key={code}>
@@ -54,7 +71,9 @@ const LanguagesPage: NextPage<LanguagesPageProps> = ({ languages = [] }) => {
   );
 };
 
-export const getStaticProps = async (): Promise<{ props: { languages: Language[] } }> => {
+export const getStaticProps = async (): Promise<{
+  props: { languages: Language[] };
+}> => {
   try {
     const response = await fetch(`${NEXT_PUBLIC_BASE_API}/languages`);
     const languages: Language[] = await response.json();

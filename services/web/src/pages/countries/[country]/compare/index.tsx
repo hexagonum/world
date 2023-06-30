@@ -1,5 +1,17 @@
 import { useQuery } from '@apollo/client';
-import { Badge, Card, CardBody, Select, Table, TableContainer, Tbody, Td, Th, Thead, Tr } from '@chakra-ui/react';
+import {
+  Badge,
+  Card,
+  CardBody,
+  Select,
+  Table,
+  TableContainer,
+  Tbody,
+  Td,
+  Th,
+  Thead,
+  Tr,
+} from '@chakra-ui/react';
 import Container from '@world/components/Container';
 import { COUNTRIES_QUERY } from '@world/graphql/queries/countries';
 import Layout from '@world/layout';
@@ -14,7 +26,9 @@ const CompareMain: React.FC = () => {
   const countryCode: string = query.country?.toString() ?? '';
   const [comparedCountryCode, setComparedCountryCode] = useState('');
 
-  const { loading, error, data } = useQuery<{ countries: Country[] }>(COUNTRIES_QUERY);
+  const { loading, error, data } = useQuery<{ countries: Country[] }>(
+    COUNTRIES_QUERY
+  );
 
   if (loading) {
     return (
@@ -50,7 +64,8 @@ const CompareMain: React.FC = () => {
     ({ code }: Country) => code?.toLowerCase() === countryCode?.toLowerCase()
   );
   const comparedCountry: Country | undefined = data.countries.find(
-    ({ code }: Country) => code?.toLowerCase() === comparedCountryCode?.toLowerCase()
+    ({ code }: Country) =>
+      code?.toLowerCase() === comparedCountryCode?.toLowerCase()
   );
   const codeCountryMap: Record<string, string> = {};
   for (const country of data.countries) {
@@ -89,10 +104,14 @@ const CompareMain: React.FC = () => {
             <Tr>
               <Th></Th>
               <Th>
-                <Link href={`/countries/${country?.code}`}>{country?.commonName}</Link>
+                <Link href={`/countries/${country?.code}`}>
+                  {country?.commonName}
+                </Link>
               </Th>
               <Th>
-                <Link href={`/countries/${comparedCountry?.code}`}>{comparedCountry?.commonName}</Link>
+                <Link href={`/countries/${comparedCountry?.code}`}>
+                  {comparedCountry?.commonName}
+                </Link>
               </Th>
             </Tr>
           </Thead>
@@ -231,11 +250,13 @@ const CompareMain: React.FC = () => {
               </Td>
               <Td>
                 <div className="flex flex-wrap gap-1 md:gap-2">
-                  {(comparedCountry?.timezones ?? []).map((timezone: string) => (
-                    <Link key={timezone} href={`/timezones/${timezone}`}>
-                      <Badge colorScheme="teal">{timezone}</Badge>
-                    </Link>
-                  ))}
+                  {(comparedCountry?.timezones ?? []).map(
+                    (timezone: string) => (
+                      <Link key={timezone} href={`/timezones/${timezone}`}>
+                        <Badge colorScheme="teal">{timezone}</Badge>
+                      </Link>
+                    )
+                  )}
                 </div>
               </Td>
             </Tr>
@@ -250,7 +271,9 @@ const CompareMain: React.FC = () => {
                   {(country?.borders ?? []).map((border: string) => {
                     return (
                       <Link key={`/${border}`} href={`/countries/${border}`}>
-                        <Badge colorScheme="teal">{codeCountryMap[border]}</Badge>
+                        <Badge colorScheme="teal">
+                          {codeCountryMap[border]}
+                        </Badge>
                       </Link>
                     );
                   })}
@@ -261,7 +284,9 @@ const CompareMain: React.FC = () => {
                   {comparedCountry?.borders.map((border: string) => {
                     return (
                       <Link key={`/${border}`} href={`/countries/${border}`}>
-                        <Badge colorScheme="teal">{codeCountryMap[border]}</Badge>
+                        <Badge colorScheme="teal">
+                          {codeCountryMap[border]}
+                        </Badge>
                       </Link>
                     );
                   })}
@@ -303,19 +328,27 @@ const CompareMain: React.FC = () => {
               </Td>
               <Td>
                 <div className="flex flex-wrap gap-1 md:gap-2">
-                  {(country?.organizations ?? []).map(({ code, name = '' }: { code: string; name: string }) => {
-                    return (
-                      <Link key={code} href={`/organizations/${code}`}>
-                        <Badge colorScheme="teal">{code}</Badge>
-                      </Link>
-                    );
-                  })}
+                  {(country?.organizations ?? []).map(
+                    ({ code, name = '' }: { code: string; name: string }) => {
+                      return (
+                        <Link key={code} href={`/organizations/${code}`}>
+                          <Badge colorScheme="teal">{code}</Badge>
+                        </Link>
+                      );
+                    }
+                  )}
                 </div>
               </Td>
               <Td>
                 <div className="flex flex-wrap gap-1 md:gap-2">
                   {(comparedCountry?.organizations ?? []).map(
-                    ({ code = '', name = '' }: { code: string; name: string }) => {
+                    ({
+                      code = '',
+                      name = '',
+                    }: {
+                      code: string;
+                      name: string;
+                    }) => {
                       return (
                         <Link key={code} href={`/organizations/${code}`}>
                           <Badge colorScheme="teal">{name}</Badge>

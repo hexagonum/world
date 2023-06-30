@@ -12,7 +12,10 @@ export class WeatherController extends Controller {
   }
 
   @Get()
-  async getVideoCategories(@Query('latitude') latitude = 0, @Query('longitude') longitude = 0) {
+  async getVideoCategories(
+    @Query('latitude') latitude = 0,
+    @Query('longitude') longitude = 0
+  ) {
     return this.weatherService.getWeather({ latitude, longitude });
   }
 }

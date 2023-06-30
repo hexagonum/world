@@ -2,12 +2,25 @@ import { API_KEY_NEWS } from '../../common/environments';
 import { farfetch } from '../../common/libs/farfetch';
 import logger from '../../common/libs/logger';
 import { getJSON, setJSON } from '../../common/libs/redis';
-import { Article, HeadlinesRequest, HeadlinesResponse, Source, SourcesRequest, SourcesResponse } from './news.types';
+import {
+  Article,
+  HeadlinesRequest,
+  HeadlinesResponse,
+  Source,
+  SourcesRequest,
+  SourcesResponse,
+} from './news.types';
 
 const BASE_URL = 'https://newsapi.org/v2';
 
 export class NewsService {
-  public async getHeadlines({ category, country, sources, q, pageSize = 10 }: HeadlinesRequest): Promise<Article[]> {
+  public async getHeadlines({
+    category,
+    country,
+    sources,
+    q,
+    pageSize = 10,
+  }: HeadlinesRequest): Promise<Article[]> {
     const urlSearchParams = new URLSearchParams();
     urlSearchParams.set('apiKey', API_KEY_NEWS);
     let redisKey = 'news-headlines';
@@ -34,7 +47,9 @@ export class NewsService {
     console.log('redisKey', redisKey);
     const url = `${BASE_URL}/top-headlines?${urlSearchParams.toString()}`;
     try {
-      const cacheArticles: Article[] | null = await getJSON<Article[]>(redisKey);
+      const cacheArticles: Article[] | null = await getJSON<Article[]>(
+        redisKey
+      );
       if (cacheArticles) return cacheArticles;
       const data: HeadlinesResponse = await farfetch<HeadlinesResponse>(url);
       const { articles = [] } = data;
@@ -45,7 +60,11 @@ export class NewsService {
     }
   }
 
-  public async getSources({ category, country, language }: SourcesRequest): Promise<Source[]> {
+  public async getSources({
+    category,
+    country,
+    language,
+  }: SourcesRequest): Promise<Source[]> {
     const urlSearchParams = new URLSearchParams();
     urlSearchParams.set('apiKey', API_KEY_NEWS);
     let redisKey = 'news-sources';

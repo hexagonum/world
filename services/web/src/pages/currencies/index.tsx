@@ -20,9 +20,15 @@ import { currencyFormatter } from '@world/utils/currency-formatter';
 import { NextPage } from 'next';
 import Link from 'next/link';
 
-type Currency = { code: string; name: string; countries: { country: Country }[] };
+type Currency = {
+  code: string;
+  name: string;
+  countries: { country: Country }[];
+};
 
-const CurrenciesTable: React.FC<{ currencies: (Currency & { rate: string })[] }> = ({ currencies = [] }) => {
+const CurrenciesTable: React.FC<{
+  currencies: (Currency & { rate: string })[];
+}> = ({ currencies = [] }) => {
   return (
     <TableContainer className="border rounded shadow">
       <Table>
@@ -34,17 +40,19 @@ const CurrenciesTable: React.FC<{ currencies: (Currency & { rate: string })[] }>
           </Tr>
         </Thead>
         <Tbody>
-          {currencies.map(({ code = '', name = '', countries = [], rate = '' }) => {
-            return (
-              <Tr key={code}>
-                <Td>
-                  <Link href={`/currencies/${code}`}>{name}</Link>
-                </Td>
-                <Td isNumeric>{countries.length}</Td>
-                <Td isNumeric>{rate}</Td>
-              </Tr>
-            );
-          })}
+          {currencies.map(
+            ({ code = '', name = '', countries = [], rate = '' }) => {
+              return (
+                <Tr key={code}>
+                  <Td>
+                    <Link href={`/currencies/${code}`}>{name}</Link>
+                  </Td>
+                  <Td isNumeric>{countries.length}</Td>
+                  <Td isNumeric>{rate}</Td>
+                </Tr>
+              );
+            }
+          )}
         </Tbody>
         <TableCaption>
           <p className="pb-4">Currencies ({currencies.length})</p>
@@ -92,17 +100,23 @@ const CurrenciesRates: React.FC<CurrenciesRatesProps> = ({
   }
 
   const { rates = {}, base = '' } = data;
-  const currenciesRates = currencies.map(({ code = '', name = '', countries = [] }) => {
-    let rate: string = 'N/A';
-    if (base === code) {
-      rate = '1';
-    } else if (rates[code]) {
-      rate = currencyFormatter(rates[code], code);
+  const currenciesRates = currencies.map(
+    ({ code = '', name = '', countries = [] }) => {
+      let rate: string = 'N/A';
+      if (base === code) {
+        rate = '1';
+      } else if (rates[code]) {
+        rate = currencyFormatter(rates[code], code);
+      }
+      return { code, name, countries, rate };
     }
-    return { code, name, countries, rate };
-  });
-  const currenciesWithRates = currenciesRates.filter(({ rate }) => rate !== 'N/A');
-  const currenciesWithoutRates = currenciesRates.filter(({ rate }) => rate === 'N/A');
+  );
+  const currenciesWithRates = currenciesRates.filter(
+    ({ rate }) => rate !== 'N/A'
+  );
+  const currenciesWithoutRates = currenciesRates.filter(
+    ({ rate }) => rate === 'N/A'
+  );
 
   return (
     <div className="flex flex-col gap-4 md:gap-8">
@@ -137,14 +151,21 @@ const CurrenciesPage: NextPage<CurrenciesPageProps> = ({ currencies = [] }) => {
     <Layout>
       <Container>
         <div className="p-8">
-          <CurrenciesRates currencies={currencies} loading={loading} error={error} data={data} />
+          <CurrenciesRates
+            currencies={currencies}
+            loading={loading}
+            error={error}
+            data={data}
+          />
         </div>
       </Container>
     </Layout>
   );
 };
 
-export const getStaticProps = async (): Promise<{ props: { currencies: Currency[] } }> => {
+export const getStaticProps = async (): Promise<{
+  props: { currencies: Currency[] };
+}> => {
   try {
     const response = await fetch(`${NEXT_PUBLIC_BASE_API}/currencies`);
     const currencies: Currency[] = await response.json();

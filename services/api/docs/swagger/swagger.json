@@ -169,7 +169,14 @@
             "format": "double"
           }
         },
-        "required": ["parentArea", "parentAreaId", "flag", "countryCode", "name", "id"],
+        "required": [
+          "parentArea",
+          "parentAreaId",
+          "flag",
+          "countryCode",
+          "name",
+          "id"
+        ],
         "type": "object"
       },
       "Competition": {
@@ -204,7 +211,17 @@
             "$ref": "#/components/schemas/Area"
           }
         },
-        "required": ["lastUpdated", "numberOfAvailableSeasons", "plan", "emblem", "type", "code", "name", "id", "area"],
+        "required": [
+          "lastUpdated",
+          "numberOfAvailableSeasons",
+          "plan",
+          "emblem",
+          "type",
+          "code",
+          "name",
+          "id",
+          "area"
+        ],
         "type": "object"
       },
       "Team": {
@@ -463,7 +480,16 @@
             "type": "object"
           }
         },
-        "required": ["content", "publishedAt", "urlToImage", "url", "description", "title", "author", "source"],
+        "required": [
+          "content",
+          "publishedAt",
+          "urlToImage",
+          "url",
+          "description",
+          "title",
+          "author",
+          "source"
+        ],
         "type": "object"
       },
       "NewsCountry": {
@@ -527,11 +553,34 @@
       },
       "NewsCategory": {
         "type": "string",
-        "enum": ["business", "entertainment", "general", "health", "science", "sports", "technology"]
+        "enum": [
+          "business",
+          "entertainment",
+          "general",
+          "health",
+          "science",
+          "sports",
+          "technology"
+        ]
       },
       "NewsLanguage": {
         "type": "string",
-        "enum": ["ar", "de", "en", "es", "fr", "he", "it", "nl", "no", "pt", "ru", "sv", "ud", "zh"]
+        "enum": [
+          "ar",
+          "de",
+          "en",
+          "es",
+          "fr",
+          "he",
+          "it",
+          "nl",
+          "no",
+          "pt",
+          "ru",
+          "sv",
+          "ud",
+          "zh"
+        ]
       },
       "Source": {
         "properties": {
@@ -557,7 +606,15 @@
             "type": "string"
           }
         },
-        "required": ["country", "language", "category", "url", "description", "name", "id"],
+        "required": [
+          "country",
+          "language",
+          "category",
+          "url",
+          "description",
+          "name",
+          "id"
+        ],
         "type": "object"
       },
       "runtime.Types.DefaultSelection_OrganizationPayload_": {
@@ -694,7 +751,14 @@
             "type": "string"
           }
         },
-        "required": ["thumbnails", "channelTitle", "channelId", "description", "title", "id"],
+        "required": [
+          "thumbnails",
+          "channelTitle",
+          "channelId",
+          "description",
+          "title",
+          "id"
+        ],
         "type": "object"
       }
     },
@@ -923,7 +987,13 @@
                               "type": "string"
                             }
                           },
-                          "required": ["timezone", "longitude", "latitude", "city", "state"],
+                          "required": [
+                            "timezone",
+                            "longitude",
+                            "latitude",
+                            "city",
+                            "state"
+                          ],
                           "type": "object"
                         },
                         "type": "array"

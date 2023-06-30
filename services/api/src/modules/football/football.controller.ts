@@ -27,12 +27,18 @@ export class FootballController extends Controller {
   }
 
   @Get('areas/:areaId/competitions/:competitionId')
-  getCompetition(@Path('areaId') areaId: string, @Path('competitionId') competitionId: string) {
+  getCompetition(
+    @Path('areaId') areaId: string,
+    @Path('competitionId') competitionId: string
+  ) {
     return this.footballService.getCompetition(areaId, competitionId);
   }
 
   @Get('areas/:areaId/competitions/:competitionId/standings')
-  getStandings(@Path('areaId') areaId: string, @Path('competitionId') competitionId: string) {
+  getStandings(
+    @Path('areaId') areaId: string,
+    @Path('competitionId') competitionId: string
+  ) {
     return this.footballService.getStandings(areaId, competitionId);
   }
 

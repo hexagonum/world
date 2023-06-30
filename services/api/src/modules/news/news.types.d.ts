@@ -1,4 +1,11 @@
-export type NewsCategory = 'business' | 'entertainment' | 'general' | 'health' | 'science' | 'sports' | 'technology';
+export type NewsCategory =
+  | 'business'
+  | 'entertainment'
+  | 'general'
+  | 'health'
+  | 'science'
+  | 'sports'
+  | 'technology';
 
 export type NewsLanguage =
   | 'ar'

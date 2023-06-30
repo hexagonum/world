@@ -24,9 +24,12 @@ import { NextPage } from 'next';
 import { useRouter } from 'next/router';
 
 const CompetitionMain: React.FC<{ areaId: string }> = ({ areaId }) => {
-  const { loading, error, data } = useQuery<{ football: Football }>(FOOTBALL_COMPETITIONS_QUERY, {
-    variables: { filterOptions: { areaId: parseInt(areaId, 10) } },
-  });
+  const { loading, error, data } = useQuery<{ football: Football }>(
+    FOOTBALL_COMPETITIONS_QUERY,
+    {
+      variables: { filterOptions: { areaId: parseInt(areaId, 10) } },
+    }
+  );
 
   if (loading) {
     return (
@@ -59,7 +62,8 @@ const CompetitionMain: React.FC<{ areaId: string }> = ({ areaId }) => {
   }
 
   const area = data.football.areas[0] ?? {};
-  const competitions: FootballCompetition[] = data.football.areas[0].competitions ?? [];
+  const competitions: FootballCompetition[] =
+    data.football.areas[0].competitions ?? [];
 
   return (
     <div className="flex flex-col gap-4 md:gap-8">
@@ -68,7 +72,9 @@ const CompetitionMain: React.FC<{ areaId: string }> = ({ areaId }) => {
           <BreadcrumbLink href="/football">Football</BreadcrumbLink>
         </BreadcrumbItem>
         <BreadcrumbItem isCurrentPage>
-          <BreadcrumbLink href={`/football/${area.id}`}>{area.name}</BreadcrumbLink>
+          <BreadcrumbLink href={`/football/${area.id}`}>
+            {area.name}
+          </BreadcrumbLink>
         </BreadcrumbItem>
       </Breadcrumb>
       <TableContainer className="border rounded shadow">
@@ -105,7 +111,9 @@ const CompetitionPage: NextPage = () => {
   return (
     <Layout>
       <Container>
-        <div className="p-8">{areaId ? <CompetitionMain areaId={areaId} /> : <></>}</div>
+        <div className="p-8">
+          {areaId ? <CompetitionMain areaId={areaId} /> : <></>}
+        </div>
       </Container>
     </Layout>
   );

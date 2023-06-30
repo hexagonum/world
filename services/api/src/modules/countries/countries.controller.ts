@@ -13,7 +13,10 @@ export class CountriesController extends Controller {
   }
 
   @Get()
-  async getCountries(@Query('codes') codes = '', @Query('timezone') timezone = '') {
+  async getCountries(
+    @Query('codes') codes = '',
+    @Query('timezone') timezone = ''
+  ) {
     return this.countriesService.getCountries({ codes, timezone });
   }
 

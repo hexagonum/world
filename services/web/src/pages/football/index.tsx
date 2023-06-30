@@ -1,4 +1,14 @@
-import { Input, Table, TableCaption, TableContainer, Tbody, Td, Th, Thead, Tr } from '@chakra-ui/react';
+import {
+  Input,
+  Table,
+  TableCaption,
+  TableContainer,
+  Tbody,
+  Td,
+  Th,
+  Thead,
+  Tr,
+} from '@chakra-ui/react';
 import Container from '@world/components/Container';
 import { apolloClient } from '@world/graphql';
 import { FOOTBALL_AREAS_QUERY } from '@world/graphql/queries/football';
@@ -50,15 +60,22 @@ const top: string[] = [
   'south america',
 ];
 
-export const FootballPage: NextPage<{ areas: FootballArea[] }> = ({ areas = [] }) => {
+export const FootballPage: NextPage<{ areas: FootballArea[] }> = ({
+  areas = [],
+}) => {
   const [query, setQuery] = useState<string>('');
 
   const filteredAreas = areas.filter(({ name }) => {
-    const nameFlag = query !== '' ? name.toLowerCase().includes(query.toLowerCase()) : true;
+    const nameFlag =
+      query !== '' ? name.toLowerCase().includes(query.toLowerCase()) : true;
     return nameFlag;
   });
-  const topAreas = filteredAreas.filter(({ name }) => top.includes(name.toLowerCase()));
-  const otherAreas = filteredAreas.filter(({ name }) => !top.includes(name.toLowerCase()));
+  const topAreas = filteredAreas.filter(({ name }) =>
+    top.includes(name.toLowerCase())
+  );
+  const otherAreas = filteredAreas.filter(
+    ({ name }) => !top.includes(name.toLowerCase())
+  );
 
   return (
     <Layout
@@ -69,7 +86,9 @@ export const FootballPage: NextPage<{ areas: FootballArea[] }> = ({ areas = [] }
             name="query"
             placeholder="Query"
             value={query}
-            onChange={(event: ChangeEvent<HTMLInputElement>) => setQuery(event.target.value)}
+            onChange={(event: ChangeEvent<HTMLInputElement>) =>
+              setQuery(event.target.value)
+            }
             className="shadow"
           />
         </>
@@ -87,9 +106,13 @@ export const FootballPage: NextPage<{ areas: FootballArea[] }> = ({ areas = [] }
   );
 };
 
-export const getStaticProps = async (): Promise<{ props: { areas: FootballArea[] } }> => {
+export const getStaticProps = async (): Promise<{
+  props: { areas: FootballArea[] };
+}> => {
   try {
-    const data = await apolloClient.query<{ football: { areas: FootballArea[] } }>({ query: FOOTBALL_AREAS_QUERY });
+    const data = await apolloClient.query<{
+      football: { areas: FootballArea[] };
+    }>({ query: FOOTBALL_AREAS_QUERY });
     const areas = [...data.data.football.areas];
     return { props: { areas } };
   } catch (error) {

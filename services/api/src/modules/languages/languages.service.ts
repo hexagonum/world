@@ -7,7 +7,10 @@ export class LanguagesService {
       orderBy: { countries: { _count: 'desc' } },
     });
     return languages.map((language) => {
-      return { ...language, countries: language.countries.map(({ country }) => country) };
+      return {
+        ...language,
+        countries: language.countries.map(({ country }) => country),
+      };
     });
   }
 
@@ -16,6 +19,9 @@ export class LanguagesService {
       include: { countries: { select: { country: true } } },
       where: { code },
     });
-    return { ...language, countries: language.countries.map(({ country }) => country) };
+    return {
+      ...language,
+      countries: language.countries.map(({ country }) => country),
+    };
   }
 }

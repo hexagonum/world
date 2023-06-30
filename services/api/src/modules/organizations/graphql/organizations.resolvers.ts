@@ -9,8 +9,13 @@ export const resolvers = {
     organizations: async (): Promise<ResponseOrganization[]> => {
       return farfetch<ResponseOrganization[]>(`${BASE_API}/organizations`);
     },
-    organization: async (_parent: unknown, { code }: { code: string }): Promise<ResponseOrganization> => {
-      return farfetch<ResponseOrganization>(`${BASE_API}/organizations/${code}`);
+    organization: async (
+      _parent: unknown,
+      { code }: { code: string }
+    ): Promise<ResponseOrganization> => {
+      return farfetch<ResponseOrganization>(
+        `${BASE_API}/organizations/${code}`
+      );
     },
   },
 };

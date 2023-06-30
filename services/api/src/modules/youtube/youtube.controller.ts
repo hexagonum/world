@@ -22,6 +22,10 @@ export class YouTubeController extends Controller {
     @Query('categoryId') categoryId = '',
     @Query('maxResults') maxResults = 50
   ) {
-    return this.youTubeService.getVideos({ categoryId, regionCode: countryCode, maxResults });
+    return this.youTubeService.getVideos({
+      categoryId,
+      regionCode: countryCode,
+      maxResults,
+    });
   }
 }

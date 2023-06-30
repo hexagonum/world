@@ -1,5 +1,16 @@
 import { useQuery } from '@apollo/client';
-import { Badge, Card, CardBody, Divider, Table, TableCaption, TableContainer, Tbody, Td, Tr } from '@chakra-ui/react';
+import {
+  Badge,
+  Card,
+  CardBody,
+  Divider,
+  Table,
+  TableCaption,
+  TableContainer,
+  Tbody,
+  Td,
+  Tr,
+} from '@chakra-ui/react';
 import { Container } from '@world/components/Container';
 import { CURRENCY_QUERY } from '@world/graphql/queries/currencies';
 import Layout from '@world/layout';
@@ -22,9 +33,12 @@ type Currency = {
 };
 
 const CurrencyData: React.FC<{ code: string }> = ({ code }) => {
-  const { loading, error, data } = useQuery<{ currency: Currency }>(CURRENCY_QUERY, {
-    variables: { code },
-  });
+  const { loading, error, data } = useQuery<{ currency: Currency }>(
+    CURRENCY_QUERY,
+    {
+      variables: { code },
+    }
+  );
 
   if (loading) {
     return (
@@ -57,9 +71,11 @@ const CurrencyData: React.FC<{ code: string }> = ({ code }) => {
   }
 
   const currency = data.currency;
-  const regions: string[] = [...new Set(currency.countries.map(({ region }: { region: string }) => region))].sort(
-    (a: string, b: string) => (a > b ? 1 : -1)
-  );
+  const regions: string[] = [
+    ...new Set(
+      currency.countries.map(({ region }: { region: string }) => region)
+    ),
+  ].sort((a: string, b: string) => (a > b ? 1 : -1));
 
   return (
     <div className="flex flex-col gap-4 md:gap-8">
@@ -75,7 +91,9 @@ const CurrencyData: React.FC<{ code: string }> = ({ code }) => {
         </Table>
       </TableContainer>
       <Divider className="border-gray-300" />
-      <h2 className="font-semibold text-xl">Countries ({currency.countries.length})</h2>
+      <h2 className="font-semibold text-xl">
+        Countries ({currency.countries.length})
+      </h2>
       <TableContainer className="shadow border rounded">
         <Table>
           <Tbody>
@@ -90,13 +108,15 @@ const CurrencyData: React.FC<{ code: string }> = ({ code }) => {
                   </Td>
                   <Td isNumeric>
                     <div className="flex flex-wrap justify-end gap-1 md:gap-2">
-                      {currencyCountriesByRegion.map(({ cca3 = '', commonName = '' }) => {
-                        return (
-                          <Link key={cca3} href={`/countries/${cca3}`}>
-                            <Badge colorScheme="teal">{commonName}</Badge>
-                          </Link>
-                        );
-                      })}
+                      {currencyCountriesByRegion.map(
+                        ({ cca3 = '', commonName = '' }) => {
+                          return (
+                            <Link key={cca3} href={`/countries/${cca3}`}>
+                              <Badge colorScheme="teal">{commonName}</Badge>
+                            </Link>
+                          );
+                        }
+                      )}
                     </div>
                   </Td>
                 </Tr>
@@ -104,7 +124,9 @@ const CurrencyData: React.FC<{ code: string }> = ({ code }) => {
             })}
           </Tbody>
           <TableCaption>
-            <p className="pb-4 text-center">Countries ({currency.countries.length})</p>
+            <p className="pb-4 text-center">
+              Countries ({currency.countries.length})
+            </p>
           </TableCaption>
         </Table>
       </TableContainer>

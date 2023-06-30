@@ -35,13 +35,15 @@ const main = async () => {
   // on
   httpServer.on('listening', () => {
     const address = httpServer.address();
-    const bind = typeof address === 'string' ? 'pipe ' + address : 'port ' + address?.port;
+    const bind =
+      typeof address === 'string' ? 'pipe ' + address : 'port ' + address?.port;
     logger.info(`🚀 Server is listening on ${bind}`);
   });
   httpServer.on('error', (error: HttpError) => {
     if (error.syscall !== 'listen') throw error;
     const bind = typeof port === 'string' ? 'Pipe ' + port : 'Port ' + port;
-    if (error.code === 'EACCES') logger.error(`${bind} requires elevated privileges`);
+    if (error.code === 'EACCES')
+      logger.error(`${bind} requires elevated privileges`);
     if (error.code === 'EADDRINUSE') logger.error(`${bind} is already in use`);
     process.exit(1);
   });

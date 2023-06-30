@@ -18,7 +18,9 @@ export class PassportsController extends Controller {
   }
 
   @Get(':code')
-  async getPassport(@Path('code') code: string): Promise<PassportRequirement[]> {
+  async getPassport(
+    @Path('code') code: string
+  ): Promise<PassportRequirement[]> {
     return this.passportsService.getPassport(code);
   }
 }

@@ -15,7 +15,9 @@ const getRequirements = async (id: string): Promise<Record<string, string>> => {
       const href = $row.find('td:nth-child(1) a').attr('href') ?? '';
       const paths: string[] = href.split('/').filter((path: string) => path);
       const singleId: string = paths[paths.length - 1];
-      const { cca2 = '' } = passports.find(({ id }) => singleId === id) ?? { cca2: '' };
+      const { cca2 = '' } = passports.find(({ id }) => singleId === id) ?? {
+        cca2: '',
+      };
       const requirement: string = $row.find('td:nth-child(2)').text();
       requirements[cca2] = requirement;
     });
@@ -33,7 +35,10 @@ const main = async () => {
       responses.forEach(({ key, value }) => {
         requirements[key] = value;
       });
-      writeFileSync(`./json/raw/passports/requirements.json`, JSON.stringify(requirements, null, 2));
+      writeFileSync(
+        `./json/raw/passports/requirements.json`,
+        JSON.stringify(requirements, null, 2)
+      );
     })
     .catch(console.error);
   process.exit(0);

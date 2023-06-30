@@ -7,7 +7,10 @@ export class OrganizationsService {
       orderBy: { countries: { _count: 'desc' } },
     });
     return organizations.map((organization) => {
-      return { ...organization, countries: organization.countries.map(({ country }) => country) };
+      return {
+        ...organization,
+        countries: organization.countries.map(({ country }) => country),
+      };
     });
   }
 
@@ -16,6 +19,9 @@ export class OrganizationsService {
       include: { countries: { select: { country: true } } },
       where: { code },
     });
-    return { ...organization, countries: organization.countries.map(({ country }) => country) };
+    return {
+      ...organization,
+      countries: organization.countries.map(({ country }) => country),
+    };
   }
 }

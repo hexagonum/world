@@ -28,7 +28,9 @@ type Coin = {
 const CoinSection: React.FC = () => {
   const { query } = useRouter();
   const coinId: string = query.coin?.toString() ?? '';
-  const { loading, error, data } = useFetch<Coin>(`${NEXT_PUBLIC_BASE_API}/crypto/coins/${coinId}`);
+  const { loading, error, data } = useFetch<Coin>(
+    `${NEXT_PUBLIC_BASE_API}/crypto/coins/${coinId}`
+  );
 
   if (loading) {
     return (
@@ -63,7 +65,9 @@ const CoinSection: React.FC = () => {
   return (
     <>
       <div className="flex justify-between items-center">
-        <h1 className="capitalize text-2xl md:text-4xl font-bold">{data.name}</h1>
+        <h1 className="capitalize text-2xl md:text-4xl font-bold">
+          {data.name}
+        </h1>
         <p className="capitalize text-xl md:text-2xl">#{data.rank}</p>
       </div>
     </>

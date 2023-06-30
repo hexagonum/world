@@ -29,7 +29,11 @@
       "suffixes": ["62"]
     },
     "capital": ["Amman"],
-    "altSpellings": ["JO", "Hashemite Kingdom of Jordan", "al-Mamlakah al-Urdunīyah al-Hāshimīyah"],
+    "altSpellings": [
+      "JO",
+      "Hashemite Kingdom of Jordan",
+      "al-Mamlakah al-Urdunīyah al-Hāshimīyah"
+    ],
     "region": "Asia",
     "subregion": "Western Asia",
     "languages": {
@@ -222,7 +226,11 @@
       "suffixes": ["670"]
     },
     "capital": ["Saipan"],
-    "altSpellings": ["MP", "Commonwealth of the Northern Mariana Islands", "Sankattan Siha Na Islas Mariånas"],
+    "altSpellings": [
+      "MP",
+      "Commonwealth of the Northern Mariana Islands",
+      "Sankattan Siha Na Islas Mariånas"
+    ],
     "region": "Oceania",
     "subregion": "Micronesia",
     "languages": {
@@ -397,7 +405,13 @@
       "suffixes": ["81"]
     },
     "capital": ["Belgrade"],
-    "altSpellings": ["RS", "Srbija", "Republic of Serbia", "Република Србија", "Republika Srbija"],
+    "altSpellings": [
+      "RS",
+      "Srbija",
+      "Republic of Serbia",
+      "Република Србија",
+      "Republika Srbija"
+    ],
     "region": "Europe",
     "subregion": "Southeast Europe",
     "languages": {
@@ -939,7 +953,12 @@
       "suffixes": ["441"]
     },
     "capital": ["Hamilton"],
-    "altSpellings": ["BM", "The Islands of Bermuda", "The Bermudas", "Somers Isles"],
+    "altSpellings": [
+      "BM",
+      "The Islands of Bermuda",
+      "The Bermudas",
+      "Somers Isles"
+    ],
     "region": "Americas",
     "subregion": "North America",
     "languages": {
@@ -1850,7 +1869,12 @@
       "suffixes": ["74"]
     },
     "capital": ["Yerevan"],
-    "altSpellings": ["AM", "Hayastan", "Republic of Armenia", "Հայաստանի Հանրապետություն"],
+    "altSpellings": [
+      "AM",
+      "Hayastan",
+      "Republic of Armenia",
+      "Հայաստանի Հանրապետություն"
+    ],
     "region": "Asia",
     "subregion": "Western Asia",
     "languages": {
@@ -2227,7 +2251,12 @@
       "suffixes": ["60"]
     },
     "capital": ["Malé"],
-    "altSpellings": ["MV", "Maldive Islands", "Republic of the Maldives", "Dhivehi Raajjeyge Jumhooriyya"],
+    "altSpellings": [
+      "MV",
+      "Maldive Islands",
+      "Republic of the Maldives",
+      "Dhivehi Raajjeyge Jumhooriyya"
+    ],
     "region": "Asia",
     "subregion": "Southern Asia",
     "languages": {
@@ -2783,7 +2812,12 @@
       "suffixes": ["51"]
     },
     "capital": ["Addis Ababa"],
-    "altSpellings": ["ET", "ʾĪtyōṗṗyā", "Federal Democratic Republic of Ethiopia", "የኢትዮጵያ ፌዴራላዊ ዲሞክራሲያዊ ሪፐብሊክ"],
+    "altSpellings": [
+      "ET",
+      "ʾĪtyōṗṗyā",
+      "Federal Democratic Republic of Ethiopia",
+      "የኢትዮጵያ ፌዴራላዊ ዲሞክራሲያዊ ሪፐብሊክ"
+    ],
     "region": "Africa",
     "subregion": "Eastern Africa",
     "languages": {
@@ -3907,7 +3941,13 @@
       "suffixes": ["97"]
     },
     "capital": ["Paramaribo"],
-    "altSpellings": ["SR", "Sarnam", "Sranangron", "Republic of Suriname", "Republiek Suriname"],
+    "altSpellings": [
+      "SR",
+      "Sarnam",
+      "Sranangron",
+      "Republic of Suriname",
+      "Republiek Suriname"
+    ],
     "region": "Americas",
     "subregion": "South America",
     "languages": {
@@ -4454,7 +4494,12 @@
       "suffixes": ["89"]
     },
     "capital": ["Papeetē"],
-    "altSpellings": ["PF", "Polynésie française", "French Polynesia", "Pōrīnetia Farāni"],
+    "altSpellings": [
+      "PF",
+      "Polynésie française",
+      "French Polynesia",
+      "Pōrīnetia Farāni"
+    ],
     "region": "Oceania",
     "subregion": "Polynesia",
     "languages": {
@@ -6174,7 +6219,12 @@
       "suffixes": ["66"]
     },
     "capital": ["Riyadh"],
-    "altSpellings": ["Saudi", "SA", "Kingdom of Saudi Arabia", "Al-Mamlakah al-‘Arabiyyah as-Su‘ūdiyyah"],
+    "altSpellings": [
+      "Saudi",
+      "SA",
+      "Kingdom of Saudi Arabia",
+      "Al-Mamlakah al-‘Arabiyyah as-Su‘ūdiyyah"
+    ],
     "region": "Asia",
     "subregion": "Western Asia",
     "languages": {
@@ -6898,7 +6948,11 @@
       "suffixes": ["36"]
     },
     "capital": ["Bangui"],
-    "altSpellings": ["CF", "Central African Republic", "République centrafricaine"],
+    "altSpellings": [
+      "CF",
+      "Central African Republic",
+      "République centrafricaine"
+    ],
     "region": "Africa",
     "subregion": "Middle Africa",
     "languages": {
@@ -7270,7 +7324,12 @@
       "suffixes": ["906698", "79"]
     },
     "capital": ["Vatican City"],
-    "altSpellings": ["VA", "Holy See (Vatican City State)", "Vatican City State", "Stato della Città del Vaticano"],
+    "altSpellings": [
+      "VA",
+      "Holy See (Vatican City State)",
+      "Vatican City State",
+      "Stato della Città del Vaticano"
+    ],
     "region": "Europe",
     "subregion": "Southern Europe",
     "languages": {
@@ -7449,7 +7508,11 @@
       "suffixes": ["63"]
     },
     "capital": ["Damascus"],
-    "altSpellings": ["SY", "Syrian Arab Republic", "Al-Jumhūrīyah Al-ʻArabīyah As-Sūrīyah"],
+    "altSpellings": [
+      "SY",
+      "Syrian Arab Republic",
+      "Al-Jumhūrīyah Al-ʻArabīyah As-Sūrīyah"
+    ],
     "region": "Asia",
     "subregion": "Western Asia",
     "languages": {
@@ -7639,7 +7702,12 @@
       "suffixes": ["78"]
     },
     "capital": ["Port Vila"],
-    "altSpellings": ["VU", "Republic of Vanuatu", "Ripablik blong Vanuatu", "République de Vanuatu"],
+    "altSpellings": [
+      "VU",
+      "Republic of Vanuatu",
+      "Ripablik blong Vanuatu",
+      "République de Vanuatu"
+    ],
     "region": "Oceania",
     "subregion": "Melanesia",
     "languages": {
@@ -8742,7 +8810,12 @@
       "suffixes": ["90"]
     },
     "capital": ["Gustavia"],
-    "altSpellings": ["BL", "St. Barthelemy", "Collectivity of Saint Barthélemy", "Collectivité de Saint-Barthélemy"],
+    "altSpellings": [
+      "BL",
+      "St. Barthelemy",
+      "Collectivity of Saint Barthélemy",
+      "Collectivité de Saint-Barthélemy"
+    ],
     "region": "Americas",
     "subregion": "Caribbean",
     "languages": {
@@ -8918,7 +8991,12 @@
       "suffixes": ["2"]
     },
     "capital": ["Mexico City"],
-    "altSpellings": ["MX", "Mexicanos", "United Mexican States", "Estados Unidos Mexicanos"],
+    "altSpellings": [
+      "MX",
+      "Mexicanos",
+      "United Mexican States",
+      "Estados Unidos Mexicanos"
+    ],
     "region": "Americas",
     "subregion": "North America",
     "languages": {
@@ -9861,7 +9939,15 @@
       "suffixes": ["68"]
     },
     "capital": ["Mbabane"],
-    "altSpellings": ["SZ", "Swaziland", "weSwatini", "Swatini", "Ngwane", "Kingdom of Eswatini", "Umbuso weSwatini"],
+    "altSpellings": [
+      "SZ",
+      "Swaziland",
+      "weSwatini",
+      "Swatini",
+      "Ngwane",
+      "Kingdom of Eswatini",
+      "Umbuso weSwatini"
+    ],
     "region": "Africa",
     "subregion": "Southern Africa",
     "languages": {
@@ -10049,7 +10135,12 @@
       "suffixes": ["98"]
     },
     "capital": ["Tashkent"],
-    "altSpellings": ["UZ", "Republic of Uzbekistan", "O‘zbekiston Respublikasi", "Ўзбекистон Республикаси"],
+    "altSpellings": [
+      "UZ",
+      "Republic of Uzbekistan",
+      "O‘zbekiston Respublikasi",
+      "Ўзбекистон Республикаси"
+    ],
     "region": "Asia",
     "subregion": "Central Asia",
     "languages": {
@@ -10426,7 +10517,12 @@
       "suffixes": ["95"]
     },
     "capital": ["Asunción"],
-    "altSpellings": ["PY", "Republic of Paraguay", "República del Paraguay", "Tetã Paraguái"],
+    "altSpellings": [
+      "PY",
+      "Republic of Paraguay",
+      "República del Paraguay",
+      "Tetã Paraguái"
+    ],
     "region": "Americas",
     "subregion": "South America",
     "languages": {
@@ -10973,7 +11069,12 @@
       "suffixes": ["85"]
     },
     "capital": ["Zagreb"],
-    "altSpellings": ["HR", "Hrvatska", "Republic of Croatia", "Republika Hrvatska"],
+    "altSpellings": [
+      "HR",
+      "Hrvatska",
+      "Republic of Croatia",
+      "Republika Hrvatska"
+    ],
     "region": "Europe",
     "subregion": "Southeast Europe",
     "languages": {
@@ -11681,7 +11782,14 @@
       "signs": ["CDN"],
       "side": "right"
     },
-    "timezones": ["UTC-08:00", "UTC-07:00", "UTC-06:00", "UTC-05:00", "UTC-04:00", "UTC-03:30"],
+    "timezones": [
+      "UTC-08:00",
+      "UTC-07:00",
+      "UTC-06:00",
+      "UTC-05:00",
+      "UTC-04:00",
+      "UTC-03:30"
+    ],
     "continents": ["North America"],
     "flags": {
       "png": "https://flagcdn.com/w320/ca.png",
@@ -11731,7 +11839,12 @@
       "suffixes": ["51"]
     },
     "capital": ["Lisbon"],
-    "altSpellings": ["PT", "Portuguesa", "Portuguese Republic", "República Portuguesa"],
+    "altSpellings": [
+      "PT",
+      "Portuguesa",
+      "Portuguese Republic",
+      "República Portuguesa"
+    ],
     "region": "Europe",
     "subregion": "Southern Europe",
     "languages": {
@@ -11917,7 +12030,12 @@
       "suffixes": ["5"]
     },
     "capital": ["Brasília"],
-    "altSpellings": ["BR", "Brasil", "Federative Republic of Brazil", "República Federativa do Brasil"],
+    "altSpellings": [
+      "BR",
+      "Brasil",
+      "Federative Republic of Brazil",
+      "República Federativa do Brasil"
+    ],
     "region": "Americas",
     "subregion": "South America",
     "languages": {
@@ -12027,7 +12145,18 @@
     },
     "latlng": [-10, -55],
     "landlocked": false,
-    "borders": ["ARG", "BOL", "COL", "GUF", "GUY", "PRY", "PER", "SUR", "URY", "VEN"],
+    "borders": [
+      "ARG",
+      "BOL",
+      "COL",
+      "GUF",
+      "GUY",
+      "PRY",
+      "PER",
+      "SUR",
+      "URY",
+      "VEN"
+    ],
     "area": 8515767,
     "demonyms": {
       "eng": {
@@ -12103,7 +12232,11 @@
       "suffixes": ["22"]
     },
     "capital": ["Nouakchott"],
-    "altSpellings": ["MR", "Islamic Republic of Mauritania", "al-Jumhūriyyah al-ʾIslāmiyyah al-Mūrītāniyyah"],
+    "altSpellings": [
+      "MR",
+      "Islamic Republic of Mauritania",
+      "al-Jumhūriyyah al-ʾIslāmiyyah al-Mūrītāniyyah"
+    ],
     "region": "Africa",
     "subregion": "Western Africa",
     "languages": {
@@ -12483,7 +12616,14 @@
       "suffixes": ["99"]
     },
     "capital": ["Willemstad"],
-    "altSpellings": ["CW", "Curacao", "Kòrsou", "Country of Curaçao", "Land Curaçao", "Pais Kòrsou"],
+    "altSpellings": [
+      "CW",
+      "Curacao",
+      "Kòrsou",
+      "Country of Curaçao",
+      "Land Curaçao",
+      "Pais Kòrsou"
+    ],
     "region": "Americas",
     "subregion": "Caribbean",
     "languages": {
@@ -12658,7 +12798,12 @@
       "suffixes": ["73"]
     },
     "capital": ["Bandar Seri Begawan"],
-    "altSpellings": ["BN", "Brunei Darussalam", "Nation of Brunei", "the Abode of Peace"],
+    "altSpellings": [
+      "BN",
+      "Brunei Darussalam",
+      "Nation of Brunei",
+      "the Abode of Peace"
+    ],
     "region": "Asia",
     "subregion": "South-Eastern Asia",
     "languages": {
@@ -13217,7 +13362,13 @@
       "suffixes": ["75"]
     },
     "capital": ["Minsk"],
-    "altSpellings": ["BY", "Bielaruś", "Republic of Belarus", "Белоруссия", "Республика Белоруссия"],
+    "altSpellings": [
+      "BY",
+      "Bielaruś",
+      "Republic of Belarus",
+      "Белоруссия",
+      "Республика Белоруссия"
+    ],
     "region": "Europe",
     "subregion": "Eastern Europe",
     "languages": {
@@ -13404,7 +13555,12 @@
       "suffixes": ["0"]
     },
     "capital": ["Ankara"],
-    "altSpellings": ["TR", "Turkiye", "Republic of Turkey", "Türkiye Cumhuriyeti"],
+    "altSpellings": [
+      "TR",
+      "Turkiye",
+      "Republic of Turkey",
+      "Türkiye Cumhuriyeti"
+    ],
     "region": "Asia",
     "subregion": "Western Asia",
     "languages": {
@@ -13594,7 +13750,13 @@
       "suffixes": ["58"]
     },
     "capital": ["Helsinki"],
-    "altSpellings": ["FI", "Suomi", "Republic of Finland", "Suomen tasavalta", "Republiken Finland"],
+    "altSpellings": [
+      "FI",
+      "Suomi",
+      "Republic of Finland",
+      "Suomen tasavalta",
+      "Republiken Finland"
+    ],
     "region": "Europe",
     "subregion": "Northern Europe",
     "languages": {
@@ -15420,7 +15582,13 @@
       "suffixes": ["1"]
     },
     "capital": ["New Delhi"],
-    "altSpellings": ["IN", "Bhārat", "Republic of India", "Bharat Ganrajya", "இந்தியா"],
+    "altSpellings": [
+      "IN",
+      "Bhārat",
+      "Republic of India",
+      "Bharat Ganrajya",
+      "இந்தியா"
+    ],
     "region": "Asia",
     "subregion": "Southern Asia",
     "languages": {
@@ -15750,7 +15918,13 @@
       "signs": ["NZ"],
       "side": "left"
     },
-    "timezones": ["UTC-11:00", "UTC-10:00", "UTC+12:00", "UTC+12:45", "UTC+13:00"],
+    "timezones": [
+      "UTC-11:00",
+      "UTC-10:00",
+      "UTC+12:00",
+      "UTC+12:45",
+      "UTC+13:00"
+    ],
     "continents": ["Oceania"],
     "flags": {
       "png": "https://flagcdn.com/w320/nz.png",
@@ -16163,7 +16337,11 @@
       "suffixes": ["78"]
     },
     "capital": ["City of San Marino"],
-    "altSpellings": ["SM", "Republic of San Marino", "Repubblica di San Marino"],
+    "altSpellings": [
+      "SM",
+      "Republic of San Marino",
+      "Repubblica di San Marino"
+    ],
     "region": "Europe",
     "subregion": "Southern Europe",
     "languages": {
@@ -16539,7 +16717,12 @@
       "suffixes": ["2"]
     },
     "capital": ["Islamabad"],
-    "altSpellings": ["PK", "Pākistān", "Islamic Republic of Pakistan", "Islāmī Jumhūriya'eh Pākistān"],
+    "altSpellings": [
+      "PK",
+      "Pākistān",
+      "Islamic Republic of Pakistan",
+      "Islāmī Jumhūriya'eh Pākistān"
+    ],
     "region": "Asia",
     "subregion": "Southern Asia",
     "languages": {
@@ -17317,7 +17500,13 @@
       "suffixes": ["79"]
     },
     "capital": ["Suva"],
-    "altSpellings": ["FJ", "Viti", "Republic of Fiji", "Matanitu ko Viti", "Fijī Gaṇarājya"],
+    "altSpellings": [
+      "FJ",
+      "Viti",
+      "Republic of Fiji",
+      "Matanitu ko Viti",
+      "Fijī Gaṇarājya"
+    ],
     "region": "Oceania",
     "subregion": "Melanesia",
     "languages": {
@@ -17685,7 +17874,12 @@
       "suffixes": ["5"]
     },
     "capital": ["Naypyidaw"],
-    "altSpellings": ["MM", "Burma", "Republic of the Union of Myanmar", "Pyidaunzu Thanmăda Myăma Nainngandaw"],
+    "altSpellings": [
+      "MM",
+      "Burma",
+      "Republic of the Union of Myanmar",
+      "Pyidaunzu Thanmăda Myăma Nainngandaw"
+    ],
     "region": "Asia",
     "subregion": "South-Eastern Asia",
     "languages": {
@@ -17871,7 +18065,11 @@
       "suffixes": ["80"]
     },
     "capital": ["Dhaka"],
-    "altSpellings": ["BD", "People's Republic of Bangladesh", "Gônôprôjatôntri Bangladesh"],
+    "altSpellings": [
+      "BD",
+      "People's Republic of Bangladesh",
+      "Gônôprôjatôntri Bangladesh"
+    ],
     "region": "Asia",
     "subregion": "Southern Asia",
     "languages": {
@@ -18061,7 +18259,11 @@
       "suffixes": ["3"]
     },
     "capital": ["Manila"],
-    "altSpellings": ["PH", "Republic of the Philippines", "Repúblika ng Pilipinas"],
+    "altSpellings": [
+      "PH",
+      "Republic of the Philippines",
+      "Repúblika ng Pilipinas"
+    ],
     "region": "Asia",
     "subregion": "South-Eastern Asia",
     "languages": {
@@ -18446,7 +18648,12 @@
       "suffixes": ["53"]
     },
     "capital": ["Dublin"],
-    "altSpellings": ["IE", "Éire", "Republic of Ireland", "Poblacht na hÉireann"],
+    "altSpellings": [
+      "IE",
+      "Éire",
+      "Republic of Ireland",
+      "Poblacht na hÉireann"
+    ],
     "region": "Europe",
     "subregion": "Northern Europe",
     "languages": {
@@ -18629,7 +18836,11 @@
       "suffixes": ["77"]
     },
     "capital": ["Kathmandu"],
-    "altSpellings": ["NP", "Federal Democratic Republic of Nepal", "Loktāntrik Ganatantra Nepāl"],
+    "altSpellings": [
+      "NP",
+      "Federal Democratic Republic of Nepal",
+      "Loktāntrik Ganatantra Nepāl"
+    ],
     "region": "Asia",
     "subregion": "Southern Asia",
     "languages": {
@@ -18997,7 +19208,13 @@
       "suffixes": ["2"]
     },
     "capital": ["Seoul"],
-    "altSpellings": ["KR", "Korea, Republic of", "Republic of Korea", "남한", "남조선"],
+    "altSpellings": [
+      "KR",
+      "Korea, Republic of",
+      "Republic of Korea",
+      "남한",
+      "남조선"
+    ],
     "region": "Asia",
     "subregion": "Eastern Asia",
     "languages": {
@@ -19183,7 +19400,12 @@
       "suffixes": ["5"]
     },
     "capital": ["Copenhagen"],
-    "altSpellings": ["DK", "Danmark", "Kingdom of Denmark", "Kongeriget Danmark"],
+    "altSpellings": [
+      "DK",
+      "Danmark",
+      "Kingdom of Denmark",
+      "Kongeriget Danmark"
+    ],
     "region": "Europe",
     "subregion": "Northern Europe",
     "languages": {
@@ -19738,7 +19960,14 @@
       "suffixes": ["91"]
     },
     "capital": ["Asmara"],
-    "altSpellings": ["ER", "State of Eritrea", "ሃገረ ኤርትራ", "Dawlat Iritriyá", "ʾErtrā", "Iritriyā"],
+    "altSpellings": [
+      "ER",
+      "State of Eritrea",
+      "ሃገረ ኤርትራ",
+      "Dawlat Iritriyá",
+      "ʾErtrā",
+      "Iritriyā"
+    ],
     "region": "Africa",
     "subregion": "Eastern Africa",
     "languages": {
@@ -20113,7 +20342,12 @@
       "suffixes": ["8"]
     },
     "capital": ["Tehran"],
-    "altSpellings": ["IR", "Islamic Republic of Iran", "Iran, Islamic Republic of", "Jomhuri-ye Eslāmi-ye Irān"],
+    "altSpellings": [
+      "IR",
+      "Islamic Republic of Iran",
+      "Iran, Islamic Republic of",
+      "Jomhuri-ye Eslāmi-ye Irān"
+    ],
     "region": "Asia",
     "subregion": "Southern Asia",
     "languages": {
@@ -20295,7 +20529,11 @@
       "suffixes": ["03"]
     },
     "capital": ["San Salvador"],
-    "altSpellings": ["SV", "Republic of El Salvador", "República de El Salvador"],
+    "altSpellings": [
+      "SV",
+      "Republic of El Salvador",
+      "República de El Salvador"
+    ],
     "region": "Americas",
     "subregion": "Central America",
     "languages": {
@@ -21410,7 +21648,12 @@
       "suffixes": ["0"]
     },
     "capital": ["Athens"],
-    "altSpellings": ["GR", "Elláda", "Hellenic Republic", "Ελληνική Δημοκρατία"],
+    "altSpellings": [
+      "GR",
+      "Elláda",
+      "Hellenic Republic",
+      "Ελληνική Δημοκρατία"
+    ],
     "region": "Europe",
     "subregion": "Southern Europe",
     "languages": {
@@ -21797,7 +22040,12 @@
       "suffixes": ["50"]
     },
     "capital": ["Kigali"],
-    "altSpellings": ["RW", "Republic of Rwanda", "Repubulika y'u Rwanda", "République du Rwanda"],
+    "altSpellings": [
+      "RW",
+      "Republic of Rwanda",
+      "Repubulika y'u Rwanda",
+      "République du Rwanda"
+    ],
     "region": "Africa",
     "subregion": "Eastern Africa",
     "languages": {
@@ -21980,7 +22228,10 @@
       "suffixes": ["08"]
     },
     "capital": ["Saint-Pierre"],
-    "altSpellings": ["PM", "Collectivité territoriale de Saint-Pierre-et-Miquelon"],
+    "altSpellings": [
+      "PM",
+      "Collectivité territoriale de Saint-Pierre-et-Miquelon"
+    ],
     "region": "Americas",
     "subregion": "North America",
     "languages": {
@@ -22346,7 +22597,14 @@
       "suffixes": ["86"]
     },
     "capital": ["Taipei"],
-    "altSpellings": ["TW", "Táiwān", "Republic of China", "中華民國", "Zhōnghuá Mínguó", "Chinese Taipei"],
+    "altSpellings": [
+      "TW",
+      "Táiwān",
+      "Republic of China",
+      "中華民國",
+      "Zhōnghuá Mínguó",
+      "Chinese Taipei"
+    ],
     "region": "Asia",
     "subregion": "Eastern Asia",
     "languages": {
@@ -22713,7 +22971,12 @@
       "suffixes": ["48"]
     },
     "capital": ["Victoria"],
-    "altSpellings": ["SC", "Republic of Seychelles", "Repiblik Sesel", "République des Seychelles"],
+    "altSpellings": [
+      "SC",
+      "Republic of Seychelles",
+      "Repiblik Sesel",
+      "République des Seychelles"
+    ],
     "region": "Africa",
     "subregion": "Eastern Africa",
     "languages": {
@@ -24012,7 +24275,13 @@
       "suffixes": ["25"]
     },
     "capital": ["Yamoussoukro"],
-    "altSpellings": ["CI", "Côte d'Ivoire", "Ivory Coast", "Republic of Côte d'Ivoire", "République de Côte d'Ivoire"],
+    "altSpellings": [
+      "CI",
+      "Côte d'Ivoire",
+      "Ivory Coast",
+      "Republic of Côte d'Ivoire",
+      "République de Côte d'Ivoire"
+    ],
     "region": "Africa",
     "subregion": "Western Africa",
     "languages": {
@@ -24198,7 +24467,13 @@
       "suffixes": ["74"]
     },
     "capital": ["Yaren"],
-    "altSpellings": ["NR", "Naoero", "Pleasant Island", "Republic of Nauru", "Ripublik Naoero"],
+    "altSpellings": [
+      "NR",
+      "Naoero",
+      "Pleasant Island",
+      "Republic of Nauru",
+      "Ripublik Naoero"
+    ],
     "region": "Oceania",
     "subregion": "Micronesia",
     "languages": {
@@ -25534,7 +25809,11 @@
       "suffixes": ["92"]
     },
     "capital": ["Majuro"],
-    "altSpellings": ["MH", "Republic of the Marshall Islands", "Aolepān Aorōkin M̧ajeļ"],
+    "altSpellings": [
+      "MH",
+      "Republic of the Marshall Islands",
+      "Aolepān Aorōkin M̧ajeļ"
+    ],
     "region": "Oceania",
     "subregion": "Micronesia",
     "languages": {
@@ -26269,7 +26548,10 @@
       "suffixes": ["90", "47"]
     },
     "capital": ["Jamestown"],
-    "altSpellings": ["Saint Helena", "St. Helena, Ascension and Tristan da Cunha"],
+    "altSpellings": [
+      "Saint Helena",
+      "St. Helena, Ascension and Tristan da Cunha"
+    ],
     "region": "Africa",
     "subregion": "Western Africa",
     "languages": {
@@ -26454,7 +26736,12 @@
       "suffixes": ["70"]
     },
     "capital": ["Ramallah", "Jerusalem"],
-    "altSpellings": ["PS", "Palestine, State of", "State of Palestine", "Dawlat Filasṭin"],
+    "altSpellings": [
+      "PS",
+      "Palestine, State of",
+      "State of Palestine",
+      "Dawlat Filasṭin"
+    ],
     "region": "Asia",
     "subregion": "Western Asia",
     "languages": {
@@ -27007,7 +27294,11 @@
       "suffixes": ["91"]
     },
     "capital": ["Palikir"],
-    "altSpellings": ["FM", "Federated States of Micronesia", "Micronesia, Federated States of"],
+    "altSpellings": [
+      "FM",
+      "Federated States of Micronesia",
+      "Micronesia, Federated States of"
+    ],
     "region": "Oceania",
     "subregion": "Micronesia",
     "languages": {
@@ -28042,7 +28333,22 @@
     },
     "latlng": [60, 100],
     "landlocked": false,
-    "borders": ["AZE", "BLR", "CHN", "EST", "FIN", "GEO", "KAZ", "PRK", "LVA", "LTU", "MNG", "NOR", "POL", "UKR"],
+    "borders": [
+      "AZE",
+      "BLR",
+      "CHN",
+      "EST",
+      "FIN",
+      "GEO",
+      "KAZ",
+      "PRK",
+      "LVA",
+      "LTU",
+      "MNG",
+      "NOR",
+      "POL",
+      "UKR"
+    ],
     "area": 17098242,
     "demonyms": {
       "eng": {
@@ -28705,7 +29011,11 @@
       "suffixes": ["16"]
     },
     "capital": ["Tunis"],
-    "altSpellings": ["TN", "Republic of Tunisia", "al-Jumhūriyyah at-Tūnisiyyah"],
+    "altSpellings": [
+      "TN",
+      "Republic of Tunisia",
+      "al-Jumhūriyyah at-Tūnisiyyah"
+    ],
     "region": "Africa",
     "subregion": "Northern Africa",
     "languages": {
@@ -28907,7 +29217,13 @@
       "suffixes": ["43"]
     },
     "capital": ["Kinshasa"],
-    "altSpellings": ["CD", "DR Congo", "Congo-Kinshasa", "Congo, the Democratic Republic of the", "DRC"],
+    "altSpellings": [
+      "CD",
+      "DR Congo",
+      "Congo-Kinshasa",
+      "Congo, the Democratic Republic of the",
+      "DRC"
+    ],
     "region": "Africa",
     "subregion": "Middle Africa",
     "languages": {
@@ -30581,7 +30897,11 @@
       "suffixes": ["4"]
     },
     "capital": ["Sri Jayawardenepura Kotte"],
-    "altSpellings": ["LK", "ilaṅkai", "Democratic Socialist Republic of Sri Lanka"],
+    "altSpellings": [
+      "LK",
+      "ilaṅkai",
+      "Democratic Socialist Republic of Sri Lanka"
+    ],
     "region": "Asia",
     "subregion": "Southern Asia",
     "languages": {
@@ -30953,7 +31273,11 @@
       "suffixes": ["85"]
     },
     "capital": ["Apia"],
-    "altSpellings": ["WS", "Independent State of Samoa", "Malo Saʻoloto Tutoʻatasi o Sāmoa"],
+    "altSpellings": [
+      "WS",
+      "Independent State of Samoa",
+      "Malo Saʻoloto Tutoʻatasi o Sāmoa"
+    ],
     "region": "Oceania",
     "subregion": "Polynesia",
     "languages": {
@@ -31307,7 +31631,11 @@
       "suffixes": ["787", "939"]
     },
     "capital": ["San Juan"],
-    "altSpellings": ["PR", "Commonwealth of Puerto Rico", "Estado Libre Asociado de Puerto Rico"],
+    "altSpellings": [
+      "PR",
+      "Commonwealth of Puerto Rico",
+      "Estado Libre Asociado de Puerto Rico"
+    ],
     "region": "Americas",
     "subregion": "Caribbean",
     "languages": {
@@ -32437,7 +32765,12 @@
       "suffixes": ["73"]
     },
     "capital": ["Chișinău"],
-    "altSpellings": ["MD", "Moldova, Republic of", "Republic of Moldova", "Republica Moldova"],
+    "altSpellings": [
+      "MD",
+      "Moldova, Republic of",
+      "Republic of Moldova",
+      "Republica Moldova"
+    ],
     "region": "Europe",
     "subregion": "Eastern Europe",
     "languages": {
@@ -32623,7 +32956,11 @@
       "suffixes": ["23"]
     },
     "capital": ["Vaduz"],
-    "altSpellings": ["LI", "Principality of Liechtenstein", "Fürstentum Liechtenstein"],
+    "altSpellings": [
+      "LI",
+      "Principality of Liechtenstein",
+      "Fürstentum Liechtenstein"
+    ],
     "region": "Europe",
     "subregion": "Western Europe",
     "languages": {
@@ -33378,7 +33715,14 @@
       "suffixes": ["7"]
     },
     "capital": ["Oslo"],
-    "altSpellings": ["NO", "Norge", "Noreg", "Kingdom of Norway", "Kongeriket Norge", "Kongeriket Noreg"],
+    "altSpellings": [
+      "NO",
+      "Norge",
+      "Noreg",
+      "Kingdom of Norway",
+      "Kongeriket Norge",
+      "Kongeriket Noreg"
+    ],
     "region": "Europe",
     "subregion": "Northern Europe",
     "languages": {
@@ -33926,7 +34270,14 @@
       "suffixes": ["6"]
     },
     "capital": ["Bangkok"],
-    "altSpellings": ["TH", "Prathet", "Thai", "Kingdom of Thailand", "ราชอาณาจักรไทย", "Ratcha Anachak Thai"],
+    "altSpellings": [
+      "TH",
+      "Prathet",
+      "Thai",
+      "Kingdom of Thailand",
+      "ราชอาณาจักรไทย",
+      "Ratcha Anachak Thai"
+    ],
     "region": "Asia",
     "subregion": "South-Eastern Asia",
     "languages": {
@@ -34112,7 +34463,12 @@
       "suffixes": ["34"]
     },
     "capital": ["Abuja"],
-    "altSpellings": ["NG", "Nijeriya", "Naíjíríà", "Federal Republic of Nigeria"],
+    "altSpellings": [
+      "NG",
+      "Nijeriya",
+      "Naíjíríà",
+      "Federal Republic of Nigeria"
+    ],
     "region": "Africa",
     "subregion": "Western Africa",
     "languages": {
@@ -34670,7 +35026,12 @@
       "suffixes": ["4"]
     },
     "capital": ["Saint Helier"],
-    "altSpellings": ["JE", "Bailiwick of Jersey", "Bailliage de Jersey", "Bailliage dé Jèrri"],
+    "altSpellings": [
+      "JE",
+      "Bailiwick of Jersey",
+      "Bailliage de Jersey",
+      "Bailliage dé Jèrri"
+    ],
     "region": "Europe",
     "subregion": "Northern Europe",
     "languages": {
@@ -35038,7 +35399,12 @@
       "suffixes": ["56"]
     },
     "capital": ["Vientiane"],
-    "altSpellings": ["LA", "Lao", "Lao People's Democratic Republic", "Sathalanalat Paxathipatai Paxaxon Lao"],
+    "altSpellings": [
+      "LA",
+      "Lao",
+      "Lao People's Democratic Republic",
+      "Sathalanalat Paxathipatai Paxaxon Lao"
+    ],
     "region": "Asia",
     "subregion": "South-Eastern Asia",
     "languages": {
@@ -36335,7 +36701,12 @@
       "suffixes": ["57"]
     },
     "capital": ["Gitega"],
-    "altSpellings": ["BI", "Republic of Burundi", "Republika y'Uburundi", "République du Burundi"],
+    "altSpellings": [
+      "BI",
+      "Republic of Burundi",
+      "Republika y'Uburundi",
+      "République du Burundi"
+    ],
     "region": "Africa",
     "subregion": "Eastern Africa",
     "languages": {
@@ -37450,7 +37821,11 @@
       "suffixes": ["81"]
     },
     "capital": ["Mata-Utu"],
-    "altSpellings": ["WF", "Territory of the Wallis and Futuna Islands", "Territoire des îles Wallis et Futuna"],
+    "altSpellings": [
+      "WF",
+      "Territory of the Wallis and Futuna Islands",
+      "Territoire des îles Wallis et Futuna"
+    ],
     "region": "Oceania",
     "subregion": "Polynesia",
     "languages": {
@@ -37622,7 +37997,11 @@
       "suffixes": ["4"]
     },
     "capital": ["Adamstown"],
-    "altSpellings": ["PN", "Pitcairn", "Pitcairn Henderson Ducie and Oeno Islands"],
+    "altSpellings": [
+      "PN",
+      "Pitcairn",
+      "Pitcairn Henderson Ducie and Oeno Islands"
+    ],
     "region": "Oceania",
     "subregion": "Polynesia",
     "languages": {
@@ -37981,7 +38360,12 @@
       "suffixes": ["4"]
     },
     "capital": ["Hanoi"],
-    "altSpellings": ["VN", "Socialist Republic of Vietnam", "Cộng hòa Xã hội chủ nghĩa Việt Nam", "Viet Nam"],
+    "altSpellings": [
+      "VN",
+      "Socialist Republic of Vietnam",
+      "Cộng hòa Xã hội chủ nghĩa Việt Nam",
+      "Viet Nam"
+    ],
     "region": "Asia",
     "subregion": "South-Eastern Asia",
     "languages": {
@@ -39275,7 +39659,12 @@
       "suffixes": ["09"]
     },
     "capital": ["Port-au-Prince"],
-    "altSpellings": ["HT", "Republic of Haiti", "République d'Haïti", "Repiblik Ayiti"],
+    "altSpellings": [
+      "HT",
+      "Republic of Haiti",
+      "République d'Haïti",
+      "Repiblik Ayiti"
+    ],
     "region": "Americas",
     "subregion": "Caribbean",
     "languages": {
@@ -39640,7 +40029,11 @@
       "suffixes": ["75"]
     },
     "capital": ["Port Moresby"],
-    "altSpellings": ["PG", "Independent State of Papua New Guinea", "Independen Stet bilong Papua Niugini"],
+    "altSpellings": [
+      "PG",
+      "Independent State of Papua New Guinea",
+      "Independen Stet bilong Papua Niugini"
+    ],
     "region": "Oceania",
     "subregion": "Melanesia",
     "languages": {
@@ -40011,7 +40404,13 @@
       "suffixes": ["96"]
     },
     "capital": ["Bishkek"],
-    "altSpellings": ["KG", "Киргизия", "Kyrgyz Republic", "Кыргыз Республикасы", "Kyrgyz Respublikasy"],
+    "altSpellings": [
+      "KG",
+      "Киргизия",
+      "Kyrgyz Republic",
+      "Кыргыз Республикасы",
+      "Kyrgyz Respublikasy"
+    ],
     "region": "Asia",
     "subregion": "Central Asia",
     "languages": {
@@ -40388,7 +40787,12 @@
       "suffixes": ["61"]
     },
     "capital": ["Antananarivo"],
-    "altSpellings": ["MG", "Republic of Madagascar", "Repoblikan'i Madagasikara", "République de Madagascar"],
+    "altSpellings": [
+      "MG",
+      "Republic of Madagascar",
+      "Repoblikan'i Madagasikara",
+      "République de Madagascar"
+    ],
     "region": "Africa",
     "subregion": "Eastern Africa",
     "languages": {
@@ -40756,7 +41160,12 @@
       "suffixes": ["28"]
     },
     "capital": ["Lomé"],
-    "altSpellings": ["TG", "Togolese", "Togolese Republic", "République Togolaise"],
+    "altSpellings": [
+      "TG",
+      "Togolese",
+      "Togolese Republic",
+      "République Togolaise"
+    ],
     "region": "Africa",
     "subregion": "Western Africa",
     "languages": {
@@ -42558,7 +42967,11 @@
       "suffixes": ["9"]
     },
     "capital": ["Berlin"],
-    "altSpellings": ["DE", "Federal Republic of Germany", "Bundesrepublik Deutschland"],
+    "altSpellings": [
+      "DE",
+      "Federal Republic of Germany",
+      "Bundesrepublik Deutschland"
+    ],
     "region": "Europe",
     "subregion": "Western Europe",
     "languages": {
@@ -43840,7 +44253,12 @@
       "suffixes": ["767"]
     },
     "capital": ["Roseau"],
-    "altSpellings": ["DM", "Dominique", "Wai‘tu kubuli", "Commonwealth of Dominica"],
+    "altSpellings": [
+      "DM",
+      "Dominique",
+      "Wai‘tu kubuli",
+      "Commonwealth of Dominica"
+    ],
     "region": "Americas",
     "subregion": "Caribbean",
     "languages": {
@@ -44935,7 +45353,13 @@
       "suffixes": ["69"]
     },
     "capital": ["Moroni"],
-    "altSpellings": ["KM", "Union of the Comoros", "Union des Comores", "Udzima wa Komori", "al-Ittiḥād al-Qumurī"],
+    "altSpellings": [
+      "KM",
+      "Union of the Comoros",
+      "Union des Comores",
+      "Udzima wa Komori",
+      "al-Ittiḥād al-Qumurī"
+    ],
     "region": "Africa",
     "subregion": "Eastern Africa",
     "languages": {
@@ -45307,7 +45731,14 @@
       "suffixes": ["1"]
     },
     "capital": ["Bern"],
-    "altSpellings": ["CH", "Swiss Confederation", "Schweiz", "Suisse", "Svizzera", "Svizra"],
+    "altSpellings": [
+      "CH",
+      "Swiss Confederation",
+      "Schweiz",
+      "Suisse",
+      "Svizzera",
+      "Svizra"
+    ],
     "region": "Europe",
     "subregion": "Western Europe",
     "languages": {
@@ -45499,7 +45930,11 @@
       "suffixes": ["72"]
     },
     "capital": ["Kingston"],
-    "altSpellings": ["NF", "Territory of Norfolk Island", "Teratri of Norf'k Ailen"],
+    "altSpellings": [
+      "NF",
+      "Territory of Norfolk Island",
+      "Teratri of Norf'k Ailen"
+    ],
     "region": "Oceania",
     "subregion": "Australia and New Zealand",
     "languages": {
@@ -46051,7 +46486,13 @@
       "suffixes": ["92"]
     },
     "capital": ["Dushanbe"],
-    "altSpellings": ["TJ", "Toçikiston", "Republic of Tajikistan", "Ҷумҳурии Тоҷикистон", "Çumhuriyi Toçikiston"],
+    "altSpellings": [
+      "TJ",
+      "Toçikiston",
+      "Republic of Tajikistan",
+      "Ҷумҳурии Тоҷикистон",
+      "Çumhuriyi Toçikiston"
+    ],
     "region": "Asia",
     "subregion": "Central Asia",
     "languages": {
@@ -46238,7 +46679,11 @@
       "suffixes": ["98"]
     },
     "capital": ["Montevideo"],
-    "altSpellings": ["UY", "Oriental Republic of Uruguay", "República Oriental del Uruguay"],
+    "altSpellings": [
+      "UY",
+      "Oriental Republic of Uruguay",
+      "República Oriental del Uruguay"
+    ],
     "region": "Americas",
     "subregion": "South America",
     "languages": {
@@ -46428,7 +46873,14 @@
       "suffixes": ["57"]
     },
     "capital": ["Nicosia"],
-    "altSpellings": ["CY", "Kýpros", "Kıbrıs", "Republic of Cyprus", "Κυπριακή Δημοκρατία", "Kıbrıs Cumhuriyeti"],
+    "altSpellings": [
+      "CY",
+      "Kýpros",
+      "Kıbrıs",
+      "Republic of Cyprus",
+      "Κυπριακή Δημοκρατία",
+      "Kıbrıs Cumhuriyeti"
+    ],
     "region": "Europe",
     "subregion": "Southern Europe",
     "languages": {
@@ -46618,7 +47070,11 @@
       "suffixes": ["45"]
     },
     "capital": ["Bissau"],
-    "altSpellings": ["GW", "Republic of Guinea-Bissau", "República da Guiné-Bissau"],
+    "altSpellings": [
+      "GW",
+      "Republic of Guinea-Bissau",
+      "República da Guiné-Bissau"
+    ],
     "region": "Africa",
     "subregion": "Western Africa",
     "languages": {

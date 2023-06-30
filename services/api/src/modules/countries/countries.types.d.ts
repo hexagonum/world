@@ -1,1 +1,5 @@
-export type CountryGoogleTrends = 'commonName' | 'region' | 'subregion' | 'googleTrends';
+export type CountryGoogleTrends =
+  | 'commonName'
+  | 'region'
+  | 'subregion'
+  | 'googleTrends';
