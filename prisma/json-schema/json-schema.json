@@ -1,0 +1,478 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "definitions": {
+    "Country": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "string"
+        },
+        "commonName": {
+          "type": "string",
+          "default": ""
+        },
+        "officialName": {
+          "type": "string",
+          "default": ""
+        },
+        "cca2": {
+          "type": "string",
+          "default": ""
+        },
+        "cca3": {
+          "type": "string",
+          "default": ""
+        },
+        "ccn3": {
+          "type": "string",
+          "default": ""
+        },
+        "cioc": {
+          "type": "string",
+          "default": ""
+        },
+        "fifa": {
+          "type": "string",
+          "default": ""
+        },
+        "status": {
+          "type": "string",
+          "default": ""
+        },
+        "independent": {
+          "type": "boolean",
+          "default": false
+        },
+        "unMember": {
+          "type": "boolean",
+          "default": false
+        },
+        "startOfWeek": {
+          "type": "string",
+          "default": ""
+        },
+        "latitude": {
+          "type": "number",
+          "default": 0
+        },
+        "longitude": {
+          "type": "number",
+          "default": 0
+        },
+        "topLevelDomains": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "capital": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "alternativeSpellings": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "continents": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "borders": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "region": {
+          "type": "string",
+          "default": ""
+        },
+        "subregion": {
+          "type": "string",
+          "default": ""
+        },
+        "flag": {
+          "type": "string",
+          "default": ""
+        },
+        "flagPNG": {
+          "type": "string",
+          "default": ""
+        },
+        "flagSVG": {
+          "type": "string",
+          "default": ""
+        },
+        "area": {
+          "type": "number",
+          "default": 0
+        },
+        "population": {
+          "type": "integer",
+          "default": 0
+        },
+        "density": {
+          "type": "integer",
+          "default": 0
+        },
+        "googleMaps": {
+          "type": "string",
+          "default": ""
+        },
+        "timezones": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "currencies": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/CurrenciesInCountries"
+          }
+        },
+        "languages": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/LanguagesInCountries"
+          }
+        },
+        "organizations": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/CountriesInOrganizations"
+          }
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "passports": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Passport"
+          }
+        },
+        "passportsRequirements": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/PassportRequirement"
+          }
+        },
+        "googleTrends": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/GoogleTrend"
+          }
+        },
+        "cities": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/City"
+          }
+        }
+      }
+    },
+    "City": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "country": {
+          "$ref": "#/definitions/Country"
+        },
+        "region": {
+          "type": "string",
+          "default": ""
+        },
+        "subregion": {
+          "type": "string",
+          "default": ""
+        },
+        "state": {
+          "type": "string",
+          "default": ""
+        },
+        "stateCode": {
+          "type": "string",
+          "default": ""
+        },
+        "stateLevel": {
+          "type": "string",
+          "default": ""
+        },
+        "city": {
+          "type": "string",
+          "default": ""
+        },
+        "cityCode": {
+          "type": "string",
+          "default": ""
+        },
+        "cityLevel": {
+          "type": "string",
+          "default": ""
+        },
+        "latitude": {
+          "type": "number",
+          "default": 0
+        },
+        "longitude": {
+          "type": "number",
+          "default": 0
+        },
+        "timezone": {
+          "type": "number",
+          "default": 0
+        }
+      }
+    },
+    "Currency": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string",
+          "default": ""
+        },
+        "symbol": {
+          "type": "string",
+          "default": ""
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "countries": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/CurrenciesInCountries"
+          }
+        }
+      }
+    },
+    "GoogleTrend": {
+      "type": "object",
+      "properties": {
+        "country": {
+          "$ref": "#/definitions/Country"
+        },
+        "queries": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "Language": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string",
+          "default": ""
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "countries": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/LanguagesInCountries"
+          }
+        }
+      }
+    },
+    "Organization": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string",
+          "default": ""
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "countries": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/CountriesInOrganizations"
+          }
+        }
+      }
+    },
+    "Passport": {
+      "type": "object",
+      "properties": {
+        "country": {
+          "$ref": "#/definitions/Country"
+        },
+        "globalRank": {
+          "type": "integer",
+          "default": 0
+        },
+        "individualRank": {
+          "type": "integer",
+          "default": 0
+        },
+        "mobilityScore": {
+          "type": "integer",
+          "default": 0
+        },
+        "passportsRequirements": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/PassportRequirement"
+          }
+        }
+      }
+    },
+    "PassportRequirement": {
+      "type": "object",
+      "properties": {
+        "passport": {
+          "$ref": "#/definitions/Passport"
+        },
+        "country": {
+          "$ref": "#/definitions/Country"
+        },
+        "requirement": {
+          "type": "string"
+        }
+      }
+    },
+    "Timezone": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string",
+          "default": ""
+        },
+        "offset": {
+          "type": "string",
+          "default": ""
+        },
+        "utcOffset": {
+          "type": "string",
+          "default": ""
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time"
+        }
+      }
+    },
+    "CurrenciesInCountries": {
+      "type": "object",
+      "properties": {
+        "currency": {
+          "$ref": "#/definitions/Currency"
+        },
+        "country": {
+          "$ref": "#/definitions/Country"
+        }
+      }
+    },
+    "LanguagesInCountries": {
+      "type": "object",
+      "properties": {
+        "language": {
+          "$ref": "#/definitions/Language"
+        },
+        "country": {
+          "$ref": "#/definitions/Country"
+        }
+      }
+    },
+    "CountriesInOrganizations": {
+      "type": "object",
+      "properties": {
+        "country": {
+          "$ref": "#/definitions/Country"
+        },
+        "organization": {
+          "$ref": "#/definitions/Organization"
+        }
+      }
+    }
+  },
+  "type": "object",
+  "properties": {
+    "country": {
+      "$ref": "#/definitions/Country"
+    },
+    "city": {
+      "$ref": "#/definitions/City"
+    },
+    "currency": {
+      "$ref": "#/definitions/Currency"
+    },
+    "googleTrend": {
+      "$ref": "#/definitions/GoogleTrend"
+    },
+    "language": {
+      "$ref": "#/definitions/Language"
+    },
+    "organization": {
+      "$ref": "#/definitions/Organization"
+    },
+    "passport": {
+      "$ref": "#/definitions/Passport"
+    },
+    "passportRequirement": {
+      "$ref": "#/definitions/PassportRequirement"
+    },
+    "timezone": {
+      "$ref": "#/definitions/Timezone"
+    },
+    "currenciesInCountries": {
+      "$ref": "#/definitions/CurrenciesInCountries"
+    },
+    "languagesInCountries": {
+      "$ref": "#/definitions/LanguagesInCountries"
+    },
+    "countriesInOrganizations": {
+      "$ref": "#/definitions/CountriesInOrganizations"
+    }
+  }
+}

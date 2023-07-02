@@ -1,0 +1,7 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+yarn lint:api --fix
+yarn lint:web --fix
+yarn prettify
+git add -A

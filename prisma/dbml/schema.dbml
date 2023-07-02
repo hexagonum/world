@@ -1,0 +1,177 @@
+//// ------------------------------------------------------
+//// THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+//// ------------------------------------------------------
+
+Table Country {
+  code String [pk]
+  commonName String [not null, default: '']
+  officialName String [not null, default: '']
+  cca2 String [not null, default: '']
+  cca3 String [not null, default: '']
+  ccn3 String [not null, default: '']
+  cioc String [not null, default: '']
+  fifa String [not null, default: '']
+  status String [not null, default: '']
+  independent Boolean [not null, default: false]
+  unMember Boolean [not null, default: false]
+  startOfWeek String [not null, default: '']
+  latitude Float [not null, default: 0]
+  longitude Float [not null, default: 0]
+  topLevelDomains String[] [not null]
+  capital String[] [not null]
+  alternativeSpellings String[] [not null]
+  continents String[] [not null]
+  borders String[] [not null]
+  region String [not null, default: '']
+  subregion String [not null, default: '']
+  flag String [not null, default: '']
+  flagPNG String [not null, default: '']
+  flagSVG String [not null, default: '']
+  area Float [not null, default: 0]
+  population Int [not null, default: 0]
+  density Int [not null, default: 0]
+  googleMaps String [not null, default: '']
+  timezones String[] [not null]
+  currencies CurrenciesInCountries [not null]
+  languages LanguagesInCountries [not null]
+  organizations CountriesInOrganizations [not null]
+  createdAt DateTime [default: `now()`, not null]
+  updatedAt DateTime [not null]
+  passports Passport [not null]
+  passportsRequirements PassportRequirement [not null]
+  googleTrends GoogleTrend [not null]
+  cities City [not null]
+}
+
+Table City {
+  id Int [pk, increment]
+  country Country [not null]
+  countryCode String [not null]
+  region String [not null, default: '']
+  subregion String [not null, default: '']
+  state String [not null, default: '']
+  stateCode String [not null, default: '']
+  stateLevel String [not null, default: '']
+  city String [not null, default: '']
+  cityCode String [not null, default: '']
+  cityLevel String [not null, default: '']
+  latitude Float [not null, default: 0]
+  longitude Float [not null, default: 0]
+  timezone Float [not null, default: 0]
+}
+
+Table Currency {
+  code String [pk]
+  name String [not null, default: '']
+  symbol String [not null, default: '']
+  createdAt DateTime [default: `now()`, not null]
+  updatedAt DateTime [not null]
+  countries CurrenciesInCountries [not null]
+}
+
+Table GoogleTrend {
+  country Country [not null]
+  countryCode String [pk]
+  queries String[] [not null]
+}
+
+Table Language {
+  code String [pk]
+  name String [not null, default: '']
+  createdAt DateTime [default: `now()`, not null]
+  updatedAt DateTime [not null]
+  countries LanguagesInCountries [not null]
+}
+
+Table Organization {
+  code String [pk]
+  name String [not null, default: '']
+  createdAt DateTime [default: `now()`, not null]
+  updatedAt DateTime [not null]
+  countries CountriesInOrganizations [not null]
+}
+
+Table Passport {
+  country Country [not null]
+  countryCode String [pk]
+  globalRank Int [not null, default: 0]
+  individualRank Int [not null, default: 0]
+  mobilityScore Int [not null, default: 0]
+  passportsRequirements PassportRequirement [not null]
+}
+
+Table PassportRequirement {
+  passport Passport [not null]
+  passportCode String [not null]
+  country Country [not null]
+  countryCode String [not null]
+  requirement String [not null]
+
+  indexes {
+    (passportCode, countryCode) [pk]
+  }
+}
+
+Table Timezone {
+  code String [pk]
+  name String [not null, default: '']
+  offset String [not null, default: '']
+  utcOffset String [not null, default: '']
+  createdAt DateTime [default: `now()`, not null]
+  updatedAt DateTime [not null]
+}
+
+Table CurrenciesInCountries {
+  currency Currency [not null]
+  currencyCode String [not null]
+  country Country [not null]
+  countryCode String [not null]
+
+  indexes {
+    (currencyCode, countryCode) [pk]
+  }
+}
+
+Table LanguagesInCountries {
+  language Language [not null]
+  languageCode String [not null]
+  country Country [not null]
+  countryCode String [not null]
+
+  indexes {
+    (languageCode, countryCode) [pk]
+  }
+}
+
+Table CountriesInOrganizations {
+  country Country [not null]
+  countryCode String [not null]
+  organization Organization [not null]
+  organizationCode String [not null]
+
+  indexes {
+    (countryCode, organizationCode) [pk]
+  }
+}
+
+Ref: City.countryCode > Country.code
+
+Ref: GoogleTrend.countryCode > Country.code
+
+Ref: Passport.countryCode > Country.code
+
+Ref: PassportRequirement.passportCode > Passport.countryCode
+
+Ref: PassportRequirement.countryCode > Country.code
+
+Ref: CurrenciesInCountries.currencyCode > Currency.code
+
+Ref: CurrenciesInCountries.countryCode > Country.code
+
+Ref: LanguagesInCountries.languageCode > Language.code
+
+Ref: LanguagesInCountries.countryCode > Country.code
+
+Ref: CountriesInOrganizations.countryCode > Country.code
+
+Ref: CountriesInOrganizations.organizationCode > Organization.code

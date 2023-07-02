@@ -1,0 +1,11 @@
+{
+  "name": "World",
+  "short_name": "World",
+  "description": "World",
+  "theme_color": "#FFFFFF",
+  "background_color": "#FFFFFF",
+  "display": "standalone",
+  "orientation": "landscape",
+  "scope": "/",
+  "start_url": "/"
+}

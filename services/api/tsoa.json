@@ -1,0 +1,22 @@
+{
+  "entryFile": "src/app.ts",
+  "noImplicitAdditionalProperties": "throw-on-extras",
+  "controllerPathGlobs": ["src/modules/**/*.controller.ts"],
+  "spec": {
+    "outputDirectory": "docs/swagger",
+    "specVersion": 3,
+    "spec": {
+      "servers": [
+        {
+          "url": "http://localhost:8080/api",
+          "description": "Local"
+        },
+        {
+          "url": "http://dashboardworldapi.vercel.app/api",
+          "description": "Vercel"
+        }
+      ]
+    }
+  },
+  "routes": { "routesDir": "src" }
+}

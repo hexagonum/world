@@ -1,0 +1,173 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("POSTGRESQL_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+generator dbml {
+  provider = "prisma-dbml-generator"
+}
+
+// generator docs {
+//   provider = "node node_modules/prisma-docs-generator"
+// }
+
+generator jsonSchema {
+  provider = "prisma-json-schema-generator"
+}
+
+model Country {
+  code                  String                     @id
+  // Name
+  commonName            String                     @default("")
+  officialName          String                     @default("")
+  // Code
+  cca2                  String                     @default("")
+  cca3                  String                     @default("")
+  ccn3                  String                     @default("")
+  cioc                  String                     @default("")
+  fifa                  String                     @default("")
+  // Status
+  status                String                     @default("")
+  independent           Boolean                    @default(false)
+  unMember              Boolean                    @default(false)
+  startOfWeek           String                     @default("")
+  latitude              Float                      @default(0)
+  longitude             Float                      @default(0)
+  topLevelDomains       String[]                   @default([])
+  capital               String[]                   @default([])
+  alternativeSpellings  String[]                   @default([])
+  continents            String[]                   @default([])
+  borders               String[]                   @default([])
+  // Region
+  region                String                     @default("")
+  subregion             String                     @default("")
+  // Image
+  flag                  String                     @default("")
+  flagPNG               String                     @default("")
+  flagSVG               String                     @default("")
+  // Population
+  area                  Float                      @default(0)
+  population            Int                        @default(0)
+  density               Int                        @default(0)
+  // Google
+  googleMaps            String                     @default("")
+  // Other Data
+  timezones             String[]                   @default([])
+  // Other Data
+  currencies            CurrenciesInCountries[]
+  languages             LanguagesInCountries[]
+  organizations         CountriesInOrganizations[]
+  createdAt             DateTime                   @default(now())
+  updatedAt             DateTime                   @updatedAt
+  passports             Passport[]
+  passportsRequirements PassportRequirement[]
+  googleTrends          GoogleTrend[]
+  cities                City[]
+}
+
+model City {
+  id          Int     @id @default(autoincrement())
+  country     Country @relation(fields: [countryCode], references: [code])
+  countryCode String
+  region      String  @default("")
+  subregion   String  @default("")
+  state       String  @default("")
+  stateCode   String  @default("")
+  stateLevel  String  @default("")
+  city        String  @default("")
+  cityCode    String  @default("")
+  cityLevel   String  @default("")
+  latitude    Float   @default(0)
+  longitude   Float   @default(0)
+  timezone    Float   @default(0)
+}
+
+model Currency {
+  code      String                  @id
+  name      String                  @default("")
+  symbol    String                  @default("")
+  createdAt DateTime                @default(now())
+  updatedAt DateTime                @updatedAt
+  countries CurrenciesInCountries[]
+}
+
+model GoogleTrend {
+  country     Country  @relation(fields: [countryCode], references: [code])
+  countryCode String   @id
+  queries     String[]
+}
+
+model Language {
+  code      String                 @id
+  name      String                 @default("")
+  createdAt DateTime               @default(now())
+  updatedAt DateTime               @updatedAt
+  countries LanguagesInCountries[]
+}
+
+model Organization {
+  code      String                     @id
+  name      String                     @default("")
+  createdAt DateTime                   @default(now())
+  updatedAt DateTime                   @updatedAt
+  countries CountriesInOrganizations[]
+}
+
+model Passport {
+  country               Country               @relation(fields: [countryCode], references: [code])
+  countryCode           String                @id
+  globalRank            Int                   @default(0)
+  individualRank        Int                   @default(0)
+  mobilityScore         Int                   @default(0)
+  passportsRequirements PassportRequirement[]
+}
+
+model PassportRequirement {
+  passport     Passport @relation(fields: [passportCode], references: [countryCode])
+  passportCode String
+  country      Country  @relation(fields: [countryCode], references: [code])
+  countryCode  String
+  requirement  String
+
+  @@id([passportCode, countryCode])
+}
+
+model Timezone {
+  code      String   @id
+  name      String   @default("")
+  offset    String   @default("")
+  utcOffset String   @default("")
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model CurrenciesInCountries {
+  currency     Currency @relation(fields: [currencyCode], references: [code])
+  currencyCode String
+  country      Country  @relation(fields: [countryCode], references: [code])
+  countryCode  String
+
+  @@id([currencyCode, countryCode])
+}
+
+model LanguagesInCountries {
+  language     Language @relation(fields: [languageCode], references: [code])
+  languageCode String
+  country      Country  @relation(fields: [countryCode], references: [code])
+  countryCode  String
+
+  @@id([languageCode, countryCode])
+}
+
+model CountriesInOrganizations {
+  country          Country      @relation(fields: [countryCode], references: [code])
+  countryCode      String
+  organization     Organization @relation(fields: [organizationCode], references: [code])
+  organizationCode String
+
+  @@id([countryCode, organizationCode])
+}

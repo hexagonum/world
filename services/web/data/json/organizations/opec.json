@@ -1,0 +1,54 @@
+[
+  {
+    "code": "DZA",
+    "name": "Algeria"
+  },
+  {
+    "code": "AGO",
+    "name": "Angola"
+  },
+  {
+    "code": "COG",
+    "name": "Republic of the Congo"
+  },
+  {
+    "code": "GNQ",
+    "name": "Equatorial Guinea"
+  },
+  {
+    "code": "GAB",
+    "name": "Gabon"
+  },
+  {
+    "code": "IRN",
+    "name": "Iran"
+  },
+  {
+    "code": "IRQ",
+    "name": "Iraq"
+  },
+  {
+    "code": "KWT",
+    "name": "Kuwait"
+  },
+  {
+    "code": "LBY",
+    "name": "Libya"
+  },
+  {
+    "code": "NGA",
+    "name": "Nigeria"
+  },
+  {
+    "code": "SAU",
+    "name": "Saudi Arabia"
+  },
+  {
+    "code": "ARE",
+    "name": "United Arab Emirates"
+  },
+  {
+    "code": "VEN",
+    "name": "Venezuela"
+  }
+]
