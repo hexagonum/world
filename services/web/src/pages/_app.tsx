@@ -1,6 +1,7 @@
 import { ApolloProvider } from '@apollo/client';
+import { UserProvider } from '@auth0/nextjs-auth0/client';
 import { ChakraProvider } from '@chakra-ui/react';
-import { APP_NAME } from '@world/configs';
+import { APP_NAME } from '@world/common/constants';
 import { apolloClient } from '@world/graphql';
 import '@world/styles/globals.scss';
 import type { AppProps } from 'next/app';
@@ -12,11 +13,13 @@ const App: React.FC<AppProps> = ({ Component, pageProps }: AppProps) => {
       <Head>
         <title>{APP_NAME}</title>
       </Head>
-      <ApolloProvider client={apolloClient}>
-        <ChakraProvider>
-          <Component {...pageProps} />
-        </ChakraProvider>
-      </ApolloProvider>
+      <UserProvider>
+        <ApolloProvider client={apolloClient}>
+          <ChakraProvider>
+            <Component {...pageProps} />
+          </ChakraProvider>
+        </ApolloProvider>
+      </UserProvider>
     </>
   );
 };

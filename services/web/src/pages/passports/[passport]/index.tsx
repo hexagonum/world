@@ -11,11 +11,11 @@ import {
   Thead,
   Tr,
 } from '@chakra-ui/react';
+import { NEXT_PUBLIC_BASE_API } from '@world/common/environments';
 import Container from '@world/components/Container';
-import { NEXT_PUBLIC_BASE_API } from '@world/configs';
-import useFetch from '@world/hooks/use-fetch';
+import useFetch from '@world/common/hooks/use-fetch';
 import Layout from '@world/layout';
-import { unique } from '@world/utils/unique';
+import { unique } from '@world/common/utils/unique';
 import { NextPage } from 'next';
 import { useRouter } from 'next/router';
 import { ChangeEvent, useState } from 'react';

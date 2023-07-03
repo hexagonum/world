@@ -9,9 +9,9 @@ import {
   Icon,
   Text,
 } from '@chakra-ui/react';
+import { APP_NAME, YEAR } from '@world/common/constants';
 import Navbar from '@world/components/Navbar';
-import { APP_NAME, YEAR } from '@world/configs';
-import { LINKS } from '@world/content';
+import { LINKS } from '@world/common/content';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { ReactNode } from 'react';

@@ -1,7 +1,7 @@
 import { Button } from '@chakra-ui/react';
+import { NEXT_PUBLIC_BASE_API } from '@world/common/environments';
 import { Articles } from '@world/components/Articles';
 import Container from '@world/components/Container';
-import { NEXT_PUBLIC_BASE_API } from '@world/configs';
 import { Layout } from '@world/layout';
 import { Article } from '@world/types/news';
 import { NextPage } from 'next';

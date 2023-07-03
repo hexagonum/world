@@ -12,7 +12,7 @@ import { Container } from '@world/components/Container';
 import { FOOTBALL_MATCHES_QUERY } from '@world/graphql/queries/football';
 import Layout from '@world/layout';
 import { Football, FootballMatch } from '@world/types/football';
-import { unique } from '@world/utils/unique';
+import { unique } from '@world/common/utils/unique';
 import { NextPage } from 'next';
 import { useRouter } from 'next/router';
 

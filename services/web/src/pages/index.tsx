@@ -26,7 +26,7 @@ import { ForexHistory, ForexRate } from '@world/types/currency';
 import { GoogleRank } from '@world/types/google';
 import { Article } from '@world/types/news';
 import { YouTubeVideo } from '@world/types/youtube';
-import currencyFormatter from '@world/utils/currency-formatter';
+import currencyFormatter from '@world/common/utils/currency-formatter';
 import { GetStaticProps, GetStaticPropsContext, NextPage } from 'next';
 import Link from 'next/link';
 import {

@@ -1,5 +1,8 @@
 import { ApolloClient, InMemoryCache } from '@apollo/client';
-import { NEXT_PUBLIC_BASE_GRAPHQL, BASE_GRAPHQL } from '@world/configs';
+import {
+  BASE_GRAPHQL,
+  NEXT_PUBLIC_BASE_GRAPHQL,
+} from '@world/common/environments';
 
 const GRAPHQL_URI: string = NEXT_PUBLIC_BASE_GRAPHQL || BASE_GRAPHQL || '';
 

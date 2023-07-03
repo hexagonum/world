@@ -1,7 +1,7 @@
 import { Card, CardBody, CardFooter, Divider, Text } from '@chakra-ui/react';
 import Clock from '@world/components/Clock';
-import { BASE_API } from '@world/configs';
-import useFetch from '@world/hooks/use-fetch';
+import { BASE_API } from '@world/common/environments';
+import useFetch from '@world/common/hooks/use-fetch';
 import Link from 'next/link';
 
 export type WeatherProps = {

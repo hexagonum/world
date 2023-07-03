@@ -4,7 +4,7 @@ import { apolloClient } from '@world/graphql';
 import { COUNTRIES_QUERY } from '@world/graphql/queries/countries';
 import { Layout } from '@world/layout';
 import { Country } from '@world/types';
-import { unique } from '@world/utils/unique';
+import { unique } from '@world/common/utils/unique';
 import { GetStaticProps, NextPage } from 'next';
 import Link from 'next/link';
 import { ChangeEvent, useState } from 'react';

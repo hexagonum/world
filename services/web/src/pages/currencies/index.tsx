@@ -12,11 +12,11 @@ import {
   Tr,
 } from '@chakra-ui/react';
 import Container from '@world/components/Container';
-import { NEXT_PUBLIC_BASE_API } from '@world/configs';
-import useFetch from '@world/hooks/use-fetch';
+import { NEXT_PUBLIC_BASE_API } from '@world/common/environments';
+import useFetch from '@world/common/hooks/use-fetch';
 import Layout from '@world/layout';
 import { Country } from '@world/types';
-import { currencyFormatter } from '@world/utils/currency-formatter';
+import { currencyFormatter } from '@world/common/utils/currency-formatter';
 import { NextPage } from 'next';
 import Link from 'next/link';
 

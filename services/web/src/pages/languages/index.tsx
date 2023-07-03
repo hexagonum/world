@@ -7,8 +7,8 @@ import {
   Thead,
   Tr,
 } from '@chakra-ui/react';
+import { NEXT_PUBLIC_BASE_API } from '@world/common/environments';
 import Container from '@world/components/Container';
-import { NEXT_PUBLIC_BASE_API } from '@world/configs';
 import Layout from '@world/layout';
 import { NextPage } from 'next';
 import Link from 'next/link';

@@ -1,5 +1,5 @@
 import Container from '@world/components/Container';
-import { APP_NAME, YEAR } from '@world/configs';
+import { APP_NAME, YEAR } from '@world/common/constants';
 
 export const Footer: React.FC = () => {
   return (

@@ -2,7 +2,6 @@ import { useQuery } from '@apollo/client';
 import { Card, CardBody, Text } from '@chakra-ui/react';
 import { YOUTUBE_VIDEOS_QUERY } from '@world/graphql/queries/youtube';
 import { YouTube, YouTubeVideo } from '@world/types/youtube';
-import Image from 'next/image';
 import Link from 'next/link';
 
 export type VideosProps = {

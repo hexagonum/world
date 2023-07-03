@@ -1,4 +1,4 @@
-import { addZero } from '@world/utils/add-zero';
+import { addZero } from '@world/common/utils/add-zero';
 import { useEffect, useState } from 'react';
 
 const oneHour = 1000 * 60 * 60;

@@ -7,10 +7,10 @@ import {
   Thead,
   Tr,
 } from '@chakra-ui/react';
+import { NEXT_PUBLIC_BASE_API } from '@world/common/environments';
 import Container from '@world/components/Container';
-import { NEXT_PUBLIC_BASE_API } from '@world/configs';
 import Layout from '@world/layout';
-import currencyFormatter from '@world/utils/currency-formatter';
+import currencyFormatter from '@world/common/utils/currency-formatter';
 import { NextPage } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';

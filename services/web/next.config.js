@@ -9,6 +9,17 @@ const withPWA = require('next-pwa')({
   disable: !isProd,
 });
 
-const nextConfig = {};
+const nextConfig = {
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 's.gravatar.com',
+        port: '',
+        pathname: '/**',
+      },
+    ],
+  },
+};
 
 module.exports = withPWA(nextConfig);

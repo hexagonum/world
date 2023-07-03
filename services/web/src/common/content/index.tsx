@@ -9,7 +9,6 @@ import {
   FaGoogle,
   FaLanguage,
   FaMap,
-  FaNewspaper,
   FaPassport,
   FaSearch,
   FaWarehouse,

@@ -1,5 +1,3 @@
-export const YEAR = new Date().getFullYear();
-export const APP_NAME = process.env.APP_NAME ?? 'World';
 export const NEXT_PUBLIC_BASE_API =
   process.env.NEXT_PUBLIC_BASE_API ?? 'https://hexagonum-world.onrender.com';
 export const NEXT_PUBLIC_BASE_GRAPHQL =

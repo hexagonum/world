@@ -13,7 +13,7 @@ import {
 import Container from '@world/components/Container';
 import { LANGUAGE_QUERY } from '@world/graphql/queries/languages';
 import Layout from '@world/layout';
-import { unique } from '@world/utils/unique';
+import { unique } from '@world/common/utils/unique';
 import { NextPage } from 'next';
 import Link from 'next/link';
 import { useRouter } from 'next/router';

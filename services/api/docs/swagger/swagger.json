@@ -2331,6 +2331,10 @@
     {
       "url": "http://localhost:8080/api",
       "description": "Local"
+    },
+    {
+      "url": "http://dashboardworldapi.vercel.app/api",
+      "description": "Vercel"
     }
   ]
 }

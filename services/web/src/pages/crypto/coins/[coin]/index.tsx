@@ -1,7 +1,7 @@
 import { Card, CardBody } from '@chakra-ui/react';
 import Container from '@world/components/Container';
-import { NEXT_PUBLIC_BASE_API } from '@world/configs';
-import useFetch from '@world/hooks/use-fetch';
+import { NEXT_PUBLIC_BASE_API } from '@world/common/environments';
+import useFetch from '@world/common/hooks/use-fetch';
 import Layout from '@world/layout';
 import { NextPage } from 'next';
 import { useRouter } from 'next/router';

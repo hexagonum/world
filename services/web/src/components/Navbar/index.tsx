@@ -1,4 +1,5 @@
-import { HamburgerIcon } from '@chakra-ui/icons';
+import { useUser } from '@auth0/nextjs-auth0/client';
+import { ChevronDownIcon, HamburgerIcon } from '@chakra-ui/icons';
 import {
   Accordion,
   AccordionButton,
@@ -14,20 +15,26 @@ import {
   DrawerHeader,
   DrawerOverlay,
   Icon,
+  Menu,
+  MenuButton,
+  MenuItem,
+  MenuList,
+  Text,
   useDisclosure,
 } from '@chakra-ui/react';
 import Container from '@world/components/Container';
-import { APP_NAME, YEAR } from '@world/configs';
-import { LINKS } from '@world/content';
+import { APP_NAME, YEAR } from '@world/common/constants';
+import { LINKS } from '@world/common/content';
 import Link from 'next/link';
 import { ReactNode } from 'react';
-import { FaUser } from 'react-icons/fa';
+import { FaSignInAlt, FaSignOutAlt, FaUser } from 'react-icons/fa';
 
 type NavbarProps = {
   searchSection: ReactNode;
 };
 
 export const Navbar: React.FC<NavbarProps> = ({ searchSection = <></> }) => {
+  const { user } = useUser();
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
@@ -52,9 +59,47 @@ export const Navbar: React.FC<NavbarProps> = ({ searchSection = <></> }) => {
                     <HamburgerIcon />
                   </Button>
                 </div>
-                <Button colorScheme="teal">
-                  <Icon as={FaUser} />
-                </Button>
+                {user ? (
+                  <Menu>
+                    <MenuButton
+                      as={Button}
+                      colorScheme="teal"
+                      rightIcon={<ChevronDownIcon />}
+                    >
+                      Menu
+                    </MenuButton>
+                    <MenuList>
+                      <MenuItem>
+                        <Link
+                          href="/profile"
+                          className="flex items-center gap-x-2"
+                        >
+                          <Icon as={FaUser} />
+                          Profile
+                        </Link>
+                      </MenuItem>
+                      <MenuItem>
+                        <Link
+                          href="/api/auth/logout"
+                          className="flex items-center gap-x-2"
+                        >
+                          <Icon as={FaSignOutAlt} />
+                          Sign Out
+                        </Link>
+                      </MenuItem>
+                    </MenuList>
+                  </Menu>
+                ) : (
+                  <Link href="/api/auth/login">
+                    <Button
+                      colorScheme="teal"
+                      className="flex items-center gap-x-2"
+                    >
+                      <Icon as={FaSignInAlt} />
+                      <Text className="hidden md:block">Sign In</Text>
+                    </Button>
+                  </Link>
+                )}
               </div>
             </div>
           </div>
