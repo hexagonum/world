@@ -29,7 +29,7 @@ exports[`ErrorTemplate to match snapshot 1`] = `
                     <p
                       class="chakra-text uppercase font-semibold css-0"
                     >
-                      World
+                      PRIME
                     </p>
                     <a
                       href="https://github.com/hexagonum/world"
@@ -595,7 +595,7 @@ exports[`ErrorTemplate to match snapshot 1`] = `
                     © 
                     2023
                      
-                    World
+                    PRIME
                   </p>
                 </div>
               </footer>
@@ -632,7 +632,7 @@ exports[`ErrorTemplate to match snapshot 1`] = `
                               class="uppercase font-semibold"
                               href="/"
                             >
-                              World
+                              PRIME
                             </a>
                           </div>
                         </div>
@@ -750,7 +750,7 @@ exports[`ErrorTemplate to match snapshot 1`] = `
                   <p
                     class="chakra-text uppercase font-semibold css-0"
                   >
-                    World
+                    PRIME
                   </p>
                   <a
                     href="https://github.com/hexagonum/world"
@@ -1316,7 +1316,7 @@ exports[`ErrorTemplate to match snapshot 1`] = `
                   © 
                   2023
                    
-                  World
+                  PRIME
                 </p>
               </div>
             </footer>
@@ -1353,7 +1353,7 @@ exports[`ErrorTemplate to match snapshot 1`] = `
                             class="uppercase font-semibold"
                             href="/"
                           >
-                            World
+                            PRIME
                           </a>
                         </div>
                       </div>
