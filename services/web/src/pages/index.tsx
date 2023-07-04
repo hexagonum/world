@@ -16,8 +16,11 @@ import {
   Thead,
   Tr,
 } from '@chakra-ui/react';
+import currencyFormatter from '@world/common/utils/currency-formatter';
 import Container from '@world/components/Container';
+import Maps from '@world/components/Maps';
 import { Weather } from '@world/components/Weather';
+import worldMapData from '@world/data/maps/world.json';
 import { apolloClient } from '@world/graphql';
 import { HOME_QUERY } from '@world/graphql/queries/home';
 import { Layout } from '@world/layout';
@@ -26,7 +29,6 @@ import { ForexHistory, ForexRate } from '@world/types/currency';
 import { GoogleRank } from '@world/types/google';
 import { Article } from '@world/types/news';
 import { YouTubeVideo } from '@world/types/youtube';
-import currencyFormatter from '@world/common/utils/currency-formatter';
 import { GetStaticProps, GetStaticPropsContext, NextPage } from 'next';
 import Link from 'next/link';
 import {
@@ -46,7 +48,7 @@ const GoogleRanksSection: React.FC<{ googleRanks: GoogleRank[] }> = ({
   return (
     <>
       {googleRanks.length > 0 ? (
-        <Card className="border border-gray-200">
+        <Card className="border border-gray-200 shadow">
           <div className="px-4 py-2">
             <div className="flex items-center justify-between">
               <Text className="font-semibold text-gray-700">
@@ -367,7 +369,17 @@ export const CountriesPage: NextPage<CountriesPageProps> = ({
                 <div className="col-span-1">
                   <PassportsSection passports={passports} />
                 </div>
-                <div className="col-span-2"></div>
+                <div className="col-span-2">
+                  <Card className="border border-gray-200 shadow">
+                    <CardHeader>
+                      <Text className="font-bold">World Map</Text>
+                    </CardHeader>
+                    <Divider />
+                    <CardBody>
+                      <Maps id="world" data={worldMapData} />
+                    </CardBody>
+                  </Card>
+                </div>
               </div>
             </section>
           </div>
