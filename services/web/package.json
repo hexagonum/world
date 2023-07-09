@@ -13,8 +13,7 @@
     "start": "next start",
     "lint": "next lint",
     "test": "jest",
-    "prebuild": "rimraf .next out",
-    "prepare": "husky install || true"
+    "prebuild": "rimraf .next out"
   },
   "dependencies": {
     "@apollo/client": "3.7.17",

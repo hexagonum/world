@@ -12,9 +12,21 @@
 html {
   -webkit-text-size-adjust: 100%;
   font-feature-settings: normal;
-  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
-    Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif,
-    Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+  font-family:
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    Segoe UI,
+    Roboto,
+    Helvetica Neue,
+    Arial,
+    Noto Sans,
+    sans-serif,
+    Apple Color Emoji,
+    Segoe UI Emoji,
+    Segoe UI Symbol,
+    Noto Color Emoji;
   line-height: 1.5;
   -moz-tab-size: 4;
   -o-tab-size: 4;
@@ -54,8 +66,15 @@ code,
 kbd,
 pre,
 samp {
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
-    Liberation Mono, Courier New, monospace;
+  font-family:
+    ui-monospace,
+    SFMono-Regular,
+    Menlo,
+    Monaco,
+    Consolas,
+    Liberation Mono,
+    Courier New,
+    monospace;
   font-size: 1em;
 }
 small {
@@ -492,8 +511,15 @@ pre[class*='language-'] code {
   border-radius: 8px;
   color: var(--main-font-color) !important;
   display: block;
-  font-family: Roboto Mono, SFMono-Regular, Menlo, Monaco, Consolas,
-    Liberation Mono, Courier New, monospace;
+  font-family:
+    Roboto Mono,
+    SFMono-Regular,
+    Menlo,
+    Monaco,
+    Consolas,
+    Liberation Mono,
+    Courier New,
+    monospace;
   font-size: 14px;
   font-variant: no-common-ligatures no-discretionary-ligatures
     no-historical-ligatures no-contextual;
@@ -528,7 +554,9 @@ pre[class*='language-'] {
 }
 .inline-code,
 code.inline-code {
-  font-feature-settings: 'clig' 0, 'calt' 0;
+  font-feature-settings:
+    'clig' 0,
+    'calt' 0;
   background: var(--code-inline-bgd-color);
   border-radius: 5px;
   color: var(--main-font-color);
