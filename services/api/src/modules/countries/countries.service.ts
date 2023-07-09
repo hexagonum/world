@@ -65,6 +65,7 @@ export class CountriesService {
   }
 
   async getCountry(code: string) {
+    const codeUppercase = code.toUpperCase();
     const country = await prismaClient.country.findFirstOrThrow({
       include: {
         cities: {
@@ -87,7 +88,14 @@ export class CountriesService {
         organizations: { select: { organization: true } },
         googleTrends: { select: { queries: true } },
       },
-      where: { OR: [{ code }, { cca2: code }, { cca3: code }, { fifa: code }] },
+      where: {
+        OR: [
+          { code: codeUppercase },
+          { cca2: codeUppercase },
+          { cca3: codeUppercase },
+          { fifa: codeUppercase },
+        ],
+      },
     });
     const googleTrends: string[] =
       country.googleTrends.map(({ queries }) => queries)[0] ?? [];
