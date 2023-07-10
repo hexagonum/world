@@ -8,6 +8,7 @@ import {
   Tr,
 } from '@chakra-ui/react';
 import { NEXT_PUBLIC_BASE_API } from '@world/common/environments';
+import { log } from '@world/common/log';
 import Container from '@world/components/Container';
 import Layout from '@world/layout';
 import { NextPage } from 'next';
@@ -71,7 +72,7 @@ export const getStaticProps = async (): Promise<{
     const timezones: Timezone[] = await response.json();
     return { props: { timezones } };
   } catch (error) {
-    console.error(error);
+    log.error(`getStaticProps error=${error}`);
     return { props: { timezones: [] } };
   }
 };

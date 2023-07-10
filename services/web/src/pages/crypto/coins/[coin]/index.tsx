@@ -1,10 +1,10 @@
 import { Card, CardBody } from '@chakra-ui/react';
-import Container from '@world/components/Container';
 import { NEXT_PUBLIC_BASE_API } from '@world/common/environments';
-import useFetch from '@world/common/hooks/use-fetch';
+import { refetch } from '@world/common/libs/refetch';
+import { log } from '@world/common/log';
+import Container from '@world/components/Container';
 import Layout from '@world/layout';
-import { NextPage } from 'next';
-import { useRouter } from 'next/router';
+import { GetServerSideProps, GetServerSidePropsContext, NextPage } from 'next';
 
 type Coin = {
   uuid: string;
@@ -25,34 +25,8 @@ type Coin = {
   btcPrice: string;
 };
 
-const CoinSection: React.FC = () => {
-  const { query } = useRouter();
-  const coinId: string = query.coin?.toString() ?? '';
-  const { loading, error, data } = useFetch<Coin>(
-    `${NEXT_PUBLIC_BASE_API}/crypto/coins/${coinId}`
-  );
-
-  if (loading) {
-    return (
-      <Card className="border border-gray-200">
-        <CardBody>
-          <p className="text-center">Loading</p>
-        </CardBody>
-      </Card>
-    );
-  }
-
-  if (error) {
-    return (
-      <Card className="border border-gray-200">
-        <CardBody>
-          <p className="text-center">Error</p>
-        </CardBody>
-      </Card>
-    );
-  }
-
-  if (!data) {
+const CoinSection: React.FC<CoinPageProps> = ({ coin }) => {
+  if (!coin) {
     return (
       <Card className="border border-gray-200">
         <CardBody>
@@ -66,26 +40,44 @@ const CoinSection: React.FC = () => {
     <>
       <div className="flex justify-between items-center">
         <h1 className="capitalize text-2xl md:text-4xl font-bold">
-          {data.name}
+          {coin.name}
         </h1>
-        <p className="capitalize text-xl md:text-2xl">#{data.rank}</p>
+        <p className="capitalize text-xl md:text-2xl">#{coin.rank}</p>
       </div>
     </>
   );
 };
 
-const CoinPage: NextPage = () => {
+type CoinPageProps = {
+  coin: Coin;
+};
+
+const CoinPage: NextPage<CoinPageProps> = ({ coin = {} as Coin }) => {
   return (
     <Layout>
       <Container>
         <div className="p-8">
           <div className="flex flex-col gap-4 md:gap-8">
-            <CoinSection />
+            <CoinSection coin={coin} />
           </div>
         </div>
       </Container>
     </Layout>
   );
+};
+
+export const getServerSideProps: GetServerSideProps<CoinPageProps> = async (
+  context: GetServerSidePropsContext
+) => {
+  try {
+    const coinId: string = context.query.coin?.toString() ?? '';
+    const url = `${NEXT_PUBLIC_BASE_API}/crypto/coins/${coinId}`;
+    const coin = await refetch<Coin>(url);
+    return { props: { coin } };
+  } catch (error) {
+    log.error(`getServerSideProps error=${error}`);
+    return { props: { coin: {} as Coin } };
+  }
 };
 
 export default CoinPage;

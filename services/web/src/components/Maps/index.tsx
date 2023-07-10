@@ -15,7 +15,6 @@ export type MapsProps = {
 };
 
 const drawChart = (id: string, data: MapsData): void => {
-  console.info('draw chart');
   const svg = select(`svg#${id}`);
   svg
     .append('g')

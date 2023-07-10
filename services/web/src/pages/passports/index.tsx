@@ -8,6 +8,7 @@ import {
   Thead,
   Tr,
 } from '@chakra-ui/react';
+import { log } from '@world/common/log';
 import Container from '@world/components/Container';
 import { apolloClient } from '@world/graphql';
 import { PASSPORTS_QUERY } from '@world/graphql/queries/passports';
@@ -124,7 +125,7 @@ export const getStaticProps = async (): Promise<{
     );
     return { props: { passports } };
   } catch (error) {
-    console.error(error);
+    log.error(`getStaticProps error=${error}`);
     return { props: { passports: [] } };
   }
 };

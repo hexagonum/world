@@ -1,4 +1,5 @@
 import { Button } from '@chakra-ui/react';
+import { log } from '@world/common/log';
 import Container from '@world/components/Container';
 import { Videos } from '@world/components/Videos';
 import { apolloClient } from '@world/graphql';
@@ -78,7 +79,7 @@ export const getStaticProps = async (): Promise<{
     ].sort((a, b) => (a.title > b.title ? 1 : -1));
     return { props: { categories } };
   } catch (error) {
-    console.error(error);
+    log.error(`getStaticProps error=${error}`);
     return { props: { categories: [] } };
   }
 };

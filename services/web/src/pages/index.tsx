@@ -16,6 +16,7 @@ import {
   Thead,
   Tr,
 } from '@chakra-ui/react';
+import { log } from '@world/common/log';
 import currencyFormatter from '@world/common/utils/currency-formatter';
 import Container from '@world/components/Container';
 import Maps from '@world/components/Maps';
@@ -177,7 +178,7 @@ const ForexChart: React.FC<{ forexHistory: ForexHistory[] }> = ({
   const tos: number[] = forexHistory.map(({ to }) => to);
   const min: number = Math.min(...tos);
   const max: number = Math.max(...tos);
-  console.log(min, max);
+
   return (
     <>
       {forexHistory.length > 0 ? (
@@ -445,11 +446,7 @@ export const getStaticProps: GetStaticProps = async (
     };
     return { props };
   } catch (error) {
-    console.error('HomePage message', (error as ApolloError).message);
-    console.error(
-      'HomePage graphQLErrors',
-      JSON.stringify((error as ApolloError).graphQLErrors, null, 2)
-    );
+    log.error(`getStaticProps error=${error}`);
     const props = {
       cities: [],
       googleRanks: [],

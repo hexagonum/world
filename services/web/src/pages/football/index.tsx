@@ -9,6 +9,7 @@ import {
   Thead,
   Tr,
 } from '@chakra-ui/react';
+import { log } from '@world/common/log';
 import Container from '@world/components/Container';
 import { apolloClient } from '@world/graphql';
 import { FOOTBALL_AREAS_QUERY } from '@world/graphql/queries/football';
@@ -116,7 +117,7 @@ export const getStaticProps = async (): Promise<{
     const areas = [...data.data.football.areas];
     return { props: { areas } };
   } catch (error) {
-    console.error(error);
+    log.error(`getStaticProps error=${error}`);
     return { props: { areas: [] } };
   }
 };

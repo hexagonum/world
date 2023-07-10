@@ -10,6 +10,7 @@ import {
   Thead,
   Tr,
 } from '@chakra-ui/react';
+import { log } from '@world/common/log';
 import Container from '@world/components/Container';
 import { apolloClient } from '@world/graphql';
 import { COUNTRIES_TIMEZONES_QUERY } from '@world/graphql/queries/countries';
@@ -129,7 +130,7 @@ export const getStaticProps: GetStaticProps = async (): Promise<{
     countries.sort((a, b) => b.timezones.length - a.timezones.length);
     return { props: { countries } };
   } catch (error) {
-    console.error(error);
+    log.error(`getStaticProps error=${error}`);
     return { props: { countries: [] } };
   }
 };

@@ -1,5 +1,6 @@
 import { Button } from '@chakra-ui/react';
 import { NEXT_PUBLIC_BASE_API } from '@world/common/environments';
+import { log } from '@world/common/log';
 import { Articles } from '@world/components/Articles';
 import Container from '@world/components/Container';
 import { Layout } from '@world/layout';
@@ -63,7 +64,7 @@ export const getStaticProps = async (): Promise<{
     const articles: Article[] = await response.json();
     return { props: { articles } };
   } catch (error) {
-    console.error(error);
+    log.error(`getStaticProps error=${error}`);
     return { props: { articles: [] } };
   }
 };

@@ -1,4 +1,5 @@
 import { Divider, Input } from '@chakra-ui/react';
+import { log } from '@world/common/log';
 import Container from '@world/components/Container';
 import { Weather } from '@world/components/Weather';
 import { apolloClient } from '@world/graphql';
@@ -91,7 +92,7 @@ export const getStaticProps = async (): Promise<{
     const cities: City[] = [...data.data.cities];
     return { props: { cities } };
   } catch (error) {
-    console.error(error);
+    log.error(`getStaticProps error=${error}`);
     return { props: { cities: [] } };
   }
 };

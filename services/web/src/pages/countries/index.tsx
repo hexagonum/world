@@ -1,10 +1,11 @@
 import { Divider, Input } from '@chakra-ui/react';
+import { log } from '@world/common/log';
+import { unique } from '@world/common/utils/unique';
 import Container from '@world/components/Container';
 import { apolloClient } from '@world/graphql';
 import { COUNTRIES_QUERY } from '@world/graphql/queries/countries';
 import { Layout } from '@world/layout';
 import { Country } from '@world/types';
-import { unique } from '@world/common/utils/unique';
 import { GetStaticProps, NextPage } from 'next';
 import Link from 'next/link';
 import { ChangeEvent, useState } from 'react';
@@ -181,7 +182,7 @@ export const getStaticProps: GetStaticProps = async (): Promise<{
     const countries = data.data.countries;
     return { props: { countries } };
   } catch (error) {
-    console.error('CountriesPage', error);
+    log.error(`getStaticProps error=${error}`);
     return { props: { countries: [] } };
   }
 };

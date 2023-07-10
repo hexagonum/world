@@ -3,6 +3,7 @@ import Clock from '@world/components/Clock';
 import { BASE_API } from '@world/common/environments';
 import useFetch from '@world/common/hooks/use-fetch';
 import Link from 'next/link';
+import { log } from '@world/common/log';
 
 export type WeatherProps = {
   city: string;
@@ -70,7 +71,7 @@ export const Weather: React.FC<WeatherProps> = ({
   urlSearchParams.set('latitude', latitude.toString());
   urlSearchParams.set('longitude', longitude.toString());
   const url = `${BASE_API}/weather?${urlSearchParams.toString()}`;
-  console.log(url);
+  log.info(`Weather url=${url}`);
   const { data, loading, error } = useFetch<WeatherResponse>(url);
 
   if (loading) {

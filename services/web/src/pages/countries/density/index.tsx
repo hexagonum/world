@@ -9,6 +9,7 @@ import {
   Thead,
   Tr,
 } from '@chakra-ui/react';
+import { log } from '@world/common/log';
 import Container from '@world/components/Container';
 import { apolloClient } from '@world/graphql';
 import { COUNTRIES_DENSITY_QUERY } from '@world/graphql/queries/countries';
@@ -105,7 +106,7 @@ export const getStaticProps: GetStaticProps = async (): Promise<{
     countries.sort((a, b) => b.density - a.density);
     return { props: { countries } };
   } catch (error) {
-    console.error('DensityPage', error);
+    log.error(`getStaticProps error=${error}`);
     return { props: { countries: [] } };
   }
 };

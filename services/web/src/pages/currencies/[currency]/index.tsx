@@ -137,7 +137,7 @@ const CurrencyData: React.FC<{ code: string }> = ({ code }) => {
 const CurrencyPage: NextPage = () => {
   const { query } = useRouter();
   const currencyCode: string = query.currency?.toString() ?? '';
-  console.log(currencyCode);
+
   return (
     <Layout>
       <Container>

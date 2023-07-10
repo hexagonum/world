@@ -1,6 +1,4 @@
 import {
-  Card,
-  CardBody,
   Divider,
   Table,
   TableCaption,
@@ -11,12 +9,13 @@ import {
   Thead,
   Tr,
 } from '@chakra-ui/react';
-import Container from '@world/components/Container';
 import { NEXT_PUBLIC_BASE_API } from '@world/common/environments';
-import useFetch from '@world/common/hooks/use-fetch';
+import { refetch } from '@world/common/libs/refetch';
+import { log } from '@world/common/log';
+import { currencyFormatter } from '@world/common/utils/currency-formatter';
+import Container from '@world/components/Container';
 import Layout from '@world/layout';
 import { Country } from '@world/types';
-import { currencyFormatter } from '@world/common/utils/currency-formatter';
 import { NextPage } from 'next';
 import Link from 'next/link';
 
@@ -62,44 +61,11 @@ const CurrenciesTable: React.FC<{
   );
 };
 
-type CurrenciesRatesProps = {
-  currencies: Currency[];
-  loading?: boolean;
-  error?: Error;
-  data?: RatesResponse;
-};
-
-const CurrenciesRates: React.FC<CurrenciesRatesProps> = ({
+const CurrenciesRates: React.FC<CurrenciesPageProps> = ({
+  base = '',
   currencies = [],
-  loading = false,
-  error = null,
-  data = null,
+  rates = {},
 }) => {
-  if (loading) {
-    return (
-      <Card className="border border-gray-200">
-        <CardBody>Loading</CardBody>
-      </Card>
-    );
-  }
-
-  if (error) {
-    return (
-      <Card className="border border-gray-200">
-        <CardBody>{error.message}</CardBody>
-      </Card>
-    );
-  }
-
-  if (!data) {
-    return (
-      <Card className="border border-gray-200">
-        <CardBody>No Data</CardBody>
-      </Card>
-    );
-  }
-
-  const { rates = {}, base = '' } = data;
   const currenciesRates = currencies.map(
     ({ code = '', name = '', countries = [] }) => {
       let rate: string = 'N/A';
@@ -133,46 +99,62 @@ const CurrenciesRates: React.FC<CurrenciesRatesProps> = ({
   );
 };
 
-type CurrenciesPageProps = { currencies: Currency[] };
-
-type RatesResponse = {
-  amount: number;
+type CurrenciesPageProps = {
   base: string;
-  date: string;
+  currencies: Currency[];
   rates: Record<string, number>;
 };
 
-const CurrenciesPage: NextPage<CurrenciesPageProps> = ({ currencies = [] }) => {
-  const base: string = 'https://api.frankfurter.app';
-  const url: string = `${base}/latest?base=EUR&amount=${1}`;
-  const { data, loading, error } = useFetch<RatesResponse>(url);
-
+const CurrenciesPage: NextPage<CurrenciesPageProps> = ({
+  base = '',
+  currencies = [],
+  rates = {},
+}) => {
   return (
     <Layout>
       <Container>
         <div className="p-8">
-          <CurrenciesRates
-            currencies={currencies}
-            loading={loading}
-            error={error}
-            data={data}
-          />
+          <CurrenciesRates base={base} currencies={currencies} rates={rates} />
         </div>
       </Container>
     </Layout>
   );
 };
 
-export const getStaticProps = async (): Promise<{
-  props: { currencies: Currency[] };
+const getRates = async (): Promise<{
+  base: string;
+  rates: Record<string, number>;
 }> => {
   try {
-    const response = await fetch(`${NEXT_PUBLIC_BASE_API}/currencies`);
-    const currencies: Currency[] = await response.json();
-    return { props: { currencies } };
+    const baseUrl: string = 'https://api.frankfurter.app';
+    const url: string = `${baseUrl}/latest?base=EUR&amount=${1}`;
+    const { base = '', rates = {} } = await refetch<{
+      base: string;
+      rates: Record<string, number>;
+    }>(url);
+    return { base, rates };
   } catch (error) {
-    console.error(error);
-    return { props: { currencies: [] } };
+    log.error(`getRates error=${error}`);
+    return { base: '', rates: {} };
+  }
+};
+
+export const getStaticProps = async (): Promise<{
+  props: {
+    base: string;
+    currencies: Currency[];
+    rates: Record<string, number>;
+  };
+}> => {
+  try {
+    const currencies: Currency[] = await refetch<Currency[]>(
+      `${NEXT_PUBLIC_BASE_API}/currencies`
+    );
+    const { base = '', rates = {} } = await getRates();
+    return { props: { base, currencies, rates } };
+  } catch (error) {
+    log.error(`getStaticProps error=${error}`);
+    return { props: { base: '', currencies: [], rates: {} } };
   }
 };
 

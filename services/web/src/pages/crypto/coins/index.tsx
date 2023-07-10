@@ -8,9 +8,10 @@ import {
   Tr,
 } from '@chakra-ui/react';
 import { NEXT_PUBLIC_BASE_API } from '@world/common/environments';
+import { log } from '@world/common/log';
+import currencyFormatter from '@world/common/utils/currency-formatter';
 import Container from '@world/components/Container';
 import Layout from '@world/layout';
-import currencyFormatter from '@world/common/utils/currency-formatter';
 import { NextPage } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -117,7 +118,7 @@ export const getStaticProps = async (): Promise<{
     const coins: Coin[] = await response.json();
     return { props: { coins } };
   } catch (error) {
-    console.error(error);
+    log.error(`getStaticProps error=${error}`);
     return { props: { coins: [] } };
   }
 };

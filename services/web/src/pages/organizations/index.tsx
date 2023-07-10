@@ -7,6 +7,7 @@ import {
   Thead,
   Tr,
 } from '@chakra-ui/react';
+import { log } from '@world/common/log';
 import Container from '@world/components/Container';
 import { apolloClient } from '@world/graphql';
 import { ORGANIZATIONS_QUERY } from '@world/graphql/queries/organizations';
@@ -71,7 +72,7 @@ export const getStaticProps = async (): Promise<{
     const organizations = data.data.organizations;
     return { props: { organizations } };
   } catch (error) {
-    console.error(error);
+    log.error(`getStaticProps error=${error}`);
     return { props: { organizations: [] } };
   }
 };

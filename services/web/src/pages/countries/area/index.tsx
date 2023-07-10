@@ -9,6 +9,7 @@ import {
   Thead,
   Tr,
 } from '@chakra-ui/react';
+import { log } from '@world/common/log';
 import Container from '@world/components/Container';
 import { apolloClient } from '@world/graphql';
 import { COUNTRIES_AREA_QUERY } from '@world/graphql/queries/countries';
@@ -105,7 +106,7 @@ export const getStaticProps: GetStaticProps = async (): Promise<{
     countries.sort((a, b) => b.area - a.area);
     return { props: { countries } };
   } catch (error) {
-    console.error('AreaPage', error);
+    log.error(`getStaticProps error=${error}`);
     return { props: { countries: [] } };
   }
 };

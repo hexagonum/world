@@ -1,6 +1,4 @@
 import {
-  Card,
-  CardBody,
   Link,
   Select,
   Table,
@@ -12,12 +10,12 @@ import {
   Tr,
 } from '@chakra-ui/react';
 import { NEXT_PUBLIC_BASE_API } from '@world/common/environments';
-import Container from '@world/components/Container';
-import useFetch from '@world/common/hooks/use-fetch';
-import Layout from '@world/layout';
+import { refetch } from '@world/common/libs/refetch';
+import { log } from '@world/common/log';
 import { unique } from '@world/common/utils/unique';
-import { NextPage } from 'next';
-import { useRouter } from 'next/router';
+import Container from '@world/components/Container';
+import Layout from '@world/layout';
+import { GetServerSideProps, GetServerSidePropsContext, NextPage } from 'next';
 import { ChangeEvent, useState } from 'react';
 
 type PassportRequirement = {
@@ -46,46 +44,14 @@ type PassportRequirement = {
   };
 };
 
-const PassportSection: React.FC<{ countryCode: string }> = ({
-  countryCode = '',
-}) => {
+const PassportRequirements: React.FC<{
+  requirements: PassportRequirement[];
+}> = ({ requirements = [] }) => {
   const [filterOptions, setFilterOptions] = useState<{ requirement: string }>({
     requirement: '',
   });
-  const url = `${NEXT_PUBLIC_BASE_API}/passports/${countryCode}`;
-  const { loading, error, data } = useFetch<PassportRequirement[]>(url);
 
-  if (loading) {
-    return (
-      <Card className="border border-gray-200">
-        <CardBody>
-          <p className="text-center">Loading</p>
-        </CardBody>
-      </Card>
-    );
-  }
-
-  if (error) {
-    return (
-      <Card className="border border-gray-200">
-        <CardBody>
-          <p className="text-center">Error</p>
-        </CardBody>
-      </Card>
-    );
-  }
-
-  if (!data || data.length === 0) {
-    return (
-      <Card className="border border-gray-200">
-        <CardBody>
-          <p className="text-center">No Data</p>
-        </CardBody>
-      </Card>
-    );
-  }
-
-  const requirements = data.map(
+  const shortRequirements = requirements.map(
     ({
       requirement: fullRequirement = '',
       country: { cca3, commonName },
@@ -110,26 +76,29 @@ const PassportSection: React.FC<{ countryCode: string }> = ({
   );
 
   const requirementOptions: string[] = unique(
-    requirements.map(({ requirement }) => requirement.toLowerCase())
+    shortRequirements.map(({ requirement }) => requirement.toLowerCase())
   );
   requirementOptions.sort((a: string, b: string) => (a > b ? 1 : -1));
 
-  const filteredRequirements = requirements.filter(({ requirement = '' }) => {
-    const requirementFlag: boolean =
-      filterOptions.requirement === ''
-        ? true
-        : requirement.toLowerCase() === filterOptions.requirement.toLowerCase();
-    return requirementFlag;
-  });
+  const filteredRequirements = shortRequirements.filter(
+    ({ requirement = '' }) => {
+      const requirementFlag: boolean =
+        filterOptions.requirement === ''
+          ? true
+          : requirement.toLowerCase() ===
+            filterOptions.requirement.toLowerCase();
+      return requirementFlag;
+    }
+  );
 
   return (
     <div className="flex flex-col gap-4 md:gap-8">
       <div className="flex justify-between items-center">
         <h1 className="capitalize text-2xl md:text-4xl font-bold">
-          {data[0].passport.country.commonName}
+          {requirements[0].passport.country.commonName}
         </h1>
         <p className="capitalize text-xl md:text-2xl">
-          #{data[0].passport.individualRank}
+          #{requirements[0].passport.individualRank}
         </p>
       </div>
       <Select
@@ -186,35 +155,35 @@ const PassportSection: React.FC<{ countryCode: string }> = ({
   );
 };
 
-const PassportPage: NextPage = () => {
-  const { query } = useRouter();
-  const countryCode: string = query.passport?.toString() ?? '';
+type PassportPageProps = {
+  requirements: PassportRequirement[];
+};
 
-  if (!countryCode) {
-    return (
-      <Layout>
-        <Container>
-          <div className="p-8">
-            <Card className="border border-gray-200">
-              <CardBody>
-                <p className="text-center">Loading</p>
-              </CardBody>
-            </Card>
-          </div>
-        </Container>
-      </Layout>
-    );
-  }
-
+const PassportPage: NextPage<PassportPageProps> = ({ requirements = [] }) => {
   return (
     <Layout>
       <Container>
         <div className="p-8">
-          <PassportSection countryCode={countryCode} />
+          <PassportRequirements requirements={requirements} />
         </div>
       </Container>
     </Layout>
   );
+};
+
+export const getServerSideProps: GetServerSideProps<PassportPageProps> = async (
+  context: GetServerSidePropsContext
+) => {
+  try {
+    const countryCode: string = context.query.passport?.toString() ?? '';
+    const url = `${NEXT_PUBLIC_BASE_API}/passports/${countryCode}`;
+    const requirements = await refetch<PassportRequirement[]>(url);
+    log.info(`getServerSideProps url=${url}`);
+    return { props: { requirements } };
+  } catch (error) {
+    log.error(`getServerSideProps error=${error}`);
+    return { props: { requirements: [] } };
+  }
 };
 
 export default PassportPage;

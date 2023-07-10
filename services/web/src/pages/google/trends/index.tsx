@@ -10,6 +10,7 @@ import { NextPage } from 'next';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { ChangeEvent, Dispatch, SetStateAction, useState } from 'react';
+import { log } from '@world/common/log';
 
 type GoogleTrendsPageProps = {
   countries: Country[];
@@ -80,7 +81,7 @@ const GoogleTrendsFilter: React.FC<GoogleTrendsFilterProps> = ({
             const region: string = event.target.value;
             router
               .replace({ query: { ...router.query, region } })
-              .catch(console.error);
+              .catch(log.error);
             setFilterOptions({ region, subregion: '', country: '' });
           }}
         >
@@ -104,7 +105,7 @@ const GoogleTrendsFilter: React.FC<GoogleTrendsFilterProps> = ({
             const subregion: string = event.target.value;
             router
               .replace({ query: { ...router.query, subregion } })
-              .catch(console.error);
+              .catch(log.error);
             setFilterOptions({
               ...filterOption,
               subregion,
@@ -132,7 +133,7 @@ const GoogleTrendsFilter: React.FC<GoogleTrendsFilterProps> = ({
             const country: string = event.target.value;
             router
               .replace({ query: { ...router.query, country } })
-              .catch(console.error);
+              .catch(log.error);
             setFilterOptions({ ...filterOption, country });
           }}
         >
@@ -278,7 +279,7 @@ export const getStaticProps = async (): Promise<{
     );
     return { props: { countries } };
   } catch (error) {
-    console.error(error);
+    log.error(`getStaticProps error=${error}`);
     return { props: { countries: [] } };
   }
 };

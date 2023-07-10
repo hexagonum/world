@@ -10,6 +10,7 @@ import {
   Thead,
   Tr,
 } from '@chakra-ui/react';
+import { log } from '@world/common/log';
 import Container from '@world/components/Container';
 import { apolloClient } from '@world/graphql';
 import { COUNTRIES_BORDERS_QUERY } from '@world/graphql/queries/countries';
@@ -149,7 +150,7 @@ export const getStaticProps: GetStaticProps = async (): Promise<{
     }
     return { props: { countries, codeCountryMap } };
   } catch (error) {
-    console.error('BordersPage', error);
+    log.error(`getStaticProps error=${error}`);
     return { props: { countries: [], codeCountryMap: {} } };
   }
 };
