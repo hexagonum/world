@@ -1,32 +1,28 @@
+import { YouTubeClient } from '../../common/client/youtube';
 import { API_KEY_YOUTUBE_V3 } from '../../common/environments';
-import { farfetch } from '../../common/libs/farfetch';
 import { logger } from '../../common/libs/logger';
 import { getJSON, setJSON } from '../../common/libs/redis';
-import {
-  VideoCategoriesResponse,
-  VideosResponse,
-  YouTubeCategory,
-  YouTubeVideo,
-} from './youtube.types';
-
-const BASE_URL = 'https://www.googleapis.com/youtube/v3';
+import { YouTubeCategory, YouTubeVideo } from './youtube.types';
 
 export class YouTubeService {
+  private youTubeClient: YouTubeClient;
+
+  constructor() {
+    this.youTubeClient = new YouTubeClient(API_KEY_YOUTUBE_V3);
+  }
+
   async getVideoCategories(
     { regionCode = 'US' }: { regionCode: string } = { regionCode: 'US' }
   ): Promise<YouTubeCategory[]> {
-    const urlSearchParams = new URLSearchParams();
-    urlSearchParams.set('key', API_KEY_YOUTUBE_V3);
-    urlSearchParams.set('part', 'snippet');
-    urlSearchParams.set('regionCode', regionCode);
-    const redisKey = `youtube-categories-${regionCode}`;
+    const redisKey: string =
+      regionCode !== ''
+        ? `youtube-categories-${regionCode}`
+        : 'youtube-categories';
     const cacheCategories: YouTubeCategory[] | null = await getJSON<
       YouTubeCategory[]
     >(redisKey);
     if (cacheCategories) return cacheCategories;
-    const url = `${BASE_URL}/videoCategories?${urlSearchParams.toString()}`;
-    const response: VideoCategoriesResponse =
-      await farfetch<VideoCategoriesResponse>(url);
+    const response = await this.youTubeClient.getCategories(regionCode);
     const categories: YouTubeCategory[] = response.items.map(
       ({ id, snippet: { title = '', channelId = '' } }) => ({
         id,
@@ -39,19 +35,22 @@ export class YouTubeService {
   }
 
   async getVideos({
-    categoryId = '',
-    regionCode = '',
     maxResults = 50,
+    regionCode = '',
+    trending = true,
+    videoCategoryId = '',
+  }: {
+    maxResults: number;
+    regionCode: string;
+    trending: boolean;
+    videoCategoryId: string;
   }): Promise<YouTubeVideo[]> {
-    const urlSearchParams = new URLSearchParams();
-    urlSearchParams.set('key', API_KEY_YOUTUBE_V3);
-    urlSearchParams.set('part', 'snippet');
-    urlSearchParams.set('chart', 'mostPopular');
-    if (regionCode) urlSearchParams.set('regionCode', regionCode);
-    if (categoryId) urlSearchParams.set('videoCategoryId', categoryId);
-    if (maxResults) urlSearchParams.set('maxResults', maxResults.toString());
-    const url = `${BASE_URL}/videos?${urlSearchParams.toString()}`;
-    const response = await farfetch<VideosResponse>(url);
+    const response = await this.youTubeClient.getVideos({
+      maxResults,
+      regionCode,
+      trending,
+      videoCategoryId,
+    });
     return response.items.map(
       ({
         id = '',

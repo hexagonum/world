@@ -2327,6 +2327,15 @@
           },
           {
             "in": "query",
+            "name": "trending",
+            "required": false,
+            "schema": {
+              "default": true,
+              "type": "boolean"
+            }
+          },
+          {
+            "in": "query",
             "name": "maxResults",
             "required": false,
             "schema": {

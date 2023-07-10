@@ -1817,7 +1817,7 @@ export function RegisterRoutes(app: Router) {
       next: any
     ) {
       const args = {
-        countryCode: {
+        regionCode: {
           default: 'US',
           in: 'query',
           name: 'countryCode',
@@ -1855,17 +1855,23 @@ export function RegisterRoutes(app: Router) {
       next: any
     ) {
       const args = {
-        countryCode: {
+        regionCode: {
           default: '',
           in: 'query',
           name: 'countryCode',
           dataType: 'string',
         },
-        categoryId: {
+        videoCategoryId: {
           default: '',
           in: 'query',
           name: 'categoryId',
           dataType: 'string',
+        },
+        trending: {
+          default: true,
+          in: 'query',
+          name: 'trending',
+          dataType: 'boolean',
         },
         maxResults: {
           default: 50,

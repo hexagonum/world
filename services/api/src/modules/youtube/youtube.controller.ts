@@ -12,20 +12,22 @@ export class YouTubeController extends Controller {
   }
 
   @Get('/categories')
-  async getVideoCategories(@Query('countryCode') countryCode = 'US') {
-    return this.youTubeService.getVideoCategories({ regionCode: countryCode });
+  async getVideoCategories(@Query('countryCode') regionCode = 'US') {
+    return this.youTubeService.getVideoCategories({ regionCode });
   }
 
   @Get('/videos')
   async getVideos(
-    @Query('countryCode') countryCode = '',
-    @Query('categoryId') categoryId = '',
+    @Query('countryCode') regionCode = '',
+    @Query('categoryId') videoCategoryId = '',
+    @Query('trending') trending = true,
     @Query('maxResults') maxResults = 50
   ) {
     return this.youTubeService.getVideos({
-      categoryId,
-      regionCode: countryCode,
       maxResults,
+      regionCode,
+      trending,
+      videoCategoryId,
     });
   }
 }
