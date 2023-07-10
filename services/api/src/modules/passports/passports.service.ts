@@ -1,9 +1,15 @@
-import { Passport, PassportRequirement } from '@prisma/client';
-import { prismaClient } from '../../common/libs/prisma';
+import { Passport, PassportRequirement, PrismaClient } from '@prisma/client';
+import { getPrismaClient } from '../../common/libs/prisma';
 
 export class PassportsService {
+  private prismaClient: PrismaClient;
+
+  constructor() {
+    this.prismaClient = getPrismaClient();
+  }
+
   async getPassports({ limit = 0 }: { limit: number }): Promise<Passport[]> {
-    const passports: Passport[] = await prismaClient.passport.findMany({
+    const passports: Passport[] = await this.prismaClient.passport.findMany({
       include: {
         country: {
           select: {
@@ -30,7 +36,7 @@ export class PassportsService {
       subregion: true,
     };
     const passportRequirement: PassportRequirement[] =
-      await prismaClient.passportRequirement.findMany({
+      await this.prismaClient.passportRequirement.findMany({
         include: {
           country: { select: countrySelect },
           passport: {

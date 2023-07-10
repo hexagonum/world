@@ -9,5 +9,3 @@ export const notFoundHandler =
     }
     return response.status(404).json({ message: 'Not Found' });
   };
-
-export default notFoundHandler;

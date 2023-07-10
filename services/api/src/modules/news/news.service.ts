@@ -1,6 +1,6 @@
 import { API_KEY_NEWS } from '../../common/environments';
 import { farfetch } from '../../common/libs/farfetch';
-import logger from '../../common/libs/logger';
+import { logger } from '../../common/libs/logger';
 import { getJSON, setJSON } from '../../common/libs/redis';
 import {
   Article,
@@ -44,7 +44,7 @@ export class NewsService {
       urlSearchParams.set('pageSize', pageSize.toString());
       redisKey = `${redisKey}-${pageSize}`;
     }
-    console.log('redisKey', redisKey);
+    logger.info(`getHeadlines redisKey=${redisKey}`);
     const url = `${BASE_URL}/top-headlines?${urlSearchParams.toString()}`;
     try {
       const cacheArticles: Article[] | null = await getJSON<Article[]>(
@@ -55,7 +55,7 @@ export class NewsService {
       const { articles = [] } = data;
       return articles;
     } catch (error) {
-      console.error(error);
+      logger.info(`getHeadlines error=${error}`);
       return [];
     }
   }
@@ -80,7 +80,7 @@ export class NewsService {
       urlSearchParams.set('language', language);
       redisKey = `${redisKey}-${language}`;
     }
-    console.log('redisKey', redisKey);
+    logger.info(`getSources redisKey=${redisKey}`);
     const url = `${BASE_URL}/top-headlines/sources?${urlSearchParams.toString()}`;
     try {
       const cacheSources: Source[] | null = await getJSON<Source[]>(redisKey);
@@ -90,7 +90,7 @@ export class NewsService {
       setJSON<Source[]>(redisKey, sources).catch(logger.error);
       return sources;
     } catch (error) {
-      console.error(error);
+      logger.info(`getSources error=${error}`);
       return [];
     }
   }

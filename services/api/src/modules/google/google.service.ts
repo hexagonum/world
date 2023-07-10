@@ -1,18 +1,26 @@
-import { GoogleTrend, Prisma } from '@prisma/client';
-import { prismaClient } from '../../common/libs/prisma';
+import { GoogleTrend, Prisma, PrismaClient } from '@prisma/client';
+import { getPrismaClient } from '../../common/libs/prisma';
 
 export class GoogleService {
+  private prismaClient: PrismaClient;
+
+  constructor() {
+    this.prismaClient = getPrismaClient();
+  }
+
   public async getGoogleTrends(countryCode: string): Promise<GoogleTrend[]> {
     let where: Prisma.GoogleTrendWhereInput = {};
     if (countryCode) where = { ...where, countryCode };
-    const googleTrends = await prismaClient.googleTrend.findMany({ where });
+    const googleTrends = await this.prismaClient.googleTrend.findMany({
+      where,
+    });
     return googleTrends;
   }
 
   public async getGoogleRanks(
     limit: number
   ): Promise<{ rank: number; query: string; count: number }[]> {
-    const googleTrends = await prismaClient.googleTrend.findMany();
+    const googleTrends = await this.prismaClient.googleTrend.findMany();
     const queries: string[] = googleTrends
       .map(({ queries = [] }) => queries)
       .flat(1);

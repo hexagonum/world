@@ -1,7 +1,13 @@
-import { Prisma } from '@prisma/client';
-import { prismaClient } from '../../common/libs/prisma';
+import { Prisma, PrismaClient } from '@prisma/client';
+import { getPrismaClient } from '../../common/libs/prisma';
 
 export class CitiesService {
+  private prismaClient: PrismaClient;
+
+  constructor() {
+    this.prismaClient = getPrismaClient();
+  }
+
   async getCities({ countryCode = '' }: { countryCode: string }) {
     let where: Prisma.CityWhereInput = {
       latitude: { not: { equals: 0 } },
@@ -9,7 +15,7 @@ export class CitiesService {
       timezone: { not: { equals: 0 } },
     };
     if (countryCode.length > 0) where = { ...where, countryCode };
-    const cities = await prismaClient.city.findMany({
+    const cities = await this.prismaClient.city.findMany({
       include: { country: true },
       where,
     });

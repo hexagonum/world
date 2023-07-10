@@ -5,6 +5,7 @@ import { json } from 'express';
 import http from 'http';
 import { createApolloServer } from '../src/apollo';
 import { app } from '../src/app';
+import { logger } from '../src/common/libs/logger';
 
 const startServer = async (apolloServer: ApolloServer) => {
   await apolloServer.start();
@@ -18,6 +19,6 @@ const startServer = async (apolloServer: ApolloServer) => {
 
 const httpServer: http.Server = http.createServer(app);
 const apolloServer: ApolloServer = createApolloServer(httpServer);
-startServer(apolloServer).catch((error) => console.error(error));
+startServer(apolloServer).catch((error) => logger.error(error));
 
 export default httpServer;

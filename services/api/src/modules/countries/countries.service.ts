@@ -1,6 +1,14 @@
-import { prismaClient } from '../../common/libs/prisma';
+import { Prisma, PrismaClient } from '@prisma/client';
+import { logger } from '../../common/libs/logger';
+import { getPrismaClient } from '../../common/libs/prisma';
 
 export class CountriesService {
+  private prismaClient: PrismaClient;
+
+  constructor() {
+    this.prismaClient = getPrismaClient();
+  }
+
   async getCountries({
     codes = '',
     timezone = '',
@@ -8,7 +16,7 @@ export class CountriesService {
     codes: string;
     timezone: string;
   }) {
-    let where = {};
+    let where: Prisma.CountryWhereInput = {};
     if (codes.length > 0)
       where = {
         ...where,
@@ -22,8 +30,8 @@ export class CountriesService {
     if (timezone.length > 0) {
       where = { ...where, timezones: { has: timezone } };
     }
-    console.log('Where', where);
-    const countries = await prismaClient.country.findMany({
+    logger.info(`getCountries where=${JSON.stringify(where)}`);
+    const countries = await this.prismaClient.country.findMany({
       include: {
         cities: {
           select: {
@@ -66,7 +74,7 @@ export class CountriesService {
 
   async getCountry(code: string) {
     const codeUppercase = code.toUpperCase();
-    const country = await prismaClient.country.findFirstOrThrow({
+    const country = await this.prismaClient.country.findFirstOrThrow({
       include: {
         cities: {
           select: {

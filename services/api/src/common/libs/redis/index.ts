@@ -1,7 +1,7 @@
 import Redis from 'ioredis';
 import { REDIS_URI } from '../../environments';
 import { jsonParse } from '../../utils/json-parse';
-import logger from '../logger';
+import { logger } from '../logger';
 
 export const redis = new Redis(REDIS_URI);
 

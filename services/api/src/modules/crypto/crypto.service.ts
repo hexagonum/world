@@ -1,3 +1,4 @@
+import { logger } from '../../common/libs/logger';
 import {
   Coin,
   CoinResponse,
@@ -34,7 +35,7 @@ export class CryptoService {
       const coins = data.data.coins;
       return coins;
     } catch (error) {
-      console.error(error);
+      logger.error(`getCoins error=${error}`);
       return [];
     }
   }
@@ -46,7 +47,7 @@ export class CryptoService {
       const coin = data.data.coin;
       return coin;
     } catch (error) {
-      console.error(error);
+      logger.error(`getCoin error=${error}`);
       return {} as Coin;
     }
   }

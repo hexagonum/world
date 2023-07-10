@@ -22,5 +22,3 @@ export const errorHandler = (
 
   next();
 };
-
-export default errorHandler;

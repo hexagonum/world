@@ -3,5 +3,3 @@ import pretty from 'pino-pretty';
 
 const stream = pretty({ colorize: true });
 export const logger: Logger = pino(stream);
-
-export default logger;

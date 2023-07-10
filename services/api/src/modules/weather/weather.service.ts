@@ -1,5 +1,5 @@
 import { farfetch } from '../../common/libs/farfetch';
-import logger from '../../common/libs/logger';
+import { logger } from '../../common/libs/logger';
 import { getJSON, setJSON } from '../../common/libs/redis';
 
 export class WeatherService {

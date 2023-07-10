@@ -1,9 +1,9 @@
 import { URLSearchParams } from 'url';
 import { API_KEY_FOOTBALL_DATA } from '../../common/environments';
 import { farfetch } from '../../common/libs/farfetch';
-import { Area, Competition, Match, Standing, Team } from './football.types';
+import { logger } from '../../common/libs/logger';
 import { getJSON, setJSON } from '../../common/libs/redis';
-import logger from '../../common/libs/logger';
+import { Area, Competition, Match, Standing, Team } from './football.types';
 
 const BASE_URL = 'http://api.football-data.org/v4';
 const headers = { 'X-Auth-Token': API_KEY_FOOTBALL_DATA };

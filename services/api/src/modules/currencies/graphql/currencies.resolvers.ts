@@ -1,6 +1,7 @@
 import { Currency } from '@prisma/client';
 import { BASE_API } from '../../../common/environments';
 import { farfetch } from '../../../common/libs/farfetch';
+import { logger } from '../../../common/libs/logger';
 import { ForexHistory, ForexRate } from '../currencies.types';
 
 export const resolvers = {
@@ -30,7 +31,7 @@ export const resolvers = {
       if (base) urlSearchParams.set('base', base);
       if (to) urlSearchParams.set('to', to);
       const url = `${BASE_API}/currencies/rates?${urlSearchParams.toString()}`;
-      console.log(url);
+      logger.info(`rates url=${url}`);
       return farfetch<ForexRate[]>(url);
     },
     history: async (
@@ -55,7 +56,7 @@ export const resolvers = {
       urlSearchParams.set('from', from);
       urlSearchParams.set('to', to);
       const url = `${BASE_API}/currencies/history?${urlSearchParams.toString()}`;
-      console.log(url);
+      logger.info(`history url=${url}`);
       return farfetch<ForexHistory[]>(url);
     },
   },

@@ -1,5 +1,6 @@
 import { BASE_API } from '../../../common/environments';
 import { farfetch } from '../../../common/libs/farfetch';
+import { logger } from '../../../common/libs/logger';
 import { YouTubeCategory } from '../youtube.types';
 
 export const resolvers = {
@@ -42,7 +43,7 @@ export const resolvers = {
       if (countryCode) urlSearchParams.set('countryCode', countryCode);
       if (maxResults) urlSearchParams.set('maxResults', maxResults.toString());
       const url = `${BASE_API}/youtube/videos?${urlSearchParams.toString()}`;
-      console.log(url);
+      logger.info(`videos url=${url}`);
       return farfetch(url);
     },
   },
@@ -58,7 +59,7 @@ export const resolvers = {
       urlSearchParams.set('categoryId', categoryId);
       urlSearchParams.set('countryCode', countryCode);
       const url = `${BASE_API}/youtube/videos?${urlSearchParams.toString()}`;
-      console.log(url);
+      logger.info(`videos url=${url}`);
       return farfetch(url);
     },
   },

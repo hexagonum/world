@@ -1,5 +1,6 @@
 import { BASE_API } from '../../../common/environments';
 import { farfetch } from '../../../common/libs/farfetch';
+import { logger } from '../../../common/libs/logger';
 import { Competition, Position, Team } from '../football.types';
 
 type FilterOptions = {
@@ -19,10 +20,9 @@ export const resolvers = {
   },
   Football: {
     async areas({ filterOptions }: { filterOptions: FilterOptions }) {
-      const areas: { id: number }[] = await farfetch(
-        `${BASE_API}/football/areas`
-      );
-      console.log(filterOptions.areaId, typeof filterOptions.areaId);
+      const url = `${BASE_API}/football/areas`;
+      logger.info(`areas url=${url}`);
+      const areas: { id: number }[] = await farfetch(url);
       return areas
         .filter(({ id }: { id: number }) =>
           filterOptions.areaId ? filterOptions.areaId === id : true

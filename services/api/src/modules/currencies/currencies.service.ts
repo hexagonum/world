@@ -1,14 +1,21 @@
+import { PrismaClient } from '@prisma/client';
 import { farfetch } from '../../common/libs/farfetch';
-import logger from '../../common/libs/logger';
-import { prismaClient } from '../../common/libs/prisma';
+import { logger } from '../../common/libs/logger';
+import { getPrismaClient } from '../../common/libs/prisma';
 import { getJSON, setJSON } from '../../common/libs/redis';
 import { ForexHistory, ForexRate } from './currencies.types';
 
 const ONE_DAY = 1000 * 60 * 60 * 24;
 
 export class CurrenciesService {
+  private prismaClient: PrismaClient;
+
+  constructor() {
+    this.prismaClient = getPrismaClient();
+  }
+
   public async getCurrencies() {
-    const currencies = await prismaClient.currency.findMany({
+    const currencies = await this.prismaClient.currency.findMany({
       include: {
         countries: {
           select: {
@@ -133,7 +140,7 @@ export class CurrenciesService {
   }
 
   public async getCurrency(code: string) {
-    const currency = await prismaClient.currency.findFirstOrThrow({
+    const currency = await this.prismaClient.currency.findFirstOrThrow({
       where: { code },
       include: {
         countries: {

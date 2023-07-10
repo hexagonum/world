@@ -1,6 +1,6 @@
 import { API_KEY_YOUTUBE_V3 } from '../../common/environments';
 import { farfetch } from '../../common/libs/farfetch';
-import logger from '../../common/libs/logger';
+import { logger } from '../../common/libs/logger';
 import { getJSON, setJSON } from '../../common/libs/redis';
 import {
   VideoCategoriesResponse,

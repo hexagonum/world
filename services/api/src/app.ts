@@ -5,8 +5,8 @@ import express, { json, urlencoded } from 'express';
 import helmet, { HelmetOptions } from 'helmet';
 import morgan from 'morgan';
 import { NODE_ENV } from './common/environments';
-import errorHandler from './common/middlewares/error';
-import notFoundHandler from './common/middlewares/not-found';
+import { errorHandler } from './common/middlewares/error';
+import { notFoundHandler } from './common/middlewares/not-found';
 import { RegisterRoutes } from './routes';
 
 export const app = express();
