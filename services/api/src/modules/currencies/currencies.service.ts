@@ -1,29 +1,28 @@
 import { PrismaClient } from '@prisma/client';
+import { FixerClient } from '../../common/client/fixer';
+import { FrankfurterClient } from '../../common/client/frankfurter';
+import { ONE_DAY } from '../../common/constants';
+import { API_KEY_FIXER } from '../../common/environments';
 import { farfetch } from '../../common/libs/farfetch';
 import { logger } from '../../common/libs/logger';
 import { getPrismaClient } from '../../common/libs/prisma';
 import { getJSON, setJSON } from '../../common/libs/redis';
-import { ForexHistory, ForexRate } from './currencies.types';
-
-const ONE_DAY = 1000 * 60 * 60 * 24;
+import { ForexHistory, ForexRate, ForexSource } from './currencies.types';
 
 export class CurrenciesService {
   private prismaClient: PrismaClient;
+  private fixerClient: FixerClient;
+  private frankfurterClient: FrankfurterClient;
 
   constructor() {
     this.prismaClient = getPrismaClient();
+    this.fixerClient = new FixerClient(API_KEY_FIXER);
+    this.frankfurterClient = new FrankfurterClient();
   }
 
   public async getCurrencies() {
-    const currencies = await this.prismaClient.currency.findMany({
-      include: {
-        countries: {
-          select: {
-            country: true,
-          },
-        },
-      },
-    });
+    const args = { include: { countries: { select: { country: true } } } };
+    const currencies = await this.prismaClient.currency.findMany(args);
     return currencies.map((currency) => {
       return {
         ...currency,
@@ -32,14 +31,30 @@ export class CurrenciesService {
     });
   }
 
+  private async getRatesBySource(
+    source: 'fixer' | 'frankfurter'
+  ): Promise<Record<string, number>> {
+    if (source === 'fixer') {
+      const { rates = {} } = await this.fixerClient.getLatest();
+      return rates;
+    }
+    if (source === 'frankfurter') {
+      const { rates = {} } = await this.frankfurterClient.getLatest();
+      return rates;
+    }
+    return {};
+  }
+
   public async getRates({
     amount = 1,
     base = 'EUR',
     to = '',
+    source = 'fixer',
   }: {
     amount: number;
     base: string;
     to: string;
+    source: ForexSource;
   }): Promise<{ code: string; rate: number }[]> {
     const urlSearchParams = new URLSearchParams();
     let redisKey = `currencies-history`;
@@ -59,19 +74,14 @@ export class CurrenciesService {
     try {
       const cacheRates = await getJSON<ForexRate[]>(redisKey);
       if (cacheRates) return cacheRates;
-
-      const url = `https://api.frankfurter.app/latest?${urlSearchParams.toString()}`;
-      const response = await farfetch<{
-        amount: number;
-        base: string;
-        date: string;
-        rates: Record<string, number>;
-      }>(url);
-      const rates = Object.entries(response.rates)
+      const rates = await this.getRatesBySource(source);
+      const sortedRates = Object.entries(rates)
         .map(([code, rate]) => ({ code, rate }))
         .sort((a, b) => a.rate - b.rate);
-      setJSON(redisKey, rates, { expiresIn: 60 * 60 * 24 }).catch(logger.error);
-      return rates;
+      setJSON(redisKey, sortedRates, { expiresIn: 60 * 60 * 24 }).catch(
+        logger.error
+      );
+      return sortedRates;
     } catch (error) {
       logger.error(`getRates error ${error}`);
       return [];

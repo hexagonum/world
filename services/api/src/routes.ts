@@ -171,6 +171,18 @@ const models: TsoaRoute.Models = {
     },
   },
   // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
+  ForexSource: {
+    dataType: 'refAlias',
+    type: {
+      dataType: 'union',
+      subSchemas: [
+        { dataType: 'enum', enums: ['fixer'] },
+        { dataType: 'enum', enums: ['frankfurter'] },
+      ],
+      validators: {},
+    },
+  },
+  // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
   ForexHistory: {
     dataType: 'refAlias',
     type: {
@@ -888,6 +900,12 @@ export function RegisterRoutes(app: Router) {
         amount: { default: 1, in: 'query', name: 'amount', dataType: 'double' },
         base: { default: 'EUR', in: 'query', name: 'base', dataType: 'string' },
         to: { default: '', in: 'query', name: 'to', dataType: 'string' },
+        source: {
+          default: 'fixer',
+          in: 'query',
+          name: 'source',
+          ref: 'ForexSource',
+        },
       };
 
       // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
