@@ -1,6 +1,6 @@
 import { Prisma, PrismaClient } from '@prisma/client';
 import { logger } from '../../common/libs/logger';
-import { getPrismaClient } from '../../common/libs/prisma';
+import { getPrismaClient } from '../../common/database/prisma';
 
 export class CountriesService {
   private prismaClient: PrismaClient;

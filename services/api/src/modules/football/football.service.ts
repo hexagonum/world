@@ -1,9 +1,10 @@
 import { URLSearchParams } from 'url';
+import { Area } from '../../common/client/football-data/types';
 import { API_KEY_FOOTBALL_DATA } from '../../common/environments';
 import { farfetch } from '../../common/libs/farfetch';
 import { logger } from '../../common/libs/logger';
-import { getJSON, setJSON } from '../../common/libs/redis';
-import { Area, Competition, Match, Standing, Team } from './football.types';
+import { getJSON, setJSON } from '../../common/database/redis';
+import { Competition, Match, Standing, Team } from './football.types';
 
 const BASE_URL = 'http://api.football-data.org/v4';
 const headers = { 'X-Auth-Token': API_KEY_FOOTBALL_DATA };
@@ -15,9 +16,7 @@ export class FootballService {
     const cacheAreas: Area[] | null = await getJSON<Area[]>(redisKey);
     if (cacheAreas) return cacheAreas;
     // API
-    const url = `${BASE_URL}/areas`;
-    const response = await farfetch<{ areas: Area[] }>(url, { headers });
-    const areas: Area[] = response.areas ?? [];
+    const areas: Area[] = await this.getAreas();
     setJSON(redisKey, areas).catch(logger.error);
     return areas;
   }

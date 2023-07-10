@@ -1,11 +1,4 @@
-export type Area = {
-  id: number;
-  name: string;
-  countryCode: string;
-  flag: string;
-  parentAreaId: number;
-  parentArea: string;
-};
+import { Area } from '../../common/client/football-data/types';
 
 export type Competition = {
   area: Area;

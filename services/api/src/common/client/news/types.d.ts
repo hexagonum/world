@@ -79,7 +79,7 @@ export type NewsCountry =
   | 've'
   | 'za';
 
-export type HeadlinesRequest = {
+export type NewsTopHeadlinesRequest = {
   category?: Category;
   country?: Country;
   sources?: string;
@@ -87,12 +87,12 @@ export type HeadlinesRequest = {
   pageSize?: number;
 };
 
-export type HeadlinesResponse = {
+export type NewsTopHeadlinesResponse = {
   status: string;
   articles: Article[];
 };
 
-export type Article = {
+export type NewsArticle = {
   source: {
     id: string;
     name: string;
@@ -106,18 +106,18 @@ export type Article = {
   content: string;
 };
 
-export type SourcesRequest = {
+export type NewsSourcesRequest = {
   category?: NewsCategory;
-  language?: NewsLanguage;
   country?: NewsCountry;
+  language?: NewsLanguage;
 };
 
-export type SourcesResponse = {
+export type NewsSourcesResponse = {
   status: string;
   sources: Source[];
 };
 
-export type Source = {
+export type NewsSource = {
   id: string;
   name: string;
   description: string;

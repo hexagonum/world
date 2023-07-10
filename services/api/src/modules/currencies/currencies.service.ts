@@ -5,8 +5,8 @@ import { ONE_DAY } from '../../common/constants';
 import { API_KEY_FIXER } from '../../common/environments';
 import { farfetch } from '../../common/libs/farfetch';
 import { logger } from '../../common/libs/logger';
-import { getPrismaClient } from '../../common/libs/prisma';
-import { getJSON, setJSON } from '../../common/libs/redis';
+import { getPrismaClient } from '../../common/database/prisma';
+import { getJSON, setJSON } from '../../common/database/redis';
 import { ForexHistory, ForexRate, ForexSource } from './currencies.types';
 
 export class CurrenciesService {

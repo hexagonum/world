@@ -275,7 +275,7 @@ components:
           $ref: '#/components/schemas/runtime.Types.DefaultSelection_LanguagePayload_',
           description: 'Model Language',
         },
-      Article:
+      NewsArticle:
         {
           properties:
             {
@@ -386,7 +386,7 @@ components:
           type: string,
           enum: [ar, de, en, es, fr, he, it, nl, no, pt, ru, sv, ud, zh],
         },
-      Source:
+      NewsSource:
         {
           properties:
             {
@@ -1618,7 +1618,8 @@ paths:
                         {
                           schema:
                             {
-                              items: { $ref: '#/components/schemas/Article' },
+                              items:
+                                { $ref: '#/components/schemas/NewsArticle' },
                               type: array,
                             },
                         },
@@ -1678,7 +1679,8 @@ paths:
                         {
                           schema:
                             {
-                              items: { $ref: '#/components/schemas/Source' },
+                              items:
+                                { $ref: '#/components/schemas/NewsSource' },
                               type: array,
                             },
                         },

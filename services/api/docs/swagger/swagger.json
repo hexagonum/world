@@ -448,7 +448,7 @@
         "$ref": "#/components/schemas/runtime.Types.DefaultSelection_LanguagePayload_",
         "description": "Model Language"
       },
-      "Article": {
+      "NewsArticle": {
         "properties": {
           "content": {
             "type": "string"
@@ -586,7 +586,7 @@
           "zh"
         ]
       },
-      "Source": {
+      "NewsSource": {
         "properties": {
           "country": {
             "$ref": "#/components/schemas/NewsCountry"
@@ -1938,7 +1938,7 @@
               "application/json": {
                 "schema": {
                   "items": {
-                    "$ref": "#/components/schemas/Article"
+                    "$ref": "#/components/schemas/NewsArticle"
                   },
                   "type": "array"
                 }
@@ -2006,7 +2006,7 @@
               "application/json": {
                 "schema": {
                   "items": {
-                    "$ref": "#/components/schemas/Source"
+                    "$ref": "#/components/schemas/NewsSource"
                   },
                   "type": "array"
                 }

@@ -1,8 +1,14 @@
-import { farfetch } from '../../common/libs/farfetch';
+import { OpenMeteoClient } from '../../common/client/weather-bit';
 import { logger } from '../../common/libs/logger';
-import { getJSON, setJSON } from '../../common/libs/redis';
+import { getJSON, setJSON } from '../../common/database/redis';
 
 export class WeatherService {
+  private openMeteoClient: OpenMeteoClient;
+
+  constructor() {
+    this.openMeteoClient = new OpenMeteoClient();
+  }
+
   async getWeather({
     latitude = 0,
     longitude = 0,
@@ -10,15 +16,13 @@ export class WeatherService {
     latitude: number;
     longitude: number;
   }) {
-    const urlSearchParams = new URLSearchParams();
-    urlSearchParams.set('current_weather', 'true');
-    urlSearchParams.set('latitude', latitude.toString());
-    urlSearchParams.set('longitude', longitude.toString());
     const redisKey = `weather-${latitude}-${longitude}`;
     const cacheWeather = await getJSON(redisKey);
     if (cacheWeather) return cacheWeather;
-    const url = `https://api.open-meteo.com/v1/forecast?${urlSearchParams.toString()}`;
-    const weather = await farfetch(url);
+    const weather = await this.openMeteoClient.getCurrentWeather({
+      latitude,
+      longitude,
+    });
     setJSON(redisKey, weather).catch(logger.error);
     return weather;
   }

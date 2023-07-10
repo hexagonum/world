@@ -372,7 +372,7 @@ const models: TsoaRoute.Models = {
     },
   },
   // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
-  Article: {
+  NewsArticle: {
     dataType: 'refAlias',
     type: {
       dataType: 'nestedObjectLiteral',
@@ -502,7 +502,7 @@ const models: TsoaRoute.Models = {
     },
   },
   // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
-  Source: {
+  NewsSource: {
     dataType: 'refAlias',
     type: {
       dataType: 'nestedObjectLiteral',

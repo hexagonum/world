@@ -1,6 +1,6 @@
+import { NewsArticle, NewsSource } from '../../../common/client/news/types';
 import { BASE_API } from '../../../common/environments';
 import { farfetch } from '../../../common/libs/farfetch';
-import { Article, Source } from '../news.types';
 
 export const resolvers = {
   Query: {
@@ -12,18 +12,18 @@ export const resolvers = {
     headlines: async (
       { country = '' },
       { pageSize = 10 }: { pageSize: number }
-    ): Promise<Article[]> => {
+    ): Promise<NewsArticle[]> => {
       const urlSearchParams = new URLSearchParams();
       if (country) urlSearchParams.set('country', country);
       if (pageSize) urlSearchParams.set('pageSize', pageSize.toString());
-      return await farfetch<Article[]>(
+      return await farfetch<NewsArticle[]>(
         `${BASE_API}/news/headlines?${urlSearchParams.toString()}`
       );
     },
-    sources: async ({ country = '' }): Promise<Source[]> => {
+    sources: async ({ country = '' }): Promise<NewsSource[]> => {
       const urlSearchParams = new URLSearchParams();
       if (country) urlSearchParams.set('country', country);
-      return await farfetch<Source[]>(
+      return await farfetch<NewsSource[]>(
         `${BASE_API}/news/sources?${urlSearchParams.toString()}`
       );
     },

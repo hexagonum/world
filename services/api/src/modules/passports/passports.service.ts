@@ -1,5 +1,5 @@
 import { Passport, PassportRequirement, PrismaClient } from '@prisma/client';
-import { getPrismaClient } from '../../common/libs/prisma';
+import { getPrismaClient } from '../../common/database/prisma';
 
 export class PassportsService {
   private prismaClient: PrismaClient;

@@ -1,7 +1,7 @@
 import { YouTubeClient } from '../../common/client/youtube';
 import { API_KEY_YOUTUBE_V3 } from '../../common/environments';
 import { logger } from '../../common/libs/logger';
-import { getJSON, setJSON } from '../../common/libs/redis';
+import { getJSON, setJSON } from '../../common/database/redis';
 import { YouTubeCategory, YouTubeVideo } from './youtube.types';
 
 export class YouTubeService {
