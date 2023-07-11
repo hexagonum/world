@@ -2403,10 +2403,20 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "items": {
-                    "$ref": "#/components/schemas/Passport"
+                  "properties": {
+                    "passports": {
+                      "items": {
+                        "$ref": "#/components/schemas/Passport"
+                      },
+                      "type": "array"
+                    },
+                    "total": {
+                      "type": "number",
+                      "format": "double"
+                    }
                   },
-                  "type": "array"
+                  "required": ["passports", "total"],
+                  "type": "object"
                 }
               }
             }
@@ -2424,6 +2434,15 @@
               "format": "double",
               "type": "number"
             }
+          },
+          {
+            "in": "query",
+            "name": "query",
+            "required": false,
+            "schema": {
+              "default": "",
+              "type": "string"
+            }
           }
         ]
       }
@@ -2437,10 +2456,20 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "items": {
-                    "$ref": "#/components/schemas/PassportRequirement"
+                  "properties": {
+                    "requirements": {
+                      "items": {
+                        "$ref": "#/components/schemas/PassportRequirement"
+                      },
+                      "type": "array"
+                    },
+                    "total": {
+                      "type": "number",
+                      "format": "double"
+                    }
                   },
-                  "type": "array"
+                  "required": ["requirements", "total"],
+                  "type": "object"
                 }
               }
             }

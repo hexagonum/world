@@ -1,4 +1,9 @@
-import { Passport, PassportRequirement, PrismaClient } from '@prisma/client';
+import {
+  Prisma,
+  Passport,
+  PassportRequirement,
+  PrismaClient,
+} from '@prisma/client';
 import { getPrismaClient } from '../../common/database/prisma';
 
 export class PassportsService {
@@ -8,26 +13,54 @@ export class PassportsService {
     this.prismaClient = getPrismaClient();
   }
 
-  async getPassports({ limit = 0 }: { limit: number }): Promise<Passport[]> {
-    const passports: Passport[] = await this.prismaClient.passport.findMany({
-      include: {
+  async getPassports({
+    limit = 0,
+    query = '',
+  }: {
+    limit: number;
+    query: string;
+  }): Promise<{ total: number; passports: Passport[] }> {
+    let where: Prisma.PassportWhereInput = {};
+    if (query !== '') {
+      where = {
         country: {
-          select: {
-            commonName: true,
-            cca2: true,
-            cca3: true,
-            region: true,
-            subregion: true,
+          OR: [
+            { cca2: { contains: query, mode: 'insensitive' } },
+            { cca3: { contains: query, mode: 'insensitive' } },
+            { fifa: { contains: query, mode: 'insensitive' } },
+            { commonName: { contains: query, mode: 'insensitive' } },
+            { officialName: { contains: query, mode: 'insensitive' } },
+          ],
+        },
+      };
+    }
+    const [total = 0, passports = []] = await this.prismaClient.$transaction([
+      this.prismaClient.passport.count({ where }),
+      this.prismaClient.passport.findMany({
+        where,
+        include: {
+          country: {
+            select: {
+              cca2: true,
+              cca3: true,
+              fifa: true,
+              commonName: true,
+              officialName: true,
+              region: true,
+              subregion: true,
+            },
           },
         },
-      },
-      orderBy: { individualRank: 'asc' },
-      take: limit > 0 ? limit : undefined,
-    });
-    return passports;
+        orderBy: { individualRank: 'asc' },
+        take: limit > 0 ? limit : undefined,
+      }),
+    ]);
+    return { total, passports };
   }
 
-  async getPassport(code: string): Promise<PassportRequirement[]> {
+  async getPassport(
+    code: string
+  ): Promise<{ total: number; requirements: PassportRequirement[] }> {
     const countrySelect = {
       commonName: true,
       cca2: true,
@@ -35,22 +68,29 @@ export class PassportsService {
       region: true,
       subregion: true,
     };
-    const passportRequirement: PassportRequirement[] =
-      await this.prismaClient.passportRequirement.findMany({
-        include: {
-          country: { select: countrySelect },
-          passport: {
-            select: {
-              countryCode: true,
-              country: { select: countrySelect },
-              globalRank: true,
-              individualRank: true,
-              mobilityScore: true,
+    const [total = 0, requirements = []] = await this.prismaClient.$transaction(
+      [
+        this.prismaClient.passportRequirement.count({
+          where: { passportCode: code },
+        }),
+        this.prismaClient.passportRequirement.findMany({
+          where: { passportCode: code },
+          include: {
+            country: { select: countrySelect },
+            passport: {
+              select: {
+                countryCode: true,
+                country: { select: countrySelect },
+                globalRank: true,
+                individualRank: true,
+                mobilityScore: true,
+              },
             },
           },
-        },
-        where: { passportCode: code },
-      });
-    return passportRequirement;
+        }),
+      ]
+    );
+
+    return { total, requirements };
   }
 }

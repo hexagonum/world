@@ -2070,8 +2070,20 @@ paths:
                         {
                           schema:
                             {
-                              items: { $ref: '#/components/schemas/Passport' },
-                              type: array,
+                              properties:
+                                {
+                                  passports:
+                                    {
+                                      items:
+                                        {
+                                          $ref: '#/components/schemas/Passport',
+                                        },
+                                      type: array,
+                                    },
+                                  total: { type: number, format: double },
+                                },
+                              required: [passports, total],
+                              type: object,
                             },
                         },
                     },
@@ -2086,6 +2098,12 @@ paths:
                 name: limit,
                 required: false,
                 schema: { default: 0, format: double, type: number },
+              },
+              {
+                in: query,
+                name: query,
+                required: false,
+                schema: { default: '', type: string },
               },
             ],
         },
@@ -2106,11 +2124,20 @@ paths:
                         {
                           schema:
                             {
-                              items:
+                              properties:
                                 {
-                                  $ref: '#/components/schemas/PassportRequirement',
+                                  requirements:
+                                    {
+                                      items:
+                                        {
+                                          $ref: '#/components/schemas/PassportRequirement',
+                                        },
+                                      type: array,
+                                    },
+                                  total: { type: number, format: double },
                                 },
-                              type: array,
+                              required: [requirements, total],
+                              type: object,
                             },
                         },
                     },

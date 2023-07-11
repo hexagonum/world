@@ -177,7 +177,9 @@ export const getServerSideProps: GetServerSideProps<PassportPageProps> = async (
   try {
     const countryCode: string = context.query.passport?.toString() ?? '';
     const url = `${NEXT_PUBLIC_BASE_API}/passports/${countryCode}`;
-    const requirements = await refetch<PassportRequirement[]>(url);
+    const { requirements = [] } = await refetch<{
+      requirements: PassportRequirement[];
+    }>(url);
     log.info(`getServerSideProps url=${url}`);
     return { props: { requirements } };
   } catch (error) {

@@ -1,4 +1,3 @@
-import { ApolloError } from '@apollo/client';
 import {
   Badge,
   Button,
@@ -175,10 +174,6 @@ const ForexRates: React.FC<{ forexRates: ForexRate[] }> = ({
 const ForexChart: React.FC<{ forexHistory: ForexHistory[] }> = ({
   forexHistory = [],
 }) => {
-  const tos: number[] = forexHistory.map(({ to }) => to);
-  const min: number = Math.min(...tos);
-  const max: number = Math.max(...tos);
-
   return (
     <>
       {forexHistory.length > 0 ? (

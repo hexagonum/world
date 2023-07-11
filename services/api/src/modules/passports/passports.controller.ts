@@ -22,15 +22,18 @@ export class PassportsController extends Controller {
 
   @Get()
   @SuccessResponse(200)
-  async getPassports(@Query('limit') limit = 0): Promise<Passport[]> {
-    return this.passportsService.getPassports({ limit });
+  async getPassports(
+    @Query('limit') limit: number = 0,
+    @Query('query') query: string = ''
+  ): Promise<{ total: number; passports: Passport[] }> {
+    return this.passportsService.getPassports({ limit, query });
   }
 
   @Get(':code')
   @SuccessResponse(200)
   async getPassport(
     @Path('code') code: string
-  ): Promise<PassportRequirement[]> {
+  ): Promise<{ total: number; requirements: PassportRequirement[] }> {
     return this.passportsService.getPassport(code);
   }
 }

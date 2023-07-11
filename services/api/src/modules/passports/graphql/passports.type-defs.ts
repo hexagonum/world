@@ -1,6 +1,6 @@
 export const typeDefs = `#graphql
   extend type Query {
-    passports(limit: Int): [Passport]
+    passports(limit: Int, query: String): [Passport]
   }
 
   type Passport {
