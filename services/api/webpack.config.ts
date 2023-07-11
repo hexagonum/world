@@ -1,8 +1,8 @@
 import path from 'path';
 import nodeExternals from 'webpack-node-externals';
 
-const isProduction = process.env.NODE_ENV === 'production';
-const mode = isProduction ? 'production' : 'development';
+const isProduction: boolean = process.env.NODE_ENV === 'production';
+const mode: string = isProduction ? 'production' : 'development';
 
 const config = {
   mode,

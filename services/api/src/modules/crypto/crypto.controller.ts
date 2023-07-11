@@ -1,4 +1,12 @@
-import { Controller, Get, Path, Query, Route, Tags } from 'tsoa';
+import {
+  Controller,
+  Get,
+  Path,
+  Query,
+  Route,
+  SuccessResponse,
+  Tags,
+} from 'tsoa';
 import { CryptoService } from './crypto.service';
 import { Coin, OrderBy, Tier, TimePeriod } from './crypto.types';
 
@@ -13,6 +21,7 @@ export class CryptoController extends Controller {
   }
 
   @Get('coins')
+  @SuccessResponse(200)
   async getCoins(
     @Query('timePeriod') timePeriod: TimePeriod = '24h',
     @Query('tier') tier: Tier = '1',
@@ -23,6 +32,7 @@ export class CryptoController extends Controller {
   }
 
   @Get('coins/:id')
+  @SuccessResponse(200)
   async getCoin(@Path('id') id: string): Promise<Coin> {
     return this.cryptoService.getCoin(id);
   }

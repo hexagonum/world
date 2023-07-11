@@ -3,6 +3,11 @@ datasource db {
   url      = env("POSTGRESQL_URL")
 }
 
+// generator class_validator {
+//   provider = "prisma-class-validator-generator"
+//   output = "../services/api/src/common/prisma"
+// }
+
 generator client {
   provider = "prisma-client-js"
 }

@@ -1,5 +1,15 @@
 import { Country } from '@prisma/client';
-import { Controller, Get, Path, Query, Route, Tags } from 'tsoa';
+import {
+  Body,
+  Controller,
+  Get,
+  Path,
+  Post,
+  Query,
+  Route,
+  SuccessResponse,
+  Tags,
+} from 'tsoa';
 import { CountriesService } from './countries.service';
 
 @Route('/countries')
@@ -13,6 +23,7 @@ export class CountriesController extends Controller {
   }
 
   @Get()
+  @SuccessResponse(200)
   async getCountries(
     @Query('codes') codes = '',
     @Query('timezone') timezone = ''
@@ -21,7 +32,14 @@ export class CountriesController extends Controller {
   }
 
   @Get(':code')
+  @SuccessResponse(200)
   async getCountry(@Path('code') code: string): Promise<Country> {
     return this.countriesService.getCountry(code);
+  }
+
+  @Post('search')
+  @SuccessResponse(200)
+  async searchCountries(@Body() { query = '' }: { query: string }) {
+    return this.countriesService.searchCountries({ query });
   }
 }

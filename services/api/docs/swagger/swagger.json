@@ -845,7 +845,7 @@
         "operationId": "GetCountries",
         "responses": {
           "200": {
-            "description": "Ok",
+            "description": "",
             "content": {
               "application/json": {
                 "schema": {
@@ -1126,7 +1126,7 @@
         "operationId": "GetCountry",
         "responses": {
           "200": {
-            "description": "Ok",
+            "description": "",
             "content": {
               "application/json": {
                 "schema": {
@@ -1150,12 +1150,300 @@
         ]
       }
     },
+    "/countries/search": {
+      "post": {
+        "operationId": "SearchCountries",
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "countries": {
+                      "items": {
+                        "properties": {
+                          "updatedAt": {
+                            "type": "string",
+                            "format": "date-time"
+                          },
+                          "createdAt": {
+                            "type": "string",
+                            "format": "date-time"
+                          },
+                          "timezones": {
+                            "items": {
+                              "type": "string"
+                            },
+                            "type": "array"
+                          },
+                          "googleMaps": {
+                            "type": "string"
+                          },
+                          "density": {
+                            "type": "number",
+                            "format": "double"
+                          },
+                          "population": {
+                            "type": "number",
+                            "format": "double"
+                          },
+                          "area": {
+                            "type": "number",
+                            "format": "double"
+                          },
+                          "flagSVG": {
+                            "type": "string"
+                          },
+                          "flagPNG": {
+                            "type": "string"
+                          },
+                          "flag": {
+                            "type": "string"
+                          },
+                          "borders": {
+                            "items": {
+                              "type": "string"
+                            },
+                            "type": "array"
+                          },
+                          "continents": {
+                            "items": {
+                              "type": "string"
+                            },
+                            "type": "array"
+                          },
+                          "alternativeSpellings": {
+                            "items": {
+                              "type": "string"
+                            },
+                            "type": "array"
+                          },
+                          "capital": {
+                            "items": {
+                              "type": "string"
+                            },
+                            "type": "array"
+                          },
+                          "topLevelDomains": {
+                            "items": {
+                              "type": "string"
+                            },
+                            "type": "array"
+                          },
+                          "startOfWeek": {
+                            "type": "string"
+                          },
+                          "unMember": {
+                            "type": "boolean"
+                          },
+                          "independent": {
+                            "type": "boolean"
+                          },
+                          "status": {
+                            "type": "string"
+                          },
+                          "fifa": {
+                            "type": "string"
+                          },
+                          "cioc": {
+                            "type": "string"
+                          },
+                          "ccn3": {
+                            "type": "string"
+                          },
+                          "cca3": {
+                            "type": "string"
+                          },
+                          "cca2": {
+                            "type": "string"
+                          },
+                          "officialName": {
+                            "type": "string"
+                          },
+                          "commonName": {
+                            "type": "string"
+                          },
+                          "code": {
+                            "type": "string"
+                          },
+                          "longitude": {
+                            "type": "number",
+                            "format": "double"
+                          },
+                          "latitude": {
+                            "type": "number",
+                            "format": "double"
+                          },
+                          "subregion": {
+                            "type": "string"
+                          },
+                          "region": {
+                            "type": "string"
+                          },
+                          "cities": {
+                            "items": {
+                              "properties": {
+                                "timezone": {
+                                  "type": "number",
+                                  "format": "double"
+                                },
+                                "longitude": {
+                                  "type": "number",
+                                  "format": "double"
+                                },
+                                "latitude": {
+                                  "type": "number",
+                                  "format": "double"
+                                },
+                                "city": {
+                                  "type": "string"
+                                },
+                                "state": {
+                                  "type": "string"
+                                }
+                              },
+                              "required": [
+                                "timezone",
+                                "longitude",
+                                "latitude",
+                                "city",
+                                "state"
+                              ],
+                              "type": "object"
+                            },
+                            "type": "array"
+                          },
+                          "googleTrends": {
+                            "items": {
+                              "type": "string"
+                            },
+                            "type": "array"
+                          },
+                          "organizations": {
+                            "items": {
+                              "allOf": [
+                                {
+                                  "$ref": "#/components/schemas/GetResult_any.any.any_"
+                                },
+                                {
+                                  "properties": {},
+                                  "type": "object"
+                                }
+                              ]
+                            },
+                            "type": "array"
+                          },
+                          "languages": {
+                            "items": {
+                              "allOf": [
+                                {
+                                  "$ref": "#/components/schemas/GetResult_any.any.any_"
+                                },
+                                {
+                                  "properties": {},
+                                  "type": "object"
+                                }
+                              ]
+                            },
+                            "type": "array"
+                          },
+                          "currencies": {
+                            "items": {
+                              "allOf": [
+                                {
+                                  "$ref": "#/components/schemas/GetResult_any.any.any_"
+                                },
+                                {
+                                  "properties": {},
+                                  "type": "object"
+                                }
+                              ]
+                            },
+                            "type": "array"
+                          }
+                        },
+                        "required": [
+                          "updatedAt",
+                          "createdAt",
+                          "timezones",
+                          "googleMaps",
+                          "density",
+                          "population",
+                          "area",
+                          "flagSVG",
+                          "flagPNG",
+                          "flag",
+                          "borders",
+                          "continents",
+                          "alternativeSpellings",
+                          "capital",
+                          "topLevelDomains",
+                          "startOfWeek",
+                          "unMember",
+                          "independent",
+                          "status",
+                          "fifa",
+                          "cioc",
+                          "ccn3",
+                          "cca3",
+                          "cca2",
+                          "officialName",
+                          "commonName",
+                          "code",
+                          "longitude",
+                          "latitude",
+                          "subregion",
+                          "region",
+                          "cities",
+                          "googleTrends",
+                          "organizations",
+                          "languages",
+                          "currencies"
+                        ],
+                        "type": "object"
+                      },
+                      "type": "array"
+                    },
+                    "total": {
+                      "type": "number",
+                      "format": "double"
+                    }
+                  },
+                  "required": ["countries", "total"],
+                  "type": "object"
+                }
+              }
+            }
+          }
+        },
+        "tags": ["Countries"],
+        "security": [],
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "properties": {
+                  "query": {
+                    "type": "string"
+                  }
+                },
+                "required": ["query"],
+                "type": "object"
+              }
+            }
+          }
+        }
+      }
+    },
     "/crypto/coins": {
       "get": {
         "operationId": "GetCoins",
         "responses": {
           "200": {
-            "description": "Ok",
+            "description": "",
             "content": {
               "application/json": {
                 "schema": {
@@ -1213,7 +1501,7 @@
         "operationId": "GetCoin",
         "responses": {
           "200": {
-            "description": "Ok",
+            "description": "",
             "content": {
               "application/json": {
                 "schema": {
@@ -1242,7 +1530,7 @@
         "operationId": "GetCurrencies",
         "responses": {
           "200": {
-            "description": "Ok",
+            "description": "",
             "content": {
               "application/json": {
                 "schema": {
@@ -1265,7 +1553,7 @@
         "operationId": "GetRates",
         "responses": {
           "200": {
-            "description": "Ok",
+            "description": "",
             "content": {
               "application/json": {
                 "schema": {
@@ -1772,7 +2060,7 @@
         "operationId": "GetTrends",
         "responses": {
           "200": {
-            "description": "Ok",
+            "description": "",
             "content": {
               "application/json": {
                 "schema": {
@@ -1813,7 +2101,7 @@
         "operationId": "GetRanks",
         "responses": {
           "200": {
-            "description": "Ok",
+            "description": "",
             "content": {
               "application/json": {
                 "schema": {
@@ -1871,7 +2159,7 @@
         "operationId": "GetHealth",
         "responses": {
           "200": {
-            "description": "Ok",
+            "description": "",
             "content": {
               "application/json": {
                 "schema": {
@@ -1891,7 +2179,7 @@
         "operationId": "GetLanguages",
         "responses": {
           "200": {
-            "description": "Ok",
+            "description": "",
             "content": {
               "application/json": {
                 "schema": {
@@ -1914,7 +2202,7 @@
         "operationId": "GetLanguage",
         "responses": {
           "200": {
-            "description": "Ok",
+            "description": "",
             "content": {
               "application/json": {
                 "schema": {
@@ -1943,7 +2231,7 @@
         "operationId": "GetHeadlines",
         "responses": {
           "200": {
-            "description": "Ok",
+            "description": "",
             "content": {
               "application/json": {
                 "schema": {
@@ -2011,7 +2299,7 @@
         "operationId": "GetSources",
         "responses": {
           "200": {
-            "description": "Ok",
+            "description": "",
             "content": {
               "application/json": {
                 "schema": {
@@ -2059,7 +2347,7 @@
         "operationId": "GetOrganizations",
         "responses": {
           "200": {
-            "description": "Ok",
+            "description": "",
             "content": {
               "application/json": {
                 "schema": {
@@ -2082,7 +2370,7 @@
         "operationId": "GetOrganization",
         "responses": {
           "200": {
-            "description": "Ok",
+            "description": "",
             "content": {
               "application/json": {
                 "schema": {
@@ -2111,7 +2399,7 @@
         "operationId": "GetPassports",
         "responses": {
           "200": {
-            "description": "Ok",
+            "description": "",
             "content": {
               "application/json": {
                 "schema": {
@@ -2145,7 +2433,7 @@
         "operationId": "GetPassport",
         "responses": {
           "200": {
-            "description": "Ok",
+            "description": "",
             "content": {
               "application/json": {
                 "schema": {
@@ -2177,7 +2465,7 @@
         "operationId": "GetTimezones",
         "responses": {
           "200": {
-            "description": "Ok",
+            "description": "",
             "content": {
               "application/json": {
                 "schema": {
@@ -2200,7 +2488,7 @@
         "operationId": "GetTimezone",
         "responses": {
           "200": {
-            "description": "Ok",
+            "description": "",
             "content": {
               "application/json": {
                 "schema": {
@@ -2226,10 +2514,10 @@
     },
     "/Weather": {
       "get": {
-        "operationId": "GetVideoCategories",
+        "operationId": "GetWeather",
         "responses": {
           "200": {
-            "description": "Ok",
+            "description": "",
             "content": {
               "application/json": {
                 "schema": {}
@@ -2268,7 +2556,7 @@
         "operationId": "GetVideoCategories",
         "responses": {
           "200": {
-            "description": "Ok",
+            "description": "",
             "content": {
               "application/json": {
                 "schema": {
@@ -2301,7 +2589,7 @@
         "operationId": "GetVideos",
         "responses": {
           "200": {
-            "description": "Ok",
+            "description": "",
             "content": {
               "application/json": {
                 "schema": {

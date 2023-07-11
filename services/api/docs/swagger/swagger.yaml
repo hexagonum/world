@@ -587,7 +587,7 @@ paths:
             {
               '200':
                 {
-                  description: Ok,
+                  description: '',
                   content:
                     {
                       application/json:
@@ -826,7 +826,7 @@ paths:
             {
               '200':
                 {
-                  description: Ok,
+                  description: '',
                   content:
                     {
                       application/json:
@@ -847,6 +847,281 @@ paths:
             ],
         },
     }
+  /countries/search:
+    {
+      post:
+        {
+          operationId: SearchCountries,
+          responses:
+            {
+              '200':
+                {
+                  description: '',
+                  content:
+                    {
+                      application/json:
+                        {
+                          schema:
+                            {
+                              properties:
+                                {
+                                  countries:
+                                    {
+                                      items:
+                                        {
+                                          properties:
+                                            {
+                                              updatedAt:
+                                                {
+                                                  type: string,
+                                                  format: date-time,
+                                                },
+                                              createdAt:
+                                                {
+                                                  type: string,
+                                                  format: date-time,
+                                                },
+                                              timezones:
+                                                {
+                                                  items: { type: string },
+                                                  type: array,
+                                                },
+                                              googleMaps: { type: string },
+                                              density:
+                                                {
+                                                  type: number,
+                                                  format: double,
+                                                },
+                                              population:
+                                                {
+                                                  type: number,
+                                                  format: double,
+                                                },
+                                              area:
+                                                {
+                                                  type: number,
+                                                  format: double,
+                                                },
+                                              flagSVG: { type: string },
+                                              flagPNG: { type: string },
+                                              flag: { type: string },
+                                              borders:
+                                                {
+                                                  items: { type: string },
+                                                  type: array,
+                                                },
+                                              continents:
+                                                {
+                                                  items: { type: string },
+                                                  type: array,
+                                                },
+                                              alternativeSpellings:
+                                                {
+                                                  items: { type: string },
+                                                  type: array,
+                                                },
+                                              capital:
+                                                {
+                                                  items: { type: string },
+                                                  type: array,
+                                                },
+                                              topLevelDomains:
+                                                {
+                                                  items: { type: string },
+                                                  type: array,
+                                                },
+                                              startOfWeek: { type: string },
+                                              unMember: { type: boolean },
+                                              independent: { type: boolean },
+                                              status: { type: string },
+                                              fifa: { type: string },
+                                              cioc: { type: string },
+                                              ccn3: { type: string },
+                                              cca3: { type: string },
+                                              cca2: { type: string },
+                                              officialName: { type: string },
+                                              commonName: { type: string },
+                                              code: { type: string },
+                                              longitude:
+                                                {
+                                                  type: number,
+                                                  format: double,
+                                                },
+                                              latitude:
+                                                {
+                                                  type: number,
+                                                  format: double,
+                                                },
+                                              subregion: { type: string },
+                                              region: { type: string },
+                                              cities:
+                                                {
+                                                  items:
+                                                    {
+                                                      properties:
+                                                        {
+                                                          timezone:
+                                                            {
+                                                              type: number,
+                                                              format: double,
+                                                            },
+                                                          longitude:
+                                                            {
+                                                              type: number,
+                                                              format: double,
+                                                            },
+                                                          latitude:
+                                                            {
+                                                              type: number,
+                                                              format: double,
+                                                            },
+                                                          city:
+                                                            { type: string },
+                                                          state:
+                                                            { type: string },
+                                                        },
+                                                      required:
+                                                        [
+                                                          timezone,
+                                                          longitude,
+                                                          latitude,
+                                                          city,
+                                                          state,
+                                                        ],
+                                                      type: object,
+                                                    },
+                                                  type: array,
+                                                },
+                                              googleTrends:
+                                                {
+                                                  items: { type: string },
+                                                  type: array,
+                                                },
+                                              organizations:
+                                                {
+                                                  items:
+                                                    {
+                                                      allOf:
+                                                        [
+                                                          {
+                                                            $ref: '#/components/schemas/GetResult_any.any.any_',
+                                                          },
+                                                          {
+                                                            properties: {},
+                                                            type: object,
+                                                          },
+                                                        ],
+                                                    },
+                                                  type: array,
+                                                },
+                                              languages:
+                                                {
+                                                  items:
+                                                    {
+                                                      allOf:
+                                                        [
+                                                          {
+                                                            $ref: '#/components/schemas/GetResult_any.any.any_',
+                                                          },
+                                                          {
+                                                            properties: {},
+                                                            type: object,
+                                                          },
+                                                        ],
+                                                    },
+                                                  type: array,
+                                                },
+                                              currencies:
+                                                {
+                                                  items:
+                                                    {
+                                                      allOf:
+                                                        [
+                                                          {
+                                                            $ref: '#/components/schemas/GetResult_any.any.any_',
+                                                          },
+                                                          {
+                                                            properties: {},
+                                                            type: object,
+                                                          },
+                                                        ],
+                                                    },
+                                                  type: array,
+                                                },
+                                            },
+                                          required:
+                                            [
+                                              updatedAt,
+                                              createdAt,
+                                              timezones,
+                                              googleMaps,
+                                              density,
+                                              population,
+                                              area,
+                                              flagSVG,
+                                              flagPNG,
+                                              flag,
+                                              borders,
+                                              continents,
+                                              alternativeSpellings,
+                                              capital,
+                                              topLevelDomains,
+                                              startOfWeek,
+                                              unMember,
+                                              independent,
+                                              status,
+                                              fifa,
+                                              cioc,
+                                              ccn3,
+                                              cca3,
+                                              cca2,
+                                              officialName,
+                                              commonName,
+                                              code,
+                                              longitude,
+                                              latitude,
+                                              subregion,
+                                              region,
+                                              cities,
+                                              googleTrends,
+                                              organizations,
+                                              languages,
+                                              currencies,
+                                            ],
+                                          type: object,
+                                        },
+                                      type: array,
+                                    },
+                                  total: { type: number, format: double },
+                                },
+                              required: [countries, total],
+                              type: object,
+                            },
+                        },
+                    },
+                },
+            },
+          tags: [Countries],
+          security: [],
+          parameters: [],
+          requestBody:
+            {
+              required: true,
+              content:
+                {
+                  application/json:
+                    {
+                      schema:
+                        {
+                          properties: { query: { type: string } },
+                          required: [query],
+                          type: object,
+                        },
+                    },
+                },
+            },
+        },
+    }
   /crypto/coins:
     {
       get:
@@ -856,7 +1131,7 @@ paths:
             {
               '200':
                 {
-                  description: Ok,
+                  description: '',
                   content:
                     {
                       application/json:
@@ -910,7 +1185,7 @@ paths:
             {
               '200':
                 {
-                  description: Ok,
+                  description: '',
                   content:
                     {
                       application/json:
@@ -933,7 +1208,7 @@ paths:
             {
               '200':
                 {
-                  description: Ok,
+                  description: '',
                   content:
                     {
                       application/json:
@@ -961,7 +1236,7 @@ paths:
             {
               '200':
                 {
-                  description: Ok,
+                  description: '',
                   content:
                     {
                       application/json:
@@ -1437,7 +1712,7 @@ paths:
             {
               '200':
                 {
-                  description: Ok,
+                  description: '',
                   content:
                     {
                       application/json:
@@ -1482,7 +1757,7 @@ paths:
             {
               '200':
                 {
-                  description: Ok,
+                  description: '',
                   content:
                     {
                       application/json:
@@ -1534,7 +1809,7 @@ paths:
             {
               '200':
                 {
-                  description: Ok,
+                  description: '',
                   content:
                     {
                       application/json:
@@ -1559,7 +1834,7 @@ paths:
             {
               '200':
                 {
-                  description: Ok,
+                  description: '',
                   content:
                     {
                       application/json:
@@ -1587,7 +1862,7 @@ paths:
             {
               '200':
                 {
-                  description: Ok,
+                  description: '',
                   content:
                     {
                       application/json:
@@ -1617,7 +1892,7 @@ paths:
             {
               '200':
                 {
-                  description: Ok,
+                  description: '',
                   content:
                     {
                       application/json:
@@ -1678,7 +1953,7 @@ paths:
             {
               '200':
                 {
-                  description: Ok,
+                  description: '',
                   content:
                     {
                       application/json:
@@ -1727,7 +2002,7 @@ paths:
             {
               '200':
                 {
-                  description: Ok,
+                  description: '',
                   content:
                     {
                       application/json:
@@ -1756,7 +2031,7 @@ paths:
             {
               '200':
                 {
-                  description: Ok,
+                  description: '',
                   content:
                     {
                       application/json:
@@ -1788,7 +2063,7 @@ paths:
             {
               '200':
                 {
-                  description: Ok,
+                  description: '',
                   content:
                     {
                       application/json:
@@ -1824,7 +2099,7 @@ paths:
             {
               '200':
                 {
-                  description: Ok,
+                  description: '',
                   content:
                     {
                       application/json:
@@ -1863,7 +2138,7 @@ paths:
             {
               '200':
                 {
-                  description: Ok,
+                  description: '',
                   content:
                     {
                       application/json:
@@ -1891,7 +2166,7 @@ paths:
             {
               '200':
                 {
-                  description: Ok,
+                  description: '',
                   content:
                     {
                       application/json:
@@ -1916,12 +2191,12 @@ paths:
     {
       get:
         {
-          operationId: GetVideoCategories,
+          operationId: GetWeather,
           responses:
             {
               '200':
                 {
-                  description: Ok,
+                  description: '',
                   content: { application/json: { schema: {} } },
                 },
             },
@@ -1953,7 +2228,7 @@ paths:
             {
               '200':
                 {
-                  description: Ok,
+                  description: '',
                   content:
                     {
                       application/json:
@@ -1992,7 +2267,7 @@ paths:
             {
               '200':
                 {
-                  description: Ok,
+                  description: '',
                   content:
                     {
                       application/json:

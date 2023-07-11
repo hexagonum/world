@@ -23,8 +23,7 @@
     "test:watch": "jest --watch",
     "test:cov": "jest --coverage",
     "test:e2e": "jest --config ./test/jest.config.ts",
-    "test:newman": "newman run ./docs/newman/collection.json -e ./docs/newman/environment.json",
-    "prepare": "husky install || true"
+    "test:newman": "newman run ./docs/newman/collection.json -e ./docs/newman/environment.json"
   },
   "dependencies": {
     "@apollo/server": "4.7.5",

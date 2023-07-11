@@ -1,5 +1,13 @@
 import { Currency } from '@prisma/client';
-import { Controller, Get, Path, Query, Route, Tags } from 'tsoa';
+import {
+  Controller,
+  Get,
+  Path,
+  Query,
+  Route,
+  SuccessResponse,
+  Tags,
+} from 'tsoa';
 import { CurrenciesService } from './currencies.service';
 import { ForexHistory, ForexSource } from './currencies.types';
 
@@ -14,11 +22,13 @@ export class CurrenciesController extends Controller {
   }
 
   @Get()
+  @SuccessResponse(200)
   async getCurrencies(): Promise<Currency[]> {
     return this.currenciesService.getCurrencies();
   }
 
   @Get('rates')
+  @SuccessResponse(200)
   async getRates(
     @Query('amount') amount = 1,
     @Query('base') base = 'EUR',

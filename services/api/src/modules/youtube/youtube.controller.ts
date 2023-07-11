@@ -1,4 +1,4 @@
-import { Controller, Get, Query, Route, Tags } from 'tsoa';
+import { Controller, Get, Query, Route, SuccessResponse, Tags } from 'tsoa';
 import { YouTubeService } from './youtube.service';
 
 @Route('/youtube')
@@ -12,11 +12,13 @@ export class YouTubeController extends Controller {
   }
 
   @Get('/categories')
+  @SuccessResponse(200)
   async getVideoCategories(@Query('countryCode') regionCode = 'US') {
     return this.youTubeService.getVideoCategories({ regionCode });
   }
 
   @Get('/videos')
+  @SuccessResponse(200)
   async getVideos(
     @Query('countryCode') regionCode = '',
     @Query('categoryId') videoCategoryId = '',

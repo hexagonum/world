@@ -738,7 +738,7 @@ export function RegisterRoutes(app: Router) {
           controller,
           validatedArgs as any
         );
-        promiseHandler(controller, promise, response, undefined, next);
+        promiseHandler(controller, promise, response, 200, next);
       } catch (err) {
         return next(err);
       }
@@ -773,7 +773,47 @@ export function RegisterRoutes(app: Router) {
           controller,
           validatedArgs as any
         );
-        promiseHandler(controller, promise, response, undefined, next);
+        promiseHandler(controller, promise, response, 200, next);
+      } catch (err) {
+        return next(err);
+      }
+    }
+  );
+  // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
+  app.post(
+    '/countries/search',
+    ...fetchMiddlewares<RequestHandler>(CountriesController),
+    ...fetchMiddlewares<RequestHandler>(
+      CountriesController.prototype.searchCountries
+    ),
+
+    function CountriesController_searchCountries(
+      request: any,
+      response: any,
+      next: any
+    ) {
+      const args = {
+        undefined: {
+          in: 'body',
+          required: true,
+          dataType: 'nestedObjectLiteral',
+          nestedProperties: { query: { dataType: 'string', required: true } },
+        },
+      };
+
+      // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
+
+      let validatedArgs: any[] = [];
+      try {
+        validatedArgs = getValidatedArgs(args, request, response);
+
+        const controller = new CountriesController();
+
+        const promise = controller.searchCountries.apply(
+          controller,
+          validatedArgs as any
+        );
+        promiseHandler(controller, promise, response, 200, next);
       } catch (err) {
         return next(err);
       }
@@ -815,7 +855,7 @@ export function RegisterRoutes(app: Router) {
           controller,
           validatedArgs as any
         );
-        promiseHandler(controller, promise, response, undefined, next);
+        promiseHandler(controller, promise, response, 200, next);
       } catch (err) {
         return next(err);
       }
@@ -844,7 +884,7 @@ export function RegisterRoutes(app: Router) {
           controller,
           validatedArgs as any
         );
-        promiseHandler(controller, promise, response, undefined, next);
+        promiseHandler(controller, promise, response, 200, next);
       } catch (err) {
         return next(err);
       }
@@ -877,7 +917,7 @@ export function RegisterRoutes(app: Router) {
           controller,
           validatedArgs as any
         );
-        promiseHandler(controller, promise, response, undefined, next);
+        promiseHandler(controller, promise, response, 200, next);
       } catch (err) {
         return next(err);
       }
@@ -920,7 +960,7 @@ export function RegisterRoutes(app: Router) {
           controller,
           validatedArgs as any
         );
-        promiseHandler(controller, promise, response, undefined, next);
+        promiseHandler(controller, promise, response, 200, next);
       } catch (err) {
         return next(err);
       }
@@ -1334,7 +1374,7 @@ export function RegisterRoutes(app: Router) {
           controller,
           validatedArgs as any
         );
-        promiseHandler(controller, promise, response, undefined, next);
+        promiseHandler(controller, promise, response, 200, next);
       } catch (err) {
         return next(err);
       }
@@ -1364,7 +1404,7 @@ export function RegisterRoutes(app: Router) {
           controller,
           validatedArgs as any
         );
-        promiseHandler(controller, promise, response, undefined, next);
+        promiseHandler(controller, promise, response, 200, next);
       } catch (err) {
         return next(err);
       }
@@ -1395,7 +1435,7 @@ export function RegisterRoutes(app: Router) {
           controller,
           validatedArgs as any
         );
-        promiseHandler(controller, promise, response, undefined, next);
+        promiseHandler(controller, promise, response, 200, next);
       } catch (err) {
         return next(err);
       }
@@ -1428,7 +1468,7 @@ export function RegisterRoutes(app: Router) {
           controller,
           validatedArgs as any
         );
-        promiseHandler(controller, promise, response, undefined, next);
+        promiseHandler(controller, promise, response, 200, next);
       } catch (err) {
         return next(err);
       }
@@ -1463,7 +1503,7 @@ export function RegisterRoutes(app: Router) {
           controller,
           validatedArgs as any
         );
-        promiseHandler(controller, promise, response, undefined, next);
+        promiseHandler(controller, promise, response, 200, next);
       } catch (err) {
         return next(err);
       }
@@ -1515,7 +1555,7 @@ export function RegisterRoutes(app: Router) {
           controller,
           validatedArgs as any
         );
-        promiseHandler(controller, promise, response, undefined, next);
+        promiseHandler(controller, promise, response, 200, next);
       } catch (err) {
         return next(err);
       }
@@ -1546,7 +1586,7 @@ export function RegisterRoutes(app: Router) {
           controller,
           validatedArgs as any
         );
-        promiseHandler(controller, promise, response, undefined, next);
+        promiseHandler(controller, promise, response, 200, next);
       } catch (err) {
         return next(err);
       }
@@ -1579,7 +1619,7 @@ export function RegisterRoutes(app: Router) {
           controller,
           validatedArgs as any
         );
-        promiseHandler(controller, promise, response, undefined, next);
+        promiseHandler(controller, promise, response, 200, next);
       } catch (err) {
         return next(err);
       }
@@ -1614,7 +1654,7 @@ export function RegisterRoutes(app: Router) {
           controller,
           validatedArgs as any
         );
-        promiseHandler(controller, promise, response, undefined, next);
+        promiseHandler(controller, promise, response, 200, next);
       } catch (err) {
         return next(err);
       }
@@ -1649,7 +1689,7 @@ export function RegisterRoutes(app: Router) {
           controller,
           validatedArgs as any
         );
-        promiseHandler(controller, promise, response, undefined, next);
+        promiseHandler(controller, promise, response, 200, next);
       } catch (err) {
         return next(err);
       }
@@ -1684,7 +1724,7 @@ export function RegisterRoutes(app: Router) {
           controller,
           validatedArgs as any
         );
-        promiseHandler(controller, promise, response, undefined, next);
+        promiseHandler(controller, promise, response, 200, next);
       } catch (err) {
         return next(err);
       }
@@ -1717,7 +1757,7 @@ export function RegisterRoutes(app: Router) {
           controller,
           validatedArgs as any
         );
-        promiseHandler(controller, promise, response, undefined, next);
+        promiseHandler(controller, promise, response, 200, next);
       } catch (err) {
         return next(err);
       }
@@ -1752,7 +1792,7 @@ export function RegisterRoutes(app: Router) {
           controller,
           validatedArgs as any
         );
-        promiseHandler(controller, promise, response, undefined, next);
+        promiseHandler(controller, promise, response, 200, next);
       } catch (err) {
         return next(err);
       }
@@ -1762,11 +1802,9 @@ export function RegisterRoutes(app: Router) {
   app.get(
     '/Weather',
     ...fetchMiddlewares<RequestHandler>(WeatherController),
-    ...fetchMiddlewares<RequestHandler>(
-      WeatherController.prototype.getVideoCategories
-    ),
+    ...fetchMiddlewares<RequestHandler>(WeatherController.prototype.getWeather),
 
-    function WeatherController_getVideoCategories(
+    function WeatherController_getWeather(
       request: any,
       response: any,
       next: any
@@ -1794,11 +1832,11 @@ export function RegisterRoutes(app: Router) {
 
         const controller = new WeatherController();
 
-        const promise = controller.getVideoCategories.apply(
+        const promise = controller.getWeather.apply(
           controller,
           validatedArgs as any
         );
-        promiseHandler(controller, promise, response, undefined, next);
+        promiseHandler(controller, promise, response, 200, next);
       } catch (err) {
         return next(err);
       }
@@ -1838,7 +1876,7 @@ export function RegisterRoutes(app: Router) {
           controller,
           validatedArgs as any
         );
-        promiseHandler(controller, promise, response, undefined, next);
+        promiseHandler(controller, promise, response, 200, next);
       } catch (err) {
         return next(err);
       }
@@ -1894,7 +1932,7 @@ export function RegisterRoutes(app: Router) {
           controller,
           validatedArgs as any
         );
-        promiseHandler(controller, promise, response, undefined, next);
+        promiseHandler(controller, promise, response, 200, next);
       } catch (err) {
         return next(err);
       }

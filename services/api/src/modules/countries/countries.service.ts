@@ -117,4 +117,66 @@ export class CountriesService {
       googleTrends,
     };
   }
+
+  async searchCountries({ query }: { query: string }) {
+    let where: Prisma.CountryWhereInput = {};
+    if (query != '') {
+      where = {
+        OR: [
+          { code: { contains: query, mode: 'insensitive' } },
+          { cca2: { contains: query, mode: 'insensitive' } },
+          { cca3: { contains: query, mode: 'insensitive' } },
+          { fifa: { contains: query, mode: 'insensitive' } },
+          { commonName: { contains: query, mode: 'insensitive' } },
+          { officialName: { contains: query, mode: 'insensitive' } },
+        ],
+      };
+    }
+    const [total = 0, countries = []] = await this.prismaClient.$transaction([
+      this.prismaClient.country.count({ where }),
+      this.prismaClient.country.findMany({
+        where,
+        include: {
+          cities: {
+            select: {
+              state: true,
+              city: true,
+              latitude: true,
+              longitude: true,
+              timezone: true,
+            },
+            where: {
+              latitude: { not: { equals: 0 } },
+              longitude: { not: { equals: 0 } },
+              timezone: { not: { equals: 0 } },
+            },
+            orderBy: { timezone: 'asc' },
+          },
+          currencies: { select: { currency: true } },
+          languages: { select: { language: true } },
+          organizations: { select: { organization: true } },
+          googleTrends: { select: { queries: true } },
+        },
+      }),
+    ]);
+
+    return {
+      total,
+      countries: countries.map((country) => {
+        const googleTrends: string[] =
+          country.googleTrends.map(
+            ({ queries }: { queries: string[] }) => queries
+          )[0] ?? [];
+        return {
+          ...country,
+          currencies: country.currencies.map(({ currency }) => currency),
+          languages: country.languages.map(({ language }) => language),
+          organizations: country.organizations.map(
+            ({ organization }) => organization
+          ),
+          googleTrends,
+        };
+      }),
+    };
+  }
 }

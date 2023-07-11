@@ -1,4 +1,4 @@
-import { Controller, Get, Query, Route, Tags } from 'tsoa';
+import { Controller, Get, Query, Route, SuccessResponse, Tags } from 'tsoa';
 import {
   NewsArticle,
   NewsCategory,
@@ -19,6 +19,7 @@ export class NewsController extends Controller {
   }
 
   @Get('headlines')
+  @SuccessResponse(200)
   async getHeadlines(
     @Query('country') country?: NewsCountry,
     @Query('category') category: NewsCategory = 'general',
@@ -36,6 +37,7 @@ export class NewsController extends Controller {
   }
 
   @Get('sources')
+  @SuccessResponse(200)
   async getSources(
     @Query('category') category?: NewsCategory,
     @Query('language') language?: NewsLanguage,

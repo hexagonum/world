@@ -1,4 +1,4 @@
-import { Controller, Get, Route, Tags } from 'tsoa';
+import { Controller, Get, Route, SuccessResponse, Tags } from 'tsoa';
 import { healthService } from './health.service';
 import { HealthResponse } from './health.types';
 
@@ -6,6 +6,7 @@ import { HealthResponse } from './health.types';
 @Tags('Health')
 export class HealthController extends Controller {
   @Get()
+  @SuccessResponse(200)
   getHealth(): HealthResponse {
     return healthService.getHealth();
   }

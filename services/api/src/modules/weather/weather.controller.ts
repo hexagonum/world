@@ -1,4 +1,4 @@
-import { Route, Tags, Controller, Get, Query } from 'tsoa';
+import { Controller, Get, Query, Route, SuccessResponse, Tags } from 'tsoa';
 import { WeatherService } from './weather.service';
 
 @Route('/Weather')
@@ -12,7 +12,8 @@ export class WeatherController extends Controller {
   }
 
   @Get()
-  async getVideoCategories(
+  @SuccessResponse(200)
+  async getWeather(
     @Query('latitude') latitude = 0,
     @Query('longitude') longitude = 0
   ) {
