@@ -1512,6 +1512,12 @@ paths:
             [
               {
                 in: query,
+                name: offset,
+                required: false,
+                schema: { default: 0, format: double, type: number },
+              },
+              {
+                in: query,
                 name: limit,
                 required: false,
                 schema: { default: 10, format: double, type: number },

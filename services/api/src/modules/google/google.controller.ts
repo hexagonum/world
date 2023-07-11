@@ -13,13 +13,14 @@ export class GoogleController extends Controller {
 
   @Get('trends')
   async getTrends(@Query('countryCode') countryCode = '') {
-    return this.googleService.getGoogleTrends(countryCode);
+    return this.googleService.getGoogleTrends({ countryCode });
   }
 
   @Get('ranks')
   async getRanks(
+    @Query('offset') offset = 0,
     @Query('limit') limit = 10
   ): Promise<{ rank: number; query: string; count: number }[]> {
-    return this.googleService.getGoogleRanks(limit);
+    return this.googleService.getGoogleRanks({ offset, limit });
   }
 }

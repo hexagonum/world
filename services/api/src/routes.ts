@@ -1348,6 +1348,7 @@ export function RegisterRoutes(app: Router) {
 
     function GoogleController_getRanks(request: any, response: any, next: any) {
       const args = {
+        offset: { default: 0, in: 'query', name: 'offset', dataType: 'double' },
         limit: { default: 10, in: 'query', name: 'limit', dataType: 'double' },
       };
 
